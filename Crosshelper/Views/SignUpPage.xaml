@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.SignUpPage">
+    <ContentPage.Content>
+                <Grid Margin="6"> 
+     <StackLayout Grid.Row="1" Grid.Column="0">        
+        <BoxView 
+               BackgroundColor="Red"
+               HorizontalOptions="Start"/>     
+    </StackLayout>
+    <StackLayout Grid.Row="1" Grid.Column="2" Margin="0,60,0,0">        
+        <Label Text="Sign up"
+               TextColor="#FF4E17"
+               FontSize="30"
+               FontAttributes="Bold"
+               HorizontalOptions="End"/>     
+    </StackLayout>
+    <StackLayout 
+           Margin="5"
+           Grid.Row="2"
+           Grid.Column="1"
+           Grid.ColumnSpan="2">
+        <Label Text="Get help right now!"
+           TextColor="Gray"
+           FontSize="20"
+           HorizontalOptions="End"
+           ></Label>
+    </StackLayout>
+    <StackLayout Grid.ColumnSpan="3" Grid.Row="3" Margin="5">
+        <Entry Placeholder="Email"
+           FontSize="28"/>
+        <Entry Placeholder="Passward"
+           FontSize="28"/>
+        <Entry 
+           Placeholder="Comfirm Passward"
+           FontSize="28"/>
+     </StackLayout>
+            
+     <StackLayout Grid.ColumnSpan="3" Grid.Row="7" Margin="5">
+     <BoxView BackgroundColor="Red" VerticalOptions="CenterAndExpand"/>
+     </StackLayout>      
+</Grid>
+    </ContentPage.Content>
+</ContentPage>
