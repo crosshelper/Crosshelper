@@ -3,9 +3,10 @@
     <ContentPage.Content>
            <Grid Margin="6">
    <StackLayout Grid.Row="1" Grid.Column="0">        
-        <BoxView 
+        <Button 
                BackgroundColor="Red"
-               HorizontalOptions="Start"/>     
+               HorizontalOptions="Start"
+               Clicked="SignInGoBack"/>     
     </StackLayout>
     <StackLayout Grid.Row="1" Grid.Column="2" Margin="0,60,0,0">        
         <Label Text="Sign in"
@@ -25,13 +26,15 @@
     </StackLayout>
     <StackLayout Grid.ColumnSpan="3" Grid.Row="4" Margin="5">
         <Entry Placeholder="Email"
+           Completed="SignInEmailCompleted"
            FontSize="28"/>
-        <Entry Placeholder="Passward"
+        <Entry Placeholder="Password"
+           Completed="SignInPasswordCompleted"
            FontSize="28"/>
      </StackLayout>
             
      <StackLayout Grid.ColumnSpan="3" Grid.Row="6" Margin="5">
-     <BoxView BackgroundColor="Red" VerticalOptions="CenterAndExpand"/>
+     <Button BackgroundColor="Red" Clicked="SignIn" VerticalOptions="CenterAndExpand"/>
      </StackLayout>
             
      <StackLayout Grid.ColumnSpan="3" Grid.Row="7" Margin="5,25,0,2">
@@ -39,20 +42,20 @@
      </StackLayout>
             
      <StackLayout Grid.ColumnSpan="1" Grid.Row="8" Margin="5" Grid.Column="0">
-     <BoxView BackgroundColor="Red"/>
+     <Button BackgroundColor="Red" Clicked="GoogleSignInIcon"/>
      </StackLayout>
      <StackLayout Grid.ColumnSpan="1" Grid.Row="8" Margin="5" Grid.Column="1">
-     <BoxView BackgroundColor="Red"/>
+     <Button BackgroundColor="Red" Clicked="FaceBookSignInIcon"/>
      </StackLayout>
      <StackLayout Grid.ColumnSpan="1" Grid.Row="8" Margin="5" Grid.Column="2">
-     <BoxView BackgroundColor="Red" />
+     <Button BackgroundColor="Red" Clicked="WechatSignInIcon"/>
      </StackLayout>
             
      <StackLayout Grid.ColumnSpan="1" Grid.Row="9" Margin="5" Grid.Column="2">
-     <Label Text="Create account" FontSize="13" HorizontalOptions="End"></Label>
+     <Button Text="Create account" Clicked="CreateAccount" FontSize="13" HorizontalOptions="End"></Button>
      </StackLayout>
      <StackLayout Grid.ColumnSpan="1" Grid.Row="9" Margin="5" Grid.Column="0">
-     <Label Text="Forgot password?" FontSize="13" HorizontalOptions="Start"></Label>
+     <Button Text="Forgot password?" Clicked="ForgotPassword" FontSize="13" HorizontalOptions="Start"></Button>
      </StackLayout>   
 </Grid>
     </ContentPage.Content>

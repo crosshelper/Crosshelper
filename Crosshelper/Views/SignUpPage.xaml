@@ -3,9 +3,10 @@
     <ContentPage.Content>
                 <Grid Margin="6"> 
      <StackLayout Grid.Row="1" Grid.Column="0">        
-        <BoxView 
+        <Button 
                BackgroundColor="Red"
-               HorizontalOptions="Start"/>     
+               HorizontalOptions="Start"
+                Clicked="SignUpGoBack"/>     
     </StackLayout>
     <StackLayout Grid.Row="1" Grid.Column="2" Margin="0,60,0,0">        
         <Label Text="Sign up"
@@ -27,16 +28,21 @@
     </StackLayout>
     <StackLayout Grid.ColumnSpan="3" Grid.Row="3" Margin="5">
         <Entry Placeholder="Email"
-           FontSize="28"/>
-        <Entry Placeholder="Passward"
-           FontSize="28"/>
+           FontSize="28"
+           Completed="SignUpEmailCompleted"/>
+        <Entry Placeholder="Password"
+           FontSize="28"
+           Completed="SignUpPasswordCompleted"/>
         <Entry 
-           Placeholder="Comfirm Passward"
-           FontSize="28"/>
+           Placeholder="Comfirm Password"
+           FontSize="28"
+           Completed="SignUpComfirmPasswordCompleted"/>
      </StackLayout>
             
      <StackLayout Grid.ColumnSpan="3" Grid.Row="7" Margin="5">
-     <BoxView BackgroundColor="Red" VerticalOptions="CenterAndExpand"/>
+     <Button BackgroundColor="Red" 
+             VerticalOptions="CenterAndExpand" 
+             Clicked="SignUp"/>
      </StackLayout>      
 </Grid>
     </ContentPage.Content>
