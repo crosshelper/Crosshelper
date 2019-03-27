@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using Crosshelper.Models;
 
 namespace Crosshelper.Views
 {
@@ -19,7 +20,9 @@ namespace Crosshelper.Views
         //登入按钮 Sign In
         void SignIn(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            //(sender as Button).Text = "Click me again!";
+            DBManager dbm = new DBManager();
+            dbm.UpdateDB(uname.Text,uname.Text);
         }
         //第三次登入 Third party sign in
         void GoogleSignInIcon(object sender, EventArgs e)

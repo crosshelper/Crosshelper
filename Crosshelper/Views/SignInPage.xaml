@@ -25,7 +25,8 @@
            ></Label>
     </StackLayout>
     <StackLayout Grid.ColumnSpan="3" Grid.Row="4" Margin="5">
-        <Entry Placeholder="Email"
+        <Entry x:Name="uname"  
+           Placeholder="Email"
            Completed="SignInEmailCompleted"
            FontSize="28"/>
         <Entry Placeholder="Password"

@@ -7,30 +7,32 @@ namespace Crosshelper.Models
 {
     public class DBManager
     {
+        string connStr = "server = chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com; user = chroot; database = chdb; port = 3306; password = ch123456 ";
+
         public DBManager()
         {
-            string connStr = "server = chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com; user = chroot; database = chdb; port = 3306; password = ch123456 ";
-            void UpdateDB(string Uname, string Pwd)
-            {
-                MySqlConnection conn = new MySqlConnection(connStr);
-                try
-                {
-                    Console.WriteLine("Connecting to MySQL...");
-                    conn.Open();
-                    string sql = "INSERT INTO `chdb`.`UserMaster`(`Uid`, `Uname`, `Pwd`, `Permission`) VALUES (NULL, " + Uname + ", " + Pwd + ", NULL) ";
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    //MySqlDataReader mySqlDataReader = cmd.ExecuteReader();
-                    //while (mySqlDataReader.Read())
-                    //{
-                        //Console.WriteLine(mySqlDataReader[0]);
-                    //}
-                    //mySqlDataReader.Close();
-                }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
-                conn.Close();
-                Console.WriteLine();
-            }
+            
+        }
 
+        public void UpdateDB(string Uname, string Pwd)
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                Console.WriteLine("Connecting to MySQL...");
+                conn.Open();
+                string sql = "INSERT INTO `chdb`.`UserMaster`(`Uid`, `Uname`, `Pwd`, `Permission`) VALUES (NULL, " + Uname + ", " + Pwd + ", NULL) ";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //MySqlDataReader mySqlDataReader = cmd.ExecuteReader();
+                //while (mySqlDataReader.Read())
+                //{
+                //Console.WriteLine(mySqlDataReader[0]);
+                //}
+                //mySqlDataReader.Close();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            conn.Close();
+            Console.WriteLine();
         }
     }
 }
