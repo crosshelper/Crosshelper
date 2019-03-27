@@ -14,7 +14,7 @@ namespace Crosshelper
             InitializeComponent();
 
 
-            MainPage = new HomePage();
+            MainPage = new SignInPage();
         }
 
         protected override void OnStart()
