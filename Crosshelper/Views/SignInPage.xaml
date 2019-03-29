@@ -1,63 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.SignInPage">
     <ContentPage.Content>
-           <Grid Margin="6">
-   <StackLayout Grid.Row="1" Grid.Column="0">        
-        <Button 
-               BackgroundColor="Red"
-               HorizontalOptions="Start"
-               Clicked="SignInGoBack"/>     
-    </StackLayout>
-    <StackLayout Grid.Row="1" Grid.Column="2" Margin="0,60,0,0">        
-        <Label Text="Sign in"
-               TextColor="#FF4E17"
-               FontSize="30"
-               FontAttributes="Bold"/>     
-    </StackLayout>
-    <StackLayout 
-           Margin="5"
-           Grid.Row="3"
-           Grid.Column="0"
-           Grid.ColumnSpan="2">
-        <Label Text="Find lovable locals to help you solve problem"
-           TextColor="Gray"
-           FontSize="20"  
-           ></Label>
-    </StackLayout>
-    <StackLayout Grid.ColumnSpan="3" Grid.Row="4" Margin="5">
-        <Entry x:Name="uname"  
-           Placeholder="Email"
-           Completed="SignInEmailCompleted"
-           FontSize="28"/>
-        <Entry Placeholder="Password"
-           Completed="SignInPasswordCompleted"
-           FontSize="28"/>
-     </StackLayout>
-            
-     <StackLayout Grid.ColumnSpan="3" Grid.Row="6" Margin="5">
-     <Button x:Name="btncl" BackgroundColor="Yellow" Clicked="SignIn" VerticalOptions="CenterAndExpand"/>
-     </StackLayout>
-            
-     <StackLayout Grid.ColumnSpan="3" Grid.Row="7" Margin="5,25,0,2">
-     <BoxView BackgroundColor="Red" VerticalOptions="CenterAndExpand"/>
-     </StackLayout>
-            
-     <StackLayout Grid.ColumnSpan="1" Grid.Row="8" Margin="5" Grid.Column="0">
-     <Button BackgroundColor="Red" Clicked="GoogleSignInIcon"/>
-     </StackLayout>
-     <StackLayout Grid.ColumnSpan="1" Grid.Row="8" Margin="5" Grid.Column="1">
-     <Button BackgroundColor="Red" Clicked="FaceBookSignInIcon"/>
-     </StackLayout>
-     <StackLayout Grid.ColumnSpan="1" Grid.Row="8" Margin="5" Grid.Column="2">
-     <Button BackgroundColor="Red" Clicked="WechatSignInIcon"/>
-     </StackLayout>
-            
-     <StackLayout Grid.ColumnSpan="1" Grid.Row="9" Margin="5" Grid.Column="2">
-     <Button Text="Create account" Clicked="CreateAccount" FontSize="13" HorizontalOptions="End"></Button>
-     </StackLayout>
-     <StackLayout Grid.ColumnSpan="1" Grid.Row="9" Margin="5" Grid.Column="0">
-     <Button Text="Forgot password?" Clicked="ForgotPassword" FontSize="13" HorizontalOptions="Start"></Button>
-     </StackLayout>   
-</Grid>
+            <StackLayout Margin="20,35,20,25">
+            <!--返回 Go Back button -->
+                    <Button
+                        Text="Go Back"
+                        HorizontalOptions="Start"
+                        Clicked="SIPSignInGoBack"/>  
+             <!--登入 Sign In lable -->
+                    <Label Margin="0,0,16,30"
+                           Text="Sign In"
+                           TextColor="#FF4E17"
+                           FontSize="30"
+                           FontAttributes="Bold"
+                           HorizontalOptions="End"/>
+            <!--标签语love label -->
+                    <Label Text="Find lovable local to help"
+                           TextColor="#888888"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+                    <Label Text="to help you solve problem"
+                           TextColor="#888888"
+                           Margin="0,0,0,10"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+            <!--邮箱密码 Email&password input -->
+                       <StackLayout VerticalOptions="CenterAndExpand">
+                            <Entry Placeholder="Email"
+                                   FontSize="28"
+                                   Completed="SIPSignInEmailCompleted"/>
+                            <Entry Placeholder="Password"
+                                   FontSize="28"
+                                   Completed="SIPSignInPasswordCompleted"/>
+                        </StackLayout >
+           <!--登入按钮 Sign in Button -->   
+                    <StackLayout VerticalOptions="EndAndExpand">
+                            <Button  
+                                    Text="Sign In"
+                                    TextColor="White"
+                                    FontSize="Medium"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#FF4E18"
+                                    Margin="0,20,0,10"
+                                    Clicked="SIPSignIn"/>
+                    </StackLayout>
+            <!-- 第三次登入 Third party sign in -->  
+                    <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                        <Button Text="Google" 
+                                BorderColor="#575656" 
+                                BorderWidth="1" 
+                                WidthRequest="90" 
+                                FontSize="Micro" 
+                                TextColor="#575656" 
+                                FontAttributes="Bold" 
+                                BackgroundColor="White" 
+                                HorizontalOptions="StartAndExpand"
+                                Clicked="SIPGoogleSignInIcon"/>
+                        <Button Text="Wechat" 
+                                WidthRequest="90" 
+                                FontSize="Micro" 
+                                TextColor="White" 
+                                BackgroundColor="#09B83E" 
+                                FontAttributes="Bold" 
+                                HorizontalOptions="CenterAndExpand"
+                                Clicked="SIPWechatSignInIcon"/>
+                       <Button 
+                                Text="Facebook" 
+                                WidthRequest="90" 
+                                FontSize="Micro" 
+                                TextColor="White" 
+                                BackgroundColor="#3B5998" 
+                                FontAttributes="Bold" 
+                                HorizontalOptions="EndAndExpand"
+                                Clicked="SIPFaceBookSignInIcon"/>
+                    </StackLayout>
+              <!-- 忘记和创建 forgot&create -->  
+                    <StackLayout Margin="20,0,20,0" VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                <Button Text="Forgot password" 
+                        FontSize="10" 
+                        HorizontalOptions="StartAndExpand"
+                        Clicked="SIPForgotPassword"/>
+                <Button Text="Create account" 
+                        FontSize="10" 
+                        HorizontalOptions="EndAndExpand"
+                        Clicked="SIPCreateAccount"/>
+                    </StackLayout>
+            </StackLayout>
     </ContentPage.Content>
 </ContentPage>

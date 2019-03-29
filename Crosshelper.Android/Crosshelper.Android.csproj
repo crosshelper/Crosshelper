@@ -83,6 +83,21 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\febookSignIn.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\googleSignIn.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\wechatSignIn.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\febookSignIn.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\googleSignIn.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\wechatSignIn.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\febookSignIn.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\googleSignIn.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\wechatSignIn.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\febookSignIn.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\googleSignIn.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\wechatSignIn.png" />
+    <AndroidResource Include="Resources\drawable\febookSignIn.png" />
+    <AndroidResource Include="Resources\drawable\googleSignIn.png" />
+    <AndroidResource Include="Resources\drawable\wechatSignIn.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
