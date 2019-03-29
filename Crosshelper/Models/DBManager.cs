@@ -23,6 +23,7 @@ namespace Crosshelper.Models
                 conn.Open();
                 string sql = "INSERT INTO `chdb`.`UserMaster`(`Uid`, `Uname`, `Pwd`, `Permission`) VALUES (NULL, " + Uname + ", " + Pwd + ", NULL) ";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
                 //MySqlDataReader mySqlDataReader = cmd.ExecuteReader();
                 //while (mySqlDataReader.Read())
                 //{

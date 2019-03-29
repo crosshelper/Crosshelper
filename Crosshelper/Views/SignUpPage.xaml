@@ -1,49 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.SignUpPage">
     <ContentPage.Content>
-                <Grid Margin="6"> 
-     <StackLayout Grid.Row="1" Grid.Column="0">        
-        <Button 
-               BackgroundColor="Red"
-               HorizontalOptions="Start"
-                Clicked="SignUpGoBack"/>     
-    </StackLayout>
-    <StackLayout Grid.Row="1" Grid.Column="2" Margin="0,60,0,0">        
-        <Label Text="Sign up"
-               TextColor="#FF4E17"
-               FontSize="30"
-               FontAttributes="Bold"
-               HorizontalOptions="End"/>     
-    </StackLayout>
-    <StackLayout 
-           Margin="5"
-           Grid.Row="2"
-           Grid.Column="1"
-           Grid.ColumnSpan="2">
-        <Label Text="Get help right now!"
-           TextColor="Gray"
-           FontSize="20"
-           HorizontalOptions="End"
-           ></Label>
-    </StackLayout>
-    <StackLayout Grid.ColumnSpan="3" Grid.Row="3" Margin="5">
-        <Entry Placeholder="Email"
-           FontSize="28"
-           Completed="SignUpEmailCompleted"/>
-        <Entry Placeholder="Password"
-           FontSize="28"
-           Completed="SignUpPasswordCompleted"/>
-        <Entry 
-           Placeholder="Comfirm Password"
-           FontSize="28"
-           Completed="SignUpComfirmPasswordCompleted"/>
-     </StackLayout>
-            
-     <StackLayout Grid.ColumnSpan="3" Grid.Row="7" Margin="5">
-     <Button BackgroundColor="Red" 
-             VerticalOptions="CenterAndExpand" 
-             Clicked="SignUp"/>
-     </StackLayout>      
-</Grid>
+           <StackLayout Margin="20,35,20,25">
+            <!--返回 Go Back button -->
+                    <Button
+                        Text="Go Back"
+                        HorizontalOptions="Start"
+                        Clicked="SUPGoBack"/>  
+             <!--登入 Sign In lable -->
+                    <Label Margin="0,0,16,30"
+                           Text="Sign Up"
+                           TextColor="#FF4E17"
+                           FontSize="30"
+                           FontAttributes="Bold"
+                           HorizontalOptions="End"/>
+            <!--标签语love label -->
+                    <Label Text="Get help right now!"
+                           TextColor="#888888"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           HorizontalOptions="End"/>
+            <!--邮箱密码 Email&password input -->
+                       <StackLayout VerticalOptions="CenterAndExpand">
+                            <Entry Placeholder="Email"
+                                   FontSize="28"
+                                   Completed="SUPEmailCompleted"/>
+                            <Entry Placeholder="Password"
+                                   FontSize="28"
+                                   Completed="SUPPasswordCompleted"/>
+                            <Entry Placeholder="Comfirm Password"
+                                   FontSize="28"
+                                   Completed="SUPComfirmPasswordCompleted"/>
+                        </StackLayout >
+           <!--登入按钮 Sign in Button -->   
+                    <StackLayout VerticalOptions="EndAndExpand">
+                            <Button  
+                                    Text="Sign Up"
+                                    TextColor="White"
+                                    FontSize="Medium"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#FF4E18"
+                                    Margin="0,20,0,0"
+                                    Clicked="SUPSignUp"/>
+                            <Button  
+                                    Text="Or sign up as a helper"
+                                    FontSize="Small"
+                                    FontAttributes="Bold"
+                                    Clicked="SUPSignUpAsHelper"/>
+                    </StackLayout>
+
+            </StackLayout>
     </ContentPage.Content>
 </ContentPage>

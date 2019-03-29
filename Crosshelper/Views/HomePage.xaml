@@ -3,45 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="Crosshelper.Views.HomePage">
     <ContentPage.Content>
-            
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+            <StackLayout>
             <!--Top Ring&Menu button -->
-                     <StackLayout Grid.Row="0" 
+                     <StackLayout
                                   Orientation="Horizontal"
                                   BackgroundColor="#E8E8E8">        
-                                    <Button Margin="16,25,16,5"
-                                           Text="Bell"
-                                           HorizontalOptions="Start"
-                                           Clicked="HomeBell"/>  
-                                     <Button 
-                                           Margin="16,25,16,5"
-                                           Text="Menu"
-                                           HorizontalOptions="EndAndExpand"
-                                           Clicked="HomeBurgerMenu"/>     
+                            <Button Margin="16,25,16,5"
+                                  Text="Bell"
+                                  HorizontalOptions="Start"
+                                  Clicked="HPBell"/>  
+                            <Button 
+                                  Margin="16,25,16,5"
+                                  Text="Menu"
+                                  HorizontalOptions="EndAndExpand"
+                                  Clicked="HPBurgerMenu"/>     
                       </StackLayout>
              <!--profile image --> 
                                 <Button 
-                                Grid.Row="1" 
                                 Margin="0,20,0,0"
                                 Text="Image"
                                 FontSize="Default"
                                 TextColor="White"
                                 BackgroundColor="Gray"
                                 CornerRadius="5"
-                                HeightRequest="80" 
-                                WidthRequest="80" 
-                                BorderRadius="40"
-                                HorizontalOptions="Center"
-                                Clicked="HomeProfileImage"/>
+                                HeightRequest="84" 
+                                WidthRequest="84" 
+                                BorderRadius="42"
+                                HorizontalOptions="CenterAndExpand"
+                                Clicked="HPProfileImage"/>
              <!--Location&language -->         
-                      <StackLayout Grid.Row="2" Margin="16,5,16,0">
+                      <StackLayout Margin="16,0,16,0" VerticalOptions="CenterAndExpand">
                                 <Label Text="Current location" 
                                        FontSize="Default"
                                        FontAttributes="Bold"
@@ -56,7 +47,7 @@
                                         BorderColor="Silver"
                                        FontAttributes="Bold"
                                        BackgroundColor="White"
-                                       Clicked="HomeLocation"
+                                       Clicked="HPLocation"
                                         ></Button>
                                 <Label 
                                        Text="Language preference" 
@@ -73,48 +64,43 @@
                                        BorderColor="Silver"
                                        FontAttributes="Bold"
                                        BackgroundColor="White"
-                                       Clicked="HomeLanguage"
+                                       Clicked="HPLanguage"
                                        ></Button>
+                             </StackLayout>
                  <!--Get help button -->      
-                            </StackLayout>
-                      <StackLayout Grid.Row="3" Margin="16,0,16,0">
+                      <StackLayout Margin="16,0,16,0" VerticalOptions="EndAndExpand">
                                 <Button  
                                          Text="Get Help"
                                          TextColor="White"
                                          FontAttributes="Bold"
                                          BackgroundColor="#FF4E18"
-                                         Margin="0,0,0,10"
-                                         Clicked="HomeGetHelp"
+                                         Margin="0,0,0,0"
+                                         Clicked="HPGetHelp"
                                          />
                       </StackLayout>
                  <!--Project view --> 
                             <StackLayout Grid.Row="4"  Margin="16,15,16,0"
                                          Padding="10"
                                          VerticalOptions="FillAndExpand" 
-                                         BackgroundColor="#F4F4F4">
+                                         BackgroundColor="#F4F4F4"
+                                         x:Name="HPProject">
                                         <Label Text="Project" HorizontalOptions="Center" FontSize="Small" TextColor="#242424" FontAttributes="Bold"></Label>
                                         <StackLayout Orientation="Horizontal">
                                             <StackLayout >
                                               <Label Text="Emergency" TextColor="Red" FontSize="Small" FontAttributes="Bold"></Label>
                                             </StackLayout>
                                               <StackLayout HorizontalOptions="EndAndExpand">
-                                                    <Label Text="09/29/2018" FontSize="Micro" TextColor="#242424" x:Name="HomeDate"></Label>
-                                                    <Label Text="Chinese" FontSize="Micro" TextColor="#242424" x:Name="HomeLanguage"></Label>
+                                                    <Label Text="09/29/2018" FontSize="Micro" TextColor="#242424" x:Name="HPProjectDate"></Label>
+                                                    <Label Text="Chinese" FontSize="Micro" TextColor="#242424" x:Name="HPProjectLanguage"></Label>
                                                </StackLayout>
                                         </StackLayout>
                                         <StackLayout>
                                             <Label Text="Problem description" FontSize="Small"></Label>
                                             <Label Text="I lost my langage at Pairs Charles de Gaulle Airport.But I can not speak French, and I dont  know how to find it."
-                                                   FontSize="Micro" TextColor="#242424" x:Name="HomeProjectDescription"></Label>
-                                            <Label Text="Open" HorizontalOptions="End" FontSize="Micro" TextColor="#242424" x:Name="HomeProjectStatus"></Label>
-                                            <Button Text="More" 
-                                                    HorizontalOptions="Center" 
-                                                    FontSize="Small" 
-                                                    FontAttributes="Bold"
-                                                    Clicked="HomeMore"></Button>
-                                        </StackLayout>
-                                       
+                                                   FontSize="Micro" TextColor="#242424" x:Name="HPProjectDescription"></Label>
+                                            <Label Text="Open" HorizontalOptions="End" FontSize="Micro" TextColor="#242424" x:Name="HPProjectStatus"></Label>
+                                        </StackLayout>   
                              </StackLayout>
-                </Grid>
+            </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -13,49 +13,42 @@ namespace Crosshelper.Views
         {
             InitializeComponent();
             // Lable&text Change
-            // NameId: HomeDate, HomeLanguage, HomeProjectDescription, HomeProjectStatus
-
+            // NameId: HPDate, HPLanguage, HPProjectDescription, HPProjectStatus
+            HPProject.GestureRecognizers.Add(new TapGestureRecognizer
+            { Command = new Command(() => { HPProject.BackgroundColor = Color.Blue; }) });
         }
 
         //Top Ring&Menu button
-        void HomeBell(object sender, EventArgs e)
+        void HPBell(object sender, EventArgs e)
         {
             (sender as Button).Text = "Click me again!";
         }
-        void HomeBurgerMenu(object sender, EventArgs e)
+        void HPBurgerMenu(object sender, EventArgs e)
         {
             (sender as Button).Text = "Click me again!";
         }
 
         //Profile image button
-        void HomeProfileImage(object sender, EventArgs e)
+        void HPProfileImage(object sender, EventArgs e)
         {
             (sender as Button).Text = "Click me again!";
         }
 
         //Location&language button
-        void HomeLocation(object sender, EventArgs e)
+        void HPLocation(object sender, EventArgs e)
         {
             (sender as Button).Text = "Click me again!";
         }
-        void HomeLanguage(object sender, EventArgs e)
+        void HPLanguage(object sender, EventArgs e)
         {
             (sender as Button).Text = "Click me again!";
         }
 
         //Get help button
-        void HomeGetHelp(object sender, EventArgs e)
+        void HPGetHelp(object sender, EventArgs e)
         {
             (sender as Button).Text = "Click me again!";
         }
-
-        //Project view button
-
-        void HomeMore(object sender, EventArgs e)
-        {
-            (sender as Button).Text = "Click me again!";
-        }
-
 
     }
 }
