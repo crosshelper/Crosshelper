@@ -85,19 +85,45 @@
     <BundleResource Include="Resources\xamarin_logo%402x.png" />
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo40.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo40-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo40%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo29.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo29%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo40%402x-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo40%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo60%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo60%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo29%402x-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo29%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo%401024.png" />
-    <ImageAsset Include="Assets.xcassets\Crosshelper Icon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo40-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo40%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo29%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo40%402x-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo40%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo60%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo60%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo29%402x-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo29%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo%401024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Crosshelper Icon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
