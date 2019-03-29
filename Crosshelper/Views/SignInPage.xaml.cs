@@ -11,7 +11,15 @@ namespace Crosshelper.Views
         public SignInPage()
         {
             InitializeComponent();
+            btncl.Clicked += Btncl_Clicked;
         }
+
+        private void Btncl_Clicked(object sender, EventArgs e)
+        {
+            DBManager dbm = new DBManager();
+            dbm.UpdateDB(uname.Text, uname.Text);
+        }
+
         //返回按钮 Go Back
         void SignInGoBack(object sender, EventArgs e)
         {
@@ -23,6 +31,7 @@ namespace Crosshelper.Views
             //(sender as Button).Text = "Click me again!";
             DBManager dbm = new DBManager();
             dbm.UpdateDB(uname.Text,uname.Text);
+            
         }
         //第三次登入 Third party sign in
         void GoogleSignInIcon(object sender, EventArgs e)

@@ -35,7 +35,7 @@
      </StackLayout>
             
      <StackLayout Grid.ColumnSpan="3" Grid.Row="6" Margin="5">
-     <Button BackgroundColor="Yellow" Clicked="SignIn" VerticalOptions="CenterAndExpand"/>
+     <Button x:Name="btncl" BackgroundColor="Yellow" Clicked="SignIn" VerticalOptions="CenterAndExpand"/>
      </StackLayout>
             
      <StackLayout Grid.ColumnSpan="3" Grid.Row="7" Margin="5,25,0,2">
