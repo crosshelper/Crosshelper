@@ -24,7 +24,7 @@ namespace Crosshelper.Models
                 conn.Open();    //建立连接，打开数据库
                 Console.WriteLine("Open Success");
 
-                string sqlstr = "select * from czhenya001";   //SQL语句
+                string sqlstr = "select * from UserMaster";   //SQL语句
                 MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
                 /* cmd.ExecuteReader();     //执行一些查询
                    cmd.ExecuteScalar();     //执行一些查询，返回一个单个的值
