@@ -45,7 +45,7 @@
                                                 HeightRequest="70"
                                                 BackgroundColor="Blue" />
                                         </StackLayout>
-                        
+                
                                         <StackLayout Margin="10,0,0,0" HorizontalOptions="CenterAndExpand">
                                             <Label Text="Gwen Stephanie" FontSize="22" TextColor="#575656" x:Name="NHPPHelperName"></Label>
                                             <BoxView BackgroundColor="Red" HeightRequest="35"></BoxView>

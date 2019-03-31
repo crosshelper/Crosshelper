@@ -10,6 +10,22 @@ namespace Crosshelper.Views
         public NewcomerHelperProfilePage()
         {
             InitializeComponent();
+            //NHPPHelperName,NHPPHelperFrom,NHPPHelperLanguage,NHPPHelperHelpingLocation,NHPPHelperStayTime,NHPPSpecialities
+            //NHPPAboutMyself,NHPPDigitalHelpPriceOne,NHPPDigitalHelpPriceTwo,NHPPRealWorldHelpPriceOne,NHPPRealWorldHelpPriceTwo
+        }
+        //Top Ring&Menu button
+        void NHPPBackButton(object sender, EventArgs e)
+        {
+            (sender as Button).Text = "Click me again!";
+        }
+        void NHPPCancelButton(object sender, EventArgs e)
+        {
+            (sender as Button).Text = "Click me again!";
+        }
+        //Confirm
+        void NHPPConfirm(object sender, EventArgs e)
+        {
+            (sender as Button).Text = "Click me again!";
         }
     }
 }

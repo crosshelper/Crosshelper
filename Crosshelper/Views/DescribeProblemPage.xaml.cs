@@ -38,13 +38,13 @@ namespace Crosshelper.Views
         }
 
         //Describe Problem Text Editor
-        void DescribeProblemTextEditor(object sender, TextChangedEventArgs e)
+        void DPPDescribeProblemTextEditorChanged(object sender, TextChangedEventArgs e)
         {
             string oldText = e.OldTextValue;
             string newText = e.NewTextValue;
         }
 
-        void DescribeProblemTextEditor(object sender, EventArgs e)
+        void DPPDescribeProblemTextEditorCompleted(object sender, EventArgs e)
         {
             string text = ((Editor)sender).Text;
         }

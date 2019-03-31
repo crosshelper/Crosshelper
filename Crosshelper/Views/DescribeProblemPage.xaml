@@ -65,7 +65,9 @@
                                        ></Label>
                                 <Editor Placeholder="Describe your problem"
                                         HeightRequest="200"
-                                        Margin="0,5,0,0"/>
+                                        Margin="0,5,0,0"
+                                        TextChanged="DPPDescribeProblemTextEditorChanged"
+                                        Completed="DPPDescribeProblemTextEditorCompleted"/>
                                <Button Text="Next"
                                             WidthRequest="90" 
                                             FontSize="Medium" 

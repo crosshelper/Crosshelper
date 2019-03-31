@@ -23,4 +23,7 @@
     <Compile Remove="Views\MyPage.xaml.cs" />
     <Compile Remove="Models\ProblemCategoryPageList.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Models\.DS_Store" />
+  </ItemGroup>
 </Project>
