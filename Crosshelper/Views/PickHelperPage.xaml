@@ -2,21 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.PickHelperPage">
     <ContentPage.Content>
         <StackLayout>
-             <StackLayout Orientation="Horizontal"  
-                                  BackgroundColor="#FF4E18">        
-                            <Button Margin="16,25,16,0"
-                                    FontSize="20"
-                                    TextColor="White"
-                                    Text="Back"
-                                    HorizontalOptions="Start"
-                                    />  
-                            <Button 
-                                  Margin="16,25,16,0"
-                                  Text="Cancel"
-                                  TextColor="White"
-                                  FontSize="20"
-                                  HorizontalOptions="EndAndExpand"
-                                  />     
+             <StackLayout BackgroundColor="#FF4E18">
+                       <StackLayout Orientation="Horizontal"
+                                    Margin="20,25,20,0"
+                                  >  
+                                <Button Text="Back" 
+                                    FontSize="15"
+                                    TextColor="White" 
+                                    HorizontalOptions="StartAndExpand"
+                                   />
+                                <Label Text="Pick Helper" 
+                                       FontSize="18"
+                                        Margin="0,10,0,0"
+                                        TextColor="White"
+                                        HorizontalOptions="CenterAndExpand"
+                                        />
+                               <Button  Text="Cancel" 
+                                        FontSize="15"
+                                        TextColor="White"
+                                        HorizontalOptions="EndAndExpand"
+                                        />
+                            </StackLayout>
                       </StackLayout>
             <ListView>
                  <ListView.ItemsSource>
