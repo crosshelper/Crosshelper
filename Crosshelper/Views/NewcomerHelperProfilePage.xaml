@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.NewcomerHelperProfilePage">
+    <ContentPage.Content>
+         <StackLayout>
+                       <StackLayout Orientation="Horizontal"  
+                                  BackgroundColor="#FF4E18">        
+                            <Button Margin="16,25,16,0"
+                                    FontSize="20"
+                                    TextColor="White"
+                                    Text="Back"
+                                    HorizontalOptions="Start"
+                                    />  
+                            <Button 
+                                  Margin="16,25,16,0"
+                                  Text="Cancel"
+                                  TextColor="White"
+                                  FontSize="20"
+                                  HorizontalOptions="EndAndExpand"
+                                  />
+                      </StackLayout>
+                      <ScrollView>
+                            <StackLayout Margin="20,5,20,0">
+                                <Label Text="To get Gwen's help"
+                                       TextColor="#FF4E17"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Start"></Label>
+                                <Label Text="touch confirm!"
+                                       TextColor="#FF4E17"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Start"></Label>
+                    
+                                     <StackLayout Orientation="Horizontal" Margin="0,10,0,0" VerticalOptions="CenterAndExpand">
+                                        <StackLayout HorizontalOptions="StartAndExpand">
+                                            <BoxView
+                                                WidthRequest="70" 
+                                                HeightRequest="70"
+                                                BackgroundColor="Blue" />
+                                        </StackLayout>
+                        
+                                        <StackLayout Margin="10,0,0,0" HorizontalOptions="CenterAndExpand">
+                                            <Label Text="Gwen Stephanie" FontSize="22" TextColor="#575656"></Label>
+                                            <BoxView BackgroundColor="Red" HeightRequest="35"></BoxView>
+                                        </StackLayout>
+                        
+                                        <StackLayout Orientation="Horizontal" Margin="10,0,0,0" HorizontalOptions="EndAndExpand">
+                                            <Label Text="From:" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="Italy" FontSize="15" TextColor="#575656"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                           <Label Text="Language:" FontSize="15" TextColor="#575656"></Label>
+                                           <Label Text="English," FontSize="15" TextColor="#575656"></Label>
+                                           <Label Text="Chinese" FontSize="15" TextColor="#575656"></Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                           <Label Text="Years to stay in" FontSize="15" TextColor="#575656"></Label>
+                                           <Label Text="United States," FontSize="15" TextColor="#575656"></Label>
+                                           <Label Text="6 years" FontSize="15" TextColor="#575656"></Label>
+                                    </StackLayout>
+                    
+                                    <StackLayout>
+                                        <Label Text="Specialities" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,10,0,0"></Label>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Language," FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="Daily life," FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="Health," FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="Pets" FontSize="15" TextColor="#575656"></Label>
+                                        </StackLayout>
+                                        <Label Text="About myself" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,10,0,0"></Label>
+                                        <Label FontSize="15" TextColor="#575656" Text="Hello, I am Gwen Stephanie, I have been here for 6 years. I am very happy to help people solve newcomers and immigrants’ problems."></Label>
+                                    </StackLayout>
+                    
+                                    <StackLayout>
+                                        <Label Text="Price range" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,10,0,0"></Label>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Digital help:" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="$" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="20" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="~" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="40" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="each problem" FontSize="15" TextColor="#575656"></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Real world help:" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="40" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="~" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="90" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="each problem" FontSize="15" TextColor="#575656"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <Button  
+                                    Text="Next"
+                                    TextColor="White"
+                                    FontSize="Medium"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#FF4E18"
+                                    VerticalOptions="EndAndExpand"
+                                    Margin="0,20,0,10"/>
+                            </StackLayout>
+                      </ScrollView>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

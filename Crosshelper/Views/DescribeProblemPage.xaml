@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.DescribeProblemPage">
+    <ContentPage.Content>
+              <StackLayout>
+            <!--Top Ring&Menu button -->
+                     <StackLayout Orientation="Horizontal"  
+                                  BackgroundColor="#FF4E18">        
+                            <Button Margin="16,25,16,0"
+                                    FontSize="20"
+                                    TextColor="White"
+                                    Text="Back"
+                                    HorizontalOptions="Start"
+                                    Clicked="DPPbackButton"/>  
+                            <Button 
+                                  Margin="16,25,16,0"
+                                  Text="Cancel"
+                                  TextColor="White"
+                                  FontSize="20"
+                                  HorizontalOptions="EndAndExpand"
+                                  Clicked="DPPCancelButton"/>     
+                      </StackLayout>
+             <!--Location&language -->         
+                      <StackLayout Margin="16,0,16,0" 
+                                   VerticalOptions="CenterAndExpand" 
+                                   BackgroundColor="#FF4E18"
+                                   Padding="1">
+                        <StackLayout Padding="10,20,10,20" BackgroundColor="White">
+                            <StackLayout >
+                                <Label Text="Is emergency problem?" 
+                                       Margin="0,5,0,0"
+                                       FontSize="Default"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Start"
+                                       TextColor="#797979"
+                                       ></Label>
+                                <StackLayout Orientation="Horizontal" 
+                                             Margin="0,5,0,0"
+                                             VerticalOptions="CenterAndExpand">
+                                    <Button Text="No really"
+                                            Margin="0,0,5,0"
+                                            WidthRequest="100" 
+                                            FontSize="Small" 
+                                            TextColor="White" 
+                                            FontAttributes="Bold" 
+                                            BackgroundColor="#FF4E18" 
+                                            Clicked="DPPNotReallyButton"
+                                            ></Button>
+                                    <Button Text="Yes"
+                                            WidthRequest="100" 
+                                            FontSize="Small" 
+                                            TextColor="White" 
+                                            FontAttributes="Bold" 
+                                            BackgroundColor="#FF4E18" 
+                                            Clicked="DPPYesButton"
+                                            ></Button>
+                                </StackLayout>
+                            </StackLayout>
+                                <Label 
+                                       Text="Enter your problem here if you can." 
+                                       Margin="0,15,0,0"
+                                       FontSize="Default"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center"
+                                       TextColor="#797979"
+                                       ></Label>
+                                <Editor Placeholder="Describe your problem"
+                                        HeightRequest="200"
+                                        Margin="0,5,0,0"/>
+                               <Button Text="Next"
+                                            WidthRequest="90" 
+                                            FontSize="Medium" 
+                                            TextColor="White" 
+                                            FontAttributes="Bold" 
+                                            BackgroundColor="#FF4E18" 
+                                            Clicked="DPPNextButton"
+                              ></Button>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

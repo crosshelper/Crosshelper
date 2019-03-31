@@ -21,5 +21,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\MyPage.xaml.cs" />
+    <Compile Remove="Models\ProblemCategoryPageList.cs" />
   </ItemGroup>
 </Project>

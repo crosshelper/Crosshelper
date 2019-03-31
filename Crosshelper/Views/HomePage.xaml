@@ -7,14 +7,16 @@
             <!--Top Ring&Menu button -->
                      <StackLayout
                                   Orientation="Horizontal"
-                                  BackgroundColor="#E8E8E8">        
-                            <Button Margin="16,25,16,5"
+                                  BackgroundColor="#FF4E18">        
+                            <Button Margin="16,25,16,0"
                                   Text="Bell"
+                                  TextColor="White"
                                   HorizontalOptions="Start"
                                   Clicked="HPBell"/>  
                             <Button 
-                                  Margin="16,25,16,5"
+                                  Margin="16,25,16,0"
                                   Text="Menu"
+                                  TextColor="White"
                                   HorizontalOptions="EndAndExpand"
                                   Clicked="HPBurgerMenu"/>     
                       </StackLayout>
@@ -80,10 +82,11 @@
                       </StackLayout>
                  <!--Project view --> 
                             <StackLayout Grid.Row="4"  Margin="16,15,16,0"
-                                         Padding="10"
+                                         Padding="3"
                                          VerticalOptions="FillAndExpand" 
                                          BackgroundColor="#F4F4F4"
                                          x:Name="HPProject">
+                                <StackLayout BackgroundColor="White" Padding="15" VerticalOptions="FillAndExpand">
                                         <Label Text="Project" HorizontalOptions="Center" FontSize="Small" TextColor="#242424" FontAttributes="Bold"></Label>
                                         <StackLayout Orientation="Horizontal">
                                             <StackLayout >
@@ -100,6 +103,7 @@
                                                    FontSize="Micro" TextColor="#242424" x:Name="HPProjectDescription"></Label>
                                             <Label Text="Open" HorizontalOptions="End" FontSize="Micro" TextColor="#242424" x:Name="HPProjectStatus"></Label>
                                         </StackLayout>   
+                                  </StackLayout>
                              </StackLayout>
             </StackLayout>
     </ContentPage.Content>
