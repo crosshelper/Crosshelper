@@ -7,9 +7,10 @@
                                     Margin="20,25,20,0"
                                   >  
                                 <Button Text="Back" 
-                                    FontSize="15"
+                                    FontSize="16"
                                     TextColor="White" 
                                     HorizontalOptions="StartAndExpand"
+                                    Clicked="NHPPBackButton"
                                    />
                                 <Label Text="Helper Info" 
                                        FontSize="18"
@@ -18,9 +19,10 @@
                                         HorizontalOptions="CenterAndExpand"
                                         />
                                <Button  Text="Cancel" 
-                                        FontSize="15"
+                                        FontSize="16"
                                         TextColor="White"
                                         HorizontalOptions="EndAndExpand"
+                                        Clicked="NHPPCancelButton"
                                         />
                             </StackLayout>
                       </StackLayout>
@@ -45,36 +47,36 @@
                                         </StackLayout>
                         
                                         <StackLayout Margin="10,0,0,0" HorizontalOptions="CenterAndExpand">
-                                            <Label Text="Gwen Stephanie" FontSize="22" TextColor="#575656"></Label>
+                                            <Label Text="Gwen Stephanie" FontSize="22" TextColor="#575656" x:Name="NHPPHelperName"></Label>
                                             <BoxView BackgroundColor="Red" HeightRequest="35"></BoxView>
                                         </StackLayout>
                         
                                         <StackLayout Orientation="Horizontal" Margin="10,0,0,0" HorizontalOptions="EndAndExpand">
                                             <Label Text="From:" FontSize="15" TextColor="#575656"></Label>
-                                            <Label Text="Italy" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="Italy" FontSize="15" TextColor="#575656" x:Name="NHPPHelperFrom"></Label>
                                         </StackLayout>
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                            <Label Text="Language:" FontSize="15" TextColor="#575656"></Label>
-                                           <Label Text="English," FontSize="15" TextColor="#575656"></Label>
+                                           <Label Text="English," FontSize="15" TextColor="#575656" x:Name="NHPPHelperLanguage"></Label>
                                            <Label Text="Chinese" FontSize="15" TextColor="#575656"></Label>
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                            <Label Text="Years to stay in" FontSize="15" TextColor="#575656"></Label>
-                                           <Label Text="United States," FontSize="15" TextColor="#575656"></Label>
-                                           <Label Text="6 years" FontSize="15" TextColor="#575656"></Label>
+                                           <Label Text="United States," FontSize="15" TextColor="#575656" x:Name="NHPPHelperHelpingLocation"></Label>
+                                           <Label Text="6 years" FontSize="15" TextColor="#575656" x:Name="NHPPHelperStayTime"></Label>
                                     </StackLayout>
                     
                                     <StackLayout>
                                         <Label Text="Specialities" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,10,0,0"></Label>
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="Language," FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="Language," FontSize="15" TextColor="#575656" x:Name="NHPPSpecialities"></Label>
                                             <Label Text="Daily life," FontSize="15" TextColor="#575656"></Label>
                                             <Label Text="Health," FontSize="15" TextColor="#575656"></Label>
                                             <Label Text="Pets" FontSize="15" TextColor="#575656"></Label>
                                         </StackLayout>
                                         <Label Text="About myself" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,10,0,0"></Label>
-                                        <Label FontSize="15" TextColor="#575656" Text="Hello, I am Gwen Stephanie, I have been here for 6 years. I am very happy to help people solve newcomers and immigrants’ problems."></Label>
+                                        <Label FontSize="15" TextColor="#575656" x:Name="NHPPAboutMyself" Text="Hello, I am Gwen Stephanie, I have been here for 6 years. I am very happy to help people solve newcomers and immigrants’ problems."></Label>
                                     </StackLayout>
                     
                                     <StackLayout>
@@ -82,27 +84,28 @@
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="Digital help:" FontSize="15" TextColor="#575656"></Label>
                                             <Label Text="$" FontSize="15" TextColor="#575656"></Label>
-                                            <Label Text="20" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="20" FontSize="15" TextColor="#575656" x:Name="NHPPDigitalHelpPriceOne"></Label>
                                             <Label Text="~" FontSize="15" TextColor="#575656"></Label>
-                                            <Label Text="40" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="40" FontSize="15" TextColor="#575656" x:Name="NHPPDigitalHelpPriceTwo"></Label>
                                             <Label Text="each problem" FontSize="15" TextColor="#575656"></Label>
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="Real world help:" FontSize="15" TextColor="#575656"></Label>
-                                            <Label Text="40" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="40" FontSize="15" TextColor="#575656" x:Name="NHPPRealWorldHelpPriceOne"></Label>
                                             <Label Text="~" FontSize="15" TextColor="#575656"></Label>
-                                            <Label Text="90" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="90" FontSize="15" TextColor="#575656" x:Name="NHPPRealWorldHelpPriceTwo"></Label>
                                             <Label Text="each problem" FontSize="15" TextColor="#575656"></Label>
                                         </StackLayout>
                                     </StackLayout>
                             </StackLayout>
                                     <Button  
-                                    Text="Next"
+                                    Text="Confirm"
                                     TextColor="White"
                                     FontSize="Medium"
                                     FontAttributes="Bold"
                                     BackgroundColor="#FF4E18"
                                     VerticalOptions="EndAndExpand"
+                                    Clicked="NHPPConfirm"
                                     Margin="20,0,20,10"/>
                         </StackLayout>
     </ContentPage.Content>
