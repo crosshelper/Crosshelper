@@ -7,14 +7,16 @@
             <!--Top Ring&Menu button -->
                      <StackLayout
                                   Orientation="Horizontal"
-                                  BackgroundColor="#E8E8E8">        
-                            <Button Margin="16,25,16,5"
+                                  BackgroundColor="#FF4E18">        
+                            <Button Margin="16,25,16,0"
                                   Text="Bell"
+                                  TextColor="White"
                                   HorizontalOptions="Start"
                                   Clicked="HPBell"/>  
                             <Button 
-                                  Margin="16,25,16,5"
+                                  Margin="16,25,16,0"
                                   Text="Menu"
+                                  TextColor="White"
                                   HorizontalOptions="EndAndExpand"
                                   Clicked="HPBurgerMenu"/>     
                       </StackLayout>
