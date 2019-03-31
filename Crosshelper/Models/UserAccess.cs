@@ -48,7 +48,7 @@ namespace Crosshelper.Models
         /// <summary>
         /// 验证用户名密码，存放回true，否则为false
         /// </summary>
-        bool VerifyUSser(string username, string password)
+        bool VerifyUser(string username, string password)
         {
             
             //并没有建立数据库连接
@@ -56,7 +56,7 @@ namespace Crosshelper.Models
             try
             {   //建立连接，打开数据库
                 conn.Open();
-                string sqlstr = "select * from UserMaster where username = @para1 and password = @para2";
+                string sqlstr = "select * from UserMaster where Uname = @para1 and Pwd = @para2";
                 MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
                 //通过设置参数的形式给SQL 语句串值
                 cmd.Parameters.AddWithValue("para1", username);
