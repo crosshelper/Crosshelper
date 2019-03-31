@@ -24,9 +24,7 @@ namespace Crosshelper.Models
                 {
                     Console.WriteLine("Connecting to MySQL...");
                     conn.Open();
-                    Console.WriteLine("Connecting to MySQL...");
-                    conn.Open();
-                    string sql = "INSERT INTO UserMaster(Uid,Uname,Pwd,Permission) VALUES(NULL, @para1, @para2, NULL) ";
+                    string sql = "INSERT INTO UserMaster(Uid,Uname,Pwd,Permission) VALUES(NULL, @para1, @para2, 0) ";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("para1", Uname);
                     cmd.Parameters.AddWithValue("para2", Pwd);
