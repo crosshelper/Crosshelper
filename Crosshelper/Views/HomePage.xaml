@@ -101,7 +101,7 @@
                                             <Label Text="Problem description" FontSize="Small"></Label>
                                             <Label Text="I lost my langage at Pairs Charles de Gaulle Airport.But I can not speak French, and I dont  know how to find it."
                                                    FontSize="Micro" TextColor="#242424" x:Name="HPProjectDescription"></Label>
-                                            <Label Text="Open" HorizontalOptions="End" FontSize="Micro" TextColor="#242424" x:Name="HPProjectStatus"></Label>
+                                            <Label Text="Open" HorizontalOptions="End" FontSize="Small" TextColor="#79B563" x:Name="HPProjectStatus"></Label>
                                         </StackLayout>   
                                   </StackLayout>
                              </StackLayout>
