@@ -50,7 +50,6 @@ namespace Crosshelper.Models
         /// </summary>
         public bool VerifyUser(string username, string password)
         {
-            
             //并没有建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
             try
