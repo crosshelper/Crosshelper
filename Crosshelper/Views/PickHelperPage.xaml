@@ -24,50 +24,54 @@
                                         />
                             </StackLayout>
                       </StackLayout>
-         <!-- <ListView>
-                 <ListView.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                              <x:String>Baboon</x:String>
-                              <x:String>Capuchin Monkey</x:String>
-                              <x:String>Blue Monkey</x:String>
-                              <x:String>Squirrel Monkey</x:String>
-                              <x:String>Golden Lion Tamarin</x:String>
-                              <x:String>Howler Monkey</x:String>
-                              <x:String>Japanese Macaque</x:String>
-                            </x:Array>
-                 </ListView.ItemsSource>
-            </ListView> -->
-            <ListView ItemsSource="{Binding Monkeys}"
-          HasUnevenRows="true">
-    <ListView.ItemTemplate>
-        <DataTemplate>
-            <ViewCell>
-                <Grid Padding="10">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.RowSpan="2"
-                           Source="{Binding ImageUrl}"
-                           Aspect="AspectFill"
-                           HeightRequest="60"
-                           WidthRequest="60" />
-                    <Label Grid.Column="1"
-                           Text="{Binding Name}"
-                           FontAttributes="Bold" />
-                    <Label Grid.Row="1"
-                           Grid.Column="1"
-                           Text="{Binding Location}"
-                           VerticalOptions="End" />
-                </Grid>
-            </ViewCell>
-        </DataTemplate>
-    </ListView.ItemTemplate>
-</ListView>
+
+                <ListView ItemsSource="{Binding Helpers}" HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="2"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="60"
+                                           WidthRequest="60" />
+                                    <Label Grid.Column="1"
+                                           Text="{Binding Name}"
+                                           FontAttributes="Bold" />
+                                    <Label Grid.RowSpan="2"
+                                           Text="{Binding Rating}"
+                                           HeightRequest="60"
+                                           WidthRequest="60" />
+                                    <Label Grid.Row="3"
+                                           Grid.Column="1"
+                                           Text="{Binding Bornin}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Row="4"
+                                           Grid.Column="1"
+                                           Text="{Binding Baseprice}"
+                                           VerticalOptions="End" />
+                                     <Label Grid.Row="5"
+                                           Grid.Column="1"
+                                           Text="{Binding Language}"
+                                           VerticalOptions="End" />
+                                                
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

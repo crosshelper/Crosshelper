@@ -5,13 +5,11 @@ using Xamarin.Forms;
 
 namespace Crosshelper.Views
 {
-    public partial class NewcomerSettingPage : ContentPage
+    public partial class NewcomersSettingPage : ContentPage
     {
-        public NewcomerSettingPage()
+        public NewcomersSettingPage()
         {
             InitializeComponent();
-
         }
     }
 }
-

@@ -18,10 +18,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\MyPage.xaml" />
+    <EmbeddedResource Remove="Views\NewcomersSettingPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\MyPage.xaml.cs" />
     <Compile Remove="Models\ProblemCategoryPageList.cs" />
+    <Compile Remove="Views\NewcomersSettingPage.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Models\.DS_Store" />
