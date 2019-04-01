@@ -48,7 +48,7 @@ namespace Crosshelper.Models
         /// <summary>
         /// 验证用户名密码，存放回true，否则为false
         /// </summary>
-        bool VerifyUser(string username, string password)
+        public bool VerifyUser(string username, string password)
         {
             
             //并没有建立数据库连接

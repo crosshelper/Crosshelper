@@ -28,10 +28,13 @@
                        <StackLayout VerticalOptions="CenterAndExpand">
                             <Entry Placeholder="Email"
                                    FontSize="28"
-                                   Completed="SIPSignInEmailCompleted"/>
+                                   Completed="SIPSignInEmailCompleted"
+                                   x:Name="uNameEntry"/>
                             <Entry Placeholder="Password"
                                    FontSize="28"
-                                   Completed="SIPSignInPasswordCompleted"/>
+                                   Completed="SIPSignInPasswordCompleted"
+                                   x:Name="pwdEntry"/>
+                            <Label Text="" x:Name="signInTest"></Label>
                         </StackLayout >
            <!--登入按钮 Sign in Button -->   
                     <StackLayout VerticalOptions="EndAndExpand">
@@ -83,7 +86,7 @@
                 <Button Text="Create account" 
                         FontSize="10" 
                         HorizontalOptions="EndAndExpand"
-                        Clicked="SIPCreateAccount"/>
+                        x:Name ="SIPCreateAccount"/>
                     </StackLayout>
             </StackLayout>
     </ContentPage.Content>

@@ -11,7 +11,13 @@ namespace Crosshelper.Views
         public SignInPage()
         {
             InitializeComponent();
+            SIPCreateAccount.Clicked += async (sender, e) =>
+            {
+                await Navigation.PushModalAsync(new SignUpPage());
+            };
+
         }
+       
         //返回按钮 Go Back
         void SIPSignInGoBack(object sender, EventArgs e)
         {
@@ -21,6 +27,16 @@ namespace Crosshelper.Views
         void SIPSignIn(object sender, EventArgs e)
         {
             //(sender as Button).Text = "Click me again!";
+            UserAccess userAccess = new UserAccess();
+
+            if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
+            {
+                signInTest.Text = "Sign in success";
+            }
+            else
+            {
+                signInTest.Text = "Sign in Faild";
+            }
         }
         //第三次登入 Third party sign in
         void SIPGoogleSignInIcon(object sender, EventArgs e)
@@ -35,11 +51,7 @@ namespace Crosshelper.Views
         {
             (sender as Button).Text = "Click me again!";
         }
-        //注册&忘记 New Account&Forgot
-        void SIPCreateAccount(object sender, EventArgs e)
-        {
-            (sender as Button).Text = "Click me again!";
-        }
+
         void SIPForgotPassword(object sender, EventArgs e)
         {
             (sender as Button).Text = "Click me again!";
@@ -53,6 +65,6 @@ namespace Crosshelper.Views
         {
             string text = ((Entry)sender).Text;
         }
-
     }
 }
+

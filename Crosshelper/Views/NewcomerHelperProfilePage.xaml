@@ -80,20 +80,17 @@
                                     </StackLayout>
                     
                                     <StackLayout>
-                                        <Label Text="Price range" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,10,0,0"></Label>
+                                        <Label Text="Price starting" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,10,0,0"></Label>
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="Digital help:" FontSize="15" TextColor="#575656"></Label>
                                             <Label Text="$" FontSize="15" TextColor="#575656"></Label>
-                                            <Label Text="20" FontSize="15" TextColor="#575656" x:Name="NHPPDigitalHelpPriceOne"></Label>
-                                            <Label Text="~" FontSize="15" TextColor="#575656"></Label>
-                                            <Label Text="40" FontSize="15" TextColor="#575656" x:Name="NHPPDigitalHelpPriceTwo"></Label>
+                                            <Label Text="25" FontSize="15" TextColor="#575656" x:Name="NHPPDigitalHelpPriceTwo"></Label>
                                             <Label Text="each problem" FontSize="15" TextColor="#575656"></Label>
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="Real world help:" FontSize="15" TextColor="#575656"></Label>
+                                            <Label Text="$" FontSize="15" TextColor="#575656"></Label>
                                             <Label Text="40" FontSize="15" TextColor="#575656" x:Name="NHPPRealWorldHelpPriceOne"></Label>
-                                            <Label Text="~" FontSize="15" TextColor="#575656"></Label>
-                                            <Label Text="90" FontSize="15" TextColor="#575656" x:Name="NHPPRealWorldHelpPriceTwo"></Label>
                                             <Label Text="each problem" FontSize="15" TextColor="#575656"></Label>
                                         </StackLayout>
                                     </StackLayout>
