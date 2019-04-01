@@ -61,7 +61,7 @@
                                            VerticalOptions="End" />
                                     <Label Grid.Column="1"
                                            Grid.Row="1"
-                                           TextColor="#393939"
+                                           TextColor="#FFC834"
                                            Grid.RowSpan="2"
                                            Text="{Binding Rating}"
                                            HeightRequest="60"
@@ -81,8 +81,13 @@
                                     <Label Grid.Row="4"
                                            Grid.Column="0"
                                            TextColor="#393939"
-                                           Grid.ColumnSpan="3"
+                                           Grid.ColumnSpan="2"
                                            Text="{Binding Location}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Row="4"
+                                           Grid.Column="3"
+                                           TextColor="#79B563"
+                                           Text="{Binding Status}"
                                            VerticalOptions="End" />
                                                 
                                 </Grid>
