@@ -13,7 +13,7 @@ namespace Crosshelper
         {
             InitializeComponent();
 
-            MainPage = new SignInPage();
+            MainPage = new NewcomersProblemCategoryPage();
         }
 
         protected override void OnStart()
