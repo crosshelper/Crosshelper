@@ -13,7 +13,7 @@ namespace Crosshelper.Views
             InitializeComponent();
             SIPCreateAccount.Clicked += async (sender, e) =>
             {
-                await Navigation.PushModalAsync(new SignUpPage());
+                await Navigation.PushAsync(new SignUpPage());
             };
         }
         //返回按钮 Go Back

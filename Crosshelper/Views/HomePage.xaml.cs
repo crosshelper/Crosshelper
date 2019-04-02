@@ -32,7 +32,7 @@ namespace Crosshelper.Views
         //Profile image button
         void HPProfileImage(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new NewcomerMyProfilePage());
+            Navigation.PushAsync(new SignInPage());
         }
 
         //Location&language button
@@ -42,7 +42,7 @@ namespace Crosshelper.Views
         }
         void HPLanguage(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new NewcomerMyProfilePage());
+            Navigation.PushAsync(new SignInPage());
         }
 
         //Get help button
