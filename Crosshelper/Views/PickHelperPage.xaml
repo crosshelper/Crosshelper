@@ -82,8 +82,8 @@
                                            VerticalOptions="End" />
                                     <Label Grid.Row="4"
                                            Grid.Column="3"
-                                           TextColor="#79B563"
-                                           Text="{Binding Status}"
+                                           TextColor= "{Binding StatusColor}"
+                                           Text="{Binding StatusText}"
                                            VerticalOptions="End" />
                                                 
                                 </Grid>

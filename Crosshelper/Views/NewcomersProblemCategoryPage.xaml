@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.ListviewtestPage">
-    <ContentPage.Resources>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Crosshelper.Models;" x:Class="Crosshelper.Views.NewcomersProblemCategoryPage">
+       <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="firstItemTemplate">
-            <ViewCell>
-                <Grid>
-                        <Label Text="Problem Category"
+            <ViewCell >
+                <Grid Margin="0,5,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Label Text="Problem Category"
                            TextColor="#575656"
                            FontSize="17"
                            Grid.Row="0"
                            Grid.Column="0"
                            Grid.ColumnSpan="2"
-                           FontAttributes="Bold"></Label>
+                           FontAttributes="Bold"/>
                     <Label Text="More"
                            TextColor="#575656"
                            Margin="0,5,0,0"
@@ -21,29 +28,35 @@
                            Grid.ColumnSpan="1"
                            x:Name="PCPMoreButton"
                            TextDecorations="Underline"
-                           FontAttributes="Italic"></Label>
+                           FontAttributes="Italic"/>
                     <!--problem category -->
                     <ImageButton 
                             BackgroundColor="#FF4E18" 
                             Grid.Row="1"
-                            Clicked="PCPDailylifeTranslateButton"
+                            Source="{Binding ImageUrl}"
                             Grid.Column="0"></ImageButton>
                     <ImageButton 
                             BackgroundColor="#FF4E18" 
                             Grid.Row="1"
-                            Clicked="PCPRepairCarButton"
+                            Source="{Binding ImageUrl}"
                             Grid.Column="1"></ImageButton>
                     <ImageButton 
                             BackgroundColor="#FF4E18" 
                             Grid.Row="1"
-                            Clicked="PCPLawButton"
+                            Source="{Binding ImageUrl}"
                             Grid.Column="3"></ImageButton>
                     <ImageButton 
                             BackgroundColor="#FF4E18" 
                             Grid.Row="1"
-                            Clicked="PCPHealthButton"
+                            Source="{Binding ImageUrl}"
                             Grid.Column="2"></ImageButton>
-                    
+                    <Label Text="Recommendations"
+                           Margin="0,10,0,0"
+                           TextColor="#575656"
+                           FontSize="16"
+                           Grid.Row="2"
+                           Grid.ColumnSpan="4"
+                           FontAttributes="Bold"/>
                 </Grid>
             </ViewCell>
             </DataTemplate>
@@ -51,27 +64,17 @@
             <DataTemplate x:Key="otherItemTemplate">
             <ViewCell>
                 <Grid>
-                        <Label Text="Recommendations"
-                           Margin="0,10,0,0"
-                           TextColor="#575656"
-                           FontSize="16"
-                           Grid.Row="2"
-                           Grid.ColumnSpan="4"
-                           FontAttributes="Bold"></Label>
-                        
-                    <Label Text="{Binding Name}" FontAttributes="Bold" />
-                    <Label Grid.Column="1" Text="{Binding Age}" />
-                    <Label Grid.Column="2" Text="{Binding Location}" HorizontalTextAlignment="End" />
+                    <Label Text="{Binding Name}" BackgroundColor=" Fuchsia "/>
                 </Grid>
             </ViewCell>
             </DataTemplate>
             
-            <local:ItemDataTemplateSelector x:Key="itemDataTemplateSelector" FirstItemTemplate="{StaticResource firstItemTemplateSelector}" OtherItemTemplate="{StaticResource otherItemTemplateSelector}"/>>
+           <local:ItemsDataTemplateSelector x:Key="itemDataTemplateSelector" FirstItemTemplate="{StaticResource firstItemTemplate}" OtherItemTemplate="{StaticResource otherItemTemplate}"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout Margin="10,35,10,25">
+         <StackLayout Margin="10,35,10,25">
             <StackLayout BackgroundColor="#FF4E18">
                 <Label Text="Search" 
                        Margin="10,20,10,0" 
@@ -83,7 +86,7 @@
                            BackgroundColor="#FF4E18" 
                            Placeholder="What type problem do you have?"/>
             </StackLayout>
-            <ListView x:Name="listView" ItemTemplate="{StaticResource itemDataTemplateSelector}"/> 
+            <ListView x:Name="listView" HasUnevenRows="true" ItemTemplate="{StaticResource itemDataTemplateSelector}"/> 
         </StackLayout>        
     </ContentPage.Content>
 </ContentPage>
