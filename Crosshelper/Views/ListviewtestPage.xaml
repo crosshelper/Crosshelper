@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.ListviewtestPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="firstItemTemplate">
+            <ViewCell>
+                <Grid>
+                        <Label Text="Problem Category"
+                           TextColor="#575656"
+                           FontSize="17"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="2"
+                           FontAttributes="Bold"></Label>
+                    <Label Text="More"
+                           TextColor="#575656"
+                           Margin="0,5,0,0"
+                           FontSize="15"
+                           Grid.Row="0"
+                           Grid.Column="2"
+                           Grid.ColumnSpan="1"
+                           x:Name="PCPMoreButton"
+                           TextDecorations="Underline"
+                           FontAttributes="Italic"></Label>
+                    <!--problem category -->
+                    <ImageButton 
+                            BackgroundColor="#FF4E18" 
+                            Grid.Row="1"
+                            Clicked="PCPDailylifeTranslateButton"
+                            Grid.Column="0"></ImageButton>
+                    <ImageButton 
+                            BackgroundColor="#FF4E18" 
+                            Grid.Row="1"
+                            Clicked="PCPRepairCarButton"
+                            Grid.Column="1"></ImageButton>
+                    <ImageButton 
+                            BackgroundColor="#FF4E18" 
+                            Grid.Row="1"
+                            Clicked="PCPLawButton"
+                            Grid.Column="3"></ImageButton>
+                    <ImageButton 
+                            BackgroundColor="#FF4E18" 
+                            Grid.Row="1"
+                            Clicked="PCPHealthButton"
+                            Grid.Column="2"></ImageButton>
+                    
+                </Grid>
+            </ViewCell>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="otherItemTemplate">
+            <ViewCell>
+                <Grid>
+                        <Label Text="Recommendations"
+                           Margin="0,10,0,0"
+                           TextColor="#575656"
+                           FontSize="16"
+                           Grid.Row="2"
+                           Grid.ColumnSpan="4"
+                           FontAttributes="Bold"></Label>
+                        
+                    <Label Text="{Binding Name}" FontAttributes="Bold" />
+                    <Label Grid.Column="1" Text="{Binding Age}" />
+                    <Label Grid.Column="2" Text="{Binding Location}" HorizontalTextAlignment="End" />
+                </Grid>
+            </ViewCell>
+            </DataTemplate>
+            
+            <local:ItemDataTemplateSelector x:Key="itemDataTemplateSelector" FirstItemTemplate="{StaticResource firstItemTemplateSelector}" OtherItemTemplate="{StaticResource otherItemTemplateSelector}"/>>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="10,35,10,25">
+            <StackLayout BackgroundColor="#FF4E18">
+                <Label Text="Search" 
+                       Margin="10,20,10,0" 
+                       FontSize="20" 
+                       FontAttributes="Bold"
+                       TextColor="White"></Label>
+                <SearchBar
+                           x:Name="MainSearchBar" 
+                           BackgroundColor="#FF4E18" 
+                           Placeholder="What type problem do you have?"/>
+            </StackLayout>
+            <ListView x:Name="listView" ItemTemplate="{StaticResource itemDataTemplateSelector}"/> 
+        </StackLayout>        
+    </ContentPage.Content>
+</ContentPage>

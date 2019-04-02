@@ -28,4 +28,9 @@
   <ItemGroup>
     <None Remove="Models\.DS_Store" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\ListviewtestPage.xaml.cs">
+      <DependentUpon>ListviewtestPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
