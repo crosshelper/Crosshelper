@@ -7,12 +7,12 @@ namespace Crosshelper.Views
 {
     public partial class NewcomersProblemCategoryPage : ContentPage
     {
-        public IList<SearchpageViewcellItem> Helpers { get; set; }
+        public IList<SearchpageViewcellItem> PanelContent { get; set; }
         public NewcomersProblemCategoryPage()
         {
             InitializeComponent();
-            Helpers = new List<SearchpageViewcellItem>();
-            Helpers.Add(new SearchpageViewcellItem
+            PanelContent = new List<SearchpageViewcellItem>();
+            PanelContent.Add(new SearchpageViewcellItem
             {
                 PanelID = 1,
                 Name = "Baboon",
@@ -23,7 +23,7 @@ namespace Crosshelper.Views
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
             });
 
-            Helpers.Add(new SearchpageViewcellItem
+            PanelContent.Add(new SearchpageViewcellItem
             {
                 PanelID = 0,
                 Name = "Mike",
@@ -35,7 +35,7 @@ namespace Crosshelper.Views
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"
             });
 
-            Helpers.Add(new SearchpageViewcellItem
+            PanelContent.Add(new SearchpageViewcellItem
             {
                 PanelID = 0,
                 Name = "David",
@@ -46,7 +46,7 @@ namespace Crosshelper.Views
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
             });
 
-            listView.ItemsSource = Helpers;
+            listView.ItemsSource = PanelContent;
         }
     }
 }
