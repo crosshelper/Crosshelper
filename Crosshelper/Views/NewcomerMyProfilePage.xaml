@@ -2,34 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.NewcomerMyProfilePage">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout BackgroundColor="#FF4E18">
-                       <StackLayout Orientation="Horizontal" Margin="20,25,20,0">  
-                                <Button Text="Back" 
-                                    FontSize="15"
-                                    TextColor="White" 
-                                    HorizontalOptions="StartAndExpand"/>
-                                <Label Text="My Profile" 
-                                       FontSize="18"
-                                        Margin="0,10,0,0"
-                                        TextColor="White"
-                                        HorizontalOptions="CenterAndExpand"/>
-                               <Button  Text="" 
-                                        FontSize="15"
-                                        TextColor="White"
-                                        HorizontalOptions="EndAndExpand"/>
-                        </StackLayout>
-              </StackLayout>
-                         <Button 
-                                Margin="0,20,0,0"
-                                Text="Image"
-                                FontSize="Default"
-                                TextColor="White"
-                                BackgroundColor="Gray"
-                                CornerRadius="5"
-                                HeightRequest="84" 
-                                WidthRequest="84" 
-                                BorderRadius="42"
-                                HorizontalOptions="CenterAndExpand"/>
+           <Button 
+               Margin="0,20,0,0"
+               Text="Image"
+               FontSize="Default"
+               TextColor="White"
+               BackgroundColor="Gray"
+               CornerRadius="5"
+               HeightRequest="84" 
+               WidthRequest="84" 
+               BorderRadius="42"
+               HorizontalOptions="CenterAndExpand"/>
             <!--邮箱密码 Email&password input -->
             <StackLayout VerticalOptions="Center" Margin="20,10,20,0">
                 <Label Text="Email address" 
@@ -76,7 +59,7 @@
                  <!--Get help button -->      
             <StackLayout Margin="16,0,16,0" VerticalOptions="EndAndExpand">
                  <Button x:Name="qwe "
-                         Text="Get Help"
+                         Text="Save"
                          TextColor="White"
                          FontAttributes="Bold"
                          BackgroundColor="#FF4E18"

@@ -4,22 +4,6 @@
              x:Class="Crosshelper.Views.HomePage">
     <ContentPage.Content>
             <StackLayout>
-            <!--Top Ring&Menu button -->
-                     <StackLayout
-                                  Orientation="Horizontal"
-                                  BackgroundColor="#FF4E18">        
-                            <Button Margin="16,25,16,0"
-                                  Text="Bell"
-                                  TextColor="White"
-                                  HorizontalOptions="Start"
-                                  Clicked="HPBell"/>  
-                            <Button 
-                                  Margin="16,25,16,0"
-                                  Text="Menu"
-                                  TextColor="White"
-                                  HorizontalOptions="EndAndExpand"
-                                  Clicked="HPBurgerMenu"/>     
-                      </StackLayout>
              <!--profile image --> 
                                 <Button 
                                 Margin="0,20,0,0"

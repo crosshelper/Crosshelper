@@ -2,29 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.PickHelperPage">
     <ContentPage.Content>
         <StackLayout>
-             <StackLayout BackgroundColor="#FF4E18">
-                       <StackLayout Orientation="Horizontal"
-                                    Margin="20,25,20,0">  
-                                <Button Text="Back" 
-                                    FontSize="15"
-                                    TextColor="White" 
-                                    HorizontalOptions="StartAndExpand"/>
-                                <Label Text="Pick Helper" 
-                                       FontSize="18"
-                                        Margin="0,10,0,0"
-                                        TextColor="White"
-                                        HorizontalOptions="CenterAndExpand"/>
-                               <Button  Text="Cancel" 
-                                        FontSize="15"
-                                        TextColor="White"
-                                        HorizontalOptions="EndAndExpand"/>
-                            </StackLayout>
-                      </StackLayout>
-
                 <ListView ItemsSource="{Binding Helpers}" HasUnevenRows="true">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
+                            <ViewCell x:Name="PHPPickNewcomeButton">
                                 <Grid Padding="10">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*" />

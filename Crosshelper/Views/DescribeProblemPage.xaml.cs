@@ -34,7 +34,7 @@ namespace Crosshelper.Views
         //下一步按钮 Next Button
         void DPPNextButton(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            Navigation.PushAsync(new PickHelperPage());
         }
 
         //Describe Problem Text Editor

@@ -13,7 +13,10 @@ namespace Crosshelper
         {
             InitializeComponent();
 
-            MainPage = new NewcomerMyProfilePage();
+            MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePage))) {
+                BarBackgroundColor = Color.FromHex("#FF4E18"),
+                BarTextColor = Color.White };
+
         }
 
         protected override void OnStart()

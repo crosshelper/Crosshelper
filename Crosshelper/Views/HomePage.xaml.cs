@@ -32,7 +32,7 @@ namespace Crosshelper.Views
         //Profile image button
         void HPProfileImage(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            Navigation.PushAsync(new NewcomerMyProfilePage());
         }
 
         //Location&language button
@@ -42,13 +42,13 @@ namespace Crosshelper.Views
         }
         void HPLanguage(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            Navigation.PushAsync(new NewcomerMyProfilePage());
         }
 
         //Get help button
         void HPGetHelp(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            Navigation.PushAsync(new NewcomersProblemCategoryPage());
         }
 
     }

@@ -48,5 +48,10 @@ namespace Crosshelper.Views
 
             listView.ItemsSource = PanelContent;
         }
+
+        void DailyLifeButton(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new DescribeProblemPage());
+        }
     }
 }
