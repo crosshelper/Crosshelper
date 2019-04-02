@@ -15,9 +15,7 @@ namespace Crosshelper.Views
             {
                 await Navigation.PushModalAsync(new SignUpPage());
             };
-
         }
-       
         //返回按钮 Go Back
         void SIPSignInGoBack(object sender, EventArgs e)
         {

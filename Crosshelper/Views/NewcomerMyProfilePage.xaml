@@ -70,7 +70,8 @@
                        VerticalOptions="Center"
                        TextColor="#797979"></Label>
                  <Entry Placeholder="Language"
-                        FontSize="23"/>
+                        FontSize="23"
+                        x:Name="EnLang"/>
             </StackLayout >
                  <!--Get help button -->      
             <StackLayout Margin="16,0,16,0" VerticalOptions="EndAndExpand">
