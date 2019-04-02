@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Crosshelper.Models;
+using UIKit;
 using Xamarin.Forms;
 
 namespace Crosshelper.Views
@@ -11,6 +12,8 @@ namespace Crosshelper.Views
         public NewcomersProblemCategoryPage()
         {
             InitializeComponent();
+            //extendedCell.HighlightSelection = true;
+
             PanelContent = new List<SearchpageViewcellItem>();
             PanelContent.Add(new SearchpageViewcellItem
             {
@@ -47,6 +50,13 @@ namespace Crosshelper.Views
             });
 
             listView.ItemsSource = PanelContent;
+            listView.SelectionMode = ListViewSelectionMode.None;
+        }
+
+        void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            //if (e.SelectedItem == null) return;
+            //((ListView)sender).SelectedItem = null;
         }
 
         void DailyLifeButton(object sender, EventArgs e)
