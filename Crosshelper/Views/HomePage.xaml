@@ -7,7 +7,7 @@
              <!--profile image --> 
                                 <Button 
                                 Margin="0,20,0,0"
-                                Text="Image"
+                                Text="Sign In"
                                 FontSize="Default"
                                 TextColor="White"
                                 BackgroundColor="Gray"
