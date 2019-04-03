@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Crosshelper.Models;
-using UIKit;
 using Xamarin.Forms;
 
 namespace Crosshelper.Views

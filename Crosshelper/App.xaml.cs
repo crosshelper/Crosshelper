@@ -13,14 +13,14 @@ namespace Crosshelper
         {
             InitializeComponent();
 
-<<<<<<< Updated upstream
+
             MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePage))) {
                 BarBackgroundColor = Color.FromHex("#FF4E18"),
                 BarTextColor = Color.White };
 
-=======
-            MainPage = new NewcomersProblemCategoryPage();//NewcomerMyProfilePage();
->>>>>>> Stashed changes
+
+      
+
         }
 
         protected override void OnStart()
