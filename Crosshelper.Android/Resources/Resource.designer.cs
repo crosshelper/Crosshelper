@@ -341,6 +341,10 @@ namespace Crosshelper.Droid
 			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceSearchResultTitle = global::Crosshelper.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
 			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceSmallPopupMenu = global::Crosshelper.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
 			global::AiForms.Renderers.Droid.Resource.Attribute.textColorAlertDialogListItem = global::Crosshelper.Droid.Resource.Attribute.textColorAlertDialogListItem;
+<<<<<<< HEAD
+=======
+			global::AiForms.Renderers.Droid.Resource.Attribute.textColorError = global::Crosshelper.Droid.Resource.Attribute.textColorError;
+>>>>>>> 204dee0... a
 			global::AiForms.Renderers.Droid.Resource.Attribute.textColorSearchUrl = global::Crosshelper.Droid.Resource.Attribute.textColorSearchUrl;
 			global::AiForms.Renderers.Droid.Resource.Attribute.theme = global::Crosshelper.Droid.Resource.Attribute.theme;
 			global::AiForms.Renderers.Droid.Resource.Attribute.thickness = global::Crosshelper.Droid.Resource.Attribute.thickness;
@@ -384,6 +388,11 @@ namespace Crosshelper.Droid
 			global::AiForms.Renderers.Droid.Resource.Boolean.abc_action_bar_embed_tabs = global::Crosshelper.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
 			global::AiForms.Renderers.Droid.Resource.Boolean.abc_allow_stacked_button_bar = global::Crosshelper.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
 			global::AiForms.Renderers.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::Crosshelper.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+<<<<<<< HEAD
+=======
+			global::AiForms.Renderers.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::Crosshelper.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
+			global::AiForms.Renderers.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::Crosshelper.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
+>>>>>>> 204dee0... a
 			global::AiForms.Renderers.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark = global::Crosshelper.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
 			global::AiForms.Renderers.Droid.Resource.Color.abc_background_cache_hint_selector_material_light = global::Crosshelper.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
 			global::AiForms.Renderers.Droid.Resource.Color.abc_btn_colored_borderless_text_material = global::Crosshelper.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
@@ -489,6 +498,10 @@ namespace Crosshelper.Droid
 			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::Crosshelper.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
 			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::Crosshelper.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
 			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::Crosshelper.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+<<<<<<< HEAD
+=======
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_progress_bar_size = global::Crosshelper.Droid.Resource.Dimension.abc_action_bar_progress_bar_size;
+>>>>>>> 204dee0... a
 			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_stacked_max_height = global::Crosshelper.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
 			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::Crosshelper.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
 			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::Crosshelper.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
@@ -1318,6 +1331,14 @@ namespace Crosshelper.Droid
 			global::AiForms.Renderers.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::Crosshelper.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
 			global::AiForms.Renderers.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::Crosshelper.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
 			global::AiForms.Renderers.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::Crosshelper.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+<<<<<<< HEAD
+=======
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::Crosshelper.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::Crosshelper.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog = global::Crosshelper.Droid.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::Crosshelper.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::Crosshelper.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText;
+>>>>>>> 204dee0... a
 			global::AiForms.Renderers.Droid.Resource.Style.Base_V21_Theme_AppCompat = global::Crosshelper.Droid.Resource.Style.Base_V21_Theme_AppCompat;
 			global::AiForms.Renderers.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::Crosshelper.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
 			global::AiForms.Renderers.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light = global::Crosshelper.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
@@ -1391,6 +1412,10 @@ namespace Crosshelper.Droid
 			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::Crosshelper.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
 			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar = global::Crosshelper.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
 			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::Crosshelper.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+<<<<<<< HEAD
+=======
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_Design_AppBarLayout = global::Crosshelper.Droid.Resource.Style.Base_Widget_Design_AppBarLayout;
+>>>>>>> 204dee0... a
 			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_Design_TabLayout = global::Crosshelper.Droid.Resource.Style.Base_Widget_Design_TabLayout;
 			global::AiForms.Renderers.Droid.Resource.Style.CardView = global::Crosshelper.Droid.Resource.Style.CardView;
 			global::AiForms.Renderers.Droid.Resource.Style.CardView_Dark = global::Crosshelper.Droid.Resource.Style.CardView_Dark;
@@ -1400,6 +1425,13 @@ namespace Crosshelper.Droid
 			global::AiForms.Renderers.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat = global::Crosshelper.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
 			global::AiForms.Renderers.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::Crosshelper.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
 			global::AiForms.Renderers.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::Crosshelper.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+<<<<<<< HEAD
+=======
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_V11_AppCompat = global::Crosshelper.Droid.Resource.Style.Platform_V11_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_V11_AppCompat_Light = global::Crosshelper.Droid.Resource.Style.Platform_V11_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_V14_AppCompat = global::Crosshelper.Droid.Resource.Style.Platform_V14_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_V14_AppCompat_Light = global::Crosshelper.Droid.Resource.Style.Platform_V14_AppCompat_Light;
+>>>>>>> 204dee0... a
 			global::AiForms.Renderers.Droid.Resource.Style.Platform_V21_AppCompat = global::Crosshelper.Droid.Resource.Style.Platform_V21_AppCompat;
 			global::AiForms.Renderers.Droid.Resource.Style.Platform_V21_AppCompat_Light = global::Crosshelper.Droid.Resource.Style.Platform_V21_AppCompat_Light;
 			global::AiForms.Renderers.Droid.Resource.Style.Platform_V25_AppCompat = global::Crosshelper.Droid.Resource.Style.Platform_V25_AppCompat;
@@ -1595,6 +1627,10 @@ namespace Crosshelper.Droid
 			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_BottomNavigationView = global::Crosshelper.Droid.Resource.Style.Widget_Design_BottomNavigationView;
 			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_BottomSheet_Modal = global::Crosshelper.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
 			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_CollapsingToolbar = global::Crosshelper.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
+<<<<<<< HEAD
+=======
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_CoordinatorLayout = global::Crosshelper.Droid.Resource.Style.Widget_Design_CoordinatorLayout;
+>>>>>>> 204dee0... a
 			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_FloatingActionButton = global::Crosshelper.Droid.Resource.Style.Widget_Design_FloatingActionButton;
 			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_NavigationView = global::Crosshelper.Droid.Resource.Style.Widget_Design_NavigationView;
 			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::Crosshelper.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
@@ -1872,6 +1908,10 @@ namespace Crosshelper.Droid
 			global::AiForms.Renderers.Droid.Resource.Styleable.DesignTheme = global::Crosshelper.Droid.Resource.Styleable.DesignTheme;
 			global::AiForms.Renderers.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::Crosshelper.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
 			global::AiForms.Renderers.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle = global::Crosshelper.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle;
+<<<<<<< HEAD
+=======
+			global::AiForms.Renderers.Droid.Resource.Styleable.DesignTheme_textColorError = global::Crosshelper.Droid.Resource.Styleable.DesignTheme_textColorError;
+>>>>>>> 204dee0... a
 			global::AiForms.Renderers.Droid.Resource.Styleable.DrawerArrowToggle = global::Crosshelper.Droid.Resource.Styleable.DrawerArrowToggle;
 			global::AiForms.Renderers.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::Crosshelper.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
 			global::AiForms.Renderers.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::Crosshelper.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
@@ -8411,11 +8451,55 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f09003a
 			public const int CTRL = 2131296314;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0900a6
 			public const int CellAccessoryView = 2131296422;
 			
 			// aapt resource value: 0x7f0900a5
 			public const int CellBody = 2131296421;
+=======
+			// aapt resource value: 0x7f09008f
+			public const int CellAccessoryView = 2131296399;
+			
+			// aapt resource value: 0x7f09008e
+			public const int CellBody = 2131296398;
+			
+			// aapt resource value: 0x7f090090
+			public const int CellContentStack = 2131296400;
+			
+			// aapt resource value: 0x7f090092
+			public const int CellDescription = 2131296402;
+			
+			// aapt resource value: 0x7f090093
+			public const int CellHintText = 2131296403;
+			
+			// aapt resource value: 0x7f09008d
+			public const int CellIcon = 2131296397;
+			
+			// aapt resource value: 0x7f090091
+			public const int CellTitle = 2131296401;
+			
+			// aapt resource value: 0x7f090094
+			public const int ContentCellBody = 2131296404;
+			
+			// aapt resource value: 0x7f090095
+			public const int ContentCellBorder = 2131296405;
+			
+			// aapt resource value: 0x7f090034
+			public const int FUNCTION = 2131296308;
+			
+			// aapt resource value: 0x7f0900a6
+			public const int FooterCellText = 2131296422;
+			
+			// aapt resource value: 0x7f0900a8
+			public const int HeaderCellBorder = 2131296424;
+			
+			// aapt resource value: 0x7f0900a7
+			public const int HeaderCellText = 2131296423;
+			
+			// aapt resource value: 0x7f090035
+			public const int META = 2131296309;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f0900a7
 			public const int CellContentStack = 2131296423;
@@ -8423,8 +8507,13 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f0900a9
 			public const int CellDescription = 2131296425;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0900aa
 			public const int CellHintText = 2131296426;
+=======
+			// aapt resource value: 0x7f0900c6
+			public const int action0 = 2131296454;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f0900a4
 			public const int CellIcon = 2131296420;
@@ -8483,17 +8572,30 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f090069
 			public const int action_bar_title = 2131296361;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0900ed
 			public const int action_container = 2131296493;
+=======
+			// aapt resource value: 0x7f0900c3
+			public const int action_container = 2131296451;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f09008e
 			public const int action_context_bar = 2131296398;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0900f4
 			public const int action_divider = 2131296500;
 			
 			// aapt resource value: 0x7f0900ee
 			public const int action_image = 2131296494;
+=======
+			// aapt resource value: 0x7f0900ca
+			public const int action_divider = 2131296458;
+			
+			// aapt resource value: 0x7f0900c4
+			public const int action_image = 2131296452;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f090003
 			public const int action_menu_divider = 2131296259;
@@ -8510,11 +8612,19 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f09006b
 			public const int action_mode_close_button = 2131296363;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0900ef
 			public const int action_text = 2131296495;
 			
 			// aapt resource value: 0x7f0900fd
 			public const int actions = 2131296509;
+=======
+			// aapt resource value: 0x7f0900c5
+			public const int action_text = 2131296453;
+			
+			// aapt resource value: 0x7f0900d3
+			public const int actions = 2131296467;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f09006c
 			public const int activity_chooser_view_content = 2131296364;
@@ -8555,8 +8665,13 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f0900a0
 			public const int browser_actions_header_text = 2131296416;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0900a2
 			public const int browser_actions_menu_item_icon = 2131296418;
+=======
+			// aapt resource value: 0x7f0900c7
+			public const int cancel_action = 2131296455;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f0900a3
 			public const int browser_actions_menu_item_text = 2131296419;
@@ -8570,8 +8685,13 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f090072
 			public const int buttonPanel = 2131296370;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0900f1
 			public const int cancel_action = 2131296497;
+=======
+			// aapt resource value: 0x7f0900cf
+			public const int chronometer = 2131296463;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f09004c
 			public const int center = 2131296332;
@@ -8582,14 +8702,24 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f090052
 			public const int center_vertical = 2131296338;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f090086
 			public const int checkbox = 2131296390;
+=======
+			// aapt resource value: 0x7f090098
+			public const int container = 2131296408;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f0900f9
 			public const int chronometer = 2131296505;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f090061
 			public const int clip_horizontal = 2131296353;
+=======
+			// aapt resource value: 0x7f090099
+			public const int coordinator = 2131296409;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f090062
 			public const int clip_vertical = 2131296354;
@@ -8603,6 +8733,7 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f090082
 			public const int content = 2131296386;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f090075
 			public const int contentPanel = 2131296373;
 			
@@ -8617,6 +8748,22 @@ namespace Crosshelper.Droid
 			
 			// aapt resource value: 0x7f09008b
 			public const int decor_content_parent = 2131296395;
+=======
+			// aapt resource value: 0x7f09009b
+			public const int design_bottom_sheet = 2131296411;
+			
+			// aapt resource value: 0x7f0900a2
+			public const int design_menu_item_action_area = 2131296418;
+			
+			// aapt resource value: 0x7f0900a1
+			public const int design_menu_item_action_area_stub = 2131296417;
+			
+			// aapt resource value: 0x7f0900a0
+			public const int design_menu_item_text = 2131296416;
+			
+			// aapt resource value: 0x7f09009f
+			public const int design_navigation_view = 2131296415;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f09006f
 			public const int default_activity_button = 2131296367;
@@ -8627,8 +8774,13 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f0900b7
 			public const int design_menu_item_action_area = 2131296439;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0900b6
 			public const int design_menu_item_action_area_stub = 2131296438;
+=======
+			// aapt resource value: 0x7f0900d5
+			public const int end_padder = 2131296469;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f0900b5
 			public const int design_menu_item_text = 2131296437;
@@ -8660,11 +8812,19 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f09006d
 			public const int expand_activities_button = 2131296365;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f090085
 			public const int expanded_menu = 2131296389;
 			
 			// aapt resource value: 0x7f09005e
 			public const int fill = 2131296350;
+=======
+			// aapt resource value: 0x7f0900a4
+			public const int flyoutcontent_appbar = 2131296420;
+			
+			// aapt resource value: 0x7f0900a5
+			public const int flyoutcontent_recycler = 2131296421;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f090063
 			public const int fill_horizontal = 2131296355;
@@ -8702,8 +8862,13 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f090071
 			public const int icon = 2131296369;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0900fe
 			public const int icon_group = 2131296510;
+=======
+			// aapt resource value: 0x7f0900d4
+			public const int icon_group = 2131296468;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f090041
 			public const int ifRoom = 2131296321;
@@ -8711,8 +8876,13 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f09006e
 			public const int image = 2131296366;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0900fa
 			public const int info = 2131296506;
+=======
+			// aapt resource value: 0x7f0900d0
+			public const int info = 2131296464;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f090068
 			public const int italic = 2131296360;
@@ -8720,8 +8890,13 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f090000
 			public const int item_touch_helper_previous_elevation = 2131296256;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f09004e
 			public const int labeled = 2131296334;
+=======
+			// aapt resource value: 0x7f090097
+			public const int largeLabel = 2131296407;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f0900ae
 			public const int largeLabel = 2131296430;
@@ -8801,6 +8976,7 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f0900c9
 			public const int mr_cast_route_icon = 2131296457;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0900ca
 			public const int mr_cast_route_name = 2131296458;
 			
@@ -8821,6 +8997,28 @@ namespace Crosshelper.Droid
 			
 			// aapt resource value: 0x7f0900d0
 			public const int mr_chooser_route_icon = 2131296464;
+=======
+			// aapt resource value: 0x7f0900d6
+			public const int main_appbar = 2131296470;
+			
+			// aapt resource value: 0x7f0900d9
+			public const int main_scrollview = 2131296473;
+			
+			// aapt resource value: 0x7f0900d8
+			public const int main_tablayout = 2131296472;
+			
+			// aapt resource value: 0x7f0900d7
+			public const int main_toolbar = 2131296471;
+			
+			// aapt resource value: 0x7f0900e1
+			public const int masked = 2131296481;
+			
+			// aapt resource value: 0x7f0900c9
+			public const int media_actions = 2131296457;
+			
+			// aapt resource value: 0x7f0900df
+			public const int message = 2131296479;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f0900d1
 			public const int mr_chooser_route_name = 2131296465;
@@ -8828,6 +9026,7 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f0900ce
 			public const int mr_chooser_title = 2131296462;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0900d7
 			public const int mr_close = 2131296471;
 			
@@ -8914,12 +9113,93 @@ namespace Crosshelper.Droid
 			
 			// aapt resource value: 0x7f09002f
 			public const int multiply = 2131296303;
+=======
+			// aapt resource value: 0x7f0900b5
+			public const int mr_art = 2131296437;
+			
+			// aapt resource value: 0x7f0900aa
+			public const int mr_chooser_list = 2131296426;
+			
+			// aapt resource value: 0x7f0900ad
+			public const int mr_chooser_route_desc = 2131296429;
+			
+			// aapt resource value: 0x7f0900ab
+			public const int mr_chooser_route_icon = 2131296427;
+			
+			// aapt resource value: 0x7f0900ac
+			public const int mr_chooser_route_name = 2131296428;
+			
+			// aapt resource value: 0x7f0900a9
+			public const int mr_chooser_title = 2131296425;
+			
+			// aapt resource value: 0x7f0900b2
+			public const int mr_close = 2131296434;
+			
+			// aapt resource value: 0x7f0900b8
+			public const int mr_control_divider = 2131296440;
+			
+			// aapt resource value: 0x7f0900be
+			public const int mr_control_playback_ctrl = 2131296446;
+			
+			// aapt resource value: 0x7f0900c1
+			public const int mr_control_subtitle = 2131296449;
+			
+			// aapt resource value: 0x7f0900c0
+			public const int mr_control_title = 2131296448;
+			
+			// aapt resource value: 0x7f0900bf
+			public const int mr_control_title_container = 2131296447;
+			
+			// aapt resource value: 0x7f0900b3
+			public const int mr_custom_control = 2131296435;
+			
+			// aapt resource value: 0x7f0900b4
+			public const int mr_default_control = 2131296436;
+			
+			// aapt resource value: 0x7f0900af
+			public const int mr_dialog_area = 2131296431;
+			
+			// aapt resource value: 0x7f0900ae
+			public const int mr_expandable_area = 2131296430;
+			
+			// aapt resource value: 0x7f0900c2
+			public const int mr_group_expand_collapse = 2131296450;
+			
+			// aapt resource value: 0x7f0900b6
+			public const int mr_media_main_control = 2131296438;
+			
+			// aapt resource value: 0x7f0900b1
+			public const int mr_name = 2131296433;
+			
+			// aapt resource value: 0x7f0900b7
+			public const int mr_playback_control = 2131296439;
+			
+			// aapt resource value: 0x7f0900b0
+			public const int mr_title_bar = 2131296432;
+			
+			// aapt resource value: 0x7f0900b9
+			public const int mr_volume_control = 2131296441;
+			
+			// aapt resource value: 0x7f0900ba
+			public const int mr_volume_group_list = 2131296442;
+			
+			// aapt resource value: 0x7f0900bc
+			public const int mr_volume_item_icon = 2131296444;
+			
+			// aapt resource value: 0x7f0900bd
+			public const int mr_volume_slider = 2131296445;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f0900b3
 			public const int navigation_header_container = 2131296435;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f090042
 			public const int never = 2131296322;
+=======
+			// aapt resource value: 0x7f09009e
+			public const int navigation_header_container = 2131296414;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f090029
 			public const int none = 2131296297;
@@ -8930,6 +9210,7 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f0900fc
 			public const int notification_background = 2131296508;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0900f6
 			public const int notification_main_column = 2131296502;
 			
@@ -8938,6 +9219,16 @@ namespace Crosshelper.Droid
 			
 			// aapt resource value: 0x7f090060
 			public const int outline = 2131296352;
+=======
+			// aapt resource value: 0x7f0900d2
+			public const int notification_background = 2131296466;
+			
+			// aapt resource value: 0x7f0900cc
+			public const int notification_main_column = 2131296460;
+			
+			// aapt resource value: 0x7f0900cb
+			public const int notification_main_column_container = 2131296459;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f090057
 			public const int parallax = 2131296343;
@@ -8963,11 +9254,19 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f090055
 			public const int right = 2131296341;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0900fb
 			public const int right_icon = 2131296507;
 			
 			// aapt resource value: 0x7f0900f7
 			public const int right_side = 2131296503;
+=======
+			// aapt resource value: 0x7f0900d1
+			public const int right_icon = 2131296465;
+			
+			// aapt resource value: 0x7f0900cd
+			public const int right_side = 2131296461;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f09000c
 			public const int save_image_matrix = 2131296268;
@@ -9029,6 +9328,7 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f09009b
 			public const int select_dialog_listview = 2131296411;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f09004f
 			public const int selected = 2131296335;
 			
@@ -9037,6 +9337,16 @@ namespace Crosshelper.Droid
 			
 			// aapt resource value: 0x7f090106
 			public const int shellcontent_scrollview = 2131296518;
+=======
+			// aapt resource value: 0x7f0900da
+			public const int shellcontent_appbar = 2131296474;
+			
+			// aapt resource value: 0x7f0900dc
+			public const int shellcontent_scrollview = 2131296476;
+			
+			// aapt resource value: 0x7f0900db
+			public const int shellcontent_toolbar = 2131296475;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f090105
 			public const int shellcontent_toolbar = 2131296517;
@@ -9050,6 +9360,7 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f09002b
 			public const int showHome = 2131296299;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f09002c
 			public const int showTitle = 2131296300;
 			
@@ -9061,6 +9372,19 @@ namespace Crosshelper.Droid
 			
 			// aapt resource value: 0x7f090016
 			public const int snackbar_action = 2131296278;
+=======
+			// aapt resource value: 0x7f0900dd
+			public const int sliding_tabs = 2131296477;
+			
+			// aapt resource value: 0x7f090096
+			public const int smallLabel = 2131296406;
+			
+			// aapt resource value: 0x7f09009d
+			public const int snackbar_action = 2131296413;
+			
+			// aapt resource value: 0x7f09009c
+			public const int snackbar_text = 2131296412;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f090017
 			public const int snackbar_text = 2131296279;
@@ -9089,8 +9413,13 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f090056
 			public const int start = 2131296342;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0900f2
 			public const int status_bar_latest_event_content = 2131296498;
+=======
+			// aapt resource value: 0x7f0900c8
+			public const int status_bar_latest_event_content = 2131296456;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f09005b
 			public const int stretch = 2131296347;
@@ -9125,8 +9454,13 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f090078
 			public const int textSpacerNoTitle = 2131296376;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f09005a
 			public const int textStart = 2131296346;
+=======
+			// aapt resource value: 0x7f0900a3
+			public const int text_input_password_toggle = 2131296419;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f0900b8
 			public const int text_input_password_toggle = 2131296440;
@@ -9134,8 +9468,13 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f090018
 			public const int textinput_counter = 2131296280;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f090019
 			public const int textinput_error = 2131296281;
+=======
+			// aapt resource value: 0x7f0900ce
+			public const int time = 2131296462;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f09001a
 			public const int textinput_helper_text = 2131296282;
@@ -9146,8 +9485,13 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f090023
 			public const int title = 2131296291;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f090080
 			public const int titleDividerNoCustom = 2131296384;
+=======
+			// aapt resource value: 0x7f0900de
+			public const int toolbar = 2131296478;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f09007e
 			public const int title_template = 2131296382;
@@ -9155,6 +9499,7 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f090108
 			public const int toolbar = 2131296520;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f090045
 			public const int top = 2131296325;
 			
@@ -9163,6 +9508,10 @@ namespace Crosshelper.Droid
 			
 			// aapt resource value: 0x7f0900b1
 			public const int touch_outside = 2131296433;
+=======
+			// aapt resource value: 0x7f09009a
+			public const int touch_outside = 2131296410;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f09000f
 			public const int transition_current_scene = 2131296271;
@@ -9194,11 +9543,19 @@ namespace Crosshelper.Droid
 			// aapt resource value: 0x7f09001b
 			public const int view_offset_helper = 2131296283;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f090109
 			public const int visible = 2131296521;
 			
 			// aapt resource value: 0x7f0900e0
 			public const int volume_item_container = 2131296480;
+=======
+			// aapt resource value: 0x7f0900e0
+			public const int visible = 2131296480;
+			
+			// aapt resource value: 0x7f0900bb
+			public const int volume_item_container = 2131296443;
+>>>>>>> 204dee0... a
 			
 			// aapt resource value: 0x7f090043
 			public const int withText = 2131296323;
@@ -9402,6 +9759,7 @@ namespace Crosshelper.Droid
 			public const int abc_select_dialog_material = 2130968602;
 			
 			// aapt resource value: 0x7f04001b
+<<<<<<< HEAD
 			public const int abc_tooltip = 2130968603;
 			
 			// aapt resource value: 0x7f04001c
@@ -9586,6 +9944,153 @@ namespace Crosshelper.Droid
 			
 			// aapt resource value: 0x7f040058
 			public const int Toolbar = 2130968664;
+=======
+			public const int CellBaseView = 2130968603;
+			
+			// aapt resource value: 0x7f04001c
+			public const int ContentCell = 2130968604;
+			
+			// aapt resource value: 0x7f04001d
+			public const int design_bottom_navigation_item = 2130968605;
+			
+			// aapt resource value: 0x7f04001e
+			public const int design_bottom_sheet_dialog = 2130968606;
+			
+			// aapt resource value: 0x7f04001f
+			public const int design_layout_snackbar = 2130968607;
+			
+			// aapt resource value: 0x7f040020
+			public const int design_layout_snackbar_include = 2130968608;
+			
+			// aapt resource value: 0x7f040021
+			public const int design_layout_tab_icon = 2130968609;
+			
+			// aapt resource value: 0x7f040022
+			public const int design_layout_tab_text = 2130968610;
+			
+			// aapt resource value: 0x7f040023
+			public const int design_menu_item_action_area = 2130968611;
+			
+			// aapt resource value: 0x7f040024
+			public const int design_navigation_item = 2130968612;
+			
+			// aapt resource value: 0x7f040025
+			public const int design_navigation_item_header = 2130968613;
+			
+			// aapt resource value: 0x7f040026
+			public const int design_navigation_item_separator = 2130968614;
+			
+			// aapt resource value: 0x7f040027
+			public const int design_navigation_item_subheader = 2130968615;
+			
+			// aapt resource value: 0x7f040028
+			public const int design_navigation_menu = 2130968616;
+			
+			// aapt resource value: 0x7f040029
+			public const int design_navigation_menu_item = 2130968617;
+			
+			// aapt resource value: 0x7f04002a
+			public const int design_text_input_password_icon = 2130968618;
+			
+			// aapt resource value: 0x7f04002b
+			public const int FlyoutContent = 2130968619;
+			
+			// aapt resource value: 0x7f04002c
+			public const int FooterCell = 2130968620;
+			
+			// aapt resource value: 0x7f04002d
+			public const int HeaderCell = 2130968621;
+			
+			// aapt resource value: 0x7f04002e
+			public const int mr_chooser_dialog = 2130968622;
+			
+			// aapt resource value: 0x7f04002f
+			public const int mr_chooser_list_item = 2130968623;
+			
+			// aapt resource value: 0x7f040030
+			public const int mr_controller_material_dialog_b = 2130968624;
+			
+			// aapt resource value: 0x7f040031
+			public const int mr_controller_volume_item = 2130968625;
+			
+			// aapt resource value: 0x7f040032
+			public const int mr_playback_control = 2130968626;
+			
+			// aapt resource value: 0x7f040033
+			public const int mr_volume_control = 2130968627;
+			
+			// aapt resource value: 0x7f040034
+			public const int notification_action = 2130968628;
+			
+			// aapt resource value: 0x7f040035
+			public const int notification_action_tombstone = 2130968629;
+			
+			// aapt resource value: 0x7f040036
+			public const int notification_media_action = 2130968630;
+			
+			// aapt resource value: 0x7f040037
+			public const int notification_media_cancel_action = 2130968631;
+			
+			// aapt resource value: 0x7f040038
+			public const int notification_template_big_media = 2130968632;
+			
+			// aapt resource value: 0x7f040039
+			public const int notification_template_big_media_custom = 2130968633;
+			
+			// aapt resource value: 0x7f04003a
+			public const int notification_template_big_media_narrow = 2130968634;
+			
+			// aapt resource value: 0x7f04003b
+			public const int notification_template_big_media_narrow_custom = 2130968635;
+			
+			// aapt resource value: 0x7f04003c
+			public const int notification_template_custom_big = 2130968636;
+			
+			// aapt resource value: 0x7f04003d
+			public const int notification_template_icon_group = 2130968637;
+			
+			// aapt resource value: 0x7f04003e
+			public const int notification_template_lines_media = 2130968638;
+			
+			// aapt resource value: 0x7f04003f
+			public const int notification_template_media = 2130968639;
+			
+			// aapt resource value: 0x7f040040
+			public const int notification_template_media_custom = 2130968640;
+			
+			// aapt resource value: 0x7f040041
+			public const int notification_template_part_chronometer = 2130968641;
+			
+			// aapt resource value: 0x7f040042
+			public const int notification_template_part_time = 2130968642;
+			
+			// aapt resource value: 0x7f040043
+			public const int RootLayout = 2130968643;
+			
+			// aapt resource value: 0x7f040044
+			public const int select_dialog_item_material = 2130968644;
+			
+			// aapt resource value: 0x7f040045
+			public const int select_dialog_multichoice_material = 2130968645;
+			
+			// aapt resource value: 0x7f040046
+			public const int select_dialog_singlechoice_material = 2130968646;
+			
+			// aapt resource value: 0x7f040047
+			public const int ShellContent = 2130968647;
+			
+			// aapt resource value: 0x7f040048
+			public const int support_simple_spinner_dropdown_item = 2130968648;
+			
+			// aapt resource value: 0x7f040049
+			public const int Tabbar = 2130968649;
+			
+			// aapt resource value: 0x7f04004a
+			public const int Toolbar = 2130968650;
+			
+			// aapt resource value: 0x7f04004b
+			public const int tooltip = 2130968651;
+>>>>>>> 204dee0... a
 			
 			static Layout()
 			{
