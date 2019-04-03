@@ -15,6 +15,7 @@
             <Color x:Key="NormalTextColor">#666666</Color>
             <Color x:Key="PaleTextColor">#999999</Color>
             <Color x:Key="NavigationPrimary">#4396F4</Color>
+            <Color x:Key="AppBackground">#E4E4E4</Color>
             <x:Double x:Key="BaseFontSize">12</x:Double>
             <x:Double x:Key="BaseFontSize+">14</x:Double>
             <x:Double x:Key="BaseFontSize++">17</x:Double>
