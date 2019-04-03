@@ -8,7 +8,7 @@
                      HasUnevenRows="true">
     
     <sv:Section Title="Header1" FooterText="Footer1">
-        <sv:CommandCell IconSource="..Resources/idphoto.jpeg" IconSize="60,60" IconRadius="30"
+        <sv:CommandCell IconSource="Resources.idphoto.jpeg" IconSize="60,60" IconRadius="30"
             Title="William Liang" Description="william.liang@crosshelper.com"
             Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"
             KeepSelectedUntilBack="true"            
