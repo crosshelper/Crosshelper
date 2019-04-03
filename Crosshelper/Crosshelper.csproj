@@ -15,7 +15,7 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.6.0.264807" />  
     <PackageReference Include="MySql.Data" Version="8.0.15" />
-    <PackageReference Include="JimBobBennett.JimLib.Xamarin" Version="1.1.103" />
+    <PackageReference Include="AiForms.SettingsView" Version="0.4.15" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\MyPage.xaml" />

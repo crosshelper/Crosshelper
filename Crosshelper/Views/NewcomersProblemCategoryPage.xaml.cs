@@ -11,8 +11,6 @@ namespace Crosshelper.Views
         public NewcomersProblemCategoryPage()
         {
             InitializeComponent();
-            //extendedCell.HighlightSelection = true;
-
             PanelContent = new List<SearchpageViewcellItem>();
             PanelContent.Add(new SearchpageViewcellItem
             {
@@ -49,6 +47,7 @@ namespace Crosshelper.Views
             });
 
             listView.ItemsSource = PanelContent;
+            listView.BackgroundColor = Color.Transparent; 
             listView.SelectionMode = ListViewSelectionMode.None;
         }
 

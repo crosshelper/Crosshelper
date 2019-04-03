@@ -12,6 +12,7 @@ namespace Crosshelper
         public App()
         {
             InitializeComponent();
+<<<<<<< HEAD
 
 
             MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePage))) {
@@ -21,6 +22,11 @@ namespace Crosshelper
 
       
 
+=======
+            MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePage))) {
+                BarBackgroundColor = Color.FromHex("#FF4E18"),
+                BarTextColor = Color.White };
+>>>>>>> d2716f3... setting
         }
 
         protected override void OnStart()
