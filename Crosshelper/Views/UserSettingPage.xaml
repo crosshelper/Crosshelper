@@ -7,31 +7,31 @@
                      HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
                      HasUnevenRows="true">
     
-    <sv:Section Title="Header1" FooterText="Footer1">
+    <sv:Section Title="Account" FooterText="">
         <sv:CommandCell x:Name="commandcell" IconSource="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png" IconSize="60,60" IconRadius="30"
             Title="William Liang" Description="william.liang@crosshelper.com"
             Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"
-            KeepSelectedUntilBack="true"            
-        />
-        <sv:LabelCell Title="Label" ValueText="value" />
-        <sv:TextPickerCell Title="TextPicker"/>
-        <sv:SwitchCell Title="Switch" On="true" 
-            Description="This is description." />
-        <sv:CheckboxCell Title="Checkbox" Checked="true" />
+            KeepSelectedUntilBack="true"/>
+        <sv:PickerCell Title="My Background" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
 
-    <sv:Section Title="Header2" FooterText="Footer2" IsVisible="{Binding SctionIsVisible}">
-        <sv:PickerCell Title="Favorites" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+    <sv:Section Title="Payment" IsVisible="{Binding SctionIsVisible}">
+        <sv:PickerCell Title="Payment Methods" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
-        <sv:NumberPickerCell Title="NumberPicker" Min="0" Max="99" Number="15" PickerTitle="Select number" />
-        <sv:TimePickerCell Title="TimePicker" Format="HH:mm" Time="15:30" PickerTitle="Select time" />
-        <sv:DatePickerCell Title="DatePicker" Format="yyyy/MM/dd (ddd)" Date="2017/11/11" MinimumDate="2015/1/1" MaximumDate="2018/12/15" TodayText="Today's date"/>
-        <sv:EntryCell Title="EntryCell" ValueText="{Binding InputText.Value}" Placeholder="Input text" Keyboard="Email" TextAlignment="End" HintText="{Binding InputError.Value}" />
+        <sv:PickerCell Title="Add Promotion Code" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+    </sv:Section>
+        
+    <sv:Section Title="Trusted contacts and Privacy" IsVisible="{Binding SctionIsVisible}">
+        <sv:PickerCell Title="Trusted contacts" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+        <sv:PickerCell Title="Privacy" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
     
-    <sv:Section Title="Header3" FooterText="Footer3" IsVisible="{Binding SctionIsVisible}">
-        <sv:EntryCell Title="EntryCell" ValueText="{Binding InputText.Value}" Placeholder="Input text" Keyboard="Email" TextAlignment="End" HintText="{Binding InputError.Value}" />
-        <sv:ButtonCell Title="Sign out" TitleColor="Red"
+    <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
+             <sv:ButtonCell Title="Sign out" TitleColor="Red"
              TitleAlignment="Center" Command="{Binding SectionToggleCommand}" />
     </sv:Section>
     

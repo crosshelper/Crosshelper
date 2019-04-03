@@ -48,7 +48,7 @@ namespace Crosshelper.Views
         //Get help button
         void HPGetHelp(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new NCAboutPage());
+            Navigation.PushAsync(new UserSettingPage());
         }
 
     }
