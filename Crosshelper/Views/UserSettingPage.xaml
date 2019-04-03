@@ -23,7 +23,7 @@
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
         
-    <sv:Section Title="Trusted contacts and Privacy" IsVisible="{Binding SctionIsVisible}">
+    <sv:Section Title="Privacy" IsVisible="{Binding SctionIsVisible}">
         <sv:PickerCell Title="Trusted contacts" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
         <sv:PickerCell Title="Privacy" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
