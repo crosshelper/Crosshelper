@@ -31,7 +31,7 @@
     
     <sv:Section Title="Header3" FooterText="Footer3" IsVisible="{Binding SctionIsVisible}">
         <sv:EntryCell Title="EntryCell" ValueText="{Binding InputText.Value}" Placeholder="Input text" Keyboard="Email" TextAlignment="End" HintText="{Binding InputError.Value}" />
-        <sv:ButtonCell Title="Toggle Section" TitleColor="{StaticResource TitleTextColor}"
+        <sv:ButtonCell Title="Sign out" TitleColor="Red"
              TitleAlignment="Center" Command="{Binding SectionToggleCommand}" />
     </sv:Section>
     
