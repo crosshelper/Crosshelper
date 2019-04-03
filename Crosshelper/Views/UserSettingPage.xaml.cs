@@ -10,6 +10,7 @@ namespace Crosshelper.Views
         public UserSettingPage()
         {
             InitializeComponent();
+            commandcell.IconSource = ImageSource.FromFile("Resources.idphoto.jpeg");  
         }
     }
 }
