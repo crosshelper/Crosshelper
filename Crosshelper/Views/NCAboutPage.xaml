@@ -1,5 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.NCAboutPage">
     <ContentPage.Content>
+        <StackLayout Margin="20,25,20,0">
+            <Label Text="Crosshelper" FontAttributes="Bold" FontSize="22" HorizontalOptions="Center"></Label>
+            <Label Text="Version beta 1.0" FontSize="20" HorizontalOptions="CenterAndExpand"></Label>
+            <Image Source="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png" HeightRequest="80"></Image>
+            <Label Text="© 2019-Present, Crosshelper, Inc. " FontSize="16" Margin="20"></Label>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
