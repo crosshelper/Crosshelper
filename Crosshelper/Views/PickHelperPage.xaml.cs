@@ -7,6 +7,11 @@ namespace Crosshelper.Views
 {
     public partial class PickHelperPage : ContentPage
     {
+        void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            Navigation.PushAsync(new NewcomerHelperProfilePage());
+        }
+
         public IList<HelperLabel> Helpers { get; private set; }
        // Color statuscolor = new Color();//(79B563);
         public PickHelperPage()

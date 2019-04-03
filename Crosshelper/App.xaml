@@ -33,7 +33,7 @@
                 <Setter Property="CellDescriptionColor" Value="{StaticResource NormalTextColor}" />
                 <Setter Property="CellDescriptionFontSize" Value="{StaticResource BaseFontSize-}" />
                 <Setter Property="CellAccentColor" Value="{StaticResource AccentColor}" />
-                <Setter Property="SelectedColor" Value="#FCD4D3" />
+                <Setter Property="SelectedColor" Value="#E4E4E4" />
                 <Setter Property="HeaderTextColor" Value="{StaticResource TitleTextColor}" />
                 <Setter Property="FooterFontSize" Value="{StaticResource BaseFontSize-}" />
                 <Setter Property="FooterTextColor" Value="{StaticResource PaleTextColor}" />
