@@ -12,7 +12,7 @@
             Title="William Liang" Description="william.liang@crosshelper.com"
             Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"
             KeepSelectedUntilBack="true"/>
-        <sv:PickerCell Title="My Background" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        <sv:PickerCell Title="My Background" Tapped="Handle_Mybackground" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
 
@@ -27,6 +27,13 @@
         <sv:PickerCell Title="Trusted contacts" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
         <sv:PickerCell Title="Privacy" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+        <sv:PickerCell Title="Agreement" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+    </sv:Section>
+        
+    <sv:Section Title="About" IsVisible="{Binding SctionIsVisible}">
+        <sv:PickerCell Title="About us" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
     

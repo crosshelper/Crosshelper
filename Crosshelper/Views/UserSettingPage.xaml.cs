@@ -7,6 +7,10 @@ namespace Crosshelper.Views
 {
     public partial class UserSettingPage : ContentPage
     {
+        void Handle_Mybackground(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new MyBackgroundPage());
+        }
         void Handle_PaymentMethod(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new PaymentPage());
