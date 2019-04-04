@@ -17,9 +17,9 @@
     </sv:Section>
 
     <sv:Section Title="Payment" IsVisible="{Binding SctionIsVisible}">
-        <sv:PickerCell Title="Payment Methods" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        <sv:PickerCell Title="Payment Methods" Tapped="Handle_PaymentMethod" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
-        <sv:PickerCell Title="Add Promotion Code" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        <sv:PickerCell Title="Add Promotion Code" Tapped="Handle_Promotion" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
         

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Crosshelper.Views.PromotionCodePage"
+             xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView">
+    <ContentPage.Content>
+        <sv:SettingsView x:Name="settings"
+                         HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
+                         HasUnevenRows="true">
+            <sv:Section Title="Promotion" FooterText="">
+                <sv:EntryCell Title="Code" ValueText="{Binding InputText.Value}" 
+                              Placeholder="000000" Keyboard="Email" 
+                              TextAlignment="End" HintText="{Binding InputError.Value}" /> 
+            </sv:Section>
+            
+            <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
+                     <sv:ButtonCell Title="Add" TitleColor="White" BackgroundColor="#FE5121" TitleFontSize="Large"
+                     TitleAlignment="Center" Tapped="Handle_AddPromotionCode" Command="{Binding SectionToggleCommand}" />
+            </sv:Section>
+        </sv:SettingsView>
+    </ContentPage.Content>
+</ContentPage>

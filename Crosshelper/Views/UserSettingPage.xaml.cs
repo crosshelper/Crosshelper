@@ -7,6 +7,16 @@ namespace Crosshelper.Views
 {
     public partial class UserSettingPage : ContentPage
     {
+        void Handle_PaymentMethod(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new PaymentPage());
+        }
+
+        void Handle_Promotion(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new PromotionCodePage());
+        }
+
         public UserSettingPage()
         {
             InitializeComponent();
