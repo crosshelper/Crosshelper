@@ -52,7 +52,7 @@ namespace Crosshelper.Views
 
         void SIPForgotPassword(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            Navigation.PushAsync(new ForgotPasswordPage());
         }
         //登入邮箱&密码输入框 Sign in email&password input box
         void SIPSignInEmailCompleted(object sender, EventArgs e)

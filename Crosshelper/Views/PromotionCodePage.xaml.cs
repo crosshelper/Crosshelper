@@ -9,7 +9,7 @@ namespace Crosshelper.Views
     {
         void Handle_AddPromotionCode(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new HomePage());
+            Navigation.PopToRootAsync();
         }
         public PromotionCodePage()
         {

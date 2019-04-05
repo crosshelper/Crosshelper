@@ -44,7 +44,6 @@
                                     FontAttributes="Bold"
                                     Clicked="SUPSignUpAsHelper"/>
                     </StackLayout>
-
             </StackLayout>
     </ContentPage.Content>
 </ContentPage>
