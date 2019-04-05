@@ -15,7 +15,7 @@ namespace Crosshelper.Views
             // Lable&text Change
             // NameId: HPDate, HPLanguage, HPProjectDescription, HPProjectStatus
             HPProject.GestureRecognizers.Add(new TapGestureRecognizer
-            { Command = new Command(() => { HPProject.BackgroundColor = Color.Blue; }) });
+            { Command = new Command(() => { HPProject.Navigation.PushAsync(new ProjectPage()); }) });
             
         }
 

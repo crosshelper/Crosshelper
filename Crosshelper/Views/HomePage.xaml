@@ -17,7 +17,7 @@
             <StackLayout>
              <!--profile image --> 
                                 <Button 
-                                Margin="0,20,0,0"
+                                Margin="0,35,0,0"
                                 Text="Sign In"
                                 FontSize="Default"
                                 TextColor="White"
