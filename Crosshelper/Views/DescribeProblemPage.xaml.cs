@@ -7,6 +7,10 @@ namespace Crosshelper.Views
 {
     public partial class DescribeProblemPage : ContentPage
     {
+        void Handle_Canceled(object sender, System.EventArgs e)
+        {
+            Navigation.PopToRootAsync(false);
+        }
         public DescribeProblemPage()
         {
             InitializeComponent();

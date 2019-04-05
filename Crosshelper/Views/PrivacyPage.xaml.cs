@@ -7,9 +7,18 @@ namespace Crosshelper.Views
 {
     public partial class PrivacyPage : ContentPage
     {
+        void Handle_Canceled(object sender, System.EventArgs e)
+        {
+            Navigation.PopToRootAsync(false);
+        }
         public PrivacyPage()
         {
             InitializeComponent();
+        }
+
+        void Handle_Saved(object sender, System.EventArgs e)
+        {
+            Navigation.PopAsync(false);
         }
     }
 }

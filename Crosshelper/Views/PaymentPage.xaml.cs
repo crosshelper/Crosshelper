@@ -7,6 +7,10 @@ namespace Crosshelper.Views
 {
     public partial class PaymentPage : ContentPage
     {
+        void Handle_Canceled(object sender, System.EventArgs e)
+        {
+            Navigation.PopToRootAsync(false);
+        }
         void Handle_AddPaymentMethod(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new AddPaymentMethodPage());

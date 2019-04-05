@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace Crosshelper.Views
 {
-    public partial class NewcomerMyProfilePage : ContentPage
+    public partial class NoticePage : ContentPage
     {
-        public NewcomerMyProfilePage()
+        public NoticePage()
         {
             InitializeComponent();
         }

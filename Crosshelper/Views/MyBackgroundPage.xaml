@@ -3,12 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
              x:Class="Crosshelper.Views.MyBackgroundPage">
+     <NavigationPage.TitleView>
+        <Grid>
+            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
+        </Grid>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <sv:SettingsView x:Name="settings"
                      HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
                      HasUnevenRows="true">
-    
-   <sv:Section Title="Background" FooterText="">
+    <sv:Section Title="Background" FooterText="">
             <sv:EntryCell Title="From" ValueText="{Binding InputText.Value}" 
                           Placeholder="China" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" /> 
@@ -26,7 +30,7 @@
     
     <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
              <sv:ButtonCell Title="Save" TitleColor="White" BackgroundColor="#FE5121" TitleFontSize="Large"
-             TitleAlignment="Center" Command="{Binding SectionToggleCommand}" />
+             TitleAlignment="Center" Command="{Binding SectionToggleCommand}" Tapped="Handle_Saved" />
     </sv:Section>
     </sv:SettingsView>
     </ContentPage.Content>

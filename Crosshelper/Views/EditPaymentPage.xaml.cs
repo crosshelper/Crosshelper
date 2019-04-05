@@ -7,9 +7,13 @@ namespace Crosshelper.Views
 {
     public partial class EditPaymentPage : ContentPage
     {
+        void Handle_Canceled(object sender, System.EventArgs e)
+        {
+            Navigation.PopToRootAsync(false);
+        }
         void Handle_SavePyament(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new PaymentPage());
+            Navigation.PopAsync(false);
         }
         public EditPaymentPage()
         {

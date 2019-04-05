@@ -7,6 +7,10 @@ namespace Crosshelper.Views
 {
     public partial class PickHelperPage : ContentPage
     {
+        void Handle_Canceled(object sender, System.EventArgs e)
+        {
+            Navigation.PopToRootAsync(false);
+        }
         void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             Navigation.PushAsync(new NewcomerHelperProfilePage());
