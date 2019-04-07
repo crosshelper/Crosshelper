@@ -22,9 +22,7 @@
             <ViewCell>
                 <Grid Margin="10">
                     <BoxView BackgroundColor="Red" Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="3"></BoxView>
-                    <Label Text="{Binding Name}" Grid.Row="5"/>
                     <Label Text="{Binding Rating}" Grid.Row="5" Grid.Column="2"/>
-                    <Label Text="{Binding Location}" Grid.Row="6" Grid.ColumnSpan="2"/>
                 </Grid>
             </ViewCell>
             </DataTemplate>

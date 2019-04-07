@@ -11,7 +11,7 @@ namespace Crosshelper.Models
         }
 
         public int PanelID { get; set; }
-        public string Name { get; set; }
+        public string HelperName { get; set; }
         public string Date { get; set; }
         public string Language { get; set; }
         public string Status { get; set; }
