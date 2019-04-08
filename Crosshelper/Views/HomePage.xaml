@@ -4,9 +4,6 @@
              x:Class="Crosshelper.Views.HomePage">
        <NavigationPage.TitleView>
     <Grid>
-        <Grid>
-            <Button Text="Alert" TextColor="White" HorizontalOptions="Start" Clicked="Handle_Notice"/>
-        </Grid>
         <Label Text="Home" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" ></Label>
         <Grid>
             <Button Text="Setting" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Setting"/>
