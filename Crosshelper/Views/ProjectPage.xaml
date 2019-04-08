@@ -1,38 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:local="clr-namespace:Crosshelper.Models;"  
-             x:Class="Crosshelper.Views.ProjectPage">
-        <ContentPage.Resources>
-        <ResourceDictionary>
-            <DataTemplate x:Key="firstItemTemplate">
-            <ViewCell>        
-                <Grid Margin="10,15,10,10">
-                    <Label Text="Project"
-                           TextColor="#575656"
-                           FontSize="18"
-                           Grid.Row="0"
-                           Grid.ColumnSpan="4"
-                           FontAttributes="Bold"/>
-                </Grid>
-            </ViewCell>
-            </DataTemplate>
-            
-            <DataTemplate x:Key="otherItemTemplate">
-            <ViewCell>
-                <Grid Margin="10">
-                    <BoxView BackgroundColor="Red" Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="3"></BoxView>
-                    <Label Text="{Binding Rating}" Grid.Row="5" Grid.Column="2"/>
-                </Grid>
-            </ViewCell>
-            </DataTemplate>
-            
-               <local:ItemsDataTemplateSelector x:Key="itemDataTemplateSelector" FirstItemTemplate="{StaticResource firstItemTemplate}" OtherItemTemplate="{StaticResource otherItemTemplate}"/>
-            </ResourceDictionary>
-        </ContentPage.Resources>
+             xmlns:tv="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"  
+             x:Class="Crosshelper.Views.ProjectPage">  
     <ContentPage.Content>
-         <StackLayout>
-            <ListView x:Name="listView" ItemSelected="Handle_ItemSelected" HasUnevenRows="true" ItemTemplate="{StaticResource itemDataTemplateSelector}"/> 
-        </StackLayout>        
+         <tv:TabViewControl HeaderTabTextFontSize="Default" HeaderBackgroundColor="Red" HeaderTabTextColor="Silver">
+            <tv:TabViewControl.ItemSource>
+                <tv:TabItem HeaderText="CURRENT">
+                    <Button Text="Go back to main page from first page"/>
+                </tv:TabItem>
+                <tv:TabItem HeaderText="PAST">
+                    <Button Text="Go back to main page from second page" BackgroundColor="Purple"/>
+                </tv:TabItem>
+            </tv:TabViewControl.ItemSource>
+        </tv:TabViewControl>         
     </ContentPage.Content>
 </ContentPage>
