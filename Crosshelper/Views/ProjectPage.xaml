@@ -4,12 +4,12 @@
              xmlns:tv="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"  
              x:Class="Crosshelper.Views.ProjectPage">  
     <ContentPage.Content>
-         <tv:TabViewControl HeaderTabTextFontSize="Default" HeaderBackgroundColor="Red" HeaderTabTextColor="Silver">
+         <tv:TabViewControl HeaderTabTextFontSize="Default" HeaderBackgroundColor="White">
             <tv:TabViewControl.ItemSource>
-                <tv:TabItem HeaderText="CURRENT">
+                <tv:TabItem HeaderText="CURRENT" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#FF4E18">
                     <Button Text="Go back to main page from first page"/>
                 </tv:TabItem>
-                <tv:TabItem HeaderText="PAST">
+                <tv:TabItem HeaderText="PAST" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#FF4E18">
                     <Button Text="Go back to main page from second page" BackgroundColor="Purple"/>
                 </tv:TabItem>
             </tv:TabViewControl.ItemSource>
