@@ -2,12 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:Crosshelper.Models;" 
-             x:Class="Crosshelper.Views.NewcomersProblemCategoryPage">
-     <NavigationPage.TitleView>
-        <Grid>
-            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
-        </Grid>
-    </NavigationPage.TitleView>
+             x:Class="Crosshelper.Views.NewcomersProblemCategoryPage"
+             Title="Get help">
        <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="firstItemTemplate">
@@ -92,13 +88,8 @@
     
     <ContentPage.Content>
          <StackLayout>
-            <StackLayout BackgroundColor="#FF4E18"  Margin="0,0,0,0">
-                <Label Text="Search" 
-                       Margin="10,20,10,0" 
-                       FontSize="20" 
-                       FontAttributes="Bold"
-                       TextColor="White"></Label>
-                <SearchBar
+            <StackLayout BackgroundColor="#FF4E18">
+                <SearchBar 
                            x:Name="MainSearchBar" 
                            BackgroundColor="#FF4E18" 
                            Placeholder="What type problem do you have?"/>

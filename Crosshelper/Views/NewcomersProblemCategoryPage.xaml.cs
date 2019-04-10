@@ -7,10 +7,7 @@ namespace Crosshelper.Views
 {
     public partial class NewcomersProblemCategoryPage : ContentPage
     {
-        void Handle_Canceled(object sender, System.EventArgs e)
-        {
-            Navigation.PopToRootAsync(false);
-        }
+
         public IList<SearchpageViewcellItem> PanelContent { get; set; }
         public NewcomersProblemCategoryPage()
         {

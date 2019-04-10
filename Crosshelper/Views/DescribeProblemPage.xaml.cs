@@ -26,17 +26,17 @@ namespace Crosshelper.Views
             (sender as Button).Text = "Click me again!";
         } 
         //Not Really按钮 Not really Button
-        void DPPNotReallyButton(object sender, EventArgs e)
+        void Handle_NotReally(object sender, EventArgs e)
         {
             (sender as Button).Text = "Click me again!";
         } 
         //Yes按钮 Yes Button
-        void DPPYesButton(object sender, EventArgs e)
+        void Handle_Yes(object sender, EventArgs e)
         {
             (sender as Button).Text = "Click me again!";
         }
         //下一步按钮 Next Button
-        void DPPNextButton(object sender, EventArgs e)
+        void Handle_Next(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PickHelperPage());
         }
@@ -51,6 +51,14 @@ namespace Crosshelper.Views
         void DPPDescribeProblemTextEditorCompleted(object sender, EventArgs e)
         {
             string text = ((Editor)sender).Text;
+        }
+        void Handle_Location(object sender, EventArgs e)
+        {
+            (sender as Button).Text = "Click me again!";
+        }
+        void Handle_Language(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SignInPage());
         }
     }
 }

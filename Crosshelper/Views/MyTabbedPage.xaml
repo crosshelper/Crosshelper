@@ -2,7 +2,18 @@
 <TabbedPage xmlns:views="clr-namespace:Crosshelper.Views" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.MyTabbedPage">
     <!--Pages can be added as references or inline-->
     <TabbedPage.Children>
-        <NavigationPage Title="Browse" BarBackgroundColor="#FF4E18">
+        <NavigationPage Title="Get help" BarBackgroundColor="#FF4E18">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_about.png" />
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:NewcomersProblemCategoryPage/>
+            </x:Arguments>
+        </NavigationPage>
+        
+        <NavigationPage Title="Chat" BarBackgroundColor="#FF4E18">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_feed.png" />
@@ -14,16 +25,27 @@
         </NavigationPage>
         
         
-        
-        <NavigationPage Title="About" BarBackgroundColor="#FF4E18">
+                <NavigationPage Title="Case" BarBackgroundColor="#FF4E18">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_about.png" />
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:NCAboutPage />
+                <views:ProjectPage/>
             </x:Arguments>
         </NavigationPage>
+        
+        <NavigationPage Title="Profile" BarBackgroundColor="#FF4E18">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_about.png" />
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:UserSettingPage />
+            </x:Arguments>
+        </NavigationPage>
+        
     </TabbedPage.Children>
 </TabbedPage>

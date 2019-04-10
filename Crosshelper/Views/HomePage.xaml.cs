@@ -14,8 +14,8 @@ namespace Crosshelper.Views
             InitializeComponent();
             // Lable&text Change
             // NameId: HPDate, HPLanguage, HPProjectDescription, HPProjectStatus
-            HPProject.GestureRecognizers.Add(new TapGestureRecognizer
-            { Command = new Command(() => { HPProject.Navigation.PushAsync(new ProjectPage()); }) });
+            //HPProject.GestureRecognizers.Add(new TapGestureRecognizer
+            //{ Command = new Command(() => { HPProject.Navigation.PushAsync(new ProjectPage()); }) });
             
         }
 
