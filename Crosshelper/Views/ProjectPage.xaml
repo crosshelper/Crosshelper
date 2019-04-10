@@ -6,12 +6,98 @@
     <ContentPage.Content>
          <tv:TabViewControl HeaderTabTextFontSize="Default" HeaderBackgroundColor="White">
             <tv:TabViewControl.ItemSource>
-                <tv:TabItem HeaderText="Current" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#FF4E18">
-                    <Button Text="Go back to main page from first page"/>
+                <!-- Current -->
+                <tv:TabItem x:Name="currentTab" HeaderText="Current" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#FF4E18">
+                        <StackLayout>
+                <ListView x:Name="currentList" HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell x:Name="PHPPickNewcomeButton">
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="3"
+                                           Grid.Row="0"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="65"
+                                           WidthRequest="65" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="0"
+                                           FontSize="20"
+                                           TextColor="#393939"
+                                           Text="{Binding Rating}"
+                                           FontAttributes="Bold" />
+                                    <Label Grid.Column="3"
+                                           Grid.Row="0"
+                                           TextColor="#393939"
+                                           Text="{Binding Language}"
+                                           VerticalOptions="End" />
+                                                
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+        </StackLayout>
                 </tv:TabItem>
-                <tv:TabItem HeaderText="Past" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#FF4E18">
-                    <Button Text="Go back to main page from second page" BackgroundColor="Purple"/>
+                
+                <!-- Past -->
+                                <tv:TabItem x:Name="pastTab" HeaderText="Past" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#FF4E18">
+                        <StackLayout>
+                <ListView x:Name="pastList" HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell x:Name="PHPPickNewcomeButton">
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="3"
+                                           Grid.Row="0"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="65"
+                                           WidthRequest="65" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="0"
+                                           FontSize="20"
+                                           TextColor="#393939"
+                                           Text="{Binding Rating}"
+                                           FontAttributes="Bold" />
+                                    <Label Grid.Column="3"
+                                           Grid.Row="0"
+                                           TextColor="#393939"
+                                           Text="{Binding Language}"
+                                           VerticalOptions="End" />
+                                                
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+        </StackLayout>
                 </tv:TabItem>
+               
             </tv:TabViewControl.ItemSource>
         </tv:TabViewControl>         
     </ContentPage.Content>

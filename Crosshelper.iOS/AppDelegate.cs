@@ -26,7 +26,8 @@ namespace Crosshelper.iOS
             AiForms.Renderers.iOS.SettingsViewInit.Init(); //need to write here
 
             LoadApplication(new App());
-            return base.FinishedLaunching(app, options);
+            UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(255, 78, 24);
+            return base.FinishedLaunching(app, options); 
         }
     }
 }
