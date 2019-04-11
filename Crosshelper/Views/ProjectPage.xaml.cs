@@ -7,6 +7,7 @@ namespace Crosshelper.Views
 {
     public partial class ProjectPage : ContentPage
     {
+
         public IList<ProjectpageViewcellItem> Project { get; set; }
         public ProjectPage()
         {
@@ -32,7 +33,7 @@ namespace Crosshelper.Views
                 Emergency = "Emergency",
                 Date = "09/20/2018",
                 Description = "I lost my langage at Pairs Charles de Gaulle Airport.But I can not speak French, and I dont  know how to find it.",
-                Status = "Op124en",
+                Status = "Open",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
             });
             Project.Add(new ProjectpageViewcellItem
@@ -43,7 +44,7 @@ namespace Crosshelper.Views
                 Emergency = "Emergency",
                 Date = "09/20/2018",
                 Description = "I lost my langage at Pairs Charles de Gaulle Airport.But I can not speak French, and I dont  know how to find it.",
-                Status = "Op123en",
+                Status = "Open",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
             });
             currentList.ItemsSource = Project;
@@ -54,12 +55,12 @@ namespace Crosshelper.Views
         }
         void Handle_CurrentItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            Navigation.PushAsync(new DescribeProblemPage());
+            Navigation.PushAsync(new PickHelperPage());
             //((ListView)sender).SelectedItem = null;
         }
         void Handle_PastItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            Navigation.PushAsync(new DescribeProblemPage());
+            Navigation.PushAsync(new PickHelperPage());
             //((ListView)sender).SelectedItem = null;
         }
     }

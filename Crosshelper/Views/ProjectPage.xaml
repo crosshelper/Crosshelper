@@ -3,49 +3,41 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:tv="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"  
              x:Class="Crosshelper.Views.ProjectPage"
-             Title="Project">  
+             Title="Cases">  
     <ContentPage.Content>
          <tv:TabViewControl HeaderTabTextFontSize="Default" HeaderBackgroundColor="White">
             <tv:TabViewControl.ItemSource>
                 <!-- Current -->
                 <tv:TabItem x:Name="currentTab" HeaderText="Current" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#FF4E18">
                         <StackLayout>
-                <ListView x:Name="currentList" HasUnevenRows="true">
+                <ListView x:Name="currentList" HasUnevenRows="true" ItemSelected="Handle_CurrentItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell x:Name="PHPPickNewcomeButton">
-                                <Grid Padding="10">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="20" />
-                                        <RowDefinition Height="20" />
-                                        <RowDefinition Height="20" />
-                                        <RowDefinition Height="20" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.RowSpan="3"
-                                           Grid.Row="0"
-                                           Source="{Binding ImageUrl}"
-                                           Aspect="AspectFill"
-                                           HeightRequest="65"
-                                           WidthRequest="65" />
-                                    <Label Grid.Column="1"
-                                           Grid.Row="0"
-                                           FontSize="20"
+                                <StackLayout Padding="15">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label 
+                                               TextColor="Red"
+                                               Text="{Binding Emergency}"/>
+                                        <StackLayout HorizontalOptions="EndAndExpand">
+                                        <Label 
+                                               TextColor="#393939"
+                                               Text="{Binding Date}"
+                                               VerticalOptions="End" />
+                                        <Label
+                                               TextColor="#393939"
+                                               Text="{Binding Language}"
+                                               VerticalOptions="End" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout>
+                                    <Label Text="Problem description" FontSize="Medium"></Label>
+                                    <Label 
                                            TextColor="#393939"
-                                           Text="{Binding Rating}"
-                                           FontAttributes="Bold" />
-                                    <Label Grid.Column="3"
-                                           Grid.Row="0"
-                                           TextColor="#393939"
-                                           Text="{Binding Language}"
-                                           VerticalOptions="End" />
-                                                
-                                </Grid>
+                                           Text="{Binding Description}"
+                                           VerticalOptions="End" />   
+                                    </StackLayout>
+                                </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -54,44 +46,35 @@
                 </tv:TabItem>
                 
                 <!-- Past -->
-                                <tv:TabItem x:Name="pastTab" HeaderText="Past" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#FF4E18">
+        <tv:TabItem x:Name="pastTab" HeaderText="Past" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#999999">
                         <StackLayout>
-                <ListView x:Name="pastList" HasUnevenRows="true">
+                <ListView x:Name="pastList" HasUnevenRows="true" ItemSelected="Handle_PastItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell x:Name="PHPPickNewcomeButton">
-                                <Grid Padding="10">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="20" />
-                                        <RowDefinition Height="20" />
-                                        <RowDefinition Height="20" />
-                                        <RowDefinition Height="20" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.RowSpan="3"
-                                           Grid.Row="0"
-                                           Source="{Binding ImageUrl}"
-                                           Aspect="AspectFill"
-                                           HeightRequest="65"
-                                           WidthRequest="65" />
-                                    <Label Grid.Column="1"
-                                           Grid.Row="0"
-                                           FontSize="20"
+                                <StackLayout Padding="15">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label 
+                                               Text="{Binding Emergency}"/>
+                                        <StackLayout HorizontalOptions="EndAndExpand">
+                                        <Label 
+                                               TextColor="#393939"
+                                               Text="{Binding Date}"
+                                               VerticalOptions="End" />
+                                        <Label
+                                               TextColor="#393939"
+                                               Text="{Binding Language}"
+                                               VerticalOptions="End" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout>
+                                    <Label Text="Problem description" FontSize="Medium"></Label>
+                                    <Label 
                                            TextColor="#393939"
-                                           Text="{Binding Rating}"
-                                           FontAttributes="Bold" />
-                                    <Label Grid.Column="3"
-                                           Grid.Row="0"
-                                           TextColor="#393939"
-                                           Text="{Binding Language}"
-                                           VerticalOptions="End" />
-                                                
-                                </Grid>
+                                           Text="{Binding Description}"
+                                           VerticalOptions="End" />   
+                                    </StackLayout>
+                                </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
