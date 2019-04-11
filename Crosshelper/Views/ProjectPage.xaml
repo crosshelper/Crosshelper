@@ -9,7 +9,7 @@
             <tv:TabViewControl.ItemSource>
                 <!-- Current -->
                 <tv:TabItem x:Name="currentTab" HeaderText="Current" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#FF4E18">
-                        <StackLayout>
+            <StackLayout>
                 <ListView x:Name="currentList" HasUnevenRows="true" ItemSelected="Handle_CurrentItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>

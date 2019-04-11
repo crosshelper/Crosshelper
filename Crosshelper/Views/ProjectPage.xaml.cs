@@ -60,7 +60,7 @@ namespace Crosshelper.Views
         }
         void Handle_PastItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            Navigation.PushAsync(new PickHelperPage());
+            Navigation.PushAsync(new PastHistoryDetailPage());
             //((ListView)sender).SelectedItem = null;
         }
     }
