@@ -14,8 +14,8 @@ namespace Crosshelper.Views
             InitializeComponent();
             // Lable&text Change
             // NameId: HPDate, HPLanguage, HPProjectDescription, HPProjectStatus
-            HPProject.GestureRecognizers.Add(new TapGestureRecognizer
-            { Command = new Command(() => { HPProject.BackgroundColor = Color.Blue; }) });
+            //HPProject.GestureRecognizers.Add(new TapGestureRecognizer
+            //{ Command = new Command(() => { HPProject.Navigation.PushAsync(new ProjectPage()); }) });
             
         }
 
@@ -40,6 +40,17 @@ namespace Crosshelper.Views
         {
             (sender as Button).Text = "Click me again!";
         }
+
+        void Handle_Setting(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new UserSettingPage());
+        }
+
+        void Handle_Notice(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new NoticePage());
+        }
+
         void HPLanguage(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SignInPage());
@@ -48,7 +59,7 @@ namespace Crosshelper.Views
         //Get help button
         void HPGetHelp(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new UserSettingPage());
+            Navigation.PushAsync(new MyTabbedPage());
         }
 
     }

@@ -7,6 +7,44 @@ namespace Crosshelper.Views
 {
     public partial class UserSettingPage : ContentPage
     {
+        void Handle_MyProfile(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new ProfilePage());
+        }
+        void Handle_Mybackground(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new MyBackgroundPage());
+        }
+        void Handle_PaymentMethod(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new PaymentPage());
+        }
+
+        void Handle_Promotion(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new PromotionCodePage());
+        }
+        void Handle_TrustedContacts(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new TrustedContactsPage());
+        }
+        void Handle_Privacy(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new PrivacyPage());
+        }
+        void Handle_AgreementPage(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new AgreementPage());
+        }
+        void Handle_AboutUs(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new NCAboutPage());
+        }
+        void Handle_SignOut(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new SignInPage());
+        }
+
         public UserSettingPage()
         {
             InitializeComponent();

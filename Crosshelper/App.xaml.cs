@@ -12,9 +12,10 @@ namespace Crosshelper
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePage))) {
-                BarBackgroundColor = Color.FromHex("#FF4E18"),
-                BarTextColor = Color.White };
+            //MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePage))) {
+            //  BarBackgroundColor = Color.FromHex("#FF4E18"),
+            //BarTextColor = Color.White };
+            MainPage = new MyTabbedPage();
         }
 
         protected override void OnStart()

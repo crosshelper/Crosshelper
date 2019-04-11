@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.SignUpPage">
+       <NavigationPage.TitleView>
+            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" Clicked="Handle_Canceled" FontSize="20"/>
+        </NavigationPage.TitleView>
     <ContentPage.Content>
            <StackLayout Margin="20,35,20,25">
-
-             <!--登入 Sign In lable -->
+                  <!--登入 Sign In lable -->
                     <Label Margin="0,0,16,30"
                            Text="Sign Up"
                            TextColor="#FF4E17"
@@ -37,14 +39,13 @@
                                     FontAttributes="Bold"
                                     BackgroundColor="#FF4E18"
                                     Margin="0,20,0,0"
-                                    Clicked="SUPSignUp"/>
+                                    Clicked="Handle_SignUp"/>
                             <Button  
                                     Text="Or sign up as a helper"
                                     FontSize="Small"
                                     FontAttributes="Bold"
                                     Clicked="SUPSignUpAsHelper"/>
                     </StackLayout>
-
             </StackLayout>
     </ContentPage.Content>
 </ContentPage>

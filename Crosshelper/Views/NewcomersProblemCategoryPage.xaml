@@ -2,15 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:Crosshelper.Models;" 
-             x:Class="Crosshelper.Views.NewcomersProblemCategoryPage">
+             x:Class="Crosshelper.Views.NewcomersProblemCategoryPage"
+             Title="Get help">
        <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="firstItemTemplate">
             <ViewCell>        
-                <Grid Margin="0,5,0,0">
+                <Grid Margin="10,5,10,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="25" />
-                        <RowDefinition Height="80" />
+                        <RowDefinition Height="70" />
                         <RowDefinition Height="30" />
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
@@ -20,14 +21,14 @@
                            FontSize="17"
                            Grid.Row="0"
                            Grid.Column="0"
-                           Grid.ColumnSpan="2"
+                           Grid.ColumnSpan="3"
                            FontAttributes="Bold"/>
                     <Label Text="More"
                            TextColor="#575656"
                            Margin="0,5,0,0"
-                           FontSize="15"
+                           FontSize="13"
                            Grid.Row="0"
-                           Grid.Column="2"
+                           Grid.Column="4"
                            Grid.ColumnSpan="1"
                            x:Name="PCPMoreButton"
                            TextDecorations="Underline"
@@ -48,14 +49,19 @@
                             BackgroundColor="#FF4E18" 
                             Grid.Row="1"
                             Source="{Binding ImageUrl}"
-                            Grid.Column="3"></ImageButton>
+                            Grid.Column="2"></ImageButton>
                     <ImageButton 
                             BackgroundColor="#FF4E18" 
                             Grid.Row="1"
                             Source="{Binding ImageUrl}"
-                            Grid.Column="2"></ImageButton>
+                            Grid.Column="3"></ImageButton>
+                     <ImageButton 
+                            BackgroundColor="#FF4E18" 
+                            Grid.Row="1"
+                            Source="{Binding ImageUrl}"
+                            Grid.Column="4"></ImageButton>
                     <Label Text="Recommendations"
-                           Margin="0,10,0,0"
+                           Margin="0,0,0,0"
                            TextColor="#575656"
                            FontSize="16"
                            Grid.Row="2"
@@ -67,8 +73,11 @@
             
             <DataTemplate x:Key="otherItemTemplate">
             <ViewCell>
-                <Grid>
-                    <Label Text="{Binding Name}" BackgroundColor=" Fuchsia "/>
+                <Grid Margin="10">
+                    <BoxView BackgroundColor="Red" Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="3"></BoxView>
+                    <Label Text="{Binding Name}" Grid.Row="5"/>
+                    <Label Text="{Binding Rating}" Grid.Row="5" Grid.Column="2"/>
+                    <Label Text="{Binding Location}" Grid.Row="6" Grid.ColumnSpan="2"/>
                 </Grid>
             </ViewCell>
             </DataTemplate>
@@ -79,13 +88,8 @@
     
     <ContentPage.Content>
          <StackLayout>
-            <StackLayout BackgroundColor="#FF4E18"  Margin="0,0,0,0">
-                <Label Text="Search" 
-                       Margin="10,20,10,0" 
-                       FontSize="20" 
-                       FontAttributes="Bold"
-                       TextColor="White"></Label>
-                <SearchBar
+            <StackLayout BackgroundColor="#FF4E18">
+                <SearchBar 
                            x:Name="MainSearchBar" 
                            BackgroundColor="#FF4E18" 
                            Placeholder="What type problem do you have?"/>

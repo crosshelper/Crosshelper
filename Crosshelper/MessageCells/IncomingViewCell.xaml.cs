@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
 
-namespace Crosshelper.Views
+namespace Crosshelper.MessageCells
 {
-    public partial class NewcomerMyProfilePage : ContentPage
+    public partial class IncomingViewCell : ContentView
     {
-        public NewcomerMyProfilePage()
+        public IncomingViewCell()
         {
             InitializeComponent();
         }

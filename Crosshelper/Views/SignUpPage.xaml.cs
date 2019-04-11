@@ -11,6 +11,11 @@ namespace Crosshelper.Views
         {
             InitializeComponent();
         }
+        //取消按钮 Cancel
+        void Handle_Canceled(object sender, EventArgs e)
+        {
+            Navigation.PopToRootAsync(false);
+        }
         //返回按钮 Go Back
         void SUPGoBack(object sender, EventArgs e)
         {
@@ -30,9 +35,9 @@ namespace Crosshelper.Views
             string text = ((Entry)sender).Text;
         }
         //注册按钮 Sign Up
-        void SUPSignUp(object sender, EventArgs e)
+        void Handle_SignUp(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            Navigation.PopAsync(false);
         }
         void SUPSignUpAsHelper(object sender, EventArgs e)
         {

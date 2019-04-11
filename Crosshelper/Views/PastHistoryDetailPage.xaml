@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Crosshelper.Views.PastHistoryDetailPage"
+             Title="Case detail">
+    <ContentPage.Content>
+            <StackLayout>
+            <ScrollView>
+                 <StackLayout>
+                 <!--Project view --> 
+                            <StackLayout Grid.Row="4"  Margin="16,15,16,0"
+                                         Padding="3"
+                                         VerticalOptions="FillAndExpand" 
+                                         BackgroundColor="#F4F4F4"
+                                         x:Name="HPProject">
+                                <StackLayout BackgroundColor="White" Padding="15" VerticalOptions="FillAndExpand">
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout >
+                                              <Label Text="Emergency" TextColor="Red" FontSize="Small" FontAttributes="Bold"></Label>
+                                            </StackLayout>
+                                              <StackLayout HorizontalOptions="EndAndExpand">
+                                                    <Label Text="09/29/2018" FontSize="Micro" TextColor="#242424" x:Name="CaseDate"></Label>
+                                                    <Label Text="Chinese" FontSize="Micro" TextColor="#242424" x:Name="HPProjectLanguage"></Label>
+                                               </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout>
+                                            <Label Text="Problem description" FontSize="Small"></Label>
+                                            <Label Text="I lost my langage at Pairs Charles de Gaulle Airport.But I can not speak French, and I dont  know how to find it."
+                                                   FontSize="Micro" TextColor="#242424" x:Name="HPProjectDescription"></Label>
+                                            <Label Text="Open" HorizontalOptions="End" FontSize="Small" TextColor="#79B563" x:Name="HPProjectStatus"></Label>
+                                        </StackLayout>   
+                                  </StackLayout>
+                             </StackLayout>
+            </StackLayout>
+
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

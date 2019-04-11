@@ -7,6 +7,7 @@ namespace Crosshelper.Views
 {
     public partial class NewcomersProblemCategoryPage : ContentPage
     {
+
         public IList<SearchpageViewcellItem> PanelContent { get; set; }
         public NewcomersProblemCategoryPage()
         {
@@ -27,7 +28,6 @@ namespace Crosshelper.Views
             {
                 PanelID = 0,
                 Name = "Mike",
-
                 Rating = 55555,
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
@@ -35,6 +35,36 @@ namespace Crosshelper.Views
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"
             });
 
+            PanelContent.Add(new SearchpageViewcellItem
+            {
+                PanelID = 0,
+                Name = "David",
+                Rating = 55555,
+                Language = "Language: Japanese/English",
+                Baseprice = "$40 starting cost",
+                Location = "8 miles away from me",
+                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
+            });
+            PanelContent.Add(new SearchpageViewcellItem
+            {
+                PanelID = 0,
+                Name = "David",
+                Rating = 55555,
+                Language = "Language: Japanese/English",
+                Baseprice = "$40 starting cost",
+                Location = "8 miles away from me",
+                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
+            });
+            PanelContent.Add(new SearchpageViewcellItem
+            {
+                PanelID = 0,
+                Name = "David",
+                Rating = 55555,
+                Language = "Language: Japanese/English",
+                Baseprice = "$40 starting cost",
+                Location = "8 miles away from me",
+                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
+            });
             PanelContent.Add(new SearchpageViewcellItem
             {
                 PanelID = 0,
