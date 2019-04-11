@@ -21,7 +21,7 @@ namespace Crosshelper.Models
         public string ImageUrl { get; set; }
         public string ServiceFee { get; set; }
         public string EquipmentFee { get; set; }
-        public string ChFee { get; set; }
+        public string CycbisFee { get; set; }
         public string Tax { get; set; }
         public string Total { get; set; }
         public string Contact { get; set; }
