@@ -24,7 +24,7 @@ namespace Crosshelper.Views
             {
                 Name = "Baboon",
                 Bornin = "China",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -37,7 +37,7 @@ namespace Crosshelper.Views
             {
                 Name = "Mike",
                 Bornin = "China",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",

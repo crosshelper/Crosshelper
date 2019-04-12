@@ -10,7 +10,7 @@ namespace Crosshelper.Models
         }
         public string Name { get; set; }
         public string Bornin { get; set; }
-        public int Rating { get; set; }
+        public string Rating { get; set; }
         public string Language { get; set; }
         public string Baseprice { get; set; }
         public string Location { get; set; }

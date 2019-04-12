@@ -75,9 +75,9 @@
             <ViewCell>
                 <Grid Margin="10">
                     <Image Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="3" Source="{Binding ImageUrl}"></Image>
-                    <Label Text="{Binding Name}" Grid.Row="5"/>
-                    <Label Text="{Binding Rating}" Grid.Row="5" Grid.Column="2"/>
-                    <Label Text="{Binding Location}" Grid.Row="6" Grid.ColumnSpan="2"/>
+                    <Label Text="{Binding Name}" Grid.Row="5" Grid.ColumnSpan="2" FontAttributes="Bold" TextColor="#4B4B4B"/>
+                    <Label Text="{Binding Rating}" Grid.Row="5" Grid.Column="2" TextColor="#FFC834"/>
+                    <Label Text="{Binding Location}" Grid.Row="6" Grid.ColumnSpan="2" TextColor="#848484"/>
                 </Grid>
             </ViewCell>
             </DataTemplate>

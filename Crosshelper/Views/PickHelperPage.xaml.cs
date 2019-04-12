@@ -27,7 +27,7 @@ namespace Crosshelper.Views
             {
                 Name = "Baboon",
                 Bornin = "China",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -40,7 +40,7 @@ namespace Crosshelper.Views
             {
                 Name = "Mike",
                 Bornin = "China",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -53,7 +53,7 @@ namespace Crosshelper.Views
             {
                 Name = "David",
                 Bornin = "Japan",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Japanese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -66,7 +66,7 @@ namespace Crosshelper.Views
             {
                 Name = "Jas",
                 Bornin = "Korea",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Korean/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -79,7 +79,7 @@ namespace Crosshelper.Views
             {
                 Name = "Jack",
                 Bornin = "China",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -92,7 +92,7 @@ namespace Crosshelper.Views
             {
                 Name = "Duke",
                 Bornin = "Germany",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: German/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -105,7 +105,7 @@ namespace Crosshelper.Views
             {
                 Name = "Bill",
                 Bornin = "Germany",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: German/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -118,7 +118,7 @@ namespace Crosshelper.Views
             {
                 Name = "Marry",
                 Bornin = "Russia",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Russian/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -131,7 +131,7 @@ namespace Crosshelper.Views
             {
                 Name = "Christ",
                 Bornin = "Duby",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -144,7 +144,7 @@ namespace Crosshelper.Views
             {
                 Name = "Leon",
                 Bornin = "Iraq",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -157,7 +157,7 @@ namespace Crosshelper.Views
             {
                 Name = "Ada",
                 Bornin = "Korea",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Korean/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -170,7 +170,7 @@ namespace Crosshelper.Views
             {
                 Name = "Bob",
                 Bornin = "Japan",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Japanese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -183,7 +183,7 @@ namespace Crosshelper.Views
             {
                 Name = "Fury",
                 Bornin = "Sweeden",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -196,7 +196,7 @@ namespace Crosshelper.Views
             {
                 Name = "Leo",
                 Bornin = "Language: Russia",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Russian/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -209,7 +209,7 @@ namespace Crosshelper.Views
             {
                 Name = "Nick",
                 Bornin = "Mexico",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Spanish/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -222,7 +222,7 @@ namespace Crosshelper.Views
             {
                 Name = "Juliya",
                 Bornin = "France",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Franch/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -235,7 +235,7 @@ namespace Crosshelper.Views
             {
                 Name = "Joserph",
                 Bornin = "Italy",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Italian/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",

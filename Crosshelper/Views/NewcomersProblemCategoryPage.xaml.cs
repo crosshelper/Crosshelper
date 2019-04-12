@@ -17,7 +17,7 @@ namespace Crosshelper.Views
             {
                 PanelID = 1,
                 Name = "Baboon",
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -27,8 +27,8 @@ namespace Crosshelper.Views
             PanelContent.Add(new SearchpageViewcellItem
             {
                 PanelID = 0,
-                Name = "Mike",
-                Rating = 55555,
+                Name = "Foothill car repair center",
+                Rating = "★★★★☆",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -38,8 +38,8 @@ namespace Crosshelper.Views
             PanelContent.Add(new SearchpageViewcellItem
             {
                 PanelID = 0,
-                Name = "David",
-                Rating = 55555,
+                Name = "David&Lee business firm",
+                Rating = "★★★☆☆",
                 Language = "Language: Japanese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -48,8 +48,8 @@ namespace Crosshelper.Views
             PanelContent.Add(new SearchpageViewcellItem
             {
                 PanelID = 0,
-                Name = "David",
-                Rating = 55555,
+                Name = "Emergency",
+                Rating = "★★★★★",
                 Language = "Language: Japanese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -58,8 +58,8 @@ namespace Crosshelper.Views
             PanelContent.Add(new SearchpageViewcellItem
             {
                 PanelID = 0,
-                Name = "David",
-                Rating = 55555,
+                Name = "David lawyer llc.",
+                Rating = "★★★★★",
                 Language = "Language: Japanese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
@@ -68,8 +68,8 @@ namespace Crosshelper.Views
             PanelContent.Add(new SearchpageViewcellItem
             {
                 PanelID = 0,
-                Name = "Davidd",
-                Rating = 55555,
+                Name = "San Jose urgent care",
+                Rating = "★★★★★",
                 Language = "Language: Japanese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
