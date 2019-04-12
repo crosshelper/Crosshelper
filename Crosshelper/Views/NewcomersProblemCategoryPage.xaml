@@ -7,7 +7,7 @@
        <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="firstItemTemplate">
-            <ViewCell>        
+            <ViewCell >        
                 <Grid Margin="10,5,10,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="25" />
@@ -37,28 +37,28 @@
                     <ImageButton 
                             BackgroundColor="#FF4E18" 
                             Grid.Row="1"
-                            Source="{Binding ImageUrl}"
+                            Source=""
                             Grid.Column="0"
                             Clicked="DailyLifeButton"></ImageButton>
                     <ImageButton 
                             BackgroundColor="#FF4E18" 
                             Grid.Row="1"
-                            Source="{Binding ImageUrl}"
+                            Source=""
                             Grid.Column="1"></ImageButton>
                     <ImageButton 
                             BackgroundColor="#FF4E18" 
                             Grid.Row="1"
-                            Source="{Binding ImageUrl}"
+                            Source=""
                             Grid.Column="2"></ImageButton>
                     <ImageButton 
                             BackgroundColor="#FF4E18" 
                             Grid.Row="1"
-                            Source="{Binding ImageUrl}"
+                            Source=""
                             Grid.Column="3"></ImageButton>
                      <ImageButton 
                             BackgroundColor="#FF4E18" 
                             Grid.Row="1"
-                            Source="{Binding ImageUrl}"
+                            Source=""
                             Grid.Column="4"></ImageButton>
                     <Label Text="Recommendations"
                            Margin="0,0,0,0"
@@ -74,7 +74,7 @@
             <DataTemplate x:Key="otherItemTemplate">
             <ViewCell>
                 <Grid Margin="10">
-                    <BoxView BackgroundColor="Red" Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="3"></BoxView>
+                    <Image Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="3" Source="{Binding ImageUrl}"></Image>
                     <Label Text="{Binding Name}" Grid.Row="5"/>
                     <Label Text="{Binding Rating}" Grid.Row="5" Grid.Column="2"/>
                     <Label Text="{Binding Location}" Grid.Row="6" Grid.ColumnSpan="2"/>

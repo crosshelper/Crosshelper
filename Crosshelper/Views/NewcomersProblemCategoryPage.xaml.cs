@@ -21,7 +21,7 @@ namespace Crosshelper.Views
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
-                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
+                ImageUrl = ""
             });
 
             PanelContent.Add(new SearchpageViewcellItem
@@ -32,7 +32,7 @@ namespace Crosshelper.Views
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
-                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
             });
 
             PanelContent.Add(new SearchpageViewcellItem
@@ -43,7 +43,7 @@ namespace Crosshelper.Views
                 Language = "Language: Japanese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
-                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
             });
             PanelContent.Add(new SearchpageViewcellItem
             {
@@ -53,7 +53,7 @@ namespace Crosshelper.Views
                 Language = "Language: Japanese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
-                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
             });
             PanelContent.Add(new SearchpageViewcellItem
             {
@@ -63,17 +63,17 @@ namespace Crosshelper.Views
                 Language = "Language: Japanese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
-                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
             });
             PanelContent.Add(new SearchpageViewcellItem
             {
                 PanelID = 0,
-                Name = "David",
+                Name = "Davidd",
                 Rating = 55555,
                 Language = "Language: Japanese/English",
                 Baseprice = "$40 starting cost",
                 Location = "8 miles away from me",
-                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom005.png"
             });
 
             listView.ItemsSource = PanelContent;
