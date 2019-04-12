@@ -42,14 +42,14 @@
                                                         WidthRequest="85"
                                                         BorderRadius="5" BackgroundColor="#FF4E18" 
                                                         TextColor="White" BorderWidth="1" FontAttributes="Bold" 
-                                                        FontSize="16"
+                                                        FontSize="Small"
                                                         Clicked="Handle_NotReally"></Button>
                                     <Button Text="Yes" BorderColor="#FF4E18" 
                                                         WidthRequest="85"
                                                         Margin="5,0,0,0"
                                                         BorderRadius="5" BackgroundColor="#FF4E18" 
                                                         TextColor="White" BorderWidth="1" FontAttributes="Bold" 
-                                                        FontSize="16"
+                                                        FontSize="Small"
                                                         Clicked="Handle_Yes"></Button>
                                 </StackLayout>
 
