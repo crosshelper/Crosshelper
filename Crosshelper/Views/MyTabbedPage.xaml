@@ -20,7 +20,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:HomePage/>
+                <views:FavoritePage/>
             </x:Arguments>
         </NavigationPage>
         
