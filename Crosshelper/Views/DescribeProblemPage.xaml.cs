@@ -15,16 +15,6 @@ namespace Crosshelper.Views
         {
             InitializeComponent();
         }
-        //返回按钮 Go Back
-        void DPPbackButton(object sender, EventArgs e)
-        {
-            (sender as Button).Text = "Click me again!";
-        } 
-        //取消按钮 cancel
-        void DPPCancelButton(object sender, EventArgs e)
-        {
-            (sender as Button).Text = "Click me again!";
-        } 
         //Not Really按钮 Not really Button
         void Handle_NotReally(object sender, EventArgs e)
         {
@@ -42,13 +32,7 @@ namespace Crosshelper.Views
         }
 
         //Describe Problem Text Editor
-        void DPPDescribeProblemTextEditorChanged(object sender, TextChangedEventArgs e)
-        {
-            string oldText = e.OldTextValue;
-            string newText = e.NewTextValue;
-        }
-
-        void DPPDescribeProblemTextEditorCompleted(object sender, EventArgs e)
+        void DescribeProblemEditorCompleted(object sender, EventArgs e)
         {
             string text = ((Editor)sender).Text;
         }
