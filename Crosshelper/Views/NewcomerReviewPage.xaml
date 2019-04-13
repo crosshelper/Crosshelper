@@ -20,10 +20,11 @@
                <!--Helper info -->
                       <StackLayout Orientation="Horizontal" Margin="20,10,20,0" VerticalOptions="Start">
                               <StackLayout HorizontalOptions="Start">
-                                 <BoxView
+                                 <Image
+                                    Source="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
                                     WidthRequest="70" 
                                     HeightRequest="70"
-                                    BackgroundColor="Blue" />
+                                    />
                               </StackLayout>
                     
                              <StackLayout HorizontalOptions="Start">

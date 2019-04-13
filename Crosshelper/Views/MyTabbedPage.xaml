@@ -20,11 +20,10 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:NewcomerReviewPage/>
+                <views:FavoritePage/>
             </x:Arguments>
         </NavigationPage>
-        
-        
+
                 <NavigationPage Title="Cases" BarBackgroundColor="#FF4E18">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -46,6 +45,5 @@
                 <views:UserSettingPage />
             </x:Arguments>
         </NavigationPage>
-        
     </TabbedPage.Children>
 </TabbedPage>

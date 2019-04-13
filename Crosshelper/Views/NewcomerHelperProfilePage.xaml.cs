@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Crosshelper.Models;
 using Xamarin.Forms;
 
 namespace Crosshelper.Views
@@ -14,8 +14,6 @@ namespace Crosshelper.Views
         public NewcomerHelperProfilePage()
         {
             InitializeComponent();
-            //NHPPHelperName,NHPPHelperFrom,NHPPHelperLanguage,NHPPHelperHelpingLocation,NHPPHelperStayTime,NHPPSpecialities
-            //NHPPAboutMyself,NHPPDigitalHelpPriceOne,NHPPDigitalHelpPriceTwo,NHPPRealWorldHelpPriceOne,NHPPRealWorldHelpPriceTwo
         }
         //Top Ring&Menu button
         void NHPPBackButton(object sender, EventArgs e)
