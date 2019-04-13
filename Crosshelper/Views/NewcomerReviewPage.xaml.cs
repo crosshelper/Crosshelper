@@ -7,12 +7,14 @@ namespace Crosshelper.Views
 {
     public partial class NewcomerReviewPage : ContentPage
     {
+
         void Handle_Canceled(object sender, System.EventArgs e)
         {
             Navigation.PopToRootAsync(false);
         }
         public NewcomerReviewPage()
         {
+
             InitializeComponent();
         }
         //Top Ring&Menu button
@@ -39,6 +41,27 @@ namespace Crosshelper.Views
         void NRPSubmit(object sender, EventArgs e)
         {
             (sender as Button).Text = "Click me again!";
+        }
+        //Star Rating button
+        void Handle_StarClickedOne(object sender, EventArgs e)
+        {
+            (sender as Button).Text = "★";
+        }
+        void Handle_StarClickedTwo(object sender, EventArgs e)
+        {
+            (sender as Button).Text = "★";
+        }
+        void Handle_StarClickedThree(object sender, EventArgs e)
+        {
+            (sender as Button).Text = "★";
+        }
+        void Handle_StarClickedFour(object sender, EventArgs e)
+        {
+            (sender as Button).Text = "★";
+        }
+        void Handle_StarClickedFive(object sender, EventArgs e)
+        {
+            (sender as Button).Text = "★";
         }
     }
 }
