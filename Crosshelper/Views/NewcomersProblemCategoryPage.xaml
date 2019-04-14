@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:Crosshelper.Models;" 
              x:Class="Crosshelper.Views.NewcomersProblemCategoryPage"
              Title="Get help">
+    <NavigationPage.TitleView>
+        <Grid>
+            <Button Text="1234 Broadway Ave ▼" TextColor="White" FontSize="17" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Button Text="Alert" TextColor="White" HorizontalOptions="End" FontSize="17"/>
+        </Grid>
+    </NavigationPage.TitleView>
        <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="firstItemTemplate">
