@@ -6,7 +6,7 @@
              Title="Get help">
     <NavigationPage.TitleView>
         <Grid>
-            <Button Text="1234 Broadway Ave ▼" TextColor="White" FontSize="17" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Button Text="1234 Broadway Ave ▼" TextColor="White" FontSize="17" HorizontalOptions="Center" VerticalOptions="Center" Clicked="Handle_location"/>
             <Button Text="Alert" TextColor="White" HorizontalOptions="End" FontSize="17"/>
         </Grid>
     </NavigationPage.TitleView>

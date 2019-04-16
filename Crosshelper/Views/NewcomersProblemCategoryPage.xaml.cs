@@ -91,5 +91,10 @@ namespace Crosshelper.Views
         {
             Navigation.PushAsync(new DescribeProblemPage());
         }
+
+        void Handle_location(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CurrentLocationPage());
+        }
     }
 }
