@@ -26,7 +26,7 @@
                                                VerticalOptions="End" />
                                         <Label
                                                TextColor="#393939"
-                                               Text="{Binding Langu7age}"
+                                               Text="{Binding Language}"
                                                VerticalOptions="End" />
                                         </StackLayout>
                                     </StackLayout>

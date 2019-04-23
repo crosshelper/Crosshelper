@@ -10,18 +10,17 @@
             <Button Text="Alert" TextColor="White" HorizontalOptions="End" FontSize="17"/>
         </Grid>
     </NavigationPage.TitleView>
-       <ContentPage.Resources>
-        <ResourceDictionary>
-            <DataTemplate x:Key="firstItemTemplate">
-            <ViewCell >        
-                <Grid Margin="10,5,10,0">
+      <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="15">
+                <StackLayout>
+                   <Grid Margin="10,5,10,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="25" />
                         <RowDefinition Height="70" />
                         <RowDefinition Height="30" />
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    
                     <Label Text="Problem Category"
                            TextColor="#575656"
                            FontSize="17"
@@ -74,33 +73,23 @@
                            Grid.ColumnSpan="4"
                            FontAttributes="Bold"/>
                 </Grid>
-            </ViewCell>
-            </DataTemplate>
-            
-            <DataTemplate x:Key="otherItemTemplate">
-            <ViewCell>
-                <Grid Margin="10">
-                    <Image Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="3" Source="{Binding ImageUrl}"></Image>
-                    <Label Text="{Binding Name}" Grid.Row="5" Grid.ColumnSpan="2" FontAttributes="Bold" TextColor="#4B4B4B"/>
-                    <Label Text="{Binding Rating}" Grid.Row="5" Grid.Column="2" TextColor="#FFC834"/>
-                    <Label Text="{Binding Location}" Grid.Row="6" Grid.ColumnSpan="2" TextColor="#848484"/>
-                </Grid>
-            </ViewCell>
-            </DataTemplate>
-            
-           <local:ItemsDataTemplateSelector x:Key="itemDataTemplateSelector" FirstItemTemplate="{StaticResource firstItemTemplate}" OtherItemTemplate="{StaticResource otherItemTemplate}"/>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    
-    <ContentPage.Content>
-         <StackLayout>
-            <StackLayout BackgroundColor="#FF4E18">
-                <SearchBar 
-                           x:Name="MainSearchBar" 
-                           BackgroundColor="#FF4E18" 
-                           Placeholder="What type problem do you have?"/>
+                </StackLayout>
+            <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
+                <ListView ItemsSource="{Binding Helpers}" HorizontalScrollBarVisibility="Always" HasUnevenRows="true" ItemSelected="Handle_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell x:Name="PHPPickNewcomeButton">
+                                <Grid Padding="10">
+                                    <Image Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="3" Source="{Binding ImageUrl}"></Image>
+                                    <Label Text="{Binding HelperName}" Grid.Row="5" Grid.ColumnSpan="2" FontAttributes="Bold" TextColor="#4B4B4B"/>
+                                    <Label Text="{Binding Rating}" Grid.Row="5" Grid.Column="2" TextColor="#FFC834"/>
+                                    <Label Text="{Binding Location}" Grid.Row="6" Grid.ColumnSpan="2" TextColor="#848484"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
-            <ListView x:Name="listView" ItemSelected="Handle_ItemSelected" HasUnevenRows="true" ItemTemplate="{StaticResource itemDataTemplateSelector}"/> 
-        </StackLayout>        
-    </ContentPage.Content>
+            </ScrollView>
+        </ContentPage.Content>
 </ContentPage>

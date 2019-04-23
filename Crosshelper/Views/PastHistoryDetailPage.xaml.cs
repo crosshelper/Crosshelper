@@ -17,7 +17,7 @@ namespace Crosshelper.Views
             CaseDetail.Add(new ProjectpageViewcellItem
             {
                 PanelID = 1,
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Chinese/English",
                 Emergency = "Emergency",
                 Date = "09/20/2018",

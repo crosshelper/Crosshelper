@@ -16,7 +16,7 @@ namespace Crosshelper.Views
             Project.Add(new ProjectpageViewcellItem
             {
                 PanelID = 1,
-                Rating = 55555,
+                Rating = "★★★★★",
                 Language = "Chinese/English",
                 Emergency = "Emergency",
                 Date = "09/20/2018",
@@ -28,7 +28,7 @@ namespace Crosshelper.Views
             Project.Add(new ProjectpageViewcellItem
             {
                 PanelID = 4124,
-                Rating = 53251555,
+                Rating = "★★★★★",
                 Language = "Chinese/English",
                 Emergency = "Emergency",
                 Date = "09/20/2018",
@@ -39,7 +39,7 @@ namespace Crosshelper.Views
             Project.Add(new ProjectpageViewcellItem
             {
                 PanelID = 23,
-                Rating = 551231555,
+                Rating = "★★★★★",
                 Language = "Chinese/English",
                 Emergency = "Emergency",
                 Date = "09/20/2018",
