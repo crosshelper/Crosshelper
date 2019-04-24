@@ -7,9 +7,8 @@
     <NavigationPage.TitleView>
         <Grid>
             <Image Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/searchIcon.png" WidthRequest="30"/>
-            <Button Text="Search your problem here" Clicked="Handle_Clicked" 
-                    BorderWidth="1" BorderColor="White" TextColor="#999999" BackgroundColor="White" Margin="5"></Button>
-        </Grid>
+            <SearchBar Placeholder="What kind problem do you have?" Focused="Handle_Search"/>
+           </Grid> 
     </NavigationPage.TitleView>
       <ContentPage.Content>
         <ScrollView>
@@ -74,7 +73,7 @@
                 </Grid>
                 </StackLayout>
             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
-                <ListView ItemsSource="{Binding Helpers}" HorizontalScrollBarVisibility="Always" HasUnevenRows="true" ItemSelected="Handle_ItemSelected">
+                <ListView ItemsSource="{Binding Helpers}" HorizontalScrollBarVisibility="Always" HasUnevenRows="true" ItemSelected="Handle_ItemSelected" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell x:Name="PHPPickNewcomeButton">

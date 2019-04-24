@@ -64,7 +64,7 @@ namespace Crosshelper.Views
 
         }
 
-        void Handle_Clicked(object sender, System.EventArgs e)
+        void Handle_Search(object sender, Xamarin.Forms.FocusEventArgs e)
         {
             Navigation.PushAsync(new SearchPage());
         }
