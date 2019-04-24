@@ -18,6 +18,7 @@
     <PackageReference Include="MySql.Data" Version="8.0.15" />
     <PackageReference Include="AiForms.SettingsView" Version="0.4.15" />
     <PackageReference Include="Xam.Plugin.TabView" Version="1.0.4" />
+    <PackageReference Include="Sharpnado.Forms.HorizontalListView" Version="1.1.0" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\MyPage.xaml" />

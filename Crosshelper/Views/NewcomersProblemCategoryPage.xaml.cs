@@ -64,6 +64,11 @@ namespace Crosshelper.Views
 
         }
 
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new SearchPage());
+        }
+
         void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             Navigation.PushAsync(new DescribeProblemPage());

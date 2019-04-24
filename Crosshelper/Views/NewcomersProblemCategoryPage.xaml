@@ -6,20 +6,20 @@
              Title="Get help">
     <NavigationPage.TitleView>
         <Grid>
-            <Button Text="1234 Broadway Ave ▼" TextColor="White" FontSize="17" HorizontalOptions="Center" VerticalOptions="Center" Clicked="Handle_location"/>
-            <Button Text="Alert" TextColor="White" HorizontalOptions="End" FontSize="17"/>
+            <Image Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/searchIcon.png" WidthRequest="30"/>
+            <Button Text="Search your problem here" Clicked="Handle_Clicked" 
+                    BorderWidth="1" BorderColor="White" TextColor="#999999" BackgroundColor="White" Margin="5"></Button>
         </Grid>
     </NavigationPage.TitleView>
       <ContentPage.Content>
         <ScrollView>
-            <StackLayout Margin="15">
+            <StackLayout Margin="10">
                 <StackLayout>
-                   <Grid Margin="10,5,10,0">
+                   <Grid Margin="0,5,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="25" />
                         <RowDefinition Height="70" />
-                        <RowDefinition Height="30" />
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="15" />
                     </Grid.RowDefinitions>
                     <Label Text="Problem Category"
                            TextColor="#575656"
@@ -66,7 +66,6 @@
                             Source=""
                             Grid.Column="4"></ImageButton>
                     <Label Text="Recommendations"
-                           Margin="0,0,0,0"
                            TextColor="#575656"
                            FontSize="16"
                            Grid.Row="2"
@@ -79,11 +78,11 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell x:Name="PHPPickNewcomeButton">
-                                <Grid Padding="10">
+                                <Grid Padding="0">
                                     <Image Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="3" Source="{Binding ImageUrl}"></Image>
-                                    <Label Text="{Binding HelperName}" Grid.Row="5" Grid.ColumnSpan="2" FontAttributes="Bold" TextColor="#4B4B4B"/>
-                                    <Label Text="{Binding Rating}" Grid.Row="5" Grid.Column="2" TextColor="#FFC834"/>
-                                    <Label Text="{Binding Location}" Grid.Row="6" Grid.ColumnSpan="2" TextColor="#848484"/>
+                                    <Label Text="{Binding HelperName}" Grid.Row="5" Grid.ColumnSpan="3" FontSize="15" FontAttributes="Bold" TextColor="#4B4B4B"/>
+                                    <Label Text="{Binding Rating}" Grid.Row="6" Grid.Column="2" TextColor="#FFC834"/>
+                                    <Label Text="{Binding Location}" Grid.Row="6" Grid.ColumnSpan="2" FontSize="14" TextColor="#848484"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
