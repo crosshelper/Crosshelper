@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Xamarin.Forms;
 using Foundation;
 using UIKit;
 
@@ -22,12 +22,15 @@ namespace Crosshelper.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
             AiForms.Renderers.iOS.SettingsViewInit.Init(); //need to write here
 
             LoadApplication(new App());
             UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(255, 78, 24);
+
             return base.FinishedLaunching(app, options); 
+
         }
     }
 }

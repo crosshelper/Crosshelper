@@ -1,6 +1,481 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.GetHelpPage">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Crosshelper.Views.GetHelpPage">
+    <NavigationPage.TitleView>
+        <Grid>
+            <SearchBar Placeholder="What kind problem do you have?" />
+        </Grid>
+    </NavigationPage.TitleView>
+        <ScrollView>
+        <StackLayout>
+            <StackLayout>
+            <Label Text="Problem Category" FontSize="25"/>
+                <CollectionView ItemsSource="{Binding Helpers}" SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="120" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                    </Grid.RowDefinitions>
+                                    <Image Grid.RowSpan="3"
+                                           Grid.Row="0"
+                                           BackgroundColor="Green"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="65"
+                                           WidthRequest="65" />
+                                     <Label Grid.Row="3"
+                                            BackgroundColor="Maroon"
+                                           Grid.Column="0"
+                                           TextColor="#393939"
+                                           Text="{Binding Language}"
+                                           VerticalOptions="End" />   
+                                </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        <!-- 2 -->
+            <StackLayout>
+            <Label Text="Recommend" FontSize="25"/>
+                    <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="3"
+                                           Grid.Row="0"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="65"
+                                           WidthRequest="65" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="0"
+                                           FontSize="20"
+                                           TextColor="#393939"
+                                           Text="{Binding Name}"
+                                           FontAttributes="Bold" />
+                                    <Label Grid.Column="3"
+                                           Grid.Row="0"
+                                           TextColor="#393939"
+                                           Text="{Binding Bornin}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="1"
+                                           TextColor="#FFC834"
+                                           Grid.RowSpan="2"
+                                           Text="{Binding Rating}"
+                                           HeightRequest="60"
+                                           WidthRequest="60" />
+                                    <Label Grid.Row="2"
+                                           Grid.Column="1"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="2"
+                                           Text="{Binding Baseprice}"
+                                           VerticalOptions="End" />
+                                     <Label Grid.Row="3"
+                                           Grid.Column="0"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="3"
+                                           Text="{Binding Language}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Row="4"
+                                           Grid.Column="0"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="2"
+                                           Text="{Binding Location}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Row="4"
+                                           Grid.Column="3"
+                                           TextColor= "{Binding StatusColor}"
+                                           Text="{Binding StatusText}"
+                                           VerticalOptions="End" />
+                                                
+                                </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+                <!-- 3 -->
+        <StackLayout>
+            <Label Text="xxxxxxxxxxx"/>
+                    <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="3"
+                                           Grid.Row="0"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="65"
+                                           WidthRequest="65" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="0"
+                                           FontSize="20"
+                                           TextColor="#393939"
+                                           Text="{Binding Name}"
+                                           FontAttributes="Bold" />
+                                    <Label Grid.Column="3"
+                                           Grid.Row="0"
+                                           TextColor="#393939"
+                                           Text="{Binding Bornin}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="1"
+                                           TextColor="#FFC834"
+                                           Grid.RowSpan="2"
+                                           Text="{Binding Rating}"
+                                           HeightRequest="60"
+                                           WidthRequest="60" />
+                                    <Label Grid.Row="2"
+                                           Grid.Column="1"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="2"
+                                           Text="{Binding Baseprice}"
+                                           VerticalOptions="End" />
+                                     <Label Grid.Row="3"
+                                           Grid.Column="0"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="3"
+                                           Text="{Binding Language}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Row="4"
+                                           Grid.Column="0"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="2"
+                                           Text="{Binding Location}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Row="4"
+                                           Grid.Column="3"
+                                           TextColor= "{Binding StatusColor}"
+                                           Text="{Binding StatusText}"
+                                           VerticalOptions="End" />
+                                                
+                                </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+             <!-- 3 -->
+        <StackLayout>
+            <Label Text="xxxxxxxxxxx"/>
+                    <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="3"
+                                           Grid.Row="0"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="65"
+                                           WidthRequest="65" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="0"
+                                           FontSize="20"
+                                           TextColor="#393939"
+                                           Text="{Binding Name}"
+                                           FontAttributes="Bold" />
+                                    <Label Grid.Column="3"
+                                           Grid.Row="0"
+                                           TextColor="#393939"
+                                           Text="{Binding Bornin}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="1"
+                                           TextColor="#FFC834"
+                                           Grid.RowSpan="2"
+                                           Text="{Binding Rating}"
+                                           HeightRequest="60"
+                                           WidthRequest="60" />
+                                    <Label Grid.Row="2"
+                                           Grid.Column="1"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="2"
+                                           Text="{Binding Baseprice}"
+                                           VerticalOptions="End" />
+                                     <Label Grid.Row="3"
+                                           Grid.Column="0"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="3"
+                                           Text="{Binding Language}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Row="4"
+                                           Grid.Column="0"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="2"
+                                           Text="{Binding Location}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Row="4"
+                                           Grid.Column="3"
+                                           TextColor= "{Binding StatusColor}"
+                                           Text="{Binding StatusText}"
+                                           VerticalOptions="End" />
+                                                
+                                </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+             <!-- 3 -->
+        <StackLayout>
+            <Label Text="xxxxxxxxxxx"/>
+                    <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="3"
+                                           Grid.Row="0"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="65"
+                                           WidthRequest="65" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="0"
+                                           FontSize="20"
+                                           TextColor="#393939"
+                                           Text="{Binding Name}"
+                                           FontAttributes="Bold" />
+                                    <Label Grid.Column="3"
+                                           Grid.Row="0"
+                                           TextColor="#393939"
+                                           Text="{Binding Bornin}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="1"
+                                           TextColor="#FFC834"
+                                           Grid.RowSpan="2"
+                                           Text="{Binding Rating}"
+                                           HeightRequest="60"
+                                           WidthRequest="60" />
+                                    <Label Grid.Row="2"
+                                           Grid.Column="1"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="2"
+                                           Text="{Binding Baseprice}"
+                                           VerticalOptions="End" />
+                                     <Label Grid.Row="3"
+                                           Grid.Column="0"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="3"
+                                           Text="{Binding Language}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Row="4"
+                                           Grid.Column="0"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="2"
+                                           Text="{Binding Location}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Row="4"
+                                           Grid.Column="3"
+                                           TextColor= "{Binding StatusColor}"
+                                           Text="{Binding StatusText}"
+                                           VerticalOptions="End" />
+                                                
+                                </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+             <!-- 3 -->
+        <StackLayout>
+            <Label Text="xxxxxxxxxxx"/>
+                    <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="3"
+                                           Grid.Row="0"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="65"
+                                           WidthRequest="65" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="0"
+                                           FontSize="20"
+                                           TextColor="#393939"
+                                           Text="{Binding Name}"
+                                           FontAttributes="Bold" />
+                                    <Label Grid.Column="3"
+                                           Grid.Row="0"
+                                           TextColor="#393939"
+                                           Text="{Binding Bornin}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="1"
+                                           TextColor="#FFC834"
+                                           Grid.RowSpan="2"
+                                           Text="{Binding Rating}"
+                                           HeightRequest="60"
+                                           WidthRequest="60" />
+                                    <Label Grid.Row="2"
+                                           Grid.Column="1"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="2"
+                                           Text="{Binding Baseprice}"
+                                           VerticalOptions="End" />
+                                     <Label Grid.Row="3"
+                                           Grid.Column="0"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="3"
+                                           Text="{Binding Language}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Row="4"
+                                           Grid.Column="0"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="2"
+                                           Text="{Binding Location}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Row="4"
+                                           Grid.Column="3"
+                                           TextColor= "{Binding StatusColor}"
+                                           Text="{Binding StatusText}"
+                                           VerticalOptions="End" />
+                                                
+                                </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+             <!-- 3 -->
+        <StackLayout>
+            <Label Text="xxxxxxxxxxx"/>
+                    <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="3"
+                                           Grid.Row="0"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="65"
+                                           WidthRequest="65" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="0"
+                                           FontSize="20"
+                                           TextColor="#393939"
+                                           Text="{Binding Name}"
+                                           FontAttributes="Bold" />
+                                    <Label Grid.Column="3"
+                                           Grid.Row="0"
+                                           TextColor="#393939"
+                                           Text="{Binding Bornin}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="1"
+                                           TextColor="#FFC834"
+                                           Grid.RowSpan="2"
+                                           Text="{Binding Rating}"
+                                           HeightRequest="60"
+                                           WidthRequest="60" />
+                                    <Label Grid.Row="2"
+                                           Grid.Column="1"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="2"
+                                           Text="{Binding Baseprice}"
+                                           VerticalOptions="End" />
+                                     <Label Grid.Row="3"
+                                           Grid.Column="0"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="3"
+                                           Text="{Binding Language}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Row="4"
+                                           Grid.Column="0"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="2"
+                                           Text="{Binding Location}"
+                                           VerticalOptions="End" />
+                                    <Label Grid.Row="4"
+                                           Grid.Column="3"
+                                           TextColor= "{Binding StatusColor}"
+                                           Text="{Binding StatusText}"
+                                           VerticalOptions="End" />
+                                                
+                                </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+            
+           <StackLayout BackgroundColor="#999999" HeightRequest="150">
+                <Label Text="All right xxxxxx xxx xxx xxx"/>
+            </StackLayout>
+            </StackLayout>
+        </ScrollView>
 </ContentPage>

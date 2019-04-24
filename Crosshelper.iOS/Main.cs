@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CarouselView.FormsPlugin.iOS;
 using Foundation;
+using Xamarin.Forms;
 using UIKit;
 
 namespace Crosshelper.iOS

@@ -9,7 +9,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:NewcomersProblemCategoryPage/>
+                <views:GetHelpPage/>
             </x:Arguments>
         </NavigationPage>
         

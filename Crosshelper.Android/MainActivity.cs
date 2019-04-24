@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Xamarin.Forms;
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
@@ -18,6 +18,7 @@ namespace Crosshelper.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+            Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
