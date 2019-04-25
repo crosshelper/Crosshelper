@@ -20,10 +20,11 @@ namespace Crosshelper.Views
                 Rating = "★★★★★",
                 Language = "Chinese",
                 Baseprice = "$40 starting cost",
-                Location = "8 miles away from me",
+                Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
-                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
             });
 
             Helpers.Add(new HelperLabel
@@ -33,10 +34,11 @@ namespace Crosshelper.Views
                 Rating = "★★★★★",
                 Language = "English",
                 Baseprice = "$40 starting cost",
-                Location = "8 miles away from me",
+                Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
-                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
             });
 
             Helpers.Add(new HelperLabel
@@ -46,10 +48,11 @@ namespace Crosshelper.Views
                 Rating = "★★★★★",
                 Language = "Japanese",
                 Baseprice = "$40 starting cost",
-                Location = "8 miles away from me",
+                Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
-                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
             });
 
             Helpers.Add(new HelperLabel
@@ -59,10 +62,11 @@ namespace Crosshelper.Views
                 Rating = "★★★★★",
                 Language = "Korean",
                 Baseprice = "$40 starting cost",
-                Location = "8 miles away from me",
+                Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
-                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Saimiri_sciureus-1_Luc_Viatour.jpg/220px-Saimiri_sciureus-1_Luc_Viatour.jpg"
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
             });
 
             Helpers.Add(new HelperLabel
@@ -72,14 +76,20 @@ namespace Crosshelper.Views
                 Rating = "★★★★★",
                 Language = "German",
                 Baseprice = "$40 starting cost",
-                Location = "8 miles away from me",
+                Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
-                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Alouatta_guariba.jpg/200px-Alouatta_guariba.jpg"
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom005.png"
             });
 
 
             BindingContext = this;
+        }
+
+        void Handle_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+            Navigation.PushAsync(new SearchPage());
         }
 
         void Handle_PickProblem(object sender, Xamarin.Forms.FocusEventArgs e)

@@ -16,6 +16,7 @@ namespace Crosshelper.Models
         public string Baseprice { get; set; }
         public string Location { get; set; }
         public string ImageUrl { get; set; }
+        public string LocationIconUrl { get; set; }
         public string StatusText { get; set; }
         public Color StatusColor { get; set; }
 
