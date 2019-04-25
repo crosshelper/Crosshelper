@@ -15,14 +15,14 @@
                             <ViewCell x:Name="PHPPickNewcomeButton">
                                 <Grid Padding="10">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="20" />
-                                        <RowDefinition Height="20" />
-                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="22" />
+                                        <RowDefinition Height="22" />
+                                        <RowDefinition Height="22" />
+                                        <RowDefinition Height="22" />
                                         <RowDefinition Height="20" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="80" />
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
@@ -38,11 +38,6 @@
                                            TextColor="#393939"
                                            Text="{Binding Name}"
                                            FontAttributes="Bold" />
-                                    <Label Grid.Column="3"
-                                           Grid.Row="0"
-                                           TextColor="#393939"
-                                           Text="{Binding Bornin}"
-                                           VerticalOptions="End" />
                                     <Label Grid.Column="1"
                                            Grid.Row="1"
                                            TextColor="#FFC834"
@@ -64,10 +59,8 @@
                                            VerticalOptions="End" />
                                 <StackLayout Grid.Row="4" Orientation="Horizontal" Grid.ColumnSpan="4">
                                     <Image  Source="{Binding LocationIconUrl}"
-                                           
-                                            
                                             Aspect="AspectFill"
-                                            WidthRequest="15"
+                                            WidthRequest="12"
                                             Margin="5,0,0,0"
                                             HorizontalOptions="Start"/>
                                     <Label 

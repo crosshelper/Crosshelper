@@ -30,7 +30,7 @@
                                            WidthRequest="75" />
                                      <Label Grid.Row="3"
                                            Grid.Column="0"
-                                            HorizontalOptions="Center"
+                                           HorizontalOptions="Center"
                                            TextColor="#393939"
                                            Text="{Binding Language}"
                                            VerticalOptions="End" />   

@@ -47,6 +47,7 @@ namespace Crosshelper.Views
                 Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"
             });
 
@@ -60,6 +61,7 @@ namespace Crosshelper.Views
                 Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
             });
 
@@ -73,6 +75,7 @@ namespace Crosshelper.Views
                 Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Saimiri_sciureus-1_Luc_Viatour.jpg/220px-Saimiri_sciureus-1_Luc_Viatour.jpg"
             });
 
@@ -86,6 +89,7 @@ namespace Crosshelper.Views
                 Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Golden_lion_tamarin_portrait3.jpg/220px-Golden_lion_tamarin_portrait3.jpg"
             });
 
@@ -112,6 +116,7 @@ namespace Crosshelper.Views
                 Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Macaca_fuscata_fuscata1.jpg/220px-Macaca_fuscata_fuscata1.jpg"
             });
 
@@ -125,6 +130,7 @@ namespace Crosshelper.Views
                 Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Mandrill_at_san_francisco_zoo.jpg/220px-Mandrill_at_san_francisco_zoo.jpg"
             });
 
@@ -138,6 +144,7 @@ namespace Crosshelper.Views
                 Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Proboscis_Monkey_in_Borneo.jpg/250px-Proboscis_Monkey_in_Borneo.jpg"
             });
 
@@ -151,6 +158,7 @@ namespace Crosshelper.Views
                 Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Portrait_of_a_Douc.jpg/159px-Portrait_of_a_Douc.jpg"
             });
 
@@ -164,6 +172,7 @@ namespace Crosshelper.Views
                 Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Cuc.Phuong.Primate.Rehab.center.jpg/320px-Cuc.Phuong.Primate.Rehab.center.jpg"
             });
 
@@ -177,6 +186,7 @@ namespace Crosshelper.Views
                 Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Golden_Snub-nosed_Monkeys%2C_Qinling_Mountains_-_China.jpg/165px-Golden_Snub-nosed_Monkeys%2C_Qinling_Mountains_-_China.jpg"
             });
 
@@ -190,6 +200,7 @@ namespace Crosshelper.Views
                 Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/RhinopitecusBieti.jpg/320px-RhinopitecusBieti.jpg"
             });
 
@@ -203,6 +214,7 @@ namespace Crosshelper.Views
                 Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Tonkin_snub-nosed_monkeys_%28Rhinopithecus_avunculus%29.jpg/320px-Tonkin_snub-nosed_monkeys_%28Rhinopithecus_avunculus%29.jpg"
             });
 
@@ -216,6 +228,7 @@ namespace Crosshelper.Views
                 Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Thomas%27s_langur_Presbytis_thomasi.jpg/142px-Thomas%27s_langur_Presbytis_thomasi.jpg"
             });
 
@@ -229,6 +242,7 @@ namespace Crosshelper.Views
                 Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Semnopithèque_blanchâtre_mâle.JPG/192px-Semnopithèque_blanchâtre_mâle.JPG"
             });
 
@@ -242,6 +256,7 @@ namespace Crosshelper.Views
                 Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Gelada-Pavian.jpg/320px-Gelada-Pavian.jpg"
             });
 

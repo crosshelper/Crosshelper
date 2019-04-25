@@ -27,9 +27,10 @@ namespace Crosshelper.Views
                 Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
-                Location = "8 miles away from me",
+                Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
             });
 
@@ -40,9 +41,10 @@ namespace Crosshelper.Views
                 Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
-                Location = "8 miles away from me",
+                Location = "8 miles away",
                 StatusColor = Color.FromHex("79B563"),
                 StatusText = "Available",
+                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"
             });
             BindingContext = this;

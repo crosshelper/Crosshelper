@@ -4,10 +4,23 @@
              x:Class="Crosshelper.Views.SearchPage"
              Title="Search">
     <ContentPage.Content>
-        
-        <StackLayout>
-                <SearchBar Placeholder="Search problem type" BackgroundColor="White" FontSize="25" HeightRequest="100"  HorizontalOptions="StartAndExpand" ></SearchBar>
-                <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="10,-15,10,0"></BoxView>
+        <StackLayout Margin="10,0,10,0">
+            <StackLayout>
+                <SearchBar Placeholder="Search problem type" BackgroundColor="White" FontSize="25" HeightRequest="100"  HorizontalOptions="StartAndExpand"></SearchBar>
+            </StackLayout>
+            <ListView ItemSelected="Handle_ItemSelected" ItemsSource="{Binding TypeProblems}">
+                 <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label  FontSize="22"
+                                    TextColor="#5F5F5F"
+                                    Margin="10,6,10,6"
+                                    Text="{Binding ProblemType}"
+                                    HorizontalOptions="StartAndExpand"></Label>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
