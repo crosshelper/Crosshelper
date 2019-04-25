@@ -10,13 +10,13 @@
         <ScrollView>
         <StackLayout>
             <StackLayout>
-            <Label Text="Problem Category" FontSize="25"/>
+            <Label Text="Problem Category" FontSize="25" VerticalOptions="Center" Margin="10,5,10,0"/>
                 <CollectionView ItemsSource="{Binding Helpers}" SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="120" >
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                                 <Grid Padding="10">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="20" />
                                         <RowDefinition Height="20" />
                                         <RowDefinition Height="20" />
                                         <RowDefinition Height="20" />
@@ -24,14 +24,13 @@
                                     </Grid.RowDefinitions>
                                     <Image Grid.RowSpan="3"
                                            Grid.Row="0"
-                                           BackgroundColor="Green"
                                            Source="{Binding ImageUrl}"
                                            Aspect="AspectFill"
-                                           HeightRequest="65"
-                                           WidthRequest="65" />
+                                           HeightRequest="75"
+                                           WidthRequest="75" />
                                      <Label Grid.Row="3"
-                                            BackgroundColor="Maroon"
                                            Grid.Column="0"
+                                            HorizontalOptions="Center"
                                            TextColor="#393939"
                                            Text="{Binding Language}"
                                            VerticalOptions="End" />   
@@ -42,7 +41,7 @@
             </StackLayout>
         <!-- 2 -->
             <StackLayout>
-            <Label Text="Recommend" FontSize="25"/>
+            <Label Text="Recommendation" FontSize="25" Margin="10,0,10,0"/>
                     <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200" >
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -64,7 +63,7 @@
                                            Source="{Binding ImageUrl}"
                                            Aspect="AspectFill"
                                            HeightRequest="65"
-                                           WidthRequest="65" />
+                                           WidthRequest="65"/>
                                     <Label Grid.Column="1"
                                            Grid.Row="0"
                                            FontSize="20"
@@ -114,7 +113,7 @@
             </StackLayout>
                 <!-- 3 -->
         <StackLayout>
-            <Label Text="xxxxxxxxxxx"/>
+            <Label Text="xxxxxxxxxxx" Margin="10,0,10,0"/>
                     <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -186,7 +185,7 @@
             </StackLayout>
              <!-- 3 -->
         <StackLayout>
-            <Label Text="xxxxxxxxxxx"/>
+            <Label Text="xxxxxxxxxxx" Margin="10,0,10,0"/>
                     <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -258,7 +257,7 @@
             </StackLayout>
              <!-- 3 -->
         <StackLayout>
-            <Label Text="xxxxxxxxxxx"/>
+            <Label Text="xxxxxxxxxxx" Margin="10,0,10,0"/>
                     <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -330,7 +329,7 @@
             </StackLayout>
              <!-- 3 -->
         <StackLayout>
-            <Label Text="xxxxxxxxxxx"/>
+            <Label Text="xxxxxxxxxxx" Margin="10,0,10,0" />
                     <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -402,7 +401,7 @@
             </StackLayout>
              <!-- 3 -->
         <StackLayout>
-            <Label Text="xxxxxxxxxxx"/>
+            <Label Text="xxxxxxxxxxx" Margin="10,0,10,0"/>
                     <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>

@@ -78,6 +78,7 @@ namespace Crosshelper.Views
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Alouatta_guariba.jpg/200px-Alouatta_guariba.jpg"
             });
 
+
             BindingContext = this;
         }
 
