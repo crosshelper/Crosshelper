@@ -38,7 +38,7 @@ namespace Crosshelper.Views
         }
         void Handle_Location(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            Navigation.PushAsync(new LocationPage());
         }
         void Handle_Language(object sender, EventArgs e)
         {
