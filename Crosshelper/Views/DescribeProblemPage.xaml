@@ -17,20 +17,22 @@
                             <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
                                         <StackLayout>
                                             <StackLayout >
-                                              <Label Text="Current location" TextColor="Gray" FontSize="Default" FontAttributes="Bold"></Label>
+                                              <Label Text="Current location" TextColor="#666666" FontSize="16" FontAttributes="Bold"></Label>
                                             </StackLayout>
                                                 <Button Text="Mountain view" BorderColor="#999999" 
                                                         BorderRadius="5" BackgroundColor="White" 
-                                                        TextColor="Gray" BorderWidth="1" FontAttributes="Bold" 
+                                                        TextColor="#666666" BorderWidth="1" FontAttributes="Bold" 
                                                         FontSize="16"
+                                                        HeightRequest="45"
                                                         Clicked="Handle_Location"></Button>
                                             <StackLayout >
-                                              <Label Text="Language Preference" TextColor="Gray" FontSize="Default" FontAttributes="Bold"></Label>
+                                              <Label Text="Language Preference" TextColor="#666666" FontSize="16" FontAttributes="Bold"></Label>
                                             </StackLayout>
                                                 <Button Text="Chinese/English" BorderColor="#999999" 
                                                         BorderRadius="5" BackgroundColor="White" 
-                                                        TextColor="Gray" BorderWidth="1" FontAttributes="Bold" 
+                                                        TextColor="#666666" BorderWidth="1" FontAttributes="Bold" 
                                                         FontSize="16"
+                                                        HeightRequest="45"
                                                         Clicked="Handle_Language"></Button>
 
                                         </StackLayout>
@@ -66,9 +68,10 @@
                                         TextColor="White"
                                         FontAttributes="Bold"
                                         BackgroundColor="#FF4E18"
-                                        Margin="0,0,0,10"
+                                        Margin="0,10,0,10"
+                                        HeightRequest="45"
                                         Clicked="Handle_Next"
-                                        VerticalOptions="EndAndExpand"
+                                        VerticalOptions="StartAndExpand"
                                         />
                     </StackLayout>
                 </StackLayout>
