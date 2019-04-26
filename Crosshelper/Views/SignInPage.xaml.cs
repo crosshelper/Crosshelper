@@ -16,10 +16,10 @@ namespace Crosshelper.Views
                 await Navigation.PushAsync(new SignUpPage());
             };
         }
-        //返回按钮 Go Back
-        void SIPSignInGoBack(object sender, EventArgs e)
+        //删除按钮 delete
+        void Handle_Canceled(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            Navigation.PopToRootAsync(false);
         }
         //登入按钮 Sign In
         void SIPSignIn(object sender, EventArgs e)
