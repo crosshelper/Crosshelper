@@ -86,7 +86,7 @@
                                 Clicked="SIPFaceBookSignInIcon"/>
                     </StackLayout>
               <!-- 忘记和创建 forgot&create -->  
-                <StackLayout Margin="0,-6,0,0" VerticalOptions="StartAndExpand" Orientation="Horizontal">
+                <StackLayout Margin="0,-5,0,0" VerticalOptions="StartAndExpand" Orientation="Horizontal">
                     <Button Text="Forgot password" 
                             FontSize="Small" 
                             TextColor="#666666"
