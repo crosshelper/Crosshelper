@@ -17,5 +17,16 @@ namespace Crosshelper.Views
             //tab1 = new PromotionCodePage().Content;
             //tab1.Content=new PromotionCodePage().Content;
         }
+
+        public MyTabbedPage(String o)
+        {
+            InitializeComponent();
+            Pageload();
+        }
+        void Pageload()
+        {
+            this.Children.RemoveAt(1);
+            this.Children.Insert(1, new NavigationPage((Page)Activator.CreateInstance(typeof(FavoritePage))));   
+        }
     }
 }

@@ -2316,6 +2316,10 @@ namespace Crosshelper.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_id = global::Crosshelper.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_inflatedId = global::Crosshelper.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_layout = global::Crosshelper.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::PCLCrypto.Resource.String.ApplicationName = global::Crosshelper.Droid.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::Crosshelper.Droid.Resource.String.Hello;
+			global::PCLStorage.Resource.String.ApplicationName = global::Crosshelper.Droid.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::Crosshelper.Droid.Resource.String.Hello;
 			global::AiForms.Renderers.Droid.Resource.Animation.abc_fade_in = global::Crosshelper.Droid.Resource.Animation.abc_fade_in;
 			global::AiForms.Renderers.Droid.Resource.Animation.abc_fade_out = global::Crosshelper.Droid.Resource.Animation.abc_fade_out;
 			global::AiForms.Renderers.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::Crosshelper.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -14279,6 +14283,12 @@ namespace Crosshelper.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f0a0052
+			public const int ApplicationName = 2131361874;
+			
+			// aapt resource value: 0x7f0a0051
+			public const int Hello = 2131361873;
 			
 			// aapt resource value: 0x7f0a0018
 			public const int abc_action_bar_home_description = 2131361816;

@@ -20,79 +20,79 @@ namespace Crosshelper.Views
 
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Accident",
+                Pcategory = "Accident",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Language",
+                Pcategory = "Language",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Car repair",
+                Pcategory = "Car repair",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "DMV & Driver License",
+                Pcategory = "DMV & Driver License",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Law",
+                Pcategory = "Law",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Translate",
+                Pcategory = "Translate",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Ticket",
+                Pcategory = "Ticket",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Car Service",
+                Pcategory = "Car Service",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Visa",
+                Pcategory = "Visa",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Insurance",
+                Pcategory = "Insurance",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Health",
+                Pcategory = "Health",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Tax",
+                Pcategory = "Tax",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Finance",
+                Pcategory = "Finance",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Credit",
+                Pcategory = "Credit",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Housing",
+                Pcategory = "Housing",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Writing",
+                Pcategory = "Writing",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Inbound/Outbound Custom",
+                Pcategory = "Inbound/Outbound Custom",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "Repair / Fix",
+                Pcategory = "Repair / Fix",
             });
             TypeProblems.Add(new TypeProblem
             {
-                ProblemType = "House repair/Fix",
+                Pcategory = "House repair/Fix",
             });
 
             BindingContext = this;

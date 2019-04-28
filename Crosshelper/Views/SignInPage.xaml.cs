@@ -27,6 +27,8 @@ namespace Crosshelper.Views
             //(sender as Button).Text = "Click me again!";
             UserAccess userAccess = new UserAccess();
 
+            Application.Current.MainPage = new MyTabbedPage("o");
+
             if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
             {
                 signInTest.Text = "Sign in success";
