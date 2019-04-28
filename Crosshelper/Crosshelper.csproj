@@ -40,6 +40,9 @@
     <Compile Update="Views\ListviewtestPage.xaml.cs">
       <DependentUpon>NewcomersProblemCategoryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\testPage.xaml.cs">
+      <DependentUpon>testPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.iOS">
@@ -47,7 +50,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
     <Folder Include="MessageCells\" />
   </ItemGroup>
 </Project>
