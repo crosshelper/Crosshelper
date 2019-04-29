@@ -1,7 +1,7 @@
-using System;
+using Crosshelper.Views;
+using SendBird;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Crosshelper.Views;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Crosshelper
@@ -12,6 +12,7 @@ namespace Crosshelper
         public App()
         {
             InitializeComponent();
+            SendBirdClient.Init(Crosshelper.Properties.Resources.APP_ID);
             //MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePage))) {
             //  BarBackgroundColor = Color.FromHex("#FF4E18"),
             //BarTextColor = Color.White };
