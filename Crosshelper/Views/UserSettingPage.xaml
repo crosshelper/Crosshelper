@@ -12,8 +12,7 @@
         <sv:CommandCell x:Name="commandcell" Tapped="Handle_MyProfile" IconSource="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png" IconSize="60,60" IconRadius="30"
             Title="William Liang" Description="william.liang@crosshelper.com"
             Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"/>
-        <sv:PickerCell Title="My Background" Tapped="Handle_Mybackground" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
-        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+        <sv:CommandCell Title="My Background" Tapped="Handle_Mybackground"/>
     </sv:Section>
 
     <sv:Section Title="Payment" IsVisible="{Binding SctionIsVisible}">
