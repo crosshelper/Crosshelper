@@ -59,10 +59,10 @@
       <HintPath>..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\12.2.1.16\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
     </Reference>
     <Reference Include="SendBird">
-      <HintPath>..\..\..\Downloads\SendBird-SDK-dotNET-master 2\SendBird.dll</HintPath>
+      <HintPath>Lib\SendBird.dll</HintPath>
     </Reference>
     <Reference Include="websocket-sharp">
-      <HintPath>..\..\..\Downloads\SendBird-SDK-dotNET-master 2\websocket-sharp.dll</HintPath>
+      <HintPath>Lib\websocket-sharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
