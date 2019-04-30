@@ -9,7 +9,7 @@ namespace Crosshelper.Views
     {
         void Handle_MyProfile(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new ProfilePage());
+            Navigation.PushAsync(new PickerTestPage());//ProfilePage());
         }
         void Handle_Mybackground(object sender, System.EventArgs e)
         {

@@ -9,7 +9,7 @@ namespace Crosshelper.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PickerTestPage : ContentPage
     {
-        public IList Items { get; } = new ObservableCollection<PickerItem>();
+        public IList Items { get; }
         public ObservableCollection<PickerItem> ItemsSource { get; } = new ObservableCollection<PickerItem>();
         public ObservableCollection<PickerItem> SelectedItems { get; set; } = new ObservableCollection<PickerItem>();
 
@@ -17,13 +17,18 @@ namespace Crosshelper.Views
         {
             InitializeComponent();
 
-            BindingContext = this;
-
-            Items.Add("abc");
-            Items.Add("def");
+            List<string> list = new List<string>
+            {
+                "abc",
+                "def",
+                "ghi"
+            };
+            Items = list;
 
             ItemsSource.Add(new PickerItem { Name = "abc" });
             ItemsSource.Add(new PickerItem { Name = "def" });
+
+            BindingContext = this;
         }
 
         public class PickerItem
