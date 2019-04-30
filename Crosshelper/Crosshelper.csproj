@@ -23,8 +23,8 @@
     <PackageReference Include="AiForms.SettingsView" Version="0.4.15" />
     <PackageReference Include="Xam.Plugin.TabView" Version="1.0.4" />
     <PackageReference Include="Sharpnado.Forms.HorizontalListView" Version="1.1.0" />
-    <PackageReference Include="AWSSDK.Core" Version="3.3.101.2" />
-    <PackageReference Include="AWSSDK.S3" Version="3.3.101.9" />
+    <PackageReference Include="AWSSDK.Core" Version="3.3.101.3" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.101.10" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\MyPage.xaml" />
@@ -55,12 +55,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="SendBird">
-      <HintPath>..\..\..\..\Lib\SendBird.dll</HintPath>
-    </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>..\..\..\..\Lib\websocket-sharp.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.iOS">
       <HintPath>..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\12.2.1.16\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
     </Reference>
