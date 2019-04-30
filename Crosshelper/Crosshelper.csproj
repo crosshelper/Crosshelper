@@ -64,9 +64,16 @@
     <Reference Include="Xamarin.iOS">
       <HintPath>..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\12.2.1.16\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="SendBird">
+      <HintPath>..\..\..\Downloads\SendBird-SDK-dotNET-master 2\SendBird.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>..\..\..\Downloads\SendBird-SDK-dotNET-master 2\websocket-sharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MessageCells\" />
+    <Folder Include="Lib\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
