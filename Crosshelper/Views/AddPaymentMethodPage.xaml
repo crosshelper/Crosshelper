@@ -23,7 +23,7 @@
             <sv:EntryCell Title="Card Holder" ValueText="{Binding InputText.Value}" 
                           Placeholder="BO CHEN" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
-            <sv:EntryCell Title="SSV" ValueText="{Binding InputText.Value}" 
+            <sv:EntryCell Title="CVV" ValueText="{Binding InputText.Value}" 
                           Placeholder="***" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
         </sv:Section>

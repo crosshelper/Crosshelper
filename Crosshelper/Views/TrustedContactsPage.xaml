@@ -14,11 +14,8 @@
                      HasUnevenRows="true">
     
    <sv:Section Title="Police Department" FooterText="">
-            <sv:EntryCell ValueText="{Binding InputText.Value}" Title="Auto call" 
-                          Placeholder="911" Keyboard="Email" 
-                          TextAlignment="End" HintText="{Binding InputError.Value}"/>
-           <sv:SwitchCell On="true" 
-            Description="Automatic calling 911."/>
+           <sv:SwitchCell On="true" Title="911"
+            Description="Share information when I calling 911."/>
 
 
     </sv:Section>

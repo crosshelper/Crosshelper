@@ -19,6 +19,11 @@ namespace Crosshelper.Views
         {
             Navigation.PushAsync(new ResetPasswordPage());
         }
+
+        async void Handle_ChangePhoto(object sender, EventArgs e)
+        {
+            string action = await DisplayActionSheet("Upload Photo", "Cencel", null, "Take photo", "From album");
+        }
         public ProfilePage()
         {
             InitializeComponent();
