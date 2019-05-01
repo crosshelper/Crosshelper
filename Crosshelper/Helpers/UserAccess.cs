@@ -1,8 +1,8 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Crosshelper.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Text;
 
 namespace Crosshelper.Helpers
 {
@@ -11,7 +11,7 @@ namespace Crosshelper.Helpers
         public UserAccess()
         {
 
-        } 
+        }
 
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
 
@@ -80,5 +80,51 @@ namespace Crosshelper.Helpers
             }
             return false;
         }
+
+        public User GetUserInfo(string userid)
+        {
+            User user = new User();
+            //并没有建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr = "select * from UserInfo where Uid = @para1";// and Pwd = @para2";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", userid);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    user.UserID = reader.GetString(0);
+                    user.FirstName = reader.GetString(1);
+                    user.LastName = reader.GetString(2);
+                    user.ChatID = reader.GetString(3);
+                    user.FLanguage = reader.GetString(4);
+                    user.SLanguage = reader.GetString(5);
+                    user.PaymentID = reader.GetString(6);
+                    user.Icon = reader.GetString(7);
+                    user.Homeland = reader.GetString(8);
+                    user.FENo = reader.GetString(9);
+                    user.SENo = reader.GetString(10);
+                    user.Address = reader.GetString(11);
+                    user.Location = reader.GetString(12);
+                    return user;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+            return user;
+        }
+
+
     }
 }
