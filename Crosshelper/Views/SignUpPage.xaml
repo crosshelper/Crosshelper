@@ -28,7 +28,7 @@
                             <Entry Placeholder="Enter UserName"
                                    FontSize="16"
                                    HeightRequest="45"
-                                   Completed="SUPEmailCompleted"/>
+                                   Completed="SUPUnameCompleted"/>
                             <Label Text="Email" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry Placeholder="Enter email address"
                                    FontSize="16"
@@ -38,7 +38,7 @@
                             <Entry Placeholder="Enter phone number"
                                    FontSize="16"
                                    HeightRequest="45"
-                                   Completed="SUPEmailCompleted"/>
+                                   Completed="SUPContactNoCompleted"/>
                             <Label Text="Password" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry Placeholder="Enter password"
                                    FontSize="16"

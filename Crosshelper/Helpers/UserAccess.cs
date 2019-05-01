@@ -15,7 +15,7 @@ namespace Crosshelper.Helpers
 
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
 
-        public void UserRegister(string Uname, string Pwd)
+        public void UserRegister(string Uname, string Email,string ContactNo, string Pwd)
         {
             MySqlConnection conn = new MySqlConnection(connStr);
             try
@@ -24,10 +24,12 @@ namespace Crosshelper.Helpers
                 {
                     Console.WriteLine("Connecting to MySQL...");
                     conn.Open();
-                    string sql = "INSERT INTO UserMaster(Uid,Uname,Pwd,Permission) VALUES(NULL, @para1, @para2, 0) ";
+                    string sql = "INSERT INTO UserMaster(Uname,Email,ContactNo,Pwd,Permission) VALUES(@para1, @para2, @para3, @para4, 0) ";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("para1", Uname);
-                    cmd.Parameters.AddWithValue("para2", Pwd);
+                    cmd.Parameters.AddWithValue("para2", Email);
+                    cmd.Parameters.AddWithValue("para3", ContactNo);
+                    cmd.Parameters.AddWithValue("para4", Pwd);
 
                     cmd.ExecuteNonQuery();
                     Console.WriteLine("Connecting to MySQL success");

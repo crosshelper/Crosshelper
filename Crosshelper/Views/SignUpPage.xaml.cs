@@ -7,7 +7,7 @@ namespace Crosshelper.Views
     public partial class SignUpPage : ContentPage
     {
         UserAccess uAccess = new UserAccess();
-        private string Uname, Pwd, Email, ContNo;
+        private string Uname, Pwd, Email, ContactNo;
         public SignUpPage()
         {
             InitializeComponent();
@@ -23,14 +23,20 @@ namespace Crosshelper.Views
             (sender as Button).Text = "Click me again!";
         }
         //注册邮箱&密码输入框&再次输入 Sign up email&password&password again input box
+        void SUPUnameCompleted(object sender, EventArgs e)
+        {
+            Uname = ((Entry)sender).Text;
+        }
         void SUPEmailCompleted(object sender, EventArgs e)
         {
-            //string text 
             Email = ((Entry)sender).Text;
+        }
+        void SUPContactNoCompleted(object sender, EventArgs e)
+        {
+            ContactNo = ((Entry)sender).Text;
         }
         void SUPPasswordCompleted(object sender, EventArgs e)
         {
-            //string text 
             Pwd = ((Entry)sender).Text;
         }
         void SUPComfirmPasswordCompleted(object sender, EventArgs e)
@@ -44,7 +50,7 @@ namespace Crosshelper.Views
         }
         void SUPSignUpAsHelper(object sender, EventArgs e)
         {
-            uAccess.UserRegister(Email,Pwd);
+            uAccess.UserRegister(Uname,Email,ContactNo,Pwd);
             //(sender as Button).Text = "Click me again!";
         }
     }
