@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Crosshelper.Helpers;
 using Crosshelper.Models;
 using Xamarin.Forms;
 
@@ -17,12 +18,16 @@ namespace Crosshelper.Views
         }
 
         public IList<HelperLabel> Helpers { get; private set; }
-       // Color statuscolor = new Color();//(79B563);
+        //public IList<UserPro> Helpers { get; private set; }
+        GetUserProList gl;
+        // Color statuscolor = new Color();//(79B563);
         public PickHelperPage()
         {
             InitializeComponent();
 
-            Helpers = new List<HelperLabel>();
+            //Helpers = gl.GetHelperList(1);// new List<UserPro>();
+            
+            /*
             Helpers.Add(new HelperLabel
             {
                 Name = "Baboon",
@@ -259,6 +264,7 @@ namespace Crosshelper.Views
                 LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Gelada-Pavian.jpg/320px-Gelada-Pavian.jpg"
             });
+            */
 
             BindingContext = this;
         }

@@ -1,7 +1,6 @@
 ﻿using Crosshelper.Models;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
 
 namespace Crosshelper.Helpers
@@ -14,6 +13,8 @@ namespace Crosshelper.Helpers
         }
 
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
+        private int currentUid;
+        public int CurrentUid { get { return currentUid; } }
 
         public void UserRegister(string Uname, string Email,string ContactNo, string Pwd)
         {
@@ -66,6 +67,7 @@ namespace Crosshelper.Helpers
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
+                    currentUid = reader.GetInt32(0);
                     return true;
                 }
                 return false;
@@ -81,7 +83,7 @@ namespace Crosshelper.Helpers
             return false;
         }
 
-        public User GetUserInfo(string userid)
+        public User GetUserInfo(int userid)
         {
             User user = new User();
             //并没有建立数据库连接

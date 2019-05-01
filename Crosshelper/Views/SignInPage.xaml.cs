@@ -32,12 +32,16 @@ namespace Crosshelper.Views
         {
             //(sender as Button).Text = "Click me again!";
             UserAccess userAccess = new UserAccess();
+            User usr = new User();
 
             Application.Current.MainPage = new MyTabbedPage("o");
 
             if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
             {
                 signInTest.Text = "Sign in success";
+                Settings.UserId = userAccess.CurrentUid;
+                usr = userAccess.GetUserInfo(Settings.UserId);
+                Settings.ChatID = usr.ChatID;
             }
             else
             {

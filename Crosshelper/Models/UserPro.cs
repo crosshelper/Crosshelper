@@ -1,6 +1,6 @@
 ﻿namespace Crosshelper.Models
 {
-    public class User
+    class UserPro
     {
         public string UserID { get; set; }
         public string FirstName { get; set; }
@@ -15,5 +15,11 @@
         public string SENo { get; set; }
         public string Address { get; set; }
         public string Location { get; set; }
+
+        public string SSN { get; set; }
+        public string Rating { get; set; }
+        public string Status { get; set; }
+        public string PriceSign { get; set; }
+        public string IDFile { get; set; }
     }
 }
