@@ -10,8 +10,8 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <sv:SettingsView x:Name="settings"
-                     HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
-                     HasUnevenRows="true">
+                    HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
+                    HasUnevenRows="true">
                 <sv:Section Title="Background" FooterText="Where are you from? That can help us further to matching helper and solving your problem.">
                 <sv:PickerCell Title="Home Land" 
                         ItemsSource="{Binding HomeLandItemsSource}" 
