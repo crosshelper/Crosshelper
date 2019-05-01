@@ -64,7 +64,7 @@ namespace Crosshelper.Views
         }
         void Handle_CreateAccount(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SignUpPage());
+            Application.Current.MainPage = new SignUpPage();
         }
 
     }

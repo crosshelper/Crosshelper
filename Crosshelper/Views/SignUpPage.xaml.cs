@@ -46,12 +46,13 @@ namespace Crosshelper.Views
         //注册按钮 Sign Up
         void Handle_SignUp(object sender, EventArgs e)
         {
-            Navigation.PopAsync(false);
-        }
-        void SUPSignUpAsHelper(object sender, EventArgs e)
-        {
-            uAccess.UserRegister(Uname,Email,ContactNo,Pwd);
+            uAccess.UserRegister(Uname, Email, ContactNo, Pwd);
             //(sender as Button).Text = "Click me again!";
+        }
+        void Handle_SignUpAsHelper(object sender, EventArgs e)
+        {
+
+            (sender as Button).Text = "Click me again!";
         }
     }
 }
