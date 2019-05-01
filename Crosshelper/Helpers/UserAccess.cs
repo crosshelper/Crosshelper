@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 
-namespace Crosshelper.Models
+namespace Crosshelper.Helpers
 {
     class UserAccess
     {
         public UserAccess()
         {
 
-        }
+        } 
 
-        string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
+        readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
 
         public void UserRegister(string Uname, string Pwd)
         {

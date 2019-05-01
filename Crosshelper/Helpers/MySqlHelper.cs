@@ -7,7 +7,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Data;
 
-namespace Crosshelper.Models
+namespace Crosshelper.Helpers
 {
     public abstract class MySqlHelper
     {
