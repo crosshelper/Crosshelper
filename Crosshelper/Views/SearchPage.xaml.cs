@@ -7,7 +7,7 @@ namespace Crosshelper.Views
 {
     public partial class SearchPage : ContentPage
     {
-        void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        void Handle_ProblemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             Navigation.PushAsync(new DescribeProblemPage()); 
         }

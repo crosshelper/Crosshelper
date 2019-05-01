@@ -4,7 +4,7 @@
              x:Class="Crosshelper.Views.GetHelpPage">
     <NavigationPage.TitleView>
         <Grid>
-            <SearchBar Placeholder="What kind problem do you have?" Focused="Handle_Focused" />
+            <SearchBar Placeholder="What kind problem do you have?" Focused="Handle_Search" />
         </Grid>
     </NavigationPage.TitleView>
         <ScrollView>

@@ -71,8 +71,7 @@
                                         Margin="0,10,0,10"
                                         HeightRequest="45"
                                         Clicked="Handle_Next"
-                                        VerticalOptions="StartAndExpand"
-                                        />
+                                        VerticalOptions="StartAndExpand"/>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>

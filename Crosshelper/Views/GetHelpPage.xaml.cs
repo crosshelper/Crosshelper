@@ -87,7 +87,7 @@ namespace Crosshelper.Views
             BindingContext = this;
         }
 
-        void Handle_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        void Handle_Search(object sender, Xamarin.Forms.FocusEventArgs e)
         {
             Navigation.PushAsync(new SearchPage());
         }
