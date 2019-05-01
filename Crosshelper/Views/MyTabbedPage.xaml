@@ -20,7 +20,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:testPage/>
+                <views:FRequiredSignInPage/>
             </x:Arguments>
         </NavigationPage>
 

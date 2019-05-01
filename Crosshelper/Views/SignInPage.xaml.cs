@@ -15,6 +15,11 @@ namespace Crosshelper.Views
             parentPageIndex = i;
             InitializeComponent();
         }
+
+        public SignInPage()
+        {
+        }
+
         //取消按钮 Canceled
         void Handle_Canceled(object sender, EventArgs e)
         {
