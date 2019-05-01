@@ -3,12 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="Crosshelper.Views.SignUpPage"
              Title="Sign Up">
-       <NavigationPage.TitleView>
-            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" Clicked="Handle_Canceled" FontSize="20"/>
-        </NavigationPage.TitleView>
     <ContentPage.Content>
         <ScrollView>
-           <StackLayout Margin="15,10,15,10">
+            <StackLayout Margin="15,10,15,10">
+                <Button Text="Cancel" TextColor="#FF4E17" HorizontalOptions="Start" Clicked="Handle_Canceled" FontSize="20"/>
                   <!--登入 Sign In lable -->
                     <Label Margin="0,5,16,5"
                            Text="Sign Up"
@@ -28,27 +26,27 @@
                             <Entry Placeholder="Enter UserName"
                                    FontSize="16"
                                    HeightRequest="45"
-                                   Completed="SUPUnameCompleted"/>
+                                   Completed="UnameCompleted"/>
                             <Label Text="Email" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry Placeholder="Enter email address"
                                    FontSize="16"
                                    HeightRequest="45"
-                                   Completed="SUPEmailCompleted"/>
+                                   Completed="EmailCompleted"/>
                             <Label Text="Phone number" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry Placeholder="Enter phone number"
                                    FontSize="16"
                                    HeightRequest="45"
-                                   Completed="SUPContactNoCompleted"/>
+                                   Completed="ContactNumCompleted"/>
                             <Label Text="Password" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry Placeholder="Enter password"
                                    FontSize="16"
                                    HeightRequest="45"
-                                   Completed="SUPPasswordCompleted"/>
+                                   Completed="PasswordCompleted"/>
                             <Label Text="Comfirm Password" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry Placeholder="Comfirm password"
                                    FontSize="16"
                                    HeightRequest="45"
-                                   Completed="SUPComfirmPasswordCompleted"/>
+                                   Completed="PasswordComfirmCompleted"/>
                         </StackLayout >
            <!--登入按钮 Sign in Button -->   
                     <StackLayout VerticalOptions="Start">

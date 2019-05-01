@@ -23,23 +23,23 @@ namespace Crosshelper.Views
             (sender as Button).Text = "Click me again!";
         }
         //注册邮箱&密码输入框&再次输入 Sign up email&password&password again input box
-        void SUPUnameCompleted(object sender, EventArgs e)
+        void UnameCompleted(object sender, EventArgs e)
         {
             Uname = ((Entry)sender).Text;
         }
-        void SUPEmailCompleted(object sender, EventArgs e)
+        void EmailCompleted(object sender, EventArgs e)
         {
             Email = ((Entry)sender).Text;
         }
-        void SUPContactNoCompleted(object sender, EventArgs e)
+        void ContactNumCompleted(object sender, EventArgs e)
         {
             ContactNo = ((Entry)sender).Text;
         }
-        void SUPPasswordCompleted(object sender, EventArgs e)
+        void PasswordCompleted(object sender, EventArgs e)
         {
             Pwd = ((Entry)sender).Text;
         }
-        void SUPComfirmPasswordCompleted(object sender, EventArgs e)
+        void PasswordComfirmCompleted(object sender, EventArgs e)
         {
             string text = ((Entry)sender).Text;
         }
