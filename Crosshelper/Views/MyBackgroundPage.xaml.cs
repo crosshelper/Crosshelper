@@ -28,6 +28,7 @@ namespace Crosshelper.Views
         {
             InitializeComponent();
 
+
             List<string> list = new List<string>
             {
                 "Chinese",
