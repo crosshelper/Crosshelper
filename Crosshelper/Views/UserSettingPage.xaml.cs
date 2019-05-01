@@ -42,7 +42,7 @@ namespace Crosshelper.Views
         }
         void Handle_SignOut(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new SignInPage());
+            Application.Current.MainPage = new SignInPage(4);
         }
 
         public UserSettingPage()

@@ -9,14 +9,19 @@ namespace Crosshelper.Views
 {
     public partial class SignInPage : ContentPage
     {
-        public SignInPage()
+        private int parentPageIndex;
+        public SignInPage(int i)
         {
+            parentPageIndex = i;
             InitializeComponent();
         }
         //取消按钮 Canceled
         void Handle_Canceled(object sender, EventArgs e)
         {
-            Navigation.PopToRootAsync(false);
+
+            var masterPage = this.Parent as TabbedPage;
+            masterPage.CurrentPage = masterPage.Children[parentPageIndex];
+            //Application.
         }
         //登入邮箱&密码输入框 Sign in email&password input box
         void UsernameSignInCompleted(object sender, EventArgs e)
@@ -60,7 +65,7 @@ namespace Crosshelper.Views
         //创建和忘记 Create&Forgot
         void Handle_ForgotPassword(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ForgotPasswordPage());
+            Application.Current.MainPage = new ForgotPasswordPage();
         }
         void Handle_CreateAccount(object sender, EventArgs e)
         {

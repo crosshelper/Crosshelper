@@ -9,7 +9,7 @@ namespace Crosshelper.Views
     {
         void Handle_Clicked(object sender, System.EventArgs e)
         {
-            Application.Current.MainPage = new SignInPage();
+            Application.Current.MainPage = new SignInPage(2);
         }
 
         public testPage()

@@ -5,7 +5,7 @@
              Title="Sign Up">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Margin="15,10,15,10">
+            <StackLayout Margin="15,15,15,10">
                 <Button Text="Cancel" TextColor="#FF4E17" HorizontalOptions="Start" Clicked="Handle_Canceled" FontSize="20"/>
                   <!--登入 Sign In lable -->
                     <Label Margin="0,5,16,5"
