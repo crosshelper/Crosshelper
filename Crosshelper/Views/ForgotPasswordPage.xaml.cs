@@ -8,7 +8,7 @@ namespace Crosshelper.Views
     {
         void Handle_Reset(object sender, System.EventArgs e)
         {
-            Navigation.PopAsync(false);
+            Application.Current.MainPage = new MyTabbedPage();
         }
 
         public ForgotPasswordPage()
@@ -18,7 +18,7 @@ namespace Crosshelper.Views
 
         void Handle_Canceled(object sender, System.EventArgs e)
         {
-            Navigation.PopToRootAsync(false);
+            //Application.Current.MainPage = new SignInPage();
         }
     }
 }

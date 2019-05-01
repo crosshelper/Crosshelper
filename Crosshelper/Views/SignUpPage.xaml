@@ -5,7 +5,7 @@
              Title="Sign Up">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Margin="15,10,15,10">
+            <StackLayout Margin="15,15,15,10">
                 <Button Text="Cancel" TextColor="#FF4E17" HorizontalOptions="Start" Clicked="Handle_Canceled" FontSize="20"/>
                   <!--登入 Sign In lable -->
                     <Label Margin="0,5,16,5"
@@ -22,21 +22,11 @@
                            HorizontalOptions="End"/>
             <!--邮箱密码 Email&password input -->
                        <StackLayout VerticalOptions="Start" Margin="0,0,0,10">
-                            <Label Text="UserName" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
+                                <Label Text="UserName" TextColor="#666666" FontSize="16" FontAttributes="Bold"/> 
                             <Entry Placeholder="Enter UserName"
                                    FontSize="16"
                                    HeightRequest="45"
                                    Completed="UnameCompleted"/>
-                            <Label Text="Email" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
-                            <Entry Placeholder="Enter email address"
-                                   FontSize="16"
-                                   HeightRequest="45"
-                                   Completed="EmailCompleted"/>
-                            <Label Text="Phone number" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
-                            <Entry Placeholder="Enter phone number"
-                                   FontSize="16"
-                                   HeightRequest="45"
-                                   Completed="ContactNumCompleted"/>
                             <Label Text="Password" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry Placeholder="Enter password"
                                    FontSize="16"
@@ -47,6 +37,24 @@
                                    FontSize="16"
                                    HeightRequest="45"
                                    Completed="PasswordComfirmCompleted"/>
+                            <BoxView HeightRequest="1" BackgroundColor="#999999" Margin="0,15,0,15"/>
+                            <StackLayout Orientation="Horizontal">
+                            <Label Text="Email" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
+                            <Label Text="(Option)" TextColor="#666666" FontSize="15"/>
+                            </StackLayout>
+                            <Entry Placeholder="Enter email address"
+                                   FontSize="16"
+                                   HeightRequest="45"
+                                   Completed="EmailCompleted"/>
+                            <StackLayout Orientation="Horizontal">
+                            <Label Text="Phone number" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
+                            <Label Text="(Option)" TextColor="#666666" FontSize="15"/>
+                            </StackLayout>
+                            <Entry Placeholder="Enter phone number"
+                                   FontSize="16"
+                                   HeightRequest="45"
+                                   Completed="ContactNumCompleted"/>
+                            <Label Text="Phone number or email address is option but highly recommend." TextColor="#666666" FontSize="13"/>
                         </StackLayout >
            <!--登入按钮 Sign in Button -->   
                     <StackLayout VerticalOptions="Start">

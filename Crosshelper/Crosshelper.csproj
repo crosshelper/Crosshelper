@@ -50,9 +50,6 @@
     <Compile Update="Views\ListviewtestPage.xaml.cs">
       <DependentUpon>NewcomersProblemCategoryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\testPage.xaml.cs">
-      <DependentUpon>testPage.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.iOS">
