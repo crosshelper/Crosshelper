@@ -8,7 +8,7 @@
             <StackLayout VerticalOptions="CenterAndExpand">
                  <!--登入 Sign In lable -->
                     <Label Margin="0,5,16,5"
-                           Text="Help Case goes here."
+                           Text="Help Case history goes here."
                            TextColor="#FF4E17"
                            FontSize="26"
                            FontAttributes="Bold"
