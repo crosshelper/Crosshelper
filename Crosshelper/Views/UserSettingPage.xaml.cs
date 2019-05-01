@@ -19,12 +19,15 @@ namespace Crosshelper.Views
         {
             Navigation.PushAsync(new PaymentPage());
         }
-
         void Handle_Promotion(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new PromotionCodePage());
         }
-        void Handle_TrustedContacts(object sender, System.EventArgs e)
+        void Handle_Language(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new LanguageSettingPage());
+        }
+        void Handle_Safety(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new TrustedContactsPage());
         }
