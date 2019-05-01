@@ -74,11 +74,11 @@ namespace Crosshelper.Views
         //创建和忘记 Create&Forgot
         void Handle_ForgotPassword(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new ForgotPasswordPage();
+            Navigation.PushAsync(new ForgotPasswordPage());
         }
         void Handle_CreateAccount(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new SignUpPage();
+            Navigation.PushAsync(new SignUpPage());
         }
 
     }

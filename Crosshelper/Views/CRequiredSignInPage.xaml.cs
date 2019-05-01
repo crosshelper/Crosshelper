@@ -14,13 +14,13 @@ namespace Crosshelper.Views
 
         void Handle_SignIn(object sender, System.EventArgs e)
         {
-            Application.Current.MainPage = new SignInPage(3);
+            Application.Current.MainPage = new NavigationPage(new SignInPage(3));
         }
 
         void Handle_SignUp(object sender, System.EventArgs e)
         {
             //Application.Current.MainPage = new SignUpPage();
-            Navigation.PushAsync(new SignUpPage());
+            Application.Current.MainPage = new NavigationPage(new SignUpPage());
         }
 
     }
