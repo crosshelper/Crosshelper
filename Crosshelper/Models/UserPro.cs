@@ -11,7 +11,7 @@
         public string Icon { get; set; }
         public string Location { get; set; }
         public int Rating { get; set; }
-        public string Status { get; set; }
+        public int Status { get; set; }
         public string PriceSign { get; set; }
     }
 }
