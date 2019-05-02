@@ -9,55 +9,67 @@
                  <ScrollView>
                  <StackLayout Padding="20">
                     <!-- Case detial -->
-                    <Label Text="Describe your problem here!" FontSize="Medium" TextColor="#FF4E18" FontAttributes="Bold" Margin="0,5,0,0"></Label>
-                    <BoxView BackgroundColor="#999999" HeightRequest="1.5"></BoxView>
+                    <Label Text="Enter your problem info here!" FontSize="20" TextColor="#777777"  FontAttributes="Bold" Margin="0,5,0,5"></Label>
+                    <BoxView BackgroundColor="#999999" HeightRequest="0.5"></BoxView>
                             <StackLayout 
                                      VerticalOptions="FillAndExpand" 
                                      BackgroundColor="#F4F4F4">
                             <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
                                         <StackLayout>
                                             <StackLayout >
-                                              <Label Text="Current location" TextColor="#666666" FontSize="16" FontAttributes="Bold"></Label>
+                                              <Label Text="Current location" TextColor="#FF4E18" FontSize="17" FontAttributes="Bold"></Label>
                                             </StackLayout>
-                                                <Button Text="Mountain view" BorderColor="#999999" 
-                                                        BorderRadius="5" BackgroundColor="White" 
-                                                        TextColor="#666666" BorderWidth="1" FontAttributes="Bold" 
-                                                        FontSize="16"
-                                                        HeightRequest="45"
-                                                        Clicked="Handle_Location"></Button>
+                                                <Label Text="123 W bigbang Ave" 
+                                                       TextColor="#666666" 
+                                                       FontSize="17" 
+                                                       TextDecorations="Underline" 
+                                                       x:Name="MyLocationName"
+                                                      
+                                                       Margin="0,0,0,5" 
+                                                       FontAttributes="Bold">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="handel_MyLocation" />
+                                                </Label.GestureRecognizers>
+                                            </Label>
                                             <StackLayout >
-                                              <Label Text="Language Preference" TextColor="#666666" FontSize="16" FontAttributes="Bold"></Label>
+                                              <Label Text="Language Preference" TextColor="#FF4E18" FontSize="17" FontAttributes="Bold"></Label>
                                             </StackLayout>
-                                                <Picker HeightRequest="45" />
-                                                <Button Text="Chinese" BorderColor="#999999" 
+                                                <Picker HeightRequest="45" Title="Pick language" TitleColor="#666666" FontAttributes="Bold" FontSize="16" TextColor="#666666" >
+                                                    <Picker.ItemsSource>
+                                                        <x:Array Type="{x:Type x:String}">
+                                                          <x:String>Chinese</x:String>
+                                                          <x:String>English</x:String>
+                                                          <x:String>Blue Monkey</x:String>
+                                                          <x:String>Squirrel Monkey</x:String>
+                                                          <x:String>Golden Lion Tamarin</x:String>
+                                                          <x:String>Howler Monkey</x:String>
+                                                          <x:String>Japanese Macaque</x:String>
+                                                        </x:Array>
+                                                    </Picker.ItemsSource>
+                                                </Picker>
+                                            </StackLayout>
+                            <StackLayout>
+                            <StackLayout>
+                                <Label Text="Is emergency problem?" TextColor="#FF4E18" FontSize="17" FontAttributes="Bold"></Label>
+                                <StackLayout Orientation="Horizontal">
+                                    <Button Text="No really" BorderColor="#666666" 
+                                                        WidthRequest="85"
                                                         BorderRadius="5" BackgroundColor="White" 
                                                         TextColor="#666666" BorderWidth="1" FontAttributes="Bold" 
-                                                        FontSize="16"
-                                                        HeightRequest="45"
-                                                        Clicked="Handle_Language"></Button>
-                                            </StackLayout>
-                            <StackLayout>
-                            <StackLayout>
-                                <Label Text="Is emergency problem?" TextColor="Gray" FontSize="Default" FontAttributes="Bold"></Label>
-                                <StackLayout Orientation="Horizontal">
-                                    <Button Text="No really" BorderColor="#FF4E18" 
-                                                        WidthRequest="85"
-                                                        BorderRadius="5" BackgroundColor="#FF4E18" 
-                                                        TextColor="White" BorderWidth="1" FontAttributes="Bold" 
                                                         FontSize="Small"
                                                         Clicked="Handle_NotReally"></Button>
-                                    <Button Text="Yes" BorderColor="#FF4E18" 
+                                    <Button Text="Yes"  BorderColor="#666666" 
                                                         WidthRequest="85"
                                                         Margin="5,0,0,0"
-                                                        BorderRadius="5" BackgroundColor="#FF4E18" 
-                                                        TextColor="White" BorderWidth="1" FontAttributes="Bold" 
+                                                        BorderRadius="5" BackgroundColor="White" 
+                                                        TextColor="#666666" BorderWidth="1" FontAttributes="Bold" 
                                                         FontSize="Small"
                                                         Clicked="Handle_Yes"></Button>
                                 </StackLayout>
 
                             </StackLayout>
-                            <Label Text="Problem description" FontSize="Default" TextColor="Gray" FontAttributes="Bold" Margin="0,5,0,0"></Label>
-                            <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
+                            <Label Text="Problem description" FontSize="17" TextColor="#FF4E18" FontAttributes="Bold" Margin="0,5,0,0"></Label>
+                            <BoxView BackgroundColor="#999999" HeightRequest="0.5"></BoxView>
                                 <Editor Placeholder="Describe your problem here!"
                                         Completed="DescribeProblemEditorCompleted"
                                         HeightRequest="180"></Editor>

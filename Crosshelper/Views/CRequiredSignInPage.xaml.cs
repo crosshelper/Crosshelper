@@ -13,12 +13,12 @@ namespace Crosshelper.Views
         }
         void Handle_SignIn(object sender, System.EventArgs e)
         {
-            Application.Current.MainPage = new NavigationPage(new SignInPage());
+            Navigation.PushModalAsync(new NavigationPage(new SignInPage()));
         }
         void Handle_SignUp(object sender, System.EventArgs e)
         {
             //Application.Current.MainPage = new SignUpPage();
-            Application.Current.MainPage = new NavigationPage(new SignUpPage());
+            Navigation.PushModalAsync(new NavigationPage(new SignUpPage()));
         }
 
     }

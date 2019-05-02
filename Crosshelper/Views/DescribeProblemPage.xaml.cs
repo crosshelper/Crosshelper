@@ -14,6 +14,8 @@ namespace Crosshelper.Views
         public DescribeProblemPage()
         {
             InitializeComponent();
+
+
         }
         //Not Really按钮 Not really Button
         void Handle_NotReally(object sender, EventArgs e)
@@ -36,7 +38,7 @@ namespace Crosshelper.Views
         {
             string text = ((Editor)sender).Text;
         }
-        void Handle_Location(object sender, EventArgs e)
+        void handel_MyLocation(object sender, EventArgs e)
         {
             Navigation.PushAsync(new LocationPage());
         }
