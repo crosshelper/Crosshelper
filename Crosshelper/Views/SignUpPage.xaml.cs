@@ -15,7 +15,7 @@ namespace Crosshelper.Views
         //取消按钮 Cancel
         void Handle_Canceled(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new SignInPage();
+            Navigation.PopModalAsync();
         }
         //注册邮箱&密码输入框&再次输入 Sign up email&password&password again input box
         void UnameCompleted(object sender, EventArgs e)

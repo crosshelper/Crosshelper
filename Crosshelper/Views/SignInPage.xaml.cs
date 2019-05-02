@@ -9,24 +9,16 @@ namespace Crosshelper.Views
 {
     public partial class SignInPage : ContentPage
     {
-        private int parentPageIndex;
-        public SignInPage(int i)
-        {
-            parentPageIndex = i;
-            InitializeComponent();
-        }
 
         public SignInPage()
         {
+            InitializeComponent();
         }
 
         //取消按钮 Canceled
         void Handle_Canceled(object sender, EventArgs e)
         {
-
-            var masterPage = this.Parent as TabbedPage;
-            masterPage.CurrentPage = masterPage.Children[parentPageIndex];
-            //Application.
+            Navigation.PopModalAsync();
         }
         //登入邮箱&密码输入框 Sign in email&password input box
         void UsernameSignInCompleted(object sender, EventArgs e)

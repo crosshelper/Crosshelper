@@ -14,8 +14,10 @@ namespace Crosshelper.Views
         public MyTabbedPage()
         {
             InitializeComponent();
-            //tab1 = new PromotionCodePage().Content;
-            //tab1.Content=new PromotionCodePage().Content;
+            MessagingCenter.Subscribe<object>(this, "Hi", (obj) =>
+            {
+                CurrentPage = Children[2];
+            });
         }
 
         public MyTabbedPage(String o)
