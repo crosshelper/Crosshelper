@@ -6,7 +6,7 @@ using System.Data;
 
 namespace Crosshelper.Helpers
 {
-    class GetUserProList
+    class UserProListHelper
     {
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
         IList<UserPro> helperlist;
