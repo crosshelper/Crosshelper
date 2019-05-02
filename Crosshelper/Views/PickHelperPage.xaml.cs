@@ -17,13 +17,15 @@ namespace Crosshelper.Views
             Navigation.PushAsync(new NewcomerHelperProfilePage());
         }
 
-        public IList<HelperLabel> Helpers { get; private set; }
-        //public IList<UserPro> Helpers { get; private set; }
-        UserProListHelper gl;
+        IList<UserPro> Helpers;
+        UserProListHelper listhelper = new UserProListHelper();
         // Color statuscolor = new Color();//(79B563);
         public PickHelperPage()
         {
             InitializeComponent();
+            listhelper.GetProHelperByTag(1);
+            listhelper.SearchingInit();
+            Helpers=listhelper.Helperlist;
 
             //Helpers = gl.GetHelperList(1);// new List<UserPro>();
             
