@@ -18,7 +18,7 @@ namespace Crosshelper.Views
 
         void Handle_Canceled(object sender, System.EventArgs e)
         {
-            //Application.Current.MainPage = new SignInPage();
+            Navigation.PopModalAsync();
         }
     }
 }

@@ -42,7 +42,7 @@ namespace Crosshelper.Views
         }
         void Handle_Language(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SignInPage(1));
+            Navigation.PushAsync(new SignInPage());
         }
     }
 }

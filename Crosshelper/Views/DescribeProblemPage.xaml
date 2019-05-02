@@ -28,14 +28,14 @@
                                             <StackLayout >
                                               <Label Text="Language Preference" TextColor="#666666" FontSize="16" FontAttributes="Bold"></Label>
                                             </StackLayout>
-                                                <Button Text="Chinese/English" BorderColor="#999999" 
+                                                <Picker HeightRequest="45" />
+                                                <Button Text="Chinese" BorderColor="#999999" 
                                                         BorderRadius="5" BackgroundColor="White" 
                                                         TextColor="#666666" BorderWidth="1" FontAttributes="Bold" 
                                                         FontSize="16"
                                                         HeightRequest="45"
                                                         Clicked="Handle_Language"></Button>
-
-                                        </StackLayout>
+                                            </StackLayout>
                             <StackLayout>
                             <StackLayout>
                                 <Label Text="Is emergency problem?" TextColor="Gray" FontSize="Default" FontAttributes="Bold"></Label>

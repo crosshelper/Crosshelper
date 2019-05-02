@@ -17,8 +17,14 @@ namespace Crosshelper.Views
             Navigation.PushAsync(new NewcomerHelperProfilePage());
         }
 
+<<<<<<< HEAD
         IList<UserPro> Helpers;
         UserProListHelper listhelper = new UserProListHelper();
+=======
+        public IList<HelperLabel> Helpers { get; private set; }
+        //public IList<UserPro> Helpers { get; private set; }
+       //GetUserProList gl;
+>>>>>>> 666a6a0... sign in done
         // Color statuscolor = new Color();//(79B563);
         public PickHelperPage()
         {

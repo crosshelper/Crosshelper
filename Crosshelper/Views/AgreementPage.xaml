@@ -10,7 +10,7 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout Margin="20,25,20,0">
-            <Label Text="I agree xxxxxxxx xxxxxxxx xxxxxx xxxxxx xxxxxxxxx"></Label>
+            <Label Text="{Binding agreement}"></Label>
             <Label Text="All right © 2019-Present, Crosshelper, Inc."></Label>
         </StackLayout>
     </ContentPage.Content>

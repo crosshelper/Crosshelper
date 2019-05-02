@@ -9,7 +9,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="15,15,15,10">
-                <!--登入 Sign In lable -->
+              <!--登入 Sign In lable -->
                     <Label Margin="0,5,16,5"
                            Text="Sign Up"
                            TextColor="#FF4E17"
