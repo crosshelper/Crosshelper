@@ -19,7 +19,7 @@ namespace Crosshelper.Views
 
         public IList<HelperLabel> Helpers { get; private set; }
         //public IList<UserPro> Helpers { get; private set; }
-        GetUserProList gl;
+        UserProListHelper gl;
         // Color statuscolor = new Color();//(79B563);
         public PickHelperPage()
         {
