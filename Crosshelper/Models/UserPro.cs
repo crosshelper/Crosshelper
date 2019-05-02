@@ -10,7 +10,7 @@
         public string PaymentID { get; set; }
         public string Icon { get; set; }
         public string Location { get; set; }
-        public string Rating { get; set; }
+        public int Rating { get; set; }
         public string Status { get; set; }
         public string PriceSign { get; set; }
     }
