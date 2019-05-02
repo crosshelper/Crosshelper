@@ -9,8 +9,26 @@ namespace Crosshelper.Helpers
     class UserProListHelper
     {
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
+
         IList<UserPro> helperlist;
-        public IList<UserPro> GetHelperList(int userid)
+
+        List<int> helperuidlist;
+
+
+        public void Init()
+        {
+             
+        }
+
+        void GetProHelperByTag()
+        { 
+
+        }
+
+
+
+
+        public void GetHelperList(int userid)
         {
             UserPro helper = new UserPro();
             
@@ -20,7 +38,8 @@ namespace Crosshelper.Helpers
             {   //建立连接，打开数据库
                 conn.Open();
                 string sqlstr = //"select * from UserInfo where Uid = @para1";// and Pwd = @para2";
-                "SELECT * FROM HelperInfo WHERE HelperInfo.Uid = @para1 AND UserInfo.Uid = @para1";
+                "SELECT Rating,`Status`,PriceSign,FirstName,LastName,ChatID,FLanguage,SLanguage,Icon FROM HelperInfo,UserInfo WHERE HelperInfo.Uid = @para1 AND UserInfo.Uid = @para1";
+                //"SELECT * FROM HelperInfo WHERE HelperInfo.Uid = @para1 AND UserInfo.Uid = @para1";
 
                 MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
                 //通过设置参数的形式给SQL 语句串值
