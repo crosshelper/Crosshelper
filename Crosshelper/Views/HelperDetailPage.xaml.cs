@@ -5,16 +5,17 @@ using Xamarin.Forms;
 
 namespace Crosshelper.Views
 {
-    public partial class NewcomerHelperProfilePage : ContentPage
+    public partial class HelperDetailPage : ContentPage
     {
         void Handle_Canceled(object sender, System.EventArgs e)
         {
             Navigation.PopToRootAsync(false);
         }
-        public NewcomerHelperProfilePage()
-        {
+        public HelperDetailPage()
+        {   
             InitializeComponent();
         }
+
         //Top Ring&Menu button
         void NHPPBackButton(object sender, EventArgs e)
         {

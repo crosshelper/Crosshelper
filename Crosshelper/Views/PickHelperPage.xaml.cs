@@ -14,7 +14,7 @@ namespace Crosshelper.Views
         }
         void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            Navigation.PushAsync(new NewcomerHelperProfilePage());
+            Navigation.PushAsync(new HelperDetailPage());
         }
 
         IList<UserPro> Helpers;
