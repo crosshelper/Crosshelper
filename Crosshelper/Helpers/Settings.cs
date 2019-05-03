@@ -1,4 +1,5 @@
-﻿using Plugin.Settings;
+﻿using Plugin.Geolocator.Abstractions;
+using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 
 namespace Crosshelper.Helpers
@@ -34,6 +35,18 @@ namespace Crosshelper.Helpers
         {
             get => AppSettings.GetValueOrDefault(nameof(ChatID), string.Empty);
             set => AppSettings.AddOrUpdateValue(nameof(ChatID), value);
+        }
+
+        public static double CurrentLatitude
+        {
+            get => AppSettings.GetValueOrDefault(nameof(CurrentLatitude), 0.00);
+            set => AppSettings.AddOrUpdateValue(nameof(CurrentLatitude), value);
+        }
+
+        public static double CurrentLongitude
+        {
+            get => AppSettings.GetValueOrDefault(nameof(CurrentLongitude), 0.00);
+            set => AppSettings.AddOrUpdateValue(nameof(CurrentLongitude), value);
         }
 
         public static string GeneralSettings
