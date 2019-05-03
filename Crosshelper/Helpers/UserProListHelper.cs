@@ -79,8 +79,8 @@ namespace Crosshelper.Helpers
                     helper.SLanguage = reader.GetString(5);
                     helper.PaymentID = reader.GetString(6);
                     helper.Location = reader.GetString(7);
-                    helper.Rating = reader.GetString(8);
-                    helper.Status = reader.GetString(9);
+                    helper.Rating = reader.GetInt32(8);
+                    helper.Status = reader.GetInt32(9);
                     helper.PriceSign = reader.GetString(10);
                     Helperlist.Add(helper);
                 }

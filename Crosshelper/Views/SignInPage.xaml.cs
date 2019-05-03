@@ -41,8 +41,8 @@ namespace Crosshelper.Views
             if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
             {
                 signInTest.Text = "Sign in success";
-                Settings.UserId = userAccess.CurrentUid;
-                usr = userAccess.GetUserInfo(Settings.UserId);
+                Settings.UserId = userAccess.CurrentUid.ToString();
+                usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                 Settings.ChatID = usr.ChatID;
             }
             else

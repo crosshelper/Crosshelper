@@ -23,7 +23,7 @@ namespace Crosshelper.Helpers
         private static readonly string SettingsDefault = string.Empty;
 
         private const string UserKey = "user_key";
-        private static readonly int UserDefault = 0;
+        private static readonly string UserDefault = string.Empty;
 
         private const string IsLoginKey = "login_key";
         private static readonly bool IsLoginDefault = false;
@@ -48,7 +48,7 @@ namespace Crosshelper.Helpers
             }
         }
 
-        public static int UserId
+        public static string UserId
         {
             get
             {
