@@ -27,7 +27,7 @@ namespace Crosshelper.Views
         //Confirm
         void NHPPConfirm(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            Navigation.PushModalAsync(new NavigationPage(new SignInPage()));
         }
     }
 }
