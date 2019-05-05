@@ -17,6 +17,7 @@ namespace Crosshelper.Models
         public string LocationIconUrl { get; set; }
         public string StatusText { get; set; }
         public Color StatusColor { get; set; }
+        public string HelperID { get; internal set; }
 
         public override string ToString()
         {

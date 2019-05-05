@@ -17,6 +17,10 @@ namespace Crosshelper.Helpers
             {
                 tmpstar += "★";
             }
+            for (int i = 0; i < 5 - no; i++)
+            {
+                tmpstar += "☆";
+            }
             return tmpstar;
         }
 
@@ -50,12 +54,13 @@ namespace Crosshelper.Helpers
             }
         }
 
-        public List<UserPro> BindingHelpersConvert(IList<UserPro> helpers)
+        public List<HelperLabel> BindingHelpersConvert(IList<UserPro> helpers)
         {
-            List<UserPro> newhelpers = new List<UserPro>();
+            List<HelperLabel> newhelpers = new List<HelperLabel>();
             HelperLabel tmp = new HelperLabel();
             foreach (UserPro helper in helpers)
             {
+                tmp.HelperID = helper.ChatID;
                 tmp.Name = helper.FirstName + helper.LastName;
                 tmp.Rating = StarNoToStarSign(helper.Rating);
                 tmp.Language = "Language: " + helper.FLanguage + "/" + helper.SLanguage;
