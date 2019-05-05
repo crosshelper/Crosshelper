@@ -8,10 +8,18 @@ namespace Crosshelper.Views
     public partial class HelperProfilePage : ContentPage
     {
         IList<ReviewLabelContent> Helpers;
+
         public HelperProfilePage()
         {
             InitializeComponent();
         }
+
+        public HelperProfilePage(UserPro hp)
+        {
+            InitializeComponent();
+            hp.ChatID = "p";
+        }
+
 
         void Handle_Canceled(object sender, System.EventArgs e)
         {

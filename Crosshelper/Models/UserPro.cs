@@ -1,6 +1,6 @@
 ﻿namespace Crosshelper.Models
 {
-    class UserPro
+    public class UserPro
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

@@ -12,12 +12,13 @@ namespace Crosshelper.Views
         {
             Navigation.PopToRootAsync(false);
         }
-        void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Navigation.PushAsync(new HelperProfilePage());
+            UserPro tmp = sender as UserPro;//e.SelectedItem;
+            Navigation.PushAsync(new HelperProfilePage(tmp));
         }
 
-        IList<UserPro> Helpers;
+        IList<HelperLabel> Helpers;
         UserProListHelper listhelper = new UserProListHelper();
         BindingContextConverter cvt = new BindingContextConverter();
         // Color statuscolor = new Color();//(79B563);
