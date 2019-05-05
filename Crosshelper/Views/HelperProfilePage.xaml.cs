@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Crosshelper.Models;
 using Xamarin.Forms;
 
 namespace Crosshelper.Views
 {
     public partial class HelperProfilePage : ContentPage
     {
+        IList<HelperProfileContent> Helpers;
         public HelperProfilePage()
         {
             InitializeComponent();
         }
-
 
         void Handle_Canceled(object sender, System.EventArgs e)
         {

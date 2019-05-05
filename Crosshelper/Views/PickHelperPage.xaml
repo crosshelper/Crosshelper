@@ -70,7 +70,6 @@
                                            Text="{Binding Location}"
                                            HorizontalOptions="Start" />
                                     <Label 
-                                           
                                            TextColor= "{Binding StatusColor}"
                                            Text="{Binding StatusText}"
                                            HorizontalOptions="EndAndExpand" />

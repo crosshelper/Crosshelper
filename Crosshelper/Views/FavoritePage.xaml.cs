@@ -23,7 +23,6 @@ namespace Crosshelper.Views
             Helpers.Add(new HelperLabel
             {
                 Name = "Baboon",
-                Bornin = "China",
                 Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
@@ -37,7 +36,6 @@ namespace Crosshelper.Views
             Helpers.Add(new HelperLabel
             {
                 Name = "Mike",
-                Bornin = "China",
                 Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",

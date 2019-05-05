@@ -21,10 +21,8 @@
                                 Source="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
                                 Aspect="AspectFill"
                                 WidthRequest="80" 
-                                HeightRequest="80"
-                                />
+                                HeightRequest="80"/>
             </StackLayout>
-                
             <Grid Margin="10,0,0,0">
                 <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="90" />
