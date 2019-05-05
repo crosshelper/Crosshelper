@@ -23,8 +23,7 @@ namespace Crosshelper.Views
                     locator.DesiredAccuracy = 1000;
                     labelGPS.Text = "Getting gps";
 
-                    var position = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
-
+                    var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(20), null, true);//locator.GetPositionAsync(TimeSpan.FromSeconds(3));  
                     if (position == null)
                     {
                         labelGPS.Text = "null gps :(";
@@ -53,7 +52,7 @@ namespace Crosshelper.Views
                     }
                     else
                     {
-                        if (await CrossGeolocator.Current.StartListeningAsync(30000, 0))
+                        if (await CrossGeolocator.Current.StartListeningAsync(TimeSpan.FromSeconds(3), 0))
                         {
                             labelGPSTrack.Text = "Started tracking";
                             buttonTrack.Text = "Track Movements";
