@@ -8,14 +8,20 @@ namespace Crosshelper.Views
 {
     public partial class PickHelperPage : ContentPage
     {
-        void Handle_Canceled(object sender, System.EventArgs e)
+        void Handle_Canceled(object sender, EventArgs e)
         {
             Navigation.PopToRootAsync(false);
         }
         void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            UserPro tmp = sender as UserPro;//e.SelectedItem;
-            Navigation.PushAsync(new HelperProfilePage(tmp));
+            HelperLabel tmp = sender as HelperLabel;
+            HelperLabel hl = e.SelectedItem as HelperLabel;
+            Navigation.PushAsync(new HelperProfilePage(hl));
+        }
+
+        void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+
         }
 
         IList<HelperLabel> Helpers;

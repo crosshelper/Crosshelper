@@ -14,10 +14,10 @@ namespace Crosshelper.Views
             InitializeComponent();
         }
 
-        public HelperProfilePage(UserPro hp)
+        public HelperProfilePage(HelperLabel hl)
         {
             InitializeComponent();
-            hp.ChatID = "p";
+            HelperName.Text = hl.Name;
         }
 
 

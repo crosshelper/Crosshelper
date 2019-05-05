@@ -50,7 +50,7 @@
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                                <Label Text="Language:" FontSize="15" TextColor="#575656"></Label>
-                               <Label BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding HelperLanguage}" FontSize="15" TextColor="#575656"></Label>
+                               <Label x:Name="HelperName" Text="" FontSize="15" TextColor="#575656"></Label>
                         </StackLayout>
                         
         
