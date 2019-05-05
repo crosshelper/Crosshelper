@@ -7,7 +7,7 @@ namespace Crosshelper.Views
 {
     public partial class HelperProfilePage : ContentPage
     {
-        IList<HelperProfileContent> Helpers;
+        IList<ReviewLabelContent> Helpers;
         public HelperProfilePage()
         {
             InitializeComponent();

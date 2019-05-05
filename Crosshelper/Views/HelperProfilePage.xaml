@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.HelperProfilePage">
+<ContentPage x:Name="HelperProfilePage" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.HelperProfilePage">
     <NavigationPage.TitleView>
         <Grid>
             <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
@@ -18,7 +18,8 @@
                      <StackLayout Orientation="Horizontal" Margin="0,10,0,0" VerticalOptions="Start">
                         <StackLayout HorizontalOptions="Start">
                             <Image
-                                Source="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
+                                Source=""
+                                x:Name="HelperImage"
                                 Aspect="AspectFill"
                                 WidthRequest="80" 
                                 HeightRequest="80"/>
@@ -32,7 +33,7 @@
                     <RowDefinition Height="25"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                    <Label Text="Gwen Stephane" Grid.ColumnSpan="3" FontAttributes="Bold" FontSize="20" TextColor="#575656" x:Name="NHPPHelperName"></Label>
+                    <Label BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding HelperName}" x:Name="HelperName" Grid.ColumnSpan="3" FontAttributes="Bold" FontSize="20" TextColor="#575656"></Label>
                     <Button  
                         Grid.Row="1"  Grid.ColumnSpan="1"
                         Text="Confirm"
@@ -42,56 +43,51 @@
                         BackgroundColor="#FF4E18"
                         Clicked="NHPPConfirm"
                         Margin="0,0,0,0"/>
-            </Grid>
-                        
+                </Grid>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                        <Label TextColor="#FFC834" Text="★★★★★" FontSize="28"></Label>
+                        <Label TextColor="#FFC834" BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding HelperRating}" x:Name="Rating" FontSize="28"></Label>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                                <Label Text="Language:" FontSize="15" TextColor="#575656"></Label>
-                               <Label Text="English," FontSize="15" TextColor="#575656" x:Name="NHPPHelperLanguage"></Label>
-                               <Label Text="Chinese" FontSize="15" TextColor="#575656"></Label>
+                               <Label BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding HelperLanguage}" x:Name="HelperLanguage"  FontSize="15" TextColor="#575656"></Label>
                         </StackLayout>
+                        
         
                         <StackLayout>
                             <Label Text="Specialities" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,10,0,0"></Label>
                             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Language, Daily life, Health, Pets" FontSize="15" TextColor="#575656" x:Name="NHPPSpecialities"></Label>
+                                <Label BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding HelperLanguage}" x:Name="HelperLanguage" FontSize="15" TextColor="#575656"></Label>
                             </StackLayout>
                             <Label Text="About myself" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,10,0,0"></Label>
                             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
-                            <Label FontSize="15" TextColor="#575656" x:Name="NHPPAboutMyself" Text="Hello, I am Gwen Stephanie, I have been here for 6 years. I am very happy to help people solve newcomers and immigrants’ problems."></Label>
+                            <Label FontSize="15" TextColor="#575656"  BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding HelperBio}" x:Name="HelperBio"></Label>
                         </StackLayout>
         
                         <StackLayout>
                             <Label Text="Price starting" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,10,0,0"></Label>
                             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Start price:" FontSize="15" TextColor="#575656"></Label>
-                                <Label Text="$" FontSize="15" TextColor="#575656"></Label>
-                                <Label Text="25" FontSize="15" TextColor="#575656" x:Name="NHPPDigitalHelpPriceTwo"></Label>
-                                <Label Text="each problem" FontSize="15" TextColor="#575656"></Label>
+                                <Label  BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding HelperPrice}" x:Name="HelperPrice" FontSize="15" TextColor="#575656"></Label>
                             </StackLayout>
                         </StackLayout>
                         <StackLayout>
                             <Label Text="Reviews" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,10,0,10"></Label>
                             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                             <StackLayout Margin="0,5,0,0">
-                                <Label TextColor="#575656" Text="Christan" FontAttributes="Bold" FontSize="15"></Label>
-                                <Label TextColor="#FFC834" Text="★★★★★"></Label>
-                                <Label TextColor="#575656" FontSize="14" Text="Went for an oil change and I gotta say its nice going somewhere where they don't gouge you for money on an oil change the older gentleman was nice he was funny and believe me I'll be going back. I definitely reccomend this place. 5 out of 5"></Label>
+                                <Label TextColor="#575656"  BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding ReviewerName}" x:Name="ReviewerName" FontAttributes="Bold" FontSize="15"></Label>
+                                <Label TextColor="#FFC834"  BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding ReviewerRating}" x:Name="ReviewerRating"></Label>
+                                <Label TextColor="#575656" FontSize="14"  BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding ReviewerContent}" x:Name="ReviewerContent"></Label>
                             </StackLayout>
                             <StackLayout Margin="0,5,0,0">
-                                <Label TextColor="#575656" Text="Christan" FontAttributes="Bold" FontSize="15"></Label>
-                                <Label TextColor="#FFC834" Text="★★★★★"></Label>
-                                <Label TextColor="#575656" FontSize="14" Text="Went for an oil change and I gotta say its nice going somewhere where they don't gouge you for money on an oil change the older gentleman was nice he was funny and believe me I'll be going back. I definitely reccomend this place. 5 out of 5"></Label>
-                            </StackLayout>
-                            <StackLayout Margin="0,5,0,0">
-                                <Label TextColor="#575656" Text="Christan" FontAttributes="Bold" FontSize="15"></Label>
-                                <Label TextColor="#FFC834" Text="★★★★★"></Label>
-                                <Label TextColor="#575656" FontSize="14" Text="Went for an oil change and I gotta say its nice going somewhere where they don't gouge you for money on an oil change the older gentleman was nice he was funny and believe me I'll be going back. I definitely reccomend this place. 5 out of 5"></Label>
+                                <Label TextColor="#575656"  BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding ReviewerName}" x:Name="ReviewerName" FontAttributes="Bold" FontSize="15"></Label>
+                                <Label TextColor="#FFC834"  BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding ReviewerRating}" x:Name="ReviewerRating"></Label>
+                                <Label TextColor="#575656" FontSize="14"  BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding ReviewerContent}" x:Name="ReviewerContent"></Label>
+                            </StackLayout>                            <StackLayout Margin="0,5,0,0">
+                                <Label TextColor="#575656"  BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding ReviewerName}" x:Name="ReviewerName" FontAttributes="Bold" FontSize="15"></Label>
+                                <Label TextColor="#FFC834"  BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding ReviewerRating}" x:Name="ReviewerRating"></Label>
+                                <Label TextColor="#575656" FontSize="14"  BindingContext="{x:Reference Name=HelperProfilePage}" Text="{Binding ReviewerContent}" x:Name="ReviewerContent"></Label>
                             </StackLayout>
                         </StackLayout>
                 </StackLayout>
