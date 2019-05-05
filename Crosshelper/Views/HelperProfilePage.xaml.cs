@@ -5,17 +5,28 @@ using Xamarin.Forms;
 
 namespace Crosshelper.Views
 {
-    public partial class HelperDetailPage : ContentPage
+
+    public partial class HelperProfilePage : ContentPage
     {
+        IList<ReviewLabelContent> Helpers;
+
+        public HelperProfilePage()
+        {
+            InitializeComponent();
+            //HelperImage,HelperName,HelperRating,HelperLanguage,HelperTags,HelperBio,HelperPrice,
+            //ReviewerName1,ReviewerRating1,ReviewContent1 //1,2,3
+        }
+        public HelperProfilePage(HelperLabel hl)
+        {
+            InitializeComponent();
+            HelperName.Text = hl.Name;
+        }
+
+
         void Handle_Canceled(object sender, System.EventArgs e)
         {
             Navigation.PopToRootAsync(false);
         }
-        public HelperDetailPage()
-        {   
-            InitializeComponent();
-        }
-
         //Top Ring&Menu button
         void NHPPBackButton(object sender, EventArgs e)
         {

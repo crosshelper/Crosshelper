@@ -9,7 +9,7 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
-                <ListView ItemsSource="{Binding Helpers}" HasUnevenRows="true" ItemSelected="Handle_ItemSelected">
+                <ListView ItemsSource="{Binding Helpers}" HasUnevenRows="true" ItemTapped="Handle_ItemTapped" ItemSelected="Handle_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell x:Name="PHPPickNewcomeButton">
@@ -70,7 +70,6 @@
                                            Text="{Binding Location}"
                                            HorizontalOptions="Start" />
                                     <Label 
-                                           
                                            TextColor= "{Binding StatusColor}"
                                            Text="{Binding StatusText}"
                                            HorizontalOptions="EndAndExpand" />

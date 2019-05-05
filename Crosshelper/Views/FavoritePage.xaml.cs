@@ -13,7 +13,7 @@ namespace Crosshelper.Views
         }
         void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            Navigation.PushAsync(new HelperDetailPage());
+            Navigation.PushAsync(new HelperProfilePage());
         }
         public IList<HelperLabel> Helpers { get; private set; }
         public FavoritePage()
@@ -23,7 +23,6 @@ namespace Crosshelper.Views
             Helpers.Add(new HelperLabel
             {
                 Name = "Baboon",
-                Bornin = "China",
                 Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
@@ -37,7 +36,6 @@ namespace Crosshelper.Views
             Helpers.Add(new HelperLabel
             {
                 Name = "Mike",
-                Bornin = "China",
                 Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",

@@ -8,9 +8,7 @@ namespace Crosshelper.Models
         public HelperLabel()
         {
         }
-        public int PanelID { get; set; }
         public string Name { get; set; }
-        public string Bornin { get; set; }
         public string Rating { get; set; }
         public string Language { get; set; }
         public string Baseprice { get; set; }
@@ -19,6 +17,7 @@ namespace Crosshelper.Models
         public string LocationIconUrl { get; set; }
         public string StatusText { get; set; }
         public Color StatusColor { get; set; }
+        public string HelperID { get; internal set; }
 
         public override string ToString()
         {
