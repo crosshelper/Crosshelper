@@ -17,7 +17,6 @@ namespace Crosshelper.Views
             //ReviewerName1,ReviewerRating1,ReviewContent1 //1,2,3
         }
         public HelperProfilePage(HelperLabel hl)
-        public HelperProfilePage(UserPro hp)
         {
             InitializeComponent();
             HelperName.Text = hl.Name;
