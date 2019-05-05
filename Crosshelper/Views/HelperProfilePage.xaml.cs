@@ -5,6 +5,7 @@ using Xamarin.Forms;
 
 namespace Crosshelper.Views
 {
+
     public partial class HelperProfilePage : ContentPage
     {
         IList<ReviewLabelContent> Helpers;
@@ -12,9 +13,11 @@ namespace Crosshelper.Views
         public HelperProfilePage()
         {
             InitializeComponent();
+            //HelperImage,HelperName,HelperRating,HelperLanguage,HelperTags,HelperBio,HelperPrice,
+            //ReviewerName1,ReviewerRating1,ReviewContent1 //1,2,3
         }
-
         public HelperProfilePage(HelperLabel hl)
+        public HelperProfilePage(UserPro hp)
         {
             InitializeComponent();
             HelperName.Text = hl.Name;
