@@ -207,21 +207,9 @@ namespace Crosshelper.Views
 
             Settings.CurrentLatitude = position.Latitude;
             Settings.CurrentLongitude = position.Longitude;
+
+            Navigation.PopAsync();
         }
 
-        private async void Handle_Map(object sender, System.EventArgs e)
-        {
-            if (!double.TryParse(Settings.CurrentLatitude.ToString(), out double lat))
-                return;
-
-            if (!double.TryParse(Settings.CurrentLongitude.ToString(), out double lng))
-                return;
-            await Map.OpenAsync(lat, lng, new MapLaunchOptions
-            {
-                Name = EntryName.Text,
-                NavigationMode = NavigationMode.None
-
-            });
-        }
     }
 }
