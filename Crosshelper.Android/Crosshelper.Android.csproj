@@ -86,6 +86,9 @@
     <PackageReference Include="AiForms.SettingsView">
       <Version>0.4.15</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Google.iOS.Places">
+      <Version>3.0.3</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
