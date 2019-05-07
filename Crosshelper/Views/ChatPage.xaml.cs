@@ -19,7 +19,7 @@ namespace Crosshelper.Views
                 return instance;
             }
         }
-        public ChatPage(Crosshelper.Models.User user, GroupChannel channel)
+        public ChatPage(Models.User user, GroupChannel channel)
         {
             InitializeComponent();
             BindingContext = vm = new ChatViewModel();

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Crosshelper.Models;
 using Crosshelper.Helpers;
+using SendBird;
 
 namespace Crosshelper.Views
 {
@@ -34,7 +35,7 @@ namespace Crosshelper.Views
         {
             //(sender as Button).Text = "Click me again!";
             UserAccess userAccess = new UserAccess();
-            User usr = new User();
+            Crosshelper.Models.User usr = new Crosshelper.Models.User();
 
             Application.Current.MainPage = new MyTabbedPage("o");
 
@@ -44,12 +45,37 @@ namespace Crosshelper.Views
                 Settings.UserId = userAccess.CurrentUid.ToString();
                 usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                 Settings.ChatID = usr.ChatID;
+                Connect();
             }
             else
             {
                 signInTest.Text = "Sign in Faild";
             }
         }
+
+        async void Connect()
+        {
+            SendBirdClient.Connect(Settings.ChatID, (SendBird.User user, SendBirdException e) =>
+            {
+                if (e != null)
+                {
+                    //MessageError = e.Message;
+                    return;
+                }
+
+                SendBirdClient.UpdateCurrentUserInfo("CYCBIS_User", "", (SendBirdException e1) =>
+                {
+                    if (e1 != null)
+                    {
+                        //MessageError = e1.Message;
+                        return;
+                    }
+                });
+            });
+            //MessageError = "Connected";
+            Settings.IsLogin = true;
+        }
+
         //第三次登入 Third party sign in
         void Handle_GoogleSignIn(object sender, EventArgs e)
         {

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Crosshelper.Helpers;
 using Crosshelper.Models;
+using SendBird;
 using Xamarin.Forms;
 
 namespace Crosshelper.Views
@@ -8,6 +11,7 @@ namespace Crosshelper.Views
 
     public partial class HelperProfilePage : ContentPage
     {
+        private HelperLabel _currenthelperlabel;
         public HelperProfilePage()
         {
             InitializeComponent();
@@ -17,6 +21,7 @@ namespace Crosshelper.Views
         public HelperProfilePage(HelperLabel hl)
         {
             InitializeComponent();
+            _currenthelperlabel = hl;
             Pageload(hl);
         }
 
@@ -28,6 +33,24 @@ namespace Crosshelper.Views
             HelperTags.Text = "";
             HelperBio.Text = "";
             HelperPrice.Text = hl.Baseprice;
+        }
+
+        async void ConnectToChannel(Models.User user, List<string> users)
+        {
+            GroupChannel group = null;
+            IsBusy = true;
+
+            GroupChannel.CreateChannelWithUserIds(users, true, (GroupChannel groupChannel, SendBirdException e) => {
+                if (e != null)
+                {
+                    // Error.
+                    return;
+                }
+                group = groupChannel;
+            });
+            await Task.Delay(3000);
+            IsBusy = false;
+            await Navigation.PushAsync(new ChatPage(user, group));
         }
 
         void Handle_Canceled(object sender, System.EventArgs e)
@@ -46,6 +69,17 @@ namespace Crosshelper.Views
         //Confirm
         void NHPPConfirm(object sender, EventArgs e)
         {
+            if (Settings.IsLogin)
+            {
+                var user = new Models.User() {
+                    UserID = _currenthelperlabel.HelperID
+                };
+                List<string> users = new List<string>() {
+                Settings.UserId,
+                _currenthelperlabel.HelperID
+                };
+                ConnectToChannel(user, users);
+            }
             Navigation.PushModalAsync(new NavigationPage(new SignInPage()));
         }
     }

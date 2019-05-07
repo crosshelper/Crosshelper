@@ -113,6 +113,7 @@ namespace Crosshelper.Helpers
                     helper.Rating = reader.GetInt32(8);
                     helper.Status = reader.GetInt32(9);
                     helper.PriceSign = reader.GetString(10);
+                    helper.UserID = userid.ToString();
                     Helperlist.Add(helper);
                 }
             }

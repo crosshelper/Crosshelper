@@ -60,7 +60,7 @@ namespace Crosshelper.Helpers
             HelperLabel tmp = new HelperLabel();
             foreach (UserPro helper in helpers)
             {
-                tmp.HelperID = helper.ChatID;
+                tmp.HelperID = helper.UserID;
                 tmp.Name = helper.FirstName + helper.LastName;
                 tmp.Rating = StarNoToStarSign(helper.Rating);
                 tmp.Language = "Language: " + helper.FLanguage + "/" + helper.SLanguage;

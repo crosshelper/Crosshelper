@@ -13,5 +13,6 @@
         public int Rating { get; set; }
         public int Status { get; set; }
         public string PriceSign { get; set; }
+        public string UserID { get; internal set; }
     }
 }
