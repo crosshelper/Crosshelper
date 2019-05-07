@@ -8,8 +8,6 @@ namespace Crosshelper.Views
 
     public partial class HelperProfilePage : ContentPage
     {
-        IList<ReviewLabelContent> Helpers;
-
         public HelperProfilePage()
         {
             InitializeComponent();
@@ -19,20 +17,18 @@ namespace Crosshelper.Views
         public HelperProfilePage(HelperLabel hl)
         {
             InitializeComponent();
-            Pageload();
+            Pageload(hl);
         }
-
 
         private void Pageload(HelperLabel hl)
         {
             HelperName.Text = hl.Name;
             HelperLanguage.Text = hl.Language;
-            HelperRatinng.Text = hl.Rating;
-            HelperTags = "";
-            HelperBio = "";
-            HelperPrice = hl.Baseprice;
+            HelperRating.Text = hl.Rating;
+            HelperTags.Text = "";
+            HelperBio.Text = "";
+            HelperPrice.Text = hl.Baseprice;
         }
-
 
         void Handle_Canceled(object sender, System.EventArgs e)
         {
