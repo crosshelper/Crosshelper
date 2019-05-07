@@ -19,7 +19,18 @@ namespace Crosshelper.Views
         public HelperProfilePage(HelperLabel hl)
         {
             InitializeComponent();
+            Pageload();
+        }
+
+
+        private void Pageload(HelperLabel hl)
+        {
             HelperName.Text = hl.Name;
+            HelperLanguage.Text = hl.Language;
+            HelperRatinng.Text = hl.Rating;
+            HelperTags = "";
+            HelperBio = "";
+            HelperPrice = hl.Baseprice;
         }
 
 
