@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.LocationPage">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-            <Label x:Name="labelGPSTrack" Text="AL"/>
-            <Label x:Name="labelGPS" Text="NB"/>            
-            <Label x:Name="LongitudeLabel"/>
-            <Label x:Name="LatitudeLabel"/> 
-            <Button Text="get GPS" Clicked="Handle_GPS"/>
-            <Button x:Name="buttonTrack" Text="get GPS"/>
-            <Button x:Name="buttonGetGPS" Text="get GPS"/>
-        </StackLayout>
+        <StackLayout Margin="16,15,16,0">
+            <StackLayout VerticalOptions="Start">
+                <Entry Placeholder="Where are you?" HeightRequest="45" FontSize="30" HorizontalOptions="FillAndExpand"/>
+                <StackLayout >
+                    <Label Text="Use my current location" TextColor="#666666" TextDecorations="Underline" FontSize="20" FontAttributes="Bold">
+                        <Entry.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Handle_GPS"/>
+                        </Entry.GestureRecognizers>
+                    </Label>
+                </StackLayout> 
+            </StackLayout>
+                <ListView></ListView>
+        </StackLayout> 
     </ContentPage.Content>
 </ContentPage>

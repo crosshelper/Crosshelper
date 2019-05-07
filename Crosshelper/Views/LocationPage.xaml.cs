@@ -6,6 +6,7 @@ using Crosshelper.Helpers;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace Crosshelper.Views
 {
@@ -15,6 +16,8 @@ namespace Crosshelper.Views
         {
             InitializeComponent();
 
+
+            /*
             buttonGetGPS.Clicked += async (sender, args) =>
             {
                 try
@@ -188,6 +191,24 @@ namespace Crosshelper.Views
                     //position.Altitude, position.AltitudeAccuracy, position.Accuracy, position.Heading, position.Speed);
             //Debug.WriteLine(output);
             return position;
+                    */
+        }
+
+        private async void Handle_GPS(object sender, EventArgs e)
+        {
+            var locator = CrossGeolocator.Current;
+            locator.DesiredAccuracy = 50;
+            var position = await locator.GetPositionAsync();
+
+            //var Longitude = position.Longitude.ToString();
+            //var Latitude = position.Latitude.ToString();
+
+            //MyLocation.Text = Longitude + " , " + Latitude;
+
+            Settings.CurrentLatitude = position.Latitude;
+            Settings.CurrentLongitude = position.Longitude;
+
+            Navigation.PopAsync();
         }
 
     }
