@@ -19,18 +19,17 @@
                                             <StackLayout >
                                               <Label Text="Current location" TextColor="#FF4E18" FontSize="17" FontAttributes="Bold"></Label>
                                             </StackLayout>
-                                                <Label Text="123 W bigbang Ave" 
+                                                <Label Text="My location" 
                                                        TextColor="#666666" 
                                                        FontSize="17" 
                                                        TextDecorations="Underline" 
                                                        x:Name="MyLocationName"
-                                                      
                                                        Margin="0,0,0,5" 
                                                        FontAttributes="Bold">
                                                 <Label.GestureRecognizers>
-                                                    <TapGestureRecognizer Tapped="handel_MyLocation" />
+                                                    <TapGestureRecognizer Tapped="Handel_MyLocation" />
                                                 </Label.GestureRecognizers>
-                                            </Label>
+                                                </Label>
                                             <StackLayout >
                                               <Label Text="Language Preference" TextColor="#FF4E18" FontSize="17" FontAttributes="Bold"></Label>
                                             </StackLayout>
