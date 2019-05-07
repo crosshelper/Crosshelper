@@ -19,7 +19,7 @@ namespace Crosshelper.Views
         public HelperProfilePage(HelperLabel hl)
         {
             InitializeComponent();
-            Pageload();
+            Pageload(hl);
         }
 
 
