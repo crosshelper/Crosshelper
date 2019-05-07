@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Plugin.Geolocator;
+using Plugin.Geolocator.Abstractions;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace Crosshelper.Views
 {
@@ -14,8 +16,6 @@ namespace Crosshelper.Views
         public DescribeProblemPage()
         {
             InitializeComponent();
-
-
         }
         //Not Really按钮 Not really Button
         void Handle_NotReally(object sender, EventArgs e)
@@ -38,8 +38,14 @@ namespace Crosshelper.Views
         {
             string text = ((Editor)sender).Text;
         }
-        void handel_MyLocation(object sender, EventArgs e)
+        private async void Handel_MyLocation(object sender, EventArgs e)
         {
+            var locator = CrossGeolocator.Current;
+            locator.DesiredAccuracy = 50;
+            var position = await locator.GetPositionAsync();
+
+            var Longitude = position.Longitude.ToString();
+            var Latitude = position.Latitude.ToString();
             Navigation.PushAsync(new LocationPage());
         }
         void Handle_Language(object sender, EventArgs e)
