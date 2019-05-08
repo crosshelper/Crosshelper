@@ -21,7 +21,7 @@
                         <StackLayout HorizontalOptions="Start">
                             <Image
                                 Source=""
-                                x:Name="helperImage"
+                                x:Name="HelperImage"
                                 Aspect="AspectFill"
                                 WidthRequest="80" 
                                 HeightRequest="80"/>
@@ -50,8 +50,7 @@
                         <StackLayout Orientation="Horizontal">
                         <Label TextColor="#FFC834" x:Name="HelperRating" Text="" FontSize="28"></Label>
                         </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                               <Label Text="Language:" FontSize="15" TextColor="#575656"></Label>
+                        <StackLayout Orientation="Horizontal">                
                                <Label x:Name="HelperLanguage" Text="" FontSize="15" TextColor="#575656"></Label>
                         </StackLayout>
                         

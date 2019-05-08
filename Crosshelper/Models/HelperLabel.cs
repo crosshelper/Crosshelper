@@ -13,7 +13,7 @@ namespace Crosshelper.Models
         public string LocationIconUrl { get; set; }
         public string StatusText { get; set; }
         public Color StatusColor { get; set; }
-        public string HelperID { get; internal set; }
+        public string HelperID { get; set; }
 
         public override string ToString()
         {

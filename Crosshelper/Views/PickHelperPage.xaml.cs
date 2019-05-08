@@ -18,26 +18,20 @@ namespace Crosshelper.Views
             Navigation.PushAsync(new HelperProfilePage(hl));
         }
 
-        void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-
-        }
-
-        List<HelperLabel> Helpers= new List<HelperLabel>();
+        public List<HelperLabel> Helpers { get; set; }//= new List<HelperLabel>();
         UserProListHelper listhelper = new UserProListHelper();
         BindingContextConverter cvt = new BindingContextConverter();
-        // Color statuscolor = new Color();//(79B563);
+
         public PickHelperPage()
         {
             InitializeComponent();
             listhelper.GetProHelperByTag(1);
             listhelper.SearchingInit();
-            //Helpers = cvt.BindingHelpersConvert(listhelper.GetHelperList());
-
+            Helpers = cvt.BindingHelpersConvert(listhelper.GetHelperList());
+            //Helpers = new List<HelperLabel>();
             Helpers.Add(new HelperLabel
             {
                 Name = "Baboon",
-                //Bornin = "China",
                 Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",

@@ -33,6 +33,7 @@ namespace Crosshelper.Views
             HelperTags.Text = "";
             HelperBio.Text = "";
             HelperPrice.Text = hl.Baseprice;
+            HelperImage.Source = hl.ImageUrl;
         }
 
         async void ConnectToChannel(Models.User user, List<string> users)

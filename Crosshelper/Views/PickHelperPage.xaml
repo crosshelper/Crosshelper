@@ -9,7 +9,7 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
-                <ListView ItemsSource="{Binding Helpers}" HasUnevenRows="true" ItemTapped="Handle_ItemTapped" ItemSelected="Handle_ItemSelected">
+                <ListView ItemsSource="{Binding Helpers}" HasUnevenRows="true" ItemSelected="Handle_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell x:Name="PHPPickNewcomeButton">
@@ -19,7 +19,6 @@
                                         <RowDefinition Height="22" />
                                         <RowDefinition Height="22" />
                                         <RowDefinition Height="22" />
-                                        <RowDefinition Height="20" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="80" />
@@ -33,6 +32,7 @@
                                            HeightRequest="65"
                                            WidthRequest="65" />
                                     <Label Grid.Column="1"
+                                           Grid.ColumnSpan="3"
                                            Grid.Row="0"
                                            FontSize="20"
                                            TextColor="#393939"
@@ -57,18 +57,7 @@
                                            Grid.ColumnSpan="3"
                                            Text="{Binding Language}"
                                            VerticalOptions="End" />
-                                <StackLayout Grid.Row="4" Orientation="Horizontal" Grid.ColumnSpan="4">
-                                    <Image  Source="{Binding LocationIconUrl}"
-                                            Aspect="AspectFill"
-                                            WidthRequest="12"
-                                            Margin="5,0,0,0"
-                                            HorizontalOptions="Start"/>
-                                    <Label 
-                                           
-                                           TextColor="#393939"
-                                           Grid.ColumnSpan="2"
-                                           Text="{Binding Location}"
-                                           HorizontalOptions="Start" />
+                                <StackLayout Grid.Row="3" Orientation="Horizontal" Grid.ColumnSpan="4">
                                     <Label 
                                            TextColor= "{Binding StatusColor}"
                                            Text="{Binding StatusText}"
