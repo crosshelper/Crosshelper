@@ -20,7 +20,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:FRequiredSignInPage/>
+                <views:FavoritePage/>
             </x:Arguments>
         </NavigationPage>
 
@@ -31,7 +31,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:CRequiredSignInPage/>
+                <views:ProjectPage/>
             </x:Arguments>
         </NavigationPage>
         

@@ -13,6 +13,12 @@ namespace Crosshelper.Views
            
 
             InitializeComponent();
+
+
+            //Emergency,CaseDate,Language,Description,HelperImage,HelperName,HelperRating,HelperLanguage
+            //ServiceFee,EquipmentFee,CycbisFee,Tax,Total,PaymentNum,CaseDateTime
+
+
             CaseDetail = new List<ProjectpageViewcellItem>();
             CaseDetail.Add(new ProjectpageViewcellItem
             {
