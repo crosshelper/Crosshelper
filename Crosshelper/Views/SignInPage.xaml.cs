@@ -37,7 +37,7 @@ namespace Crosshelper.Views
             UserAccess userAccess = new UserAccess();
             Crosshelper.Models.User usr = new Crosshelper.Models.User();
 
-            Application.Current.MainPage = new MyTabbedPage("o");
+
 
             if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
             {
@@ -45,7 +45,8 @@ namespace Crosshelper.Views
                 Settings.UserId = userAccess.CurrentUid.ToString();
                 usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                 Settings.ChatID = usr.ChatID;
-                Connect();
+                //Connect();
+                Application.Current.MainPage = new MyTabbedPage("o");
             }
             else
             {
@@ -96,7 +97,8 @@ namespace Crosshelper.Views
         }
         void Handle_CreateAccount(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SignUpPage());
+            Navigation.PushModalAsync(new SignUpPage());
+            //Navigation.PushAsync(new SignUpPage());
         }
 
     }

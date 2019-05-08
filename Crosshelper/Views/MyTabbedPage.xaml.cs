@@ -48,7 +48,7 @@ namespace Crosshelper.Views
         public MyTabbedPage(String o)
         {
             InitializeComponent();
-            Pageload();
+            //Pageload();
         }
         void Pageload()
         {

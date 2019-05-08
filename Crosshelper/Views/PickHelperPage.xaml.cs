@@ -33,6 +33,7 @@ namespace Crosshelper.Views
             listhelper.GetProHelperByTag(1);
             listhelper.SearchingInit();
             Helpers = cvt.BindingHelpersConvert(listhelper.Helperlist);
+
             /*
             Helpers.Add(new HelperLabel
             {

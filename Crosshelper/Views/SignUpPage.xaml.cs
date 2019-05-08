@@ -41,7 +41,8 @@ namespace Crosshelper.Views
         //注册按钮 Sign Up
         void Handle_SignUp(object sender, EventArgs e)
         {
-            uAccess.UserRegister(Uname, Email, ContactNo, Pwd);
+            //uAccess.UserRegister(Uname, Email, ContactNo, Pwd);
+            Application.Current.MainPage = new MyTabbedPage();
             //(sender as Button).Text = "Click me again!";
         }
         void Handle_SignUpAsHelper(object sender, EventArgs e)

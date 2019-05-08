@@ -15,13 +15,13 @@
                                      BackgroundColor="#F4F4F4">
                             <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
                                         <StackLayout Orientation="Horizontal">
-                                            <StackLayout >
-                                              <Label Text="" TextColor="Red" FontSize="Default" FontAttributes="Bold" x:Name="Emergency" ></Label>
-                                            </StackLayout>
-                                              <StackLayout HorizontalOptions="EndAndExpand">
-                                                    <Label Text="" FontSize="Default" TextColor="#242424" x:Name="CaseDate"></Label>
-                                                    <Label Text="" FontSize="Default" TextColor="#242424" x:Name="Language"></Label>
-                                               </StackLayout>
+                                        <StackLayout >
+                                          <Label Text="{Binding Emergency}" TextColor="Red" FontSize="Default" FontAttributes="Bold" x:Name="Emergency" ></Label>
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="EndAndExpand">
+                                            <Label Text="" FontSize="Default" TextColor="#242424" x:Name="CaseDate"></Label>
+                                            <Label Text="" FontSize="Default" TextColor="#242424" x:Name="Language"></Label>
+                                        </StackLayout>
                             </StackLayout>
                         <StackLayout>
                             <Label Text="Problem description" FontSize="Default" Margin="0,5,0,0"></Label>
@@ -47,7 +47,7 @@
                                 <Label Text="" HorizontalOptions="EndAndExpand" FontSize="Default" x:Name="HelperLanguage"></Label>
                                 </StackLayout>
                 <!--Receipt-->
-                        
+                       
                         <Label Text="Receipt" FontSize="Medium" Margin="0,20,0,0" FontAttributes="Bold" ></Label>
                         <BoxView BackgroundColor="#999999" HeightRequest="1.5"></BoxView>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
