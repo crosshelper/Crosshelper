@@ -11,7 +11,7 @@
                  <ScrollView>
                  <StackLayout Padding="20">
                     <!-- Case detial -->
-                    <Label Text="Enter your problem info here!" FontSize="20" TextColor="#777777"  FontAttributes="Bold" Margin="0,5,0,5"></Label>
+                    <Label Text="Problem info" FontSize="18" TextColor="#777777"  FontAttributes="Bold" Margin="0,5,0,5"></Label>
                     <BoxView BackgroundColor="#999999" HeightRequest="0.5"></BoxView>
                             <StackLayout 
                                      VerticalOptions="FillAndExpand" 
@@ -23,7 +23,7 @@
                                             </StackLayout>
                                                 <Label Text="My location" 
                                                        TextColor="#666666" 
-                                                       FontSize="20" 
+                                                       FontSize="18" 
                                                        TextDecorations="Underline" 
                                                        x:Name="MyLocationName"
                                                        Margin="0,0,0,5" 
@@ -71,12 +71,10 @@
                             </StackLayout>
                             <Label Text="Problem description" FontSize="17" TextColor="#FF4E18" FontAttributes="Bold" Margin="0,5,0,0"></Label>
                             <BoxView BackgroundColor="#999999" HeightRequest="0.5"></BoxView>
-                                <Editor Placeholder="Title"
-                                        HeightRequest="30"></Editor>
                                 <Editor Margin="0,5,0,0"
                                         Placeholder="Describe your problem here!"
                                         Completed="DescribeProblemEditorCompleted"
-                                        HeightRequest="180"></Editor>
+                                        HeightRequest="180" MaxLength="200"></Editor>
                       </StackLayout>
 
                                 <Button x:Name="qwe "
