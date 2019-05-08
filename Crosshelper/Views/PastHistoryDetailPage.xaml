@@ -33,7 +33,7 @@
                             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                             <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
                             <ImageButton
-                                TextColor="White"
+                                
                                 Source=""
                                 x:Name="HelperImage"
                                 BackgroundColor="Gray"

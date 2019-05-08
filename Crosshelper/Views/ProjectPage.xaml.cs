@@ -9,7 +9,7 @@ namespace Crosshelper.Views
     {
 
         //public IList<ProjectpageViewcellItem> Project { get; set; }
-        private List<CaseInfoLabel> CaseInfoLabels = new List<CaseInfoLabel>();
+        //private List<CaseInfoLabel> CaseInfoLabels = new List<CaseInfoLabel>();
 
         public ProjectPage()
         {
@@ -30,10 +30,10 @@ namespace Crosshelper.Views
             });*/
 
 
-            currentList.ItemsSource = CaseInfoLabels;
+            //currentList.ItemsSource = CaseInfoLabels;
             currentTab.Content = currentList;
 
-            pastList.ItemsSource = CaseInfoLabels;
+            //pastList.ItemsSource = CaseInfoLabels;
             pastTab.Content = pastList;
         }
         void Handle_CurrentItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)

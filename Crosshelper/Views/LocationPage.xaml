@@ -10,6 +10,7 @@
                             <TapGestureRecognizer Tapped="Handle_GPS"/>
                         </Entry.GestureRecognizers>
                     </Label>
+                    <Label x:Name="Addresslabel" Text="Use my current location" TextColor="#666666" TextDecorations="Underline" FontSize="20" FontAttributes="Bold"/>
                 </StackLayout> 
             </StackLayout>
                 <ListView></ListView>

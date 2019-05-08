@@ -7,6 +7,7 @@ using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using System.Linq;
 
 namespace Crosshelper.Views
 {
@@ -208,7 +209,22 @@ namespace Crosshelper.Views
             Settings.CurrentLatitude = position.Latitude;
             Settings.CurrentLongitude = position.Longitude;
 
-            Navigation.PopAsync();
+            try
+            {
+                string mapKey = null; //only needed on UWP
+                var addresses = await locator.GetAddressesForPositionAsync(position, mapKey);
+                var address = addresses.FirstOrDefault();
+
+                if (address == null)
+                    Addresslabel.Text = "No address found for position.";
+                else
+                    Addresslabel.Text = "Addresss: " + address.Locality + ", " + address.AdminArea + ", " + address.CountryCode + ", " + address.PostalCode;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Unable to get address: " + ex);
+            }
+            //Navigation.PopAsync();
         }
 
     }

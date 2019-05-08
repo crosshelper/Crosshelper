@@ -50,7 +50,7 @@ namespace Crosshelper.Helpers
                 case 3:
                     return "Busy";
                 default:
-                    return "Offline"; 
+                    return "Offline";
             }
         }
 
@@ -72,28 +72,7 @@ namespace Crosshelper.Helpers
                 tmp.ImageUrl = helper.Icon;
             }
             return newhelpers;
+
         }
-
-        public List<CaseInfoLabel> BindingCasesConvert(IList<UserPro> helpers)
-        {
-            List<CaseInfoLabel> tmplist = new List<CaseInfoLabel>();
-            CaseInfoLabel tmpcase = new CaseInfoLabel();
-            foreach (UserPro helper in helpers)
-            {
-                tmpcase.HelperName = helper.FirstName + helper.LastName;
-                tmpcase.Rating = StarNoToStarSign(helper.Rating);
-                tmpcase.Language = "Language: " + helper.FLanguage + "/" + helper.SLanguage;
-                tmpcase.Emergency = "$" + helper.PriceSign + "starting cost";
-                tmpcase.Status = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png";
-                tmpcase.Date = helper.Icon;
-                tmpcase.Description = "";
-                tmpcase.Icon = "";
-                tmplist.Add(tmpcase);
-            }
-            return tmplist;
-        }
-
-
-
-    }
+    } 
 }
