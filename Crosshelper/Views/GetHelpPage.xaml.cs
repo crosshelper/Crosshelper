@@ -84,12 +84,12 @@ namespace Crosshelper.Views
 
         void Handle_Search(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            Navigation.PushAsync(new SearchPage());
+            Navigation.PushModalAsync(new NavigationPage(new SearchPage()));
         }
 
         void Handle_PickProblem(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            Navigation.PushAsync(new DescribeProblemPage());
+            Navigation.PushModalAsync(new NavigationPage(new DescribeProblemPage()));
         }
     }
 }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.DescribeProblemPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Crosshelper.Views.DescribeProblemPage">
     <NavigationPage.TitleView>
         <Grid>
-            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
+            <Button Text="Cancel" TextColor="White" HorizontalOptions="Start" FontSize="17" Clicked="Handle_Canceled" VerticalOptions="Center"/>
         </Grid>
     </NavigationPage.TitleView>
-    <ContentPage.Content>
                  <ScrollView>
                  <StackLayout Padding="20">
                     <!-- Case detial -->
@@ -87,6 +88,4 @@
                 </StackLayout>
             </StackLayout>
             </ScrollView>
-
-    </ContentPage.Content>
 </ContentPage>

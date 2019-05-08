@@ -13,10 +13,10 @@ namespace Crosshelper.Views
 {
     public partial class LocationPage : ContentPage
     {
+
         public LocationPage()
         {
             InitializeComponent();
-
 
             /*
             buttonGetGPS.Clicked += async (sender, args) =>
@@ -193,6 +193,11 @@ namespace Crosshelper.Views
             //Debug.WriteLine(output);
             return position;
                     */
+        }
+
+        void Handle_Canceled(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
         }
 
         private async void Handle_GPS(object sender, EventArgs e)

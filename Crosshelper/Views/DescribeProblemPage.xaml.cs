@@ -11,7 +11,7 @@ namespace Crosshelper.Views
     {
         void Handle_Canceled(object sender, System.EventArgs e)
         {
-            Navigation.PopToRootAsync(false);
+            Navigation.PopModalAsync();
         }
         public DescribeProblemPage()
         {
@@ -50,7 +50,7 @@ namespace Crosshelper.Views
         }
         void Handle_Language(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SignInPage());
+            Navigation.PushModalAsync(new SignInPage());
         }
     }
 }

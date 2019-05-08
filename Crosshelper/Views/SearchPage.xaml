@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="Crosshelper.Views.SearchPage"
              Title="Search">
-    <ContentPage.Content>
+    <NavigationPage.TitleView>
+        <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
+    </NavigationPage.TitleView>
         <StackLayout Margin="10,0,10,0">
             <StackLayout>
                 <SearchBar Placeholder="Search problem type" BackgroundColor="White" FontSize="25" HeightRequest="100"  HorizontalOptions="StartAndExpand"></SearchBar>
@@ -22,5 +24,4 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-    </ContentPage.Content>
 </ContentPage>

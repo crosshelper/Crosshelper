@@ -10,7 +10,7 @@ namespace Crosshelper.Views
     {
         void Handle_Canceled(object sender, EventArgs e)
         {
-            Navigation.PopToRootAsync(false);
+            Navigation.PopModalAsync();
         }
         void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {

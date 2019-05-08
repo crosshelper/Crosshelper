@@ -56,7 +56,7 @@ namespace Crosshelper.Views
 
         void Handle_Canceled(object sender, System.EventArgs e)
         {
-            Navigation.PopToRootAsync(false);
+            Navigation.PopModalAsync();
         }
         //Top Ring&Menu button
         void NHPPBackButton(object sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace Crosshelper.Views
                 };
                 ConnectToChannel(user, users);
             }
-            Navigation.PushModalAsync(new NavigationPage(new SignInPage()));
+           
         }
     }
 }
