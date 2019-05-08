@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="Crosshelper.Views.DescribeProblemPage">
+             x:Class="Crosshelper.Views.DescribeProblemPage"
+             >
     <NavigationPage.TitleView>
         <Grid>
             <Button Text="Cancel" TextColor="White" HorizontalOptions="Start" FontSize="17" Clicked="Handle_Canceled" VerticalOptions="Center"/>
@@ -70,7 +71,10 @@
                             </StackLayout>
                             <Label Text="Problem description" FontSize="17" TextColor="#FF4E18" FontAttributes="Bold" Margin="0,5,0,0"></Label>
                             <BoxView BackgroundColor="#999999" HeightRequest="0.5"></BoxView>
-                                <Editor Placeholder="Describe your problem here!"
+                                <Editor Placeholder="Title"
+                                        HeightRequest="30"></Editor>
+                                <Editor Margin="0,5,0,0"
+                                        Placeholder="Describe your problem here!"
                                         Completed="DescribeProblemEditorCompleted"
                                         HeightRequest="180"></Editor>
                       </StackLayout>
