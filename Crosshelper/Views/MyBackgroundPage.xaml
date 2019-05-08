@@ -23,7 +23,7 @@
                 </sv:Section>
             
         <sv:Section Title="Language Preference" FooterText="Pick your Language">
-                    <sv:TextPickerCell Title="Priority language" Items="{Binding HomeLandItems}" TitleFontSize="18" ValueTextFontSize="16"/>
+                    <sv:TextPickerCell Title="Priority language" Items="{Binding HomeLandItems}" TitleFontSize="18" ValueTextFontSize="16" ValueText="789"/>
                     <sv:TextPickerCell Title="Second language" Items="{Binding HomeLandItems}" TitleFontSize="18" ValueTextFontSize="16" />
         </sv:Section>
     
