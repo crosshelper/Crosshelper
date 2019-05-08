@@ -1,13 +1,9 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace Crosshelper.Models
 {
     public class HelperLabel
     {
-        public HelperLabel()
-        {
-        }
         public string Name { get; set; }
         public string Rating { get; set; }
         public string Language { get; set; }

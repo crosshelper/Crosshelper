@@ -10,9 +10,14 @@ namespace Crosshelper.Helpers
     {
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
 
-        private IList<UserPro> helperlist;
-        internal IList<UserPro> Helperlist { get => helperlist; set => helperlist = value; }
+        private List<UserPro> helperlist = new List<UserPro>();
+        //internal List<UserPro> Helperlist { get => helperlist; set => helperlist = value; }
         private List<int> helperuidlist = new List<int>();
+
+        public List<UserPro> GetHelperList()
+        {
+            return helperlist;
+        }
 
         public void SearchingInit()
         {
@@ -114,7 +119,7 @@ namespace Crosshelper.Helpers
                     helper.Status = reader.GetInt32(9);
                     helper.PriceSign = reader.GetString(10);
                     helper.UserID = userid.ToString();
-                    Helperlist.Add(helper);
+                    helperlist.Add(helper);
                 }
             }
             catch (Exception ex)

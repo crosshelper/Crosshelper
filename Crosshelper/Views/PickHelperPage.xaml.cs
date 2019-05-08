@@ -23,7 +23,7 @@ namespace Crosshelper.Views
 
         }
 
-        IList<HelperLabel> Helpers;
+        List<HelperLabel> Helpers= new List<HelperLabel>();
         UserProListHelper listhelper = new UserProListHelper();
         BindingContextConverter cvt = new BindingContextConverter();
         // Color statuscolor = new Color();//(79B563);
@@ -32,13 +32,12 @@ namespace Crosshelper.Views
             InitializeComponent();
             listhelper.GetProHelperByTag(1);
             listhelper.SearchingInit();
-            Helpers = cvt.BindingHelpersConvert(listhelper.Helperlist);
+            //Helpers = cvt.BindingHelpersConvert(listhelper.GetHelperList());
 
-            /*
             Helpers.Add(new HelperLabel
             {
                 Name = "Baboon",
-                Bornin = "China",
+                //Bornin = "China",
                 Rating = "★★★★★",
                 Language = "Language: Chinese/English",
                 Baseprice = "$40 starting cost",
@@ -47,7 +46,7 @@ namespace Crosshelper.Views
                 StatusText = "Available",
                 LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
-            });*/
+            });
             BindingContext = this;
         }
     }
