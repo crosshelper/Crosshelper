@@ -15,7 +15,6 @@
                                         <RowDefinition Height="22" />
                                         <RowDefinition Height="22" />
                                         <RowDefinition Height="22" />
-                                        <RowDefinition Height="20" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="80" />
@@ -31,6 +30,7 @@
                                     <Label Grid.Column="1"
                                            Grid.Row="0"
                                            FontSize="20"
+                                           Grid.ColumnSpan="3"
                                            TextColor="#393939"
                                            Text="{Binding Name}"
                                            FontAttributes="Bold" />
@@ -53,16 +53,7 @@
                                            Grid.ColumnSpan="3"
                                            Text="{Binding Language}"
                                            VerticalOptions="End" />
-                                <StackLayout Grid.Row="4" Orientation="Horizontal" Grid.ColumnSpan="4">
-                                    <Image  Source="{Binding LocationIconUrl}"
-                                            Aspect="AspectFill"
-                                            WidthRequest="12"
-                                            Margin="5,0,0,0"
-                                            HorizontalOptions="Start"/>
-                                    <Label TextColor="#393939"
-                                           Grid.ColumnSpan="2"
-                                           Text="{Binding Location}"
-                                           HorizontalOptions="Start" />
+                                <StackLayout Grid.Row="3" Orientation="Horizontal" Grid.ColumnSpan="4">
                                     <Label TextColor= "{Binding StatusColor}"
                                            Text="{Binding StatusText}"
                                            HorizontalOptions="EndAndExpand" />

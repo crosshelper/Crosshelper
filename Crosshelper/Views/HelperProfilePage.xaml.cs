@@ -68,7 +68,7 @@ namespace Crosshelper.Views
             (sender as Button).Text = "Click me again!";
         }
         //Confirm
-        void NHPPConfirm(object sender, EventArgs e)
+        void Handle_GetHelp(object sender, EventArgs e)
         {
             if (Settings.IsLogin)
             {
@@ -81,7 +81,12 @@ namespace Crosshelper.Views
                 };
                 ConnectToChannel(user, users);
             }
-           
+
+        }
+
+        void Handle_Like(object sender, System.EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
