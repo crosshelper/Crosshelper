@@ -10,6 +10,14 @@ namespace Crosshelper.Views
     {
         void Handle_Saved(object sender, System.EventArgs e)
         {
+            _usr.FirstName = FirstName;
+            _usr.LastName = LastName;
+            _ac.Email = Email;
+            _ac.ContactNo = PhoneNumber;
+
+            uih.UpdateUserInfo(_usr);
+            uih.UpdateUac(_ac);
+
             Navigation.PopAsync(false);
         }
         void Handle_Canceled(object sender, System.EventArgs e)
@@ -18,7 +26,7 @@ namespace Crosshelper.Views
         }
         void Handle_ResetPassword(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new ResetPasswordPage());
+            Navigation.PushAsync(new ResetPasswordPage(_ac));
         }
 
         async void Handle_ChangePhoto(object sender, EventArgs e)
@@ -27,6 +35,7 @@ namespace Crosshelper.Views
         }
 
         User _usr;
+        Uac _ac;
         public string Email { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -41,10 +50,9 @@ namespace Crosshelper.Views
             NameCell.IconSource = user.Icon;
             FirstName = user.FirstName;
             LastName = user.LastName;
-
-            Email = "cycbis666@ok.com";
-            PhoneNumber = "6687876543";
-
+            _ac = uih.GetUacByID(user.UserID);
+            Email = _ac.Email;
+            PhoneNumber = _ac.ContactNo;
             BindingContext = this;
         }
     }
