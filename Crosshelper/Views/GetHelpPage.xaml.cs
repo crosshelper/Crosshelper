@@ -8,10 +8,38 @@ namespace Crosshelper.Views
     public partial class GetHelpPage : ContentPage
     {
         public IList<HelperLabel> Helpers { get; private set; }
+        public IList<TypeProblem> ProblemsCategory { get; private set; }
         public GetHelpPage()
         {
             InitializeComponent();
-
+            ////ProblemsCategory////
+            ProblemsCategory = new List<TypeProblem>();
+            ProblemsCategory.Add(new TypeProblem
+            {
+                Pcategory = "Daily life",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
+            });
+            ProblemsCategory.Add(new TypeProblem
+            {
+                Pcategory = "Language",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
+            });
+            ProblemsCategory.Add(new TypeProblem
+            {
+                Pcategory = "Law",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
+            });
+            ProblemsCategory.Add(new TypeProblem
+            {
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+            });
+            ProblemsCategory.Add(new TypeProblem
+            {
+                Pcategory = "Health",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom005.png"
+            });
+            //////Helpers///////
             Helpers = new List<HelperLabel>();
             Helpers.Add(new HelperLabel
             {

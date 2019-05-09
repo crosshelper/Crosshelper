@@ -10,8 +10,8 @@
         <ScrollView>
         <StackLayout>
             <StackLayout>
-            <Label Text="Problem Category" FontSize="25" VerticalOptions="Center" Margin="10,5,10,0"/>
-                <CollectionView ItemsSource="{Binding Helpers}" SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="120" >
+            <Label Text="Problem Category" FontSize="25" VerticalOptions="Center" Margin="10,10,10,0"/>
+                <CollectionView ItemsSource="{Binding ProblemsCategory}" SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="120" >
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                                 <Grid Padding="10">
@@ -32,7 +32,7 @@
                                            Grid.Column="0"
                                            HorizontalOptions="Center"
                                            TextColor="#393939"
-                                           Text="{Binding Language}"
+                                           Text="{Binding Pcategory}"
                                            VerticalOptions="End" />   
                                 </Grid>
                         </DataTemplate>
