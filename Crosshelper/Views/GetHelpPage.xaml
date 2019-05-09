@@ -42,12 +42,12 @@
         <!-- 2 -->
             <StackLayout BackgroundColor="#F2F2F2" Padding="10">
             <StackLayout >
-            <Label Text="Recommendation" FontSize="25" Margin="10,0,10,0"/>
+            <Label Text="Are you international student?" FontSize="22" Margin="5,0,5,0"/>
                     <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout Padding="10" >
-                                        <StackLayout BackgroundColor="White" Padding="5">
+                            <StackLayout Padding="8" >
+                                        <StackLayout BackgroundColor="White" Padding="3">
                                             <Image Source="{Binding ImageUrl}"
                                                    Aspect="AspectFill"
                                                    HeightRequest="115"
@@ -81,7 +81,7 @@
             </StackLayout>
                 <!-- 3 -->
                     <StackLayout >
-            <Label Text="Recommendation" FontSize="25" Margin="10,0,10,0"/>
+            <Label Text="Immigrant probability this." FontSize="22" Margin="5,0,5,0"/>
                     <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -120,7 +120,7 @@
             </StackLayout>
              <!-- 3 -->
                     <StackLayout >
-            <Label Text="Recommendation" FontSize="25" Margin="10,0,10,0"/>
+            <Label Text="Traveler got into trouble?" FontSize="22" Margin="5,0,5,0"/>
                     <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -158,8 +158,8 @@
                 </CollectionView>
             </StackLayout>
              <!-- 3 -->
-                    <StackLayout >
-            <Label Text="Recommendation" FontSize="25" Margin="10,0,10,0"/>
+            <StackLayout >
+            <Label Text="Business traveler recommendation" FontSize="22" Margin="5,0,5,0"/>
                     <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200" >
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -197,85 +197,9 @@
                 </CollectionView>
             </StackLayout>
              <!-- 3 -->
-                    <StackLayout >
-            <Label Text="Recommendation" FontSize="25" Margin="10,0,10,0"/>
-                    <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout Padding="10" >
-                                        <StackLayout BackgroundColor="White" Padding="5">
-                                            <Image Source="{Binding ImageUrl}"
-                                                   Aspect="AspectFill"
-                                                   HeightRequest="115"
-                                                   HorizontalOptions="StartAndExpand"/>
-                                            <Label Grid.Row="0"
-                                                   FontSize="20"
-                                                   TextColor="#393939"
-                                                   Text="{Binding Name}"
-                                                   FontAttributes="Bold"
-                                                   HorizontalOptions="StartAndExpand"/>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Image Source="{Binding LocationIconUrl}"
-                                                   Aspect="AspectFill"
-                                                   WidthRequest="15"
-                                                   Margin="5,0,0,0"
-                                                   HorizontalOptions="Start"/>
-                                            <Label TextColor="#393939"
-                                                   HorizontalOptions="Start"
-                                                   Text="{Binding Location}"
-                                                   VerticalOptions="End" />
-                                            <Label TextColor="#FFC834"
-                                                   HorizontalOptions="EndAndExpand"
-                                                   Text="{Binding Rating}"
-                                                   VerticalOptions="EndAndExpand" />
-                                        </StackLayout>
-                                </StackLayout>
-                            </StackLayout>                    
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+             
             </StackLayout>
-             <!-- 3 -->
-                   <StackLayout >
-            <Label Text="Recommendation" FontSize="25" Margin="10,0,10,0"/>
-                    <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200" >
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout Padding="10" >
-                                        <StackLayout BackgroundColor="White" Padding="5">
-                                            <Image Source="{Binding ImageUrl}"
-                                                   Aspect="AspectFill"
-                                                   HeightRequest="115"
-                                                   HorizontalOptions="StartAndExpand"/>
-                                            <Label Grid.Row="0"
-                                                   FontSize="20"
-                                                   TextColor="#393939"
-                                                   Text="{Binding Name}"
-                                                   FontAttributes="Bold"
-                                                   HorizontalOptions="StartAndExpand"/>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Image Source="{Binding LocationIconUrl}"
-                                                   Aspect="AspectFill"
-                                                   WidthRequest="15"
-                                                   Margin="5,0,0,0"
-                                                   HorizontalOptions="Start"/>
-                                            <Label TextColor="#393939"
-                                                   HorizontalOptions="Start"
-                                                   Text="{Binding Location}"
-                                                   VerticalOptions="End" />
-                                            <Label TextColor="#FFC834"
-                                                   HorizontalOptions="EndAndExpand"
-                                                   Text="{Binding Rating}"
-                                                   VerticalOptions="EndAndExpand" />
-                                        </StackLayout>
-                                </StackLayout>
-                            </StackLayout>                    
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </StackLayout>
-            </StackLayout>
-           <StackLayout BackgroundColor="#F2F2F2" HeightRequest="150" Padding="10" Margin="0,-3,0,0">
+           <StackLayout BackgroundColor="#F2F2F2" HeightRequest="20" Padding="10" Margin="0,-3,0,0">
                 <Label Text="All right xxxxxx xxx xxx xxx"/>
             </StackLayout>
             </StackLayout>
