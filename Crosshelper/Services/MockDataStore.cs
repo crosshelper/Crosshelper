@@ -6,9 +6,9 @@ using Crosshelper.Models;
 
 namespace Crosshelper.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockDataStore //: IDataStore<Item>
     {
-        List<Item> items;
+        /*List<Item> items;
 
         public MockDataStore()
         {
@@ -62,5 +62,6 @@ namespace Crosshelper.Services
         {
             return await Task.FromResult(items);
         }
+        */
     }
 }

@@ -9,9 +9,9 @@ using Xamarin.Forms;
 
 namespace CollectionViewDemos.ViewModels
 {
-    public class MonkeysViewModel : INotifyPropertyChanged
+    public class MonkeysViewModel //: INotifyPropertyChanged
     {
-        readonly IList<SearchpageViewcellItem> source;
+        /*readonly IList<SearchpageViewcellItem> source;
         SearchpageViewcellItem selectedMonkey;
         int selectionCount = 1;
 
@@ -135,5 +135,6 @@ namespace CollectionViewDemos.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
+        */       
     }
 }

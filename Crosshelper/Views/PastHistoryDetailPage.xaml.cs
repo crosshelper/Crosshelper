@@ -7,7 +7,7 @@ namespace Crosshelper.Views
 {
     public partial class PastHistoryDetailPage : ContentPage
     {
-        public IList<ProjectpageViewcellItem> CaseDetail { get; set; }
+        /*public IList<ProjectpageViewcellItem> CaseDetail { get; set; }
         public PastHistoryDetailPage()
         {
            
@@ -29,6 +29,8 @@ namespace Crosshelper.Views
                 Status = "Open",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
             });
+
         }
+        */
     }
 }
