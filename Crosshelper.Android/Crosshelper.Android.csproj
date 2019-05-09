@@ -86,6 +86,9 @@
     <PackageReference Include="AiForms.SettingsView">
       <Version>0.4.15</Version>
     </PackageReference>
+    <PackageReference Include="CarouselView.FormsPlugin">
+      <Version>5.2.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

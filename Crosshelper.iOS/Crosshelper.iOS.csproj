@@ -136,6 +136,9 @@
     <BundleResource Include="Resources\tab_help.png" />
     <BundleResource Include="Resources\tab_help%402x.png" />
     <BundleResource Include="Resources\tab_help%403x.png" />
+    <BundleResource Include="Resources\tab_inbox.png" />
+    <BundleResource Include="Resources\tab_inbox%402x.png" />
+    <BundleResource Include="Resources\tab_inbox%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -23,8 +23,8 @@
                 <views:FavoritePage/>
             </x:Arguments>
         </NavigationPage>
-
-                <NavigationPage Title="Cases" BarBackgroundColor="#FF4E18">
+        
+        <NavigationPage Title="Cases" BarBackgroundColor="#FF4E18">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_case.png" />
@@ -32,6 +32,17 @@
             </NavigationPage.Icon>
             <x:Arguments>
                 <views:ProjectPage/>
+            </x:Arguments>
+        </NavigationPage>
+        
+        <NavigationPage Title="Inbox" BarBackgroundColor="#FF4E18">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_inbox.png" />
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:UserSettingPage />
             </x:Arguments>
         </NavigationPage>
         
