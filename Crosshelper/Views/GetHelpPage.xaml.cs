@@ -9,6 +9,9 @@ namespace Crosshelper.Views
     {
         public IList<HelperLabel> Helpers { get; private set; }
         public IList<TypeProblem> ProblemsCategory { get; private set; }
+        public IList<TypeProblem> RecommendationOne { get; private set; }
+        public IList<TypeProblem> RecommendationTwo { get; private set; }
+        public IList<TypeProblem> RecommendationThree { get; private set; }
         public GetHelpPage()
         {
             InitializeComponent();
@@ -39,71 +42,105 @@ namespace Crosshelper.Views
                 Pcategory = "Health",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom005.png"
             });
-            //////Helpers///////
-            Helpers = new List<HelperLabel>();
-            Helpers.Add(new HelperLabel
+
+
+            //////International Recommendation///////
+            RecommendationOne = new List<TypeProblem>();
+            RecommendationOne.Add(new TypeProblem
             {
-                Name = "Baboon",
-                Rating = "★★★★★",
-                Language = "Chinese",
-                Baseprice = "$40 starting cost",
-                Location = "8 miles away",
-                StatusColor = Color.FromHex("79B563"),
-                StatusText = "Available",
-                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
+                Pcategory = "Repai1",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
+                Pcategory = "Repair2",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
+                Pcategory = "Repair3",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
+                Pcategory = "Repair4",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
+                Pcategory = "Repair5",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
             });
 
-            Helpers.Add(new HelperLabel
+            //////Immigrant Recommendation///////
+            RecommendationTwo = new List<TypeProblem>();
+            RecommendationTwo.Add(new TypeProblem
             {
-                Name = "Mike",
-                Rating = "★★★★★",
-                Language = "English",
-                Baseprice = "$40 starting cost",
-                Location = "8 miles away",
-                StatusColor = Color.FromHex("79B563"),
-                StatusText = "Available",
-                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
             });
 
-            Helpers.Add(new HelperLabel
+            //////International Recommendation///////
+            RecommendationThree = new List<TypeProblem>();
+            RecommendationThree.Add(new TypeProblem
             {
-                Name = "David",
-                Rating = "★★★★★",
-                Language = "Japanese",
-                Baseprice = "$40 starting cost",
-                Location = "8 miles away",
-                StatusColor = Color.FromHex("79B563"),
-                StatusText = "Available",
-                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
             });
-
-            Helpers.Add(new HelperLabel
+            RecommendationOne.Add(new TypeProblem
             {
-                Name = "Jas",
-                Rating = "★★★★★",
-                Language = "Korean",
-                Baseprice = "$40 starting cost",
-                Location = "8 miles away",
-                StatusColor = Color.FromHex("79B563"),
-                StatusText = "Available",
-                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
             });
-
-            Helpers.Add(new HelperLabel
+            RecommendationOne.Add(new TypeProblem
             {
-                Name = "Duke",
-                Rating = "★★★★★",
-                Language = "German",
-                Baseprice = "$40 starting cost",
-                Location = "8 miles away",
-                StatusColor = Color.FromHex("79B563"),
-                StatusText = "Available",
-                LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom005.png"
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
             });
 
 

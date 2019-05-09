@@ -10,7 +10,7 @@
         <ScrollView>
         <StackLayout>
             <StackLayout>
-            <Label Text="Problem Category" FontSize="25" VerticalOptions="Center" Margin="10,10,10,0"/>
+            <Label Text="Problem Category" FontSize="25" VerticalOptions="Center" Margin="10,5,10,0"/>
                 <CollectionView ItemsSource="{Binding ProblemsCategory}" SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="120" >
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -43,36 +43,32 @@
             <StackLayout BackgroundColor="#F2F2F2" Padding="10">
             <StackLayout >
             <Label Text="Are you international student?" FontSize="22" Margin="5,0,5,0"/>
-                    <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
+                    <CollectionView ItemsSource="{Binding RecommendationOne}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout Padding="8" >
-                                        <StackLayout BackgroundColor="White" Padding="3">
-                                            <Image Source="{Binding ImageUrl}"
-                                                   Aspect="AspectFill"
-                                                   HeightRequest="115"
-                                                   HorizontalOptions="StartAndExpand"/>
-                                            <Label Grid.Row="0"
-                                                   FontSize="20"
-                                                   TextColor="#393939"
-                                                   Text="{Binding Name}"
-                                                   FontAttributes="Bold"
-                                                   HorizontalOptions="StartAndExpand"/>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Image Source="{Binding LocationIconUrl}"
-                                                   Aspect="AspectFill"
-                                                   WidthRequest="15"
-                                                   Margin="5,0,0,0"
-                                                   HorizontalOptions="Start"/>
-                                            <Label TextColor="#393939"
-                                                   HorizontalOptions="Start"
-                                                   Text="{Binding Location}"
-                                                   VerticalOptions="End" />
-                                            <Label TextColor="#FFC834"
-                                                   HorizontalOptions="EndAndExpand"
-                                                   Text="{Binding Rating}"
-                                                   VerticalOptions="EndAndExpand" />
-                                        </StackLayout>
+                            <StackLayout Padding="5" >
+                                <StackLayout BackgroundColor="White" Padding="2">
+                                    <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="20"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Grid.RowSpan="3"
+                                           Grid.Row="0"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="80"
+                                           WidthRequest="180" />
+                                     <Label Grid.Row="3"
+                                           Grid.Column="0"
+                                           FontSize="18"
+                                           HorizontalOptions="Center"
+                                           TextColor="#393939"
+                                           Text="{Binding Pcategory}"
+                                           VerticalOptions="End" />   
+                                </Grid>
                                 </StackLayout>
                             </StackLayout>                    
                         </DataTemplate>
@@ -80,77 +76,35 @@
                 </CollectionView>
             </StackLayout>
                 <!-- 3 -->
-                    <StackLayout >
-            <Label Text="Immigrant probability this." FontSize="22" Margin="5,0,5,0"/>
-                    <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
+        <!-- 2 -->
+            <StackLayout >
+            <Label Text="Make immigrant life better" FontSize="22" Margin="5,0,5,0"/>
+                    <CollectionView ItemsSource="{Binding RecommendationOne}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout Padding="10" >
-                                        <StackLayout BackgroundColor="White" Padding="5">
-                                            <Image Source="{Binding ImageUrl}"
-                                                   Aspect="AspectFill"
-                                                   HeightRequest="115"
-                                                   HorizontalOptions="StartAndExpand"/>
-                                            <Label Grid.Row="0"
-                                                   FontSize="20"
-                                                   TextColor="#393939"
-                                                   Text="{Binding Name}"
-                                                   FontAttributes="Bold"
-                                                   HorizontalOptions="StartAndExpand"/>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Image Source="{Binding LocationIconUrl}"
-                                                   Aspect="AspectFill"
-                                                   WidthRequest="15"
-                                                   Margin="5,0,0,0"
-                                                   HorizontalOptions="Start"/>
-                                            <Label TextColor="#393939"
-                                                   HorizontalOptions="Start"
-                                                   Text="{Binding Location}"
-                                                   VerticalOptions="End" />
-                                            <Label TextColor="#FFC834"
-                                                   HorizontalOptions="EndAndExpand"
-                                                   Text="{Binding Rating}"
-                                                   VerticalOptions="EndAndExpand" />
-                                        </StackLayout>
-                                </StackLayout>
-                            </StackLayout>                    
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </StackLayout>
-             <!-- 3 -->
-                    <StackLayout >
-            <Label Text="Traveler got into trouble?" FontSize="22" Margin="5,0,5,0"/>
-                    <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout Padding="10" >
-                                        <StackLayout BackgroundColor="White" Padding="5">
-                                            <Image Source="{Binding ImageUrl}"
-                                                   Aspect="AspectFill"
-                                                   HeightRequest="115"
-                                                   HorizontalOptions="StartAndExpand"/>
-                                            <Label Grid.Row="0"
-                                                   FontSize="20"
-                                                   TextColor="#393939"
-                                                   Text="{Binding Name}"
-                                                   FontAttributes="Bold"
-                                                   HorizontalOptions="StartAndExpand"/>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Image Source="{Binding LocationIconUrl}"
-                                                   Aspect="AspectFill"
-                                                   WidthRequest="15"
-                                                   Margin="5,0,0,0"
-                                                   HorizontalOptions="Start"/>
-                                            <Label TextColor="#393939"
-                                                   HorizontalOptions="Start"
-                                                   Text="{Binding Location}"
-                                                   VerticalOptions="End" />
-                                            <Label TextColor="#FFC834"
-                                                   HorizontalOptions="EndAndExpand"
-                                                   Text="{Binding Rating}"
-                                                   VerticalOptions="EndAndExpand" />
-                                        </StackLayout>
+                            <StackLayout Padding="5" >
+                                <StackLayout BackgroundColor="White" Padding="2">
+                                    <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="20"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Grid.RowSpan="3"
+                                           Grid.Row="0"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="80"
+                                           WidthRequest="180" />
+                                     <Label Grid.Row="3"
+                                           Grid.Column="0"
+                                           FontSize="18"
+                                           HorizontalOptions="Center"
+                                           TextColor="#393939"
+                                           Text="{Binding Pcategory}"
+                                           VerticalOptions="End" />   
+                                </Grid>
                                 </StackLayout>
                             </StackLayout>                    
                         </DataTemplate>
@@ -159,37 +113,68 @@
             </StackLayout>
              <!-- 3 -->
             <StackLayout >
-            <Label Text="Business traveler recommendation" FontSize="22" Margin="5,0,5,0"/>
-                    <CollectionView ItemsSource="{Binding Helpers}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="200" >
+            <Label Text="Traveler got some problem" FontSize="22" Margin="5,0,5,0"/>
+                    <CollectionView ItemsSource="{Binding RecommendationOne}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout Padding="10" >
-                                        <StackLayout BackgroundColor="White" Padding="5">
-                                            <Image Source="{Binding ImageUrl}"
-                                                   Aspect="AspectFill"
-                                                   HeightRequest="115"
-                                                   HorizontalOptions="StartAndExpand"/>
-                                            <Label Grid.Row="0"
-                                                   FontSize="20"
-                                                   TextColor="#393939"
-                                                   Text="{Binding Name}"
-                                                   FontAttributes="Bold"
-                                                   HorizontalOptions="StartAndExpand"/>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Image Source="{Binding LocationIconUrl}"
-                                                   Aspect="AspectFill"
-                                                   WidthRequest="15"
-                                                   Margin="5,0,0,0"
-                                                   HorizontalOptions="Start"/>
-                                            <Label TextColor="#393939"
-                                                   HorizontalOptions="Start"
-                                                   Text="{Binding Location}"
-                                                   VerticalOptions="End" />
-                                            <Label TextColor="#FFC834"
-                                                   HorizontalOptions="EndAndExpand"
-                                                   Text="{Binding Rating}"
-                                                   VerticalOptions="EndAndExpand" />
-                                        </StackLayout>
+                            <StackLayout Padding="5" >
+                                <StackLayout BackgroundColor="White" Padding="2">
+                                    <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="20"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Grid.RowSpan="3"
+                                           Grid.Row="0"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="80"
+                                           WidthRequest="180" />
+                                     <Label Grid.Row="3"
+                                           Grid.Column="0"
+                                           FontSize="18"
+                                           HorizontalOptions="Center"
+                                           TextColor="#393939"
+                                           Text="{Binding Pcategory}"
+                                           VerticalOptions="End" />   
+                                </Grid>
+                                </StackLayout>
+                            </StackLayout>                    
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+             <!-- 3 -->
+            <StackLayout >
+            <Label Text="Business recommendation" FontSize="22" Margin="5,0,5,0"/>
+                    <CollectionView ItemsSource="{Binding RecommendationOne}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="5" >
+                                <StackLayout BackgroundColor="White" Padding="2">
+                                    <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="20"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Grid.RowSpan="3"
+                                           Grid.Row="0"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="80"
+                                           WidthRequest="180" />
+                                     <Label Grid.Row="3"
+                                           Grid.Column="0"
+                                           FontSize="18"
+                                           HorizontalOptions="Center"
+                                           TextColor="#393939"
+                                           Text="{Binding Pcategory}"
+                                           VerticalOptions="End" />   
+                                </Grid>
                                 </StackLayout>
                             </StackLayout>                    
                         </DataTemplate>
