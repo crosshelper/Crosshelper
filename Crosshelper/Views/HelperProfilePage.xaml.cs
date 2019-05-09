@@ -86,7 +86,7 @@ namespace Crosshelper.Views
 
         void Handle_Like(object sender, System.EventArgs e)
         {
-            throw new NotImplementedException();
+
         }
     }
 }

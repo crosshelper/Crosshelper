@@ -196,11 +196,6 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </StackLayout>
-             <!-- 3 -->
-             
-            </StackLayout>
-           <StackLayout BackgroundColor="#F2F2F2" HeightRequest="20" Padding="10" Margin="0,-3,0,0">
-                <Label Text="All right xxxxxx xxx xxx xxx"/>
             </StackLayout>
             </StackLayout>
         </ScrollView>
