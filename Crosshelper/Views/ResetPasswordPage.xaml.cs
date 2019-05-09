@@ -15,6 +15,7 @@ namespace Crosshelper.Views
         }
 
         public ICommand ResetCommand { get; private set; }
+
         Uac _ac;
         public string OldPwd { get; set; }
         public string NewPwd1 { get; set; }
@@ -40,6 +41,8 @@ namespace Crosshelper.Views
             {
                 _ac.Pwd = NewPwd2;
                 uih.UpdateUac(_ac);
+                DisplayAlert("Reset success!", "Your password updated, press 'OK' back to last page.", "OK");
+                Navigation.PopAsync();
             }
             else
             {
