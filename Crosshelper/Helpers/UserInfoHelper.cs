@@ -6,13 +6,13 @@ using System.Data;
 
 namespace Crosshelper.Helpers
 {
-    class UserProListHelper
+    class UserInfoHelper
     {
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
 
-        private List<UserPro> helperlist = new List<UserPro>();
+        private readonly List<UserPro> helperlist = new List<UserPro>();
         //internal List<UserPro> Helperlist { get => helperlist; set => helperlist = value; }
-        private List<int> helperuidlist = new List<int>();
+        private readonly List<int> helperuidlist = new List<int>();
 
         public List<UserPro> GetHelperList()
         {
@@ -23,7 +23,7 @@ namespace Crosshelper.Helpers
         {
             foreach (int uid in helperuidlist)
             {
-                GetHelperList(uid);
+                GetHelperIDbyChatID(uid);
             }
         }
 
@@ -87,8 +87,52 @@ namespace Crosshelper.Helpers
             }
         }
 
+        public User GetUserInfoByID(int userid)
+        {
+            User user = new User();
+            //并没有建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT FirstName,LastName,Icon,ChatID,FLanguage,SLanguage,PaymentID,FENum,SENum,Address FROM UserInfo WHERE Uid = @para1";
 
-        private void GetHelperList(int userid)
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", userid);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    user.FirstName = reader.GetString(0);
+                    user.LastName = reader.GetString(1);
+                    user.Icon = reader.GetString(2);
+                    user.ChatID = reader.GetString(3);
+                    user.FLanguage = reader.GetString(4);
+                    user.SLanguage = reader.GetString(5);
+                    user.PaymentID = reader.GetString(6);
+                    user.FENo = reader.GetString(7);
+                    user.SENo = reader.GetString(8);
+                    user.Address = reader.GetString(9);
+                    user.UserID = userid.ToString();
+                }
+                return user;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
+        //ChatID to ID
+        private void GetHelperIDbyChatID(int userid)
         {
             UserPro helper = new UserPro();
             //并没有建立数据库连接
@@ -131,6 +175,7 @@ namespace Crosshelper.Helpers
                 conn.Close();   //关闭连接              
             }
         }
+
 
     }
 }

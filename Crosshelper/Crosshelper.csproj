@@ -47,6 +47,7 @@
     <Compile Remove="Models\ProblemCategoryPageList.cs" />
     <Compile Remove="Views\NewcomersSettingPage.xaml.cs" />
     <Compile Remove="Views\ProblemCategoryPage.xaml.cs" />
+    <Compile Remove="Models\CaseInfoLabel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Models\.DS_Store" />

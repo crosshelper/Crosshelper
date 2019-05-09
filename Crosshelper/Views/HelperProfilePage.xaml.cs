@@ -76,7 +76,7 @@ namespace Crosshelper.Views
                     UserID = _currenthelperlabel.HelperID
                 };
                 List<string> users = new List<string>() {
-                Settings.UserId,
+                Settings.ChatID,
                 _currenthelperlabel.HelperID
                 };
                 ConnectToChannel(user, users);

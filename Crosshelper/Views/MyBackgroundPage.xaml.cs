@@ -19,15 +19,20 @@ namespace Crosshelper.Views
             Navigation.PopToRootAsync(false);
         }
 
-        public IList HomeLandItems { get; }
+        public IList LanguageItems { get; }
         //Homeland
-        public ObservableCollection<HomeLandPickerItem> HomeLandItemsSource { get; } = new ObservableCollection<HomeLandPickerItem>();
-        public ObservableCollection<HomeLandPickerItem> HomeLandSelectedItems { get; set; } = new ObservableCollection<HomeLandPickerItem>();
+        //public ObservableCollection<HomeLandPickerItem> HomeLandItemsSource { get; } = new ObservableCollection<HomeLandPickerItem>();
+        //public ObservableCollection<HomeLandPickerItem> HomeLandSelectedItems { get; set; } = new ObservableCollection<HomeLandPickerItem>();
+
+        public string FLanguage { get; set; }
+        public string SLanguage { get; set; }
 
         public MyBackgroundPage()
         {
             InitializeComponent();
 
+            FLanguage = "English";
+            SLanguage = "Russian";
 
             List<string> list = new List<string>
             {
@@ -40,19 +45,7 @@ namespace Crosshelper.Views
                 "German",
                 "Thai"
             };
-            HomeLandItems = list;
-
-            //出生地 pick homeland
-            HomeLandItemsSource.Add(new HomeLandPickerItem { Name = "China" });
-            HomeLandItemsSource.Add(new HomeLandPickerItem { Name = "United States" });
-            HomeLandItemsSource.Add(new HomeLandPickerItem { Name = "France" });
-            HomeLandItemsSource.Add(new HomeLandPickerItem { Name = "Germany" });
-            HomeLandItemsSource.Add(new HomeLandPickerItem { Name = "Japan" });
-            HomeLandItemsSource.Add(new HomeLandPickerItem { Name = "South Korea" });
-            HomeLandItemsSource.Add(new HomeLandPickerItem { Name = "Spain" });
-            HomeLandItemsSource.Add(new HomeLandPickerItem { Name = "Mexico" });
-            HomeLandItemsSource.Add(new HomeLandPickerItem { Name = "Brazil" });
-            HomeLandItemsSource.Add(new HomeLandPickerItem { Name = "Thailand" });
+            LanguageItems = list;
 
             BindingContext = this;
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Crosshelper.Helpers;
+using Crosshelper.Converters;
 using Crosshelper.Models;
 using Xamarin.Forms;
 
@@ -19,7 +20,7 @@ namespace Crosshelper.Views
         }
 
         public List<HelperLabel> Helpers { get; set; }//= new List<HelperLabel>();
-        UserProListHelper listhelper = new UserProListHelper();
+        UserInfoHelper listhelper = new UserInfoHelper();
         BindingContextConverter cvt = new BindingContextConverter();
 
         public PickHelperPage()
