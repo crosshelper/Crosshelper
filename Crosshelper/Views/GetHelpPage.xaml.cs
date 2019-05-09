@@ -174,6 +174,7 @@ namespace Crosshelper.Views
         void Handle_PickProblem(object sender, Xamarin.Forms.FocusEventArgs e)
         {
             Navigation.PushModalAsync(new NavigationPage(new DescribeProblemPage()));
+            
         }
     }
 }

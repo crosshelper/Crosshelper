@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.CtestPage">
+    <ContentPage.Content>
+        <StackLayout Margin="15,35,15,10">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Silver" >
+                <Image Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/CH+logo2.png"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="Center"></Image>
+            </StackLayout>
+        <!-- sign in -->
+        <StackLayout VerticalOptions="End" Margin="0,10,0,0">  
+        <BoxView BackgroundColor="#CDCDCD" HeightRequest="1"></BoxView>
+            <!-- 第三次登入 Third party sign in -->  
+                                <StackLayout VerticalOptions="Start">
+                            <Button  
+                                    Text="Sign Up with Username"
+                                    TextColor="White"
+                                    FontSize="13"
+                                    HeightRequest="45"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#FF4E18"
+                                    Margin="0,10,0,10"
+                                    Clicked="Handle_SignUp"/>
+                    </StackLayout>
+                <Label Text="or sign in with" FontSize="12" TextColor="#999999" HorizontalTextAlignment="Center" Margin="0,-10,0,-10"/>
+                    <StackLayout VerticalOptions="StartAndExpand" Orientation="Horizontal"  Margin="0,10,0,0">
+                        <Button Text="Google" 
+                                BorderColor="#575656" 
+                                BorderWidth="1" 
+                                WidthRequest="90" 
+                                FontSize="13" 
+                                HeightRequest="45"
+                                TextColor="#575656" 
+                                FontAttributes="Bold" 
+                                BackgroundColor="White" 
+                                HorizontalOptions="StartAndExpand"
+                                Clicked="Handle_GoogleSignIn"/>
+                    
+                        <Button Text="Wechat" 
+                                WidthRequest="90" 
+                                FontSize="13" 
+                                TextColor="White" 
+                                HeightRequest="45"
+                                BackgroundColor="#09B83E" 
+                                FontAttributes="Bold" 
+                                HorizontalOptions="CenterAndExpand"
+                                Clicked="Handle_WechatSignIn"/>
+                       <Button 
+                                Text="Facebook" 
+                                WidthRequest="90" 
+                                FontSize="13" 
+                                TextColor="White"
+                                HeightRequest="45"
+                                BackgroundColor="#3B5998" 
+                                FontAttributes="Bold" 
+                                HorizontalOptions="EndAndExpand"
+                                Clicked="Handle_FaceBookSignIn"/>
+                    </StackLayout>
+               
+                
+                <Button Text="I already have an account" 
+                            FontSize="13"
+                            Margin="0,-10,0,0"
+                            TextColor="#999999"
+                            HorizontalOptions="CenterAndExpand"
+                            Clicked="Handle_SignIn"/>
+                </StackLayout>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

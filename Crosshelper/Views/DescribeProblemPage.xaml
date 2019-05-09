@@ -5,7 +5,7 @@
              >
     <NavigationPage.TitleView>
         <Grid>
-            <Button Text="Cancel" TextColor="White" HorizontalOptions="Start" FontSize="17" Clicked="Handle_Canceled" VerticalOptions="Center"/>
+            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled" VerticalOptions="Center"/>
         </Grid>
     </NavigationPage.TitleView>
                  <ScrollView>

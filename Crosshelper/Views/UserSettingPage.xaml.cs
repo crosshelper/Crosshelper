@@ -47,7 +47,7 @@ namespace Crosshelper.Views
         }
         void Handle_SignOut(object sender, System.EventArgs e)
         {
-            Application.Current.MainPage = new SignInPage();
+            Application.Current.MainPage = new CtestPage();
         }
 
         private User currentUser;
