@@ -79,7 +79,7 @@
         <!-- 2 -->
             <StackLayout >
             <Label Text="Make immigrant life better" FontSize="22" Margin="5,0,5,0"/>
-                    <CollectionView ItemsSource="{Binding RecommendationOne}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
+                    <CollectionView ItemsSource="{Binding RecommendationTwo}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="5" >
@@ -114,7 +114,7 @@
              <!-- 3 -->
             <StackLayout >
             <Label Text="Traveler got some problem" FontSize="22" Margin="5,0,5,0"/>
-                    <CollectionView ItemsSource="{Binding RecommendationOne}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
+                    <CollectionView ItemsSource="{Binding RecommendationThree}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="5" >
@@ -149,7 +149,7 @@
              <!-- 3 -->
             <StackLayout >
             <Label Text="Business recommendation" FontSize="22" Margin="5,0,5,0"/>
-                    <CollectionView ItemsSource="{Binding RecommendationOne}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
+                    <CollectionView ItemsSource="{Binding RecommendationFour}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="5" >
