@@ -11,8 +11,50 @@ namespace Crosshelper.Helpers
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
 
         private readonly List<UserPro> helperlist = new List<UserPro>();
-        //internal List<UserPro> Helperlist { get => helperlist; set => helperlist = value; }
         private readonly List<int> helperuidlist = new List<int>();
+
+        internal void UpdateUserInfo(User usr)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                    "UPDATE UserInfo SET " +
+                    "FirstName = @para2, " +
+                    "LastName = @para3, " +
+                    "FLanguage = @para4, " +
+                    "SLanguage = @para5, " +
+                    "PaymentID = @para6, " +
+                    "Icon = @para7, " +
+                    "FENum = @para8, " +
+                    "SENum = @para9, " +
+                    "Address = @para10" +
+                    " WHERE Uid = @para1";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", usr.UserID);
+                cmd.Parameters.AddWithValue("para2", usr.FirstName);
+                cmd.Parameters.AddWithValue("para3", usr.LastName);
+                cmd.Parameters.AddWithValue("para4", usr.FLanguage);
+                cmd.Parameters.AddWithValue("para5", usr.SLanguage);
+                cmd.Parameters.AddWithValue("para6", usr.PaymentID);
+                cmd.Parameters.AddWithValue("para7", usr.Icon);
+                cmd.Parameters.AddWithValue("para8", usr.FENo);
+                cmd.Parameters.AddWithValue("para9", usr.SENo);
+                cmd.Parameters.AddWithValue("para10", usr.Address);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
 
         public List<UserPro> GetHelperList()
         {
@@ -87,7 +129,7 @@ namespace Crosshelper.Helpers
             }
         }
 
-        public User GetUserInfoByID(int userid)
+        public User GetUserInfoByID(string userid)
         {
             User user = new User();
             //并没有建立数据库连接

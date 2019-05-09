@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Crosshelper.Models;
+using Crosshelper.Helpers;
 
 namespace Crosshelper.Views
 {
@@ -12,6 +14,9 @@ namespace Crosshelper.Views
     {
         void Handle_Saved(object sender, System.EventArgs e)
         {
+            _usr.FLanguage = FLanguage;
+            _usr.SLanguage = SLanguage;
+            uih.UpdateUserInfo(_usr);
             Navigation.PopAsync(false);
         }
         void Handle_Canceled(object sender, System.EventArgs e)
@@ -19,6 +24,7 @@ namespace Crosshelper.Views
             Navigation.PopToRootAsync(false);
         }
 
+        UserInfoHelper uih = new UserInfoHelper();
         public IList LanguageItems { get; }
         //Homeland
         //public ObservableCollection<HomeLandPickerItem> HomeLandItemsSource { get; } = new ObservableCollection<HomeLandPickerItem>();
@@ -27,12 +33,16 @@ namespace Crosshelper.Views
         public string FLanguage { get; set; }
         public string SLanguage { get; set; }
 
-        public MyBackgroundPage()
+        User _usr;
+
+        public MyBackgroundPage(User user)
         {
             InitializeComponent();
 
-            FLanguage = "English";
-            SLanguage = "Russian";
+            _usr = user;
+
+            FLanguage = user.FLanguage;
+            SLanguage = user.SLanguage;
 
             List<string> list = new List<string>
             {

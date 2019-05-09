@@ -14,26 +14,26 @@
                          HasUnevenRows="true">
             
             <sv:Section FooterText="Tap image to change photo">
-             <sv:CommandCell x:Name="commandcell" IconSource="https://s3-us-west-1.amazonaws.com/image.cycbis.com/UserProfileIcon/bochen.png" IconSize="60,60" IconRadius="30"
+             <sv:CommandCell x:Name="NameCell" IconSource="https://s3-us-west-1.amazonaws.com/image.cycbis.com/UserProfileIcon/bochen.png" IconSize="60,60" IconRadius="30"
                              Title="Bo Chen" Tapped="Handle_ChangePhoto"
                              Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"/>
             </sv:Section>
             <sv:Section Title="Email Address" FooterText="">
-                <sv:EntryCell Title="Email" ValueText="{Binding InputText.Value}" 
+                <sv:EntryCell Title="Email" ValueText="{Binding Email}" 
                               Placeholder="0000 0000 0000 0000" Keyboard="Email" 
                               TextAlignment="End" HintText="{Binding InputError.Value}" />
             </sv:Section>
             <sv:Section Title="Name" FooterText="">
-                <sv:EntryCell Title="First Name" ValueText="{Binding InputText.Value}" 
-                              Placeholder="0000 0000 0000 0000" Keyboard="Email" 
+                <sv:EntryCell Title="First Name" ValueText="{Binding FirstName}" 
+                              Keyboard="Email" 
                               TextAlignment="End" HintText="{Binding InputError.Value}" /> 
-                <sv:EntryCell Title="Last Name" ValueText="{Binding InputText.Value}" 
-                              Placeholder="11/20" Keyboard="Email" 
+                <sv:EntryCell Title="Last Name" ValueText="{Binding LastName}" 
+                              Keyboard="Email" 
                               TextAlignment="End" HintText="{Binding InputError.Value}" />
             </sv:Section>
             
            <sv:Section Title="Security" FooterText="">
-                <sv:EntryCell Title="Phone number" ValueText="{Binding InputText.Value}" 
+                <sv:EntryCell Title="Phone number" ValueText="{Binding PhoneNumber}" 
                               Placeholder="626 566 0781" Keyboard="Email" 
                               TextAlignment="End" HintText="{Binding InputError.Value}" /> 
                 <sv:PickerCell Title="Reset Password" Tapped="Handle_ResetPassword" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
