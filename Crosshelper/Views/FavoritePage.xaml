@@ -38,6 +38,7 @@
                                            Grid.Row="1"
                                            TextColor="#FFC834"
                                            Grid.RowSpan="2"
+                                           Grid.ColumnSpan="3"
                                            Text="{Binding Rating}"
                                            HeightRequest="60"
                                            WidthRequest="60" />

@@ -26,9 +26,9 @@ namespace Crosshelper.Views
 
         UserInfoHelper uih = new UserInfoHelper();
         public IList LanguageItems { get; }
-        //Homeland
-        //public ObservableCollection<HomeLandPickerItem> HomeLandItemsSource { get; } = new ObservableCollection<HomeLandPickerItem>();
-        //public ObservableCollection<HomeLandPickerItem> HomeLandSelectedItems { get; set; } = new ObservableCollection<HomeLandPickerItem>();
+        //FamiliarCountry
+        //public ObservableCollection<HomeLandPickerItem> FamiliarCountryItemsSource { get; } = new ObservableCollection<FamiliarCountryPickerItem>();
+        //public ObservableCollection<HomeLandPickerItem> FamiliarCountrySelectedItems { get; set; } = new ObservableCollection<FamiliarCountryPickerItem>();
 
         public string FLanguage { get; set; }
         public string SLanguage { get; set; }
