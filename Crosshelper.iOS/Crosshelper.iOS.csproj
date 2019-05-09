@@ -127,9 +127,6 @@
     <ImageAsset Include="Assets.xcassets\Crosshelper Icon.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <BundleResource Include="Resources\tab_favorite.png" />
-    <BundleResource Include="Resources\tab_favorite%402x.png" />
-    <BundleResource Include="Resources\tab_favorite%403x.png" />
     <BundleResource Include="Resources\tab_profile.png" />
     <BundleResource Include="Resources\tab_profile%402x.png" />
     <BundleResource Include="Resources\tab_profile%403x.png" />
@@ -139,6 +136,9 @@
     <BundleResource Include="Resources\tab_inbox.png" />
     <BundleResource Include="Resources\tab_inbox%402x.png" />
     <BundleResource Include="Resources\tab_inbox%403x.png" />
+    <BundleResource Include="Resources\tab_favorite.png" />
+    <BundleResource Include="Resources\tab_favorite%402x.png" />
+    <BundleResource Include="Resources\tab_favorite%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
