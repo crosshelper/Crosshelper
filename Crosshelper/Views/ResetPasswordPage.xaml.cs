@@ -15,7 +15,6 @@ namespace Crosshelper.Views
         }
 
         public ICommand ResetCommand { get; private set; }
-
         Uac _ac;
         public string OldPwd { get; set; }
         public string NewPwd1 { get; set; }
@@ -27,7 +26,6 @@ namespace Crosshelper.Views
             _ac = ac;
             Init();
         }
-
         private void Init()
         {
             InitializeComponent();
@@ -36,17 +34,16 @@ namespace Crosshelper.Views
             BindingContext = this;
         }
 
-        public void ResetPwd()
+        private void ResetPwd()
         {
-            if (NewPwd1 == NewPwd2 && NewPwd1.Length > 7 && NewPwd1 != OldPwd)
+            if (NewPwd1 == NewPwd2 && NewPwd2.Length > 7 && NewPwd1 != OldPwd)
             {
                 _ac.Pwd = NewPwd2;
                 uih.UpdateUac(_ac);
-                Navigation.PopToRootAsync(false);
             }
             else
             {
-                DisplayAlert("Not accessable input!", "Password reset error, please try again!", "OK");
+                DisplayAlert("Not accessable input!", "Not a valid password, please try again!", "OK");
             }
         }
     }
