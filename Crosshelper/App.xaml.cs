@@ -22,12 +22,7 @@ namespace Crosshelper
             //MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePage))) {
             //BarBackgroundColor = Color.FromHex("#FF4E18"),
             //BarTextColor = Color.White };
-<<<<<<< HEAD
-
-            MainPage = new CtestPage();
-=======
             MainPage = new LaunchingPage();//SignInPage();
->>>>>>> 4ceb55b... dsqasa
         }
 
         protected override void OnStart()
