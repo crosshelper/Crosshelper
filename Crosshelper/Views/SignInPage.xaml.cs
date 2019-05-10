@@ -14,7 +14,6 @@ namespace Crosshelper.Views
 
         public SignInPage()
         {
-
             InitializeComponent();
             NavigationPage.SetHasBackButton(this, false);
         }

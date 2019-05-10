@@ -19,7 +19,7 @@ namespace Crosshelper
         {
             InitializeComponent();
             SendBirdClient.Init(Crosshelper.Properties.Resources.APP_ID);
-            //MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePage))) {
+            //MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(SignInPage))) {
             //BarBackgroundColor = Color.FromHex("#FF4E18"),
             //BarTextColor = Color.White };
             MainPage = new LaunchingPage();//SignInPage();

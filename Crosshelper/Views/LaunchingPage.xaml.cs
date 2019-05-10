@@ -30,6 +30,11 @@ namespace Crosshelper.Views
             BindingContext = this;
         }
 
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushModalAsync(new NavigationPage(new SignInPage()));
+        }
+
         void Init()
         {
             LaunchingItemsSource = new List<User>()

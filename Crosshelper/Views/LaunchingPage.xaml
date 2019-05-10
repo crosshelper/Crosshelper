@@ -42,7 +42,7 @@
                                             </Label.FontFamily> 
                                         </Label>
                                     </StackLayout>
-                                    <Button Text="Signin"/>
+                                    <Button Text="Signin" Clicked="Handle_Clicked"/>
                                     <Button Text="Signup"/>
                                     <!--<Label VerticalOptions="EndAndExpand" Margin="0,0,0,40" FontSize="12" HorizontalTextAlignment="Center" TextColor="#EEE" Text="SWIPE TO CONTINUE">
                                             <Label.FontFamily>

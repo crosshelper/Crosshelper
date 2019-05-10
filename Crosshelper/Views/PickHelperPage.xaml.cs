@@ -16,6 +16,7 @@ namespace Crosshelper.Views
         void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             HelperLabel hl = (HelperLabel)e.SelectedItem as HelperLabel;
+            ((ListView)sender).SelectedItem = null;
             Navigation.PushAsync(new HelperProfilePage(hl));
         }
 

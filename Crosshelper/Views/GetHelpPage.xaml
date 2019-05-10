@@ -11,7 +11,7 @@
         <StackLayout>
             <StackLayout>
             <Label Text="Problem Category" FontSize="25" VerticalOptions="Center" Margin="10,5,10,0"/>
-                <CollectionView ItemsSource="{Binding ProblemsCategory}" SelectionMode="Single" SelectionChanged="Handle_PickProblem"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="120" >
+                <CollectionView x:Name="cv1" ItemsSource="{Binding ProblemsCategory}" SelectionMode="Single" SelectionChanged="Handle_PickProblem"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="120" >
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                                 <Grid Padding="10">

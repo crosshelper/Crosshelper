@@ -11,6 +11,8 @@ namespace Crosshelper.Views
     {
         void Handle_Canceled(object sender, System.EventArgs e)
         {
+            //var tmppage = this.Parent as GetHelpPage;
+            //tmppage.RefreshSelection();
             Navigation.PopModalAsync();
         }
         public DescribeProblemPage()

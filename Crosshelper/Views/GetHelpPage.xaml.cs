@@ -16,6 +16,8 @@ namespace Crosshelper.Views
         public GetHelpPage()
         {
             InitializeComponent();
+
+            
             ////ProblemsCategory////
             ProblemsCategory = new List<TypeProblem>();
             ProblemsCategory.Add(new TypeProblem
@@ -163,8 +165,23 @@ namespace Crosshelper.Views
 
         void Handle_PickProblem(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            Navigation.PushModalAsync(new NavigationPage(new DescribeProblemPage()));
-            
+            if (cv1.SelectedItem != null)
+            {
+                Navigation.PushModalAsync(new NavigationPage(new DescribeProblemPage()));
+            }
+        }
+
+        protected override void OnAppearing()
+        {
+            RefreshSelection();
+        }
+
+        public void RefreshSelection()
+        {
+            if (cv1.SelectedItem != null)
+            {
+                cv1.SelectedItem = null;
+            }
         }
     }
 }
