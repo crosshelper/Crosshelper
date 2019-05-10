@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Crosshelper.Models;
 using Crosshelper.Helpers;
 using SendBird;
+using Xamarin.Forms.Xaml;
 
 namespace Crosshelper.Views
 {
@@ -13,7 +14,9 @@ namespace Crosshelper.Views
 
         public SignInPage()
         {
+
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, false);
         }
 
         //取消按钮 Canceled

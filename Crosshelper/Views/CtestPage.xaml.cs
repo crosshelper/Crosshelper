@@ -10,6 +10,7 @@ namespace Crosshelper.Views
         public CtestPage()
         {
             InitializeComponent();
+           
         }
 
         //第三次登入 Third party sign in
@@ -34,6 +35,7 @@ namespace Crosshelper.Views
         void Handle_SignUp(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new NavigationPage(new SignUpPage()));
+            
         }
     }
 }

@@ -40,7 +40,7 @@
                 </CollectionView>
             </StackLayout>
         <!-- 2 -->
-            <StackLayout BackgroundColor="#F2F2F2" Padding="10">
+            <StackLayout BackgroundColor="#F9F9F9" Padding="10">
             <StackLayout >
             <Label Text="Are you international student?" FontSize="22" Margin="5,0,5,0"/>
                     <CollectionView ItemsSource="{Binding RecommendationOne}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
@@ -59,8 +59,8 @@
                                            Grid.Row="0"
                                            Source="{Binding ImageUrl}"
                                            Aspect="AspectFill"
-                                           HeightRequest="80"
-                                           WidthRequest="180" />
+                                           HeightRequest="85"
+                                           WidthRequest="210"/>
                                      <Label Grid.Row="3"
                                            Grid.Column="0"
                                            FontSize="18"
@@ -95,8 +95,8 @@
                                            Grid.Row="0"
                                            Source="{Binding ImageUrl}"
                                            Aspect="AspectFill"
-                                           HeightRequest="80"
-                                           WidthRequest="180" />
+                                           HeightRequest="85"
+                                           WidthRequest="210" />
                                      <Label Grid.Row="3"
                                            Grid.Column="0"
                                            FontSize="18"
@@ -130,8 +130,8 @@
                                            Grid.Row="0"
                                            Source="{Binding ImageUrl}"
                                            Aspect="AspectFill"
-                                           HeightRequest="80"
-                                           WidthRequest="180" />
+                                           HeightRequest="85"
+                                           WidthRequest="210" />
                                      <Label Grid.Row="3"
                                            Grid.Column="0"
                                            FontSize="18"
@@ -165,8 +165,8 @@
                                            Grid.Row="0"
                                            Source="{Binding ImageUrl}"
                                            Aspect="AspectFill"
-                                           HeightRequest="80"
-                                           WidthRequest="180" />
+                                           HeightRequest="85"
+                                           WidthRequest="210" />
                                      <Label Grid.Row="3"
                                            Grid.Column="0"
                                            FontSize="18"

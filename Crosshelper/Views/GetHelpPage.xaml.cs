@@ -50,17 +50,17 @@ namespace Crosshelper.Views
             RecommendationOne.Add(new TypeProblem
             {
                 Pcategory = "Repair",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom005.png"
             });
             RecommendationOne.Add(new TypeProblem
             {
                 Pcategory = "Repai1",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
             });
             RecommendationOne.Add(new TypeProblem
             {
                 Pcategory = "Repair2",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
             });
             RecommendationOne.Add(new TypeProblem
             {
@@ -70,12 +70,7 @@ namespace Crosshelper.Views
             RecommendationOne.Add(new TypeProblem
             {
                 Pcategory = "Repair4",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
-            });
-            RecommendationOne.Add(new TypeProblem
-            {
-                Pcategory = "Repair5",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
             });
 
             //////Immigrant Recommendation///////
@@ -83,7 +78,17 @@ namespace Crosshelper.Views
             RecommendationTwo.Add(new TypeProblem
             {
                 Pcategory = "Repair",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
+            });
+            RecommendationTwo.Add(new TypeProblem
+            {
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
+            });
+            RecommendationTwo.Add(new TypeProblem
+            {
+                Pcategory = "Repair",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom005.png"
             });
             RecommendationTwo.Add(new TypeProblem
             {
@@ -93,22 +98,7 @@ namespace Crosshelper.Views
             RecommendationTwo.Add(new TypeProblem
             {
                 Pcategory = "Repair",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
-            });
-            RecommendationTwo.Add(new TypeProblem
-            {
-                Pcategory = "Repair",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
-            });
-            RecommendationTwo.Add(new TypeProblem
-            {
-                Pcategory = "Repair",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
-            });
-            RecommendationTwo.Add(new TypeProblem
-            {
-                Pcategory = "Repair",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
             });
 
             //////Traveler Recommendation///////
@@ -121,22 +111,22 @@ namespace Crosshelper.Views
             RecommendationThree.Add(new TypeProblem
             {
                 Pcategory = "Repair",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom005.png"
             });
             RecommendationThree.Add(new TypeProblem
             {
                 Pcategory = "Repair",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
             });
             RecommendationThree.Add(new TypeProblem
             {
                 Pcategory = "Repair",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
             });
             RecommendationThree.Add(new TypeProblem
             {
                 Pcategory = "Repair",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
             });
 
             //////Business Recommendation///////
@@ -149,17 +139,17 @@ namespace Crosshelper.Views
             RecommendationFour.Add(new TypeProblem
             {
                 Pcategory = "Repair",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
             });
             RecommendationFour.Add(new TypeProblem
             {
                 Pcategory = "Repair",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
             });
             RecommendationFour.Add(new TypeProblem
             {
                 Pcategory = "Repair",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
             });
 
 

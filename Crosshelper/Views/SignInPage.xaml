@@ -37,6 +37,7 @@
                             <Entry Placeholder="Enter your email Password"
                                    FontSize="16"
                                    HeightRequest="45"
+                                   IsPassword="true"
                                    Completed="PasswordSignInCompleted"
                                    x:Name="pwdEntry"/>
                             <Label Text="" x:Name="signInTest"></Label>
