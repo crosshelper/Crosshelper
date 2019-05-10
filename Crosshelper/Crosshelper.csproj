@@ -36,6 +36,9 @@
     <PackageReference Include="AWSSDK.Core" Version="3.3.101.7" />
     <PackageReference Include="AWSSDK.S3" Version="3.3.101.14" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.9.961" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.9.961" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\MyPage.xaml" />
