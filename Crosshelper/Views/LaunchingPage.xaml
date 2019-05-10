@@ -54,23 +54,6 @@
                             </Grid>
                     </DataTemplate>
                 </carousel:CarouselViewControl.ItemTemplate>
-
-        <!--<cv:CarouselViewControl.ItemsSource>
-           <x:Array Type="{x:Type View}">
-                <ScrollView>
-                    <StackLayout>
-                        <ffimageloading:CachedImage DownsampleToViewSize="true" Source = "c1.jpg" Aspect="AspectFill" />
-                        <ffimageloading:CachedImage DownsampleToViewSize="true" Source = "c2.jpg" Aspect="AspectFill" />
-                        <ffimageloading:CachedImage DownsampleToViewSize="true" Source = "c3.jpg" Aspect="AspectFill" />
-                    </StackLayout>
-                </ScrollView>
-                <ffimageloading:CachedImage DownsampleToViewSize="true" Source = "c1.jpg" Aspect="AspectFill" />
-                <ffimageloading:CachedImage DownsampleToViewSize="true" Source = "c2.jpg" Aspect="AspectFill" />
-                <ffimageloading:CachedImage DownsampleToViewSize="true" Source = "c3.jpg" Aspect="AspectFill" />
-           </x:Array>
-        </cv:CarouselViewControl.ItemsSource>-->
-
-    </carousel:CarouselViewControl>
-        
+        </carousel:CarouselViewControl>
     </ContentPage.Content>
 </ContentPage>
