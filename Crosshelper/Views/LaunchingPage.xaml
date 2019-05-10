@@ -42,14 +42,16 @@
                                             </Label.FontFamily> 
                                         </Label>
                                     </StackLayout>
-                                    <Label VerticalOptions="EndAndExpand" Margin="0,0,0,40" FontSize="12" HorizontalTextAlignment="Center" TextColor="#EEE" Text="SWIPE TO CONTINUE">
+                                    <Button Text="Signin"/>
+                                    <Button Text="Signup"/>
+                                    <!--<Label VerticalOptions="EndAndExpand" Margin="0,0,0,40" FontSize="12" HorizontalTextAlignment="Center" TextColor="#EEE" Text="SWIPE TO CONTINUE">
                                             <Label.FontFamily>
                                                 <OnPlatform x:TypeArguments="x:String">
                                                     <On Platform="iOS" Value="Montserrat" />
                                                     <On Platform="Android" Value="fonts/Montserrat-Regular.ttf#Montserrat" />
                                                 </OnPlatform>
                                             </Label.FontFamily> 
-                                        </Label>
+                                        </Label>-->
                                 </StackLayout>
                             </Grid>
                     </DataTemplate>
