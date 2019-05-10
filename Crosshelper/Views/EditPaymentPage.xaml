@@ -15,19 +15,24 @@
     
         <sv:Section Title="Bank Info" FooterText="">
             <sv:EntryCell Title="Credit/Debit" ValueText="{Binding InputText.Value}" 
+                          ValueTextFontSize="16"
                           Placeholder="0000 0000 0000 0000" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" /> 
             <sv:EntryCell Title="Expiry Date" ValueText="{Binding InputText.Value}" 
                           Placeholder="11/20" Keyboard="Email" 
+                          ValueTextFontSize="16"
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
             <sv:EntryCell Title="Card Holder" ValueText="{Binding InputText.Value}" 
                           Placeholder="Name" Keyboard="Email" 
+                          ValueTextFontSize="16"
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
             <sv:EntryCell Title="CVV" ValueText="{Binding InputText.Value}" 
                           Placeholder="***" Keyboard="Email" 
+                          ValueTextFontSize="16"
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
             <sv:EntryCell Title="Zip Code" ValueText="{Binding InputText.Value}" 
                           Placeholder="95136" Keyboard="Email" 
+                          ValueTextFontSize="16"
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
         </sv:Section>
             

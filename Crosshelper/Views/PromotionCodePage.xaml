@@ -15,6 +15,7 @@
             <sv:Section Title="Promotion" FooterText="">
                 <sv:EntryCell Title="Code" ValueText="{Binding InputText.Value}" 
                               Placeholder="000000" Keyboard="Email" 
+                              ValueTextFontSize="16"
                               TextAlignment="End" HintText="{Binding InputError.Value}" /> 
             </sv:Section>
             

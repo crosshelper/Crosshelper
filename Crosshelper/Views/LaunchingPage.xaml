@@ -6,7 +6,6 @@
              x:Class="Crosshelper.Views.LaunchingPage">
     <ContentPage.Content>
         <StackLayout Margin="16,35,16,10">
-             
                 <carousel:CarouselViewControl x:Name="carousel"
                 ItemsSource="{Binding LaunchingItemsSource}"
                 ShowIndicators="true" 
@@ -31,7 +30,7 @@
             <StackLayout VerticalOptions="Start">
                 <Button Text="Get Started"
                         TextColor="White"
-                        FontSize="13"
+                        FontSize="18"
                         HeightRequest="45"
                         FontAttributes="Bold"
                         BackgroundColor="#FF4E18"
@@ -40,7 +39,7 @@
                         </StackLayout>
                 <Button Text="Sign In"
                         TextColor="Gray"
-                        FontSize="13"
+                        FontSize="18"
                         BorderWidth="1"
                         BorderColor="#999999"
                         HeightRequest="45"

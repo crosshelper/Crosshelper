@@ -21,7 +21,7 @@
                                 BorderColor="#575656" 
                                 BorderWidth="1" 
                                 WidthRequest="90" 
-                                FontSize="13" 
+                                FontSize="16" 
                                 TextColor="#575656" 
                                 FontAttributes="Bold" 
                                 BackgroundColor="White" 
@@ -29,7 +29,7 @@
                                 Clicked="Handle_GoogleSignIn"/>
                         <Button Text="Wechat" 
                                 WidthRequest="90" 
-                                FontSize="13" 
+                                FontSize="16" 
                                 TextColor="White" 
                                 BackgroundColor="#09B83E" 
                                 FontAttributes="Bold" 
@@ -37,7 +37,7 @@
                                 Clicked="Handle_WechatSignIn"/>
                        <Button  Text="Facebook" 
                                 WidthRequest="90" 
-                                FontSize="13" 
+                                FontSize="16" 
                                 TextColor="White" 
                                 BackgroundColor="#3B5998" 
                                 FontAttributes="Bold" 
