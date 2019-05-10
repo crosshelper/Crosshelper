@@ -43,5 +43,16 @@ namespace Crosshelper.Views
                 new User() { Icon="https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/CH+logo2.png", FirstName = "Title2", LastName = "Test2", Address="this is the second page" }
             };
         }
+
+        void Handle_SignIn(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new NavigationPage(new SignInPage()));
+        }
+
+        void Handle_SignUp(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new NavigationPage(new SignUpPage()));
+
+        }
     }
 }

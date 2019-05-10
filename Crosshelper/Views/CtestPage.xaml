@@ -20,7 +20,7 @@
                                     BackgroundColor="#FF4E18"
                                     Margin="0,10,0,10"
                                     Clicked="Handle_SignUp"/>
-                    </StackLayout>
+                </StackLayout>
                 <Button Text="I already have an account" 
                         FontSize="13"
                         Margin="0,-10,0,0"

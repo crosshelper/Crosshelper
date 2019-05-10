@@ -99,7 +99,7 @@ namespace Crosshelper.Views
         }
         void Handle_CreateAccount(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new SignUpPage());
+            Navigation.PushAsync(new SignUpPage());
             //Navigation.PushAsync(new SignUpPage());
         }
 

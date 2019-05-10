@@ -5,57 +5,49 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="Crosshelper.Views.LaunchingPage">
     <ContentPage.Content>
+        <StackLayout Margin="16,35,16,10">
         <carousel:CarouselViewControl x:Name="carousel"
         ItemsSource="{Binding LaunchingItemsSource}"
         ShowIndicators="true" 
         Position="0"
+        HorizontalOptions="FillAndExpand" 
+        VerticalOptions="FillAndExpand"
         InterPageSpacing="10">
             <carousel:CarouselViewControl.ItemTemplate>
                     <DataTemplate>
-                            <Grid>
-                                <ffimageloading:CachedImage x:Name="background" Source="{Binding Icon}" Aspect="AspectFill" />
+                            <Grid Padding="0,50,0,45">
+                                <ffimageloading:CachedImage x:Name="background" Source="{Binding Icon}" VerticalOptions="EndAndExpand"/>
                                 <StackLayout>
-                                    <StackLayout VerticalOptions="CenterAndExpand">
-                                        <Image Margin="0,100,0,20" Source="logo.png" WidthRequest="80" HorizontalOptions="Center" />
-                                        <Label FontSize="50" TextColor="White" HorizontalTextAlignment="Center" Text="{Binding FirstName}">
-                                            <Label.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Montserrat" />
-                                                    <On Platform="Android" Value="fonts/Montserrat-Regular.ttf#Montserrat" />
-                                                </OnPlatform>
-                                            </Label.FontFamily> 
-                                        </Label>
-                                        <Label FontFamily="Raleway-Bold" FontSize="14" TextColor="White" HorizontalTextAlignment="Center" Text="{Binding LastName}">
-                                             <Label.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Raleway-Bold" />
-                                                    <On Platform="Android" Value="fonts/Raleway-Bold.ttf#Raleway-Bold" />
-                                                </OnPlatform>
-                                            </Label.FontFamily> 
-                                        </Label>
-                                        <Label Margin="20,20,20,0" FontSize="14" TextColor="White" HorizontalTextAlignment="Center" Text="{Binding Address}">
-                                            <Label.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Montserrat" />
-                                                    <On Platform="Android" Value="fonts/Montserrat-Regular.ttf#Montserrat" />
-                                                </OnPlatform>
-                                            </Label.FontFamily> 
-                                        </Label>
-                                    </StackLayout>
-                                    <Button Text="Signin" Clicked="Handle_Clicked"/>
-                                    <Button Text="Signup"/>
-                                    <!--<Label VerticalOptions="EndAndExpand" Margin="0,0,0,40" FontSize="12" HorizontalTextAlignment="Center" TextColor="#EEE" Text="SWIPE TO CONTINUE">
-                                            <Label.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Montserrat" />
-                                                    <On Platform="Android" Value="fonts/Montserrat-Regular.ttf#Montserrat" />
-                                                </OnPlatform>
-                                            </Label.FontFamily> 
-                                        </Label>-->
+                                    <Image Margin="0,100,0,20" Source="logo.png"  HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" />
                                 </StackLayout>
                             </Grid>
                     </DataTemplate>
                 </carousel:CarouselViewControl.ItemTemplate>
         </carousel:CarouselViewControl>
+         <StackLayout VerticalOptions="End" Margin="0,0,0,0">  
+        <BoxView BackgroundColor="#CDCDCD" HeightRequest="1"></BoxView>
+                <!-- 第三次登入 Third party sign in -->  
+        <StackLayout VerticalOptions="Start">
+            <Button Text="Get Started"
+                    TextColor="White"
+                    FontSize="13"
+                    HeightRequest="45"
+                    FontAttributes="Bold"
+                    BackgroundColor="#FF4E18"
+                    Margin="0,10,0,5"
+                    Clicked="Handle_SignUp"/>
+                    </StackLayout>
+            <Button Text="Sign In"
+                    TextColor="Gray"
+                    FontSize="13"
+                    BorderWidth="1"
+                    BorderColor="#999999"
+                    HeightRequest="45"
+                    FontAttributes="Bold"
+                    BackgroundColor="White"
+                    Margin="0,0,0,10"
+                    Clicked="Handle_SignIn"/>
+                    </StackLayout>
+            </StackLayout>
     </ContentPage.Content>
 </ContentPage>
