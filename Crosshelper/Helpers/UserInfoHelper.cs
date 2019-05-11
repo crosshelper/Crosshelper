@@ -10,8 +10,15 @@ namespace Crosshelper.Helpers
     {
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
 
+        private readonly List<PaymentInfo> paymentlist = new List<PaymentInfo>();
         private readonly List<UserPro> helperlist = new List<UserPro>();
+        private readonly List<int> paymentsidlist = new List<int>();
         private readonly List<int> helperuidlist = new List<int>();
+
+        internal void UpdatePaymentInfo(PaymentInfo paymentinfo)
+        {
+            throw new NotImplementedException();
+        }
 
         internal void UpdateUac(Uac ac)
         {
@@ -98,6 +105,16 @@ namespace Crosshelper.Helpers
             {
                 GetHelperIDbyChatID(uid);
             }
+        }
+
+        public List<PaymentInfo> GetPaymentsList(string userid)
+        {
+            GetPaymentIDByID(userid);
+            foreach (int paymentid in paymentsidlist)
+            {
+                GetPaymentbyPID(paymentid);
+            }
+            return paymentlist;
         }
 
         public void GetProHelperByTag(int tagid)
@@ -204,6 +221,37 @@ namespace Crosshelper.Helpers
             }
         }
 
+        private void GetPaymentIDByID(string userid)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr = "SELECT Pid FROM HelperTag WHERE Uid = @para1";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", userid);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    paymentsidlist.Add(reader.GetInt32(0));
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
+
+
         public Uac GetUacByID(string userid)
         {
             Uac ac = new Uac();
@@ -239,6 +287,49 @@ namespace Crosshelper.Helpers
                 conn.Close();   //关闭连接              
             }
         }
+
+        //ChatID to ID
+        private void GetPaymentbyPID(int pid)
+        {
+            PaymentInfo ptmp = new PaymentInfo();
+            //并没有建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT FirstName,LastName,Icon,ChatID,FLanguage,SLanguage,PaymentID,Location,Rating,`Status`,PriceSign FROM HelperInfo,UserInfo WHERE HelperInfo.Uid = @para1 AND UserInfo.Uid = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", pid);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    ptmp.PaymentID = reader.GetString(0);
+                    ptmp.AccountNo = reader.GetString(1);
+                    ptmp.CName = reader.GetString(2);
+                    ptmp.ExDate = reader.GetDateTime(3);
+                    ptmp.CVV = reader.GetString(4);
+                    ptmp.Zipcode = reader.GetString(5);
+                    paymentlist.Add(ptmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
+
+
+
 
         //ChatID to ID
         private void GetHelperIDbyChatID(int userid)

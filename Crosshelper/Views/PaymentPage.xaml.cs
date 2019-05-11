@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using AiForms.Renderers;
+using Crosshelper.Helpers;
+using Crosshelper.Models;
 using Xamarin.Forms;
 
 namespace Crosshelper.Views
@@ -11,18 +13,42 @@ namespace Crosshelper.Views
         {
             Navigation.PopToRootAsync(false);
         }
-        void Handle_AddPaymentMethod(object sender, System.EventArgs e)
+
+        void AddPayment()
         {
             Navigation.PushAsync(new AddPaymentMethodPage());
         }
-        void Handle_EditPaymentMethod(object sender, System.EventArgs e)
+
+        void EditPayment()
         {
             Navigation.PushAsync(new EditPaymentPage());
         }
 
+        public List<PaymentInfo> Paymentlist { get; set; } = new List<PaymentInfo>();
+        public List<Cell> PaymentCells { get; set; } = new List<Cell>();
+        UserInfoHelper uih = new UserInfoHelper();
+
         public PaymentPage()
         {
             InitializeComponent();
+        }
+
+        private void RefreshData()
+        {
+            Paymentlist = uih.GetPaymentsList(Settings.UserId);
+            foreach(PaymentInfo ptmp in Paymentlist)
+            {
+                PaymentCells.Add(new CommandCell() { Title = ptmp.AccountNo, Command = new Command(EditPayment), CommandParameter = ptmp, });
+            }
+            PaymentCells.Add(new CommandCell() { Title = "Add Payment Method", Command = new Command(AddPayment)});
+
+            pmsection.Add(PaymentCells);
+        }
+
+        protected override void OnAppearing()
+        {
+            pmsection.Clear();
+            RefreshData();
         }
     }
 }
