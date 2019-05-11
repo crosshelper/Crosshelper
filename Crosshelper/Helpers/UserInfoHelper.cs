@@ -16,7 +16,8 @@ namespace Crosshelper.Helpers
         private readonly List<int> paymentsidlist = new List<int>();
         private readonly List<int> helperuidlist = new List<int>();
 
-        private readonly string speclist = "";
+        private string speclist = "";
+        private readonly List<int> tagidlist= new List<int>();
 
         internal void InsertPaymentInfo(PaymentInfo pinfo)
         {
@@ -179,7 +180,7 @@ namespace Crosshelper.Helpers
         internal string GetTagsByID(string helperID)
         {
             GetTagByHelperID(helperID);
-            foreach (int tagid in helperuidlist)
+            foreach (int tagid in tagidlist)
             {
                 GetTagInfoByID(tagid.ToString());
             }
@@ -188,12 +189,62 @@ namespace Crosshelper.Helpers
 
         private void GetTagByHelperID(string helperID)
         {
-            throw new NotImplementedException();
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr = "SELECT TagID FROM HelperTag WHERE Uid = @para1";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", helperID);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    tagidlist.Add(reader.GetInt32(0));
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
         }
 
         private void GetTagInfoByID(string v)
         {
-            throw new NotImplementedException();
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT TagName FROM Tags WHERE TagID = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", v);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    speclist += reader.GetString(0) + ", ";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
         }
 
         public List<ReviewsInfo> GetReviewsList(string userid)

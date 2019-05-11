@@ -39,7 +39,7 @@ namespace Crosshelper.Views
             HelperPrice.Text = hl.Baseprice;
             HelperImage.Source = hl.ImageUrl;
 
-            List<ReviewLabelContent> reviewsList = bcc.BindingReviewssConvert(uih.GetReviewsList(hl.HelperID));
+            /*List<ReviewLabelContent> reviewsList = bcc.BindingReviewssConvert(uih.GetReviewsList(hl.HelperID));
             ReviewerName1.Text = reviewsList[0].ReviewerName;
             ReviewerRating1.Text = reviewsList[0].ReviewerRating;
             ReviewerContent1.Text = reviewsList[0].ReviewerContent;
@@ -48,7 +48,7 @@ namespace Crosshelper.Views
             ReviewerContent2.Text = reviewsList[1].ReviewerContent;
             ReviewerName3.Text = reviewsList[2].ReviewerName;
             ReviewerRating3.Text = reviewsList[2].ReviewerRating;
-            ReviewerContent3.Text = reviewsList[2].ReviewerContent;
+            ReviewerContent3.Text = reviewsList[2].ReviewerContent;*/
         }
 
         async void ConnectToChannel(Models.User user, List<string> users)
