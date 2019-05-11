@@ -2,16 +2,36 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.MessageListPage">
     <ContentPage.Content>
         <Grid x:Name="LayoutRoot" BackgroundColor="White">
-            <ListView ItemsSource="{Binding Users}" ItemSelected="LstView_ItemSelected" RowHeight="60">
+            <ListView ItemsSource="{Binding Users}" HasUnevenRows="true" ItemSelected="LstView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
-                                <StackLayout Orientation="Vertical">
-                                    <Label Text ="{Binding FirstName}" TextColor="Black"  FontSize="24" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40"/>
-                                    <Label Text ="{Binding LastName}" TextColor="Gray" AbsoluteLayout.LayoutBounds="50, 35, 200, 25"/>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25" />
+                                    <RowDefinition Height="25" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="55" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.RowSpan="2"
+                                           Grid.Row="0"
+                                           BackgroundColor="#999999"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="60"
+                                           WidthRequest="60" />
+                                <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalOptions="Center" Margin="5,0,0,0" Grid.ColumnSpan="2">
+                                    <Label Text ="{Binding FirstName}" TextColor="Black"  FontSize="18"/>
+                                    <Label Text ="{Binding LastName}" TextColor="Black" FontSize="18"/>
                                 </StackLayout>
-                            </StackLayout>
+                                <StackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="End">
+                                    <Label Text="May 5" TextColor="#666666" FontSize="14"></Label>
+                                </StackLayout>
+                                <Label Grid.Row="1" Grid.Column="1" Text ="Last Chat" TextColor="#666666" Margin="5,0,0,0" FontSize="16"/>
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
