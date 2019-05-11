@@ -24,7 +24,7 @@ namespace Crosshelper.Views
             InitializeComponent();
             BindingContext = vm = new ChatViewModel();
             vm.Channel = channel;
-            //vm.Title = user.Nickname;
+            vm.Title = user.FirstName;
             vm.UserName = Settings.ChatID;
             vm.Load();
             instance = this;
