@@ -27,7 +27,7 @@ namespace Crosshelper.Views
         public PickHelperPage()
         {
             InitializeComponent();
-            Helpers = cvt.BindingHelpersConvert(uih.GetHelperList(1));
+            Helpers = cvt.BindingHelpersConvert(uih.GetHelperList("1"));
             //Helpers = new List<HelperLabel>();
             Helpers.Add(new HelperLabel
             {

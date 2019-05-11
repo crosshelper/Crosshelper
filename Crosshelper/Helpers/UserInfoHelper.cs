@@ -162,18 +162,18 @@ namespace Crosshelper.Helpers
             GetHelperIDByTag(tagid);
             foreach (int uid in helperuidlist)
             {
-                GetHelperIDbyChatID(uid);
+                GetHelperInfoByID(uid.ToString());
             }
             return helperlist;
         }
 
         public List<PaymentInfo> GetPaymentsList(string userid)
         {
-            GetPaymentbyID(userid);
+            GetPaymentByID(userid);
             return paymentlist;
         }
 
-        public void GetHelperIDByTag(string tagid)
+        private void GetHelperIDByTag(string tagid)
         {
             //建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -202,7 +202,7 @@ namespace Crosshelper.Helpers
             }
         }
 
-        public void GetHelperInfoByID(string chatid)
+        public void GetHelperInfoByChnatID(string chatid)
         {
             UserPro helper = new UserPro();
             //建立数据库连接
@@ -313,8 +313,7 @@ namespace Crosshelper.Helpers
             }
         }
 
-        //ChatID to ID
-        private void GetPaymentbyID(string uid)
+        private void GetPaymentByID(string uid)
         {
 
             //并没有建立数据库连接
@@ -358,9 +357,8 @@ namespace Crosshelper.Helpers
 
 
         //ChatID to ID
-        private void GetHelperIDbyChatID(int userid)
+        private void GetHelperInfoByID(string userid)
         {
-            UserPro helper = new UserPro();
             //并没有建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
             try
@@ -375,20 +373,35 @@ namespace Crosshelper.Helpers
                 //cmd.Parameters.AddWithValue("para2", password);
 
                 MySqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
+                while (reader.Read())
                 {
-                    helper.FirstName = reader.GetString(0);
-                    helper.LastName = reader.GetString(1);
-                    helper.Icon = reader.GetString(2);
-                    helper.ChatID = reader.GetString(3);
-                    helper.FLanguage = reader.GetString(4);
-                    helper.SLanguage = reader.GetString(5);
-                    helper.PaymentID = reader.GetString(6);
-                    helper.Location = reader.GetString(7);
-                    helper.Rating = reader.GetInt32(8);
-                    helper.Status = reader.GetInt32(9);
-                    helper.PriceSign = reader.GetString(10);
-                    helper.UserID = userid.ToString();
+                    string FirstName = reader.GetString(0);
+                    string LastName = reader.GetString(1);
+                    string Icon = reader.GetString(2);
+                    string ChatID = reader.GetString(3);
+                    string FLanguage = reader.GetString(4);
+                    string SLanguage = reader.GetString(5);
+                    string PaymentID = reader.GetString(6);
+                    string Location = reader.GetString(7);
+                    int Rating = reader.GetInt32(8);
+                    int Status = reader.GetInt32(9);
+                    string PriceSign = reader.GetString(10);
+                    string UserID = userid.ToString();
+                    UserPro helper = new UserPro() 
+                    { 
+                        FirstName=FirstName,
+                        LastName=LastName,
+                        Icon=Icon,
+                        ChatID=ChatID,
+                        FLanguage=FLanguage,
+                        SLanguage=SLanguage,
+                        PaymentID=PaymentID,
+                        Location=Location,
+                        Rating=Rating,
+                        Status=Status,
+                        PriceSign=PriceSign,
+                        UserID=UserID
+                    };
                     helperlist.Add(helper);
                 }
             }
