@@ -1,4 +1,5 @@
-﻿using Crosshelper.Models;
+﻿using Crosshelper.Helpers;
+using Crosshelper.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -75,7 +76,25 @@ namespace Crosshelper.Converters
                 newhelpers.Add(tmp);
             }
             return newhelpers;
+        }
+
+        readonly UserInfoHelper uih = new UserInfoHelper();
+
+        public List<ReviewLabelContent> BindingReviewssConvert(List<ReviewsInfo> reviews)
+        {
+            List<ReviewLabelContent> newreviews = new List<ReviewLabelContent>();
+            ReviewLabelContent tmp = new ReviewLabelContent();
+            foreach (ReviewsInfo review in reviews)
+            {
+                tmp.ReviewerName = uih.GetUserInfoByID(review.UserID).FirstName;
+                tmp.ReviewerRating = StarNoToStarSign(review.ReviewRating);
+                tmp.ReviewerContent = review.ReviewContent;
+
+                newreviews.Add(tmp);
+            }
+            return newreviews;
 
         }
+
     } 
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Crosshelper.Converters;
 using Crosshelper.Helpers;
 using Crosshelper.Models;
 using SendBird;
@@ -12,45 +13,42 @@ namespace Crosshelper.Views
     public partial class HelperProfilePage : ContentPage
     {
         private HelperLabel _currenthelperlabel;
+
         public HelperProfilePage()
         {
             InitializeComponent();
-            //HelperImage,HelperName,HelperRating,HelperLanguage,HelperTags,HelperBio,HelperPrice,
-            //ReviewerName1,ReviewerRating1,ReviewContent1 //1,2,3
         }
+
         public HelperProfilePage(HelperLabel hl)
         {
             InitializeComponent();
             _currenthelperlabel = hl;
             Pageload(hl);
         }
+
         UserInfoHelper uih = new UserInfoHelper();
+        BindingContextConverter bcc = new BindingContextConverter();
+
         private void Pageload(HelperLabel hl)
         {
             HelperName.Text = hl.Name;
             HelperLanguage.Text = hl.Language;
             HelperRating.Text = hl.Rating;
-            HelperTags.Text = "";
+            HelperTags.Text = uih.GetTagsByID(hl.HelperID);
             HelperBio.Text = hl.Bio;
             HelperPrice.Text = hl.Baseprice;
             HelperImage.Source = hl.ImageUrl;
-            List<ReviewsInfo> reviewsList = uih.GetReviewsList(hl.HelperID);
 
-            ReviewerName1.Text = reviewsList[0].UserID;
-            ReviewerRating1.Text = reviewsList[0].ReviewRating;
-            ReviewerContent1.Text = reviewsList[0].ReviewContent;
-            ReviewerName2.Text = reviewsList[0].UserID;
-            ReviewerRating2.Text = reviewsList[0].ReviewRating;
-            ReviewerContent2.Text = reviewsList[0].ReviewContent;
-            ReviewerName3.Text = reviewsList[0].UserID;
-            ReviewerRating3.Text = reviewsList[0].ReviewRating;
-            ReviewerContent3.Text = reviewsList[0].ReviewContent;
-
-
-
-
-
-
+            List<ReviewLabelContent> reviewsList = bcc.BindingReviewssConvert(uih.GetReviewsList(hl.HelperID));
+            ReviewerName1.Text = reviewsList[0].ReviewerName;
+            ReviewerRating1.Text = reviewsList[0].ReviewerRating;
+            ReviewerContent1.Text = reviewsList[0].ReviewerContent;
+            ReviewerName2.Text = reviewsList[1].ReviewerName;
+            ReviewerRating2.Text = reviewsList[1].ReviewerRating;
+            ReviewerContent2.Text = reviewsList[1].ReviewerContent;
+            ReviewerName3.Text = reviewsList[2].ReviewerName;
+            ReviewerRating3.Text = reviewsList[2].ReviewerRating;
+            ReviewerContent3.Text = reviewsList[2].ReviewerContent;
         }
 
         async void ConnectToChannel(Models.User user, List<string> users)

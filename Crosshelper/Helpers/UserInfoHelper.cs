@@ -16,6 +16,8 @@ namespace Crosshelper.Helpers
         private readonly List<int> paymentsidlist = new List<int>();
         private readonly List<int> helperuidlist = new List<int>();
 
+        private readonly string speclist;
+
         internal void InsertPaymentInfo(PaymentInfo pinfo)
         {
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -174,6 +176,11 @@ namespace Crosshelper.Helpers
             return paymentlist;
         }
 
+        internal string GetTagsByID(string helperID)
+        {
+            return "";
+        }
+
         public List<ReviewsInfo> GetReviewsList(string userid)
         {
             GetReviewByID(userid);
@@ -199,7 +206,7 @@ namespace Crosshelper.Helpers
                 while (reader.Read())
                 {
                     string ReviewID = reader.GetString(0);
-                    string ReviewRating = reader.GetString(1);
+                    int ReviewRating = reader.GetInt32(1);
                     string ReviewContent = reader.GetString(2);
                     ReviewsInfo tmp = new ReviewsInfo() { UserID = userid, ReviewRating = ReviewRating, ReviewContent = ReviewContent, ReviewID = ReviewID };
                     reviewlist.Add(tmp);
@@ -326,7 +333,6 @@ namespace Crosshelper.Helpers
 
         private void GetPaymentByID(string uid)
         {
-
             //建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
             try
