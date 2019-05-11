@@ -15,9 +15,45 @@ namespace Crosshelper.Helpers
         private readonly List<int> paymentsidlist = new List<int>();
         private readonly List<int> helperuidlist = new List<int>();
 
-        internal void UpdatePaymentInfo(PaymentInfo paymentinfo)
+        internal void InsertPaymentInfo(PaymentInfo pinfo)
         {
             throw new NotImplementedException();
+        }
+
+        internal void UpdatePaymentInfo(PaymentInfo paymentinfo)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                    "UPDATE PaymentInfo SET " +
+                    "AccountNumber = @para1, " +
+                    "CName = @para2, " +
+                    "ExDate = @para3, " +
+                    "CVV = @para4, " +
+                    "Zip = @para5" +
+                    " WHERE Pid = @para6";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", paymentinfo.AccountNo);
+                cmd.Parameters.AddWithValue("para2", paymentinfo.CName);
+                cmd.Parameters.AddWithValue("para3", paymentinfo.ExDate);
+                cmd.Parameters.AddWithValue("para4", paymentinfo.CVV);
+                cmd.Parameters.AddWithValue("para5", paymentinfo.Zipcode);
+                cmd.Parameters.AddWithValue("para6", paymentinfo.PaymentID);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
         }
 
         internal void UpdateUac(Uac ac)

@@ -14,20 +14,26 @@
                      HasUnevenRows="true">
     
         <sv:Section Title="Bank Info" FooterText="">
-            <sv:EntryCell Title="Credit" ValueText="{Binding InputText.Value}" 
+            <sv:EntryCell Title="Card#" ValueText="{Binding CardNumber}" 
                           Placeholder="0000 0000 0000 0000" Keyboard="Email" 
                           ValueTextFontSize="16"
-                          TextAlignment="End" HintText="{Binding InputError.Value}" /> 
-            <sv:EntryCell Title="Expiry Date" ValueText="{Binding InputText.Value}" 
-                          Placeholder="11/20" Keyboard="Email" 
-                          ValueTextFontSize="16"
-                          TextAlignment="End" HintText="{Binding InputError.Value}" />
-            <sv:EntryCell Title="Card Holder" ValueText="{Binding InputText.Value}" 
+                          TextAlignment="End" HintText="{Binding InputError.Value}" />  
+            <sv:DatePickerCell Title="Expiry Date" Date="{Binding ExDate}" 
+                               ValueTextFontSize="16" 
+                               Format="yyyy/MM/dd (ddd)"
+                               MinimumDate="2019/1/1" 
+                               MaximumDate="2050/12/31"
+                               TodayText="Today's date" />
+            <sv:EntryCell Title="Card Holder" ValueText="{Binding CName}" 
                           Placeholder="BO CHEN" Keyboard="Email"
                           ValueTextFontSize="16"
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
-            <sv:EntryCell Title="CVV" ValueText="{Binding InputText.Value}" 
+            <sv:EntryCell Title="CVV" ValueText="{Binding CVV}" 
                           Placeholder="***" Keyboard="Email" 
+                          ValueTextFontSize="16"
+                          TextAlignment="End" HintText="{Binding InputError.Value}" />
+            <sv:EntryCell Title="Zip Code" ValueText="{Binding Zip}" 
+                          Placeholder="*****" Keyboard="Email" 
                           ValueTextFontSize="16"
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
         </sv:Section>

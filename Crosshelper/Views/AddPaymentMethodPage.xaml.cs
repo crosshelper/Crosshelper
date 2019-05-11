@@ -12,16 +12,23 @@ namespace Crosshelper.Views
         {
             Navigation.PopToRootAsync(false);
         }
+
         void Handle_AddPyament(object sender, System.EventArgs e)
         {
-            _pinfo.AccountNo = "";
-            _pinfo.CName = ""; 
-            _pinfo.ExDate = new DateTime(2012,05,09);
-            _pinfo.CVV = "";
-            _pinfo.Zipcode = "";
-            uih.UpdatePaymentInfo(_pinfo);
+            _pinfo.AccountNo = CardNumber;
+            _pinfo.CName = CName;
+            _pinfo.ExDate = ExDate.Date;
+            _pinfo.CVV = CVV;
+            _pinfo.Zipcode = Zip;
+            uih.InsertPaymentInfo(_pinfo);
             Navigation.PopAsync(false);
         }
+
+        public string CardNumber { get; set; }
+        public DateTime ExDate { get; set; }
+        public string CName { get; set; }
+        public string CVV { get; set; }
+        public string Zip { get; set; }
 
         PaymentInfo _pinfo = new PaymentInfo();
         UserInfoHelper uih = new UserInfoHelper();
@@ -29,6 +36,8 @@ namespace Crosshelper.Views
         public AddPaymentMethodPage()
         {
             InitializeComponent();
+            ExDate = DateTime.Today;
+            BindingContext = this;
         }
     }
 }

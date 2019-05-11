@@ -14,16 +14,18 @@ namespace Crosshelper.Views
             Navigation.PopToRootAsync(false);
         }
 
-        void AddPayment()
-        {
-            Navigation.PushAsync(new AddPaymentMethodPage());
-        }
-
         void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             PaymentInfo ptmp = e.Item as PaymentInfo;
-            ((ListView)sender).SelectedItem = null;
-            Navigation.PushAsync(new EditPaymentPage(ptmp));
+            //((ListView)sender).SelectedItem = null;
+            if(ptmp.CVV=="000")
+            {
+                Navigation.PushAsync(new AddPaymentMethodPage());
+            }
+            else
+            {
+                Navigation.PushAsync(new EditPaymentPage(ptmp));
+            }
         }
 
         public List<PaymentInfo> PaymentsList { get; set; } = new List<PaymentInfo>();
@@ -37,7 +39,7 @@ namespace Crosshelper.Views
         private void RefreshData()
         {
             PaymentsList = uih.GetPaymentsList(Settings.UserId);
-            PaymentsList.Add(new PaymentInfo() { AccountNo = "Add Payment Method" });
+            PaymentsList.Add(new PaymentInfo() { AccountNo = "Add Payment Method", CVV="000" });
         }
 
         protected override void OnAppearing()
