@@ -47,6 +47,7 @@ namespace Crosshelper.Views
         }
         void Handle_SignOut(object sender, System.EventArgs e)
         {
+            Settings.IsLogin = false;
             Application.Current.MainPage = new LaunchingPage();
         }
 

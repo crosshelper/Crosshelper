@@ -47,6 +47,7 @@ namespace Crosshelper.Views
                 Settings.UserId = userAccess.CurrentUid.ToString();
                 usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                 Settings.ChatID = usr.ChatID;
+                Settings.IsLogin = true;
                 //Connect();
                 Application.Current.MainPage = new MyTabbedPage("o");
             }

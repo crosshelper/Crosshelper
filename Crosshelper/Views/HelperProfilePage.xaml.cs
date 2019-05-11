@@ -73,15 +73,14 @@ namespace Crosshelper.Views
             if (Settings.IsLogin)
             {
                 var user = new Models.User() {
-                    UserID = _currenthelperlabel.HelperID
+                    UserID = _currenthelperlabel.ChatID
                 };
                 List<string> users = new List<string>() {
                 Settings.ChatID,
-                _currenthelperlabel.HelperID
+                _currenthelperlabel.ChatID
                 };
                 ConnectToChannel(user, users);
             }
-
         }
 
         void Handle_Like(object sender, System.EventArgs e)
