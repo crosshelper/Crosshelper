@@ -17,7 +17,7 @@ namespace Crosshelper.Views
         void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             PaymentInfo ptmp = e.Item as PaymentInfo;
-            //((ListView)sender).SelectedItem = null;
+            ((ListView)sender).SelectedItem = null;
             if(ptmp.CVV=="000")
             {
                 Navigation.PushAsync(new AddPaymentMethodPage());
