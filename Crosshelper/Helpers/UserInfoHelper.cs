@@ -17,7 +17,33 @@ namespace Crosshelper.Helpers
 
         internal void InsertPaymentInfo(PaymentInfo pinfo)
         {
-            throw new NotImplementedException();
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "INSERT INTO PaymentInfo(AccountNumber,CName,ExDate,CVV,Zip) VALUES(@para1, @para2, @para3, @para4, @para5) ";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", pinfo.AccountNo);
+                    cmd.Parameters.AddWithValue("para2", pinfo.CName);
+                    cmd.Parameters.AddWithValue("para3", pinfo.ExDate);
+                    cmd.Parameters.AddWithValue("para4", pinfo.CVV);
+                    cmd.Parameters.AddWithValue("para5", pinfo.Zipcode);
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Connecting to MySQL success");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Connection failed");
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         internal void UpdatePaymentInfo(PaymentInfo paymentinfo)
