@@ -60,7 +60,7 @@ namespace Crosshelper.Views
             {
                 if (!media.IsCameraAvailable || !media.IsTakePhotoSupported)
                 {
-                    await DisplayAlert("Alert", "Can not accese Camera", "OK");
+                    await DisplayAlert("Alert", "Can not access Camera", "OK");
                     return;
 
                 }
@@ -70,42 +70,33 @@ namespace Crosshelper.Views
                     return;
             }
         }
-
         private async Task SelectFromImageLibrary()
         {
             var media = CrossMedia.Current;
-
             if(await CheckPermisson())
             {
                 if (!media.IsPickPhotoSupported)
                 {
-                    await DisplayAlert("Alert", "Can not accese album", "OK");
+                    await DisplayAlert("Alert", "Can not access album", "OK");
                     return;
                 }
-
                 var file = await media.PickPhotoAsync();
-
                 if (file == null)
                     return;
-
             }
         }
-
         ////check Permisson method
         private async Task<bool> CheckPermisson()
         {
             var permissons = CrossPermissions.Current;
-
             var storageStatus = await permissons.CheckPermissionStatusAsync(Permission.Storage);
             if(storageStatus != PermissionStatus.Granted)
             {
                 var results = await permissons.RequestPermissionsAsync(Permission.Storage);
                 storageStatus = results[Permission.Storage];
             }
-
             return storageStatus == PermissionStatus.Granted;
         }
-
         User _usr;
         Uac _ac;
         public string Email { get; set; }
