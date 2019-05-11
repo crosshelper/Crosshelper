@@ -37,9 +37,7 @@ namespace Crosshelper.Views
         {
             //(sender as Button).Text = "Click me again!";
             UserAccess userAccess = new UserAccess();
-            Crosshelper.Models.User usr = new Crosshelper.Models.User();
-
-
+            Models.User usr = new Models.User();
 
             if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
             {
@@ -48,7 +46,7 @@ namespace Crosshelper.Views
                 usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                 Settings.ChatID = usr.ChatID;
                 Name = usr.FirstName + " " + usr.LastName;
-                //Connect();
+                ChatServerConnect();
                 Application.Current.MainPage = new MyTabbedPage();
             }
             else
@@ -59,7 +57,7 @@ namespace Crosshelper.Views
 
         private string Name = "";
 
-        async void Connect()
+        private void ChatServerConnect()
         {
             SendBirdClient.Connect(Settings.ChatID, (SendBird.User user, SendBirdException e) =>
             {

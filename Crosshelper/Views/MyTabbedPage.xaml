@@ -43,7 +43,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:UserSettingPage />
+                <views:MessageListPage />
             </x:Arguments>
         </NavigationPage>
         
