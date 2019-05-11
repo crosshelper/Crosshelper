@@ -382,7 +382,7 @@ namespace Crosshelper.Helpers
                     ac.UserName = reader.GetString(1);
                     ac.Email = reader.GetString(2);
                     ac.ContactNo = reader.GetString(3);
-                    ac.Pwd = reader.GetString(3);
+                    ac.Pwd = reader.GetString(4);
                 }
                 return ac;
             }
