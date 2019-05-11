@@ -47,15 +47,17 @@ namespace Crosshelper.Views
                 Settings.UserId = userAccess.CurrentUid.ToString();
                 usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                 Settings.ChatID = usr.ChatID;
-                Settings.IsLogin = true;
+                Name = usr.FirstName + " " + usr.LastName;
                 //Connect();
-                Application.Current.MainPage = new MyTabbedPage("o");
+                Application.Current.MainPage = new MyTabbedPage();
             }
             else
             {
                 signInTest.Text = "Sign in Faild";
             }
         }
+
+        private string Name = "";
 
         async void Connect()
         {
@@ -67,7 +69,7 @@ namespace Crosshelper.Views
                     return;
                 }
 
-                SendBirdClient.UpdateCurrentUserInfo("CYCBIS_User", "", (SendBirdException e1) =>
+                SendBirdClient.UpdateCurrentUserInfo(Name, "", (SendBirdException e1) =>
                 {
                     if (e1 != null)
                     {
