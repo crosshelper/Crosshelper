@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Crosshelper.Helpers;
 using Crosshelper.Models;
 using Xamarin.Forms;
 
@@ -7,43 +8,31 @@ namespace Crosshelper.Views
 {
     public partial class ProjectPage : ContentPage
     {
-
-        //public IList<ProjectpageViewcellItem> Project { get; set; }
-        //private List<CaseInfoLabel> CaseInfoLabels = new List<CaseInfoLabel>();
+        private List<CaseInfo> CaseInfoLabels { get; set; } = new List<CaseInfo>();
+        private List<CaseInfo> PastCaseInfoLabels { get; set; } = new List<CaseInfo>();
+        UserInfoHelper uih = new UserInfoHelper();
 
         public ProjectPage()
         {
             InitializeComponent();
+            CaseInfoLabels = uih.GetCaseInfoByUid(Settings.UserId);
+            PastCaseInfoLabels = uih.GetPastCaseInfoByUid(Settings.UserId);
 
-
-            //Project = new List<ProjectpageViewcellItem>();
-            /*Project.Add(new ProjectpageViewcellItem
-            {
-                PanelID = 1,
-                Rating = "★★★★★",
-                Language = "Chinese/English",
-                Emergency = "Emergency",
-                Date = "09/20/2018",
-                Description = "I lost my langage at Pairs Charles de Gaulle Airport.But I can not speak French, and I dont  know how to find it.",
-                Status = "Open",
-                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
-            });*/
-
-
-            //currentList.ItemsSource = CaseInfoLabels;
+            currentList.ItemsSource = CaseInfoLabels;
             currentTab.Content = currentList;
-
-            //pastList.ItemsSource = CaseInfoLabels;
+            pastList.ItemsSource = PastCaseInfoLabels;
             pastTab.Content = pastList;
         }
-        void Handle_CurrentItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        void Handle_CurrentItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Navigation.PushAsync(new PickHelperPage());
+            CaseInfo _currentCase = e.SelectedItem as CaseInfo;
+            Navigation.PushAsync(new PastHistoryDetailPage(_currentCase));
             //((ListView)sender).SelectedItem = null;
         }
-        void Handle_PastItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        void Handle_PastItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Navigation.PushAsync(new PastHistoryDetailPage());
+            CaseInfo _currentCase = e.SelectedItem as CaseInfo;
+            Navigation.PushAsync(new PastHistoryDetailPage(_currentCase));
             //((ListView)sender).SelectedItem = null;
         }
     }

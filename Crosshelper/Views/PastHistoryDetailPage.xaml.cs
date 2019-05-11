@@ -32,5 +32,11 @@ namespace Crosshelper.Views
 
         }
         */
+        private CaseInfo _currentCase;
+
+        public PastHistoryDetailPage(CaseInfo currentCase)
+        {
+            _currentCase = currentCase;
+        }
     }
 }

@@ -22,11 +22,11 @@
                                         <StackLayout HorizontalOptions="EndAndExpand">
                                         <Label 
                                                TextColor="#393939"
-                                               Text="{Binding Date}"
+                                               Text="{Binding CaseDateTime}"
                                                VerticalOptions="End" />
                                         <Label
                                                TextColor="#393939"
-                                               Text="{Binding Language}"
+                                               Text="{Binding HName}"
                                                VerticalOptions="End" />
                                         </StackLayout>
                                     </StackLayout>
@@ -34,7 +34,7 @@
                                     <Label Text="Problem description" FontSize="Medium"></Label>
                                     <Label 
                                            TextColor="#393939"
-                                           Text="{Binding Description}"
+                                           Text="{Binding CaseDescription}"
                                            VerticalOptions="End" />   
                                     </StackLayout>
                                 </StackLayout>
@@ -59,11 +59,11 @@
                                         <StackLayout HorizontalOptions="EndAndExpand">
                                         <Label 
                                                TextColor="#393939"
-                                               Text="{Binding Date}"
+                                               Text="{Binding CaseDateTime}"
                                                VerticalOptions="End" />
                                         <Label
                                                TextColor="#393939"
-                                               Text="{Binding Language}"
+                                               Text="{Binding HName}"
                                                VerticalOptions="End" />
                                         </StackLayout>
                                     </StackLayout>
@@ -71,7 +71,7 @@
                                     <Label Text="Problem description" FontSize="Medium"></Label>
                                     <Label 
                                            TextColor="#393939"
-                                           Text="{Binding Description}"
+                                           Text="{Binding CaseDescription}"
                                            VerticalOptions="End" />   
                                     </StackLayout>
                                 </StackLayout>

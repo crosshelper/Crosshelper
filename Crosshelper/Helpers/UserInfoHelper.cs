@@ -10,14 +10,132 @@ namespace Crosshelper.Helpers
     {
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
 
+        private readonly List<CaseInfo> caselist  = new List<CaseInfo>();
+        private readonly List<CaseInfo> pastcaselist = new List<CaseInfo>();
         private readonly List<ReviewsInfo> reviewlist = new List<ReviewsInfo>();
         private readonly List<PaymentInfo> paymentlist = new List<PaymentInfo>();
+
+        internal List<CaseInfo> GetCaseInfoByUid(string userId)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT CaseID,HelperUID,ReceiptID,CaseType,CaseDateTime,CaseDes FROM CaseInfo WHERE CustomerUID = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", userId);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader.GetString(2) == "0")
+                    {
+                        string CaseID = reader.GetString(0);
+                        string HelperUID = reader.GetString(1);
+                        string ReceiptID = reader.GetString(2);
+                        string CaseType = reader.GetString(3);
+                        string CaseTypeLabelText = "";
+                        if (CaseType == "1")
+                            CaseTypeLabelText = "Emergency";
+                        DateTime CaseDateTime = reader.GetDateTime(4);
+                        string CaseDes = reader.GetString(5);
+
+                        CaseInfo tmp = new CaseInfo() 
+                        { 
+                            CaseID = CaseID, 
+                            HelperID = HelperUID,
+                            CustomerID = userId,
+                            ReceiptID = ReceiptID, 
+                            CaseType = CaseType, 
+                            CaseTypeLabelText = CaseTypeLabelText, 
+                            CaseDateTime = CaseDateTime, 
+                            CaseDescription = CaseDes 
+                        };
+                        caselist.Add(tmp);
+                    }
+                }
+                if (caselist != null)
+                return caselist;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+            return caselist;
+        }
+
+        internal List<CaseInfo> GetPastCaseInfoByUid(string userId)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT CaseID,HelperUID,ReceiptID,CaseType,CaseDateTime,CaseDes FROM CaseInfo WHERE CustomerUID = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", userId);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if(reader.GetString(2) != "0")
+                    {
+                        string CaseID = reader.GetString(0);
+                        string HelperUID = reader.GetString(1);
+                        string ReceiptID = reader.GetString(2);
+                        string CaseType = reader.GetString(3);
+                        string CaseTypeLabelText = "";
+                        if (CaseType == "1")
+                            CaseTypeLabelText = "Emergency";
+                        DateTime CaseDateTime = reader.GetDateTime(4);
+                        string CaseDes = reader.GetString(5);
+                        CaseInfo tmp = new CaseInfo()
+                        {
+                            CaseID = CaseID,
+                            HelperID = HelperUID,
+                            CustomerID = userId,
+                            ReceiptID = ReceiptID,
+                            CaseType = CaseType,
+                            CaseTypeLabelText = CaseTypeLabelText,
+                            CaseDateTime = CaseDateTime,
+                            CaseDescription = CaseDes
+                        };
+                        pastcaselist.Add(tmp);
+                    }
+                }
+                if (pastcaselist != null)
+                    return pastcaselist;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+            return pastcaselist;
+        }
+
         private readonly List<UserPro> helperlist = new List<UserPro>();
         private readonly List<int> paymentsidlist = new List<int>();
         private readonly List<int> helperuidlist = new List<int>();
 
         private string speclist = "";
-        private readonly List<int> tagidlist= new List<int>();
+        private readonly List<int> tagidlist = new List<int>();
 
         internal void InsertPaymentInfo(PaymentInfo pinfo)
         {
@@ -421,7 +539,7 @@ namespace Crosshelper.Helpers
                     DateTime ExDate = reader.GetDateTime(3);
                     string CVV = reader.GetString(4);
                     string Zipcode = reader.GetString(5);
-                    PaymentInfo ptmp = new PaymentInfo() { Uid=uid, PaymentID=PaymentID, AccountNo= AccountNo, CName=CName, ExDate= ExDate, CVV=CVV, Zipcode= Zipcode };
+                    PaymentInfo ptmp = new PaymentInfo() { Uid = uid, PaymentID = PaymentID, AccountNo = AccountNo, CName = CName, ExDate = ExDate, CVV = CVV, Zipcode = Zipcode };
                     paymentlist.Add(ptmp);
                 }
             }
@@ -466,20 +584,20 @@ namespace Crosshelper.Helpers
                     string PriceSign = reader.GetString(10);
                     string Bio = reader.GetString(11);
                     string UserID = userid.ToString();
-                    UserPro helper = new UserPro() 
-                    { 
-                        FirstName=FirstName,
-                        LastName=LastName,
-                        Icon=Icon,
-                        ChatID=ChatID,
-                        FLanguage=FLanguage,
-                        SLanguage=SLanguage,
-                        PaymentID=PaymentID,
-                        Location=Location,
-                        Rating=Rating,
-                        Status=Status,
-                        PriceSign=PriceSign,
-                        UserID=UserID,
+                    UserPro helper = new UserPro()
+                    {
+                        FirstName = FirstName,
+                        LastName = LastName,
+                        Icon = Icon,
+                        ChatID = ChatID,
+                        FLanguage = FLanguage,
+                        SLanguage = SLanguage,
+                        PaymentID = PaymentID,
+                        Location = Location,
+                        Rating = Rating,
+                        Status = Status,
+                        PriceSign = PriceSign,
+                        UserID = UserID,
                         Bio = Bio
                     };
                     helperlist.Add(helper);
