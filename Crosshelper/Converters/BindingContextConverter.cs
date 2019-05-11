@@ -70,6 +70,7 @@ namespace Crosshelper.Converters
                 tmp.StatusText = StatusTextConverter(helper.Status); ;
                 tmp.LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png";
                 tmp.ImageUrl = helper.Icon;
+                tmp.ChatID = helper.ChatID;
                 newhelpers.Add(tmp);
             }
             return newhelpers;
