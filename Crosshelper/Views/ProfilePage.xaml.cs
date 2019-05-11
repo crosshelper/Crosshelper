@@ -62,10 +62,13 @@ namespace Crosshelper.Views
                 {
                     await DisplayAlert("Alert", "Can not access Camera", "OK");
                     return;
-
                 }
+                var file = await media.TakePhotoAsync(new StoreCameraMediaOptions {
+                    AllowCropping = true,
+                    SaveToAlbum = true
+                });
 
-                var file = await media.TakePhotoAsync(new StoreCameraMediaOptions());
+                    //fileImage.Source = ImageSource.FromStream(() => { return file.GetStream(); });
                 if (file == null)
                     return;
             }
@@ -80,7 +83,11 @@ namespace Crosshelper.Views
                     await DisplayAlert("Alert", "Can not access album", "OK");
                     return;
                 }
-                var file = await media.PickPhotoAsync();
+
+                var file = await media.PickPhotoAsync(new PickMediaOptions {
+                    RotateImage =true
+                 });
+
                 if (file == null)
                     return;
             }
