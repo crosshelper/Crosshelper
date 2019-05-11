@@ -26,10 +26,10 @@ namespace Crosshelper.Views
         PaymentInfo _pinfo = new PaymentInfo();
         UserInfoHelper uih = new UserInfoHelper();
 
-
         public EditPaymentPage(PaymentInfo paymentinfo)
         {
             _pinfo = paymentinfo;
+
             InitializeComponent();
         }
     }
