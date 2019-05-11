@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using AiForms.Renderers;
 using Crosshelper.Helpers;
@@ -39,7 +39,8 @@ namespace Crosshelper.Views
         private void RefreshData()
         {
             PaymentsList = uih.GetPaymentsList(Settings.UserId);
-            PaymentsList.Add(new PaymentInfo() { AccountNo = "Add Payment Method", CVV="000" });
+            PaymentsList.Add(new PaymentInfo() { AccountNo = "1234 5678 9012 1223" });
+            PaymentsList.Add(new PaymentInfo() { AccountNo = "1234 5678 9012 1223" });
         }
 
         protected override void OnAppearing()

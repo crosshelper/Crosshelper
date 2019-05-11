@@ -9,32 +9,38 @@
         </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout>
-                <ListView ItemsSource="{Binding PaymentsList}" HasUnevenRows="true" ItemTapped="Handle_ItemTapped">
+        <StackLayout BackgroundColor="#f4f4f4" Padding="0,30,0,0">
+                <Label Text="Payment info" 
+                       FontSize="18" 
+                       Margin="15,0,0,0"
+                       VerticalOptions="Start"
+                       TextColor="#666666"/>
+                <ListView ItemsSource="{Binding PaymentsList}" HasUnevenRows="true" ItemTapped="Handle_ItemTapped" BackgroundColor="#f4f4f4" RefreshControlColor="Green" SeparatorVisibility="None" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
-                                <Grid Padding="10">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="22" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="80" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.RowSpan="3"
-                                           Source="{Binding ImageUrl}"
-                                           Aspect="AspectFill"
-                                           HeightRequest="65"
-                                           WidthRequest="65" />
-                                    <Label Grid.Column="1"
-                                           Grid.ColumnSpan="3"
-                                           Grid.Row="0"
-                                           FontSize="20"
-                                           TextColor="#393939"
-                                           Text="{Binding AccountNo}"
-                                           FontAttributes="Bold" />
-                                </Grid>
+                            <ViewCell >
+                                <StackLayout Margin="0,0,0,0">
+                                <BoxView HeightRequest="0.5" BackgroundColor="#a5a5a5" Margin="0,3,0,0"/>
+                                        <StackLayout Orientation="Horizontal" Margin="0,-6,0,-6" BackgroundColor="White" Padding="0,6,0,6">
+                                            <Label FontSize="18"
+                                                   TextColor="#393939"
+                                                   Margin="10,0,0,0"
+                                                   VerticalOptions="CenterAndExpand"
+                                                   HorizontalOptions="StartAndExpand"
+                                                   Text="Card Number" />
+                                            <Label FontSize="16"
+                                                   VerticalOptions="CenterAndExpand"
+                                                   TextColor="#666666"
+                                                   HorizontalOptions="End"
+                                                   Text="{Binding AccountNo}" />
+                                            <Label Text="›" 
+                                                   FontSize="30" 
+                                                   Margin="5,0,5,6"
+                                                   VerticalOptions="CenterAndExpand"
+                                                   TextColor="#C4C4C4"/>
+                                        </StackLayout>
+                                    <BoxView HeightRequest="0.5" BackgroundColor="#a5a5a5" Margin="0,0,0,3"/>
+                                </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
