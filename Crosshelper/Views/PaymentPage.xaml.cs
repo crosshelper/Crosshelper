@@ -34,12 +34,11 @@ namespace Crosshelper.Views
         public PaymentPage()
         {
             InitializeComponent();
-            RefreshData();
-            BindingContext = this;
         }
 
         private void RefreshData()
         {
+            PaymentsList = null;
             PaymentsList = uih.GetPaymentsList(Settings.UserId);
             PaymentsList.Add(new PaymentInfo() { AccountNo = "Add a new payment", CVV = "000" });
         }
@@ -47,6 +46,7 @@ namespace Crosshelper.Views
         protected override void OnAppearing()
         {
             RefreshData();
+            BindingContext = this;
         }
     }
 }
