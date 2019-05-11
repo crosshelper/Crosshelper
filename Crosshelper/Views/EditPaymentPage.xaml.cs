@@ -35,7 +35,11 @@ namespace Crosshelper.Views
         public EditPaymentPage(PaymentInfo paymentinfo)
         {
             _pinfo = paymentinfo;
-
+            CardNumber = paymentinfo.AccountNo;
+            ExDate = paymentinfo.ExDate;
+            CName = paymentinfo.CName;
+            CVV = paymentinfo.CVV;
+            Zip = paymentinfo.Zipcode;
             InitializeComponent();
             BindingContext = this;
         }
