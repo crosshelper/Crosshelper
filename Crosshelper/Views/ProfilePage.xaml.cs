@@ -1,8 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Android.Content.PM;
+using Android.OS;
 using Crosshelper.Helpers;
 using Crosshelper.Models;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using Xamarin.Forms;
+using Permission = Plugin.Permissions.Abstractions.Permission;
 
 namespace Crosshelper.Views
 {
@@ -31,7 +39,71 @@ namespace Crosshelper.Views
 
         async void Handle_ChangePhoto(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("Upload Photo", "Cencel", null, "Take photo", "From album");
+            var action = await DisplayActionSheet("Change the photo", "Cencel", null, "Take photo", "From album");
+            switch (action)
+            {
+                case "Take photo":
+                    await TakePhotoFromCameraAsync();
+                    break;
+                case "From album":
+                    await SelectFromImageLibrary();
+                    break;
+            }
+        }
+
+        private async Task TakePhotoFromCameraAsync()
+        {
+            var media = CrossMedia.Current;
+
+            //check Permisson
+            if (await CheckPermisson())
+            {
+                if (!media.IsCameraAvailable || !media.IsTakePhotoSupported)
+                {
+                    await DisplayAlert("Alert", "Can not accese Camera", "OK");
+                    return;
+
+                }
+
+                var file = await media.TakePhotoAsync(new StoreCameraMediaOptions());
+                if (file == null)
+                    return;
+            }
+        }
+
+        private async Task SelectFromImageLibrary()
+        {
+            var media = CrossMedia.Current;
+
+            if(await CheckPermisson())
+            {
+                if (!media.IsPickPhotoSupported)
+                {
+                    await DisplayAlert("Alert", "Can not accese album", "OK");
+                    return;
+                }
+
+                var file = await media.PickPhotoAsync();
+
+                if (file == null)
+                    return;
+
+            }
+        }
+
+        ////check Permisson method
+        private async Task<bool> CheckPermisson()
+        {
+            var permissons = CrossPermissions.Current;
+
+            var storageStatus = await permissons.CheckPermissionStatusAsync(Permission.Storage);
+            if(storageStatus != PermissionStatus.Granted)
+            {
+                var results = await permissons.RequestPermissionsAsync(Permission.Storage);
+                storageStatus = results[Permission.Storage];
+            }
+
+            return storageStatus == PermissionStatus.Granted;
         }
 
         User _usr;

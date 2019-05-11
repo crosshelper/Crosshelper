@@ -133,6 +133,10 @@
     <AndroidResource Include="Resources\drawable\febookSignIn.png" />
     <AndroidResource Include="Resources\drawable\googleSignIn.png" />
     <AndroidResource Include="Resources\drawable\wechatSignIn.png" />
+    <AndroidResource Include="Resources\xml\file_paths.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -140,6 +144,9 @@
       <Project>{04CBFB1C-5495-4BFD-8D82-A1BB9A96162D}</Project>
       <Name>Crosshelper</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\xml\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

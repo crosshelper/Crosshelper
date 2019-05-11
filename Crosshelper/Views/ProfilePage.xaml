@@ -15,7 +15,7 @@
             
             <sv:Section FooterText="Tap image to change photo">
              <sv:CommandCell x:Name="NameCell" IconSource="https://s3-us-west-1.amazonaws.com/image.cycbis.com/UserProfileIcon/bochen.png" IconSize="60,60" IconRadius="30"
-                             Title="Bo Chen" Tapped="Handle_ChangePhoto"
+                             Title="Bo Chen" Tapped="Handle_ChangePhoto" Description="Change the photo"
                              Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"/>
             </sv:Section>
             <sv:Section Title="Email Address" FooterText="">
