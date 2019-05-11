@@ -16,7 +16,7 @@ namespace Crosshelper.Helpers
         private readonly List<int> paymentsidlist = new List<int>();
         private readonly List<int> helperuidlist = new List<int>();
 
-        private readonly string speclist;
+        private readonly string speclist = "";
 
         internal void InsertPaymentInfo(PaymentInfo pinfo)
         {
@@ -178,7 +178,22 @@ namespace Crosshelper.Helpers
 
         internal string GetTagsByID(string helperID)
         {
-            return "";
+            GetTagByHelperID(helperID);
+            foreach (int tagid in helperuidlist)
+            {
+                GetTagInfoByID(tagid.ToString());
+            }
+            return speclist;
+        }
+
+        private void GetTagByHelperID(string helperID)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void GetTagInfoByID(string v)
+        {
+            throw new NotImplementedException();
         }
 
         public List<ReviewsInfo> GetReviewsList(string userid)
