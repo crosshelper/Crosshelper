@@ -40,6 +40,10 @@ namespace Crosshelper.Views
         {
             ls.BeginRefresh();
             ls.ItemsSource = null;
+            if(PaymentsList.Count>0)
+            {
+                PaymentsList.Clear();
+            }
             PaymentsList = uih.GetPaymentsList(Settings.UserId);
             PaymentsList.Add(new PaymentInfo() { AccountNo = "Add a new payment", CVV = "000" });
             ls.ItemsSource = PaymentsList;
