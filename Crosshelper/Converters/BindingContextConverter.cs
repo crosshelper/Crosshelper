@@ -71,6 +71,7 @@ namespace Crosshelper.Converters
                 tmp.LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png";
                 tmp.ImageUrl = helper.Icon;
                 tmp.ChatID = helper.ChatID;
+                tmp.Bio = helper.Bio;
                 newhelpers.Add(tmp);
             }
             return newhelpers;

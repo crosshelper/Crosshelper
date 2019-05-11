@@ -10,6 +10,7 @@ namespace Crosshelper.Helpers
     {
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
 
+        private readonly List<ReviewsInfo> reviewlist = new List<ReviewsInfo>();
         private readonly List<PaymentInfo> paymentlist = new List<PaymentInfo>();
         private readonly List<UserPro> helperlist = new List<UserPro>();
         private readonly List<int> paymentsidlist = new List<int>();
@@ -173,6 +174,47 @@ namespace Crosshelper.Helpers
             return paymentlist;
         }
 
+        public List<ReviewsInfo> GetReviewsList(string userid)
+        {
+            GetReviewByID(userid);
+            return reviewlist;
+        }
+
+        private void GetReviewByID(string userid)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT ReviewID,RRating,Content FROM Reviews WHERE Uid = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", userid);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string ReviewID = reader.GetString(0);
+                    string ReviewRating = reader.GetString(1);
+                    string ReviewContent = reader.GetString(2);
+                    ReviewsInfo tmp = new ReviewsInfo() { UserID = userid, ReviewRating = ReviewRating, ReviewContent = ReviewContent, ReviewID = ReviewID };
+                    reviewlist.Add(tmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
         private void GetHelperIDByTag(string tagid)
         {
             //建立数据库连接
@@ -285,7 +327,7 @@ namespace Crosshelper.Helpers
         private void GetPaymentByID(string uid)
         {
 
-            //并没有建立数据库连接
+            //建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
             try
             {   //建立连接，打开数据库
@@ -329,7 +371,7 @@ namespace Crosshelper.Helpers
             {   //建立连接，打开数据库
                 conn.Open();
                 string sqlstr =
-                "SELECT FirstName,LastName,Icon,ChatID,FLanguage,SLanguage,PaymentID,Location,Rating,`Status`,PriceSign FROM HelperInfo,UserInfo WHERE HelperInfo.Uid = @para1 AND UserInfo.Uid = @para1";
+                "SELECT FirstName,LastName,Icon,ChatID,FLanguage,SLanguage,PaymentID,Location,Rating,`Status`,PriceSign,Bio FROM HelperInfo,UserInfo WHERE HelperInfo.Uid = @para1 AND UserInfo.Uid = @para1";
 
                 MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
                 //通过设置参数的形式给SQL 语句串值
@@ -350,6 +392,7 @@ namespace Crosshelper.Helpers
                     int Rating = reader.GetInt32(8);
                     int Status = reader.GetInt32(9);
                     string PriceSign = reader.GetString(10);
+                    string Bio = reader.GetString(11);
                     string UserID = userid.ToString();
                     UserPro helper = new UserPro() 
                     { 
@@ -364,7 +407,8 @@ namespace Crosshelper.Helpers
                         Rating=Rating,
                         Status=Status,
                         PriceSign=PriceSign,
-                        UserID=UserID
+                        UserID=UserID,
+                        Bio = Bio
                     };
                     helperlist.Add(helper);
                 }
