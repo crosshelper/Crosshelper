@@ -20,6 +20,7 @@ namespace Crosshelper.Views
             _pinfo.ExDate = ExDate.Date;
             _pinfo.CVV = CVV;
             _pinfo.Zipcode = Zip;
+            _pinfo.Uid = Settings.UserId;
             uih.InsertPaymentInfo(_pinfo);
             Navigation.PopAsync(false);
         }

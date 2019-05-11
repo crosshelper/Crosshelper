@@ -341,7 +341,7 @@ namespace Crosshelper.Helpers
                     DateTime ExDate = reader.GetDateTime(3);
                     string CVV = reader.GetString(4);
                     string Zipcode = reader.GetString(5);
-                    PaymentInfo ptmp = new PaymentInfo() { PaymentID=PaymentID, AccountNo= AccountNo, CName=CName, ExDate= ExDate, CVV=CVV, Zipcode= Zipcode };
+                    PaymentInfo ptmp = new PaymentInfo() { Uid=uid, PaymentID=PaymentID, AccountNo= AccountNo, CName=CName, ExDate= ExDate, CVV=CVV, Zipcode= Zipcode };
                     paymentlist.Add(ptmp);
                 }
             }

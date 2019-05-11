@@ -9,5 +9,6 @@ namespace Crosshelper.Models
         public DateTime ExDate { get; set; }
         public string CVV { get; set; }
         public string Zipcode { get; set; }
+        public string Uid { get; internal set; }
     }
 }
