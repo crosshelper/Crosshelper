@@ -15,7 +15,7 @@
                        Margin="15,0,0,0"
                        VerticalOptions="Start"
                        TextColor="#666666"/>
-                <ListView ItemsSource="{Binding PaymentsList}" HasUnevenRows="true" ItemTapped="Handle_ItemTapped" BackgroundColor="#f4f4f4" RefreshControlColor="Green" SeparatorVisibility="None" >
+                <ListView x:Name="ls" ItemsSource="{Binding PaymentsList}" HasUnevenRows="true" ItemTapped="Handle_ItemTapped" BackgroundColor="#f4f4f4" RefreshControlColor="Green" SeparatorVisibility="None" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell >

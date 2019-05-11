@@ -34,6 +34,7 @@ namespace Crosshelper.Views
         public PaymentPage()
         {
             InitializeComponent();
+            BindingContext = this;
         }
 
         private void RefreshData()
@@ -45,7 +46,6 @@ namespace Crosshelper.Views
         protected override void OnAppearing()
         {
             RefreshData();
-            BindingContext = this;
         }
     }
 }
