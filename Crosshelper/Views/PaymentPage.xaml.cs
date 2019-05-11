@@ -34,6 +34,7 @@ namespace Crosshelper.Views
         public PaymentPage()
         {
             InitializeComponent();
+            RefreshData();
             BindingContext = this;
         }
 
