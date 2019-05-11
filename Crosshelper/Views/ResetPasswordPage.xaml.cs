@@ -30,14 +30,13 @@ namespace Crosshelper.Views
         private void Init()
         {
             InitializeComponent();
-            OldPwd = _ac.Pwd;
             ResetCommand = new Command(ResetPwd);
             BindingContext = this;
         }
 
         private void ResetPwd()
         {
-            if (NewPwd1 == NewPwd2 && NewPwd2.Length > 7 && NewPwd1 != OldPwd)
+            if (NewPwd1 == NewPwd2 && NewPwd2.Length > 7 && NewPwd1 != OldPwd && OldPwd == _ac.Pwd)
             {
                 _ac.Pwd = NewPwd2;
                 uih.UpdateUac(_ac);
