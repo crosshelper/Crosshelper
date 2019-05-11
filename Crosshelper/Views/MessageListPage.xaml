@@ -8,8 +8,8 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
                                 <StackLayout Orientation="Vertical">
-                                    <Label Text ="{Binding Nickname}" TextColor="Black"  FontSize="24" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40"/>
-                                    <Label Text ="{Binding Email}" TextColor="Gray" AbsoluteLayout.LayoutBounds="50, 35, 200, 25"/>
+                                    <Label Text ="{Binding FirstName}" TextColor="Black"  FontSize="24" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40"/>
+                                    <Label Text ="{Binding LastName}" TextColor="Gray" AbsoluteLayout.LayoutBounds="50, 35, 200, 25"/>
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>

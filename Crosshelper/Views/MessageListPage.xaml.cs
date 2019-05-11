@@ -27,6 +27,7 @@ namespace Crosshelper.Views
                 Settings.UserId,
                 user.ChatID
             };
+            ((ListView)sender).SelectedItem = null;
             vm.ConnectToChannel(user, users);
         }
     }
