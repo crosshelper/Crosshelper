@@ -38,9 +38,12 @@ namespace Crosshelper.Views
 
         private void RefreshData()
         {
-            PaymentsList = null;
+            ls.BeginRefresh();
+            ls.ItemsSource = null;
             PaymentsList = uih.GetPaymentsList(Settings.UserId);
             PaymentsList.Add(new PaymentInfo() { AccountNo = "Add a new payment", CVV = "000" });
+            ls.ItemsSource = PaymentsList;
+            ls.EndRefresh();
         }
 
         protected override void OnAppearing()
