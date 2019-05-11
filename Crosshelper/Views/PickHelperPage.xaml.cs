@@ -21,15 +21,13 @@ namespace Crosshelper.Views
         }
 
         public List<HelperLabel> Helpers { get; set; }//= new List<HelperLabel>();
-        UserInfoHelper listhelper = new UserInfoHelper();
+        UserInfoHelper uih = new UserInfoHelper();
         BindingContextConverter cvt = new BindingContextConverter();
 
         public PickHelperPage()
         {
             InitializeComponent();
-            listhelper.GetProHelperByTag(1);
-            listhelper.SearchingInit();
-            Helpers = cvt.BindingHelpersConvert(listhelper.GetHelperList());
+            Helpers = cvt.BindingHelpersConvert(uih.GetHelperList(1));
             //Helpers = new List<HelperLabel>();
             Helpers.Add(new HelperLabel
             {

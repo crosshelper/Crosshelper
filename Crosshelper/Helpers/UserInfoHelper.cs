@@ -157,17 +157,14 @@ namespace Crosshelper.Helpers
             }
         }
 
-        public List<UserPro> GetHelperList()
+        public List<UserPro> GetHelperList(string tagid)
         {
-            return helperlist;
-        }
-
-        public void SearchingInit()
-        {
+            GetHelperIDByTag(tagid);
             foreach (int uid in helperuidlist)
             {
                 GetHelperIDbyChatID(uid);
             }
+            return helperlist;
         }
 
         public List<PaymentInfo> GetPaymentsList(string userid)
@@ -176,7 +173,7 @@ namespace Crosshelper.Helpers
             return paymentlist;
         }
 
-        public void GetProHelperByTag(int tagid)
+        public void GetHelperIDByTag(string tagid)
         {
             //建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
