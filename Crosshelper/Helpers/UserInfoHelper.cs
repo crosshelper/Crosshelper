@@ -15,6 +15,12 @@ namespace Crosshelper.Helpers
         private readonly List<ReviewsInfo> reviewlist = new List<ReviewsInfo>();
         private readonly List<PaymentInfo> paymentlist = new List<PaymentInfo>();
 
+        private readonly List<UserPro> helperlist = new List<UserPro>();
+        private readonly List<int> helperuidlist = new List<int>();
+
+        private string speclist = "";
+        private readonly List<int> tagidlist = new List<int>();
+
         internal List<CaseInfo> GetCaseInfoByUid(string userId)
         {
             //建立数据库连接
@@ -49,6 +55,7 @@ namespace Crosshelper.Helpers
                         { 
                             CaseID = CaseID, 
                             HelperID = HelperUID,
+                            HelperName = GetNameByID(HelperUID),
                             CustomerID = userId,
                             ReceiptID = ReceiptID, 
                             CaseType = CaseType, 
@@ -106,6 +113,7 @@ namespace Crosshelper.Helpers
                         {
                             CaseID = CaseID,
                             HelperID = HelperUID,
+                            HelperName = GetNameByID(HelperUID),
                             CustomerID = userId,
                             ReceiptID = ReceiptID,
                             CaseType = CaseType,
@@ -129,13 +137,6 @@ namespace Crosshelper.Helpers
             }
             return pastcaselist;
         }
-
-        private readonly List<UserPro> helperlist = new List<UserPro>();
-        private readonly List<int> paymentsidlist = new List<int>();
-        private readonly List<int> helperuidlist = new List<int>();
-
-        private string speclist = "";
-        private readonly List<int> tagidlist = new List<int>();
 
         internal void InsertPaymentInfo(PaymentInfo pinfo)
         {
@@ -472,6 +473,40 @@ namespace Crosshelper.Helpers
             {
                 Console.WriteLine(ex.ToString());
                 return null;
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
+        public string GetNameByID(string userid)
+        {
+            string name = "";
+            //并没有建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT FirstName,LastName FROM UserInfo WHERE Uid = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", userid);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    name = reader.GetString(0) + " " + reader.GetString(1);
+                }
+                return name;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return "";
             }
             finally
             {

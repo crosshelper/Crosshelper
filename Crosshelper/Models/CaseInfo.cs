@@ -12,5 +12,6 @@ namespace Crosshelper.Models
         public DateTime CaseDateTime { get; set; }
         public string CaseDescription { get; set; }
         public string CaseTypeLabelText { get; internal set; }
+        public string HelperName { get; internal set; }
     }
 }
