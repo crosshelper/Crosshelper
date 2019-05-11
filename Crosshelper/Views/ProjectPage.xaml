@@ -13,7 +13,7 @@
                 <ListView x:Name="currentList" HasUnevenRows="true" ItemSelected="Handle_CurrentItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell x:Name="PHPPickNewcomeButton">
+                            <ViewCell>
                                 <StackLayout Padding="15">
                                     <StackLayout Orientation="Horizontal">
                                         <Label 
@@ -51,7 +51,7 @@
                 <ListView x:Name="pastList" HasUnevenRows="true" ItemSelected="Handle_PastItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell x:Name="PHPPickNewcomeButton">
+                            <ViewCell>
                                 <StackLayout Padding="15">
                                     <StackLayout Orientation="Horizontal">
                                         <Label 
