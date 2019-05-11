@@ -24,13 +24,14 @@ namespace Crosshelper.Helpers
                 {
                     Console.WriteLine("Connecting to MySQL...");
                     conn.Open();
-                    string sql = "INSERT INTO PaymentInfo(AccountNumber,CName,ExDate,CVV,Zip) VALUES(@para1, @para2, @para3, @para4, @para5) ";
+                    string sql = "INSERT INTO PaymentInfo(AccountNumber,CName,ExDate,CVV,Zip,Uid) VALUES(@para1, @para2, @para3, @para4, @para5, @para6) ";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("para1", pinfo.AccountNo);
                     cmd.Parameters.AddWithValue("para2", pinfo.CName);
                     cmd.Parameters.AddWithValue("para3", pinfo.ExDate);
                     cmd.Parameters.AddWithValue("para4", pinfo.CVV);
                     cmd.Parameters.AddWithValue("para5", pinfo.Zipcode);
+                    cmd.Parameters.AddWithValue("para6", pinfo.Uid);
                     cmd.ExecuteNonQuery();
                     Console.WriteLine("Connecting to MySQL success");
                 }
