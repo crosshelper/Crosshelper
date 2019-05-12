@@ -22,6 +22,7 @@ namespace Crosshelper.Views
             currentTab.Content = currentList;
             pastList.ItemsSource = PastCaseInfoLabels;
             pastTab.Content = pastList;
+            BindingContext = this;
         }
         void Handle_CurrentItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
@@ -32,7 +33,7 @@ namespace Crosshelper.Views
         void Handle_PastItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             CaseInfo _currentCase = e.SelectedItem as CaseInfo;
-            //((ListView)sender).SelectedItem = null;
+            ((ListView)sender).SelectedItem = null;
             Navigation.PushAsync(new PastHistoryDetailPage(_currentCase));
         }
     }
