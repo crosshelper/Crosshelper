@@ -16,14 +16,13 @@ namespace Crosshelper.ViewModels
 	public class ChatViewModel : ViewModelBase
     {
         #region Properties
-        private Crosshelper.Models.User userTo;
+        private Models.User userTo;
 
-        public Crosshelper.Models.User UserTo
+        public Models.User UserTo
         {
             get { return userTo; }
             set { SetProperty(ref userTo, value); }
         }
-
 
         private ObservableCollection<UserMessage> _messages;
 
@@ -101,7 +100,6 @@ namespace Crosshelper.ViewModels
             IsBusy = false;
             Init();
         }
-
 
         public void Send()
         {

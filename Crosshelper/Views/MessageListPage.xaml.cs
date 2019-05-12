@@ -24,7 +24,7 @@ namespace Crosshelper.Views
         {
             var user = (Models.User)e.SelectedItem;
             List<string> users = new List<string>() {
-                Settings.UserId,
+                Settings.ChatID,
                 user.ChatID
             };
             ((ListView)sender).SelectedItem = null;

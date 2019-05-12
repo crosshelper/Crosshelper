@@ -32,7 +32,17 @@ namespace Crosshelper.Views
 
         public void ScrollDown(UserMessage m)
         {
-            list.ScrollTo(m, ScrollToPosition.End, true);
+            MessagesListView.ScrollTo(m, ScrollToPosition.End, true);
         }
-	}
+
+        private void MyListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            MessagesListView.SelectedItem = null;
+        }
+
+        private void MyListView_OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            MessagesListView.SelectedItem = null;
+        }
+    }
 }

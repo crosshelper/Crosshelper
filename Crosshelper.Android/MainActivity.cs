@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Plugin.Permissions;
 using Plugin.CurrentActivity;
+using ButtonCircle.FormsPlugin.Droid;
 
 namespace Crosshelper.Droid
 {
@@ -19,6 +20,7 @@ namespace Crosshelper.Droid
 
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+            ButtonCircleRenderer.Init();
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             base.OnCreate(savedInstanceState);
             Forms.SetFlags("CollectionView_Experimental");
