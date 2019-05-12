@@ -139,6 +139,7 @@
     <BundleResource Include="Resources\tab_favorite.png" />
     <BundleResource Include="Resources\tab_favorite%402x.png" />
     <BundleResource Include="Resources\tab_favorite%403x.png" />
+    <BundleResource Include="Resources\cb_logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
