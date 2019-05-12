@@ -26,7 +26,7 @@ namespace Crosshelper.Views
             CaseDate.Text = _currentCase.CaseDateTime.ToString();
             Description.Text = _currentCase.CaseDescription;
 
-            uih.GetHelperInfoByID(_currentCase.CustomerID);
+            uih.GetHelperInfoByID(_currentCase.HelperID);
             UserPro helper = uih.GetHelperInfo();
             HelperImage.Source = helper.Icon;
             HelperName.Text = helper.FirstName;
