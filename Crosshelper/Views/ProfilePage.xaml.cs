@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using Android.Content.PM;
-using Android.OS;
 using Crosshelper.Helpers;
 using Crosshelper.Models;
 using Plugin.Media;
@@ -67,8 +64,7 @@ namespace Crosshelper.Views
                     AllowCropping = true,
                     SaveToAlbum = true
                 });
-
-                    //fileImage.Source = ImageSource.FromStream(() => { return file.GetStream(); });
+                //fileImage.Source = ImageSource.FromStream(() => { return file.GetStream(); });
                 if (file == null)
                     return;
             }
@@ -104,6 +100,7 @@ namespace Crosshelper.Views
             }
             return storageStatus == PermissionStatus.Granted;
         }
+
         User _usr;
         Uac _ac;
         public string Email { get; set; }
