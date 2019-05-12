@@ -27,7 +27,7 @@ namespace Crosshelper.Views
         void Handle_CurrentItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             CaseInfo _currentCase = e.SelectedItem as CaseInfo;
-            //((ListView)sender).SelectedItem = null;
+            ((ListView)sender).SelectedItem = null;
             Navigation.PushAsync(new PastHistoryDetailPage(_currentCase));
         }
         void Handle_PastItemSelected(object sender, SelectedItemChangedEventArgs e)
