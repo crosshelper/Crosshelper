@@ -65,7 +65,8 @@
         <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
             <Entry Grid.Column="0" HeightRequest="25" Placeholder="Write here" Keyboard="Chat" HorizontalOptions="FillAndExpand" Text="{Binding TxtMessage, Mode=TwoWay}"/>
-            <controls:CircleButton Grid.Column="1" Icon="ic_send" TextColor="White" FontSize="25" BorderColor="Transparent" HeightRequest="50" WidthRequest="50" BorderRadius="50" HorizontalOptions="End" Command="{Binding SendCommand}" BackgroundColor="#2196F3"/>
+            <Button Grid.Column="1" Text="Send" FontSize="20" BorderColor="Transparent" HeightRequest="50" WidthRequest="50" HorizontalOptions="End" Command="{Binding SendCommand}"/>
+            <!--<controls:CircleButton Grid.Column="1" Icon="ic_send" TextColor="White" FontSize="25" BorderColor="Transparent" HeightRequest="50" WidthRequest="50" BorderRadius="50" HorizontalOptions="End" Command="{Binding SendCommand}" BackgroundColor="#2196F3"/>-->
         </Grid>
     </RelativeLayout>
 </ContentPage>
