@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Crosshelper.Converters;
+using Crosshelper.Helpers;
 using Crosshelper.Models;
 using Xamarin.Forms;
 
@@ -13,25 +15,33 @@ namespace Crosshelper.Views
         private CaseInfo _currentCase;
         public string Emergency { get; set; }
 
+        UserInfoHelper uih = new UserInfoHelper();
+        BindingContextConverter bcc = new BindingContextConverter();
+
         public PastHistoryDetailPage(CaseInfo currentCase)
         {
             _currentCase = currentCase;
             InitializeComponent();
-            Emergency = "";
+            Emergency = _currentCase.CaseTypeLabelText;
             CaseDate.Text = _currentCase.CaseDateTime.ToString();
-            Language.Text = "";
-            Description.Text = "";
-            HelperImage.Source = "";
-            HelperName.Text = "";
-            HelperRating.Text = "";
-            HelperLanguage.Text = "";
-            ServiceFee.Text = "";
-            EquipmentFee.Text = "";
-            CycbisFee.Text = "";
-            Tax.Text = "";
-            Total.Text = "";
-            PaymentNum.Text = "";
-            CaseDateTime.Text = "";
+            Description.Text = _currentCase.CaseDescription;
+
+            uih.GetHelperInfoByID(_currentCase.CustomerID);
+            UserPro helper = uih.GetHelperInfo();
+            HelperImage.Source = helper.Icon;
+            HelperName.Text = helper.FirstName;
+            HelperRating.Text = bcc.StarNoToStarSign(helper.Rating);
+            HelperLanguage.Text = helper.FLanguage + "/" + helper.SLanguage;
+
+            ReceiptInfo _receipt = uih.GetReceiptByID(_currentCase.ReceiptID);
+            ServiceFee.Text = _receipt.ServiceFee.ToString();
+            EquipmentFee.Text = _receipt.EqFee.ToString();
+            CycbisFee.Text = _receipt.Surcharge.ToString();
+            Tax.Text = _receipt.Tax.ToString();
+            Total.Text = (_receipt.EqFee+ _receipt.ServiceFee+ _receipt.Surcharge+ _receipt.Tax).ToString();
+
+            PaymentNum.Text = _receipt.PaymentName;
+            CaseDateTime.Text = _currentCase.CaseDateTime.ToString();
         }
     }
 }

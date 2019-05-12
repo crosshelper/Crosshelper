@@ -80,6 +80,11 @@ namespace Crosshelper.Helpers
             return caselist;
         }
 
+        internal ReceiptInfo GetReceiptByID(string receiptID)
+        {
+            throw new NotImplementedException();
+        }
+
         internal List<CaseInfo> GetPastCaseInfoByUid(string userId)
         {
             //建立数据库连接
@@ -288,6 +293,11 @@ namespace Crosshelper.Helpers
                 GetHelperInfoByID(uid.ToString());
             }
             return helperlist;
+        }
+
+        public UserPro GetHelperInfo()
+        {
+            return helperlist[0];
         }
 
         public List<PaymentInfo> GetPaymentsList(string userid)
@@ -588,7 +598,7 @@ namespace Crosshelper.Helpers
             }
         }
 
-        private void GetHelperInfoByID(string userid)
+        public void GetHelperInfoByID(string userid)
         {
             //并没有建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);

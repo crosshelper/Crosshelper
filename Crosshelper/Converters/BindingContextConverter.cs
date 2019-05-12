@@ -9,9 +9,9 @@ namespace Crosshelper.Converters
 {
     class BindingContextConverter
     {
-        private string starsign = "★";
+        //private string starsign = "★";
 
-        private string StarNoToStarSign(int no)
+        public string StarNoToStarSign(int no)
         {
             string tmpstar = "";
             for (int i = 0; i < no; i++)
