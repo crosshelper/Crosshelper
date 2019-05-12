@@ -85,10 +85,6 @@ namespace Crosshelper.Views
         {
             (sender as Button).Text = "Click me again!";
         }
-        void Handle_WechatSignIn(object sender, EventArgs e)
-        {
-            (sender as Button).Text = "Click me again!";
-        }
         void Handle_FaceBookSignIn(object sender, EventArgs e)
         {
             (sender as Button).Text = "Click me again!";

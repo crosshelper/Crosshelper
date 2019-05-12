@@ -29,7 +29,7 @@
                                        Text="{Binding CaseDateTime}"
                                        VerticalOptions="End" />
                                     <StackLayout>
-                                    <Label Text="Problem description" FontSize="Medium"></Label>
+                                    <Label Text="Problem description" FontSize="18" TextColor="Black"></Label>
                                     <Label 
                                            TextColor="#393939"
                                            MaxLines="4"

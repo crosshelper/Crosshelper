@@ -16,32 +16,26 @@
                 </StackLayout>
                 <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,5,0,5"></BoxView>
                 <!-- 第三次登入 Third party sign in -->  
-                <StackLayout VerticalOptions="Start" Orientation="Horizontal"  Margin="0,5,0,0">
+                <StackLayout VerticalOptions="Start" Orientation="Vertical"  Margin="0,5,0,0">
                         <Button Text="Google" 
                                 BorderColor="#575656" 
                                 BorderWidth="1" 
                                 WidthRequest="90" 
-                                FontSize="16" 
+                                FontSize="16"
+                                Image="https://cdn.foliomag.com/wp-content/uploads/2018/04/google-logo-icon-png-transparent-background.png"
                                 TextColor="#575656" 
                                 FontAttributes="Bold" 
                                 BackgroundColor="White" 
-                                HorizontalOptions="StartAndExpand"
+                                HorizontalOptions="FillAndExpand"
                                 Clicked="Handle_GoogleSignIn"/>
-                        <Button Text="Wechat" 
-                                WidthRequest="90" 
-                                FontSize="16" 
-                                TextColor="White" 
-                                BackgroundColor="#09B83E" 
-                                FontAttributes="Bold" 
-                                HorizontalOptions="CenterAndExpand"
-                                Clicked="Handle_WechatSignIn"/>
                        <Button  Text="Facebook" 
                                 WidthRequest="90" 
-                                FontSize="16" 
+                                FontSize="16"
+                                Margin="0,3,0,0"
                                 TextColor="White" 
                                 BackgroundColor="#3B5998" 
                                 FontAttributes="Bold" 
-                                HorizontalOptions="EndAndExpand"
+                                HorizontalOptions="FillAndExpand"
                                 Clicked="Handle_FaceBookSignIn"/>
                     </StackLayout>
                
