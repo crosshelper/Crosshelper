@@ -7,36 +7,31 @@ namespace Crosshelper.Views
 {
     public partial class PastHistoryDetailPage : ContentPage
     {
-        /*public IList<ProjectpageViewcellItem> CaseDetail { get; set; }
-        public PastHistoryDetailPage()
-        {
-           
+        //Emergency,CaseDate,Language,Description,HelperImage,HelperName,HelperRating,HelperLanguage
+        //ServiceFee,EquipmentFee,CycbisFee,Tax,Total,PaymentNum,CaseDateTime
 
-            InitializeComponent();
-
-            //Emergency,CaseDate,Language,Description,HelperImage,HelperName,HelperRating,HelperLanguage
-            //ServiceFee,EquipmentFee,CycbisFee,Tax,Total,PaymentNum,CaseDateTime
-
-            CaseDetail = new List<ProjectpageViewcellItem>();
-            CaseDetail.Add(new ProjectpageViewcellItem
-            {
-                PanelID = 1,
-                Rating = "★★★★★",
-                Language = "Chinese/English",
-                Emergency = "Emergency",
-                Date = "09/20/2018",
-                Description = "I lost my langage at Pairs Charles de Gaulle Airport.But I can not speak French, and I dont  know how to find it.",
-                Status = "Open",
-                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
-            });
-
-        }
-        */
         private CaseInfo _currentCase;
+        public string Emergency { get; set; }
 
         public PastHistoryDetailPage(CaseInfo currentCase)
         {
             _currentCase = currentCase;
+            InitializeComponent();
+            Emergency = "";
+            CaseDate.Text = _currentCase.CaseDateTime.ToString();
+            Language.Text = "";
+            Description.Text = "";
+            HelperImage.Source = "";
+            HelperName.Text = "";
+            HelperRating.Text = "";
+            HelperLanguage.Text = "";
+            ServiceFee.Text = "";
+            EquipmentFee.Text = "";
+            CycbisFee.Text = "";
+            Tax.Text = "";
+            Total.Text = "";
+            PaymentNum.Text = "";
+            CaseDateTime.Text = "";
         }
     }
 }

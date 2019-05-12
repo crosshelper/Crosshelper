@@ -16,7 +16,7 @@
                             <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
                                         <StackLayout Orientation="Horizontal">
                                         <StackLayout >
-                                          <Label Text="{Binding Emergency}" TextColor="Red" FontSize="Default" FontAttributes="Bold" x:Name="Emergency" ></Label>
+                                          <Label Text="{Binding Emergency}" TextColor="Red" FontSize="Default" FontAttributes="Bold"></Label>
                                         </StackLayout>
                                         <StackLayout HorizontalOptions="EndAndExpand">
                                             <Label Text="" FontSize="Default" TextColor="#242424" x:Name="CaseDate"></Label>
