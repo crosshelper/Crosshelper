@@ -23,27 +23,27 @@ namespace Crosshelper.Views
             ProblemsCategory.Add(new TypeProblem
             {
                 Pcategory = "Daily life",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/GetHelpIcon/Daily+life.png"
             });
             ProblemsCategory.Add(new TypeProblem
             {
                 Pcategory = "Language",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/GetHelpIcon/Language.png"
             });
             ProblemsCategory.Add(new TypeProblem
             {
                 Pcategory = "Law",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/GetHelpIcon/Law.png"
             });
             ProblemsCategory.Add(new TypeProblem
             {
                 Pcategory = "Repair",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/GetHelpIcon/Repair.png"
             });
             ProblemsCategory.Add(new TypeProblem
             {
                 Pcategory = "Health",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom005.png"
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/GetHelpIcon/Health.png"
             });
 
 

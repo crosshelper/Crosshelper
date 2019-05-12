@@ -11,23 +11,23 @@
         <StackLayout>
             <StackLayout>
             <Label Text="Problem Category" FontSize="25" VerticalOptions="Center" Margin="10,5,10,0"/>
-                <CollectionView x:Name="cv1" ItemsSource="{Binding ProblemsCategory}" SelectionMode="Single" SelectionChanged="Handle_PickProblem"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="120" >
+                <CollectionView x:Name="cv1" ItemsSource="{Binding ProblemsCategory}" SelectionMode="Single" SelectionChanged="Handle_PickProblem"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="100" >
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                                 <Grid Padding="10">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="20"/>
-                                        <RowDefinition Height="20"/>
-                                        <RowDefinition Height="20"/>
-                                        <RowDefinition Height="20"/>
-                                        <RowDefinition Height="20"/>
+                                        <RowDefinition Height="16"/>
+                                        <RowDefinition Height="16"/>
+                                        <RowDefinition Height="16"/>
+                                        <RowDefinition Height="16"/>
+                                        <RowDefinition Height="16"/>
                                     </Grid.RowDefinitions>
                                     <Image Grid.RowSpan="3"
                                            Grid.Row="0"
                                            Source="{Binding ImageUrl}"
                                            Aspect="AspectFill"
-                                           HeightRequest="75"
-                                           WidthRequest="75" />
+                                           HeightRequest="70"
+                                           WidthRequest="50" />
                                      <Label Grid.Row="3"
                                            Grid.Column="0"
                                            HorizontalOptions="Center"
