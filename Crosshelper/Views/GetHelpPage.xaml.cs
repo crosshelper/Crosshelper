@@ -162,15 +162,13 @@ namespace Crosshelper.Views
         {
             Navigation.PushModalAsync(new NavigationPage(new SearchPage()));
         }
-
         void Handle_PickProblem(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            if (cv1.SelectedItem != null)
+            if (cv1.SelectedItem != null || cv2.SelectedItem != null || cv3.SelectedItem != null || cv4.SelectedItem != null || cv5.SelectedItem != null)
             {
                 Navigation.PushModalAsync(new NavigationPage(new DescribeProblemPage()));
             }
         }
-
         protected override void OnAppearing()
         {
             RefreshSelection();

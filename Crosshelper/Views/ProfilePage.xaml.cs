@@ -79,9 +79,8 @@ namespace Crosshelper.Views
                     await DisplayAlert("Alert", "Can not access album", "OK");
                     return;
                 }
-
                 var file = await media.PickPhotoAsync(new PickMediaOptions {
-                    RotateImage =true
+                    //RotateImage = true
                  });
 
                 if (file == null)
@@ -108,7 +107,6 @@ namespace Crosshelper.Views
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
         UserInfoHelper uih = new UserInfoHelper();
-
         public ProfilePage(User user)
         {
             InitializeComponent();

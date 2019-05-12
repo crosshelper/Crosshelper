@@ -14,26 +14,26 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Padding="15">
+                                 <StackLayout Padding="15">
                                     <StackLayout Orientation="Horizontal">
-                                        <Label 
-                                               TextColor="Red"
-                                               Text="{Binding CaseTypeLabelText}"/>
-                                        <StackLayout HorizontalOptions="EndAndExpand">
-                                        <Label 
-                                               TextColor="#393939"
-                                               Text="{Binding CaseDateTime}"
-                                               VerticalOptions="End" />
                                         <Label
-                                               TextColor="#393939"
-                                               Text="{Binding HelperName}"
-                                               VerticalOptions="End" />
-                                        </StackLayout>
+                                           TextColor="#393939"
+                                           FontSize="18"
+                                           Text="{Binding HelperName}"
+                                           HorizontalOptions="StartAndExpand" />
+                                        <Label Text="{Binding CaseTypeLabelText}" TextColor="Red" FontSize="15" HorizontalOptions="End"/>
                                     </StackLayout>
+                                    <Label 
+                                       TextColor="#393939"
+                                       FontSize="12"
+                                       Text="{Binding CaseDateTime}"
+                                       VerticalOptions="End" />
                                     <StackLayout>
                                     <Label Text="Problem description" FontSize="Medium"></Label>
                                     <Label 
                                            TextColor="#393939"
+                                           MaxLines="4"
+                                           FontSize="16"
                                            Text="{Binding CaseDescription}"
                                            VerticalOptions="End" />   
                                     </StackLayout>
@@ -54,23 +54,24 @@
                             <ViewCell>
                                 <StackLayout Padding="15">
                                     <StackLayout Orientation="Horizontal">
-                                        <Label 
-                                               Text="{Binding CaseTypeLabelText}"/>
-                                        <StackLayout HorizontalOptions="EndAndExpand">
-                                        <Label 
-                                               TextColor="#393939"
-                                               Text="{Binding CaseDateTime}"
-                                               VerticalOptions="End" />
                                         <Label
-                                               TextColor="#393939"
-                                               Text="{Binding HelperName}"
-                                               VerticalOptions="End" />
-                                        </StackLayout>
+                                           TextColor="#393939"
+                                           FontSize="18"
+                                           Text="{Binding HelperName}"
+                                           HorizontalOptions="StartAndExpand" />
+                                        <Label Text="{Binding CaseTypeLabelText}" TextColor="Red" FontSize="15" HorizontalOptions="End"/>
                                     </StackLayout>
+                                    <Label 
+                                       TextColor="#393939"
+                                       FontSize="12"
+                                       Text="{Binding CaseDateTime}"
+                                       VerticalOptions="End" />
                                     <StackLayout>
                                     <Label Text="Problem description" FontSize="Medium"></Label>
                                     <Label 
                                            TextColor="#393939"
+                                           MaxLines="4"
+                                           FontSize="16"
                                            Text="{Binding CaseDescription}"
                                            VerticalOptions="End" />   
                                     </StackLayout>
