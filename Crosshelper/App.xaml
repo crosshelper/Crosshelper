@@ -9,7 +9,7 @@
             <Color x:Key="AccentColor">#FF4E18</Color>
             <Color x:Key="DisabledColor">#D1D1D1</Color>
             <Color x:Key="TitleTextColor">#4A4A4A</Color>
-            <Color x:Key="PaleBackColorPrimary">#F4F4F4</Color>
+            <Color x:Key="PaleBackColorPrimary">#F6F6F6</Color>
             <Color x:Key="PaleBackColorSecondary">#F2EDDA</Color>
             <Color x:Key="DeepTextColor">#555555</Color>
             <Color x:Key="NormalTextColor">#666666</Color>

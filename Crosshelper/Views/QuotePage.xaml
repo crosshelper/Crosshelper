@@ -1,50 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.QuotePage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.QuotePage">
     <ContentPage.Content>
         <!--Receipt-->
         <ScrollView>
-            <StackLayout Padding="15"> 
-                <StackLayout>
+            <StackLayout> 
+           
+                
+                <StackLayout Margin="0,0,0,0" Padding="15,15,15,0">
                     <Label Text="Quote detail" FontSize="16" Margin="0,0,0,0" FontAttributes="Bold" ></Label>
-                    <BoxView BackgroundColor="#999999" HeightRequest="1.5"></BoxView>
+                    <BoxView BackgroundColor="#555555" HeightRequest="0.5"></BoxView>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                        <Label Text="Service Fee:" FontSize="16"></Label>
-                            <Label Text="" FontSize="16" TextColor="#242424" x:Name="ServiceFee" ></Label>
+                        <Label Text="Service Fee:" FontSize="16" TextColor="#555555"></Label>
+                            <Label Text="" FontSize="16" TextColor="#555555" x:Name="ServiceFee" ></Label>
                     </StackLayout>  
                     <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                        <Label Text="Equipment Fee:" FontSize="16"></Label>
-                        <Label Text="" FontSize="16" TextColor="#242424" x:Name="EquipmentFee"></Label>
+                        <Label Text="Equipment Fee:" FontSize="16" TextColor="#555555"></Label>
+                        <Label Text="" FontSize="16" TextColor="#555555" x:Name="EquipmentFee"></Label>
                     </StackLayout> 
                     <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                        <Label Text="Cycbis fee:" FontSize="16"></Label>
-                        <Label Text="" FontSize="16" TextColor="#242424" x:Name="CycbisFee"></Label>
+                        <Label Text="Cycbis fee:" FontSize="16" TextColor="#555555"></Label>
+                        <Label Text="" FontSize="16" TextColor="#555555" x:Name="CycbisFee"></Label>
                     </StackLayout> 
                     <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                        <Label Text="Tax:" FontSize="16"></Label>
-                        <Label Text="" FontSize="16" TextColor="#242424" x:Name="Tax"></Label>
+                        <Label Text="Tax:" FontSize="16" TextColor="#555555"></Label>
+                        <Label Text="" FontSize="16" TextColor="#555555" x:Name="Tax"></Label>
                     </StackLayout> 
                     <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                        <Label Text="Total:" FontSize="16"></Label>
-                        <Label Text="" FontSize="16" TextColor="#242424" x:Name="Total"></Label>
+                        <Label Text="Total:" FontSize="16" TextColor="#555555"></Label>
+                        <Label Text="" FontSize="16" TextColor="#555555" x:Name="Total"></Label>
                     </StackLayout>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,15,0,0">
+                
+                                <!--Default  PAYMENT INFO -->
+                <StackLayout Margin="15,20,15,0">
+                    <Label Text="Payment method" FontSize="16" Margin="0,0,0,0" ></Label>
+                    <BoxView HeightRequest="0.5" BackgroundColor="#555555"  Margin="0,3,0,0"/>
+                        <StackLayout Margin="0,-6,0,-6" BackgroundColor="White" Padding="0,6,0,6">
+                            <StackLayout Orientation="Horizontal" >
+                            <Label FontSize="16"
+                                   VerticalOptions="CenterAndExpand"
+                                   TextColor="#555555"
+                                   Margin="10,0,0,0"
+                                   HorizontalOptions="StartAndExpand"
+                                   Text="**** **** **** 5555" />
+                            <Label Text="›" 
+                                   FontSize="30" 
+                                   Margin="5,0,10,6"
+                                   VerticalOptions="End"
+                                   TextColor="#999999"/>
+                            </StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Handle_Tapped"/>
+                        </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    <BoxView HeightRequest="0.5" BackgroundColor="#555555" Margin="0,0,0,0"/>
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal" Margin="15,15,15,30">
                     <Button Text="Accept" 
                             TextColor="White"
                             FontSize="16"
-                            WidthRequest="100"
                             HorizontalOptions="FillAndExpand" 
                             BackgroundColor="#FF4E18"
                             Clicked="Handle_Accept"/>
-                    <Button Text="Cancel"
-                            FontSize="16"
-                            TextColor="#575656"
-                            WidthRequest="100"
-                            HorizontalOptions="FillAndExpand" 
-                            BackgroundColor="White" 
-                            BorderColor="#575656" 
-                            BorderWidth="1"
-                            Clicked="Handle_Cancel"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

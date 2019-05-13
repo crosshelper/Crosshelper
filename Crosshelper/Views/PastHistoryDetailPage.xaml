@@ -51,34 +51,34 @@
                         <Label Text="Receipt" FontSize="Medium" Margin="0,20,0,0" FontAttributes="Bold" ></Label>
                         <BoxView BackgroundColor="#999999" HeightRequest="1.5"></BoxView>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Service Fee:" FontSize="Small"></Label>
-                                <Label Text="" FontSize="Small" TextColor="#242424" x:Name="ServiceFee" ></Label>
+                            <Label Text="Service Fee:" FontSize="Small" TextColor="#333333"></Label>
+                                <Label Text="" FontSize="Small" TextColor="#333333" x:Name="ServiceFee" ></Label>
                         </StackLayout>  
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Equipment Fee:" FontSize="Small"></Label>
-                            <Label Text="" FontSize="Small" TextColor="#242424" x:Name="EquipmentFee"></Label>
+                            <Label Text="Equipment Fee:" FontSize="Small" TextColor="#333333"></Label>
+                            <Label Text="" FontSize="Small" TextColor="#333333" x:Name="EquipmentFee"></Label>
                         </StackLayout> 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Cycbis fee:" FontSize="Small"></Label>
-                            <Label Text="" FontSize="Small" TextColor="#242424" x:Name="CycbisFee"></Label>
+                            <Label Text="Cycbis fee:" FontSize="Small" TextColor="#333333"></Label>
+                            <Label Text="" FontSize="Small" TextColor="#333333" x:Name="CycbisFee"></Label>
                         </StackLayout> 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Tax:" FontSize="Small"></Label>
-                            <Label Text="" FontSize="Small" TextColor="#242424" x:Name="Tax"></Label>
+                            <Label Text="Tax:" FontSize="Small" TextColor="#333333"></Label>
+                            <Label Text="" FontSize="Small" TextColor="#333333" x:Name="Tax"></Label>
                         </StackLayout> 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Total:" FontSize="Small"></Label>
-                            <Label Text="" FontSize="Small" TextColor="#242424" x:Name="Total"></Label>
+                            <Label Text="Total:" FontSize="Small" TextColor="#333333"></Label>
+                            <Label Text="" FontSize="Small" TextColor="#333333" x:Name="Total"></Label>
                         </StackLayout>
                 <!--Receipt-->   
                 <Label Text="Payment info" FontSize="Default" Margin="0,5,0,0"></Label>
                 <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Visa:" FontSize="Small"></Label>
-                            <Label Text="" FontSize="Small" TextColor="#242424" x:Name="PaymentNum"></Label>
+                            <Label Text="Visa:" TextColor="#333333" FontSize="Small"></Label>
+                            <Label Text="" FontSize="Small" TextColor="#333333" x:Name="PaymentNum"></Label>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="" FontSize="Small" TextColor="Gray" x:Name="CaseDateTime"></Label>
+                            <Label Text="" FontSize="Small" TextColor="#333333" x:Name="CaseDateTime"></Label>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>

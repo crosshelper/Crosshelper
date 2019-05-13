@@ -83,11 +83,11 @@ namespace Crosshelper.Views
         //第三次登入 Third party sign in
         void Handle_GoogleSignIn(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            Application.Current.MainPage = new MyTabbedPage();
         }
         void Handle_FaceBookSignIn(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            Application.Current.MainPage = new MyTabbedPage();
         }
         //创建和忘记 Create&Forgot
         void Handle_ForgotPassword(object sender, EventArgs e)
