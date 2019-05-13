@@ -13,7 +13,7 @@ namespace Crosshelper.Views
         }
         void Handle_ProblemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            Navigation.PushAsync(new DescribeProblemPage()); 
+            Navigation.PushAsync(new DescribeProblemPage(e.SelectedItem as TypeProblem)); 
         }
         public IList<TypeProblem> TypeProblems { get; private set; }
         public SearchPage()
