@@ -5,6 +5,7 @@ using Plugin.Geolocator.Abstractions;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using Crosshelper.Models;
+using Crosshelper.Helpers;
 
 namespace Crosshelper.Views
 {
@@ -52,9 +53,9 @@ namespace Crosshelper.Views
             locator.DesiredAccuracy = 50;
             var position = await locator.GetPositionAsync();
 
-            var Longitude = position.Longitude.ToString();
-            var Latitude = position.Latitude.ToString();
-            Navigation.PushAsync(new LocationPage());
+            Settings.CurrentLongitude = position.Longitude;
+            Settings.CurrentLatitude = position.Latitude;
+            await Navigation.PushAsync(new LocationPage());
         }
         void Handle_Language(object sender, EventArgs e)
         {
