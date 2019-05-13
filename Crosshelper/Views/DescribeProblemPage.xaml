@@ -35,7 +35,7 @@
                                             <StackLayout >
                                               <Label Text="Language Preference" TextColor="#FF4E18" FontSize="17" FontAttributes="Bold"></Label>
                                             </StackLayout>
-                                                <Picker HeightRequest="45" Title="Pick language" TitleColor="#666666" FontAttributes="Bold" FontSize="16" TextColor="#666666" >
+                                                <Picker x:Name="languagepicker" HeightRequest="45" Title="Pick language" TitleColor="#666666" FontAttributes="Bold" FontSize="16" TextColor="#666666" >
                                                     <Picker.ItemsSource>
                                                         <x:Array Type="{x:Type x:String}">
                                                           <x:String>Chinese</x:String>

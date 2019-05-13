@@ -150,6 +150,7 @@ namespace Crosshelper.Views
             });
             RecommendationFour.Add(new TypeProblem
             {
+                TagID = 0,
                 Pcategory = "Repair",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
             });
@@ -158,15 +159,16 @@ namespace Crosshelper.Views
             BindingContext = this;
         }
 
-        void Handle_Search(object sender, Xamarin.Forms.FocusEventArgs e)
+        void Handle_Search(object sender, FocusEventArgs e)
         {
             Navigation.PushModalAsync(new NavigationPage(new SearchPage()));
         }
-        void Handle_PickProblem(object sender, Xamarin.Forms.FocusEventArgs e)
+        void Handle_PickProblem(object sender, SelectedItemChangedEventArgs e)
         {
+            TypeProblem tmp = e.SelectedItem as TypeProblem;
             if (cv1.SelectedItem != null || cv2.SelectedItem != null || cv3.SelectedItem != null || cv4.SelectedItem != null || cv5.SelectedItem != null)
             {
-                Navigation.PushModalAsync(new NavigationPage(new DescribeProblemPage()));
+                Navigation.PushModalAsync(new NavigationPage(new DescribeProblemPage(tmp)));
             }
         }
         protected override void OnAppearing()

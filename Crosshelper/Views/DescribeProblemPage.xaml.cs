@@ -4,6 +4,7 @@ using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using Crosshelper.Models;
 
 namespace Crosshelper.Views
 {
@@ -15,8 +16,12 @@ namespace Crosshelper.Views
             //tmppage.RefreshSelection();
             Navigation.PopModalAsync();
         }
-        public DescribeProblemPage()
+
+        private TypeProblem _typeproblem;
+
+        public DescribeProblemPage(TypeProblem tmp)
         {
+            _typeproblem = tmp;
             InitializeComponent();
         }
         //Not Really按钮 Not really Button
@@ -32,7 +37,8 @@ namespace Crosshelper.Views
         //下一步按钮 Next Button
         void Handle_Next(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PickHelperPage());
+            string language = languagepicker.SelectedItem.ToString();
+            Navigation.PushAsync(new PickHelperPage(_typeproblem,language));
         }
 
         //Describe Problem Text Editor
