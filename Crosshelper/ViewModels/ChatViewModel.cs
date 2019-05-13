@@ -74,7 +74,7 @@ namespace Crosshelper.ViewModels
             Device.StartTimer(seconds, () => {
                 ch.OnMessageReceived = (BaseChannel baseChannel, BaseMessage baseMessage) => {
                     Messages.Add((UserMessage)baseMessage);
-                    ChatPage.CurrentActivity.ScrollDown(Messages.Last());
+                    //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
                 };
                 return true;
             });
@@ -97,7 +97,7 @@ namespace Crosshelper.ViewModels
                 {
                     Messages.Insert(0, (UserMessage)item);
                 }
-                ChatPage.CurrentActivity.ScrollDown(Messages.Last());
+                //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
             });
             IsBusy = false;
             Init();
@@ -121,7 +121,7 @@ namespace Crosshelper.ViewModels
                     }
 
                     Messages.Add(userMessage);
-                    ChatPage.CurrentActivity.ScrollDown(Messages.Last());
+                    //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
                 });
                 TxtMessage = string.Empty;
                 IsBusy = false;
