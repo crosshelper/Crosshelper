@@ -323,7 +323,9 @@ namespace Crosshelper.Helpers
         public List<UserPro> GetHelperList(string tagid, string language)
         {
             GetHelperIDByTag(tagid);
-
+            //TODO: language location search
+            //double lo = Settings.CurrentLatitude;
+            //double la = Settings.CurrentLongitude;
             foreach (int uid in helperuidlist)
             {
                 GetHelperInfoByID(uid.ToString());
