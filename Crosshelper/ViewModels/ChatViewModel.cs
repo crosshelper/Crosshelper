@@ -64,6 +64,7 @@ namespace Crosshelper.ViewModels
         {
             SendCommand = new Command(Send);
             Messages = new ObservableCollection<UserMessage>();
+            //RemoveChannelHandler("MyKey");
         }
 
         public void Init()
