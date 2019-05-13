@@ -320,9 +320,10 @@ namespace Crosshelper.Helpers
             }
         }
 
-        public List<UserPro> GetHelperList(string tagid)
+        public List<UserPro> GetHelperList(string tagid, string language)
         {
             GetHelperIDByTag(tagid);
+
             foreach (int uid in helperuidlist)
             {
                 GetHelperInfoByID(uid.ToString());
