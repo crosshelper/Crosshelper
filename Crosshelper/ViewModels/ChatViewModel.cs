@@ -74,7 +74,7 @@ namespace Crosshelper.ViewModels
             Device.StartTimer(seconds, () => {
                 ch.OnMessageReceived = (BaseChannel baseChannel, BaseMessage baseMessage) => {
                     Messages.Add((UserMessage)baseMessage);
-                    //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
+                    //ChatPage.CurrentActivity.ScrollDown(Messages.Last());1
                 };
                 return true;
             });
