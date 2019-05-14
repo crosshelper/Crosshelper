@@ -24,9 +24,9 @@
                                     <Image Grid.RowSpan="3"
                                            Grid.Row="0"
                                            Source="{Binding ImageUrl}"
-                                           Aspect="AspectFill"
+                                           Aspect="AspectFit"
                                            HeightRequest="70"
-                                           WidthRequest="50" />
+                                           WidthRequest="55" />
                                     <Label Grid.Row="3"
                                            Grid.Column="0"
                                            HorizontalOptions="Center"
