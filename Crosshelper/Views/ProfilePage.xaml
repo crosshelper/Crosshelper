@@ -36,7 +36,7 @@
            <sv:Section Title="Security" FooterText="">
                 <sv:EntryCell Title="Phone number" ValueText="{Binding PhoneNumber}" 
                               Placeholder="626 566 0781" Keyboard="Email" 
-                              ValueTextFontSize="16"
+                              ValueTextFontSize="16" MaxLength="15"
                               TextAlignment="End" HintText="{Binding InputError.Value}" /> 
                 <sv:PickerCell Title="Reset Password" Tapped="Handle_ResetPassword" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
                               SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />

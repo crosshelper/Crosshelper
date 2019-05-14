@@ -22,6 +22,8 @@
                        HeightRequest="45"/>
                 <Entry Placeholder="Enter phone number (option)"
                        FontSize="16"
+                       MaxLength="15"
+                       Keyboard="Numeric"
                        PlaceholderColor="#888888"
                        HeightRequest="45"/>
                 <Label Text="Phone number or email address is option but highly recommend." TextColor="#666666" FontSize="13"/>

@@ -75,15 +75,6 @@ namespace Crosshelper.Views
             Navigation.PushModalAsync(new QuotePage());
             //Navigation.PopModalAsync();
         }
-        //Top Ring&Menu button
-        void NHPPBackButton(object sender, EventArgs e)
-        {
-            (sender as Button).Text = "Click me again!";
-        }
-        void NHPPCancelButton(object sender, EventArgs e)
-        {
-            (sender as Button).Text = "Click me again!";
-        }
         //Confirm
         void Handle_GetHelp(object sender, EventArgs e)
         {
@@ -98,11 +89,6 @@ namespace Crosshelper.Views
                 };
                 ConnectToChannel(user, users);
             }
-        }
-
-        void Handle_Like(object sender, System.EventArgs e)
-        {
-
         }
     }
 }

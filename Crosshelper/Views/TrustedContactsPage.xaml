@@ -22,12 +22,12 @@
             
     <sv:Section Title="Emergency Contacts" FooterText="">
             <sv:EntryCell Title="Priority number" ValueText="{Binding FENo}" 
-                          Placeholder="000 000 0000" Keyboard="Email" 
-                          ValueTextFontSize="16"
+                          Placeholder="000 000 0000" Keyboard="Numeric" 
+                          ValueTextFontSize="16" MaxLength="15"
                           TextAlignment="End" HintText="{Binding InputError.Value}" /> 
             <sv:EntryCell Title="Second number" ValueText="{Binding SENo}" 
-                          Placeholder="000 000 0000" Keyboard="Email"
-                          ValueTextFontSize="16"
+                          Placeholder="000 000 0000" Keyboard="Numeric"
+                          ValueTextFontSize="16" MaxLength="15"
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
     </sv:Section>
     

@@ -49,12 +49,14 @@
                             
                             <Entry Placeholder="Enter Username"
                                    FontSize="16"
+                                   MaxLength="18"
                                    PlaceholderColor="#888888"
                                    HeightRequest="45"
                                    Completed="UnameCompleted"/>
                             
                             <Entry Placeholder="Enter password"
                                    FontSize="16"
+                                   MaxLength="18"
                                    PlaceholderColor="#888888"
                                    IsPassword="true"
                                    HeightRequest="45"
@@ -62,6 +64,7 @@
                            
                             <Entry Placeholder="Comfirm password"
                                    FontSize="16"
+                                   MaxLength="18"
                                    PlaceholderColor="#888888"
                                    HeightRequest="45"
                                    IsPassword="true"

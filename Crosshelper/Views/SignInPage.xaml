@@ -46,15 +46,17 @@
                             <!-- <Label Text="Username" TextColor="#666666" FontSize="16" FontAttributes="Bold"/> -->
                             <Entry Placeholder="Enter your Username"
                                    FontSize="16"
+                                   MaxLength="18"
                                    PlaceholderColor="#888888"
                                    HeightRequest="45"
                                    Completed="UsernameSignInCompleted"
                                    x:Name="uNameEntry"/>
                             <!-- <Label Text="Password" TextColor="#666666" FontAttributes="Bold"/> -->
-                            <Entry Placeholder="Enter your email Password"
+                            <Entry Placeholder="Enter your password"
                                    FontSize="16"
                                    HeightRequest="45"
                                    IsPassword="true"
+                                   MaxLength="18"
                                    PlaceholderColor="#888888"
                                    Completed="PasswordSignInCompleted"
                                    x:Name="pwdEntry"/>
