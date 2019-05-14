@@ -21,6 +21,9 @@
                                         <RowDefinition Height="17"/>
                                         <RowDefinition Height="20"/>
                                     </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="65"/>
+                                    </Grid.ColumnDefinitions>
                                     <Image Grid.RowSpan="3"
                                            Grid.Row="0"
                                            Source="{Binding ImageUrl}"
