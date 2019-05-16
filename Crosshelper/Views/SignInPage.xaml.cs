@@ -52,6 +52,7 @@ namespace Crosshelper.Views
             else
             {
                 signInTest.Text = "Sign in Faild";
+                Settings.IsLogin = false;
             }
         }
 
