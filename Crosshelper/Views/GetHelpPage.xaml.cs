@@ -22,7 +22,7 @@ namespace Crosshelper.Views
             ProblemsCategory = new List<TypeProblem>();
             ProblemsCategory.Add(new TypeProblem
             {
-                TagID = 2,
+                TagID = 1,
                 Pcategory = "Daily life",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/GetHelpIcon/Daily+life.png"
             });
