@@ -39,7 +39,11 @@ namespace Crosshelper.Views
         //下一步按钮 Next Button
         void Handle_Next(object sender, EventArgs e)
         {
-            string language = languagepicker.SelectedItem.ToString();
+            string language = "English";
+            if (languagepicker.SelectedItem != null)
+            {
+                language = languagepicker.SelectedItem.ToString();
+            }
             Navigation.PushAsync(new PickHelperPage(_typeproblem,language));
         }
 
