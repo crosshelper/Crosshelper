@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Crosshelper.Models;
 using Xamarin.Forms;
 
@@ -186,9 +187,9 @@ namespace Crosshelper.Views
         {
             Navigation.PushModalAsync(new NavigationPage(new SearchPage()));
         }
-        void Handle_PickProblem(object sender, SelectedItemChangedEventArgs e)
+        void Handle_PickProblem(object sender, SelectionChangedEventArgs e)
         {
-            TypeProblem tmp = e.SelectedItem as TypeProblem;
+            TypeProblem tmp = e.CurrentSelection.FirstOrDefault() as TypeProblem;
             if (cv1.SelectedItem != null || cv2.SelectedItem != null || cv3.SelectedItem != null || cv4.SelectedItem != null || cv5.SelectedItem != null)
             {
                 Navigation.PushModalAsync(new NavigationPage(new DescribeProblemPage(tmp)));
