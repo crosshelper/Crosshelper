@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.LocationPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:Crosshelper.PlacesBar;"
+             x:Class="Crosshelper.Views.LocationPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" Android="0" />
+    </ContentPage.Padding>
         <NavigationPage.TitleView>
         <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
         </NavigationPage.TitleView>    
@@ -15,6 +21,22 @@
                     <Label x:Name="Addresslabel" Text="Use my current location" TextColor="#666666" TextDecorations="Underline" FontSize="20" FontAttributes="Bold"/>
                 </StackLayout> 
             </StackLayout>
-                <ListView></ListView>
+
+    <StackLayout>
+        <custom:PlacesBar x:Name="search_bar" />
+        <Image Source="" HeightRequest="30" HorizontalOptions="Center" />
+        <AbsoluteLayout>
+            <ActivityIndicator x:Name="spinner" IsRunning="false"
+                AbsoluteLayout.LayoutBounds="0.5, 0.1, 50, 50" AbsoluteLayout.LayoutFlags="PositionProportional" />
+            <ListView x:Name="results_list" IsVisible="false"
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="SizeProportional" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Description}" Detail="{Binding Place_ID}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </AbsoluteLayout>
+    </StackLayout>
         </StackLayout> 
 </ContentPage>
