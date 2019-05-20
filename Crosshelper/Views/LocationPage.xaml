@@ -24,5 +24,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </AbsoluteLayout>
+        <Image Source="powered_by_google_on_white.png" HeightRequest="30" HorizontalOptions="End" />
     </StackLayout>
 </ContentPage>
