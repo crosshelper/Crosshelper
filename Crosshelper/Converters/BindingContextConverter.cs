@@ -58,9 +58,9 @@ namespace Crosshelper.Converters
         public List<HelperLabel> BindingHelpersConvert(List<UserPro> helpers)
         {
             List<HelperLabel> newhelpers = new List<HelperLabel>();
-            HelperLabel tmp = new HelperLabel();
             foreach (UserPro helper in helpers)
             {
+                HelperLabel tmp = new HelperLabel();
                 tmp.HelperID = helper.UserID;
                 tmp.Name = helper.FirstName + "  " + helper.LastName;
                 tmp.Rating = StarNoToStarSign(helper.Rating);
@@ -83,13 +83,13 @@ namespace Crosshelper.Converters
         public List<ReviewLabelContent> BindingReviewssConvert(List<ReviewsInfo> reviews)
         {
             List<ReviewLabelContent> newreviews = new List<ReviewLabelContent>();
-            ReviewLabelContent tmp = new ReviewLabelContent();
+
             foreach (ReviewsInfo review in reviews)
             {
+                ReviewLabelContent tmp = new ReviewLabelContent();
                 tmp.ReviewerName = uih.GetUserInfoByID(review.UserID).FirstName;
                 tmp.ReviewerRating = StarNoToStarSign(review.ReviewRating);
                 tmp.ReviewerContent = review.ReviewContent;
-
                 newreviews.Add(tmp);
             }
             return newreviews;
