@@ -15,7 +15,7 @@ namespace Crosshelper.Converters
             var userName = Settings.ChatID;
             if (user.UserId == userName)
             {
-                background = Color.FromHex("#FF5252");
+                background = Color.FromHex("#FFFFFF");
                 if (parameterType == 0)
                     background = Color.FromHex("#F1F0F0");
             }

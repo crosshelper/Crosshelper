@@ -1,6 +1,7 @@
 ﻿using CarouselView.FormsPlugin.iOS;
 using FFImageLoading.Forms.Platform;
 using Foundation;
+using ImageCircle.Forms.Plugin.iOS;
 using UIKit;
 using Xamarin.Forms;
 
@@ -26,6 +27,7 @@ namespace Crosshelper.iOS
             AiForms.Renderers.iOS.SettingsViewInit.Init(); //need to write here
             CarouselViewRenderer.Init();
             CachedImageRenderer.Init();
+            ImageCircleRenderer.Init();
             //PlacesClient.ProvideApiKey("AIzaSyBcxooWTNnHQJb10x0cgkijXn5fowDfUjE");
 
             LoadApplication(new App());

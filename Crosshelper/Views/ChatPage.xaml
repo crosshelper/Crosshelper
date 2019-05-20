@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:Crosshelper.Converters"
              xmlns:controls="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
+            
              x:Class="Crosshelper.Views.ChatPage">
 
     <ContentPage.Resources>
@@ -35,18 +36,23 @@
                                     <RowDefinition Height="*" />
                                     <RowDefinition Height="5" />
                                 </Grid.RowDefinitions>
-
-                                <Frame Grid.ColumnSpan="2" 
+                                <StackLayout Grid.ColumnSpan="2" 
                                        Padding="5" 
-                                       OutlineColor="#BF8585" 
                                        Grid.Column="{Binding Sender, Converter={StaticResource TypeToColumnConverter}}" 
                                        BackgroundColor="{Binding Sender, Converter={StaticResource TypeToBackgroundConverter}, ConverterParameter=1}">
+                                    
+                                    <ImageButton>
+                                        
+                                    </ImageButton>
+                                    
+                                    <Label Text="Bo Chen"></Label>
                                     <Label Text="{Binding Message}" 
                                            TextColor="{Binding Sender, Converter={StaticResource TypeToTextColorConverter}, ConverterParameter=1}" 
                                            FontSize="Medium" 
                                            LineBreakMode="WordWrap" 
                                            VerticalOptions="Center"/>
-                                </Frame>
+                                    
+                                </StackLayout>
                             </Grid>
                         </ContentView>
                     </ViewCell>
