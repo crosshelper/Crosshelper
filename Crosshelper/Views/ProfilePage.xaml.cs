@@ -13,6 +13,13 @@ namespace Crosshelper.Views
 {
     public partial class ProfilePage : ContentPage
     {
+        // 初始化 Amazon Cognito 凭证提供程序
+        /*CognitoAWSCredentials credentials = new CognitoAWSCredentials(
+            "us-east-1:220800bd-8233-4785-b80e-7f440926f503", // 身份池 ID
+            RegionEndpoint.USEast1 // 区域
+        );
+        */
+
         void Handle_Saved(object sender, System.EventArgs e)
         {
             _usr.FirstName = FirstName;
