@@ -14,7 +14,7 @@ namespace Crosshelper.Views
 {
     public partial class LocationPage : ContentPage
     {
-        string GooglePlacesApiKey = "AIzaSyBcxooWTNnHQJb10x0cgkijXn5fowDfUjE";//Keys.ApiKey;  // Replace this with your api key
+        string GooglePlacesApiKey = Properties.Resources.API_KEY;//Keys.ApiKey;  // Replace this with your api key
 
         public LocationPage()
         {
@@ -22,7 +22,7 @@ namespace Crosshelper.Views
 
             search_bar.ApiKey = GooglePlacesApiKey;
             search_bar.Type = PlaceType.Address;
-            search_bar.Components = new Components("country:us|country:uk"); // Restrict results to Australia and New Zealand
+            search_bar.Components = new Components("country:us|country:uk"); // Restrict results to United States and United Kingdom
             search_bar.PlacesRetrieved += Search_Bar_PlacesRetrieved;
             search_bar.TextChanged += Search_Bar_TextChanged;
             search_bar.MinimumSearchText = 1;
