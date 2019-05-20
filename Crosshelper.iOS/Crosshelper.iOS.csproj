@@ -141,6 +141,9 @@
     <BundleResource Include="Resources\tab_favorite%402x.png" />
     <BundleResource Include="Resources\tab_favorite%403x.png" />
     <BundleResource Include="Resources\cb_logo.png" />
+    <BundleResource Include="Resources\powered_by_google_on_white.png" />
+    <BundleResource Include="Resources\powered_by_google_on_white%402x.png" />
+    <BundleResource Include="Resources\powered_by_google_on_white%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
