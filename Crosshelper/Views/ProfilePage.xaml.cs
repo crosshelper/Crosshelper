@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using Amazon;
 using Amazon.CognitoIdentity;
@@ -18,10 +19,7 @@ namespace Crosshelper.Views
     public partial class ProfilePage : ContentPage
     {
         // 初始化 Amazon Cognito 凭证提供程序
-        CognitoAWSCredentials credentials = new CognitoAWSCredentials(
-            "us-east-1:220800bd-8233-4785-b80e-7f440926f503", // 身份池 ID
-            RegionEndpoint.USEast1 // 区域
-        );
+
 
         private string filename = Settings.ChatID + DateTime.Now.ToShortDateString();
         private const string bucketName = "image.cycbis.com/UserProfileIcon";
@@ -105,14 +103,16 @@ namespace Crosshelper.Views
                 }
                 else
                 {
-                    var fileTransferUtility =
-                    new TransferUtility(s3Client);
+                    AWSS3Uploader awsObject = new AWSS3Uploader();
+                    awsObject.SetupAsync();
+                    var key = filename + Path.GetFileName(file.Path);
+                    Task.Run(() => awsObject.UploadFileAsync(file.Path, key));
 
                     //await fileTransferUtility.UploadAsync(file.GetStream(), bucketName,"123");
 
                     //await fileTransferUtility.UploadAsync(filename + file.AlbumPath, bucketName);
 
-                    await fileTransferUtility.UploadAsync(filename + file.Path, bucketName);
+                    //await fileTransferUtility.UploadAsync(filename + file.Path, bucketName);
 
                 }
             }

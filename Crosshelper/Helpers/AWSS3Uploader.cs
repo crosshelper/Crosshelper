@@ -1,15 +1,67 @@
 ﻿using Amazon;
+using Amazon.CognitoIdentity;
 using Amazon.S3;
+using Amazon.S3.Model;
 using Amazon.S3.Transfer;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 
 namespace Crosshelper.Helpers
 {
-    class UploadFileMPUHighLevelAPI
+    class AWSS3Uploader
     {
+        public TransferUtility transferUtility;
 
+        public AWSS3Uploader()
+        {
+        }
+
+        public async void SetupAsync()
+        {
+            CognitoAWSCredentials credentials = new CognitoAWSCredentials(
+            "us-east-1:220800bd-8233-4785-b80e-7f440926f503", // 身份池 ID
+            RegionEndpoint.USEast1 // 区域
+            );
+
+            var config = new TransferUtilityConfig();
+            config.ConcurrentServiceRequests = 10;
+            config.MinSizeBeforePartUpload = 16 * 1024 * 1024;
+
+            var s3Client = new AmazonS3Client(credentials, RegionEndpoint.EUWest1);
+            ListBucketsResponse response = await s3Client.ListBucketsAsync();
+            Console.WriteLine("Buckets owner - {0}", response.Owner.DisplayName);
+            foreach (S3Bucket bucket in response.Buckets)
+            {
+                Console.WriteLine("Bucket {0}, Created on {1}", bucket.BucketName, bucket.CreationDate);
+            }
+
+            transferUtility = new TransferUtility(s3Client, config);
+        }
+
+        public async void UploadFileAsync(string filePath, string bucketName)
+        {
+
+            try
+            {
+                await transferUtility.UploadAsync(
+                    filePath,
+                    bucketName
+                );
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine("AWSS3 upload file exception = " + e);
+            }
+
+
+        }
+
+
+
+
+        /*
         private const string bucketName = "image.cycbis.com";//"*** provide bucket name ***";
         private const string keyName = "*** provide a name for the uploaded object ***";
         private const string filePath = "*** provide the full path name of the file to upload ***";
@@ -17,7 +69,7 @@ namespace Crosshelper.Helpers
         private static readonly RegionEndpoint bucketRegion = RegionEndpoint.USWest1;
         private static IAmazonS3 s3Client;
 
-        public UploadFileMPUHighLevelAPI()
+        public AWSS3Uploader()
         {
             s3Client = new AmazonS3Client(bucketRegion);
             UploadFileAsync().Wait();
@@ -72,7 +124,7 @@ namespace Crosshelper.Helpers
 
                 await fileTransferUtility.UploadAsync(fileTransferUtilityRequest);
                 Console.WriteLine("Upload 4 completed");
-                */
+                
             }
             catch (AmazonS3Exception e)
             {
@@ -82,7 +134,9 @@ namespace Crosshelper.Helpers
             {
                 Console.WriteLine("Unknown encountered on server. Message:'{0}' when writing an object", e.Message);
             }
+            
 
         }
+        */
     }
 }
