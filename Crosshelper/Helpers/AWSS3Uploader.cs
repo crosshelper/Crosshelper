@@ -13,12 +13,12 @@ namespace Crosshelper.Helpers
     class AWSS3Uploader
     {
         public TransferUtility transferUtility;
-
+        private static readonly RegionEndpoint bucketRegion = RegionEndpoint.USWest1;
         public AWSS3Uploader()
         {
         }
 
-        public async void SetupAsync()
+        public async void UploadFileAsync(string filePath, string bucketName, string keyname)
         {
             CognitoAWSCredentials credentials = new CognitoAWSCredentials(
             "us-east-1:220800bd-8233-4785-b80e-7f440926f503", // 身份池 ID
@@ -29,25 +29,16 @@ namespace Crosshelper.Helpers
             config.ConcurrentServiceRequests = 10;
             config.MinSizeBeforePartUpload = 16 * 1024 * 1024;
 
-            var s3Client = new AmazonS3Client(credentials, RegionEndpoint.EUWest1);
-            ListBucketsResponse response = await s3Client.ListBucketsAsync();
-            Console.WriteLine("Buckets owner - {0}", response.Owner.DisplayName);
-            foreach (S3Bucket bucket in response.Buckets)
-            {
-                Console.WriteLine("Bucket {0}, Created on {1}", bucket.BucketName, bucket.CreationDate);
-            }
+            var s3Client = new AmazonS3Client(credentials, bucketRegion);
 
-            transferUtility = new TransferUtility(s3Client, config);
-        }
-
-        public async void UploadFileAsync(string filePath, string bucketName)
-        {
+            transferUtility = new TransferUtility(s3Client);//, config);
 
             try
             {
                 await transferUtility.UploadAsync(
                     filePath,
-                    bucketName
+                    bucketName,
+                    keyname
                 );
             }
             catch (Exception e)

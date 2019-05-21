@@ -106,7 +106,8 @@ namespace Crosshelper.Views
                     AWSS3Uploader awsObject = new AWSS3Uploader();
                     awsObject.SetupAsync();
                     var key = filename + Path.GetFileName(file.Path);
-                    Task.Run(() => awsObject.UploadFileAsync(file.Path, key));
+                    Task.Run(() => awsObject.UploadFileAsync(file.Path,
+                                                             key));
 
                     //await fileTransferUtility.UploadAsync(file.GetStream(), bucketName,"123");
 
@@ -150,6 +151,9 @@ namespace Crosshelper.Views
             Email = _ac.Email;
             PhoneNumber = _ac.ContactNo;
             BindingContext = this;
+        }
+    }
+}
         }
     }
 }
