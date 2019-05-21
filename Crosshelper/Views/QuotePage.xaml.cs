@@ -34,7 +34,7 @@ namespace Crosshelper.Views
                     ExpYear = Convert.ToInt64("2022"),
                     ExpMonth = Convert.ToInt64("04"),
                     Cvc = "684",
-                    Currency = "eur"
+                    Currency = "usd"
                 }
             };
 
@@ -50,7 +50,7 @@ namespace Crosshelper.Views
             var options2 = new ChargeCreateOptions
             {
                 Amount = Convert.ToInt64("20.89"),//valor),
-                Currency = "eur",
+                Currency = "usd",
                 Description = "Charge for ",
                 SourceId = checkToken
             };
