@@ -51,6 +51,38 @@ namespace Crosshelper.Helpers
             return topiclist;
         }
 
+        internal void UpdateMyTopic(string zipcode, string language, string description,int topicID)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                    "UPDATE TopicInfo SET " +
+                    "Zip = @para1, " +
+                    "Language = @para2, " +
+                    "Description = @para3" +
+                    " WHERE TopicID = @para4";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", zipcode);
+                cmd.Parameters.AddWithValue("para2", language);
+                cmd.Parameters.AddWithValue("para3", description);
+                cmd.Parameters.AddWithValue("para4", topicID);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
         private void GetMyTopicByUid(string userId)
         {
             //建立数据库连接

@@ -49,13 +49,21 @@ namespace Crosshelper.Views
         void Handle_Next(object sender, EventArgs e)
         {
             string language = "English";
+            var tih = new TopicInfoHelper();
             if (languagepicker.SelectedItem != null)
             {
                 language = languagepicker.SelectedItem.ToString();
             }
-            var tih = new TopicInfoHelper();
-            tih.ListMyTopic(_typeproblem.TagID,"95131",language,DescriptionBox.Text);
+            if(_currentTopic==null)
+            {
 
+                tih.ListMyTopic(_typeproblem.TagID, "95131", language, DescriptionBox.Text);
+            }
+            else
+            {
+
+                tih.UpdateMyTopic("95131", language, DescriptionBox.Text, _currentTopic.TopicID);
+            }
             Navigation.PushAsync(new PickHelperPage(_typeproblem,language));
         }
 
