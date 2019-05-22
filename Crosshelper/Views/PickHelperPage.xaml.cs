@@ -25,10 +25,10 @@ namespace Crosshelper.Views
         UserInfoHelper uih = new UserInfoHelper();
         BindingContextConverter cvt = new BindingContextConverter();
 
-        public PickHelperPage(TypeProblem _typeproblem, string language)
+        public PickHelperPage(TopicInfo _topic)
         {
             InitializeComponent();
-            Helpers = cvt.BindingHelpersConvert(uih.GetHelperList(_typeproblem.TagID.ToString(),language));//"1"));
+            Helpers = cvt.BindingHelpersConvert(uih.GetHelperList(_topic.TagID.ToString(), _topic.Language));//"1"));
             //Helpers = new List<HelperLabel>();
             Helpers.Add(new HelperLabel
             {

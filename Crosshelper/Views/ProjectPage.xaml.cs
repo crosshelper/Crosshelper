@@ -12,34 +12,39 @@ namespace Crosshelper.Views
         private List<CaseInfo> PastCaseInfoLabels { get; set; } = new List<CaseInfo>();
         UserInfoHelper uih = new UserInfoHelper();
         TopicInfoHelper tih = new TopicInfoHelper();
-
+        //TODO:下拉刷新，删除listitem
         public ProjectPage()
         {
             InitializeComponent();
 
             TopicInfoLabels = tih.GetMyTopicList(Settings.UserId);
-
             PastCaseInfoLabels = uih.GetPastCaseInfoByUid(Settings.UserId);
 
             currentList.ItemsSource = TopicInfoLabels;
             currentTab.Content = currentList;
 
-
             pastList.ItemsSource = PastCaseInfoLabels;
             pastTab.Content = pastList;
             BindingContext = this;
         }
-        void Handle_CurrentItemSelected(object sender, SelectedItemChangedEventArgs e)
+
+        void Handle_CurrentItemTapped(object sender, ItemTappedEventArgs e)
         {
-            TopicInfo _currentTopic = e.SelectedItem as TopicInfo;
+            TopicInfo _currentTopic = e.Item as TopicInfo;
             ((ListView)sender).SelectedItem = null;
             Navigation.PushAsync(new DescribeProblemPage(_currentTopic));
         }
-        void Handle_PastItemSelected(object sender, SelectedItemChangedEventArgs e)
+
+        void Handle_PastItemTapped(object sender, ItemTappedEventArgs e)
         {
-            CaseInfo _currentCase = e.SelectedItem as CaseInfo;
+            CaseInfo _currentCase = e.Item as CaseInfo;
             ((ListView)sender).SelectedItem = null;
             Navigation.PushAsync(new PastHistoryDetailPage(_currentCase));
         }
+
+        //protected override void OnAppearing()
+        //{
+
+        //}
     }
 }

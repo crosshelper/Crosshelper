@@ -31,7 +31,8 @@ namespace Crosshelper.Views
         public DescribeProblemPage(TopicInfo tmp)
         {
             _currentTopic = tmp;
-            DescriptionBox.Text = _currentTopic.Description;
+            InitializeComponent();
+            des.Text = _currentTopic.Description;
             if(_currentTopic.Status == 1)
             {
                 switchButton.IsToggled = true;
@@ -40,8 +41,6 @@ namespace Crosshelper.Views
             {
                 switchButton.IsToggled = false;
             }
-
-            InitializeComponent();
         }
 
         //Not Really按钮 Not really Button
@@ -68,23 +67,23 @@ namespace Crosshelper.Views
                 int status = 0;
                 if(switchButton.IsToggled)
                     status = 1; 
-                tih.ListMyTopic(_typeproblem.TagID, "95131", language, DescriptionBox.Text,status);
+                tih.ListMyTopic(_typeproblem.TagID, "95131", language, des.Text,status);
+                _currentTopic.TagID = _typeproblem.TagID;
+                _currentTopic.Zipcode = "95131";
+                _currentTopic.Language = language;
+                _currentTopic.Description = des.Text;
+                _currentTopic.Status = status;
             }
             else
             {
                 int status = 0;
                 if (switchButton.IsToggled)
                     status = 1;
-                tih.UpdateMyTopic("95131", language, DescriptionBox.Text, _currentTopic.TopicID, status);
+                tih.UpdateMyTopic("95131", language, des.Text, _currentTopic.TopicID, status);
             }
-            Navigation.PushAsync(new PickHelperPage(_typeproblem,language));
+            Navigation.PushAsync(new PickHelperPage(_currentTopic));
         }
 
-        //Describe Problem Text Editor
-        void DescribeProblemEditorCompleted(object sender, EventArgs e)
-        {
-            string text = ((Editor)sender).Text;
-        }
         private async void Handel_MyLocation(object sender, EventArgs e)
         {
             var locator = CrossGeolocator.Current;

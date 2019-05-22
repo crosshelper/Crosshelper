@@ -12,7 +12,7 @@ namespace Crosshelper.ViewModels
         public ObservableCollection<Models.User> Users { get; set; } = new ObservableCollection<Models.User>();
         public INavigation Navigation;
         #endregion
-
+        //TODO:刷新真实user
         public MessageListViewModel()
         {
             Users.Add(new Models.User { ChatID = "cycbis_001", FirstName = "Thomas", LastName = "Wong" });

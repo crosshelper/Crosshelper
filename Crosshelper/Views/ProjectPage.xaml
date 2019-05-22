@@ -10,7 +10,7 @@
                 <!-- Current -->
                 <tv:TabItem x:Name="currentTab" HeaderText="Current" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#FF4E18">
             <StackLayout>
-                <ListView x:Name="currentList" HasUnevenRows="true" ItemTapped="Handle_CurrentItemSelected">
+                <ListView x:Name="currentList" HasUnevenRows="true" ItemTapped="Handle_CurrentItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -48,7 +48,7 @@
                 <!-- Past -->
         <tv:TabItem x:Name="pastTab" HeaderText="Past" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#999999">
                         <StackLayout>
-                <ListView x:Name="pastList" HasUnevenRows="true" ItemTapped="Handle_PastItemSelected">
+                <ListView x:Name="pastList" HasUnevenRows="true" ItemTapped="Handle_PastItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

@@ -94,7 +94,7 @@ namespace Crosshelper.Helpers
             {   //建立连接，打开数据库
                 conn.Open();
                 string sqlstr =
-                "SELECT TopicID,TagID,Zip,Language,Description FROM TopicInfo WHERE Uid = @para1";
+                "SELECT TopicID,TagID,Zip,Language,Description,Status FROM TopicInfo WHERE Uid = @para1";
 
                 MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
                 //通过设置参数的形式给SQL 语句串值
