@@ -10,8 +10,241 @@ namespace Crosshelper.Helpers
     {
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
 
+        private readonly List<CaseInfo> caselist  = new List<CaseInfo>();
+        private readonly List<CaseInfo> pastcaselist = new List<CaseInfo>();
+        private readonly List<ReviewsInfo> reviewlist = new List<ReviewsInfo>();
+        private readonly List<PaymentInfo> paymentlist = new List<PaymentInfo>();
+
         private readonly List<UserPro> helperlist = new List<UserPro>();
         private readonly List<int> helperuidlist = new List<int>();
+
+        private string speclist = "";
+        private readonly List<int> tagidlist = new List<int>();
+
+        internal List<CaseInfo> GetCaseInfoByUid(string userId)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT CaseID,HelperUID,ReceiptID,CaseType,CaseDateTime,CaseDes FROM CaseInfo WHERE CustomerUID = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", userId);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader.GetString(2) == "0")
+                    {
+                        string CaseID = reader.GetString(0);
+                        string HelperUID = reader.GetString(1);
+                        string ReceiptID = reader.GetString(2);
+                        string CaseType = reader.GetString(3);
+                        string CaseTypeLabelText = "";
+                        if (CaseType == "1")
+                            CaseTypeLabelText = "Emergency";
+                        DateTime CaseDateTime = reader.GetDateTime(4);
+                        string CaseDes = reader.GetString(5);
+
+                        CaseInfo tmp = new CaseInfo() 
+                        { 
+                            CaseID = CaseID, 
+                            HelperID = HelperUID,
+                            HelperName = GetNameByID(HelperUID),
+                            CustomerID = userId,
+                            ReceiptID = ReceiptID, 
+                            CaseType = CaseType, 
+                            CaseTypeLabelText = CaseTypeLabelText, 
+                            CaseDateTime = CaseDateTime, 
+                            CaseDescription = CaseDes 
+                        };
+                        caselist.Add(tmp);
+                    }
+                }
+                if (caselist != null)
+                return caselist;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+            return caselist;
+        }
+
+        internal ReceiptInfo GetReceiptByID(string receiptID)
+        {
+            ReceiptInfo tmp = new ReceiptInfo();
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT ServiceFee,EqFee,Tax,Surcharges,PayTime FROM Receipts WHERE ReceiptID = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", receiptID);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    tmp.ServiceFee = reader.GetDouble(0);
+                    tmp.EqFee = reader.GetDouble(1);
+                    tmp.Tax = reader.GetDouble(2);
+                    tmp.Surcharge = reader.GetDouble(3);
+                    tmp.PaymentDateTime = reader.GetDateTime(4);
+                    tmp.PaymentName = "7785-9085-3425-8797";
+                }
+                if (tmp != null)
+                    return tmp;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接 
+            }
+            return tmp;
+        }
+
+        internal List<CaseInfo> GetPastCaseInfoByUid(string userId)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT CaseID,HelperUID,ReceiptID,CaseType,CaseDateTime,CaseDes FROM CaseInfo WHERE CustomerUID = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", userId);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if(reader.GetString(2) != "0")
+                    {
+                        string CaseID = reader.GetString(0);
+                        string HelperUID = reader.GetString(1);
+                        string ReceiptID = reader.GetString(2);
+                        string CaseType = reader.GetString(3);
+                        string CaseTypeLabelText = "";
+                        if (CaseType == "1")
+                            CaseTypeLabelText = "Emergency";
+                        DateTime CaseDateTime = reader.GetDateTime(4);
+                        string CaseDes = reader.GetString(5);
+                        CaseInfo tmp = new CaseInfo()
+                        {
+                            CaseID = CaseID,
+                            HelperID = HelperUID,
+                            HelperName = GetNameByID(HelperUID),
+                            CustomerID = userId,
+                            ReceiptID = ReceiptID,
+                            CaseType = CaseType,
+                            CaseTypeLabelText = CaseTypeLabelText,
+                            CaseDateTime = CaseDateTime,
+                            CaseDescription = CaseDes
+                        };
+                        pastcaselist.Add(tmp);
+                    }
+                }
+                if (pastcaselist != null)
+                    return pastcaselist;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+            return pastcaselist;
+        }
+
+        internal void InsertPaymentInfo(PaymentInfo pinfo)
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "INSERT INTO PaymentInfo(AccountNumber,CName,ExDate,CVV,Zip,Uid) VALUES(@para1, @para2, @para3, @para4, @para5, @para6) ";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", pinfo.AccountNo);
+                    cmd.Parameters.AddWithValue("para2", pinfo.CName);
+                    cmd.Parameters.AddWithValue("para3", pinfo.ExDate);
+                    cmd.Parameters.AddWithValue("para4", pinfo.CVV);
+                    cmd.Parameters.AddWithValue("para5", pinfo.Zipcode);
+                    cmd.Parameters.AddWithValue("para6", pinfo.Uid);
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Connecting to MySQL success");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Connection failed");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        internal void UpdatePaymentInfo(PaymentInfo paymentinfo)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                    "UPDATE PaymentInfo SET " +
+                    "AccountNumber = @para1, " +
+                    "CName = @para2, " +
+                    "ExDate = @para3, " +
+                    "CVV = @para4, " +
+                    "Zip = @para5" +
+                    " WHERE Pid = @para6";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", paymentinfo.AccountNo);
+                cmd.Parameters.AddWithValue("para2", paymentinfo.CName);
+                cmd.Parameters.AddWithValue("para3", paymentinfo.ExDate);
+                cmd.Parameters.AddWithValue("para4", paymentinfo.CVV);
+                cmd.Parameters.AddWithValue("para5", paymentinfo.Zipcode);
+                cmd.Parameters.AddWithValue("para6", paymentinfo.PaymentID);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
 
         internal void UpdateUac(Uac ac)
         {
@@ -87,20 +320,142 @@ namespace Crosshelper.Helpers
             }
         }
 
-        public List<UserPro> GetHelperList()
+        public List<UserPro> GetHelperList(string tagid, string language)
         {
+            GetHelperIDByTag(tagid);
+            //TODO: language location search
+            //double lo = Settings.CurrentLatitude;
+            //double la = Settings.CurrentLongitude;
+            foreach (int uid in helperuidlist)
+            {
+                GetHelperInfoByID(uid.ToString());
+            }
             return helperlist;
         }
 
-        public void SearchingInit()
+        public UserPro GetHelperInfo()
         {
-            foreach (int uid in helperuidlist)
+            return helperlist[0];
+        }
+
+        public List<PaymentInfo> GetPaymentsList(string userid)
+        {
+            GetPaymentByID(userid);
+            return paymentlist;
+        }
+
+        internal string GetTagsByID(string helperID)
+        {
+            GetTagByHelperID(helperID);
+            foreach (int tagid in tagidlist)
             {
-                GetHelperIDbyChatID(uid);
+                GetTagInfoByID(tagid.ToString());
+            }
+            return speclist;
+        }
+
+        private void GetTagByHelperID(string helperID)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr = "SELECT TagID FROM HelperTag WHERE Uid = @para1";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", helperID);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    tagidlist.Add(reader.GetInt32(0));
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
             }
         }
 
-        public void GetProHelperByTag(int tagid)
+        private void GetTagInfoByID(string v)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT TagName FROM Tags WHERE TagID = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", v);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    speclist += reader.GetString(0) + ", ";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
+        public List<ReviewsInfo> GetReviewsList(string userid)
+        {
+            GetReviewByID(userid);
+            return reviewlist;
+        }
+
+        private void GetReviewByID(string userid)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT ReviewID,RRating,Content FROM Reviews WHERE Uid = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", userid);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string ReviewID = reader.GetString(0);
+                    int ReviewRating = reader.GetInt32(1);
+                    string ReviewContent = reader.GetString(2);
+                    ReviewsInfo tmp = new ReviewsInfo() { UserID = userid, ReviewRating = ReviewRating, ReviewContent = ReviewContent, ReviewID = ReviewID };
+                    reviewlist.Add(tmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
+        private void GetHelperIDByTag(string tagid)
         {
             //建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -114,38 +469,7 @@ namespace Crosshelper.Helpers
                 //cmd.Parameters.AddWithValue("para2", password);
 
                 MySqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    helperuidlist.Add(reader.GetInt32(0));
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                conn.Close();   //关闭连接              
-            }
-        }
-
-        public void GetHelperInfoByID(string chatid)
-        {
-            UserPro helper = new UserPro();
-            //建立数据库连接
-            MySqlConnection conn = new MySqlConnection(connStr);
-            try
-            {   //建立连接，打开数据库
-                conn.Open();
-                string sqlstr = "SELECT Uid FROM HelperInfo,UserInfo WHERE UserInfo.ChatID = @para1";
-
-                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
-                //通过设置参数的形式给SQL 语句串值
-                cmd.Parameters.AddWithValue("para1", chatid);
-                //cmd.Parameters.AddWithValue("para2", password);
-
-                MySqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
+                while (reader.Read())
                 {
                     helperuidlist.Add(reader.GetInt32(0));
                 }
@@ -177,7 +501,7 @@ namespace Crosshelper.Helpers
                 //cmd.Parameters.AddWithValue("para2", password);
 
                 MySqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
+                while (reader.Read())
                 {
                     user.FirstName = reader.GetString(0);
                     user.LastName = reader.GetString(1);
@@ -204,6 +528,40 @@ namespace Crosshelper.Helpers
             }
         }
 
+        public string GetNameByID(string userid)
+        {
+            string name = "";
+            //并没有建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT FirstName,LastName FROM UserInfo WHERE Uid = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", userid);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    name = reader.GetString(0) + " " + reader.GetString(1);
+                }
+                return name;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return "";
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
         public Uac GetUacByID(string userid)
         {
             Uac ac = new Uac();
@@ -219,13 +577,13 @@ namespace Crosshelper.Helpers
                 cmd.Parameters.AddWithValue("para1", userid);
 
                 MySqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
+                while (reader.Read())
                 {
                     ac.UserID = reader.GetString(0);
                     ac.UserName = reader.GetString(1);
                     ac.Email = reader.GetString(2);
                     ac.ContactNo = reader.GetString(3);
-                    ac.Pwd = reader.GetString(3);
+                    ac.Pwd = reader.GetString(4);
                 }
                 return ac;
             }
@@ -240,17 +598,53 @@ namespace Crosshelper.Helpers
             }
         }
 
-        //ChatID to ID
-        private void GetHelperIDbyChatID(int userid)
+        private void GetPaymentByID(string uid)
         {
-            UserPro helper = new UserPro();
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT Pid,AccountNumber,CName,ExDate,CVV,Zip FROM PaymentInfo WHERE Uid = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", uid);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string PaymentID = reader.GetString(0);
+                    string AccountNo = reader.GetString(1);
+                    string CName = reader.GetString(2);
+                    DateTime ExDate = reader.GetDateTime(3);
+                    string CVV = reader.GetString(4);
+                    string Zipcode = reader.GetString(5);
+                    PaymentInfo ptmp = new PaymentInfo() { Uid = uid, PaymentID = PaymentID, AccountNo = AccountNo, CName = CName, ExDate = ExDate, CVV = CVV, Zipcode = Zipcode };
+                    paymentlist.Add(ptmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
+        public void GetHelperInfoByID(string userid)
+        {
             //并没有建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
             try
             {   //建立连接，打开数据库
                 conn.Open();
                 string sqlstr =
-                "SELECT FirstName,LastName,Icon,ChatID,FLanguage,SLanguage,PaymentID,Location,Rating,`Status`,PriceSign FROM HelperInfo,UserInfo WHERE HelperInfo.Uid = @para1 AND UserInfo.Uid = @para1";
+                "SELECT FirstName,LastName,Icon,ChatID,FLanguage,SLanguage,PaymentID,Location,Rating,`Status`,PriceSign,Bio FROM HelperInfo,UserInfo WHERE HelperInfo.Uid = @para1 AND UserInfo.Uid = @para1";
 
                 MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
                 //通过设置参数的形式给SQL 语句串值
@@ -258,20 +652,37 @@ namespace Crosshelper.Helpers
                 //cmd.Parameters.AddWithValue("para2", password);
 
                 MySqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
+                while (reader.Read())
                 {
-                    helper.FirstName = reader.GetString(0);
-                    helper.LastName = reader.GetString(1);
-                    helper.Icon = reader.GetString(2);
-                    helper.ChatID = reader.GetString(3);
-                    helper.FLanguage = reader.GetString(4);
-                    helper.SLanguage = reader.GetString(5);
-                    helper.PaymentID = reader.GetString(6);
-                    helper.Location = reader.GetString(7);
-                    helper.Rating = reader.GetInt32(8);
-                    helper.Status = reader.GetInt32(9);
-                    helper.PriceSign = reader.GetString(10);
-                    helper.UserID = userid.ToString();
+                    string FirstName = reader.GetString(0);
+                    string LastName = reader.GetString(1);
+                    string Icon = reader.GetString(2);
+                    string ChatID = reader.GetString(3);
+                    string FLanguage = reader.GetString(4);
+                    string SLanguage = reader.GetString(5);
+                    string PaymentID = reader.GetString(6);
+                    string Location = reader.GetString(7);
+                    int Rating = reader.GetInt32(8);
+                    int Status = reader.GetInt32(9);
+                    string PriceSign = reader.GetString(10);
+                    string Bio = reader.GetString(11);
+                    string UserID = userid.ToString();
+                    UserPro helper = new UserPro()
+                    {
+                        FirstName = FirstName,
+                        LastName = LastName,
+                        Icon = Icon,
+                        ChatID = ChatID,
+                        FLanguage = FLanguage,
+                        SLanguage = SLanguage,
+                        PaymentID = PaymentID,
+                        Location = Location,
+                        Rating = Rating,
+                        Status = Status,
+                        PriceSign = PriceSign,
+                        UserID = UserID,
+                        Bio = Bio
+                    };
                     helperlist.Add(helper);
                 }
             }

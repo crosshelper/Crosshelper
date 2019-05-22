@@ -8,9 +8,9 @@
                      HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
                      HasUnevenRows="true">
     
-    <sv:Section Title="Account" FooterText="" >
+    <sv:Section Title="Account" FooterText="" TextColor="Black" >
         <sv:CommandCell x:Name="UserCell" Tapped="Handle_MyProfile" IconSource="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png" IconSize="60,60" IconRadius="30"
-            Title="William Liang" Description="william.liang@crosshelper.com"
+            Title="William Liang" Description=""
             Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"/>
         <sv:CommandCell Title="My Background" Tapped="Handle_Mybackground"/>
     </sv:Section>

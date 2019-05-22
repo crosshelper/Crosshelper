@@ -1,6 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-
+using AiForms.Renderers;
+using Crosshelper.Helpers;
+using Crosshelper.Models;
 using Xamarin.Forms;
 
 namespace Crosshelper.Views
@@ -11,18 +13,47 @@ namespace Crosshelper.Views
         {
             Navigation.PopToRootAsync(false);
         }
-        void Handle_AddPaymentMethod(object sender, System.EventArgs e)
+
+        void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            Navigation.PushAsync(new AddPaymentMethodPage());
+            PaymentInfo ptmp = e.Item as PaymentInfo;
+            ((ListView)sender).SelectedItem = null;
+            if(ptmp.CVV=="000")
+            {
+                Navigation.PushAsync(new AddPaymentMethodPage());
+            }
+            else
+            {
+                Navigation.PushAsync(new EditPaymentPage(ptmp));
+            }
         }
-        void Handle_EditPaymentMethod(object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new EditPaymentPage());
-        }
+
+        public List<PaymentInfo> PaymentsList { get; set; } = new List<PaymentInfo>();
+        UserInfoHelper uih = new UserInfoHelper();
 
         public PaymentPage()
         {
             InitializeComponent();
+        }
+
+        private void RefreshData()
+        {
+            ls.BeginRefresh();
+            ls.ItemsSource = null;
+            if(PaymentsList.Count>0)
+            {
+                PaymentsList.Clear();
+            }
+            PaymentsList = uih.GetPaymentsList(Settings.UserId);
+            PaymentsList.Add(new PaymentInfo() { AccountNo = "Add a new payment", CVV = "000" });
+            ls.ItemsSource = PaymentsList;
+            ls.EndRefresh();
+        }
+
+        protected override void OnAppearing()
+        {
+            RefreshData();
+            BindingContext = this;
         }
     }
 }

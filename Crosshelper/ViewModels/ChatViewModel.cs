@@ -16,14 +16,13 @@ namespace Crosshelper.ViewModels
 	public class ChatViewModel : ViewModelBase
     {
         #region Properties
-        private Crosshelper.Models.User userTo;
+        private Models.User userTo;
 
-        public Crosshelper.Models.User UserTo
+        public Models.User UserTo
         {
             get { return userTo; }
             set { SetProperty(ref userTo, value); }
         }
-
 
         private ObservableCollection<UserMessage> _messages;
 
@@ -65,6 +64,8 @@ namespace Crosshelper.ViewModels
         {
             SendCommand = new Command(Send);
             Messages = new ObservableCollection<UserMessage>();
+            //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
+            //RemoveChannelHandler("MyKey");
         }
 
         public void Init()
@@ -73,7 +74,7 @@ namespace Crosshelper.ViewModels
             Device.StartTimer(seconds, () => {
                 ch.OnMessageReceived = (BaseChannel baseChannel, BaseMessage baseMessage) => {
                     Messages.Add((UserMessage)baseMessage);
-                    ChatPage.CurrentActivity.ScrollDown(Messages.Last());
+                    //ChatPage.CurrentActivity.ScrollDown(Messages.Last());1
                 };
                 return true;
             });
@@ -83,7 +84,7 @@ namespace Crosshelper.ViewModels
         public async void Load()
         {
             IsBusy = true;
-            await Task.Delay(3000);
+            await Task.Delay(1000);
             PreviousMessageListQuery mPrevMessageListQuery = Channel.CreatePreviousMessageListQuery();
             mPrevMessageListQuery.Load(30, true, (List<BaseMessage> messages, SendBirdException e) => {
                 if (e != null)
@@ -96,12 +97,11 @@ namespace Crosshelper.ViewModels
                 {
                     Messages.Insert(0, (UserMessage)item);
                 }
-                ChatPage.CurrentActivity.ScrollDown(Messages.Last());
+                //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
             });
             IsBusy = false;
             Init();
         }
-
 
         public void Send()
         {
@@ -121,7 +121,7 @@ namespace Crosshelper.ViewModels
                     }
 
                     Messages.Add(userMessage);
-                    ChatPage.CurrentActivity.ScrollDown(Messages.Last());
+                    //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
                 });
                 TxtMessage = string.Empty;
                 IsBusy = false;

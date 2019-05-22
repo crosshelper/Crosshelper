@@ -4,6 +4,8 @@ using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using Crosshelper.Models;
+using Crosshelper.Helpers;
 
 namespace Crosshelper.Views
 {
@@ -11,10 +13,17 @@ namespace Crosshelper.Views
     {
         void Handle_Canceled(object sender, System.EventArgs e)
         {
-            Navigation.PopModalAsync();
+            //var tmppage = this.Parent as GetHelpPage;
+            //tmppage.RefreshSelection();
+            //Navigation.PopModalAsync();
+            Navigation.PushAsync(new QuotePage());
         }
-        public DescribeProblemPage()
+
+        private TypeProblem _typeproblem;
+
+        public DescribeProblemPage(TypeProblem tmp)
         {
+            _typeproblem = tmp;
             InitializeComponent();
         }
         //Not Really按钮 Not really Button
@@ -30,7 +39,12 @@ namespace Crosshelper.Views
         //下一步按钮 Next Button
         void Handle_Next(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PickHelperPage());
+            string language = "English";
+            if (languagepicker.SelectedItem != null)
+            {
+                language = languagepicker.SelectedItem.ToString();
+            }
+            Navigation.PushAsync(new PickHelperPage(_typeproblem,language));
         }
 
         //Describe Problem Text Editor
@@ -44,9 +58,9 @@ namespace Crosshelper.Views
             locator.DesiredAccuracy = 50;
             var position = await locator.GetPositionAsync();
 
-            var Longitude = position.Longitude.ToString();
-            var Latitude = position.Latitude.ToString();
-            Navigation.PushAsync(new LocationPage());
+            Settings.CurrentLongitude = position.Longitude;
+            Settings.CurrentLatitude = position.Latitude;
+            await Navigation.PushAsync(new LocationPage());
         }
         void Handle_Language(object sender, EventArgs e)
         {

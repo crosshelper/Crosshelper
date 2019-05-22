@@ -11,24 +11,26 @@
         <StackLayout>
             <StackLayout>
             <Label Text="Problem Category" FontSize="25" VerticalOptions="Center" Margin="10,5,10,0"/>
-                <CollectionView ItemsSource="{Binding ProblemsCategory}" SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="120" >
+                <CollectionView x:Name="cv1" ItemsSource="{Binding ProblemsCategory}" SelectionMode="Single" SelectionChanged="Handle_PickProblem"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="110">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                                <Grid Padding="10">
+                                <Grid Padding="10,10,10,0">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="20"/>
-                                        <RowDefinition Height="20"/>
-                                        <RowDefinition Height="20"/>
-                                        <RowDefinition Height="20"/>
+                                        <RowDefinition Height="17"/>
+                                        <RowDefinition Height="17"/>
+                                        <RowDefinition Height="17"/>
                                         <RowDefinition Height="20"/>
                                     </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="65"/>
+                                    </Grid.ColumnDefinitions>
                                     <Image Grid.RowSpan="3"
                                            Grid.Row="0"
                                            Source="{Binding ImageUrl}"
-                                           Aspect="AspectFill"
-                                           HeightRequest="75"
-                                           WidthRequest="75" />
-                                     <Label Grid.Row="3"
+                                           Aspect="AspectFit"
+                                           HeightRequest="70"
+                                           WidthRequest="55" />
+                                    <Label Grid.Row="3"
                                            Grid.Column="0"
                                            HorizontalOptions="Center"
                                            TextColor="#393939"
@@ -40,10 +42,10 @@
                 </CollectionView>
             </StackLayout>
         <!-- 2 -->
-            <StackLayout BackgroundColor="#F2F2F2" Padding="10">
+            <StackLayout BackgroundColor="#F9F9F9" Padding="10">
             <StackLayout >
             <Label Text="Are you international student?" FontSize="22" Margin="5,0,5,0"/>
-                    <CollectionView ItemsSource="{Binding RecommendationOne}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
+                    <CollectionView  x:Name="cv2" ItemsSource="{Binding RecommendationOne}"  SelectionMode="Single" SelectionChanged="Handle_PickProblem"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="5" >
@@ -59,8 +61,8 @@
                                            Grid.Row="0"
                                            Source="{Binding ImageUrl}"
                                            Aspect="AspectFill"
-                                           HeightRequest="80"
-                                           WidthRequest="180" />
+                                           HeightRequest="85"
+                                           WidthRequest="210"/>
                                      <Label Grid.Row="3"
                                            Grid.Column="0"
                                            FontSize="18"
@@ -79,7 +81,7 @@
         <!-- 2 -->
             <StackLayout >
             <Label Text="Make immigrant life better" FontSize="22" Margin="5,0,5,0"/>
-                    <CollectionView ItemsSource="{Binding RecommendationTwo}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
+                    <CollectionView x:Name="cv3" ItemsSource="{Binding RecommendationTwo}"  SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="5" >
@@ -95,8 +97,8 @@
                                            Grid.Row="0"
                                            Source="{Binding ImageUrl}"
                                            Aspect="AspectFill"
-                                           HeightRequest="80"
-                                           WidthRequest="180" />
+                                           HeightRequest="85"
+                                           WidthRequest="210" />
                                      <Label Grid.Row="3"
                                            Grid.Column="0"
                                            FontSize="18"
@@ -114,7 +116,7 @@
              <!-- 3 -->
             <StackLayout >
             <Label Text="Traveler got some problem" FontSize="22" Margin="5,0,5,0"/>
-                    <CollectionView ItemsSource="{Binding RecommendationThree}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
+                    <CollectionView x:Name="cv4" ItemsSource="{Binding RecommendationThree}"  SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="5" >
@@ -130,8 +132,8 @@
                                            Grid.Row="0"
                                            Source="{Binding ImageUrl}"
                                            Aspect="AspectFill"
-                                           HeightRequest="80"
-                                           WidthRequest="180" />
+                                           HeightRequest="85"
+                                           WidthRequest="210" />
                                      <Label Grid.Row="3"
                                            Grid.Column="0"
                                            FontSize="18"
@@ -149,7 +151,7 @@
              <!-- 3 -->
             <StackLayout >
             <Label Text="Business recommendation" FontSize="22" Margin="5,0,5,0"/>
-                    <CollectionView ItemsSource="{Binding RecommendationFour}"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
+                    <CollectionView x:Name="cv5" ItemsSource="{Binding RecommendationFour}"  SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="5" >
@@ -165,8 +167,8 @@
                                            Grid.Row="0"
                                            Source="{Binding ImageUrl}"
                                            Aspect="AspectFill"
-                                           HeightRequest="80"
-                                           WidthRequest="180" />
+                                           HeightRequest="85"
+                                           WidthRequest="210" />
                                      <Label Grid.Row="3"
                                            Grid.Column="0"
                                            FontSize="18"
@@ -174,7 +176,7 @@
                                            TextColor="#393939"
                                            Text="{Binding Pcategory}"
                                            VerticalOptions="End" />   
-                                </Grid>
+                                    </Grid>
                                 </StackLayout>
                             </StackLayout>                    
                         </DataTemplate>

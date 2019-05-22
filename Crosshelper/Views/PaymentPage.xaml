@@ -9,26 +9,37 @@
         </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <sv:SettingsView x:Name="settings"
-                     HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
-                     HasUnevenRows="true">
-    <sv:Section Title="Bank Info" FooterText="">
-        <sv:PickerCell Title="**** **** **** 2055" 
-                       ItemsSource="{Binding ItemsSource}" 
-                       DisplayMember="Name" 
-                       MaxSelectedNumber="3" 
-                       SelectedItems="{Binding SelectedItems}" 
-                       KeepSelectedUntilBack="true" 
-                       PageTitle="select 3 items"
-                       Tapped="Handle_EditPaymentMethod"/>
-        <sv:PickerCell Title="Add Payment Method" 
-                       ItemsSource="{Binding ItemsSource}" 
-                       DisplayMember="Name" 
-                       MaxSelectedNumber="3" 
-                       Tapped="Handle_AddPaymentMethod" 
-                       KeepSelectedUntilBack="true" 
-                       PageTitle="select 3 items"  />
-    </sv:Section>
-    </sv:SettingsView>
+        <StackLayout BackgroundColor="#f4f4f4" Padding="0,30,0,0">
+                <Label Text="Payment info" 
+                       FontSize="18" 
+                       Margin="15,0,0,0"
+                       VerticalOptions="Start"
+                       TextColor="#666666"/>
+                <ListView x:Name="ls" ItemsSource="{Binding PaymentsList}" HasUnevenRows="true" ItemTapped="Handle_ItemTapped" BackgroundColor="#f4f4f4" RefreshControlColor="Green" SeparatorVisibility="None" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <StackLayout Margin="0,0,0,0">
+                                <BoxView HeightRequest="0.5" BackgroundColor="#e0e0e0" Margin="0,3,0,0"/>
+                                        <StackLayout Orientation="Horizontal" Margin="0,-6,0,-6" BackgroundColor="White" Padding="0,6,0,6">
+                                            <Label FontSize="16"
+                                                   VerticalOptions="CenterAndExpand"
+                                                   TextColor="#555555"
+                                                   Margin="10,0,0,0"
+                                                   HorizontalOptions="StartAndExpand"
+                                                   Text="{Binding AccountNo}" />
+                                            <Label Text="›" 
+                                                   FontSize="30" 
+                                                   Margin="5,0,10,6"
+                                                   VerticalOptions="End"
+                                                   TextColor="#555555"/>
+                                        </StackLayout>
+                                    <BoxView HeightRequest="0.5" BackgroundColor="#e0e0e0" Margin="0,0,0,3"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

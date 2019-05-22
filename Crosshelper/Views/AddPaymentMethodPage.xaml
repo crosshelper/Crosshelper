@@ -14,17 +14,23 @@
                      HasUnevenRows="true">
     
         <sv:Section Title="Bank Info" FooterText="">
-            <sv:EntryCell Title="Credit" ValueText="{Binding InputText.Value}" 
-                          Placeholder="0000 0000 0000 0000" Keyboard="Email" 
-                          TextAlignment="End" HintText="{Binding InputError.Value}" /> 
-            <sv:EntryCell Title="Expiry Date" ValueText="{Binding InputText.Value}" 
-                          Placeholder="11/20" Keyboard="Email" 
+            <sv:EntryCell Title="Card#" ValueText="{Binding CardNumber}" 
+                          Placeholder="0000 0000 0000 0000" Keyboard="Numeric" 
+                          ValueTextFontSize="16" MaxLength="20"
+                          TextAlignment="End" HintText="{Binding InputError.Value}" />  
+            <sv:DatePickerCell Title="Expiry Date" Date="{Binding ExDate}" 
+                               ValueTextFontSize="16" 
+                               Format="MM/yyyy"
+                               MinimumDate="2019/1/1" 
+                               MaximumDate="2050/12/31"
+                               TodayText="Today's date" />
+            <sv:EntryCell Title="Card Holder" ValueText="{Binding CName}" 
+                          Placeholder="BO CHEN" Keyboard="Email"
+                          ValueTextFontSize="16"
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
-            <sv:EntryCell Title="Card Holder" ValueText="{Binding InputText.Value}" 
-                          Placeholder="BO CHEN" Keyboard="Email" 
-                          TextAlignment="End" HintText="{Binding InputError.Value}" />
-            <sv:EntryCell Title="CVV" ValueText="{Binding InputText.Value}" 
-                          Placeholder="***" Keyboard="Email" 
+            <sv:EntryCell Title="CVV" ValueText="{Binding CVV}" 
+                          Placeholder="***" Keyboard="Numeric" 
+                          ValueTextFontSize="16" MaxLength="3"
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
         </sv:Section>
             

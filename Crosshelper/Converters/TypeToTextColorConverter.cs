@@ -13,10 +13,10 @@ namespace Crosshelper.Converters
             int parameterType = int.Parse(parameter.ToString());
             Xamarin.Forms.Color background = Color.Silver;
             var user = (User)value;
-            var userName = Settings.UserId;
+            var userName = Settings.ChatID;
             if (user.UserId == userName)
             {
-                background = Color.White;
+                background = Color.FromHex("#999999"); 
                 if (parameterType == 0)
                     background = Color.Black;
             }

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Xamarin.Forms;
+﻿using CarouselView.FormsPlugin.iOS;
+using FFImageLoading.Forms.Platform;
 using Foundation;
+using ImageCircle.Forms.Plugin.iOS;
 using UIKit;
+using Xamarin.Forms;
 
 namespace Crosshelper.iOS
 {
@@ -25,6 +25,10 @@ namespace Crosshelper.iOS
             Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
             AiForms.Renderers.iOS.SettingsViewInit.Init(); //need to write here
+            CarouselViewRenderer.Init();
+            CachedImageRenderer.Init();
+            ImageCircleRenderer.Init();
+            //PlacesClient.ProvideApiKey("AIzaSyBcxooWTNnHQJb10x0cgkijXn5fowDfUjE");
 
             LoadApplication(new App());
             UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(255, 78, 24);

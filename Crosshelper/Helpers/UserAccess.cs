@@ -68,6 +68,7 @@ namespace Crosshelper.Helpers
                 if (reader.Read())
                 {
                     currentUid = reader.GetInt32(0);
+                    Settings.IsLogin = true;
                     return true;
                 }
                 return false;

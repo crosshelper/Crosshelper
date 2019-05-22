@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace Crosshelper.MessageCells
 {
-    public partial class IncomingViewCell : ContentView
+    public partial class IncomingViewCell : ViewCell
     {
         public IncomingViewCell()
         {

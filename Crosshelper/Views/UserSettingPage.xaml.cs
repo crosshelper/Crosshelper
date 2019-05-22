@@ -47,7 +47,8 @@ namespace Crosshelper.Views
         }
         void Handle_SignOut(object sender, System.EventArgs e)
         {
-            Application.Current.MainPage = new SignInPage();
+            Settings.IsLogin = false;
+            Application.Current.MainPage = new LaunchingPage();
         }
 
         private User currentUser;
@@ -56,8 +57,8 @@ namespace Crosshelper.Views
         {
             InitializeComponent();
             currentUser = uih.GetUserInfoByID(Settings.UserId);
-            UserCell.Title = currentUser.FirstName;
-            UserCell.Description = currentUser.LastName;
+            UserCell.Title = currentUser.FirstName + " " + currentUser.LastName;
+            //UserCell.Description = currentUser.LastName;
             UserCell.IconSource = currentUser.Icon;
             //commandcell.IconSource = ImageSource.FromUri(new Uri("https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png"));
         }

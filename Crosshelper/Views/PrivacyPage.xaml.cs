@@ -15,10 +15,5 @@ namespace Crosshelper.Views
         {
             InitializeComponent();
         }
-
-        void Handle_Saved(object sender, System.EventArgs e)
-        {
-            Navigation.PopAsync(false);
-        }
     }
 }

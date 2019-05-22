@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Crosshelper.Converters;
+using Crosshelper.Helpers;
 using Crosshelper.Models;
 using Xamarin.Forms;
 
@@ -7,30 +9,39 @@ namespace Crosshelper.Views
 {
     public partial class PastHistoryDetailPage : ContentPage
     {
-        /*public IList<ProjectpageViewcellItem> CaseDetail { get; set; }
-        public PastHistoryDetailPage()
+        //Emergency,CaseDate,Language,Description,HelperImage,HelperName,HelperRating,HelperLanguage
+        //ServiceFee,EquipmentFee,CycbisFee,Tax,Total,PaymentNum,CaseDateTime
+
+        private CaseInfo _currentCase;
+        public string Emergency { get; set; }
+
+        UserInfoHelper uih = new UserInfoHelper();
+        BindingContextConverter bcc = new BindingContextConverter();
+
+        public PastHistoryDetailPage(CaseInfo currentCase)
         {
-           
-
+            _currentCase = currentCase;
             InitializeComponent();
+            Emergency = _currentCase.CaseTypeLabelText;
+            CaseDate.Text = _currentCase.CaseDateTime.ToString();
+            Description.Text = _currentCase.CaseDescription;
 
-            //Emergency,CaseDate,Language,Description,HelperImage,HelperName,HelperRating,HelperLanguage
-            //ServiceFee,EquipmentFee,CycbisFee,Tax,Total,PaymentNum,CaseDateTime
+            uih.GetHelperInfoByID(_currentCase.HelperID);
+            UserPro helper = uih.GetHelperInfo();
+            HelperImage.Source = helper.Icon;
+            HelperName.Text = helper.FirstName;
+            HelperRating.Text = bcc.StarNoToStarSign(helper.Rating);
+            HelperLanguage.Text = helper.FLanguage + "/" + helper.SLanguage;
 
-            CaseDetail = new List<ProjectpageViewcellItem>();
-            CaseDetail.Add(new ProjectpageViewcellItem
-            {
-                PanelID = 1,
-                Rating = "★★★★★",
-                Language = "Chinese/English",
-                Emergency = "Emergency",
-                Date = "09/20/2018",
-                Description = "I lost my langage at Pairs Charles de Gaulle Airport.But I can not speak French, and I dont  know how to find it.",
-                Status = "Open",
-                ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
-            });
+            ReceiptInfo _receipt = uih.GetReceiptByID(_currentCase.ReceiptID);
+            ServiceFee.Text = _receipt.ServiceFee.ToString();
+            EquipmentFee.Text = _receipt.EqFee.ToString();
+            CycbisFee.Text = _receipt.Surcharge.ToString();
+            Tax.Text = _receipt.Tax.ToString();
+            Total.Text = (_receipt.EqFee+ _receipt.ServiceFee+ _receipt.Surcharge+ _receipt.Tax).ToString();
 
+            PaymentNum.Text = _receipt.PaymentName;
+            CaseDateTime.Text = _currentCase.CaseDateTime.ToString();
         }
-        */
     }
 }
