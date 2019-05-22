@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using Crosshelper.Helpers;
 using Crosshelper.Models;
 using Xamarin.Forms;
@@ -12,7 +14,7 @@ namespace Crosshelper.Views
         private List<CaseInfo> PastCaseInfoLabels { get; set; } = new List<CaseInfo>();
         UserInfoHelper uih = new UserInfoHelper();
         TopicInfoHelper tih = new TopicInfoHelper();
-        //TODO:下拉刷新，删除listitem
+        //TODO:删除listitem
         public ProjectPage()
         {
             InitializeComponent();
@@ -42,9 +44,41 @@ namespace Crosshelper.Views
             Navigation.PushAsync(new PastHistoryDetailPage(_currentCase));
         }
 
-        //protected override void OnAppearing()
-        //{
+        private bool _isRefreshing = false;
+        public bool IsRefreshing
+        {
+            get { return _isRefreshing; }
+            set
+            {
+                _isRefreshing = value;
+                OnPropertyChanged(nameof(IsRefreshing));
+            }
+        }
 
-        //}
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    IsRefreshing = true;
+                    RefreshData();
+                    IsRefreshing = false;
+                });
+            }
+        }
+
+        private void RefreshData()
+        {
+            //currentList.BeginRefresh();
+            currentList.ItemsSource = null;
+            if (TopicInfoLabels.Count > 0)
+            {
+                TopicInfoLabels.Clear();
+            }
+            TopicInfoLabels = tih.GetMyTopicList(Settings.UserId);
+            currentList.ItemsSource = TopicInfoLabels;
+            //currentList.EndRefresh();
+        }
     }
 }

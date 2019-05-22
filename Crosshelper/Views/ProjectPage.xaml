@@ -10,7 +10,12 @@
                 <!-- Current -->
                 <tv:TabItem x:Name="currentTab" HeaderText="Current" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#FF4E18">
             <StackLayout>
-                <ListView x:Name="currentList" HasUnevenRows="true" ItemTapped="Handle_CurrentItemTapped">
+                <ListView IsPullToRefreshEnabled="True"
+                          RefreshCommand="{Binding RefreshCommand}"
+                          IsRefreshing="{Binding IsRefreshing}" 
+                          x:Name="currentList" 
+                          HasUnevenRows="true" 
+                          ItemTapped="Handle_CurrentItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
