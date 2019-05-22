@@ -47,6 +47,7 @@
                                            FontSize="Medium" 
                                            LineBreakMode="WordWrap" 
                                            VerticalOptions="Center"/>
+                                    <Label Text="{Binding CreatedAt}"></Label>
                                     
                                 </StackLayout>
                             </Grid>
