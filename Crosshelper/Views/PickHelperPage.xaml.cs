@@ -13,6 +13,7 @@ namespace Crosshelper.Views
         {
             Navigation.PopModalAsync();
         }
+
         void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             HelperLabel hl = (HelperLabel)e.SelectedItem as HelperLabel;

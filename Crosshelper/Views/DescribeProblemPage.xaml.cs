@@ -15,8 +15,8 @@ namespace Crosshelper.Views
         {
             //var tmppage = this.Parent as GetHelpPage;
             //tmppage.RefreshSelection();
-            //Navigation.PopModalAsync();
-            Navigation.PushAsync(new QuotePage());
+            Navigation.PopModalAsync();
+            //Navigation.PushAsync(new QuotePage());
         }
 
         private TypeProblem _typeproblem;

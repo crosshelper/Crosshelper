@@ -18,7 +18,7 @@ namespace Crosshelper.Views
         {
             InitializeComponent();
 
-            
+
             ////ProblemsCategory////
             ProblemsCategory = new List<TypeProblem>();
             ProblemsCategory.Add(new TypeProblem
@@ -205,6 +205,22 @@ namespace Crosshelper.Views
             if (cv1.SelectedItem != null)
             {
                 cv1.SelectedItem = null;
+            }
+            if (cv2.SelectedItem != null)
+            {
+                cv2.SelectedItem = null;
+            }
+            if (cv3.SelectedItem != null)
+            {
+                cv3.SelectedItem = null;
+            }
+            if (cv4.SelectedItem != null)
+            {
+                cv4.SelectedItem = null;
+            }
+            if (cv5.SelectedItem != null)
+            {
+                cv5.SelectedItem = null;
             }
         }
     }

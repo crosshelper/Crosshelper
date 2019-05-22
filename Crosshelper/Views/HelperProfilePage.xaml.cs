@@ -72,8 +72,8 @@ namespace Crosshelper.Views
         void Handle_Canceled(object sender, System.EventArgs e)
         {
 
-            Navigation.PushModalAsync(new QuotePage());
-            //Navigation.PopModalAsync();
+            //Navigation.PushModalAsync(new QuotePage());
+            Navigation.PopModalAsync();
         }
         //Confirm
         void Handle_GetHelp(object sender, EventArgs e)
