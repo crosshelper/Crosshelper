@@ -51,25 +51,14 @@
                                             </StackLayout>
                             <StackLayout>
                             <StackLayout>
-                                <Label Text="Is emergency problem?" TextColor="#FF4E18" FontSize="17" FontAttributes="Bold"></Label>
-                                <StackLayout Orientation="Horizontal">
-                                    <Button Text="No really" BorderColor="#555555" 
-                                                        WidthRequest="85"
-                                                        BorderRadius="5" BackgroundColor="White" 
-                                                        TextColor="#555555" BorderWidth="1" FontAttributes="Bold" 
-                                                        FontSize="Small"
-                                                        Clicked="Handle_NotReally"></Button>
-                                    <Button Text="Yes"  BorderColor="#555555" 
-                                                        WidthRequest="85"
-                                                        Margin="5,0,0,0"
-                                                        BorderRadius="5" BackgroundColor="White" 
-                                                        TextColor="#555555" BorderWidth="1" FontAttributes="Bold" 
-                                                        FontSize="Small"
-                                                        Clicked="Handle_Yes"></Button>
+                               
+                                <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                                <Label Text="Is emergency problem?" TextColor="#FF4E18" VerticalOptions="Center" FontSize="17" FontAttributes="Bold"></Label>
+                                <Switch IsToggled="false" VerticalOptions="Center" HorizontalOptions="EndAndExpand" x:Name="switchButton"></Switch>
                                 </StackLayout>
 
                             </StackLayout>
-                            <Label Text="Problem description" FontSize="17" TextColor="#FF4E18" FontAttributes="Bold" Margin="0,5,0,0"></Label>
+                            <Label Text="Problem description" FontSize="17" TextColor="#FF4E18" FontAttributes="Bold" Margin="0,10,0,0"></Label>
                             <BoxView BackgroundColor="#555555" HeightRequest="0.5"></BoxView>
                                 <Editor x:Name="DescriptionBox" Margin="0,5,0,0"
                                         Placeholder="Describe your problem here!"
