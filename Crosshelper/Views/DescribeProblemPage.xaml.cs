@@ -44,6 +44,9 @@ namespace Crosshelper.Views
             {
                 language = languagepicker.SelectedItem.ToString();
             }
+            var tih = new TopicInfoHelper();
+            tih.ListMyTopic(_typeproblem.TagID,"95131",language,DescriptionBox.Text);
+
             Navigation.PushAsync(new PickHelperPage(_typeproblem,language));
         }
 
