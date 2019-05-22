@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="Crosshelper.Views.PickHelperPage">
-    <NavigationPage.TitleView>
-        <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
-    </NavigationPage.TitleView>
+             x:Class="Crosshelper.Views.FavoritePage"
+             Title="Favorite">
     <ContentPage.Content>
-        <StackLayout>
+                <StackLayout>
                 <ListView ItemsSource="{Binding Helpers}" HasUnevenRows="true" ItemSelected="Handle_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -30,17 +28,17 @@
                                            HeightRequest="65"
                                            WidthRequest="65" />
                                     <Label Grid.Column="1"
-                                           Grid.ColumnSpan="3"
                                            Grid.Row="0"
                                            FontSize="20"
+                                           Grid.ColumnSpan="3"
                                            TextColor="#393939"
                                            Text="{Binding Name}"
                                            FontAttributes="Bold" />
                                     <Label Grid.Column="1"
                                            Grid.Row="1"
-                                           Grid.ColumnSpan="3"
                                            TextColor="#FFC834"
                                            Grid.RowSpan="2"
+                                           Grid.ColumnSpan="3"
                                            Text="{Binding Rating}"
                                            HeightRequest="60"
                                            WidthRequest="60" />
@@ -50,7 +48,7 @@
                                            Grid.ColumnSpan="2"
                                            Text="{Binding Baseprice}"
                                            VerticalOptions="End" />
-                                    <Label Grid.Row="3"
+                                     <Label Grid.Row="3"
                                            Grid.Column="0"
                                            TextColor="#393939"
                                            Grid.ColumnSpan="3"
@@ -60,7 +58,7 @@
                                     <Label TextColor= "{Binding StatusColor}"
                                            Text="{Binding StatusText}"
                                            HorizontalOptions="EndAndExpand" />
-                                </StackLayout>  
+                                </StackLayout>     
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

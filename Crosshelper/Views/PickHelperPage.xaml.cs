@@ -16,18 +16,19 @@ namespace Crosshelper.Views
         void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             HelperLabel hl = (HelperLabel)e.SelectedItem as HelperLabel;
-            ((ListView)sender).SelectedItem = null;
             Navigation.PushAsync(new HelperProfilePage(hl));
         }
 
         public List<HelperLabel> Helpers { get; set; }//= new List<HelperLabel>();
-        UserInfoHelper uih = new UserInfoHelper();
+        UserInfoHelper listhelper = new UserInfoHelper();
         BindingContextConverter cvt = new BindingContextConverter();
 
-        public PickHelperPage(TypeProblem _typeproblem, string language)
+        public PickHelperPage()
         {
             InitializeComponent();
-            Helpers = cvt.BindingHelpersConvert(uih.GetHelperList(_typeproblem.TagID.ToString(),language));//"1"));
+            listhelper.GetProHelperByTag(1);
+            listhelper.SearchingInit();
+            Helpers = cvt.BindingHelpersConvert(listhelper.GetHelperList());
             //Helpers = new List<HelperLabel>();
             Helpers.Add(new HelperLabel
             {

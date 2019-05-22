@@ -14,8 +14,6 @@ namespace Crosshelper.Models
         public string StatusText { get; set; }
         public Color StatusColor { get; set; }
         public string HelperID { get; set; }
-        public string ChatID { get; internal set; }
-        public string Bio { get; internal set; }
 
         public override string ToString()
         {

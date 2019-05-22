@@ -1,27 +1,32 @@
+using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using Crosshelper.Views;
+using Plugin.Geolocator;
+using Plugin.Geolocator.Abstractions;
 using SendBird;
-using Stripe;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Crosshelper.Helpers;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Crosshelper
 {
-    public partial class App : Xamarin.Forms.Application
+    public partial class App : Application
     {
 
         public App()
         {
             InitializeComponent();
-            //MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(SignInPage))) {
+            SendBirdClient.Init(Crosshelper.Properties.Resources.APP_ID);
+            //MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePage))) {
             //BarBackgroundColor = Color.FromHex("#FF4E18"),
             //BarTextColor = Color.White };
-            MainPage = new LaunchingPage();//SignInPage();
+            MainPage = new SignInPage();
         }
 
         protected override void OnStart()
         {
-            SendBirdClient.Init(Crosshelper.Properties.Resources.APP_ID);
-            StripeConfiguration.SetApiKey("sk_live_XXXXXXXXXXXXXXX");
             // Handle when your app starts
         }
 

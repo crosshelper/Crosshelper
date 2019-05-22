@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Crosshelper.Models
+﻿namespace Crosshelper.Models
 {
     public class CaseInfo
     {
@@ -9,9 +7,7 @@ namespace Crosshelper.Models
         public string HelperID { get; set; }
         public string ReceiptID { get; set; }
         public string CaseType { get; set; }
-        public DateTime CaseDateTime { get; set; }
+        public string CaseDateTime { get; set; }
         public string CaseDescription { get; set; }
-        public string CaseTypeLabelText { get; internal set; }
-        public string HelperName { get; internal set; }
     }
 }

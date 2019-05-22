@@ -40,11 +40,5 @@
 	<string>This app needs access to location when open.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This app needs access to location when open and in the background.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>access camera</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>access add photo library</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>access add photo library</string>
 </dict>
 </plist>

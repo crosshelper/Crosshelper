@@ -14,6 +14,5 @@
         public int Status { get; set; }
         public string PriceSign { get; set; }
         public string UserID { get; internal set; }
-        public string Bio { get; internal set; }
     }
 }

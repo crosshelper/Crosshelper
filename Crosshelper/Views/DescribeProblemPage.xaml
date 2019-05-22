@@ -5,14 +5,14 @@
              >
     <NavigationPage.TitleView>
         <Grid>
-            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled" VerticalOptions="Center"/>
+            <Button Text="Cancel" TextColor="White" HorizontalOptions="Start" FontSize="17" Clicked="Handle_Canceled" VerticalOptions="Center"/>
         </Grid>
     </NavigationPage.TitleView>
                  <ScrollView>
                  <StackLayout Padding="20">
                     <!-- Case detial -->
-                    <Label Text="Problem info" FontSize="18" TextColor="#555555"  FontAttributes="Bold" Margin="0,5,0,5"></Label>
-                    <BoxView BackgroundColor="#555555" HeightRequest="0.5"></BoxView>
+                    <Label Text="Problem info" FontSize="18" TextColor="#777777"  FontAttributes="Bold" Margin="0,5,0,5"></Label>
+                    <BoxView BackgroundColor="#999999" HeightRequest="0.5"></BoxView>
                             <StackLayout 
                                      VerticalOptions="FillAndExpand" 
                                      BackgroundColor="#F4F4F4">
@@ -35,16 +35,16 @@
                                             <StackLayout >
                                               <Label Text="Language Preference" TextColor="#FF4E18" FontSize="17" FontAttributes="Bold"></Label>
                                             </StackLayout>
-                                                <Picker x:Name="languagepicker" SelectedItem="English" HeightRequest="45" Title="English" TitleColor="#555555" FontAttributes="Bold" FontSize="16" TextColor="#555555" >
+                                                <Picker HeightRequest="45" Title="Pick language" TitleColor="#666666" FontAttributes="Bold" FontSize="16" TextColor="#666666" >
                                                     <Picker.ItemsSource>
                                                         <x:Array Type="{x:Type x:String}">
                                                           <x:String>Chinese</x:String>
                                                           <x:String>English</x:String>
-                                                          <x:String>Spanish</x:String>
-                                                          <x:String>Vietnamance</x:String>
-                                                          <x:String>Italian</x:String>
-                                                          <x:String>German</x:String>
-                                                          <x:String>Japanese</x:String>
+                                                          <x:String>Blue Monkey</x:String>
+                                                          <x:String>Squirrel Monkey</x:String>
+                                                          <x:String>Golden Lion Tamarin</x:String>
+                                                          <x:String>Howler Monkey</x:String>
+                                                          <x:String>Japanese Macaque</x:String>
                                                         </x:Array>
                                                     </Picker.ItemsSource>
                                                 </Picker>
@@ -53,24 +53,24 @@
                             <StackLayout>
                                 <Label Text="Is emergency problem?" TextColor="#FF4E18" FontSize="17" FontAttributes="Bold"></Label>
                                 <StackLayout Orientation="Horizontal">
-                                    <Button Text="No really" BorderColor="#555555" 
+                                    <Button Text="No really" BorderColor="#666666" 
                                                         WidthRequest="85"
                                                         BorderRadius="5" BackgroundColor="White" 
-                                                        TextColor="#555555" BorderWidth="1" FontAttributes="Bold" 
+                                                        TextColor="#666666" BorderWidth="1" FontAttributes="Bold" 
                                                         FontSize="Small"
                                                         Clicked="Handle_NotReally"></Button>
-                                    <Button Text="Yes"  BorderColor="#555555" 
+                                    <Button Text="Yes"  BorderColor="#666666" 
                                                         WidthRequest="85"
                                                         Margin="5,0,0,0"
                                                         BorderRadius="5" BackgroundColor="White" 
-                                                        TextColor="#555555" BorderWidth="1" FontAttributes="Bold" 
+                                                        TextColor="#666666" BorderWidth="1" FontAttributes="Bold" 
                                                         FontSize="Small"
                                                         Clicked="Handle_Yes"></Button>
                                 </StackLayout>
 
                             </StackLayout>
                             <Label Text="Problem description" FontSize="17" TextColor="#FF4E18" FontAttributes="Bold" Margin="0,5,0,0"></Label>
-                            <BoxView BackgroundColor="#555555" HeightRequest="0.5"></BoxView>
+                            <BoxView BackgroundColor="#999999" HeightRequest="0.5"></BoxView>
                                 <Editor Margin="0,5,0,0"
                                         Placeholder="Describe your problem here!"
                                         Completed="DescribeProblemEditorCompleted"

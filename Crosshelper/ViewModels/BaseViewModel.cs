@@ -1,48 +1,57 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
+
+using Xamarin.Forms;
+
+using Crosshelper.Models;
+using Crosshelper.Services;
 
 namespace Crosshelper.ViewModels
 {
     public class BaseViewModel //: INotifyPropertyChanged
     {
-        /*public string Title
-        {
-            get { return title; }
-            set
-            {
-                title = value;
-                RaisePropertyChanged();
-            }
-        }
+        /*public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
 
+        bool isBusy = false;
         public bool IsBusy
         {
-            get
-            {
-                return isBusy;
-            }
-            set
-            {
-                isBusy = value;
-                RaisePropertyChanged();
-            }
+            get { return isBusy; }
+            set { SetProperty(ref isBusy, value); }
         }
 
-        protected void RaisePropertyChanged([CallerMemberName]  string propertyName = "")
+        string title = string.Empty;
+        public string Title
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            get { return title; }
+            set { SetProperty(ref title, value); }
         }
 
-        string title;
-        bool isBusy;
+        protected bool SetProperty<T>(ref T backingStore, T value,
+            [CallerMemberName]string propertyName = "",
+            Action onChanged = null)
+        {
+            if (EqualityComparer<T>.Default.Equals(backingStore, value))
+                return false;
 
-        #region INotifyPropertyChanged implementation
+            backingStore = value;
+            onChanged?.Invoke();
+            OnPropertyChanged(propertyName);
+            return true;
+        }
 
+        #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            var changed = PropertyChanged;
+            if (changed == null)
+                return;
 
-        #endregion     */
+            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
+        */       
     }
 }

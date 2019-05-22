@@ -21,6 +21,11 @@
                 <sv:SwitchCell Title="Switch" On="true" 
                     Description="This is description." />
           </sv:Section>
+    
+            <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
+                     <sv:ButtonCell Title="Save" TitleColor="White" BackgroundColor="#FE5121" TitleFontSize="Large"
+                     TitleAlignment="Center" Command="{Binding SectionToggleCommand}" Tapped="Handle_Saved" />
+            </sv:Section>
        </sv:SettingsView>
     </ContentPage.Content>
 </ContentPage>

@@ -24,7 +24,7 @@ namespace Crosshelper.Views
             InitializeComponent();
             BindingContext = vm = new ChatViewModel();
             vm.Channel = channel;
-            vm.Title = user.FirstName;
+            //vm.Title = user.Nickname;
             vm.UserName = Settings.ChatID;
             vm.Load();
             instance = this;
@@ -32,17 +32,7 @@ namespace Crosshelper.Views
 
         public void ScrollDown(UserMessage m)
         {
-            MessagesListView.ScrollTo(m, ScrollToPosition.End, true);
+            list.ScrollTo(m, ScrollToPosition.End, true);
         }
-
-        private void MyListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            MessagesListView.SelectedItem = null;
-        }
-
-        private void MyListView_OnItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            MessagesListView.SelectedItem = null;
-        }
-    }
+	}
 }

@@ -11,7 +11,7 @@ namespace Crosshelper.Converters
         {
             int column = 0;
             var user = (User)value;
-            var userName = Settings.ChatID;
+            var userName = Settings.UserId;
             if (user.UserId != userName)
             {
                 column = 0;

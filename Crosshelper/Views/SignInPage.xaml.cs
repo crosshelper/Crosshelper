@@ -5,7 +5,6 @@ using Xamarin.Forms;
 using Crosshelper.Models;
 using Crosshelper.Helpers;
 using SendBird;
-using Xamarin.Forms.Xaml;
 
 namespace Crosshelper.Views
 {
@@ -15,7 +14,6 @@ namespace Crosshelper.Views
         public SignInPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasBackButton(this, false);
         }
 
         //取消按钮 Canceled
@@ -37,7 +35,9 @@ namespace Crosshelper.Views
         {
             //(sender as Button).Text = "Click me again!";
             UserAccess userAccess = new UserAccess();
-            Models.User usr = new Models.User();
+            Crosshelper.Models.User usr = new Crosshelper.Models.User();
+
+
 
             if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
             {
@@ -45,20 +45,16 @@ namespace Crosshelper.Views
                 Settings.UserId = userAccess.CurrentUid.ToString();
                 usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                 Settings.ChatID = usr.ChatID;
-                Name = usr.FirstName + " " + usr.LastName;
-                ChatServerConnect();
-                Application.Current.MainPage = new MyTabbedPage();
+                //Connect();
+                Application.Current.MainPage = new MyTabbedPage("o");
             }
             else
             {
                 signInTest.Text = "Sign in Faild";
-                Settings.IsLogin = false;
             }
         }
 
-        private string Name = "";
-
-        private void ChatServerConnect()
+        async void Connect()
         {
             SendBirdClient.Connect(Settings.ChatID, (SendBird.User user, SendBirdException e) =>
             {
@@ -68,7 +64,7 @@ namespace Crosshelper.Views
                     return;
                 }
 
-                SendBirdClient.UpdateCurrentUserInfo(Name, "", (SendBirdException e1) =>
+                SendBirdClient.UpdateCurrentUserInfo("CYCBIS_User", "", (SendBirdException e1) =>
                 {
                     if (e1 != null)
                     {
@@ -84,11 +80,15 @@ namespace Crosshelper.Views
         //第三次登入 Third party sign in
         void Handle_GoogleSignIn(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new MyTabbedPage();
+            (sender as Button).Text = "Click me again!";
+        }
+        void Handle_WechatSignIn(object sender, EventArgs e)
+        {
+            (sender as Button).Text = "Click me again!";
         }
         void Handle_FaceBookSignIn(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new MyTabbedPage();
+            (sender as Button).Text = "Click me again!";
         }
         //创建和忘记 Create&Forgot
         void Handle_ForgotPassword(object sender, EventArgs e)
@@ -97,7 +97,7 @@ namespace Crosshelper.Views
         }
         void Handle_CreateAccount(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SignUpPage());
+            Navigation.PushModalAsync(new SignUpPage());
             //Navigation.PushAsync(new SignUpPage());
         }
 

@@ -14,8 +14,7 @@
                          HasUnevenRows="true">
             <sv:Section Title="Promotion" FooterText="">
                 <sv:EntryCell Title="Code" ValueText="{Binding InputText.Value}" 
-                              Placeholder="00000000" Keyboard="Email" 
-                              ValueTextFontSize="16" MaxLength="8"
+                              Placeholder="000000" Keyboard="Email" 
                               TextAlignment="End" HintText="{Binding InputError.Value}" /> 
             </sv:Section>
             

@@ -7,7 +7,7 @@ namespace Crosshelper.Views
     public partial class SignUpPage : ContentPage
     {
         UserAccess uAccess = new UserAccess();
-        private string Uname, Pwd;
+        private string Uname, Pwd, Email, ContactNo;
         public SignUpPage()
         {
             InitializeComponent();
@@ -22,6 +22,14 @@ namespace Crosshelper.Views
         {
             Uname = ((Entry)sender).Text;
         }
+        void EmailCompleted(object sender, EventArgs e)
+        {
+            Email = ((Entry)sender).Text;
+        }
+        void ContactNumCompleted(object sender, EventArgs e)
+        {
+            ContactNo = ((Entry)sender).Text;
+        }
         void PasswordCompleted(object sender, EventArgs e)
         {
             Pwd = ((Entry)sender).Text;
@@ -31,17 +39,15 @@ namespace Crosshelper.Views
             string text = ((Entry)sender).Text;
         }
         //注册按钮 Sign Up
-        void Handle_Next(object sender, EventArgs e)
+        void Handle_SignUp(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SignUpTwoPage(Uname,Pwd));
+            //uAccess.UserRegister(Uname, Email, ContactNo, Pwd);
+            Application.Current.MainPage = new MyTabbedPage();
+            //(sender as Button).Text = "Click me again!";
         }
-        //第三次登入 Third party sign in
-        void Handle_GoogleSignIn(object sender, EventArgs e)
+        void Handle_SignUpAsHelper(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
-        }
-        void Handle_FaceBookSignIn(object sender, EventArgs e)
-        {
+
             (sender as Button).Text = "Click me again!";
         }
     }

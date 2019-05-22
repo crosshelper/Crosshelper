@@ -12,7 +12,7 @@
                 <views:GetHelpPage/>
             </x:Arguments>
         </NavigationPage>
-       <!-- 
+        
         <NavigationPage Title="Favorite" BarBackgroundColor="#FF4E18">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -23,7 +23,7 @@
                 <views:FavoritePage/>
             </x:Arguments>
         </NavigationPage>
-        -->
+        
         <NavigationPage Title="Cases" BarBackgroundColor="#FF4E18">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -42,7 +42,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:MessageListPage />
+                <views:UserSettingPage />
             </x:Arguments>
         </NavigationPage>
         

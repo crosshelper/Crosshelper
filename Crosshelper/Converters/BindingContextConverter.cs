@@ -1,5 +1,4 @@
-﻿using Crosshelper.Helpers;
-using Crosshelper.Models;
+﻿using Crosshelper.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,9 +8,9 @@ namespace Crosshelper.Converters
 {
     class BindingContextConverter
     {
-        //private string starsign = "★";
+        private string starsign = "★";
 
-        public string StarNoToStarSign(int no)
+        private string StarNoToStarSign(int no)
         {
             string tmpstar = "";
             for (int i = 0; i < no; i++)
@@ -58,9 +57,9 @@ namespace Crosshelper.Converters
         public List<HelperLabel> BindingHelpersConvert(List<UserPro> helpers)
         {
             List<HelperLabel> newhelpers = new List<HelperLabel>();
+            HelperLabel tmp = new HelperLabel();
             foreach (UserPro helper in helpers)
             {
-                HelperLabel tmp = new HelperLabel();
                 tmp.HelperID = helper.UserID;
                 tmp.Name = helper.FirstName + "  " + helper.LastName;
                 tmp.Rating = StarNoToStarSign(helper.Rating);
@@ -71,30 +70,10 @@ namespace Crosshelper.Converters
                 tmp.StatusText = StatusTextConverter(helper.Status); ;
                 tmp.LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png";
                 tmp.ImageUrl = helper.Icon;
-                tmp.ChatID = helper.ChatID;
-                tmp.Bio = helper.Bio;
                 newhelpers.Add(tmp);
             }
             return newhelpers;
-        }
-
-        readonly UserInfoHelper uih = new UserInfoHelper();
-
-        public List<ReviewLabelContent> BindingReviewssConvert(List<ReviewsInfo> reviews)
-        {
-            List<ReviewLabelContent> newreviews = new List<ReviewLabelContent>();
-
-            foreach (ReviewsInfo review in reviews)
-            {
-                ReviewLabelContent tmp = new ReviewLabelContent();
-                tmp.ReviewerName = uih.GetUserInfoByID(review.UserID).FirstName;
-                tmp.ReviewerRating = StarNoToStarSign(review.ReviewRating);
-                tmp.ReviewerContent = review.ReviewContent;
-                newreviews.Add(tmp);
-            }
-            return newreviews;
 
         }
-
     } 
 }
