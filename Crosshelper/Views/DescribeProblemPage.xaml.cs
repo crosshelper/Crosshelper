@@ -32,6 +32,15 @@ namespace Crosshelper.Views
         {
             _currentTopic = tmp;
             DescriptionBox.Text = _currentTopic.Description;
+            if(_currentTopic.Status == 1)
+            {
+                switchButton.IsToggled = true;
+            }
+            else
+            {
+                switchButton.IsToggled = false;
+            }
+
             InitializeComponent();
         }
 
@@ -56,13 +65,17 @@ namespace Crosshelper.Views
             }
             if(_currentTopic==null)
             {
-
-                tih.ListMyTopic(_typeproblem.TagID, "95131", language, DescriptionBox.Text);
+                int status = 0;
+                if(switchButton.IsToggled)
+                    status = 1; 
+                tih.ListMyTopic(_typeproblem.TagID, "95131", language, DescriptionBox.Text,status);
             }
             else
             {
-
-                tih.UpdateMyTopic("95131", language, DescriptionBox.Text, _currentTopic.TopicID);
+                int status = 0;
+                if (switchButton.IsToggled)
+                    status = 1;
+                tih.UpdateMyTopic("95131", language, DescriptionBox.Text, _currentTopic.TopicID, status);
             }
             Navigation.PushAsync(new PickHelperPage(_typeproblem,language));
         }

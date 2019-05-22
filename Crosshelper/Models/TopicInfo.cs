@@ -9,6 +9,7 @@ namespace Crosshelper.Models
         public string Zipcode { get; set; }
         public string Language { get; internal set; }
         public string Description { get; internal set; }
+        public int Status { get; internal set; }
 
         public TopicInfo()
         {
