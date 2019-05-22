@@ -31,7 +31,7 @@ namespace Crosshelper.Views
         public DescribeProblemPage(TopicInfo tmp)
         {
             _currentTopic = tmp;
-
+            DescriptionBox.Text = _currentTopic.Description;
             InitializeComponent();
         }
 
