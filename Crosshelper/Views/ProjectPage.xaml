@@ -19,14 +19,14 @@
                                         <Label
                                            TextColor="#393939"
                                            FontSize="18"
-                                           Text="{Binding HelperName}"
+                                           Text="{Binding Zipcode}"
                                            HorizontalOptions="StartAndExpand" />
                                         <Label Text="{Binding CaseTypeLabelText}" TextColor="Red" FontSize="15" HorizontalOptions="End"/>
                                     </StackLayout>
                                     <Label 
                                        TextColor="#393939"
                                        FontSize="12"
-                                       Text="{Binding CaseDateTime}"
+                                       Text="{Binding Language}"
                                        VerticalOptions="End" />
                                     <StackLayout>
                                     <Label Text="Problem description" FontSize="18" TextColor="Black"></Label>
@@ -34,7 +34,7 @@
                                            TextColor="#393939"
                                            MaxLines="4"
                                            FontSize="16"
-                                           Text="{Binding CaseDescription}"
+                                           Text="{Binding Description}"
                                            VerticalOptions="End" />   
                                     </StackLayout>
                                 </StackLayout>

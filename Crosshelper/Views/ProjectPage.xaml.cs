@@ -8,27 +8,32 @@ namespace Crosshelper.Views
 {
     public partial class ProjectPage : ContentPage
     {
-        private List<CaseInfo> CaseInfoLabels { get; set; } = new List<CaseInfo>();
+        private List<TopicInfo> TopicInfoLabels { get; set; } = new List<TopicInfo>();
         private List<CaseInfo> PastCaseInfoLabels { get; set; } = new List<CaseInfo>();
         UserInfoHelper uih = new UserInfoHelper();
+        TopicInfoHelper tih = new TopicInfoHelper();
 
         public ProjectPage()
         {
             InitializeComponent();
-            CaseInfoLabels = uih.GetCaseInfoByUid(Settings.UserId);
+
+            TopicInfoLabels = tih.GetMyTopicList(Settings.UserId);
+
             PastCaseInfoLabels = uih.GetPastCaseInfoByUid(Settings.UserId);
 
-            currentList.ItemsSource = CaseInfoLabels;
+            currentList.ItemsSource = TopicInfoLabels;
             currentTab.Content = currentList;
+
+
             pastList.ItemsSource = PastCaseInfoLabels;
             pastTab.Content = pastList;
             BindingContext = this;
         }
         void Handle_CurrentItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            CaseInfo _currentCase = e.SelectedItem as CaseInfo;
+            TopicInfo _currentTopic = e.SelectedItem as TopicInfo;
             ((ListView)sender).SelectedItem = null;
-            Navigation.PushAsync(new PastHistoryDetailPage(_currentCase));
+            Navigation.PushAsync(new DescribeProblemPage(_currentTopic));
         }
         void Handle_PastItemSelected(object sender, SelectedItemChangedEventArgs e)
         {

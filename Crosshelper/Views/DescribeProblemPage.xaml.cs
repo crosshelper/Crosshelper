@@ -20,12 +20,21 @@ namespace Crosshelper.Views
         }
 
         private TypeProblem _typeproblem;
+        private TopicInfo _currentTopic;
 
         public DescribeProblemPage(TypeProblem tmp)
         {
             _typeproblem = tmp;
             InitializeComponent();
         }
+
+        public DescribeProblemPage(TopicInfo tmp)
+        {
+            _currentTopic = tmp;
+
+            InitializeComponent();
+        }
+
         //Not Really按钮 Not really Button
         void Handle_NotReally(object sender, EventArgs e)
         {
