@@ -27,7 +27,7 @@ namespace Crosshelper.ViewModels
             GroupChannel.CreateChannelWithUserIds(users, true, (GroupChannel groupChannel, SendBirdException e) => {
                 if (e != null)
                 {
-                    // Error.
+                    // Error..
                     return;
                 }
                 group = groupChannel;
