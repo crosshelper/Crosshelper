@@ -68,11 +68,14 @@ namespace Crosshelper.Views
                 if(switchButton.IsToggled)
                     status = 1; 
                 tih.ListMyTopic(_typeproblem.TagID, "95131", language, des.Text,status);
-                _currentTopic.TagID = _typeproblem.TagID;
-                _currentTopic.Zipcode = "95131";
-                _currentTopic.Language = language;
-                _currentTopic.Description = des.Text;
-                _currentTopic.Status = status;
+                _currentTopic = new TopicInfo
+                {
+                    TagID = _typeproblem.TagID,
+                    Zipcode = "95131",
+                    Language = language,
+                    Description = des.Text,
+                    Status = status
+                };
             }
             else
             {
