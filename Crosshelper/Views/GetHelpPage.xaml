@@ -22,7 +22,7 @@
                                         <RowDefinition Height="20"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="65"/>
+                                        <ColumnDefinition Width="80"/>
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.RowSpan="3"
                                            Grid.Row="0"
