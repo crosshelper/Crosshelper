@@ -44,5 +44,14 @@ namespace Crosshelper.Views
         {
             MessagesListView.SelectedItem = null;
         }
+
+        void Handle_Canceled(object sender, System.EventArgs e)
+        {
+            //var tmppage = this.Parent as GetHelpPage;
+            //tmppage.RefreshSelection();
+            Navigation.PopModalAsync();
+            //Navigation.PushAsync(new QuotePage());
+        }
     }
+
 }

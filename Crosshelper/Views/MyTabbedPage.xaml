@@ -42,7 +42,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:MessageListPage />
+                <views:MessageListPage/>
             </x:Arguments>
         </NavigationPage>
         
