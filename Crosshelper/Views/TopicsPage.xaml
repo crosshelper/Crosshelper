@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.TopicsPage">
+    <ListView x:Name="MyListView" 
+              IsPullToRefreshEnabled="True"
+              RefreshCommand="{Binding RefreshCommand}"
+              IsRefreshing="{Binding IsRefreshing}"
+              ItemTapped="Handle_ItemTapped" 
+              HasUnevenRows="true"
+              CachingStrategy="RecycleElement">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+        <ViewCell.ContextActions>
+            <MenuItem Clicked="OnDeleteAsync" CommandParameter="{Binding .}"
+                      Text="Delete" IsDestructive="true"/>
+        </ViewCell.ContextActions>
+          <StackLayout Padding="15">
+            <StackLayout Orientation="Horizontal">
+                <Label
+                   TextColor="#393939"
+                   FontSize="18"
+                   Text="{Binding Zipcode}"
+                   Style="{DynamicResource ListItemTextStyle}"
+                   HorizontalOptions="StartAndExpand" />
+                <Label Text="{Binding CaseTypeLabelText}" TextColor="Red" FontSize="15" HorizontalOptions="End"/>
+            </StackLayout>
+            <Label 
+               TextColor="#393939"
+               FontSize="12"
+               Text="{Binding Language}"
+               Style="{DynamicResource ListItemDetailTextStyle}"
+               VerticalOptions="End" />
+            <StackLayout>
+            <Label Text="Problem description" FontSize="18" TextColor="Black"></Label>
+            <Label 
+                   TextColor="#393939"
+                   MaxLines="4"
+                   FontSize="16"
+                   Text="{Binding Description}"
+                   VerticalOptions="End" />   
+            </StackLayout>    
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

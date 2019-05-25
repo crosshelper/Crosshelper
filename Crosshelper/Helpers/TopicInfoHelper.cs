@@ -10,7 +10,6 @@ namespace Crosshelper.Helpers
     {
         private readonly List<TopicInfo> topiclist = new List<TopicInfo>();
 
-
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
 
         internal void ListMyTopic(int tagID, string zipcode, string language, string description, int status)
@@ -31,6 +30,33 @@ namespace Crosshelper.Helpers
                     cmd.Parameters.AddWithValue("para5", description);
                     cmd.Parameters.AddWithValue("para6", status);
 
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Connecting to MySQL success");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Connection failed");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        internal void DeleteMyTopicByID(int topicID)
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "DELETE From TopicInfo Where TopicID = @para1";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", topicID);
                     cmd.ExecuteNonQuery();
                     Console.WriteLine("Connecting to MySQL success");
                 }

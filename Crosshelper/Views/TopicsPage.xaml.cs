@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Crosshelper.Helpers;
@@ -10,46 +13,42 @@ using Xamarin.Forms.Xaml;
 namespace Crosshelper.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProjectPage : ContentPage
+    public partial class TopicsPage : ContentPage
     {
+        //public ObservableCollection<string> Items { get; set; }
         private List<TopicInfo> TopicInfoLabels { get; set; } = new List<TopicInfo>();
-        private List<CaseInfo> PastCaseInfoLabels { get; set; } = new List<CaseInfo>();
-        UserInfoHelper uih = new UserInfoHelper();
         TopicInfoHelper tih = new TopicInfoHelper();
-        //TODO:删除listitem //Done!
-        public ProjectPage()
+
+        public TopicsPage()
         {
             InitializeComponent();
-
             TopicInfoLabels = tih.GetMyTopicList(Settings.UserId);
-            PastCaseInfoLabels = uih.GetPastCaseInfoByUid(Settings.UserId);
-
-            currentList.ItemsSource = TopicInfoLabels;
-            currentTab.Content = currentList;
-
-            pastList.ItemsSource = PastCaseInfoLabels;
-            pastTab.Content = pastList;
+            MyListView.ItemsSource = TopicInfoLabels;
             BindingContext = this;
         }
 
-        private void OnDelete(object sender, EventArgs e)
+        async void OnDeleteAsync(object sender, EventArgs e)
         {
             var mi = ((MenuItem)sender);
-            DisplayAlert("Delete Action", mi.CommandParameter + "delete action", "OK");//(mi.CommandParameter as ListviewItem).Title
+            bool x =  await DisplayAlert("Delete Action Confirm", "Delete this Topic ?", "OK", "Cancel");
+            if(x)
+            {
+                tih.DeleteMyTopicByID((mi.CommandParameter as TopicInfo).TopicID);
+                //TopicInfoLabels.Remove((mi.CommandParameter as TopicInfo));//.TopicID
+                RefreshData();
+            }
         }
 
-        void Handle_CurrentItemTapped(object sender, ItemTappedEventArgs e)
+        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
+            if (e.Item == null)
+                return;
+
             TopicInfo _currentTopic = e.Item as TopicInfo;
             ((ListView)sender).SelectedItem = null;
-            Navigation.PushAsync(new DescribeProblemPage(_currentTopic));
-        }
-
-        void Handle_PastItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            CaseInfo _currentCase = e.Item as CaseInfo;
-            ((ListView)sender).SelectedItem = null;
-            Navigation.PushAsync(new PastHistoryDetailPage(_currentCase));
+            await Navigation.PushAsync(new DescribeProblemPage(_currentTopic));
+            //await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            //Deselect Item
         }
 
         private bool _isRefreshing = false;
@@ -79,14 +78,15 @@ namespace Crosshelper.Views
         private void RefreshData()
         {
             //currentList.BeginRefresh();
-            currentList.ItemsSource = null;
+            MyListView.ItemsSource = null;
             if (TopicInfoLabels.Count > 0)
             {
                 TopicInfoLabels.Clear();
             }
             TopicInfoLabels = tih.GetMyTopicList(Settings.UserId);
-            currentList.ItemsSource = TopicInfoLabels;
+            MyListView.ItemsSource = TopicInfoLabels;
             //currentList.EndRefresh();
         }
+
     }
 }

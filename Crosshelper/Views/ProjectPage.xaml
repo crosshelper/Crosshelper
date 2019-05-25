@@ -19,6 +19,10 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+                                          Text="Delete" IsDestructive="true"/>
+                            </ViewCell.ContextActions>
                                  <StackLayout Padding="15">
                                     <StackLayout Orientation="Horizontal">
                                         <Label
@@ -41,8 +45,8 @@
                                            FontSize="16"
                                            Text="{Binding Description}"
                                            VerticalOptions="End" />   
-                                    </StackLayout>
-                                </StackLayout>
+                                    </StackLayout>    
+                                </StackLayout>      
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
