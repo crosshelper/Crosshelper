@@ -30,7 +30,7 @@ namespace Crosshelper.Views
         async void OnDeleteAsync(object sender, EventArgs e)
         {
             var mi = ((MenuItem)sender);
-            bool x =  await DisplayAlert("Delete Action Confirm", "Delete this Topic ?", "OK", "Cancel");
+            bool x =  await DisplayAlert("Delete Confirm", "Delete this Topic ?", "Yes", "Cancel");
             if(x)
             {
                 tih.DeleteMyTopicByID((mi.CommandParameter as TopicInfo).TopicID);
