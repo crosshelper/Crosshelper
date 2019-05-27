@@ -52,9 +52,6 @@ namespace Crosshelper.Views
                 Name = usr.FirstName + " " + usr.LastName;
                 ChatServerConnect();
                 await Task.Delay(3000);
-                activity.IsEnabled = false;
-                activity.IsRunning = false;
-                activity.IsVisible = false;
                 Application.Current.MainPage = new MyTabbedPage();
 
             }
