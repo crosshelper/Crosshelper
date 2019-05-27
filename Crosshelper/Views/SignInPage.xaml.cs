@@ -6,12 +6,12 @@ using Crosshelper.Models;
 using Crosshelper.Helpers;
 using SendBird;
 using Xamarin.Forms.Xaml;
+using System.Threading.Tasks;
 
 namespace Crosshelper.Views
 {
     public partial class SignInPage : ContentPage
     {
-
         public SignInPage()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace Crosshelper.Views
             string text = ((Entry)sender).Text;
         }
         //登入按钮 Sign In
-        void Handle_SignIn(object sender, EventArgs e)
+        async void Handle_SignIn(object sender, EventArgs e)
         {
             //(sender as Button).Text = "Click me again!";
             UserAccess userAccess = new UserAccess();
@@ -41,13 +41,22 @@ namespace Crosshelper.Views
 
             if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
             {
-                signInTest.Text = "Sign in success";
+                activity.IsEnabled = true;
+                activity.IsRunning = true;
+                activity.IsVisible = true;
+                signInTest.Text = "Sign In Succeeded, Data Loading...";
+                signInTest.TextColor = Color.FromHex("#FF4E18");
                 Settings.UserId = userAccess.CurrentUid.ToString();
                 usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                 Settings.ChatID = usr.ChatID;
                 Name = usr.FirstName + " " + usr.LastName;
                 ChatServerConnect();
+                await Task.Delay(3000);
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
                 Application.Current.MainPage = new MyTabbedPage();
+
             }
             else
             {
@@ -64,7 +73,6 @@ namespace Crosshelper.Views
             {
                 if (e != null)
                 {
-                    //MessageError = e.Message;
                     return;
                 }
 
@@ -72,12 +80,10 @@ namespace Crosshelper.Views
                 {
                     if (e1 != null)
                     {
-                        //MessageError = e1.Message;
                         return;
                     }
                 });
             });
-            //MessageError = "Connected";
             Settings.IsLogin = true;
         }
 
@@ -98,7 +104,6 @@ namespace Crosshelper.Views
         void Handle_CreateAccount(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SignUpPage());
-            //Navigation.PushAsync(new SignUpPage());
         }
 
     }

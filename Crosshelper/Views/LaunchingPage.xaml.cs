@@ -46,6 +46,7 @@ namespace Crosshelper.Views
 
         void Handle_SignIn(object sender, EventArgs e)
         {
+            //Navigation.PushModalAsync(new NavigationPage(new TestPage()));
             Navigation.PushModalAsync(new NavigationPage(new SignInPage()));
         }
 

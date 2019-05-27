@@ -4,6 +4,7 @@
         <Button Text="Cancel" TextColor="White" HorizontalOptions="End" Clicked="Handle_Canceled" FontSize="20"/>
     </NavigationPage.TitleView>
     <ContentPage.Content>
+        <Grid>
         <ScrollView>
             <StackLayout Margin="15,15,15,10"> 
                 <StackLayout Orientation="Horizontal">
@@ -59,9 +60,9 @@
                                    MaxLength="18"
                                    PlaceholderColor="#888888"
                                    Completed="PasswordSignInCompleted"
-                                   x:Name="pwdEntry"/>
+                                   x:Name="pwdEntry"/>                 
                             <Label Text="" x:Name="signInTest"></Label>
-                        </StackLayout >
+                        </StackLayout>
            <!--登入按钮 Sign in Button -->   
             <StackLayout VerticalOptions="StartAndExpand">
                     <StackLayout VerticalOptions="Start">
@@ -107,5 +108,14 @@
             </StackLayout>
         </StackLayout>
       </ScrollView>
+      <ActivityIndicator x:Name="activity"  
+                         IsRunning="False"  
+                         IsEnabled="False"  
+                         IsVisible="False" 
+                         Color="#FF4E18"
+                         VerticalOptions="CenterAndExpand" 
+                         HorizontalOptions="FillAndExpand"
+                         BackgroundColor="Transparent"/>
+      </Grid>
     </ContentPage.Content>
 </ContentPage>
