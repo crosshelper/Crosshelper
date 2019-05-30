@@ -16,7 +16,7 @@ namespace Crosshelper.Helpers
         private int currentUid;
         public int CurrentUid { get { return currentUid; } }
 
-        public void UserRegister(string Uname, string Email,string ContactNo, string Pwd)
+        public void UserRegister(string Uname, string Email, string ContactNo, string Pwd)
         {
             MySqlConnection conn = new MySqlConnection(connStr);
             try
@@ -35,6 +35,36 @@ namespace Crosshelper.Helpers
                     cmd.ExecuteNonQuery();
                     Console.WriteLine("Connecting to MySQL success");
 
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Connection failed");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        internal void SetChatID()
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "UPDATE UserInfo SET " +
+                                 "ChatID = @para1" +
+                                 " WHERE Uid = @para2";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", "cycbis_" + currentUid);
+                    cmd.Parameters.AddWithValue("para2", currentUid);
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Connecting to MySQL success");
                 }
             }
             catch (Exception ex)

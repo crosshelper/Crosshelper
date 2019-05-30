@@ -28,6 +28,7 @@ namespace Crosshelper.Views
         {
             uAccess.UserRegister(Uname, Email, ContactNo, Pwd);
             Settings.IsLogin = uAccess.VerifyUser(Uname, Pwd);
+            uAccess.SetChatID();
             Application.Current.MainPage = new MyTabbedPage();
         }
 
