@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using Crosshelper.Views;
 using SendBird;
 using Xamarin.Forms;
+using Crosshelper.Helpers;
+
 namespace Crosshelper.ViewModels
 {
     public class MessageListViewModel : ViewModelBase
@@ -15,8 +17,31 @@ namespace Crosshelper.ViewModels
         //TODO:刷新真实user
         public MessageListViewModel()
         {
-            Users.Add(new Models.User { ChatID = "cycbis_006", FirstName = "Thomas", LastName = "Wong" });
-            Users.Add(new Models.User { ChatID = "cycbis_002", FirstName = "Jim", LastName = "Green" });
+            GroupChannelListQuery mQuery = GroupChannel.CreateMyGroupChannelListQuery();
+            mQuery.IncludeEmpty = true;
+            mQuery.Next((List<GroupChannel> list, SendBirdException e) => {
+                if (e != null)
+                {
+                    // Error.
+                    return;
+                }
+                foreach(GroupChannel channel in list)
+                {
+                    foreach(User user in channel.Members)
+                    {
+                        if(user.UserId!=Settings.ChatID)
+                        {
+                            Users.Add(new Models.User
+                            {
+                                ChatID = user.UserId,
+                                FirstName = user.Nickname,
+                                Icon = user.ProfileUrl
+                            });
+                        }
+                    }
+                }
+            });
+            Users.Add(new Models.User { ChatID = "cycbis_006", FirstName = "Thomas Wong" });
         }
 
         public async void ConnectToChannel(Models.User user, List<string> users)

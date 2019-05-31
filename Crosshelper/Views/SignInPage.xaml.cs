@@ -50,6 +50,7 @@ namespace Crosshelper.Views
                 usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                 Settings.ChatID = usr.ChatID;
                 Name = usr.FirstName + " " + usr.LastName;
+                Icon = usr.Icon;
                 ChatServerConnect();
                 await Task.Delay(3000);
                 Application.Current.MainPage = new MyTabbedPage();
@@ -63,6 +64,7 @@ namespace Crosshelper.Views
         }
 
         private string Name = "";
+        private string Icon = ""; 
 
         private void ChatServerConnect()
         {
@@ -73,7 +75,7 @@ namespace Crosshelper.Views
                     return;
                 }
 
-                SendBirdClient.UpdateCurrentUserInfo(Name, "", (SendBirdException e1) =>
+                SendBirdClient.UpdateCurrentUserInfo(Name, Icon, (SendBirdException e1) =>
                 {
                     if (e1 != null)
                     {
