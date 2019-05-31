@@ -15,7 +15,7 @@ namespace Crosshelper.ViewModels
         //TODO:刷新真实user
         public MessageListViewModel()
         {
-            Users.Add(new Models.User { ChatID = "cycbis_001", FirstName = "Thomas", LastName = "Wong" });
+            Users.Add(new Models.User { ChatID = "cycbis_006", FirstName = "Thomas", LastName = "Wong" });
             Users.Add(new Models.User { ChatID = "cycbis_002", FirstName = "Jim", LastName = "Green" });
         }
 
