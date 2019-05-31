@@ -5,59 +5,8 @@
              x:Class="Crosshelper.Views.ProjectPage"
              Title="Cases">  
     <ContentPage.Content>
-         <tv:TabViewControl HeaderTabTextFontSize="Default" HeaderBackgroundColor="White">
-            <tv:TabViewControl.ItemSource>
-                <!-- Current -->
-                <tv:TabItem x:Name="currentTab" HeaderText="Current" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#FF4E18">
-            <StackLayout>
-                <ListView IsPullToRefreshEnabled="True"
-                          RefreshCommand="{Binding RefreshCommand}"
-                          IsRefreshing="{Binding IsRefreshing}" 
-                          x:Name="currentList" 
-                          HasUnevenRows="true" 
-                          ItemTapped="Handle_CurrentItemTapped">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                            <ViewCell.ContextActions>
-                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
-                                          Text="Delete" IsDestructive="true"/>
-                            </ViewCell.ContextActions>
-                                 <StackLayout Padding="15">
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label
-                                           TextColor="#393939"
-                                           FontSize="18"
-                                           Text="{Binding Zipcode}"
-                                           HorizontalOptions="StartAndExpand" />
-                                        <Label Text="{Binding CaseTypeLabelText}" TextColor="Red" FontSize="15" HorizontalOptions="End"/>
-                                    </StackLayout>
-                                    <Label 
-                                       TextColor="#393939"
-                                       FontSize="12"
-                                       Text="{Binding Language}"
-                                       VerticalOptions="End" />
-                                    <StackLayout>
-                                    <Label Text="Problem description" FontSize="18" TextColor="Black"></Label>
-                                    <Label 
-                                           TextColor="#393939"
-                                           MaxLines="4"
-                                           FontSize="16"
-                                           Text="{Binding Description}"
-                                           VerticalOptions="End" />   
-                                    </StackLayout>    
-                                </StackLayout>      
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-        </StackLayout>
-                </tv:TabItem>
-                
-                <!-- Past -->
-        <tv:TabItem x:Name="pastTab" HeaderText="Past" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#999999">
-                        <StackLayout>
-                <ListView x:Name="pastList" HasUnevenRows="true" ItemTapped="Handle_PastItemTapped">
+
+         <ListView x:Name="pastList" HasUnevenRows="true" ItemTapped="Handle_PastItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -89,10 +38,6 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-        </StackLayout>
-                </tv:TabItem>
-               
-            </tv:TabViewControl.ItemSource>
-        </tv:TabViewControl>         
+      
     </ContentPage.Content>
 </ContentPage>

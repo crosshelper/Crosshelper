@@ -4,7 +4,7 @@
              x:Class="Crosshelper.Views.PastHistoryDetailPage"
              Title="Case detail">
     <ContentPage.Content>
-            <StackLayout>
+            
             <ScrollView>
                  <StackLayout Padding="15">
                     <!-- Case detial -->
@@ -47,7 +47,6 @@
                                 <Label Text="" HorizontalOptions="EndAndExpand" FontSize="Default" x:Name="HelperLanguage"></Label>
                                 </StackLayout>
                 <!--Receipt-->
-                       
                         <Label Text="Receipt" FontSize="Medium" Margin="0,20,0,0" FontAttributes="Bold" ></Label>
                         <BoxView BackgroundColor="#999999" HeightRequest="1.5"></BoxView>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
@@ -84,6 +83,6 @@
                 </StackLayout>
             </StackLayout>
             </ScrollView>
-        </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

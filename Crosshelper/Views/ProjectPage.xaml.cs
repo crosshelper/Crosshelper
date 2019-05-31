@@ -24,12 +24,12 @@ namespace Crosshelper.Views
             TopicInfoLabels = tih.GetMyTopicList(Settings.UserId);
             PastCaseInfoLabels = uih.GetPastCaseInfoByUid(Settings.UserId);
 
-            currentList.ItemsSource = TopicInfoLabels;
-            currentTab.Content = currentList;
+           // currentList.ItemsSource = TopicInfoLabels;
+            //currentTab.Content = currentList;
 
-            pastList.ItemsSource = PastCaseInfoLabels;
-            pastTab.Content = pastList;
-            BindingContext = this;
+           pastList.ItemsSource = PastCaseInfoLabels;
+           //pastTab.Content = pastList;
+           BindingContext = this;
         }
 
         private void OnDelete(object sender, EventArgs e)
@@ -79,13 +79,13 @@ namespace Crosshelper.Views
         private void RefreshData()
         {
             //currentList.BeginRefresh();
-            currentList.ItemsSource = null;
+            //currentList.ItemsSource = null;
             if (TopicInfoLabels.Count > 0)
             {
                 TopicInfoLabels.Clear();
             }
             TopicInfoLabels = tih.GetMyTopicList(Settings.UserId);
-            currentList.ItemsSource = TopicInfoLabels;
+            //currentList.ItemsSource = TopicInfoLabels;
             //currentList.EndRefresh();
         }
     }

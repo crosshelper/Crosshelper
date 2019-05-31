@@ -21,6 +21,11 @@
         <sv:PickerCell Title="Add Promotion Code" Tapped="Handle_Promotion" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
+        
+    <sv:Section Title="History" IsVisible="{Binding SctionIsVisible}">
+        <sv:PickerCell Title="Past cases" Tapped="Handle_PastCases" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true"/>
+    </sv:Section>
 
     <sv:Section Title="General" IsVisible="{Binding SctionIsVisible}">
         <sv:CommandCell Title="Language" Tapped="Handle_Language"/>

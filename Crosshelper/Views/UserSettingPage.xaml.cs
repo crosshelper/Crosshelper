@@ -45,6 +45,10 @@ namespace Crosshelper.Views
         {
             Navigation.PushAsync(new NCAboutPage());
         }
+        void Handle_PastCases(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new ProjectPage());
+        }
         void Handle_SignOut(object sender, System.EventArgs e)
         {
             Settings.IsLogin = false;
