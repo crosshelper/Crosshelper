@@ -66,7 +66,7 @@ namespace Crosshelper.Converters
                 tmp.Rating = StarNoToStarSign(helper.Rating);
                 tmp.Language = "Language: " + helper.FLanguage + "/" + helper.SLanguage;
                 tmp.Baseprice = "$" + helper.PriceSign + " starting cost";
-                tmp.Location = "8 miles away";//TODO:应该绑定为真实数据
+                tmp.Location = "8 miles away";
                 tmp.StatusColor = StatusColorConverter(helper.Status);
                 tmp.StatusText = StatusTextConverter(helper.Status); ;
                 tmp.LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png";

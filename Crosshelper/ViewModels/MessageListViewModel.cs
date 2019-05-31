@@ -14,7 +14,6 @@ namespace Crosshelper.ViewModels
         public ObservableCollection<Models.User> Users { get; set; } = new ObservableCollection<Models.User>();
         public INavigation Navigation;
         #endregion
-        //TODO:刷新真实user
         public MessageListViewModel()
         {
             GroupChannelListQuery mQuery = GroupChannel.CreateMyGroupChannelListQuery();

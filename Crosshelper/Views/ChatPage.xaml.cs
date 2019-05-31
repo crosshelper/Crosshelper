@@ -22,9 +22,11 @@ namespace Crosshelper.Views
         public ChatPage(Models.User user, GroupChannel channel)
         {
             InitializeComponent();
+
             BindingContext = vm = new ChatViewModel();
             vm.Channel = channel;
-            vm.Title = user.FirstName;
+            Page_Title.Text = user.FirstName;
+            //vm.Title = user.FirstName;
             vm.UserName = Settings.ChatID;
             vm.Load();
             instance = this;

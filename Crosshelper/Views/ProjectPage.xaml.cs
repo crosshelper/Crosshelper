@@ -16,7 +16,6 @@ namespace Crosshelper.Views
         private List<CaseInfo> PastCaseInfoLabels { get; set; } = new List<CaseInfo>();
         UserInfoHelper uih = new UserInfoHelper();
         TopicInfoHelper tih = new TopicInfoHelper();
-        //TODO:删除listitem //Done!
         public ProjectPage()
         {
             InitializeComponent();
