@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Essentials;
 using Crosshelper.Models;
 using Crosshelper.Helpers;
+using System.Linq;
 
 namespace Crosshelper.Views
 {
@@ -84,17 +85,34 @@ namespace Crosshelper.Views
                     status = 1;
                 tih.UpdateMyTopic("95131", language, des.Text, _currentTopic.TopicID, status);
             }
+
+            SetCurrentZipCode();
             Navigation.PushAsync(new PickHelperPage(_currentTopic));
         }
+
+        private async void SetCurrentZipCode()
+        {
+            var locator = CrossGeolocator.Current;
+            locator.DesiredAccuracy = 50;
+            var position = new Position(Settings.CurrentLatitude, Settings.CurrentLongitude);
+            var addresses = await locator.GetAddressesForPositionAsync(position, null);
+            var address = addresses.FirstOrDefault();
+            Settings.ZipCode = address.PostalCode;
+        }
+
 
         private async void Handel_MyLocation(object sender, EventArgs e)
         {
             var locator = CrossGeolocator.Current;
             locator.DesiredAccuracy = 50;
             var position = await locator.GetPositionAsync();
-
             Settings.CurrentLongitude = position.Longitude;
             Settings.CurrentLatitude = position.Latitude;
+
+            var addresses = await locator.GetAddressesForPositionAsync(position, null);
+            var address = addresses.FirstOrDefault();
+            Settings.ZipCode = address.PostalCode;
+
             await Navigation.PushAsync(new LocationPage());
         }
         void Handle_Language(object sender, EventArgs e)

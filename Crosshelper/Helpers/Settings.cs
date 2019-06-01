@@ -18,8 +18,6 @@ namespace Crosshelper.Helpers
 
         #region Setting Constants
 
-
-
         private const string SettingsKey = "settings_key";
         private static readonly string SettingsDefault = string.Empty;
 
@@ -29,12 +27,27 @@ namespace Crosshelper.Helpers
         private const string IsLoginKey = "login_key";
         private static readonly bool IsLoginDefault = false;
 
+        private const string ZipCodeKey = "zipcode_key";
+        private static readonly string ZipCodeDefault = string.Empty;
+
         #endregion
 
         public static string ChatID
         {
             get => AppSettings.GetValueOrDefault(nameof(ChatID), string.Empty);
             set => AppSettings.AddOrUpdateValue(nameof(ChatID), value);
+        }
+
+        public static string ZipCode
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(ZipCodeKey, ZipCodeDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(ZipCodeKey, value);
+            }
         }
 
         public static double CurrentLatitude

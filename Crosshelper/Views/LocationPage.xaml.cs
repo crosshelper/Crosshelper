@@ -66,8 +66,13 @@ namespace Crosshelper.Views
             var place = await Places.GetPlace(prediction.Place_ID, GooglePlacesApiKey);
 
             if (place != null)
+            {
+                Settings.CurrentLatitude = place.Latitude;
+                Settings.CurrentLongitude = place.Longitude;
                 await DisplayAlert(
                     place.Name, string.Format("Lat: {0}\nLon: {1}", place.Latitude, place.Longitude), "OK");
+            }
+            await Navigation.PopModalAsync();
         }
 
         void Handle_Canceled(object sender, EventArgs e)

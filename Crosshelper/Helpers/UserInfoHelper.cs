@@ -320,12 +320,9 @@ namespace Crosshelper.Helpers
             }
         }
 
-        public List<UserPro> GetHelperList(string tagid, string language)
+        public List<UserPro> GetHelperList(string tagid, string language, string zipCode)
         {
             GetHelperIDByTag(tagid);
-            //TODO: location search
-            //double lo = Settings.CurrentLatitude;
-            //double la = Settings.CurrentLongitude;
             foreach (int uid in helperuidlist)
             {
                 GetHelperInfoByID(uid.ToString());
@@ -335,6 +332,13 @@ namespace Crosshelper.Helpers
                 if(helper.FLanguage != language && helper.SLanguage != language)
                 {
                     helperlist.Remove(helper); 
+                }
+            }
+            foreach (UserPro helper in helperlist)
+            {
+                if (helper.ZipCode != zipCode)
+                {
+                    helperlist.Remove(helper);
                 }
             }
             return helperlist;
