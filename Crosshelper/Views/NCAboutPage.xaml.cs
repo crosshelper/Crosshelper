@@ -20,7 +20,6 @@ namespace Crosshelper.Views
 
             supportsEmail = "bo.chen@cycbis.com";
             emailTitle = "[SupportsTicket]Feedback from Customer";
-            emailBody = emaileditor.Text;
 
             SubmitBtn.Clicked += async (sender, e) =>
             {
@@ -29,6 +28,7 @@ namespace Crosshelper.Views
                     var emailTask = CrossMessaging.Current.EmailMessenger;
                     if (emailTask.CanSendEmail)
                     {
+                        emailBody = emaileditor.Text;
                         emailTask.SendEmail(supportsEmail, emailTitle, emailBody);
 
                         /*var email = new EmailMessageBuilder()
