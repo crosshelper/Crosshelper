@@ -655,7 +655,7 @@ namespace Crosshelper.Helpers
             {   //建立连接，打开数据库
                 conn.Open();
                 string sqlstr =
-                "SELECT FirstName,LastName,Icon,ChatID,FLanguage,SLanguage,PaymentID,Location,Rating,`Status`,PriceSign,Bio FROM HelperInfo,UserInfo WHERE HelperInfo.Uid = @para1 AND UserInfo.Uid = @para1";
+                "SELECT FirstName,LastName,Icon,ChatID,FLanguage,SLanguage,PaymentID,Location,Rating,`Status`,PriceSign,Bio,ServiceZip1,ServiceZip2,ServiceZip3 FROM HelperInfo,UserInfo WHERE HelperInfo.Uid = @para1 AND UserInfo.Uid = @para1";
 
                 MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
                 //通过设置参数的形式给SQL 语句串值
@@ -677,7 +677,11 @@ namespace Crosshelper.Helpers
                     int Status = reader.GetInt32(9);
                     string PriceSign = reader.GetString(10);
                     string Bio = reader.GetString(11);
-                    string UserID = userid.ToString();
+                    string zip1 = reader.GetString(12);
+                    string zip2 = reader.GetString(13);
+                    string zip3 = reader.GetString(14);
+
+                    string UserID = userid;
                     UserPro helper = new UserPro()
                     {
                         FirstName = FirstName,
@@ -692,7 +696,10 @@ namespace Crosshelper.Helpers
                         Status = Status,
                         PriceSign = PriceSign,
                         UserID = UserID,
-                        Bio = Bio
+                        Bio = Bio,
+                        ZipCode1=zip1,
+                        ZipCode2=zip2,
+                        ZipCode3=zip3
                     };
                     helperlist.Add(helper);
                 }
