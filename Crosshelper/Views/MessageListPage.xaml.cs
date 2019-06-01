@@ -20,17 +20,6 @@ namespace Crosshelper.Views
             vm.Navigation = Navigation;
         }
 
-      //  private void LstView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        //{
-          //  var user = (Models.User)e.SelectedItem;
-            //List<string> users = new List<string>() {
-              //  Settings.ChatID,
-                //user.ChatID
-            //};
-            //((ListView)sender).SelectedItem = null;
-            //vm.ConnectToChannel(user, users);
-       // }
-
         void LstView_ItemSelected(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
             var user = (Models.User)e.Item;
