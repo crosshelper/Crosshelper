@@ -15,6 +15,8 @@
         public string PriceSign { get; set; }
         public string UserID { get; internal set; }
         public string Bio { get; internal set; }
-        public string ZipCode { get; internal set; }
+        public string ZipCode1 { get; internal set; }
+        public string ZipCode2 { get; internal set; }
+        public string ZipCode3 { get; internal set; }
     }
 }

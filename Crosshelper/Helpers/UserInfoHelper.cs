@@ -336,7 +336,7 @@ namespace Crosshelper.Helpers
             }
             foreach (UserPro helper in helperlist)
             {
-                if (helper.ZipCode != zipCode)
+                if (helper.ZipCode1 != zipCode && helper.ZipCode2 != zipCode && helper.ZipCode3 != zipCode)
                 {
                     helperlist.Remove(helper);
                 }
