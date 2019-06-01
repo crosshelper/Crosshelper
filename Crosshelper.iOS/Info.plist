@@ -25,13 +25,11 @@
 	<key>CFBundleDisplayName</key>
 	<string>Crosshelper</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.crosshelper.Crosshelper</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>crosshelper.CycbisTest</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
-	<string>Crosshelper</string>
+	<string>CycbisTest</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -46,5 +44,9 @@
 	<string>access add photo library</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>access add photo library</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1</string>
+	<key>CFBundleVersion</key>
+	<string>0.1</string>
 </dict>
 </plist>
