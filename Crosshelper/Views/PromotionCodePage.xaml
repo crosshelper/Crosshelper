@@ -2,11 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="Crosshelper.Views.PromotionCodePage"
-             xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView">
+             xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
+             Title="Promo">
     <NavigationPage.TitleView>
-        <Grid>
-            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
-        </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <sv:SettingsView x:Name="settings"

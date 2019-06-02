@@ -80,6 +80,33 @@ namespace Crosshelper.Helpers
             return caselist;
         }
 
+        internal void DeleteMyPaymentByID(string paymentID)
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "DELETE From PaymentInfo Where Pid = @para1";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", paymentID);
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Connecting to MySQL success");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Connection failed");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         internal ReceiptInfo GetReceiptByID(string receiptID)
         {
             ReceiptInfo tmp = new ReceiptInfo();

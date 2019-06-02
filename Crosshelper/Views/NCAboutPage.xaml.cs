@@ -1,25 +1,18 @@
 ﻿using Plugin.Messaging;
 using Xamarin.Forms;
-
+using Crosshelper.Helpers;
 
 namespace Crosshelper.Views
 {
     public partial class NCAboutPage : ContentPage
     {
         private string supportsEmail, emailTitle, emailBody;
-
-
-        void Handle_Canceled(object sender, System.EventArgs e)
-        {
-            Navigation.PopToRootAsync(false);
-        }
-
         public NCAboutPage()
         {
             InitializeComponent();
 
             supportsEmail = "bo.chen@cycbis.com";
-            emailTitle = "[SupportsTicket]Feedback from Customer";
+            emailTitle = "[Supports Ticket] Feedback from Customer: " + Settings.ChatID;
 
             SubmitBtn.Clicked += async (sender, e) =>
             {
@@ -50,13 +43,7 @@ namespace Crosshelper.Views
                 {
                     await DisplayAlert("Error", "Unable to perform action", "OK");
                 }
-                //Navigation.PopAsync(false);
             };
-        }
-
-        void Handle_Submit(object sender, System.EventArgs e)
-        {
-
         }
     }
 }

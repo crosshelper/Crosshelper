@@ -19,10 +19,7 @@ namespace Crosshelper.Views
 {
     public partial class ProfilePage : ContentPage
     {
-        // 初始化 Amazon Cognito 凭证提供程序
-
-
-        private string filename = Settings.ChatID + DateTime.Now.ToShortDateString();
+        private string filename = Settings.ChatID + "_ProfileIcon.png";// + DateTime.Now.ToShortDateString();
 
         // Specify your bucket region (an example region is shown).
         //private static readonly RegionEndpoint bucketRegion = RegionEndpoint.USWest1;
@@ -36,16 +33,13 @@ namespace Crosshelper.Views
             _usr.LastName = LastName;
             _ac.Email = Email;
             _ac.ContactNo = PhoneNumber;
-
+            //TODO:_usr.Icon = URL Get From Amazon S3 "";
             uih.UpdateUserInfo(_usr);
             uih.UpdateUac(_ac);
 
             Navigation.PopAsync(false);
         }
-        void Handle_Canceled(object sender, System.EventArgs e)
-        {
-            Navigation.PopToRootAsync(false);
-        }
+
         void Handle_ResetPassword(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new ResetPasswordPage(_ac));
@@ -77,21 +71,19 @@ namespace Crosshelper.Views
                     {
                         BucketName = "imagetest123bibi",
                         FilePath = file.Path,
-                        Key = string.Format("Login Picture"),
+                        Key = string.Format(filename),
                         ContentType = "image/png"
                     };
-
                 //The cancellationToken is not used within this example, however you can pass it to the UploadAsync consutructor as well
                 //CancellationToken cancellationToken = new CancellationToken();
-
                 await this.s3transferUtility.UploadAsync(request).ContinueWith(((x) =>
                 {
                     Debug.WriteLine("Image Uploaded");
                 }));
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                throw e;
             }
 
             //image.Source = ImageSource.FromStream(() => {
@@ -119,7 +111,39 @@ namespace Crosshelper.Views
                 });
                 //fileImage.Source = ImageSource.FromStream(() => { return file.GetStream(); });
                 if (file == null)
+                {
                     return;
+                }
+                else 
+                {
+                    try
+                    {
+                        TransferUtilityUploadRequest request =
+                            new TransferUtilityUploadRequest
+                            {
+                                BucketName = "imagetest123bibi",
+                                FilePath = file.Path,
+                                Key = string.Format(filename),
+                                ContentType = "image/png"
+                            };
+                        //The cancellationToken is not used within this example, however you can pass it to the UploadAsync consutructor as well
+                        //CancellationToken cancellationToken = new CancellationToken();
+                        await this.s3transferUtility.UploadAsync(request).ContinueWith(((x) =>
+                        {
+                            Debug.WriteLine("Image Uploaded");
+                        }));
+                    }
+                    catch (Exception e)
+                    {
+                        throw e;
+                    }
+                    //image.Source = ImageSource.FromStream(() => {
+                    // var stream = file.GetStream();
+                    //file.Dispose();
+                    //return stream;
+                    //});
+                }
+
             }
         }
        
@@ -162,11 +186,6 @@ namespace Crosshelper.Views
         private void SetupAWSCredentials()
         {
             // 初始化 Amazon Cognito 凭证提供程序
-            //CognitoAWSCredentials credentials = new CognitoAWSCredentials(
-            //  "us-east-1:220800bd-8233-4785-b80e-7f440926f503", // 身份池 ID
-            //RegionEndpoint.USEast1 // 区域
-            //);
-
             CognitoAWSCredentials credentials = new CognitoAWSCredentials(
                 "us-east-1:be56bffa-67eb-40f0-b7cf-18caf9df0a20", // 身份池 ID
                 RegionEndpoint.USEast1 // 区域

@@ -19,10 +19,6 @@ namespace Crosshelper.Views
             uih.UpdateUserInfo(_usr);
             Navigation.PopAsync(false);
         }
-        void Handle_Canceled(object sender, System.EventArgs e)
-        {
-            Navigation.PopToRootAsync(false);
-        }
 
         UserInfoHelper uih = new UserInfoHelper();
         public IList LanguageItems { get; }
@@ -38,25 +34,21 @@ namespace Crosshelper.Views
         public MyBackgroundPage(User user)
         {
             InitializeComponent();
-
             _usr = user;
-
             FLanguage = user.FLanguage;
             SLanguage = user.SLanguage;
-
             List<string> list = new List<string>
             {
-                "Chinese",
                 "English",
                 "Spanish",
+                "Chinese",
                 "Korean",
                 "Japanese",
                 "French",
                 "German",
-                "Thai"
+                "Vietnamese"
             };
             LanguageItems = list;
-
             BindingContext = this;
         }
 

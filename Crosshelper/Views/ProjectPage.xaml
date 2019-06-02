@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:tv="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"  
              x:Class="Crosshelper.Views.ProjectPage"
-             Title="Cases">  
+             Title="Case History">  
     <ContentPage.Content>
-
-         <ListView x:Name="pastList" HasUnevenRows="true" ItemTapped="Handle_PastItemTapped">
+         <ListView x:Name="pastList" HasUnevenRows="true" 
+                   ItemTapped="Handle_PastItemTapped"
+                   CachingStrategy="RecycleElement" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -38,6 +39,5 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-      
     </ContentPage.Content>
 </ContentPage>

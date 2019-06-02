@@ -48,6 +48,10 @@ namespace Crosshelper.Views
                     DisplayAlert("Reset success!", "Your password updated, press 'OK' back to last page.", "OK");
                     Navigation.PopAsync();
                 }
+                else
+                {
+                    DisplayAlert("Not accessable input!", "Not a valid password, please try again!", "OK");
+                }
             }
 
             else

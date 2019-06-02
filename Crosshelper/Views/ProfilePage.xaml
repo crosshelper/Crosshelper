@@ -2,11 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
-             x:Class="Crosshelper.Views.ProfilePage">
+             x:Class="Crosshelper.Views.ProfilePage"
+             Title="Account Setting">
      <NavigationPage.TitleView>
-        <Grid>
-            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
-        </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <sv:SettingsView x:Name="settings"
