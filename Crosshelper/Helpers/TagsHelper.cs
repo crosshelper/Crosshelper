@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using Crosshelper.Models;
+using MySql.Data.MySqlClient;
+
+namespace Crosshelper.Helpers
+{
+    public class TagsHelper
+    {
+        private readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
+
+        readonly private List<TypeProblem> tagInfoList = new List<TypeProblem>();
+        public List<TypeProblem> GetTagList()
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT * FROM Tags";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int TagID = reader.GetInt32(0);
+                    string Pcategory = reader.GetString(1);
+                    string ImageUrl = reader.GetString(2);
+
+                    TypeProblem tmp = new TypeProblem()
+                    {
+                        TagID = TagID,
+                        Pcategory = Pcategory,
+                        ImageUrl = ImageUrl
+                    };
+                    tagInfoList.Add(tmp);
+                }
+                return tagInfoList;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return tagInfoList;
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+        public TagsHelper()
+        {
+        }
+    }
+}

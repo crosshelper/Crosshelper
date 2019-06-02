@@ -11,7 +11,6 @@
         </NavigationPage.TitleView>
     <StackLayout>
         <custom:PlacesBar x:Name="search_bar" />
-        <Image Source="" HeightRequest="30" HorizontalOptions="Center" />
         <AbsoluteLayout>
             <ActivityIndicator x:Name="spinner" IsRunning="false"
                 AbsoluteLayout.LayoutBounds="0.5, 0.1, 50, 50" AbsoluteLayout.LayoutFlags="PositionProportional" />
@@ -19,7 +18,7 @@
                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="SizeProportional" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Description}" Detail="{Binding Place_ID}" />
+                        <TextCell Text="{Binding Description}" Detail="{Binding Description}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
