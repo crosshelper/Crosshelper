@@ -35,7 +35,7 @@
                                     FontSize="Medium"
                                     FontAttributes="Bold"
                                     BackgroundColor="#FF4E18"
-                                    Clicked="Handle_SignUpAsync"/>
+                                    Clicked="Handle_SignUp"/>
                             <Button BackgroundColor="#999999" HeightRequest="1" Margin="0,5,0,0"></Button>
                             <Button  
                                     Text="Or sign up as a helper"
