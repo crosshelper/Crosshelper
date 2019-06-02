@@ -35,6 +35,7 @@
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="55" />
+                                    <ColumnDefinition Width="100" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
                                 <circleimage:CircleImage Source="{Binding Sender.ProfileUrl}"
@@ -47,8 +48,8 @@
                                                             HorizontalOptions="Start">
                                     </circleimage:CircleImage>
                                 
-                                <Label Text="{Binding Sender.Nickname}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"></Label>
-                                <Label Text="{Binding CreatAt, Converter={StaticResource TypeToDateTimeConverter}}" Grid.Row="0" HorizontalOptions="End"></Label>
+                                <Label Text="{Binding Sender.Nickname}" Grid.Row="0" Grid.Column="1" ></Label>
+                                <Label Text="{Binding CreatedAt, Converter={StaticResource TypeToDateTimeConverter}}" Grid.Row="0" Grid.Column="2" HorizontalOptions="EndAndExpand" TextColor="Red"></Label>
                                <!-- <StackLayout Grid.ColumnSpan="2" 
                                        Padding="5" 
                                        Grid.Column="{Binding Sender, Converter={StaticResource TypeToColumnConverter}}" 
@@ -58,6 +59,7 @@
                                            FontSize="Medium" 
                                            Grid.RowSpan="2"
                                            Grid.Row="1" Grid.Column="1"
+                                           Grid.ColumnSpan="2"
                                            LineBreakMode="WordWrap" 
                                            VerticalOptions="Center"/>
                               <!--  </StackLayout> -->
