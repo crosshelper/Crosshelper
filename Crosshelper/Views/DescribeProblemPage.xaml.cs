@@ -109,7 +109,7 @@ namespace Crosshelper.Views
             var address = addresses.FirstOrDefault();
             Settings.ZipCode = address.PostalCode;
 
-            await Navigation.PushAsync(new LocationPage());
+            await Navigation.PushModalAsync(new LocationPage());
         }
         void Handle_Language(object sender, EventArgs e)
         {

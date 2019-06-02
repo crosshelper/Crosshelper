@@ -5,15 +5,6 @@
              xmlns:controls="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
              xmlns:circleimage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="Crosshelper.Views.ChatPage">
-    <NavigationPage.TitleView>
-        <Grid>
-            <StackLayout Orientation="Horizontal">
-            <!--此行无Event，仅做占位符--><Button Text="X" TextColor="#FF4E18" HorizontalOptions="End" FontSize="17" VerticalOptions="Center"/>
-                <Label x:Name="Page_Title" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="White" FontSize="17" FontAttributes="Bold"/>
-                <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled" VerticalOptions="Center"/>
-            </StackLayout>
-        </Grid>
-    </NavigationPage.TitleView>
           <!-- <ScrollView > -->
     <ContentPage.Resources>
         <ResourceDictionary>
