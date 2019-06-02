@@ -56,11 +56,9 @@ namespace Crosshelper.Views
                     Key = string.Format(filename),
                     Expires=DateTime.Now.AddMinutes(5) 
                 };
-            //The cancellationToken is not used within this example, however you can pass it to the UploadAsync consutructor as well
-            //CancellationToken cancellationToken = new CancellationToken();
             */
-            var BucketName = "imagetest123bibi";           
-            string url = "https://" + BucketName + ".s3.amazonaws.com/" + filename; //s3client.GetPreSignedURL(request); //s3.getSignedUrl('getObject', params);
+            var s3 = Properties.Resources.S3_BUCKETNAME;
+            string url = "https://" + s3 + ".s3.amazonaws.com/" + filename; //s3client.GetPreSignedURL(request); //s3.getSignedUrl('getObject', params);
             return url; 
         }
 

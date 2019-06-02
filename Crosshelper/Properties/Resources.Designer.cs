@@ -58,5 +58,11 @@ namespace Crosshelper.Properties {
                 return ResourceManager.GetString("API_KEY", resourceCulture);
             }
         }
+        
+        internal static string S3_BUCKETNAME {
+            get {
+                return ResourceManager.GetString("S3_BUCKETNAME", resourceCulture);
+            }
+        }
     }
 }

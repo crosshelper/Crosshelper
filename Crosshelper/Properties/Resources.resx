@@ -120,7 +120,10 @@
   <data name="APP_ID" xml:space="preserve">
     <value>B0F51364-A66F-4EF8-B6AA-0A61629E45C7</value>
   </data>
-      <data name="API_KEY" xml:space="preserve">
+  <data name="API_KEY" xml:space="preserve">
     <value>AIzaSyBcxooWTNnHQJb10x0cgkijXn5fowDfUjE</value>
+  </data>
+  <data name="S3_BUCKETNAME" xml:space="preserve">
+    <value>imagetest123bibi</value>
   </data>
 </root>
