@@ -10,6 +10,7 @@ namespace Crosshelper.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ChatPage : ContentPage
 	{
+        //TODO:Auto Scroll
         ChatViewModel vm;
         static ChatPage instance = null;
         public static ChatPage CurrentActivity

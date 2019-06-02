@@ -12,6 +12,7 @@ namespace Crosshelper.Views
 {
     public partial class SignInPage : ContentPage
     {
+        //TODO:Auto signin
         public SignInPage()
         {
             InitializeComponent();

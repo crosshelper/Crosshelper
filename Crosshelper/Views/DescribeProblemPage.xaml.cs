@@ -63,9 +63,11 @@ namespace Crosshelper.Views
             if(_currentTopic==null)
             {
                 int status = 0;
-                if(switchButton.IsToggled)
-                    status = 1; 
-                tih.ListMyTopic(_typeproblem.TagID, "95131", language, des.Text,status);
+                Settings.ZipCode = "95131";
+                if (switchButton.IsToggled)
+                    status = 1;
+                SetCurrentZipCode();
+                tih.ListMyTopic(_typeproblem.TagID, Settings.ZipCode, language, des.Text,status);
                 _currentTopic = new TopicInfo
                 {
                     TagID = _typeproblem.TagID,
@@ -77,12 +79,12 @@ namespace Crosshelper.Views
             }
             else
             {
+                SetCurrentZipCode();
                 int status = 0;
                 if (switchButton.IsToggled)
                     status = 1;
-                tih.UpdateMyTopic("95131", language, des.Text, _currentTopic.TopicID, status);
+                tih.UpdateMyTopic(Settings.ZipCode, language, des.Text, _currentTopic.TopicID, status);
             }
-            //SetCurrentZipCode();
             Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
         }
 

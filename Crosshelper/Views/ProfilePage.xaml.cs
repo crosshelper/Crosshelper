@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Amazon;
 using Amazon.CognitoIdentity;
 using Amazon.S3;
+using Amazon.S3.Model;
 using Amazon.S3.Transfer;
 using Crosshelper.Helpers;
 using Crosshelper.Models;
@@ -33,7 +34,7 @@ namespace Crosshelper.Views
             _usr.LastName = LastName;
             _ac.Email = Email;
             _ac.ContactNo = PhoneNumber;
-            //TODO:_usr.Icon = URL Get From Amazon S3 "";
+            _usr.Icon = GetIconUrlFromS3();
             uih.UpdateUserInfo(_usr);
             uih.UpdateUac(_ac);
 
@@ -43,6 +44,28 @@ namespace Crosshelper.Views
         void Handle_ResetPassword(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new ResetPasswordPage(_ac));
+        }
+
+        private string GetIconUrlFromS3()
+        {
+            try
+            {
+                GetPreSignedUrlRequest request =
+                    new GetPreSignedUrlRequest
+                    {
+                        BucketName = "imagetest123bibi",
+                        Key = string.Format(filename),
+                        ContentType = "image/png"
+                    };
+                //The cancellationToken is not used within this example, however you can pass it to the UploadAsync consutructor as well
+                //CancellationToken cancellationToken = new CancellationToken();
+                string url = s3client.GetPreSignedURL(request); //s3.getSignedUrl('getObject', params);
+                return url; 
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         async void Handle_ChangePhoto(object sender, EventArgs e)
@@ -80,17 +103,18 @@ namespace Crosshelper.Views
                 {
                     Debug.WriteLine("Image Uploaded");
                 }));
+
+                NameCell.IconSource = ImageSource.FromStream(() => {
+                    var stream = file.GetStream();
+                    file.Dispose();
+                    return stream;
+                });
+                await Task.Delay(5000);
             }
             catch (Exception e)
             {
                 throw e;
             }
-
-            //image.Source = ImageSource.FromStream(() => {
-               // var stream = file.GetStream();
-                //file.Dispose();
-                //return stream;
-            //});
         }
 
         private async Task TakePhotoFromCameraAsync()
@@ -132,16 +156,18 @@ namespace Crosshelper.Views
                         {
                             Debug.WriteLine("Image Uploaded");
                         }));
+
+                        NameCell.IconSource = ImageSource.FromStream(() => {
+                            var stream = file.GetStream();
+                            file.Dispose();
+                            return stream;
+                        });
+                        await Task.Delay(5000);
                     }
                     catch (Exception e)
                     {
                         throw e;
                     }
-                    //image.Source = ImageSource.FromStream(() => {
-                    // var stream = file.GetStream();
-                    //file.Dispose();
-                    //return stream;
-                    //});
                 }
 
             }
