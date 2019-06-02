@@ -37,7 +37,6 @@ namespace Crosshelper.Views
             _usr.Icon = GetIconUrlFromS3();
             uih.UpdateUserInfo(_usr);
             uih.UpdateUac(_ac);
-
             Navigation.PopAsync(false);
         }
 
@@ -48,24 +47,21 @@ namespace Crosshelper.Views
 
         private string GetIconUrlFromS3()
         {
-            try
-            {
-                GetPreSignedUrlRequest request =
-                    new GetPreSignedUrlRequest
-                    {
-                        BucketName = "imagetest123bibi",
-                        Key = string.Format(filename),
-                        ContentType = "image/png"
-                    };
-                //The cancellationToken is not used within this example, however you can pass it to the UploadAsync consutructor as well
-                //CancellationToken cancellationToken = new CancellationToken();
-                string url = s3client.GetPreSignedURL(request); //s3.getSignedUrl('getObject', params);
-                return url; 
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            /*
+            s3client.getObjectUrl()
+            GetPreSignedUrlRequest request =
+                new GetPreSignedUrlRequest
+                {
+                    BucketName = "imagetest123bibi",
+                    Key = string.Format(filename),
+                    Expires=DateTime.Now.AddMinutes(5) 
+                };
+            //The cancellationToken is not used within this example, however you can pass it to the UploadAsync consutructor as well
+            //CancellationToken cancellationToken = new CancellationToken();
+            */
+            var BucketName = "imagetest123bibi";           
+            string url = "https://" + BucketName + ".s3.amazonaws.com/" + filename; //s3client.GetPreSignedURL(request); //s3.getSignedUrl('getObject', params);
+            return url; 
         }
 
         async void Handle_ChangePhoto(object sender, EventArgs e)
@@ -218,8 +214,7 @@ namespace Crosshelper.Views
             );
 
             this.s3client = new AmazonS3Client(credentials, RegionEndpoint.USEast1);//new AmazonS3Client("your awsAccessKeyId", "your awsSecretKeyId", RegionEndpoint.USEast1);
-            var config = new AmazonS3Config() { RegionEndpoint = Amazon.RegionEndpoint.USEast1, Timeout = TimeSpan.FromSeconds(30), UseHttp = true };
-
+            //var config = new AmazonS3Config() { RegionEndpoint = Amazon.RegionEndpoint.USEast1, Timeout = TimeSpan.FromSeconds(30), UseHttp = true };
             AWSConfigsS3.UseSignatureVersion4 = true;
             this.s3transferUtility = new TransferUtility(s3client);
         }
