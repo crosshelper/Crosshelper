@@ -85,6 +85,20 @@ namespace Crosshelper.Views
                         return;
                     }
                 });
+
+                SendBirdClient.RegisterAPNSPushTokenForCurrentUser(SendBirdClient.GetPendingPushToken(), (SendBirdClient.PushTokenRegistrationStatus status, SendBirdException e1) => 
+                {
+                    if (e1 != null)
+                    {
+                        // Error.
+                        return;
+                    }
+
+                    if (status == SendBirdClient.PushTokenRegistrationStatus.PENDING)
+                    {
+                        // Try registration after connection is established.
+                    }
+                });
             });
             Settings.IsLogin = true;
         }

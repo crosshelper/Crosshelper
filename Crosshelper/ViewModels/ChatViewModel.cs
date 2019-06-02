@@ -24,10 +24,7 @@ namespace Crosshelper.ViewModels
             set { SetProperty(ref userTo, value); }
         }
 
-        public DateTime TimeNow { get; set; }
-
         private ObservableCollection<UserMessage> _messages;
-
         public ObservableCollection<UserMessage> Messages
         {
             get { return _messages; }
@@ -56,7 +53,6 @@ namespace Crosshelper.ViewModels
             get { return username; }
             set { SetProperty(ref username, value); }
         }
-
 
         public ICommand SendCommand { get; private set; }
 
@@ -123,7 +119,6 @@ namespace Crosshelper.ViewModels
                     }
 
                     Messages.Add(userMessage);
-                    TimeNow = DateTime.Now;
                     //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
                 });
                 TxtMessage = string.Empty;

@@ -29,7 +29,9 @@ namespace Crosshelper.Views
             uAccess.UserRegister(Uname, Email, ContactNo, Pwd);
             Settings.IsLogin = uAccess.VerifyUser(Uname, Pwd);
             uAccess.SetChatID();
-            Application.Current.MainPage = new MyTabbedPage();
+            DisplayAlert("Congrats!", "You Have Done Sign Up, Sign In right now", "OK");
+            Navigation.PopToRootAsync();
+            //Application.Current.MainPage = new LaunchingPage();
         }
 
         void Handle_SignUpAsHelper(object sender, EventArgs e)

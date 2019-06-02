@@ -11,6 +11,7 @@
             <converters:TypeToBackgroundConverter x:Key="TypeToBackgroundConverter" />
             <converters:TypeToColumnConverter x:Key="TypeToColumnConverter" />
             <converters:TypeToTextColorConverter x:Key="TypeToTextColorConverter" />
+            <converters:TypeToDateTimeConverter x:Key="TypeToDateTimeConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <StackLayout>
@@ -47,7 +48,7 @@
                                     </circleimage:CircleImage>
                                 
                                 <Label Text="{Binding Sender.Nickname}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"></Label>
-                                <Label Text="{Binding TimeNow}" Grid.Row="0" HorizontalOptions="End"></Label>
+                                <Label Text="{Binding CreatAt, Converter={StaticResource TypeToDateTimeConverter}}" Grid.Row="0" HorizontalOptions="End"></Label>
                                <!-- <StackLayout Grid.ColumnSpan="2" 
                                        Padding="5" 
                                        Grid.Column="{Binding Sender, Converter={StaticResource TypeToColumnConverter}}" 
