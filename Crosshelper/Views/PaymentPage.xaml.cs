@@ -49,35 +49,11 @@ namespace Crosshelper.Views
         async void OnDeleteAsync(object sender, EventArgs e)
         {
             var mi = ((MenuItem)sender);
-            bool x = await DisplayAlert("Delete Confirm", "Delete this Topic ?", "Yes", "Cancel");
+            bool x = await DisplayAlert("Delete Confirm", "Delete this Payment ?", "Yes", "Cancel");
             if (x)
             {
                 uih.DeleteMyPaymentByID((mi.CommandParameter as PaymentInfo).PaymentID);
                 RefreshData();
-            }
-        }
-
-        private bool _isRefreshing = false;
-        public bool IsRefreshing
-        {
-            get { return _isRefreshing; }
-            set
-            {
-                _isRefreshing = value;
-                OnPropertyChanged(nameof(IsRefreshing));
-            }
-        }
-
-        public ICommand RefreshCommand
-        {
-            get
-            {
-                return new Command(() =>
-                {
-                    IsRefreshing = true;
-                    RefreshData();
-                    IsRefreshing = false;
-                });
             }
         }
 

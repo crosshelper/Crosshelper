@@ -38,19 +38,18 @@ namespace Crosshelper.Views
             //(sender as Button).Text = "Click me again!";
             UserAccess userAccess = new UserAccess();
             Models.User usr = new Models.User();
-
+            activity.IsEnabled = true;
+            activity.IsRunning = true;
+            activity.IsVisible = true;
             if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
             {
-                activity.IsEnabled = true;
-                activity.IsRunning = true;
-                activity.IsVisible = true;
                 signInTest.Text = "Sign In Succeeded, Data Loading...";
                 signInTest.TextColor = Color.FromHex("#FF4E18");
                 Settings.UserId = userAccess.CurrentUid.ToString();
                 usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                 Settings.ChatID = usr.ChatID;
                 Name = usr.FirstName + " " + usr.LastName;
-                Icon = usr.Icon;
+                ProfileIcon = usr.Icon;
                 ChatServerConnect();
                 await Task.Delay(3000);
                 Application.Current.MainPage = new MyTabbedPage();
@@ -59,12 +58,15 @@ namespace Crosshelper.Views
             else
             {
                 signInTest.Text = "Sign in Faild";
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
                 Settings.IsLogin = false;
             }
         }
 
         private string Name = "";
-        private string Icon = ""; 
+        private string ProfileIcon = ""; 
 
         private void ChatServerConnect()
         {
@@ -75,7 +77,7 @@ namespace Crosshelper.Views
                     return;
                 }
 
-                SendBirdClient.UpdateCurrentUserInfo(Name, Icon, (SendBirdException e1) =>
+                SendBirdClient.UpdateCurrentUserInfo(Name, ProfileIcon, (SendBirdException e1) =>
                 {
                     if (e1 != null)
                     {
@@ -89,11 +91,11 @@ namespace Crosshelper.Views
         //第三次登入 Third party sign in
         void Handle_GoogleSignIn(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new MyTabbedPage();
+            DisplayAlert("Sorry", "It will be suppported later.", "OK");
         }
         void Handle_FaceBookSignIn(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new MyTabbedPage();
+            DisplayAlert("Sorry", "It will be suppported later.", "OK");
         }
         //创建和忘记 Create&Forgot
         void Handle_ForgotPassword(object sender, EventArgs e)

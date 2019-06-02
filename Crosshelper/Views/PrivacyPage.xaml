@@ -12,8 +12,8 @@
                      HasUnevenRows="true">
     
            <sv:Section Title="Access" FooterText="">
-                <sv:CommandCell Title="Allow location access" Command="" 
-                    Description="Allow Crosshelper access your current location, 
+                <sv:CommandCell Title="Allow location access" 
+                                Description="Allow Crosshelper access your current location, 
                                 You won’t get any deals if we can’t locate locate
                                  where you are." />
           </sv:Section>

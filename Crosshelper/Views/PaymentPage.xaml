@@ -15,13 +15,9 @@
                        TextColor="#666666"/>
                 <ListView x:Name="ls" ItemsSource="{Binding PaymentsList}" 
                           HasUnevenRows="true"
-                          IsPullToRefreshEnabled="True"
-                          RefreshCommand="{Binding RefreshCommand}"
-                          IsRefreshing="{Binding IsRefreshing}"
                           ItemTapped="Handle_ItemTapped"
                           CachingStrategy="RecycleElement"
-                          BackgroundColor="#f4f4f4" 
-                          RefreshControlColor="Green" 
+                          BackgroundColor="#f4f4f4"
                           SeparatorVisibility="None" >
                     <ListView.ItemTemplate>
                         <DataTemplate>

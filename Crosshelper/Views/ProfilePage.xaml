@@ -17,7 +17,7 @@
             </sv:Section>
             <sv:Section Title="Email Address" FooterText="">
                 <sv:EntryCell Title="Email" ValueText="{Binding Email}" 
-                              Placeholder="0000 0000 0000 0000" Keyboard="Email" ValueTextFontSize="16"
+                              Placeholder="example@example.copm" Keyboard="Email" ValueTextFontSize="16"
                               TextAlignment="End" HintText="{Binding InputError.Value}" />
             </sv:Section>
             <sv:Section Title="Name" FooterText="">

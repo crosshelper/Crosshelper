@@ -14,10 +14,7 @@ namespace Crosshelper.Views
     {
         void Handle_Canceled(object sender, System.EventArgs e)
         {
-            //var tmppage = this.Parent as GetHelpPage;
-            //tmppage.RefreshSelection();
             Navigation.PopModalAsync();
-            //Navigation.PushAsync(new QuotePage());
         }
 
         private TypeProblem _typeproblem;
@@ -85,9 +82,8 @@ namespace Crosshelper.Views
                     status = 1;
                 tih.UpdateMyTopic("95131", language, des.Text, _currentTopic.TopicID, status);
             }
-
-            SetCurrentZipCode();
-            Navigation.PushAsync(new PickHelperPage(_currentTopic));
+            //SetCurrentZipCode();
+            Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
         }
 
         private async void SetCurrentZipCode()
