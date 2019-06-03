@@ -61,8 +61,8 @@ namespace Crosshelper.Views
                 //Redirect to you desired page
                 UserAccess userAccess = new UserAccess();
                 Models.User usr = new Models.User();
-                var pwd = kch.GetKeyChainPassword("token_of_" + Username);
-                if (userAccess.VerifyUser(Username, pwd))
+                var pwd = kch.GetFromSecureStorage("token_of_" + Username);
+                if (userAccess.VerifyUser(Username, pwd.Result))
                 {
                     Settings.UserId = userAccess.CurrentUid.ToString();
                     usr = userAccess.GetUserInfo(userAccess.CurrentUid);
@@ -100,7 +100,6 @@ namespace Crosshelper.Views
                         return;
                     }
                 });
-
                 SendBirdClient.RegisterAPNSPushTokenForCurrentUser(SendBirdClient.GetPendingPushToken(), (SendBirdClient.PushTokenRegistrationStatus status, SendBirdException e1) =>
                 {
                     if (e1 != null)

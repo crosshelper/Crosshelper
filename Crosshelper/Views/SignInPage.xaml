@@ -45,7 +45,7 @@
                 <!--邮箱密码 Email&password input -->
                        <StackLayout VerticalOptions="Start" Margin="0,0,0,0" >
                         <Label Text="Save Username" TextColor="#666666" FontSize="16" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
-                            <Switch IsToggled="{Binding RememberMe}" OnColor="#FF4E18" HorizontalOptions="EndAndExpand"/>
+                            <Switch x:Name="savename" IsToggled="{Binding RememberMe, Mode=TwoWay}" OnColor="#FF4E18" HorizontalOptions="EndAndExpand"/>
                             <Entry Placeholder="Enter your Username"
                                    FontSize="16"
                                    MaxLength="18"

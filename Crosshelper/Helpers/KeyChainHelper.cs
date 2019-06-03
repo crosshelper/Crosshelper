@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Foundation;
 using Security;
 using WebSocketSharp;
@@ -30,14 +31,16 @@ namespace Crosshelper.Helpers
             }
         }
 
-        public async void GetFromSecureStorage(string oauth_token)
+        public async Task<string> GetFromSecureStorage(string oauth_token)
         {
             try
             {
                 var oauthToken = await SecureStorage.GetAsync(oauth_token);
+                return oauthToken;
             }
             catch (Exception ex)
             {
+                return "";
                 // Possible that device doesn't support secure storage on device.
             }
         }

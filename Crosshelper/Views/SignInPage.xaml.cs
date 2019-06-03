@@ -22,7 +22,7 @@ namespace Crosshelper.Views
         private string Name = "";
         private string ProfileIcon = "";
 
-        bool rememberMe = false;
+        //bool rememberMe = false;
         public bool RememberMe
         {
             get => Preferences.Get(nameof(RememberMe), false);
@@ -70,6 +70,7 @@ namespace Crosshelper.Views
             if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
             {
                 Username = uNameEntry.Text;
+                RememberMe = savename.IsToggled;
                 kch.SavetoSecureStorage("token_of_" + Username, pwdEntry.Text);
                 signInTest.Text = "Sign In Succeeded, Data Loading...";
                 signInTest.TextColor = Color.FromHex("#FF4E18");
@@ -130,6 +131,7 @@ namespace Crosshelper.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            savename.IsToggled = RememberMe;
             if (RememberMe)
             {
                 uNameEntry.Text = Username;

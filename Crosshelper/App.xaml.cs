@@ -15,12 +15,9 @@ namespace Crosshelper
             //MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(SignInPage))) {
             //BarBackgroundColor = Color.FromHex("#FF4E18"),
             //BarTextColor = Color.White };
-            //if (CrossAutoLogin.Current.UserIsSaved) 
-            //{ 
-            //MainPage = new HomePage(); 
-            //}
-            //else
-            MainPage = new MySplashScreen();//LaunchingPage();//SignInPage();
+            SendBirdClient.Init(Crosshelper.Properties.Resources.APP_ID);
+            MainPage = new MySplashScreen();
+            //LaunchingPage();//SignInPage();
         }
 
         protected override void OnStart()
