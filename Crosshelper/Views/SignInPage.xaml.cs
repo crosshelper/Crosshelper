@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Crosshelper.Models;
 using Crosshelper.Helpers;
@@ -12,38 +12,65 @@ namespace Crosshelper.Views
 {
     public partial class SignInPage : ContentPage
     {
-        //TODO:Auto signin
         public SignInPage()
         {
             InitializeComponent();
             NavigationPage.SetHasBackButton(this, false);
         }
 
-        //取消按钮 Canceled
-        void Handle_Canceled(object sender, EventArgs e)
+        KeyChainHelper kch = new KeyChainHelper();
+        private string Name = "";
+        private string ProfileIcon = "";
+
+        bool rememberMe = false;
+        public bool RememberMe
         {
-            Navigation.PopModalAsync();
+            get => Preferences.Get(nameof(RememberMe), false);
+            set
+            {
+                Preferences.Set(nameof(RememberMe), value);
+                if(!value)
+                {
+                    Preferences.Set(nameof(Username), string.Empty);
+                }
+                OnPropertyChanged(nameof(RememberMe));
+            } 
         }
-        //登入邮箱&密码输入框 Sign in email&password input box
-        void UsernameSignInCompleted(object sender, EventArgs e)
+
+        string username = Preferences.Get(nameof(Username), string.Empty);
+        public string Username
         {
-            string text = ((Entry)sender).Text;
+            get => username;
+            set
+            {
+                username = value;
+                if (RememberMe)
+                { 
+                    Preferences.Set(nameof(Username), value);
+                }
+                OnPropertyChanged(nameof(RememberMe));
+            }
         }
-        void PasswordSignInCompleted(object sender, EventArgs e)
-        {
-            string text = ((Entry)sender).Text;
-        }
+
         //登入按钮 Sign In
         async void Handle_SignIn(object sender, EventArgs e)
         {
-            //(sender as Button).Text = "Click me again!";
+            if(Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await DisplayAlert("No Internet", "Try again later!", "OK");
+                return;
+            }
+
             UserAccess userAccess = new UserAccess();
             Models.User usr = new Models.User();
             activity.IsEnabled = true;
             activity.IsRunning = true;
             activity.IsVisible = true;
+
             if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
             {
+                Username = uNameEntry.Text;
+                kch.SavetoSecureStorage("token_of_" + Username, pwdEntry.Text);
                 signInTest.Text = "Sign In Succeeded, Data Loading...";
                 signInTest.TextColor = Color.FromHex("#FF4E18");
                 Settings.UserId = userAccess.CurrentUid.ToString();
@@ -64,10 +91,7 @@ namespace Crosshelper.Views
                 activity.IsVisible = false;
                 Settings.IsLogin = false;
             }
-        }
-
-        private string Name = "";
-        private string ProfileIcon = ""; 
+        } 
 
         private void ChatServerConnect()
         {
@@ -103,6 +127,16 @@ namespace Crosshelper.Views
             Settings.IsLogin = true;
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (RememberMe)
+            {
+                uNameEntry.Text = Username;
+            }
+        }
+
+
         //第三次登入 Third party sign in
         void Handle_GoogleSignIn(object sender, EventArgs e)
         {
@@ -122,6 +156,20 @@ namespace Crosshelper.Views
             Navigation.PushAsync(new SignUpPage());
         }
 
+        //取消按钮 Canceled
+        void Handle_Canceled(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
+        //登入邮箱&密码输入框 Sign in email&password input box
+        void UsernameSignInCompleted(object sender, EventArgs e)
+        {
+            string text = ((Entry)sender).Text;
+        }
+        void PasswordSignInCompleted(object sender, EventArgs e)
+        {
+            string text = ((Entry)sender).Text;
+        }
     }
 }
 
