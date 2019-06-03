@@ -12,18 +12,13 @@ namespace Crosshelper
         public App()
         {
             InitializeComponent();
-            //MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(SignInPage))) {
-            //BarBackgroundColor = Color.FromHex("#FF4E18"),
-            //BarTextColor = Color.White };
+            StripeConfiguration.SetApiKey("sk_live_XXXXXXXXXXXXXXX");
             SendBirdClient.Init(Crosshelper.Properties.Resources.APP_ID);
             MainPage = new MySplashScreen();
-            //LaunchingPage();//SignInPage();
         }
 
         protected override void OnStart()
         {
-            SendBirdClient.Init(Crosshelper.Properties.Resources.APP_ID);
-            StripeConfiguration.SetApiKey("sk_live_XXXXXXXXXXXXXXX");
             // Handle when your app starts
         }
 
