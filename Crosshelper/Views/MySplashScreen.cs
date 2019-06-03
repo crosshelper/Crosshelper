@@ -16,7 +16,7 @@ namespace Crosshelper.Views
 
         private string Name = "";
         private string ProfileIcon = "";
-        KeyChainHelper kch = new KeyChainHelper();
+        readonly KeyChainHelper kch = new KeyChainHelper();
 
         bool rememberMe = false;
         public bool RememberMe
