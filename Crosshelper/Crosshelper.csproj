@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.CognitoIdentity" Version="3.3.100.24" />
+    <PackageReference Include="AWSSDK.CognitoIdentity" Version="3.3.100.28" />
     <PackageReference Include="Plugins.Forms.ButtonCircle" Version="2.0.3" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
     <PackageReference Include="Xam.Plugin.ExternalMaps" Version="4.0.1" />
@@ -28,10 +28,10 @@
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />  
     <PackageReference Include="MySql.Data" Version="8.0.16" />
-    <PackageReference Include="AiForms.SettingsView" Version="0.4.15" />
+    <PackageReference Include="AiForms.SettingsView" Version="0.5.2" />
     <PackageReference Include="Xam.Plugin.TabView" Version="1.0.4" />
-    <PackageReference Include="AWSSDK.Core" Version="3.3.101.15" />
-    <PackageReference Include="AWSSDK.S3" Version="3.3.102.5" />
+    <PackageReference Include="AWSSDK.Core" Version="3.3.102" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.102.9" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
     <PackageReference Include="Xamarin.CustomControls.StateButton" Version="1.1.0" />
@@ -95,8 +95,20 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Cells\IncomingViewCell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Cells\OutgoingViewCell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ChatPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ChatTestPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Partials\ChatInputBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
 </Project>
