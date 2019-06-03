@@ -66,15 +66,15 @@ namespace Crosshelper.ViewModels
             SendCommand = new Command(Send);
             Messages = new ObservableCollection<UserMessage>();
 
-            OnSendCommand = new Command(() =>
-            {
+            //OnSendCommand = new Command(() =>
+            //{
                 //if (!string.IsNullOrEmpty(TextToSend))
                 //{
                     //Messages.Insert(0, new Message() { Text = TextToSend, User = App.User });
                     //TextToSend = string.Empty;
                 //}
 
-            });
+            //});
             //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
             //RemoveChannelHandler("MyKey");
         }
