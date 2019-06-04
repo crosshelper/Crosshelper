@@ -349,37 +349,24 @@ namespace Crosshelper.Helpers
 
         public List<UserPro> GetHelperList(string tagid, string language, string zipCode)
         {
+            //TODO:list remove 后再查询
             GetHelperIDByTag(tagid);
             foreach (int uid in helperuidlist)
             {
                 GetHelperInfoByID(uid.ToString());
             }
-            if(helperlist.Count>0)
+            foreach(UserPro helper in helperlist)
             {
-                foreach (UserPro helper in helperlist)
+                if(helper.FLanguage != language && helper.SLanguage != language)
                 {
-                    if (helper.FLanguage != language && helper.SLanguage != language)
-                    {
-                        helperlist.Remove(helper);
-                        if(helperlist.Count == 0)
-                        {
-                            return helperlist; 
-                        }
-                    }
+                    helperlist.Remove(helper); 
                 }
-                if (helperlist.Count > 0)
+            }
+            foreach (UserPro helper in helperlist)
+            {
+                if (helper.ZipCode1 != zipCode && helper.ZipCode2 != zipCode && helper.ZipCode3 != zipCode)
                 {
-                    foreach (UserPro helper in helperlist)
-                    {
-                        if (helper.ZipCode1 != zipCode && helper.ZipCode2 != zipCode && helper.ZipCode3 != zipCode)
-                        {
-                            helperlist.Remove(helper);
-                            if (helperlist.Count == 0)
-                            {
-                                return helperlist;
-                            }
-                        }
-                    }
+                    helperlist.Remove(helper);
                 }
             }
             return helperlist;

@@ -6,6 +6,10 @@
              xmlns:circleimage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="Crosshelper.Views.ChatPage">
           <!-- <ScrollView > -->
+    <NavigationPage.TitleView>
+        <label x:Name="TitleName"/>
+        <Button x:Name="Back" Clicked="Handle_Clicked" />
+    </NavigationPage.TitleView>
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:TypeToBackgroundConverter x:Key="TypeToBackgroundConverter" />

@@ -9,7 +9,12 @@ namespace Crosshelper.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ChatPage : ContentPage
-	{
+    {
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PopToRootAsync();
+        }
+
         //TODO:Auto Scroll
         ChatViewModel vm;
         static ChatPage instance = null;
