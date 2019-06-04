@@ -16,7 +16,7 @@ namespace Crosshelper.Views
 			InitializeComponent ();
             this.BindingContext = vm = new ChatTestViewModel();
             vm.Channel = channel;
-            //Page_Title.Text = user.FirstName;
+            vm.Title = user.FirstName + " " + user.LastName;
             vm.Load();
         }
 

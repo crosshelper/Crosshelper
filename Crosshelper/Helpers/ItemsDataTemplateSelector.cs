@@ -18,10 +18,6 @@ namespace Crosshelper.Helpers
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            //if (!(item is UserMessage messageVm))
-                //return null;
-            //return messageVm.IsIncoming ? this.incomingDataTemplate : this.outgoingDataTemplate;
-
             DataTemplate _returnTemplate = new DataTemplate();
             //_returnTemplate = ((SearchpageViewcellItem)item).PanelID > 0 ? FirstItemTemplate : OtherItemTemplate;
             return _returnTemplate;

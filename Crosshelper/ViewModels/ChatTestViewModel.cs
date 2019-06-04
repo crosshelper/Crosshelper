@@ -12,7 +12,7 @@ using static SendBird.SendBirdClient;
 
 namespace Crosshelper.ViewModels
 {
-    public class ChatTestViewModel : INotifyPropertyChanged
+    public class ChatTestViewModel : ViewModelBase, INotifyPropertyChanged
     {
         public bool ShowScrollTap { get; set; } = false;
         public bool LastMessageVisible { get; set; } = true;
@@ -26,81 +26,18 @@ namespace Crosshelper.ViewModels
         public ICommand MessageAppearingCommand { get; set; }
         public ICommand MessageDisappearingCommand { get; set; }
 
-        private GroupChannel channel;
-
-        public GroupChannel Channel
-        {
-            get; //{ return channel; }
-            set; //{ SetProperty(ref channel, value); }
-        }
+        //private GroupChannel channel;
+        public GroupChannel Channel { get; set; }
 
         public ChatTestViewModel()
         {
             /*
             Messages.Insert(0, new Message() { Text = "Hi" });
-            Messages.Insert(0, new Message() { Text = "How are you?", User = App.User });
-            Messages.Insert(0, new Message() { Text = "What's new?" });
-            Messages.Insert(0, new Message() { Text = "How is your family", User = App.User });
-            Messages.Insert(0, new Message() { Text = "How is your dog?", User = App.User });
-            Messages.Insert(0, new Message() { Text = "How is your cat?", User = App.User });
-            Messages.Insert(0, new Message() { Text = "How is your sister?" });
-            Messages.Insert(0, new Message() { Text = "When we are going to meet?" });
-            Messages.Insert(0, new Message() { Text = "I want to buy a laptop" });
-            Messages.Insert(0, new Message() { Text = "Where I can find a good one?" });
-            Messages.Insert(0, new Message() { Text = "Also I'm testing this chat" });
-            Messages.Insert(0, new Message() { Text = "Oh My God!" });
-            Messages.Insert(0, new Message() { Text = " No Problem", User = App.User });
-            Messages.Insert(0, new Message() { Text = "Hugs and Kisses", User = App.User });
-            Messages.Insert(0, new Message() { Text = "When we are going to meet?" });
-            Messages.Insert(0, new Message() { Text = "I want to buy a laptop" });
-            Messages.Insert(0, new Message() { Text = "Where I can find a good one?" });
-            Messages.Insert(0, new Message() { Text = "Also I'm testing this chat" });
-            Messages.Insert(0, new Message() { Text = "Oh My God!" });
-            Messages.Insert(0, new Message() { Text = " No Problem" });
-            Messages.Insert(0, new Message() { Text = "Hugs and Kisses" });
             */
 
             MessageAppearingCommand = new Command<UserMessage>(OnMessageAppearing);
             MessageDisappearingCommand = new Command<UserMessage>(OnMessageDisappearing);
-
-            OnSendCommand = new Command(() =>
-            {
-                //IsBusy = true;
-                try
-                {
-                    if (string.IsNullOrEmpty(TextToSend))
-                    {
-                        //IsBusy = false; 
-                        return;
-                    }
-                    Channel.SendUserMessage(TextToSend, "", (UserMessage userMessage, SendBirdException e) =>
-                    {
-                        if (e != null)
-                        {
-                            // Error.
-                            return;
-                        }
-
-                        Messages.Add(userMessage);
-                        //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
-                    });
-                    TextToSend = string.Empty;
-                    //IsBusy = false;
-                }
-                catch (NullReferenceException ex)
-                {
-                    ex.ToString();
-                    //IsBusy = false;
-                }
-
-                //if (!string.IsNullOrEmpty(TextToSend))
-                //{
-                    //Messages.Insert(0, new UserMessage() { Text = TextToSend, User = App.User });
-                    //TextToSend = string.Empty;
-                //}
-
-            });
-
+            OnSendCommand = new Command(Send);
             //Code to simulate reveing a new message procces
             /*
             Device.StartTimer(TimeSpan.FromSeconds(5), () =>
@@ -119,10 +56,7 @@ namespace Crosshelper.ViewModels
             */
         }
 
-        private ChannelHandler ch = new ChannelHandler();
-
-
-
+        private readonly ChannelHandler ch = new ChannelHandler();
 
         public void Init()
         {
@@ -131,8 +65,8 @@ namespace Crosshelper.ViewModels
                 if (LastMessageVisible)
                 {
                     ch.OnMessageReceived = (BaseChannel baseChannel, BaseMessage baseMessage) => {
-                        Messages.Add((UserMessage)baseMessage);
-                        //ChatPage.CurrentActivity.ScrollDown(Messages.Last());1
+                        Messages.Insert(0, (UserMessage)baseMessage);
+                        //Messages.Add((UserMessage)baseMessage);
                     };
                 }
                 else
@@ -149,7 +83,7 @@ namespace Crosshelper.ViewModels
 
         public async void Load()
         {
-            //IsBusy = true;
+            IsBusy = true;
             await Task.Delay(1000);
             PreviousMessageListQuery mPrevMessageListQuery = Channel.CreatePreviousMessageListQuery();
             mPrevMessageListQuery.Load(30, true, (List<BaseMessage> messages, SendBirdException e) => {
@@ -158,15 +92,44 @@ namespace Crosshelper.ViewModels
                     // Error.
                     return;
                 }
+                //??????
                 messages = messages.OrderByDescending(x => x.CreatedAt).ToList();
                 foreach (var item in messages)
                 {
                     Messages.Insert(0, (UserMessage)item);
                 }
-                //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
             });
-            //IsBusy = false;
+            IsBusy = false;
             Init();
+        }
+
+        public void Send()
+        {
+            IsBusy = true;
+            try
+            {
+                if (string.IsNullOrEmpty(TextToSend))
+                {
+                    IsBusy = false; return;
+                }
+                Channel.SendUserMessage(TextToSend, "", (UserMessage userMessage, SendBirdException e) =>
+                {
+                    if (e != null)
+                    {
+                        // Error.
+                        return;
+                    }
+                    Messages.Insert(0, userMessage); //(UserMessage)baseMessage);
+                    //Messages.Add(userMessage);
+                });
+                TextToSend = string.Empty;
+                IsBusy = false;
+            }
+            catch (NullReferenceException ex)
+            {
+                ex.ToString();
+                IsBusy = false;
+            }
         }
 
 

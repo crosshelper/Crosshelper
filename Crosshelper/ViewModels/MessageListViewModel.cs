@@ -58,7 +58,7 @@ namespace Crosshelper.ViewModels
             });
             await Task.Delay(1000);
             IsBusy = false;
-            await Navigation.PushModalAsync(new NavigationPage(new ChatPage(user, group)));
+            await Navigation.PushModalAsync(new NavigationPage(new ChatTestPage(user, group)));
         }
     }
 }

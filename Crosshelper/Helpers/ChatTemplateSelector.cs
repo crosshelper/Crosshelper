@@ -9,8 +9,8 @@ namespace Crosshelper.Helpers
 {
     class ChatTemplateSelector : DataTemplateSelector
     {
-        DataTemplate incomingDataTemplate;
-        DataTemplate outgoingDataTemplate;
+        private readonly DataTemplate incomingDataTemplate;
+        private readonly DataTemplate outgoingDataTemplate;
 
         public ChatTemplateSelector()
         {
@@ -20,11 +20,8 @@ namespace Crosshelper.Helpers
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            var messageVm = item as UserMessage;
-            if (messageVm == null)
+            if (!(item is UserMessage messageVm))
                 return null;
-
-
             return (messageVm.Sender.UserId == Settings.ChatID) ? outgoingDataTemplate : incomingDataTemplate;
         }
     }
