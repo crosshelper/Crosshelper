@@ -16,7 +16,7 @@
         <NavigationPage Title="Topics" BarBackgroundColor="#FF4E18">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_favorite.png" />
+                    <On Platform="iOS" Value="tab_case.png" />
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
