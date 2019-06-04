@@ -354,18 +354,32 @@ namespace Crosshelper.Helpers
             {
                 GetHelperInfoByID(uid.ToString());
             }
-            foreach(UserPro helper in helperlist)
+            if(helperlist.Count>0)
             {
-                if(helper.FLanguage != language && helper.SLanguage != language)
+                foreach (UserPro helper in helperlist)
                 {
-                    helperlist.Remove(helper); 
+                    if (helper.FLanguage != language && helper.SLanguage != language)
+                    {
+                        helperlist.Remove(helper);
+                        if(helperlist.Count == 0)
+                        {
+                            return helperlist; 
+                        }
+                    }
                 }
-            }
-            foreach (UserPro helper in helperlist)
-            {
-                if (helper.ZipCode1 != zipCode && helper.ZipCode2 != zipCode && helper.ZipCode3 != zipCode)
+                if (helperlist.Count > 0)
                 {
-                    helperlist.Remove(helper);
+                    foreach (UserPro helper in helperlist)
+                    {
+                        if (helper.ZipCode1 != zipCode && helper.ZipCode2 != zipCode && helper.ZipCode3 != zipCode)
+                        {
+                            helperlist.Remove(helper);
+                            if (helperlist.Count == 0)
+                            {
+                                return helperlist;
+                            }
+                        }
+                    }
                 }
             }
             return helperlist;

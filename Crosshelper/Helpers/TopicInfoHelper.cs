@@ -136,7 +136,9 @@ namespace Crosshelper.Helpers
                     string Language = reader.GetString(3);
                     string Description = reader.GetString(4);
                     int Status = reader.GetInt32(5);
-
+                    string CaseTypeLabelText = "";
+                    if (Status == 1)
+                        CaseTypeLabelText = "Emergency";
                     TopicInfo tmp = new TopicInfo()
                     {
                         UserID = userId,
@@ -145,6 +147,7 @@ namespace Crosshelper.Helpers
                         Zipcode = Zip,
                         Language = Language,
                         Description = Description,
+                        CaseTypeLabelText= CaseTypeLabelText,
                         Status = Status
                     };
                     topiclist.Add(tmp);
