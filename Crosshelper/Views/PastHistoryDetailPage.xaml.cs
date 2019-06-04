@@ -43,5 +43,9 @@ namespace Crosshelper.Views
             PaymentNum.Text = _receipt.PaymentName;
             CaseDateTime.Text = _currentCase.CaseDateTime.ToString();
         }
+        void Handle_Canceled(object sender, System.EventArgs e)
+        {
+            Navigation.PopToRootAsync();
+        }
     }
 }

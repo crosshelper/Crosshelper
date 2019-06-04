@@ -84,6 +84,13 @@
                             TextColor="#666666"
                             HorizontalOptions="StartAndExpand"
                             Clicked="Handle_ForgotPassword"/>
+                    <ActivityIndicator x:Name="activity"  
+                         IsRunning="False"  
+                         IsEnabled="False"  
+                         IsVisible="False" 
+                         Color="#FF4E18"
+                         HorizontalOptions="CenterAndExpand" 
+                         BackgroundColor="Transparent"/>     
                     <Button Text="Create account" 
                             FontSize="14" 
                             TextColor="#666666"
@@ -109,14 +116,6 @@
             </StackLayout>
         </StackLayout>
       </ScrollView>
-      <ActivityIndicator x:Name="activity"  
-                         IsRunning="False"  
-                         IsEnabled="False"  
-                         IsVisible="False" 
-                         Color="#FF4E18"
-                         VerticalOptions="CenterAndExpand" 
-                         HorizontalOptions="FillAndExpand"
-                         BackgroundColor="Transparent"/>
       </Grid>
     </ContentPage.Content>
 </ContentPage>
