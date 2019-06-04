@@ -12,7 +12,7 @@ namespace Crosshelper.Views
 	{
         void Handle_Clicked(object sender, System.EventArgs e)
         {
-            Navigation.PopToRootAsync();
+            Navigation.PopModalAsync();
         }
 
         ChatTestViewModel vm;
