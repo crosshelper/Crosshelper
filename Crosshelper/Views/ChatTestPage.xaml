@@ -6,7 +6,7 @@
              xmlns:partials="clr-namespace:Crosshelper.Views.Partials" 
              xmlns:controls="clr-namespace:Crosshelper.Controls">
     <NavigationPage.TitleView>
-        <label x:Name="TitleName"/>
+        <Label x:Name="TitleName"/>
         <Button x:Name="Back" Clicked="Handle_Clicked" />
     </NavigationPage.TitleView>
     <ContentPage.Resources>

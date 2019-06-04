@@ -93,7 +93,7 @@ namespace Crosshelper.ViewModels
                     return;
                 }
                 //??????
-                messages = messages.OrderByDescending(x => x.CreatedAt).ToList();
+                //messages = messages.OrderByDescending(x => x.CreatedAt).ToList();
                 foreach (var item in messages)
                 {
                     Messages.Insert(0, (UserMessage)item);
