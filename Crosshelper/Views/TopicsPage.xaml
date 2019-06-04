@@ -21,7 +21,7 @@
             </StackLayout>
             <StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Location" TextColor="#393939" FontSize="17" HorizontalOptions="Start"/>
+                    <Label Text="Location:" TextColor="#393939" FontSize="17" HorizontalOptions="Start"/>
                     <Label
                        TextColor="#393939"
                         FontSize="17"
