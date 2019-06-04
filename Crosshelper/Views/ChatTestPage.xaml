@@ -6,8 +6,9 @@
              xmlns:partials="clr-namespace:Crosshelper.Views.Partials" 
              xmlns:controls="clr-namespace:Crosshelper.Controls">
     <NavigationPage.TitleView>
-        <Label x:Name="TitleName"/>
-        <Button x:Name="Back" Clicked="Handle_Clicked" />
+        <Grid>
+            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Clicked" VerticalOptions="Center"/>
+        </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Resources>
         <ResourceDictionary>
