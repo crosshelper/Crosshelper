@@ -16,22 +16,22 @@
         </ViewCell.ContextActions>
           <StackLayout Padding="15">
             <StackLayout Orientation="Horizontal">
-                 <Label Text="Car repair" TextColor="#FF4E18" FontSize="18" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+                 <Label Text="Car repair" TextColor="#FF4E18" FontSize="17" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
                  <Label Text="Emergency" TextColor="Red" FontSize="16" HorizontalOptions="End"/>
             </StackLayout>
             <StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Location" TextColor="#393939" FontSize="18" HorizontalOptions="Start"/>
+                    <Label Text="Location" TextColor="#393939" FontSize="17" HorizontalOptions="Start"/>
                     <Label
                        TextColor="#393939"
-                        FontSize="18"
+                        FontSize="17"
                        Text="{Binding Zipcode}"
                        Style="{DynamicResource ListItemTextStyle}"
                        HorizontalOptions="StartAndExpand" />
-                    <Label Text="Language:" TextColor="#393939" FontSize="18" HorizontalOptions="End"/>
+                    <Label Text="Language:" TextColor="#393939" FontSize="17" HorizontalOptions="End"/>
                     <Label 
                        TextColor="#393939"
-                       FontSize="18"
+                       FontSize="17"
                        Text="{Binding Language}"
                        HorizontalOptions="End"/>
                 </StackLayout>       
