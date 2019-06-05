@@ -52,7 +52,7 @@ namespace Crosshelper.ViewModels
                     }
                 }
             });
-            Users.Add(new Models.User { ChatID = "cycbis_006", FirstName = "Thomas Wong" });
+            //Users.Add(new Models.User { ChatID = "cycbis_006", FirstName = "Thomas Wong" });
         }
 
         private DateTime MilsecToDatetime(long milsec)
