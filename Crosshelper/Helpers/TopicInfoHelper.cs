@@ -123,6 +123,7 @@ namespace Crosshelper.Helpers
                 "SELECT TopicID,TagID,Zip,Language,Description,Status FROM TopicInfo WHERE Uid = @para1";
 
                 MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                TagsHelper th = new TagsHelper();
                 //通过设置参数的形式给SQL 语句串值
                 cmd.Parameters.AddWithValue("para1", userId);
                 //cmd.Parameters.AddWithValue("para2", password);
@@ -144,6 +145,7 @@ namespace Crosshelper.Helpers
                         UserID = userId,
                         TopicID = TopicID,
                         TagID = TagID,
+                        TagName = th.GetTagNameByID(TagID),
                         Zipcode = Zip,
                         Language = Language,
                         Description = Description,

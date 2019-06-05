@@ -47,6 +47,37 @@ namespace Crosshelper.Helpers
                 conn.Close();   //关闭连接              
             }
         }
+
+        public string GetTagNameByID(int tagID)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            string _tagName = "";
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT TagName FROM Tags WHERE TagID = @para1";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                cmd.Parameters.AddWithValue("para1", tagID);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    _tagName = reader.GetString(0);
+                }
+                return _tagName;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return _tagName;
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
         public TagsHelper()
         {
         }

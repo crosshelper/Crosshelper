@@ -11,6 +11,24 @@ namespace Crosshelper.Views
     {
         public MySplashScreen()
         {
+            Content = new StackLayout
+            {
+                Children = {
+                    new ActivityIndicator()
+                    {
+                        Color = Color.FromHex("#FF4E18"),
+                        IsEnabled = true,
+                        IsRunning = true,
+                        IsVisible = true,
+                        BackgroundColor= Color.Transparent,
+                        HorizontalOptions = LayoutOptions.FillAndExpand,
+                        VerticalOptions = LayoutOptions.CenterAndExpand
+                    },
+                    new Label { Text = "Data Loading......",
+                        HorizontalOptions = LayoutOptions.FillAndExpand,
+                        VerticalOptions = LayoutOptions.CenterAndExpand }
+                }
+            };
             CheckForAutoLogin();
         }
 

@@ -16,7 +16,7 @@
         </ViewCell.ContextActions>
           <StackLayout Padding="15">
             <StackLayout Orientation="Horizontal">
-                 <Label Text="Car repair" TextColor="#FF4E18" FontSize="17" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+                 <Label Text="{Binding TagName}" TextColor="#FF4E18" FontSize="17" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
                  <Label Text="{Binding CaseTypeLabelText}" TextColor="Red" FontSize="16" HorizontalOptions="End"/>
             </StackLayout>
             <StackLayout>

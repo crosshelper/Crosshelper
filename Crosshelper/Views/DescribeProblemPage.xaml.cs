@@ -30,6 +30,7 @@ namespace Crosshelper.Views
         {
             _currentTopic = tmp;
             InitializeComponent();
+            languagepicker.SelectedItem = _currentTopic.Language;
             des.Text = _currentTopic.Description;
             if(_currentTopic.Status == 1)
             {
