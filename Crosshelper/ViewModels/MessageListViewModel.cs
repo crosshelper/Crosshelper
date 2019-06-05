@@ -5,6 +5,7 @@ using Crosshelper.Views;
 using SendBird;
 using Xamarin.Forms;
 using Crosshelper.Helpers;
+using System;
 
 namespace Crosshelper.ViewModels
 {
@@ -34,13 +35,22 @@ namespace Crosshelper.ViewModels
                             {
                                 ChatID = user.UserId,
                                 FirstName = user.Nickname,
-                                Icon = user.ProfileUrl
+                                Icon = user.ProfileUrl,
+                                Homeland = channel.LastMessage.ToString(),
+                                Address = MilsecToDatetime(channel.LastMessage.CreatedAt).ToString()
                             });
                         }
                     }
                 }
             });
             Users.Add(new Models.User { ChatID = "cycbis_006", FirstName = "Thomas Wong" });
+        }
+
+        private DateTime MilsecToDatetime(long milsec)
+        {
+            var createtimestamp = DateTimeOffset.FromUnixTimeMilliseconds(milsec).UtcDateTime;
+            createtimestamp = createtimestamp.ToLocalTime();
+            return createtimestamp;
         }
 
         public async void ConnectToChannel(Models.User user, List<string> users)
