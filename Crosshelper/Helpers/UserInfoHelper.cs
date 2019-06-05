@@ -349,7 +349,6 @@ namespace Crosshelper.Helpers
 
         public List<UserPro> GetHelperList(string tagid, string language, string zipCode)
         {
-            //TODO:list remove 后再查询
             var newhelperlist = new List<UserPro>();
             GetHelperIDByTag(tagid);
             foreach (int uid in helperuidlist)
