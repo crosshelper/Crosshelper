@@ -15,14 +15,14 @@ namespace Crosshelper.Views
             Navigation.PopModalAsync();
         }
 
-        ChatTestViewModel vm;
         public ChatTestPage (Models.User user, GroupChannel channel)
 		{
 			InitializeComponent ();
-            this.BindingContext = vm = new ChatTestViewModel();
-            vm.Channel = channel;
-            vm.Title = user.FirstName + " " + user.LastName;
-            vm.Load();
+            ChatTestViewModel vvm;
+            this.BindingContext = vvm = new ChatTestViewModel();
+            vvm.Channel = channel;
+            vvm.Title = user.FirstName + " " + user.LastName;
+            vvm.Load();
         }
 
         public void ScrollTap(object sender, System.EventArgs e)

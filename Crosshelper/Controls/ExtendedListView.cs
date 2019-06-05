@@ -87,7 +87,7 @@ namespace Crosshelper.Controls
             {
                 try
                 {
-                    if (ItemsSource != null && ItemsSource.Cast<object>().Count() > 0)
+                    if (ItemsSource != null && ItemsSource.Cast<object>().Any())
                     {
                         var msg = ItemsSource.Cast<object>().FirstOrDefault();
                         if (msg != null)
@@ -111,7 +111,7 @@ namespace Crosshelper.Controls
             {
                 try
                 {
-                    if (ItemsSource != null && ItemsSource.Cast<object>().Count() > 0)
+                    if (ItemsSource != null && ItemsSource.Cast<object>().Any())
                     {
                         var msg = ItemsSource.Cast<object>().LastOrDefault();
                         if (msg != null)
