@@ -64,7 +64,7 @@ namespace Crosshelper.ViewModels
         public async void Load()
         {
             IsBusy = true;
-            await Task.Delay(3000);
+            await Task.Delay(2000);
             PreviousMessageListQuery mPrevMessageListQuery = Channel.CreatePreviousMessageListQuery();
             mPrevMessageListQuery.Load(30, true, (List<BaseMessage> messages, SendBirdException e) => {
                 if (e != null)

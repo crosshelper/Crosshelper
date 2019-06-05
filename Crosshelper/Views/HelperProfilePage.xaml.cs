@@ -64,7 +64,7 @@ namespace Crosshelper.Views
                 }
                 group = groupChannel;
             });
-            await Task.Delay(3000);
+            await Task.Delay(2000);
             IsBusy = false;
             await Navigation.PushAsync(new ChatPage(user, group));
         }
