@@ -31,29 +31,9 @@ namespace Crosshelper.ViewModels
 
         public ChatTestViewModel()
         {
-            /*
-            Messages.Insert(0, new Message() { Text = "Hi" });
-            */
-
             MessageAppearingCommand = new Command<UserMessage>(OnMessageAppearing);
             MessageDisappearingCommand = new Command<UserMessage>(OnMessageDisappearing);
             OnSendCommand = new Command(Send);
-            //Code to simulate reveing a new message procces
-            /*
-            Device.StartTimer(TimeSpan.FromSeconds(5), () =>
-            {
-                if (LastMessageVisible)
-                {
-                    Messages.Insert(0, new UserMessage() { Text = "New message test", User = "Mario" });
-                }
-                else
-                {
-                    DelayedMessages.Enqueue(new UserMessage() { Text = "New message test", User = "Mario" });
-                    PendingMessageCount++;
-                }
-                return true;
-            });
-            */
         }
 
         private readonly ChannelHandler ch = new ChannelHandler();
@@ -118,8 +98,7 @@ namespace Crosshelper.ViewModels
                         // Error.
                         return;
                     }
-                    Messages.Insert(0, userMessage); //(UserMessage)baseMessage);
-                    //Messages.Add(userMessage);
+                    Messages.Insert(0, userMessage);
                 });
                 TextToSend = string.Empty;
                 IsBusy = false;
@@ -130,7 +109,6 @@ namespace Crosshelper.ViewModels
                 IsBusy = false;
             }
         }
-
 
         void OnMessageAppearing(UserMessage message)
         {

@@ -15,7 +15,6 @@ namespace Crosshelper.Views
             Navigation.PopModalAsync();
         }
 
-        //TODO:Auto Scroll
         ChatViewModel vm;
         static ChatPage instance = null;
         public static ChatPage CurrentActivity
