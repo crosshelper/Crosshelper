@@ -25,6 +25,7 @@ namespace Crosshelper.Views
                         VerticalOptions = LayoutOptions.CenterAndExpand
                     },
                     new Label { Text = "Data Loading......",
+                        TextColor=Color.FromHex("#FF4E18"),
                         HorizontalOptions = LayoutOptions.FillAndExpand,
                         VerticalOptions = LayoutOptions.CenterAndExpand }
                 }
