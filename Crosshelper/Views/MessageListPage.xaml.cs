@@ -30,5 +30,10 @@ namespace Crosshelper.Views
             ((ListView)sender).SelectedItem = null;
             vm.ConnectToChannel(user, users);
         }
+
+        protected override void OnAppearing()
+        {
+            vm.DataInit();
+        }
     }
 }

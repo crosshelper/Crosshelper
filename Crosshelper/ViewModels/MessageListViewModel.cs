@@ -17,6 +17,15 @@ namespace Crosshelper.ViewModels
         #endregion
         public MessageListViewModel()
         {
+            DataInit();
+        }
+
+        public void DataInit()
+        {
+            if (Users.Count > 0)
+            {
+                Users.Clear();
+            }
             GroupChannelListQuery mQuery = GroupChannel.CreateMyGroupChannelListQuery();
             mQuery.IncludeEmpty = true;
             mQuery.Next((List<GroupChannel> list, SendBirdException e) => {
@@ -25,18 +34,18 @@ namespace Crosshelper.ViewModels
                     // Error.
                     return;
                 }
-                foreach(GroupChannel channel in list)
+                foreach (GroupChannel channel in list)
                 {
-                    foreach(User user in channel.Members)
+                    foreach (User user in channel.Members)
                     {
-                        if(user.UserId!=Settings.ChatID)
+                        if (user.UserId != Settings.ChatID)
                         {
                             Users.Add(new Models.User
                             {
                                 ChatID = user.UserId,
                                 FirstName = user.Nickname,
                                 Icon = user.ProfileUrl,
-                                Homeland = channel.LastMessage.ToString(),
+                                Homeland = ((UserMessage)channel.LastMessage).Message,
                                 Address = MilsecToDatetime(channel.LastMessage.CreatedAt).ToString()
                             });
                         }
@@ -66,7 +75,7 @@ namespace Crosshelper.ViewModels
                 }
                 group = groupChannel;
             });
-            await Task.Delay(1000);
+            await Task.Delay(3000);
             IsBusy = false;
             await Navigation.PushModalAsync(new NavigationPage(new ChatTestPage(user, group)));
         }
