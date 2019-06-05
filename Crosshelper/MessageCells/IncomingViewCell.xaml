@@ -28,7 +28,7 @@
                     HeightRequest="50"
                     WidthRequest="50"
                     BorderThickness="2"
-                    BorderColor="#03A9F4"  
+                    BorderColor="#FFFFFF"  
                     HorizontalOptions="Start"
                     VerticalOptions="End"
                     Source="{Binding Sender.ProfileUrl}" >
@@ -36,7 +36,7 @@
 <Label Text="{Binding Sender.Nickname}" Grid.Row="2" Grid.Column="1" HorizontalOptions="StartAndExpand" Rotation="180"></Label>        
 <Frame Grid.Row="1" OutlineColor="Transparent" 
        HasShadow="false" Grid.Column="1" 
-       BackgroundColor="#03A9F4"
+       BackgroundColor="#EDF0F6"
        Rotation="180"
        FlowDirection="LeftToRight"
        Padding="10">
