@@ -1,4 +1,5 @@
 using Crosshelper.Views;
+using Plugin.Multilingual;
 using SendBird;
 using Stripe;
 using Xamarin.Forms.Xaml;
@@ -12,6 +13,7 @@ namespace Crosshelper
         public App()
         {
             InitializeComponent();
+            AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
             StripeConfiguration.SetApiKey("sk_live_XXXXXXXXXXXXXXX");
             SendBirdClient.Init(Crosshelper.Properties.Resources.APP_ID);
             MainPage = new MySplashScreen();
