@@ -16,16 +16,20 @@ namespace Crosshelper.Views
                 Children = {
                     new ActivityIndicator()
                     {
-                        Color = Color.FromHex("#FF4E18"),
+                        Color = Color.FromHex("#999999"),
                         IsEnabled = true,
                         IsRunning = true,
                         IsVisible = true,
+                        WidthRequest = 40,
                         BackgroundColor= Color.Transparent,
-                        HorizontalOptions = LayoutOptions.FillAndExpand,
+                       // HorizontalOptions = LayoutOptions.FillAndExpand,
                         VerticalOptions = LayoutOptions.CenterAndExpand
                     },
                     new Label { Text = "Data Loading......",
-                        TextColor=Color.FromHex("#FF4E18"),
+                        TextColor=Color.FromHex("#999999"),
+                        FontAttributes = FontAttributes.Bold,
+                        FontSize = 26,
+                        Margin = new Thickness (20),
                         HorizontalOptions = LayoutOptions.FillAndExpand,
                         VerticalOptions = LayoutOptions.CenterAndExpand }
                 }
@@ -37,7 +41,7 @@ namespace Crosshelper.Views
         private string ProfileIcon = "";
         readonly KeyChainHelper kch = new KeyChainHelper();
 
-        bool rememberMe = false;
+        bool rememberMe = true;
         public bool RememberMe
         {
             get => Preferences.Get(nameof(RememberMe), false);
