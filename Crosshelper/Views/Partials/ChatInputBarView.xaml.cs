@@ -20,6 +20,7 @@ namespace Crosshelper.Views.Partials
         {
             (this.Parent.Parent.BindingContext as ChatTestViewModel).OnSendCommand.Execute(null);
             chatTextInput.Focus();
+            chatTextInput.Text = "";
         }
 
         public void UnFocusEntry(){
