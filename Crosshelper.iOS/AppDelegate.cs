@@ -24,7 +24,7 @@ namespace Crosshelper.iOS
         {
             Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
-            UITabBar.Appearance.TintColor = UIColor.FromRGB(255, 78, 24);
+
             AiForms.Renderers.iOS.SettingsViewInit.Init(); //need to write here
             CarouselViewRenderer.Init();
             CachedImageRenderer.Init();
@@ -32,8 +32,6 @@ namespace Crosshelper.iOS
             //PlacesClient.ProvideApiKey("AIzaSyBcxooWTNnHQJb10x0cgkijXn5fowDfUjE");
 
             LoadApplication(new App());
-            //UITabBar.Appearance.TintColor = UIColor.FromRGB(255, 78, 24);
-            //UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(255, 240, 60);
             return base.FinishedLaunching(app, options); 
 
         }
