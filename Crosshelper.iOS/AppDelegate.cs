@@ -30,7 +30,6 @@ namespace Crosshelper.iOS
             CachedImageRenderer.Init();
             ImageCircleRenderer.Init();
             //PlacesClient.ProvideApiKey("AIzaSyBcxooWTNnHQJb10x0cgkijXn5fowDfUjE");
-
             LoadApplication(new App());
             return base.FinishedLaunching(app, options); 
 
