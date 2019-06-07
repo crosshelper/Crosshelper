@@ -29,8 +29,8 @@
                Grid.Row="0"
                Grid.Column="1"
                FontSize="20"
-               TextColor="White" HeightRequest="30" 
-               BackgroundColor="#FF4E18" WidthRequest="60"
+               TextColor="#FF4E18" HeightRequest="30" 
+               BackgroundColor="Transparent" WidthRequest="60"
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="Center">
             <Label.GestureRecognizers> 
