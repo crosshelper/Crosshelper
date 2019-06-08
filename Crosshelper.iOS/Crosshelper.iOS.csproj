@@ -68,7 +68,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Distribution: Crosshelper INC. (X67YLHG9G2)</CodesignKey>
-    <CodesignProvision>William Liang Dev</CodesignProvision>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
