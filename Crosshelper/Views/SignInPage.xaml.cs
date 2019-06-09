@@ -172,6 +172,11 @@ namespace Crosshelper.Views
         {
             string text = ((Entry)sender).Text;
         }
+        void Handle_Privacy(object sender, System.EventArgs e)
+        {
+            Device.OpenUri(new Uri("https://cycbis.flycricket.io/privacy.html"));
+            //Navigation.PushModalAsync(new PrivacyPage());
+        }
     }
 }
 
