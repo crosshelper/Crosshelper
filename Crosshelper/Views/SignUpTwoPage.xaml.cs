@@ -46,6 +46,11 @@ namespace Crosshelper.Views
         {
             if(GetRealName())
             {
+                if(Email.Length == 0 || ContactNo.Length == 0)
+                {
+                    Email = "test@tert.com";
+                    ContactNo = "0000000000";
+                }
                 uih.UpdateUserRealName(FName, LName);
                 uAccess.UpdateEmailNo(Email, ContactNo);
                 //Settings.IsLogin = uAccess.VerifyUser(Uname, Pwd);
@@ -55,6 +60,7 @@ namespace Crosshelper.Views
             }
             else
             {
+                DisplayAlert("Name not Valid","Name should be 'Donald Trump', Try again.","Got it!");
                 return; 
             }
         }
