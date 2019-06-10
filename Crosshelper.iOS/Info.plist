@@ -18,11 +18,11 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>8.0</string>
+	<string>9.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>Crosshelper</string>
 	<key>CFBundleIdentifier</key>
-	<string>Cycbis.CycbisTest.test</string>
+	<string>com.crosshelper.cycbis</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>XSAppIconAssets</key>
@@ -44,6 +44,6 @@
 	<key>CFBundleVersion</key>
 	<string>0.1</string>
 	<key>CFBundleName</key>
-	<string>test</string>
+	<string>Crosshelper</string>
 </dict>
 </plist>

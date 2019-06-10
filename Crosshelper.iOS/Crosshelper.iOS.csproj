@@ -134,9 +134,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\CHAppLogo%401024.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Crosshelper Icon.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
     <BundleResource Include="Resources\tab_profile.png" />
     <BundleResource Include="Resources\tab_profile%402x.png" />
     <BundleResource Include="Resources\tab_profile%403x.png" />
@@ -156,7 +153,6 @@
     <BundleResource Include="Resources\tab_topic.png" />
     <BundleResource Include="Resources\tab_topic%402x.png" />
     <BundleResource Include="Resources\tab_topic%403x.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
