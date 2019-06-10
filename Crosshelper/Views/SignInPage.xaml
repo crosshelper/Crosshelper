@@ -60,6 +60,7 @@
                                    PlaceholderColor="#888888"
                                    Completed="PasswordSignInCompleted"
                                    x:Name="pwdEntry"/>
+                        <Label Text="" x:Name="signInTest"></Label>
                         </StackLayout>
            <!--登入按钮 Sign in Button -->   
             <StackLayout Orientation="Horizontal">
