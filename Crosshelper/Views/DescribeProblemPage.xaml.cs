@@ -7,6 +7,7 @@ using Xamarin.Essentials;
 using Crosshelper.Models;
 using Crosshelper.Helpers;
 using System.Linq;
+using WebSocketSharp;
 
 namespace Crosshelper.Views
 {
@@ -61,6 +62,11 @@ namespace Crosshelper.Views
             {
                 language = languagepicker.SelectedItem.ToString();
             }
+            if (des.Text.IsNullOrEmpty())
+            {
+                DisplayAlert("No description","Describe your Question plsease!","OK");
+                return;
+            }
             if(_currentTopic==null)
             {
                 int status = 0;
@@ -77,6 +83,7 @@ namespace Crosshelper.Views
                     Description = des.Text,
                     Status = status
                 };
+                Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
             }
             else
             {
@@ -85,8 +92,9 @@ namespace Crosshelper.Views
                 if (switchButton.IsToggled)
                     status = 1;
                 tih.UpdateMyTopic(Settings.ZipCode, language, des.Text, _currentTopic.TopicID, status);
+                Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
             }
-            Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
+
         }
 
         private async void SetCurrentZipCode()
