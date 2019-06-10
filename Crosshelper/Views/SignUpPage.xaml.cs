@@ -7,7 +7,9 @@ namespace Crosshelper.Views
     public partial class SignUpPage : ContentPage
     {
         UserAccess uAccess = new UserAccess();
-        private string Uname, Pwd, Pwdc;
+        private string Uname = "";
+        private string Pwd = "";
+        private string Pwdc = "";
         public SignUpPage()
         {
             InitializeComponent();
@@ -36,6 +38,9 @@ namespace Crosshelper.Views
         //注册按钮 Sign Up
         void Handle_Next(object sender, EventArgs e)
         {
+            Uname = UnameEntry.Text;
+            Pwd = PwdEntry.Text;
+            Pwdc = PwdcEntry.Text;
             if (Uname.Length < 5 || Pwd.Length < 8 || Pwd != Pwdc)
             {
                 DisplayAlert("No Access", "Try again!", "OK");

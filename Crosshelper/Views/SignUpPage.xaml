@@ -47,14 +47,14 @@
             <!--密码 Password input -->
                        <StackLayout VerticalOptions="Start" Margin="0,0,0,10">
                             
-                            <Entry Placeholder="Enter Username"
+                            <Entry x:Name="UnameEntry" Placeholder="Enter Username"
                                    FontSize="16"
                                    MaxLength="18"
                                    PlaceholderColor="#888888"
                                    HeightRequest="45"
                                    Completed="UnameCompleted"/>
                             
-                            <Entry Placeholder="Enter password"
+                            <Entry x:Name="PwdEntry" Placeholder="Enter password"
                                    FontSize="16"
                                    MaxLength="18"
                                    PlaceholderColor="#888888"
@@ -62,7 +62,7 @@
                                    HeightRequest="45"
                                    Completed="PasswordCompleted"/>
                            
-                            <Entry Placeholder="Comfirm password"
+                            <Entry x:Name="PwdcEntry" Placeholder="Comfirm password"
                                    FontSize="16"
                                    MaxLength="18"
                                    PlaceholderColor="#888888"

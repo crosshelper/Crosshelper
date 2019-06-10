@@ -1,5 +1,6 @@
 ﻿using System;
 using Crosshelper.Helpers;
+using WebSocketSharp;
 using Xamarin.Forms;
 
 namespace Crosshelper.Views
@@ -46,7 +47,7 @@ namespace Crosshelper.Views
         {
             if(GetRealName())
             {
-                if(Email.Length == 0 || ContactNo.Length == 0)
+                if(Email.IsNullOrEmpty() || ContactNo.IsNullOrEmpty())
                 {
                     Email = "test@tert.com";
                     ContactNo = "0000000000";
