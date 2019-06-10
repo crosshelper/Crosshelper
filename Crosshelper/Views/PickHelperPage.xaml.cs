@@ -14,9 +14,9 @@ namespace Crosshelper.Views
             Navigation.PopModalAsync();
         }
 
-        void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
-            HelperLabel hl = (HelperLabel)e.SelectedItem as HelperLabel;
+            HelperLabel hl = (HelperLabel)e.Item as HelperLabel;
             ((ListView)sender).SelectedItem = null;
             Navigation.PushAsync(new HelperProfilePage(hl));
         }

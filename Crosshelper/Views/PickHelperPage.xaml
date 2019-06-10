@@ -7,7 +7,7 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
-                <ListView ItemsSource="{Binding Helpers}" HasUnevenRows="true" ItemTapped="Handle_ItemSelected">
+                <ListView ItemsSource="{Binding Helpers}" HasUnevenRows="true" ItemTapped="Handle_ItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell x:Name="PHPPickNewcomeButton">
