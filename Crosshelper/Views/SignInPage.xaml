@@ -59,8 +59,7 @@
                                    MaxLength="18"
                                    PlaceholderColor="#888888"
                                    Completed="PasswordSignInCompleted"
-                                   x:Name="pwdEntry"/>                 
-                            <Label Text="" x:Name="signInTest"></Label>
+                                   x:Name="pwdEntry"/>
                         </StackLayout>
            <!--登入按钮 Sign in Button -->   
             <StackLayout Orientation="Horizontal">

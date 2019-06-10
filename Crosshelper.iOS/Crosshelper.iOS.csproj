@@ -58,6 +58,7 @@
     <CodesignProvision>William Liang Dev Test</CodesignProvision>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchLink>None</MtouchLink>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>

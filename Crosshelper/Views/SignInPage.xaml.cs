@@ -151,7 +151,8 @@ namespace Crosshelper.Views
         //创建和忘记 Create&Forgot
         void Handle_ForgotPassword(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ForgotPasswordPage());
+            DisplayAlert("Email Us","Please send your email address or your phone number to bo.chen@cycbis.com","OK");
+            //Navigation.PushAsync(new ForgotPasswordPage());
         }
         void Handle_CreateAccount(object sender, EventArgs e)
         {
