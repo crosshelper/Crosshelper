@@ -82,7 +82,31 @@ namespace Crosshelper.Helpers
 
         internal void UpdateUserRealName(string fName, string lName)
         {
-            throw new NotImplementedException();
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                    "UPDATE UserInfo SET " +
+                    "FirstName = @para2, " +
+                    "LastName = @para3" +
+                    " WHERE Uid = @para1";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", Settings.UserId);
+                cmd.Parameters.AddWithValue("para2", fName);
+                cmd.Parameters.AddWithValue("para3", lName);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                conn.Close();//关闭连接              
+            }
         }
 
         internal void DeleteMyPaymentByID(string paymentID)
