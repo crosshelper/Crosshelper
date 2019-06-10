@@ -18,7 +18,7 @@
                                     <StackLayout Padding="0,50,0,45">
                                         <ffimageloading:CachedImage x:Name="background" Source="{Binding Icon}" VerticalOptions="FillAndExpand"/>
                                         <StackLayout>
-                                            <Image Margin="0,0,0,0" Source="logo.png" Aspect="AspectFill"/>
+                                            <Image Margin="0,0,0,0"  Aspect="AspectFill"/>
                                         </StackLayout>
                                     </StackLayout>
                             </DataTemplate>

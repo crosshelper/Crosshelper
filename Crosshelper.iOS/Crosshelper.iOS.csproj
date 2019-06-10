@@ -53,9 +53,8 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer: Liang Han (M4L4WV8424)</CodesignKey>
+    <CodesignKey>iPhone Developer: bochen1092@gmail.com (29LNMNFZ57)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignProvision>William Liang Dev Test</CodesignProvision>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchLink>None</MtouchLink>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
