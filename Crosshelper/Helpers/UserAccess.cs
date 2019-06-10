@@ -16,7 +16,7 @@ namespace Crosshelper.Helpers
         private int currentUid;
         public int CurrentUid { get { return currentUid; } }
 
-        public void UserRegister(string Uname, string Email, string ContactNo, string Pwd)
+        public void UserRegister(string Uname, string Pwd)
         {
             MySqlConnection conn = new MySqlConnection(connStr);
             try
@@ -25,16 +25,47 @@ namespace Crosshelper.Helpers
                 {
                     Console.WriteLine("Connecting to MySQL...");
                     conn.Open();
-                    string sql = "INSERT INTO UserMaster(Uname,Email,ContactNo,Pwd,Permission) VALUES(@para1, @para2, @para3, @para4, 0) ";
+                    string sql = "INSERT INTO UserMaster(Uname,Pwd,Permission) VALUES(@para1, @para2, 0) ";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("para1", Uname);
-                    cmd.Parameters.AddWithValue("para2", Email);
-                    cmd.Parameters.AddWithValue("para3", ContactNo);
-                    cmd.Parameters.AddWithValue("para4", Pwd);
+                    cmd.Parameters.AddWithValue("para2", Pwd);
 
                     cmd.ExecuteNonQuery();
                     Console.WriteLine("Connecting to MySQL success");
 
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Connection failed");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        internal void UpdateEmailNo(string email, string contactNo)
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "UPDATE UserMaster SET " +
+                                 "Email = @para2 " +
+                                 "ContactNo = @para3" +
+                                 " WHERE Uid = @para1";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", currentUid);
+                    cmd.Parameters.AddWithValue("para2", email);
+                    cmd.Parameters.AddWithValue("para3", contactNo);
+
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Connecting to MySQL success");
                 }
             }
             catch (Exception ex)

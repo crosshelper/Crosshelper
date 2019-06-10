@@ -7,12 +7,11 @@ namespace Crosshelper.Views
     public partial class SignUpTwoPage : ContentPage
     {
         UserAccess uAccess = new UserAccess();
-        private string Uname, Pwd, Email, ContactNo = "";
-        public SignUpTwoPage(string uname, string pwd)
+        UserInfoHelper uih = new UserInfoHelper();
+        private string Email, ContactNo = "";
+        public SignUpTwoPage()
         {
             InitializeComponent();
-            Uname = uname;
-            Pwd = pwd;
         }
 
         void EmailCompleted(object sender, EventArgs e)
@@ -24,14 +23,40 @@ namespace Crosshelper.Views
             ContactNo = ((Entry)sender).Text;
         }
 
+        private string FName, LName;
+
+        private bool GetRealName()
+        {
+            var IsNameValid = false;
+            var name = NameEntry.Text;
+            string[] sArray = name.Split(' ');
+            //Regex.Split(str, "js", RegexOptions.IgnoreCase);
+            FName = "";
+            LName = "";
+            if (sArray.Length == 2)
+            {
+                FName = sArray[0];
+                LName = sArray[1];
+                IsNameValid = true;
+            }
+            return IsNameValid;
+        }
+
         void Handle_SignUp(object sender, EventArgs e)
         {
-            uAccess.UserRegister(Uname, Email, ContactNo, Pwd);
-            Settings.IsLogin = uAccess.VerifyUser(Uname, Pwd);
-            uAccess.SetChatID();
-            DisplayAlert("Congrats!", "You Have Done Sign Up, Sign In right now", "OK");
-            Navigation.PopToRootAsync();
-            //Application.Current.MainPage = new LaunchingPage();
+            if(GetRealName())
+            {
+                uih.UpdateUserRealName(FName, LName);
+                uAccess.UpdateEmailNo(Email, ContactNo);
+                //Settings.IsLogin = uAccess.VerifyUser(Uname, Pwd);
+                DisplayAlert("Congrats!", "You Have Done Sign Up, Sign In right now", "OK");
+                Navigation.PopToRootAsync();
+                //Application.Current.MainPage = new LaunchingPage();
+            }
+            else
+            {
+                return; 
+            }
         }
 
         void Handle_SignUpAsHelper(object sender, EventArgs e)

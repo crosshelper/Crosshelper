@@ -80,6 +80,11 @@ namespace Crosshelper.Helpers
             return caselist;
         }
 
+        internal void UpdateUserRealName(string fName, string lName)
+        {
+            throw new NotImplementedException();
+        }
+
         internal void DeleteMyPaymentByID(string paymentID)
         {
             MySqlConnection conn = new MySqlConnection(connStr);

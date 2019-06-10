@@ -7,7 +7,7 @@ namespace Crosshelper.Views
     public partial class SignUpPage : ContentPage
     {
         UserAccess uAccess = new UserAccess();
-        private string Uname, Pwd;
+        private string Uname, Pwd, Pwdc;
         public SignUpPage()
         {
             InitializeComponent();
@@ -28,12 +28,31 @@ namespace Crosshelper.Views
         }
         void PasswordComfirmCompleted(object sender, EventArgs e)
         {
-            string text = ((Entry)sender).Text;
+            Pwdc = ((Entry)sender).Text;
         }
+
+        UserAccess uac = new UserAccess();
+
         //注册按钮 Sign Up
         void Handle_Next(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SignUpTwoPage(Uname,Pwd));
+            if (Uname.Length < 5 || Pwd.Length < 8 || Pwd != Pwdc)
+            {
+                DisplayAlert("No Access", "Try again!", "OK");
+                return;
+            }
+            try
+            {
+                uac.UserRegister(Uname, Pwd);
+                uac.SetChatID();
+                Navigation.PushAsync(new SignUpTwoPage());
+            }
+            catch (SystemException ex)
+            {
+                Console.WriteLine(ex);
+                return;
+            }
+            //Navigation.PushAsync(new SignUpTwoPage(Uname,Pwd));
         }
         //第三次登入 Third party sign in
         void Handle_GoogleSignIn(object sender, EventArgs e)
