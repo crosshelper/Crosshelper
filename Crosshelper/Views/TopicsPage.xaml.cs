@@ -36,6 +36,7 @@ namespace Crosshelper.Views
                 tih.DeleteMyTopicByID((mi.CommandParameter as TopicInfo).TopicID);
                 //TopicInfoLabels.Remove((mi.CommandParameter as TopicInfo));//.TopicID
                 RefreshData();
+   
             }
         }
 

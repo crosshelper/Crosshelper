@@ -36,7 +36,6 @@
                        HorizontalOptions="End"/>
                 </StackLayout>       
             </StackLayout>
-           
             <StackLayout>
             <Label Text="Problem description" FontSize="18" TextColor="#393939"></Label>
             <Label 

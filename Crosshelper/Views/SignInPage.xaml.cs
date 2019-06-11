@@ -71,8 +71,8 @@ namespace Crosshelper.Views
             if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
             {
                 kch.SavetoSecureStorage("token_of_" + Username, pwdEntry.Text);
-                signInTest.Text = "Sign In Succeeded, Data Loading...";
-                signInTest.TextColor = Color.FromHex("#FF4E18");
+                signInloading.Text = "Sign In Succeeded, Data Loading...";
+                signInloading.TextColor = Color.FromHex("#555555");
                 Settings.UserId = userAccess.CurrentUid.ToString();
                 usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                 Settings.ChatID = usr.ChatID;
@@ -84,7 +84,8 @@ namespace Crosshelper.Views
             }
             else
             {
-                signInTest.Text = "Sign in Faild";
+                signInloading.Text = "Sign in Faild";
+                signInloading.TextColor = Color.FromHex("#555555");
                 activity.IsEnabled = false;
                 activity.IsRunning = false;
                 activity.IsVisible = false;

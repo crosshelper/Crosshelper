@@ -67,7 +67,11 @@ namespace Crosshelper.Views
                 DisplayAlert("No description","Describe your Question plsease!","OK");
                 return;
             }
-            if(_currentTopic==null)
+            activity.IsEnabled = true;
+            activity.IsRunning = true;
+            activity.IsVisible = true;
+            loading.IsVisible = true;
+            if (_currentTopic==null)
             {
                 int status = 0;
                 Settings.ZipCode = "95131";
