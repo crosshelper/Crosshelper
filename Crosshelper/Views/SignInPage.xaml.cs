@@ -60,7 +60,8 @@ namespace Crosshelper.Views
                 await DisplayAlert("No Internet", "Try again later!", "OK");
                 return;
             }
-
+            RememberMe = savename.IsToggled;
+            Username = uNameEntry.Text;
             UserAccess userAccess = new UserAccess();
             Models.User usr = new Models.User();
             activity.IsEnabled = true;
@@ -69,8 +70,6 @@ namespace Crosshelper.Views
 
             if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
             {
-                Username = uNameEntry.Text;
-                RememberMe = savename.IsToggled;
                 kch.SavetoSecureStorage("token_of_" + Username, pwdEntry.Text);
                 signInTest.Text = "Sign In Succeeded, Data Loading...";
                 signInTest.TextColor = Color.FromHex("#FF4E18");
@@ -82,7 +81,6 @@ namespace Crosshelper.Views
                 ChatServerConnect();
                 await Task.Delay(3000);
                 Application.Current.MainPage = new MyTabbedPage();
-
             }
             else
             {
@@ -175,7 +173,7 @@ namespace Crosshelper.Views
         }
         void Handle_Privacy(object sender, System.EventArgs e)
         {
-            //Device.OpenUri(new Uri("https://cycbis.flycricket.io/privacy.html"));
+            Device.OpenUri(new Uri("https://cycbis.flycricket.io/privacy.html"));
             //Navigation.PushModalAsync(new PrivacyPage());
         }
     }

@@ -41,7 +41,6 @@ namespace Crosshelper.Views
         private string ProfileIcon = "";
         readonly KeyChainHelper kch = new KeyChainHelper();
 
-        bool rememberMe = true;
         public bool RememberMe
         {
             get => Preferences.Get(nameof(RememberMe), false);
