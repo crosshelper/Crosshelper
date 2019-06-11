@@ -21,7 +21,8 @@ namespace Crosshelper.Views
             ChatTestViewModel vvm;
             this.BindingContext = vvm = new ChatTestViewModel();
             vvm.Channel = channel;
-            vvm.Title = user.FirstName + " " + user.LastName;
+            Titlelabel.Text = user.FirstName + " " + user.LastName;
+            //vvm.Title = user.FirstName + " " + user.LastName;
             vvm.Load();
         }
 
