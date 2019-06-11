@@ -46,7 +46,7 @@ namespace Crosshelper.ViewModels
                                 FirstName = user.Nickname,
                                 Icon = user.ProfileUrl,
                                 Homeland = ((UserMessage)channel.LastMessage).Message,
-                                Address = MilsecToDatetime(channel.LastMessage.CreatedAt).ToString()
+                                Address = MilsecToDatetime(channel.LastMessage.CreatedAt).ToShortTimeString()//ToString()
                             });
                         }
                     }
