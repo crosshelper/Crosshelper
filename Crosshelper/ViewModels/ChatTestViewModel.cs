@@ -64,7 +64,7 @@ namespace Crosshelper.ViewModels
         public async void Load()
         {
             IsBusy = true;
-            await Task.Delay(2000);
+            await Task.Delay(3000);
             PreviousMessageListQuery mPrevMessageListQuery = Channel.CreatePreviousMessageListQuery();
             mPrevMessageListQuery.Load(30, true, (List<BaseMessage> messages, SendBirdException e) => {
                 if (e != null)
@@ -112,8 +112,9 @@ namespace Crosshelper.ViewModels
 
         void OnMessageAppearing(UserMessage message)
         {
+
             var idx = Messages.IndexOf(message);
-            if (idx <= 6)
+            if (idx <= 1)
             {
                 Device.BeginInvokeOnMainThread(() =>
                 {
@@ -126,12 +127,13 @@ namespace Crosshelper.ViewModels
                     PendingMessageCount = 0;
                 });
             }
+
         }
 
         void OnMessageDisappearing(UserMessage message)
         {
             var idx = Messages.IndexOf(message);
-            if (idx >= 6)
+            if (idx >= 1)
             {
                 Device.BeginInvokeOnMainThread(() =>
                 {

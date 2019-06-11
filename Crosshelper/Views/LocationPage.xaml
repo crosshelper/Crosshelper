@@ -4,7 +4,7 @@
              xmlns:custom="clr-namespace:Crosshelper.PlacesBar;"
              x:Class="Crosshelper.Views.LocationPage">
     <ContentPage.Padding>
-        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" Android="0" />
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 1, 0, 0" Android="0" />
     </ContentPage.Padding>
         <NavigationPage.TitleView>
         <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
