@@ -59,8 +59,8 @@ namespace Crosshelper.Views
             activity.IsEnabled = true;
             activity.IsRunning = true;
             activity.IsVisible = true;
-            signInTest.Text = "Connecting...";
-            signInTest.TextColor = Color.FromHex("#FF4E18");
+            signInloading.Text = "Connecting...";
+            signInloading.TextColor = Color.FromHex("#FF4E18");
             await Task.Delay(2000);
 
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
