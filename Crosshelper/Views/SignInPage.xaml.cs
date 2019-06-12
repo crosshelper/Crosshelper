@@ -7,6 +7,7 @@ using Crosshelper.Helpers;
 using SendBird;
 using Xamarin.Forms.Xaml;
 using System.Threading.Tasks;
+using WebSocketSharp;
 
 namespace Crosshelper.Views
 {
@@ -55,18 +56,29 @@ namespace Crosshelper.Views
         //登入按钮 Sign In
         async void Handle_SignIn(object sender, EventArgs e)
         {
-            if(Connectivity.NetworkAccess != NetworkAccess.Internet)
+            activity.IsEnabled = true;
+            activity.IsRunning = true;
+            activity.IsVisible = true;
+            signInTest.Text = "Connecting...";
+            signInTest.TextColor = Color.FromHex("#FF4E18");
+            await Task.Delay(2000);
+
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
                 await DisplayAlert("No Internet", "Try again later!", "OK");
                 return;
             }
+
+            if (uNameEntry.Text.IsNullOrEmpty() || pwdEntry.Text.IsNullOrEmpty())
+            {
+                await DisplayAlert("No user found", "Try again later!", "OK");
+                return;
+            }
+
             RememberMe = savename.IsToggled;
             Username = uNameEntry.Text;
             UserAccess userAccess = new UserAccess();
             Models.User usr = new Models.User();
-            activity.IsEnabled = true;
-            activity.IsRunning = true;
-            activity.IsVisible = true;
 
             if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
             {
