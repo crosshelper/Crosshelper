@@ -71,6 +71,7 @@
     <CodesignKey>iPhone Distribution: Crosshelper INC. (X67YLHG9G2)</CodesignKey>
     <CodesignProvision>William Liang Dev</CodesignProvision>
 <MtouchFloat32>true</MtouchFloat32>
+<MtouchLink>Full</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
@@ -162,9 +163,6 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Stripe.net">
-      <Version>27.1.3</Version>
-    </PackageReference>
     <PackageReference Include="Xam.Plugin.Geolocator">
       <Version>4.5.0.6</Version>
     </PackageReference>
@@ -176,9 +174,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.482894" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.497661" />
     <PackageReference Include="AiForms.SettingsView">
       <Version>0.5.2</Version>
+    </PackageReference>
+    <PackageReference Include="Stripe.net">
+      <Version>27.1.3</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
