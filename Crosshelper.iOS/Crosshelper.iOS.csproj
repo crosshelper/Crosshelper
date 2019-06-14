@@ -65,12 +65,13 @@
     <OutputPath>bin\iPhone\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <MtouchArch>ARM64</MtouchArch>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Distribution: Crosshelper INC. (X67YLHG9G2)</CodesignKey>
     <CodesignProvision>William Liang Dev</CodesignProvision>
 <MtouchFloat32>true</MtouchFloat32>
 <MtouchLink>SdkOnly</MtouchLink>
+<MtouchExtraArgs>-v -v -v -v</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />

@@ -26,6 +26,7 @@ namespace Crosshelper.Views
 
         void Handle_Accept(object sender, System.EventArgs e)
         {
+            /*
             var options = new TokenCreateOptions
             {
                 Card = new CreditCardOptions
@@ -64,7 +65,7 @@ namespace Crosshelper.Views
             {
                 DisplayAlert("teste", ex.Message, "ok");
             }
-
+            */
             Navigation.PopAsync();
         }
 
