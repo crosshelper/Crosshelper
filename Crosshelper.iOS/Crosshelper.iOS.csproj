@@ -70,7 +70,7 @@
     <CodesignKey>iPhone Distribution: Crosshelper INC. (X67YLHG9G2)</CodesignKey>
     <CodesignProvision>William Liang Dev</CodesignProvision>
 <MtouchFloat32>true</MtouchFloat32>
-<MtouchLink>Full</MtouchLink>
+<MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
