@@ -72,6 +72,8 @@
 <MtouchFloat32>true</MtouchFloat32>
 <MtouchLink>SdkOnly</MtouchLink>
 <MtouchExtraArgs>-v -v -v -v</MtouchExtraArgs>
+<MtouchUseLlvm>true</MtouchUseLlvm>
+<MtouchUseThumb>true</MtouchUseThumb>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
