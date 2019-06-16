@@ -17,7 +17,7 @@
                 </StackLayout>
                 <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,5,0,5"></BoxView>
                 <!-- 第三次登入 Third party sign in -->  
-                <StackLayout VerticalOptions="Start" Orientation="Vertical"  Margin="0,5,0,0">
+             <!--   <StackLayout VerticalOptions="Start" Orientation="Vertical"  Margin="0,5,0,0">
                         <Button Text="Google" 
                                 BorderColor="#575656" 
                                 BorderWidth="1" 
@@ -39,7 +39,7 @@
                                 HorizontalOptions="FillAndExpand"
                                 Clicked="Handle_FaceBookSignIn"/>
                     </StackLayout>
-                <Label Text="or continue with username" HorizontalTextAlignment="Center" TextColor="#999999" FontSize="14" Margin="0,5,0,5"/>
+                <Label Text="or continue with username" HorizontalTextAlignment="Center" TextColor="#999999" FontSize="14" Margin="0,5,0,5"/>  -->
                 <!--邮箱密码 Email&password input -->
                        <StackLayout VerticalOptions="Start" Margin="0,0,0,0" >
                         <Entry Placeholder="Enter your Username"
