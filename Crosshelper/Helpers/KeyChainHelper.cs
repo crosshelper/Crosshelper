@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Foundation;
-using Security;
-using WebSocketSharp;
 using Xamarin.Essentials;
 
 namespace Crosshelper.Helpers
@@ -52,7 +49,7 @@ namespace Crosshelper.Helpers
 
 
 
-
+        /*
         /// <summary>
         /// Real KeyChain Method
         /// </summary>
@@ -177,7 +174,7 @@ namespace Crosshelper.Helpers
             }
 
             return true;
-        }
+        }*/
 
     }
 }

@@ -26,7 +26,6 @@ namespace Crosshelper.Views
 
         void Handle_Accept(object sender, System.EventArgs e)
         {
-            /*
             var options = new TokenCreateOptions
             {
                 Card = new CreditCardOptions
@@ -53,7 +52,7 @@ namespace Crosshelper.Views
                 Amount = Convert.ToInt64("20.89"),//valor),
                 Currency = "usd",
                 Description = "Charge for ",
-                SourceId = checkToken
+                Source = checkToken
             };
             var service1 = new ChargeService();
 
@@ -65,7 +64,7 @@ namespace Crosshelper.Views
             {
                 DisplayAlert("teste", ex.Message, "ok");
             }
-            */
+            
             Navigation.PopAsync();
         }
 
