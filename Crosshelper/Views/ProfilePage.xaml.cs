@@ -116,6 +116,7 @@ namespace Crosshelper.Views
             }
             else
             {
+                await DisplayAlert("Photo lib not access", "Go your system [Setting], change permission and try again.", "OK");
                 return;
             }
         }
@@ -177,6 +178,7 @@ namespace Crosshelper.Views
             }
             else
             {
+                await DisplayAlert("Camera not access", "Go your system [Setting], change permission and try again.", "OK");
                 return;
             }
         }
