@@ -94,7 +94,10 @@ namespace Crosshelper.Views
                 }
                 
                 var file = await CrossMedia.Current.PickPhotoAsync();
-
+                if (file == null)
+                {
+                    return;
+                }
                 try
                 {
                     TransferUtilityUploadRequest request =
@@ -142,53 +145,62 @@ namespace Crosshelper.Views
             //check Permisson
             if (await CheckCameraPermisson())
             {
-                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                if (await CheckPhotoPermisson())
                 {
-                    await DisplayAlert("Alert", "Can not access Camera", "OK");
-                    return;
-                }
-                var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-                {
-                    AllowCropping = true,
-                    SaveToAlbum = true
-                });
-                //fileImage.Source = ImageSource.FromStream(() => { return file.GetStream(); });
-                if (file == null)
-                {
-                    return;
+                    if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                    {
+                        await DisplayAlert("Alert", "Can not access Camera", "OK");
+                        return;
+                    }
+                    var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                    {
+                        AllowCropping = true,
+                        SaveToAlbum = true
+                    });
+                    //fileImage.Source = ImageSource.FromStream(() => { return file.GetStream(); });
+                    if (file == null)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        try
+                        {
+                            TransferUtilityUploadRequest request =
+                                new TransferUtilityUploadRequest
+                                {
+                                    BucketName = "imagetest123bibi",
+                                    FilePath = file.Path,
+                                    Key = string.Format(filename),
+                                    ContentType = "image/png"
+                                };
+                            //The cancellationToken is not used within this example, however you can pass it to the UploadAsync consutructor as well
+                            //CancellationToken cancellationToken = new CancellationToken();
+                            await this.s3transferUtility.UploadAsync(request).ContinueWith(((x) =>
+                            {
+                                Debug.WriteLine("Image Uploaded");
+                            }));
+
+                            NameCell.IconSource = ImageSource.FromStream(() =>
+                            {
+                                var stream = file.GetStream();
+                                file.Dispose();
+                                return stream;
+                            });
+                            await Task.Delay(5000);
+                        }
+                        catch (Exception e)
+                        {
+                            throw e;
+                        }
+                    }
                 }
                 else
                 {
-                    try
-                    {
-                        TransferUtilityUploadRequest request =
-                            new TransferUtilityUploadRequest
-                            {
-                                BucketName = "imagetest123bibi",
-                                FilePath = file.Path,
-                                Key = string.Format(filename),
-                                ContentType = "image/png"
-                            };
-                        //The cancellationToken is not used within this example, however you can pass it to the UploadAsync consutructor as well
-                        //CancellationToken cancellationToken = new CancellationToken();
-                        await this.s3transferUtility.UploadAsync(request).ContinueWith(((x) =>
-                        {
-                            Debug.WriteLine("Image Uploaded");
-                        }));
-
-                        NameCell.IconSource = ImageSource.FromStream(() =>
-                        {
-                            var stream = file.GetStream();
-                            file.Dispose();
-                            return stream;
-                        });
-                        await Task.Delay(5000);
-                    }
-                    catch (Exception e)
-                    {
-                        throw e;
-                    }
+                    await DisplayAlert("Photo lib not access", "Go your system [Setting], change permission and try again.", "OK");
+                    return;
                 }
+                
             }
             else
             {
