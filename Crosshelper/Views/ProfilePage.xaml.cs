@@ -78,11 +78,22 @@ namespace Crosshelper.Views
 
         async Task SelectFromImageLibrary()
         {
-            //check Permisson
-            if (await CheckPermisson())
+            bool IsAvailable = await CrossMedia.Current.Initialize();
+            if (!IsAvailable)
             {
-                var media = CrossMedia.Current;
-                var file = await media.PickPhotoAsync();
+                return;
+            }
+            //check Permisson
+            if (await CheckPhotoPermisson())
+            {
+                await CrossMedia.Current.Initialize();
+                if (!CrossMedia.Current.IsPickPhotoSupported)
+                {
+                    await DisplayAlert("Alert", "Can not access Camera", "OK");
+                    return;
+                }
+                
+                var file = await CrossMedia.Current.PickPhotoAsync();
 
                 try
                 {
@@ -123,17 +134,20 @@ namespace Crosshelper.Views
 
         private async Task TakePhotoFromCameraAsync()
         {
-            var media = CrossMedia.Current;
-
-            //check Permisson
-            if (await CheckPermisson())
+            bool IsAvailable = await CrossMedia.Current.Initialize();
+            if (!IsAvailable)
             {
-                if (!media.IsCameraAvailable || !media.IsTakePhotoSupported)
+                return;
+            }
+            //check Permisson
+            if (await CheckCameraPermisson())
+            {
+                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
                 {
                     await DisplayAlert("Alert", "Can not access Camera", "OK");
                     return;
                 }
-                var file = await media.TakePhotoAsync(new StoreCameraMediaOptions
+                var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
                 {
                     AllowCropping = true,
                     SaveToAlbum = true
@@ -182,16 +196,28 @@ namespace Crosshelper.Views
                 return;
             }
         }
-       
-        ////check Permisson method
-        private async Task<bool> CheckPermisson()
+
+        private async Task<bool> CheckPhotoPermisson()
         {
             var permissons = CrossPermissions.Current;
-            var storageStatus = await permissons.CheckPermissionStatusAsync(Permission.Storage);
+            var storageStatus = await permissons.CheckPermissionStatusAsync(Permission.MediaLibrary);
+            if (storageStatus != PermissionStatus.Granted)
+            {
+                var results = await permissons.RequestPermissionsAsync(Permission.MediaLibrary);
+                storageStatus = results[Permission.MediaLibrary];
+            }
+            return storageStatus == PermissionStatus.Granted;
+        }
+
+        //check Permisson method
+        private async Task<bool> CheckCameraPermisson()
+        {
+            var permissons = CrossPermissions.Current;
+            var storageStatus = await permissons.CheckPermissionStatusAsync(Permission.Camera);
             if(storageStatus != PermissionStatus.Granted)
             {
-                var results = await permissons.RequestPermissionsAsync(Permission.Storage);
-                storageStatus = results[Permission.Storage];
+                var results = await permissons.RequestPermissionsAsync(Permission.Camera);
+                storageStatus = results[Permission.Camera];
             }
             return storageStatus == PermissionStatus.Granted;
         }
