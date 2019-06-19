@@ -78,36 +78,45 @@ namespace Crosshelper.Views
 
         async Task SelectFromImageLibrary()
         {
-            var media = CrossMedia.Current;
-            var file = await media.PickPhotoAsync();
-
-            try
+            //check Permisson
+            if (await CheckPermisson())
             {
-                TransferUtilityUploadRequest request =
-                    new TransferUtilityUploadRequest
-                    {
-                        BucketName = "imagetest123bibi",
-                        FilePath = file.Path,
-                        Key = string.Format(filename),
-                        ContentType = "image/png"
-                    };
-                //The cancellationToken is not used within this example, however you can pass it to the UploadAsync consutructor as well
-                //CancellationToken cancellationToken = new CancellationToken();
-                await this.s3transferUtility.UploadAsync(request).ContinueWith(((x) =>
+                var media = CrossMedia.Current;
+                var file = await media.PickPhotoAsync();
+
+                try
                 {
-                    Debug.WriteLine("Image Uploaded");
-                }));
+                    TransferUtilityUploadRequest request =
+                        new TransferUtilityUploadRequest
+                        {
+                            BucketName = "imagetest123bibi",
+                            FilePath = file.Path,
+                            Key = string.Format(filename),
+                            ContentType = "image/png"
+                        };
+                    //The cancellationToken is not used within this example, however you can pass it to the UploadAsync consutructor as well
+                    //CancellationToken cancellationToken = new CancellationToken();
+                    await this.s3transferUtility.UploadAsync(request).ContinueWith(((x) =>
+                    {
+                        Debug.WriteLine("Image Uploaded");
+                    }));
 
-                NameCell.IconSource = ImageSource.FromStream(() => {
-                    var stream = file.GetStream();
-                    file.Dispose();
-                    return stream;
-                });
-                await Task.Delay(5000);
+                    NameCell.IconSource = ImageSource.FromStream(() =>
+                    {
+                        var stream = file.GetStream();
+                        file.Dispose();
+                        return stream;
+                    });
+                    await Task.Delay(5000);
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
             }
-            catch (Exception e)
+            else
             {
-                throw e;
+                return;
             }
         }
 
@@ -123,7 +132,8 @@ namespace Crosshelper.Views
                     await DisplayAlert("Alert", "Can not access Camera", "OK");
                     return;
                 }
-                var file = await media.TakePhotoAsync(new StoreCameraMediaOptions {
+                var file = await media.TakePhotoAsync(new StoreCameraMediaOptions
+                {
                     AllowCropping = true,
                     SaveToAlbum = true
                 });
@@ -132,7 +142,7 @@ namespace Crosshelper.Views
                 {
                     return;
                 }
-                else 
+                else
                 {
                     try
                     {
@@ -151,7 +161,8 @@ namespace Crosshelper.Views
                             Debug.WriteLine("Image Uploaded");
                         }));
 
-                        NameCell.IconSource = ImageSource.FromStream(() => {
+                        NameCell.IconSource = ImageSource.FromStream(() =>
+                        {
                             var stream = file.GetStream();
                             file.Dispose();
                             return stream;
@@ -163,7 +174,10 @@ namespace Crosshelper.Views
                         throw e;
                     }
                 }
-
+            }
+            else
+            {
+                return;
             }
         }
        
