@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Crosshelper.Models;
 using Crosshelper.Helpers;
+using System.Threading.Tasks;
 
 namespace Crosshelper.Views
 {
@@ -49,11 +50,15 @@ namespace Crosshelper.Views
         {
             Navigation.PushAsync(new ProjectPage());
         }
-        void Handle_SignOut(object sender, System.EventArgs e)
+
+        async void Handle_SignOut(object sender, System.EventArgs e)
         {
             Settings.IsLogin = false;
+            await Task.Delay(1000);
+            await Navigation.PopAsync();
             Application.Current.MainPage = new LaunchingPage();
         }
+        //SelectableItemsView
 
         private User currentUser;
         UserInfoHelper uih = new UserInfoHelper();
