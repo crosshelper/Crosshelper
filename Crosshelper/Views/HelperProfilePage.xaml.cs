@@ -39,7 +39,8 @@ namespace Crosshelper.Views
             HelperPrice.Text = hl.Baseprice;
             HelperImage.Source = hl.ImageUrl;
 
-            /*List<ReviewLabelContent> reviewsList = bcc.BindingReviewssConvert(uih.GetReviewsList(hl.HelperID));
+            /*
+            List<ReviewLabelContent> reviewsList = bcc.BindingReviewssConvert(uih.GetReviewsList(hl.HelperID));
             ReviewerName1.Text = reviewsList[0].ReviewerName;
             ReviewerRating1.Text = reviewsList[0].ReviewerRating;
             ReviewerContent1.Text = reviewsList[0].ReviewerContent;
