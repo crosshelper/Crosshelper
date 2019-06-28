@@ -8,12 +8,12 @@ namespace Crosshelper.Views
 {
     public partial class GetHelpPage : ContentPage
     {
-        public IList<HelperLabel> Helpers { get; private set; }
-        public IList<TypeProblem> ProblemsCategory { get; private set; }
-        public IList<TypeProblem> RecommendationOne { get; private set; }
-        public IList<TypeProblem> RecommendationTwo { get; private set; }
-        public IList<TypeProblem> RecommendationThree { get; private set; }
-        public IList<TypeProblem> RecommendationFour { get; private set; }
+        public List<HelperLabel> Helpers { get; private set; }
+        public List<TypeProblem> ProblemsCategory { get; private set; }
+        public List<TypeProblem> RecommendationOne { get; private set; }
+        public List<TypeProblem> RecommendationTwo { get; private set; }
+        public List<TypeProblem> RecommendationThree { get; private set; }
+        public List<TypeProblem> RecommendationFour { get; private set; }
         public GetHelpPage()
         {
             InitializeComponent();

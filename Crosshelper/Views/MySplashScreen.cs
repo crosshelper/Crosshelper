@@ -93,6 +93,7 @@ namespace Crosshelper.Views
                     ProfileIcon = usr.Icon;
                     ChatServerConnect();
                     await Task.Delay(3000);
+                    //await Navigation.PushModalAsync(new MyTabbedPage());
                     Application.Current.MainPage = new MyTabbedPage();
                 }
                 else
