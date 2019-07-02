@@ -12,7 +12,7 @@
         <StackLayout>
             <StackLayout>
             <Label Text="Problem Category" FontSize="25" VerticalOptions="Center" Margin="10,5,10,0"/>
-                <CollectionView x:Name="cv1" ItemsSource="{Binding ProblemsCategory}" SelectionMode="Single" SelectionChanged="Handle_PickProblem"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="110">
+                <CollectionView x:Name="cv1" ItemsSource="{Binding ProblemsCategory}" SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.Horizontal}" HeightRequest="110">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                                 <Grid Padding="10,10,10,0">
@@ -46,7 +46,7 @@
             <StackLayout BackgroundColor="#F9F9F9" Padding="10">
             <StackLayout >
             <Label Text="Are you international student?" FontSize="22" Margin="5,0,5,0"/>
-                    <CollectionView  x:Name="cv2" ItemsSource="{Binding RecommendationOne}"  SelectionMode="Single" SelectionChanged="Handle_PickProblem"  ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
+                    <CollectionView  x:Name="cv2" ItemsSource="{Binding RecommendationOne}"  SelectionMode="Single" SelectionChanged="Handle_PickProblem"  ItemsLayout="{x:Static ListItemsLayout.Horizontal}" HeightRequest="148">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="5" >
@@ -82,7 +82,7 @@
         <!-- 2 -->
             <StackLayout >
             <Label Text="Make immigrant life better" FontSize="22" Margin="5,0,5,0"/>
-                    <CollectionView x:Name="cv3" ItemsSource="{Binding RecommendationTwo}"  SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
+                    <CollectionView x:Name="cv3" ItemsSource="{Binding RecommendationTwo}"  SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.Horizontal}" HeightRequest="148">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="5" >
@@ -117,7 +117,7 @@
              <!-- 3 -->
             <StackLayout >
             <Label Text="Traveler got some problem" FontSize="22" Margin="5,0,5,0"/>
-                    <CollectionView x:Name="cv4" ItemsSource="{Binding RecommendationThree}"  SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
+                    <CollectionView x:Name="cv4" ItemsSource="{Binding RecommendationThree}"  SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.Horizontal}" HeightRequest="148">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="5" >
@@ -152,7 +152,7 @@
              <!-- 3 -->
             <StackLayout >
             <Label Text="Business recommendation" FontSize="22" Margin="5,0,5,0"/>
-                    <CollectionView x:Name="cv5" ItemsSource="{Binding RecommendationFour}"  SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" HeightRequest="148">
+                    <CollectionView x:Name="cv5" ItemsSource="{Binding RecommendationFour}"  SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.Horizontal}" HeightRequest="148">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="5" >
