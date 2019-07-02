@@ -55,12 +55,8 @@ namespace Crosshelper.Views
         {
             Settings.IsLogin = false;
             await Task.Delay(1000);
-            //Application.Current.MainPage.
-            //await Navigation.PopModalAsync();
             Application.Current.MainPage = new LaunchingPage();
         }
-
-        //SelectableItemsView
 
         private User currentUser;
         UserInfoHelper uih = new UserInfoHelper();
