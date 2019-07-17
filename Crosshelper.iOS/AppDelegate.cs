@@ -2,6 +2,7 @@
 using FFImageLoading.Forms.Platform;
 using Foundation;
 using ImageCircle.Forms.Plugin.iOS;
+using Plugin.GoogleClient;
 using UIKit;
 using Xamarin.Forms;
 
@@ -25,6 +26,7 @@ namespace Crosshelper.iOS
             Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
 
+            GoogleClientManager.Initialize();
             AiForms.Renderers.iOS.SettingsViewInit.Init(); //need to write here
             CarouselViewRenderer.Init();
             CachedImageRenderer.Init();
@@ -33,6 +35,11 @@ namespace Crosshelper.iOS
             LoadApplication(new App());
             return base.FinishedLaunching(app, options); 
 
+        }
+
+        public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+        {
+            return GoogleClientManager.OnOpenUrl(app, url, options);
         }
     }
 }

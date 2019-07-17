@@ -72,6 +72,7 @@
 <MtouchFloat32>true</MtouchFloat32>
 <MtouchLink>SdkOnly</MtouchLink>
 <MtouchExtraArgs>-v -v -v -v</MtouchExtraArgs>
+<CodesignEntitlements>GoogleService-Info.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
@@ -85,6 +86,7 @@
     <Compile Include="Renderers\ChatEntryRenderer.cs" />
     <Compile Include="Renderers\CustomEditorRenderer.cs" />
     <Compile Include="Renderers\ExtendedListViewRenderer.cs" />
+    <None Include="GoogleService-Info.plist" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -178,7 +180,10 @@
       <Version>0.5.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>4.1.0.555618</Version>
+      <Version>4.1.0.581479</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.GoogleClient">
+      <Version>1.1.1</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

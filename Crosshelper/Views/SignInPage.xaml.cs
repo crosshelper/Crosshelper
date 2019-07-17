@@ -150,12 +150,13 @@ namespace Crosshelper.Views
             }
         }
 
-
         //第三次登入 Third party sign in
         void Handle_GoogleSignIn(object sender, EventArgs e)
         {
-            DisplayAlert("Sorry", "It will be suppported later.", "OK");
+            Navigation.PushModalAsync(new GoogleSignInPage());
+            //DisplayAlert("Sorry", "It will be suppported later.", "OK");
         }
+
         void Handle_FaceBookSignIn(object sender, EventArgs e)
         {
             DisplayAlert("Sorry", "It will be suppported later.", "OK");

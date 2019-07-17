@@ -47,5 +47,18 @@
 	<string>0.1.9</string>
 	<key>CFBundleName</key>
 	<string>Cycbis</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>Google Services</string>
+			<key>CFBundleURLTypes</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.86389973067-piph19gms4no8ms5s98859bdqtvcpomc</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
