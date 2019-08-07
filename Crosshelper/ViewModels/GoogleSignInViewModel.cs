@@ -26,7 +26,7 @@ namespace Crosshelper.ViewModels
 
         public Uri Picture
         {
-            //get => (Uri)User.Icon;
+            get => new Uri(User.Icon, UriKind.Absolute);
             set => User.Icon = value.ToString();
         }
 
@@ -45,7 +45,6 @@ namespace Crosshelper.ViewModels
             LogoutCommand = new Command(Logout);
 
             _googleClientManager = CrossGoogleClient.Current;
-
 
             IsLoggedIn = false;
         }
@@ -95,7 +94,6 @@ namespace Crosshelper.ViewModels
                 User.Icon = googleUser.Picture.ToString();
                 var GivenName = googleUser.GivenName;
                 var FamilyName = googleUser.FamilyName;
-
 
                 // Log the current User email
                 Debug.WriteLine(User.Address);//Email);
