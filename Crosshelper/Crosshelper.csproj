@@ -33,7 +33,6 @@
     <PackageReference Include="Stripe.net" Version="27.21.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.618606" />
     <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
-    <PackageReference Include="Plugin.GoogleClient" Version="1.1.1" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\MyPage.xaml" />
