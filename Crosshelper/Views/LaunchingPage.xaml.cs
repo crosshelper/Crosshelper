@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using Crosshelper.Models;
 using FFImageLoading.Forms;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace Crosshelper.Views
 {
@@ -28,11 +29,11 @@ namespace Crosshelper.Views
             InitializeComponent();
             Init();
             BindingContext = this;
-        }
 
-        void Handle_Clicked(object sender, System.EventArgs e)
-        {
-            Navigation.PushModalAsync(new NavigationPage(new SignInPage()));
+
+On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
+
+
         }
 
         void Init()
@@ -44,15 +45,10 @@ namespace Crosshelper.Views
             };
         }
 
-        void Handle_SignIn(object sender, EventArgs e)
-        {
-            //Navigation.PushModalAsync(new NavigationPage(new TestPage()));
-            Navigation.PushModalAsync(new NavigationPage(new SignInPage()));
-        }
 
-        void Handle_SignUp(object sender, EventArgs e)
+        void Handle_GetStarted(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new NavigationPage(new SignUpPage()));
+            Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage( new SignInPage()));
 
         }
     }

@@ -5,11 +5,11 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="Crosshelper.Views.LaunchingPage">
     <ContentPage.Content>
-        <StackLayout Margin="16,35,16,20">
+        <StackLayout Margin="16,25,16,10">
                 <StackLayout Margin="0,10,0,0" Padding="0,10,0,0">
                     <Image Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/CycbisLogoH.png"
                           
-                    HeightRequest="50" />
+                    HeightRequest="60"/>
                 </StackLayout>
                 <carousel:CarouselViewControl x:Name="carousel"
                 ItemsSource="{Binding LaunchingItemsSource}"
@@ -41,8 +41,8 @@
                         HeightRequest="50"
                         FontAttributes="Bold"
                         BackgroundColor="#FF4E18"
-                        Margin="0,8,0,8"
-                        Clicked="Handle_SignUp"/>
+                        Margin="0,10,0,0"
+                        Clicked="Handle_GetStarted"/>
                         </StackLayout>
                 </StackLayout>
         </StackLayout>

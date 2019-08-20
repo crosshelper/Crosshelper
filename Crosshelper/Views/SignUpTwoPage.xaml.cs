@@ -10,42 +10,50 @@ namespace Crosshelper.Views
         UserAccess uAccess = new UserAccess();
         UserInfoHelper uih = new UserInfoHelper();
         private string Email, ContactNo = "";
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await System.Threading.Tasks.Task.Delay(150);
+                FNameEntry.Focus();
+            });
+        }
+
         public SignUpTwoPage()
         {
             InitializeComponent();
         }
 
-        void EmailCompleted(object sender, EventArgs e)
+        void Handle_Canceled(object sender, EventArgs e)
         {
-            Email = ((Entry)sender).Text;
-        }
-        void ContactNumCompleted(object sender, EventArgs e)
-        {
-            ContactNo = ((Entry)sender).Text;
+            Navigation.PopModalAsync();
         }
 
         private string FName, LName;
 
-        private bool GetRealName()
-        {
-            var IsNameValid = false;
-            var name = NameEntry.Text;
-            string[] sArray = name.Split(' ');
+       // private bool GetRealName()
+       // {
+            //var IsNameValid = false;
+           // var name = NameEntry.Text;
+           // string[] sArray = name.Split(' ');
             //Regex.Split(str, "js", RegexOptions.IgnoreCase);
-            FName = "";
-            LName = "";
-            if (sArray.Length == 2)
-            {
-                FName = sArray[0];
-                LName = sArray[1];
-                IsNameValid = true;
-            }
-            return IsNameValid;
-        }
+           // FName = "";
+           // LName = "";
+           // if (sArray.Length == 2)
+           // {
+           //     FName = sArray[0];
+            //    LName = sArray[1];
+           //     IsNameValid = true;
+           // }
+           // return IsNameValid;
+      //  }
 
-        void Handle_SignUp(object sender, EventArgs e)
+        void Handle_CreateAccount(object sender, EventArgs e)
         {
-            if(GetRealName())
+            /*
+            if (GetRealName())
             {
                 if(Email.IsNullOrEmpty() || ContactNo.IsNullOrEmpty())
                 {
@@ -64,12 +72,20 @@ namespace Crosshelper.Views
                 DisplayAlert("Name not Valid","Name should be 'Donald Trump', Try again.","Got it!");
                 return; 
             }
+            */
+
+            if (FNameEntry.Text == null
+                && LNameEntry.Text == null)
+            {
+                DisplayAlert("Notice", "Please fill all required information box.", "OK");
+            }
+            else
+            {
+
+                Application.Current.MainPage = new MyTabbedPage();
+            }
+
         }
 
-        void Handle_SignUpAsHelper(object sender, EventArgs e)
-        {
-
-            (sender as Button).Text = "Click me again!";
-        }
     }
 }
