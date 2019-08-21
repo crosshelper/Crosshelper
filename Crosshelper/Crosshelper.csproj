@@ -34,6 +34,7 @@
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.673156" />
     <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
     <PackageReference Include="libphonenumber-csharp" Version="8.10.17" />
+    <PackageReference Include="Twilio" Version="5.31.4" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\MyPage.xaml" />

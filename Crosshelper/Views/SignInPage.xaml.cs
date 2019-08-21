@@ -53,7 +53,7 @@ namespace Crosshelper.Views
         //登入按钮 Sign In
         async void Handle_SignIn(object sender, EventArgs e)
         {
-            await DisplayAlert("Your Number is", countryCodePicker.SelectedItem.ToString() + PNumEntry.Text, "OK");
+            //await DisplayAlert("Your Number is", countryCodePicker.SelectedItem.ToString() + PNumEntry.Text, "OK");
             /*  activity.IsEnabled = true;
               activity.IsRunning = true;
               activity.IsVisible = true;
