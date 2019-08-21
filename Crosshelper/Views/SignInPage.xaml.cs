@@ -13,6 +13,8 @@ namespace Crosshelper.Views
 {
     public partial class SignInPage : ContentPage
     {
+        public List<string> CountryCodes { get; private set; }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -26,7 +28,22 @@ namespace Crosshelper.Views
         public SignInPage()
         {
             InitializeComponent();
+            CountryCodes = new List<string>();
+            CountryCodes.Add("+55");
+            CountryCodes.Add("🇺🇸 +1");
+            CountryCodes.Add("+7");
+            CountryCodes.Add("+33");
+            CountryCodes.Add("+44");
+            CountryCodes.Add("+49");
+            CountryCodes.Add("+52");
+            CountryCodes.Add("+81");
+            CountryCodes.Add("+82");
+            CountryCodes.Add("+86");
+            CountryCodes.Add("+91");
+            CountryCodes.Add("+852");
+            CountryCodes.Add("+886");
             NavigationPage.SetHasBackButton(this, false);
+            this.BindingContext = this;
         }
       
         KeyChainHelper kch = new KeyChainHelper();
@@ -36,6 +53,7 @@ namespace Crosshelper.Views
         //登入按钮 Sign In
         async void Handle_SignIn(object sender, EventArgs e)
         {
+            await DisplayAlert("Your Number is", countryCodePicker.SelectedItem.ToString() + PNumEntry.Text, "OK");
             /*  activity.IsEnabled = true;
               activity.IsRunning = true;
               activity.IsVisible = true;
