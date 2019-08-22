@@ -51,7 +51,6 @@ namespace Crosshelper.Views
         private string GetCountryName(string fullcode)
         {
             string[] sArray = fullcode.Split(' ');
-            //Regex.Split(str, "js", RegexOptions.IgnoreCase);
             var Flag = "";
             var Code = "";
             if (sArray.Length == 2)
