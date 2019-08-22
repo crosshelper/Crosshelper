@@ -46,7 +46,8 @@ namespace Crosshelper.Views
                  {
                     uac.UserRegister(ContactNo, Pwd);
                     //uac.SetChatID();
-                    uih.UpdateUserRealNameEmail(ContactNo, "Cycbis", "cycbis@cycbis.com");
+                    Settings.UserId = uac.GetUserIDbyNo(ContactNo);
+                    //uih.UpdateUserRealNameEmail(ContactNo, "Cycbis", "cycbis@cycbis.com");
 
                     Navigation.PushAsync(new SignUpInfoPage(ContactNo, Pwd));
                     //Navigation.PushAsync(new SignUpTwoPage());
