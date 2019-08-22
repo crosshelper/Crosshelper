@@ -354,7 +354,9 @@ namespace Crosshelper.Helpers
                     "Icon = @para7, " +
                     "FENum = @para8, " +
                     "SENum = @para9, " +
-                    "Address = @para10" +
+                    "Address = @para10, " +
+                    "Email = @para11, " +
+                    "ZipCode = @para12" +
                     " WHERE Uid = @para1";
                 MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
                 //通过设置参数的形式给SQL 语句串值
@@ -368,6 +370,8 @@ namespace Crosshelper.Helpers
                 cmd.Parameters.AddWithValue("para8", usr.FENo);
                 cmd.Parameters.AddWithValue("para9", usr.SENo);
                 cmd.Parameters.AddWithValue("para10", usr.Address);
+                cmd.Parameters.AddWithValue("para11", usr.Email);
+                cmd.Parameters.AddWithValue("para12", usr.ZipCode);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

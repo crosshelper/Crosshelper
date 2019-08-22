@@ -33,7 +33,7 @@ namespace Crosshelper.Views
             _usr.FirstName = FirstName;
             _usr.LastName = LastName;
             _ac.ContactNo = PhoneNumber;
-            //TODO: update email
+            _usr.Email = Email;
             _usr.Icon = GetIconUrlFromS3();
             uih.UpdateUserInfo(_usr);
             uih.UpdateUac(_ac);
