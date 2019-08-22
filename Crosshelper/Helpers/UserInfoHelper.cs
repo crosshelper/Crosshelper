@@ -85,21 +85,20 @@ namespace Crosshelper.Helpers
             //建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
             try
-            {   //建立连接，打开数据库
-                conn.Open();
-                string sqlstr =
-                    "UPDATE UserInfo SET " +
-                    "FirstName = @para2, " +
-                    "LastName = @para3" +
-                    "Email = @para4" +
-                    " WHERE Uid = @para1";
-                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
-                //通过设置参数的形式给SQL 语句串值
-                cmd.Parameters.AddWithValue("para1", Settings.UserId);
-                cmd.Parameters.AddWithValue("para2", fName);
-                cmd.Parameters.AddWithValue("para3", lName);
-                cmd.Parameters.AddWithValue("para4", email);
-                cmd.ExecuteNonQuery();
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "INSERT INTO UserInfo(FirstName,LastName,Email) VALUES(@para1, @para2, @para3)";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", fName);
+                    cmd.Parameters.AddWithValue("para2", lName);
+                    cmd.Parameters.AddWithValue("para3", email);
+
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Connecting to MySQL success");
+                }
             }
             catch (Exception ex)
             {

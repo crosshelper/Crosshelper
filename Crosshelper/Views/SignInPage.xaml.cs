@@ -8,6 +8,7 @@ using SendBird;
 using Xamarin.Forms.Xaml;
 using System.Threading.Tasks;
 using WebSocketSharp;
+using System.Text.RegularExpressions;
 
 namespace Crosshelper.Views
 {
@@ -30,7 +31,7 @@ namespace Crosshelper.Views
             InitializeComponent();
             CountryCodes = new List<string>();
             CountryCodes.Add("+55");
-            CountryCodes.Add("+1");
+            CountryCodes.Add("usa +1");
             CountryCodes.Add("+7");
             CountryCodes.Add("+33");
             CountryCodes.Add("+44");
@@ -43,11 +44,23 @@ namespace Crosshelper.Views
             CountryCodes.Add("+852");
             CountryCodes.Add("+886");
             NavigationPage.SetHasBackButton(this, false);
+            countryCodePicker.SelectedIndex = 1;
             this.BindingContext = this;
         }
-      
-        KeyChainHelper kch = new KeyChainHelper();
 
+        private string GetCountryName(string fullcode)
+        {
+            string[] sArray = fullcode.Split(' ');
+            //Regex.Split(str, "js", RegexOptions.IgnoreCase);
+            var Flag = "";
+            var Code = "";
+            if (sArray.Length == 2)
+            {
+                Flag = sArray[0];
+                Code = sArray[1];
+            }
+            return Code;
+        }
 
         //登入按钮 Sign In
         async void Handle_SignIn(object sender, EventArgs e)
@@ -57,11 +70,8 @@ namespace Crosshelper.Views
             activity.IsVisible = true;
             signInloading.Text = "Connecting...";
             signInloading.TextColor = Color.FromHex("#FF4E18");
-            await Task.Delay(2000);
             UserAccess userAccess = new UserAccess();
-            
             Uac uac = new Uac();
-
             //Internet Connection Check
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
@@ -83,9 +93,10 @@ namespace Crosshelper.Views
             }
 
             //RememberMe = savename.IsToggled;
-            uac.ContactNo = countryCodePicker.SelectedItem + PNumEntry.Text;
+            uac.ContactNo = GetCountryName(countryCodePicker.SelectedItem.ToString()) + PNumEntry.Text;
             if (userAccess.CheckPhoneNoExist(uac.ContactNo))
             {
+                Settings.UserId = userAccess.GetUserIDbyNo(uac.ContactNo);
                 await Navigation.PushAsync(new SignInPasswordPage(uac.ContactNo));
             }
             else
@@ -94,9 +105,6 @@ namespace Crosshelper.Views
                 await Navigation.PushAsync(new SignUpVerifyPage(uac.ContactNo));
             }
         } 
-
-        
-
           /*protected override void OnAppearing()
           {
               base.OnAppearing();

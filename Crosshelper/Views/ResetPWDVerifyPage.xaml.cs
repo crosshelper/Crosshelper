@@ -67,7 +67,7 @@ namespace Crosshelper.Views
             }
             else
             {
-                Navigation.PushAsync(new ResetPasswordPage(_contactNo));
+                Navigation.PushAsync(new PwdForgotResetPage(_contactNo));
             }
         }
     }
