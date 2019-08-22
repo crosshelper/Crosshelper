@@ -10,9 +10,12 @@ namespace Crosshelper.Views
 {
     public partial class ResetPWDVerifyPage : ContentPage
     {
+        private string _contactNo = "";
+        private UserAccess userAccess = new UserAccess();
+
         public ResetPWDVerifyPage(string _currentNumber)
         {
-
+            _contactNo = _currentNumber;
             InitializeComponent();
         }
 
@@ -20,9 +23,6 @@ namespace Crosshelper.Views
         {
             Navigation.PopModalAsync();
         }
-
-        private string _contactNo = "";
-        private UserAccess userAccess = new UserAccess();
 
         protected override void OnAppearing()
         {
