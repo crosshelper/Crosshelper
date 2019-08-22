@@ -91,7 +91,7 @@ namespace Crosshelper.Views
             else
             {
                 userAccess.TwilioVerifyService(countryCodePicker.SelectedItem + PNumEntry.Text);
-                await Navigation.PushAsync(new SignUpPage());
+                await Navigation.PushAsync(new SignUpVerifyPage());
             }
         } 
 
