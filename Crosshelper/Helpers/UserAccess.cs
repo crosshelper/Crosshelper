@@ -108,7 +108,7 @@ namespace Crosshelper.Helpers
             try
             {   //建立连接，打开数据库
                 conn.Open();
-                string sqlstr = "select * from UserInfo where ContactNo = @para1";// and Pwd = @para2";
+                string sqlstr = "select * from UserMaster where ContactNo = @para1";// and Pwd = @para2";
                 MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
                 //通过设置参数的形式给SQL 语句串值
                 cmd.Parameters.AddWithValue("para1", contactNo);
