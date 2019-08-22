@@ -263,7 +263,7 @@ namespace Crosshelper.Views
             FirstName = user.FirstName;
             LastName = user.LastName;
             _ac = uih.GetUacByID(user.UserID);
-            //Email = _ac.Email;
+            Email = _usr.Email;
             PhoneNumber = _ac.ContactNo;
             BindingContext = this;
             SetupAWSCredentials();
