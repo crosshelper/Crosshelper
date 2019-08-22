@@ -4,6 +4,7 @@ using Crosshelper.ViewModels;
 using Crosshelper.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Crosshelper.Models;
 
 namespace Crosshelper.Views
 {
@@ -22,7 +23,7 @@ namespace Crosshelper.Views
 
         void LstView_ItemSelected(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
-            var user = (Models.User)e.Item;
+            var user = (UserInfo)e.Item;
             List<string> users = new List<string>() {
                 Settings.ChatID,
                 user.ChatID

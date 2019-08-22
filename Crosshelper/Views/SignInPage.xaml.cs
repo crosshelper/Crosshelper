@@ -30,7 +30,7 @@ namespace Crosshelper.Views
             InitializeComponent();
             CountryCodes = new List<string>();
             CountryCodes.Add("+55");
-            CountryCodes.Add("🇺🇸 +1");
+            CountryCodes.Add("+1");
             CountryCodes.Add("+7");
             CountryCodes.Add("+33");
             CountryCodes.Add("+44");
@@ -91,7 +91,7 @@ namespace Crosshelper.Views
             else
             {
                 userAccess.TwilioVerifyService(countryCodePicker.SelectedItem + PNumEntry.Text);
-                await Navigation.PushAsync(new SignUpVerifyPage());
+                await Navigation.PushAsync(new SignUpVerifyPage(uac.ContactNo));
             }
         } 
 

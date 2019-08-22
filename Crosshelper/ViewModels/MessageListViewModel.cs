@@ -41,7 +41,7 @@ namespace Crosshelper.ViewModels
                     {
                         if (user.UserId != Settings.ChatID)
                         {
-                            Users.Add(new Models.User
+                            Users.Add(new UserInfo
                             {
                                 ChatID = user.UserId,
                                 FirstName = user.Nickname,

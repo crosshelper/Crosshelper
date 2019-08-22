@@ -38,10 +38,10 @@ On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
 
         void Init()
         {
-            LaunchingItemsSource = new List<User>()
+            LaunchingItemsSource = new List<UserInfo>()
             {
-                new User() { Icon="https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/CH+logo2.png", FirstName = "Title1", LastName = "Test1", Address="this is the first page" },
-                new User() { Icon="https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/CH+logo2.png", FirstName = "Title2", LastName = "Test2", Address="this is the second page" }
+                new UserInfo() { Icon="https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/CH+logo2.png", FirstName = "Title1", LastName = "Test1", Address="this is the first page" },
+                new UserInfo() { Icon="https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/CH+logo2.png", FirstName = "Title2", LastName = "Test2", Address="this is the second page" }
             };
         }
 

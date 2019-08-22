@@ -15,7 +15,7 @@ namespace Crosshelper.Views
             base.OnAppearing();
             Device.BeginInvokeOnMainThread(async () =>
             {
-                await System.Threading.Tasks.Task.Delay(150);
+                await Task.Delay(150);
                 pwdEntry.Focus();
             });
         }
@@ -23,6 +23,7 @@ namespace Crosshelper.Views
         private string Name = "";
         private string ProfileIcon = "";
         UserInfo usr = new UserInfo();
+        UserAccess userAccess = new UserAccess();
         KeyChainHelper kch = new KeyChainHelper();
         private string _currentNumber = "";
 
@@ -40,19 +41,19 @@ namespace Crosshelper.Views
                 return;
             }
 
-            activity.IsEnabled = true;
+            /*activity.IsEnabled = true;
             activity.IsRunning = true;
             activity.IsVisible = true;
             signInloading.Text = "Connecting...";
-            signInloading.TextColor = Color.FromHex("#FF4E18");
+            signInloading.TextColor = Color.FromHex("#FF4E18");*/
             await Task.Delay(2000);
             UserAccess userAccess = new UserAccess();
 
             if (userAccess.VerifyUser(_currentNumber, pwdEntry.Text))
             {
                 kch.SavetoSecureStorage("token_of_" + _currentNumber, pwdEntry.Text);
-                signInloading.Text = "Sign In Succeeded, Data Loading...";
-                signInloading.TextColor = Color.FromHex("#555555");
+                //signInloading.Text = "Sign In Succeeded, Data Loading...";
+                //signInloading.TextColor = Color.FromHex("#555555");
                 Settings.UserId = userAccess.CurrentUid.ToString();
                 usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                 Settings.ChatID = usr.ChatID;
@@ -60,16 +61,16 @@ namespace Crosshelper.Views
                 ProfileIcon = usr.Icon;
                 ChatServerConnect();
                 await Task.Delay(3000);
-
+                Settings.IsLogin = true;
                 Application.Current.MainPage = new MyTabbedPage();
             }
             else
             {
-                signInloading.Text = "Sign in Faild";
-                signInloading.TextColor = Color.FromHex("#555555");
-                activity.IsEnabled = false;
-                activity.IsRunning = false;
-                activity.IsVisible = false;
+                //signInloading.Text = "Sign in Faild";
+                //signInloading.TextColor = Color.FromHex("#555555");
+                //activity.IsEnabled = false;
+                //activity.IsRunning = false;
+                //activity.IsVisible = false;
                 Settings.IsLogin = false;
             }
         }
@@ -110,7 +111,8 @@ namespace Crosshelper.Views
 
         void Handle_forgotPwd(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new SignUpPage());
+            userAccess.TwilioVerifyService(_currentNumber);
+            Navigation.PushAsync(new ResetPWDVerifyPage(_currentNumber));
         }
         void Handle_Privacy(object sender, System.EventArgs e)
         {

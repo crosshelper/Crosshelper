@@ -32,8 +32,8 @@ namespace Crosshelper.Views
         {
             _usr.FirstName = FirstName;
             _usr.LastName = LastName;
-            _ac.Email = Email;
             _ac.ContactNo = PhoneNumber;
+            //TODO: update email
             _usr.Icon = GetIconUrlFromS3();
             uih.UpdateUserInfo(_usr);
             uih.UpdateUac(_ac);
@@ -263,7 +263,7 @@ namespace Crosshelper.Views
             FirstName = user.FirstName;
             LastName = user.LastName;
             _ac = uih.GetUacByID(user.UserID);
-            Email = _ac.Email;
+            //Email = _ac.Email;
             PhoneNumber = _ac.ContactNo;
             BindingContext = this;
             SetupAWSCredentials();

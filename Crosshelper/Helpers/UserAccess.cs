@@ -24,17 +24,13 @@ namespace Crosshelper.Helpers
         {
             const string accountSid = "AC86ac48ee4086ad028d5c75b60bc28d12";
             const string authToken = "88bde17df05d1be8d26239c2915f0960";
-
             TwilioClient.Init(accountSid, authToken);
-
-            var service = ServiceResource.Create(friendlyName: "My First Verify Service");
-
-            Console.WriteLine(service.Sid);
-
+            //var service = ServiceResource.Create(friendlyName: "My First Verify Service");
+            //Console.WriteLine(service.Sid);
             var verification = VerificationResource.Create(
                 to: tempNumber, //"+14084641309",
                 channel: "sms",
-                pathServiceSid: "VAXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                pathServiceSid: "VA0f7950bc53a8d465b01ecff8f8c96f1c"
             );
 
             Console.WriteLine(verification.Status);
@@ -43,7 +39,7 @@ namespace Crosshelper.Helpers
 
 
 
-        public void UserRegister(string Uname, string Pwd)
+        public void UserRegister(string ContactNo, string Pwd)
         {
             MySqlConnection conn = new MySqlConnection(connStr);
             try
@@ -52,9 +48,9 @@ namespace Crosshelper.Helpers
                 {
                     Console.WriteLine("Connecting to MySQL...");
                     conn.Open();
-                    string sql = "INSERT INTO UserMaster(Uname,Pwd,Permission) VALUES(@para1, @para2, 0) ";
+                    string sql = "INSERT INTO UserMaster(ContactNo,Pwd,Permission) VALUES(@para1, @para2, 0) ";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("para1", Uname);
+                    cmd.Parameters.AddWithValue("para1", ContactNo);
                     cmd.Parameters.AddWithValue("para2", Pwd);
 
                     cmd.ExecuteNonQuery();
@@ -118,7 +114,8 @@ namespace Crosshelper.Helpers
                     string sql = "select 1 from UserMaster where ContactNo = @para1 limit 1";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("para1", contactNo);
-                    if (cmd.ExecuteNonQuery() == 1)
+                    object result = cmd.ExecuteScalar();
+                    if (Convert.ToInt32(result) == 1)
                         return true;
                 }
             }
@@ -167,17 +164,17 @@ namespace Crosshelper.Helpers
         /// <summary>
         /// 验证用户名密码，存放回true，否则为false
         /// </summary>
-        public bool VerifyUser(string username, string password)
+        public bool VerifyUser(string phonenumber, string password)
         {
             //并没有建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
             try
             {   //建立连接，打开数据库
                 conn.Open();
-                string sqlstr = "select * from UserMaster where Uname = @para1 and Pwd = @para2";
+                string sqlstr = "select * from UserMaster where ContactNo = @para1 and Pwd = @para2";
                 MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
                 //通过设置参数的形式给SQL 语句串值
-                cmd.Parameters.AddWithValue("para1", username);
+                cmd.Parameters.AddWithValue("para1", phonenumber);
                 cmd.Parameters.AddWithValue("para2", password);
 
                 MySqlDataReader reader = cmd.ExecuteReader();

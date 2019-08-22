@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Crosshelper.Helpers;
 using Xamarin.Forms;
 
@@ -7,8 +8,19 @@ using Twilio.Rest.Verify.V2.Service;
 
 namespace Crosshelper.Views
 {
-    public partial class SignUpVerifyPage : ContentPage
+    public partial class ResetPWDVerifyPage : ContentPage
     {
+        public ResetPWDVerifyPage(string _currentNumber)
+        {
+
+            InitializeComponent();
+        }
+
+        void Handle_Canceled(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
+
         private string _contactNo = "";
         private UserAccess userAccess = new UserAccess();
 
@@ -22,18 +34,17 @@ namespace Crosshelper.Views
             });
         }
 
-        public SignUpVerifyPage(string contactNo)
+        void Handle_CodeAgain(object sender, System.EventArgs e)
         {
-            _contactNo = contactNo;
-            InitializeComponent();
-        }
-        //取消按钮 Cancel
-        void Handle_Canceled(object sender, EventArgs e)
-        {
-            Navigation.PopModalAsync();
+            //TODO: Timer
+            userAccess.TwilioVerifyService(_contactNo);
+            var time = 45;
+            TmcodeAgain.Text = "Resent code in " + time + " second";
+            TmcodeAgain.TextColor = Color.FromHex("#888888");
+            //this.IsEnabled = false;
+
         }
 
-        //注册按钮 Sign Up
         void Handle_Next(object sender, EventArgs e)
         {
 
@@ -49,26 +60,15 @@ namespace Crosshelper.Views
             );
 
             Console.WriteLine(verificationCheck.Status);
-            
+
             if (CodeEntry.Text == null || verificationCheck.Status != "approved")
             {
                 DisplayAlert("Notice", "Please check your text code and make sure it's correct. ", "OK");
             }
             else
             {
-                Navigation.PushAsync(new SignUpPasswordPage(_contactNo));
+                Navigation.PushAsync(new ResetPasswordPage(_contactNo));
             }
         }
-        void Handle_CodeAgain(object sender, System.EventArgs e)
-        {
-            //TODO: Timer
-            userAccess.TwilioVerifyService(_contactNo);
-            var time = 45;
-            TmcodeAgain.Text = "Resent code in " + time + " second";
-            TmcodeAgain.TextColor = Color.FromHex("#888888");
-            //this.IsEnabled = false;
-
-        }
-
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Crosshelper.Helpers;
 using Xamarin.Forms;
 
 namespace Crosshelper.Views
@@ -13,30 +13,56 @@ namespace Crosshelper.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 await System.Threading.Tasks.Task.Delay(150);
-                pwdEntry.Focus();
+                PwdEntry.Focus();
             });
         }
-        public SignUpPasswordPage()
+
+        UserAccess uac = new UserAccess();
+        UserInfoHelper uih = new UserInfoHelper();
+        private string ContactNo = "";
+        private string Pwd = "";
+
+
+        public SignUpPasswordPage(string _contactNo)
         {
+            ContactNo = _contactNo;
             InitializeComponent();
         }
         void Handle_Next(object sender, EventArgs e)
         {
-
-            if (pwdEntry.Text == null)
+            if (PwdEntry.Text == null)
             {
                 DisplayAlert("Notice", "Please enter your password and make sure it's least 8 characters. ", "OK");
-
             }
             else
             {
+                 Pwd = PwdEntry.Text;
+                 if (Pwd.Length < 8)
+                 {
+                    DisplayAlert("No Access", "Please enter your password and make sure it's least 8 characters!", "OK");
+                    return;
+                 }
+                 try
+                 {
+                    uac.UserRegister(ContactNo, Pwd);
+                    uac.SetChatID();
+                    uih.UpdateUserRealNameEmail(ContactNo, "Cycbis", "cycbis@cycbis.com");
 
-                Navigation.PushAsync(new SignUpTwoPage());
+                    Navigation.PushAsync(new SignUpInfoPage(ContactNo, Pwd));
+                    //Navigation.PushAsync(new SignUpTwoPage());
+                 }
+                 catch (SystemException ex)
+                 {
+                    Console.WriteLine(ex);
+                    return;
+                 }
+                 //Navigation.PushAsync(new SignUpTwoPage(Uname,Pwd)); */
+                 //Navigation.PushAsync(new SignUpInfoPage());
             }
         }
         void Handle_forgotPwd(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new SignUpPage());
+            //Navigation.PushAsync(new ResetPage());
         }
         void Handle_Privacy(object sender, System.EventArgs e)
         {

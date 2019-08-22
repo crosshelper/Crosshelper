@@ -81,7 +81,7 @@ namespace Crosshelper.Views
         {
             if (Settings.IsLogin)
             {
-                var user = new Models.User() {
+                var user = new UserInfo() {
                     UserID = _currenthelperlabel.ChatID
                 };
                 List<string> users = new List<string>() {

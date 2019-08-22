@@ -4,6 +4,7 @@ using Crosshelper.Helpers;
 using SendBird;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using Crosshelper.Models;
 
 namespace Crosshelper.Views
 {
@@ -82,7 +83,7 @@ namespace Crosshelper.Views
             {
                 //Redirect to you desired page
                 UserAccess userAccess = new UserAccess();
-                Models.User usr = new Models.User();
+                UserInfo usr = new UserInfo();
                 var pwd = kch.GetFromSecureStorage("token_of_" + Username);
                 if (userAccess.VerifyUser(Username, pwd.Result))
                 {

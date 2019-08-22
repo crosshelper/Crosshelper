@@ -80,7 +80,7 @@ namespace Crosshelper.Helpers
             return caselist;
         }
 
-        internal void UpdateUserRealName(string fName, string lName)
+        internal void UpdateUserRealNameEmail(string fName, string lName, string email)
         {
             //建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -91,12 +91,14 @@ namespace Crosshelper.Helpers
                     "UPDATE UserInfo SET " +
                     "FirstName = @para2, " +
                     "LastName = @para3" +
+                    "Email = @para4" +
                     " WHERE Uid = @para1";
                 MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
                 //通过设置参数的形式给SQL 语句串值
                 cmd.Parameters.AddWithValue("para1", Settings.UserId);
                 cmd.Parameters.AddWithValue("para2", fName);
                 cmd.Parameters.AddWithValue("para3", lName);
+                cmd.Parameters.AddWithValue("para4", email);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -311,14 +313,12 @@ namespace Crosshelper.Helpers
                 conn.Open();
                 string sqlstr =
                     "UPDATE UserMaster SET " +
-                    "Email = @para2, " +
                     "ContactNo = @para3, " +
                     "Pwd = @para4" +
                     " WHERE Uid = @para1";
                 MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
                 //通过设置参数的形式给SQL 语句串值
                 cmd.Parameters.AddWithValue("para1", ac.UserID);
-                cmd.Parameters.AddWithValue("para2", ac.Email);
                 cmd.Parameters.AddWithValue("para3", ac.ContactNo);
                 cmd.Parameters.AddWithValue("para4", ac.Pwd);
                 cmd.ExecuteNonQuery();
@@ -644,10 +644,8 @@ namespace Crosshelper.Helpers
                 while (reader.Read())
                 {
                     ac.UserID = reader.GetString(0);
-                    ac.UserName = reader.GetString(1);
-                    ac.Email = reader.GetString(2);
-                    ac.ContactNo = reader.GetString(3);
-                    ac.Pwd = reader.GetString(4);
+                    ac.ContactNo = reader.GetString(1);
+                    ac.Pwd = reader.GetString(2);
                 }
                 return ac;
             }
