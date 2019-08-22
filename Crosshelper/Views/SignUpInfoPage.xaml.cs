@@ -137,12 +137,11 @@ namespace Crosshelper.Views
                 if (Email.IsNullOrEmpty())
                     Email = "cycbis@cycbis.com";
                 uih.UpdateUserRealNameEmail(FName, LName, Email);
+                uAccess.SetChatID();
                 //uAccess.UpdateEmailNo(Email, ContactNo);
                 //Settings.IsLogin = uAccess.VerifyUser(Uname, Pwd);
                 //DisplayAlert("Congrats!", "You Have Done Sign Up, Sign In right now", "OK");
                 //
-                
-
                 kch.SavetoSecureStorage("token_of_" + _currentNo, _currentPassword);
                 //signInloading.Text = "Sign In Succeeded, Data Loading...";
                 //signInloading.TextColor = Color.FromHex("#555555");

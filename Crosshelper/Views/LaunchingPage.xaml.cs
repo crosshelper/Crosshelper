@@ -29,11 +29,7 @@ namespace Crosshelper.Views
             InitializeComponent();
             Init();
             BindingContext = this;
-
-
-On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
-
-
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
         }
 
         void Init()

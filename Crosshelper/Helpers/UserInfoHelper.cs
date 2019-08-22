@@ -90,7 +90,11 @@ namespace Crosshelper.Helpers
                 {
                     Console.WriteLine("Connecting to MySQL...");
                     conn.Open();
-                    string sql = "INSERT INTO UserInfo(FirstName,LastName,Email) VALUES(@para1, @para2, @para3)";
+                    string sql = "INSERT INTO UserInfo(FirstName,LastName," +
+                        "Flanguage,SLanguage,PaymentID,Icon,FENum,SENum," +
+                        "Address,Location,Email,ZipCode) " +
+                        "VALUES(@para1, @para2, Engligsh, English, cycbis0000, http, " +
+                        "0000000000, 0000000000, example, example, @para3, 95131)";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("para1", fName);
                     cmd.Parameters.AddWithValue("para2", lName);

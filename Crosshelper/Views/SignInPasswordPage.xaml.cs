@@ -47,7 +47,6 @@ namespace Crosshelper.Views
             signInloading.Text = "Connecting...";
             signInloading.TextColor = Color.FromHex("#FF4E18");*/
             await Task.Delay(2000);
-            UserAccess userAccess = new UserAccess();
 
             if (userAccess.VerifyUser(_currentNumber, pwdEntry.Text))
             {
