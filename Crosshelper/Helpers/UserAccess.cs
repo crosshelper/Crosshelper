@@ -3,6 +3,10 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 
+using Twilio;
+using Twilio.Rest.Verify.V2;
+using Twilio.Rest.Verify.V2.Service;
+
 namespace Crosshelper.Helpers
 {
     class UserAccess
@@ -15,6 +19,29 @@ namespace Crosshelper.Helpers
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
         private int currentUid;
         public int CurrentUid { get { return currentUid; } }
+
+        public void TwilioVerifyService(string tempNumber)
+        {
+            const string accountSid = "AC86ac48ee4086ad028d5c75b60bc28d12";
+            const string authToken = "88bde17df05d1be8d26239c2915f0960";
+
+            TwilioClient.Init(accountSid, authToken);
+
+            var service = ServiceResource.Create(friendlyName: "My First Verify Service");
+
+            Console.WriteLine(service.Sid);
+
+            var verification = VerificationResource.Create(
+                to: tempNumber, //"+14084641309",
+                channel: "sms",
+                pathServiceSid: "VAXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+            );
+
+            Console.WriteLine(verification.Status);
+        }
+
+
+
 
         public void UserRegister(string Uname, string Pwd)
         {
@@ -77,6 +104,34 @@ namespace Crosshelper.Helpers
             {
                 conn.Close();
             }
+        }
+
+        internal bool CheckPhoneNoExist(string contactNo)
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "select 1 from UserMaster where ContactNo = @para1 limit 1";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", contactNo);
+                    if (cmd.ExecuteNonQuery() == 1)
+                        return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Connection failed");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
         }
 
         internal void SetChatID()
@@ -145,9 +200,9 @@ namespace Crosshelper.Helpers
             return false;
         }
 
-        public User GetUserInfo(int userid)
+        public UserInfo GetUserInfo(int userid)
         {
-            User user = new User();
+            UserInfo user = new UserInfo();
             //并没有建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
             try

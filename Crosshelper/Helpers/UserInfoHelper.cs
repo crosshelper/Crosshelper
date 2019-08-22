@@ -333,7 +333,7 @@ namespace Crosshelper.Helpers
             }
         }
 
-        internal void UpdateUserInfo(User usr)
+        internal void UpdateUserInfo(UserInfo usr)
         {
             //建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -548,9 +548,9 @@ namespace Crosshelper.Helpers
             }
         }
 
-        public User GetUserInfoByID(string userid)
+        public UserInfo GetUserInfoByID(string userid)
         {
-            User user = new User();
+            UserInfo user = new UserInfo();
             //并没有建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
             try

@@ -1,11 +1,12 @@
 ﻿namespace Crosshelper.Models
 {
-    public class User
+    public class UserInfo
     {
         public string UserID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string ChatID { get; set; }
+        public string Email { get; set; }
         public string FLanguage { get; set; }
         public string SLanguage { get; set; }
         public string PaymentID { get; set; }

@@ -47,98 +47,57 @@ namespace Crosshelper.Views
         }
       
         KeyChainHelper kch = new KeyChainHelper();
-        private string Name = "";
-        private string ProfileIcon = "";
+
 
         //登入按钮 Sign In
         async void Handle_SignIn(object sender, EventArgs e)
         {
-            //await DisplayAlert("Your Number is", countryCodePicker.SelectedItem.ToString() + PNumEntry.Text, "OK");
-            /*  activity.IsEnabled = true;
-              activity.IsRunning = true;
-              activity.IsVisible = true;
-              signInloading.Text = "Connecting...";
-              signInloading.TextColor = Color.FromHex("#FF4E18");
-              await Task.Delay(2000);
+            activity.IsEnabled = true;
+            activity.IsRunning = true;
+            activity.IsVisible = true;
+            signInloading.Text = "Connecting...";
+            signInloading.TextColor = Color.FromHex("#FF4E18");
+            await Task.Delay(2000);
+            UserAccess userAccess = new UserAccess();
+            
+            Uac uac = new Uac();
 
-              if (Connectivity.NetworkAccess != NetworkAccess.Internet)
-              {
-                  await DisplayAlert("No Internet", "Try again later!", "OK");
-                  return;
-              }
+            //Internet Connection Check
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await DisplayAlert("No Internet", "Try again later!", "OK");
+                return;
+            }
 
-              if (uNameEntry.Text.IsNullOrEmpty() || pwdEntry.Text.IsNullOrEmpty())
-              {
-                  await DisplayAlert("No user found", "Try again later!", "OK");
-                  return;
-              }
+            //Validation Check
+            //if (true)
+            //{
 
-              RememberMe = savename.IsToggled;
-              Username = uNameEntry.Text;
-              UserAccess userAccess = new UserAccess();
-              Models.User usr = new Models.User();
+            //}
 
-              if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
-              {
-                  kch.SavetoSecureStorage("token_of_" + Username, pwdEntry.Text);
-                  signInloading.Text = "Sign In Succeeded, Data Loading...";
-                  signInloading.TextColor = Color.FromHex("#555555");
-                  Settings.UserId = userAccess.CurrentUid.ToString();
-                  usr = userAccess.GetUserInfo(userAccess.CurrentUid);
-                  Settings.ChatID = usr.ChatID;
-                  Name = usr.FirstName + " " + usr.LastName;
-                  ProfileIcon = usr.Icon;
-                  ChatServerConnect();
-                  await Task.Delay(3000);
-                  //await Navigation.PushModalAsync(new MyTabbedPage());
-                  Application.Current.MainPage = new MyTabbedPage();
-              }
-              else
-              {
-                  signInloading.Text = "Sign in Faild";
-                  signInloading.TextColor = Color.FromHex("#555555");
-                  activity.IsEnabled = false;
-                  activity.IsRunning = false;
-                  activity.IsVisible = false;
-                  Settings.IsLogin = false;
-              }
-          } 
+            //Empty Check
+            if (PNumEntry.Text.IsNullOrEmpty())
+            {
+                await DisplayAlert("Error", "Try enter your Number and try again!", "OK");
+                return;
+            }
 
-          private void ChatServerConnect()
-          {
-              SendBirdClient.Connect(Settings.ChatID, (SendBird.User user, SendBirdException e) =>
-              {
-                  if (e != null)
-                  {
-                      return;
-                  }
+            //RememberMe = savename.IsToggled;
+            uac.ContactNo = countryCodePicker.SelectedItem + PNumEntry.Text;
+            if (userAccess.CheckPhoneNoExist(uac.ContactNo))
+            {
+                await Navigation.PushAsync(new SignInPasswordPage(uac.ContactNo));
+            }
+            else
+            {
+                userAccess.TwilioVerifyService(countryCodePicker.SelectedItem + PNumEntry.Text);
+                await Navigation.PushAsync(new SignUpPage());
+            }
+        } 
 
-                  SendBirdClient.UpdateCurrentUserInfo(Name, ProfileIcon, (SendBirdException e1) =>
-                  {
-                      if (e1 != null)
-                      {
-                          return;
-                      }
-                  });
+        
 
-                  SendBirdClient.RegisterAPNSPushTokenForCurrentUser(SendBirdClient.GetPendingPushToken(), (SendBirdClient.PushTokenRegistrationStatus status, SendBirdException e1) => 
-                  {
-                      if (e1 != null)
-                      {
-                          // Error.
-                          return;
-                      }
-
-                      if (status == SendBirdClient.PushTokenRegistrationStatus.PENDING)
-                      {
-                          // Try registration after connection is established.
-                      }
-                  });
-              });
-              Settings.IsLogin = true;
-          }
-
-          protected override void OnAppearing()
+          /*protected override void OnAppearing()
           {
               base.OnAppearing();
               savename.IsToggled = RememberMe;
@@ -148,18 +107,6 @@ namespace Crosshelper.Views
               }
               */
 
-            if (PNumEntry.Text == null)
-            {
-                await DisplayAlert("Notice", "Please enter your phone number and make sure it's correct and includes with area code.", "OK");
-
-            }
-            else
-            {
-
-                Navigation.PushAsync(new SignUpPage());
-
-            }
-        }
         //取消按钮 Canceled
         void Handle_Canceled(object sender, EventArgs e)
         {

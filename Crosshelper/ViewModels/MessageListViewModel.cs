@@ -6,13 +6,14 @@ using SendBird;
 using Xamarin.Forms;
 using Crosshelper.Helpers;
 using System;
+using Crosshelper.Models;
 
 namespace Crosshelper.ViewModels
 {
     public class MessageListViewModel : ViewModelBase
     {
         #region Properties
-        public ObservableCollection<Models.User> Users { get; set; } = new ObservableCollection<Models.User>();
+        public ObservableCollection<UserInfo> Users { get; set; } = new ObservableCollection<UserInfo>();
         public INavigation Navigation;
         #endregion
         public MessageListViewModel()
@@ -62,7 +63,7 @@ namespace Crosshelper.ViewModels
             return createtimestamp;
         }
 
-        public async void ConnectToChannel(Models.User user, List<string> users)
+        public async void ConnectToChannel(UserInfo user, List<string> users)
         {
             GroupChannel group = null;
             IsBusy = true;

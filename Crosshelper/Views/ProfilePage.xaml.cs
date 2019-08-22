@@ -246,7 +246,7 @@ namespace Crosshelper.Views
             return storageStatus == PermissionStatus.Granted;
         }
 
-        User _usr;
+        UserInfo _usr;
         Uac _ac;
         public string Email { get; set; }
         public string FirstName { get; set; }
@@ -254,7 +254,7 @@ namespace Crosshelper.Views
         public string PhoneNumber { get; set; }
         UserInfoHelper uih = new UserInfoHelper();
 
-        public ProfilePage(User user)
+        public ProfilePage(UserInfo user)
         {
             InitializeComponent();
             _usr = user;

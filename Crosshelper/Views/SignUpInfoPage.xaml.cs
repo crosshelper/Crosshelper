@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace Crosshelper.Views
 {
-    public partial class SignUpTwoPage : ContentPage
+    public partial class SignUpInfoPage : ContentPage
     {
         UserAccess uAccess = new UserAccess();
         UserInfoHelper uih = new UserInfoHelper();
@@ -21,7 +21,7 @@ namespace Crosshelper.Views
             });
         }
 
-        public SignUpTwoPage()
+        public SignUpInfoPage()
         {
             InitializeComponent();
         }

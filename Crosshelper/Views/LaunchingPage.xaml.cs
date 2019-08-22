@@ -10,8 +10,8 @@ namespace Crosshelper.Views
 {
     public partial class LaunchingPage : ContentPage
     {
-        List<User> _myItemsSource;
-        public List<User> LaunchingItemsSource
+        List<UserInfo> _myItemsSource;
+        public List<UserInfo> LaunchingItemsSource
         {
             set
             {

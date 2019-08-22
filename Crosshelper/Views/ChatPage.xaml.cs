@@ -1,4 +1,5 @@
 ﻿using Crosshelper.Helpers;
+using Crosshelper.Models;
 using Crosshelper.ViewModels;
 using SendBird;
 
@@ -24,7 +25,7 @@ namespace Crosshelper.Views
                 return instance;
             }
         }
-        public ChatPage(Models.User user, GroupChannel channel)
+        public ChatPage(UserInfo user, GroupChannel channel)
         {
             InitializeComponent();
 

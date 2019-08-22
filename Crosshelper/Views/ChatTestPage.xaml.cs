@@ -1,4 +1,5 @@
 ﻿using Crosshelper.Helpers;
+using Crosshelper.Models;
 using Crosshelper.ViewModels;
 using SendBird;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Crosshelper.Views
             Navigation.PopModalAsync();
         }
 
-        public ChatTestPage (Models.User user, GroupChannel channel)
+        public ChatTestPage (UserInfo user, GroupChannel channel)
 		{
 			InitializeComponent ();
             ChatTestViewModel vvm;

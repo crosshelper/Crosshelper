@@ -29,9 +29,9 @@ namespace Crosshelper.Views
         public string FLanguage { get; set; }
         public string SLanguage { get; set; }
 
-        User _usr;
+        UserInfo _usr;
 
-        public MyBackgroundPage(User user)
+        public MyBackgroundPage(UserInfo user)
         {
             InitializeComponent();
             _usr = user;

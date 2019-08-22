@@ -18,8 +18,8 @@ namespace Crosshelper.Views
         UserInfoHelper uih = new UserInfoHelper();
         public string FENo { get; set; }
         public string SENo { get; set; }
-        User _usr;
-        public TrustedContactsPage(User user)
+        UserInfo _usr;
+        public TrustedContactsPage(UserInfo user)
         {
             InitializeComponent();
             _usr = user;

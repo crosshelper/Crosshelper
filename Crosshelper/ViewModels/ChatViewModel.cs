@@ -16,9 +16,9 @@ namespace Crosshelper.ViewModels
 	public class ChatViewModel : ViewModelBase
     {
         #region Properties
-        private Models.User userTo;
+        private UserInfo userTo;
 
-        public Models.User UserTo
+        public UserInfo UserTo
         {
             get { return userTo; }
             set { SetProperty(ref userTo, value); }

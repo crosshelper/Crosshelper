@@ -58,7 +58,7 @@ namespace Crosshelper.Views
             Application.Current.MainPage = new LaunchingPage();
         }
 
-        private User currentUser;
+        private UserInfo currentUser;
         UserInfoHelper uih = new UserInfoHelper();
         public UserSettingPage()
         {

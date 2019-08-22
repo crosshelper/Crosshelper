@@ -52,7 +52,7 @@ namespace Crosshelper.Views
             ReviewerContent3.Text = reviewsList[2].ReviewerContent;*/
         }
 
-        async void ConnectToChannel(Models.User user, List<string> users)
+        async void ConnectToChannel(UserInfo user, List<string> users)
         {
             GroupChannel group = null;
             IsBusy = true;

@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace Crosshelper.Views
 {
-    public partial class SignUpPage : ContentPage
+    public partial class SignUpVerifyPage : ContentPage
     {
         UserAccess uAccess = new UserAccess();
         private string Uname = "";
@@ -21,7 +21,7 @@ namespace Crosshelper.Views
             });
         }
 
-        public SignUpPage()
+        public SignUpVerifyPage()
         {
             InitializeComponent();
         }
