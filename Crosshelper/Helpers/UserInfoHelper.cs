@@ -93,8 +93,8 @@ namespace Crosshelper.Helpers
                     string sql = "INSERT INTO UserInfo(Uid,FirstName,LastName,ChatID," +
                         "Flanguage,SLanguage,PaymentID,Icon,FENum,SENum," +
                         "Address,Location,Email,ZipCode) " +
-                        "VALUES(@para4, @para1, @para2, cycbis, English, English, cycbis0000, http, " +
-                        "0000000000, 0000000000, example, example, @para3, 95131)";
+                        "VALUES(@para4, @para1, @para2, 'cycbis', 'English', 'English', 'cycbis0000', 'http', " +
+                        "0000000000, 0000000000, 'example', 'example', @para3, 95131)";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("para1", fName);
                     cmd.Parameters.AddWithValue("para2", lName);
