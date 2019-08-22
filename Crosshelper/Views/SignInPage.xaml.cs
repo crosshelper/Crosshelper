@@ -15,6 +15,7 @@ namespace Crosshelper.Views
     public partial class SignInPage : ContentPage
     {
         public List<string> CountryCodes { get; private set; }
+        private TwilioHelper thelper = new TwilioHelper();
 
         protected override void OnAppearing()
         {
@@ -71,6 +72,8 @@ namespace Crosshelper.Views
             signInloading.TextColor = Color.FromHex("#FF4E18");
             UserAccess userAccess = new UserAccess();
             Uac uac = new Uac();
+            uac.ContactNo = GetCountryName(countryCodePicker.SelectedItem.ToString()) + PNumEntry.Text;
+
             //Internet Connection Check
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
@@ -79,10 +82,11 @@ namespace Crosshelper.Views
             }
 
             //Validation Check
-            //if (true)
-            //{
-
-            //}
+            if (thelper.IsValidE164(uac.ContactNo, "US"))
+            {
+                await DisplayAlert("Not Valid", "Enter a real number and try again!", "OK");
+                return;
+            }
 
             //Empty Check
             if (PNumEntry.Text.IsNullOrEmpty())
@@ -92,7 +96,6 @@ namespace Crosshelper.Views
             }
 
             //RememberMe = savename.IsToggled;
-            uac.ContactNo = GetCountryName(countryCodePicker.SelectedItem.ToString()) + PNumEntry.Text;
             if (userAccess.CheckPhoneNoExist(uac.ContactNo))
             {
                 Settings.UserId = userAccess.GetUserIDbyNo(uac.ContactNo);
