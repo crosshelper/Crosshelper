@@ -90,7 +90,7 @@ namespace Crosshelper.Helpers
                 {
                     Console.WriteLine("Connecting to MySQL...");
                     conn.Open();
-                    string sql = "INSERT INTO UserInfo(Uid,FirstName,LastName,ChatID" +
+                    string sql = "INSERT INTO UserInfo(Uid,FirstName,LastName,ChatID," +
                         "Flanguage,SLanguage,PaymentID,Icon,FENum,SENum," +
                         "Address,Location,Email,ZipCode) " +
                         "VALUES(@para4, @para1, @para2, cycbis, English, English, cycbis0000, http, " +
