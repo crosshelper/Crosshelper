@@ -101,7 +101,7 @@ namespace Crosshelper.Views
             }
             else
             {
-                userAccess.TwilioVerifyService(countryCodePicker.SelectedItem + PNumEntry.Text);
+                userAccess.TwilioVerifyService(uac.ContactNo);
                 await Navigation.PushAsync(new SignUpVerifyPage(uac.ContactNo));
             }
         } 

@@ -145,8 +145,8 @@ namespace Crosshelper.Views
                 kch.SavetoSecureStorage("token_of_" + _currentNo, _currentPassword);
                 //signInloading.Text = "Sign In Succeeded, Data Loading...";
                 //signInloading.TextColor = Color.FromHex("#555555");
-                Settings.UserId = uAccess.CurrentUid.ToString();
-                usr = uAccess.GetUserInfo(uAccess.CurrentUid);
+                //Settings.UserId = uAccess.CurrentUid.ToString();
+                usr = uAccess.GetUserInfo(Convert.ToInt32(Settings.UserId));// uAccess.CurrentUid);
                 Settings.ChatID = usr.ChatID;
                 Name = usr.FirstName + " " + usr.LastName;
                 ProfileIcon = usr.Icon;
