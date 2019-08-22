@@ -4,7 +4,7 @@
         <ScrollView>
            <StackLayout Margin="15,20,15,10">
          <!--邮箱密码 Email&password input -->
-                    <StackLayout VerticalOptions="Start">
+                    <StackLayout>
                         <Label Text="What's your Name?" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                         <StackLayout Orientation="Horizontal">
                             <Entry x:Name="FNameEntry" Placeholder="First Name (Required)"
@@ -14,6 +14,20 @@
                             <Entry x:Name="LNameEntry" Placeholder="Last Name (Required)"
                                    FontSize="16"
                                    HorizontalOptions="EndAndExpand"
+                                   HeightRequest="45"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Entry x:Name="PLangEntry" Placeholder="Preferred Language (Required)"
+                                   FontSize="16"
+                                   HorizontalOptions="FillAndExpand"
+                                   HeightRequest="45"/>
+                            <Entry x:Name="SLangEntry" Placeholder="Second Language (Option)"
+                                   FontSize="16"
+                                   HorizontalOptions="FillAndExpand"
+                                   HeightRequest="45"/>
+                            <Entry x:Name="EmailEntry" Placeholder="Email Address (Option)"
+                                   FontSize="16"
+                                   HorizontalOptions="FillAndExpand"
                                    HeightRequest="45"/>
                         </StackLayout>
                         </StackLayout >

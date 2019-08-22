@@ -32,7 +32,7 @@ namespace Crosshelper.Views
             InitializeComponent();
             CountryCodes = new List<string>();
             CountryCodes.Add("+55");
-            CountryCodes.Add("usa +1");
+            CountryCodes.Add("(US) +1");
             CountryCodes.Add("+7");
             CountryCodes.Add("+33");
             CountryCodes.Add("+44");
@@ -82,7 +82,7 @@ namespace Crosshelper.Views
             }
 
             //Validation Check
-            if (thelper.IsValidE164(uac.ContactNo, "US"))
+            if (!thelper.IsValidE164(uac.ContactNo, "US"))
             {
                 await DisplayAlert("Not Valid", "Enter a real number and try again!", "OK");
                 return;
