@@ -58,19 +58,19 @@ namespace Crosshelper.Views
             RecommendationOne.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = "Health",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom005.png"
             });
             RecommendationOne.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = "Emergency",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
             });
             RecommendationOne.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = "Translate",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
             });
             RecommendationOne.Add(new TypeProblem
@@ -82,8 +82,8 @@ namespace Crosshelper.Views
             RecommendationOne.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
+                Pcategory = "Law",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
             });
 
             //////Immigrant Recommendation///////
@@ -91,19 +91,19 @@ namespace Crosshelper.Views
             RecommendationTwo.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = "Translate",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
             });
             RecommendationTwo.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = "Law",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
             });
             RecommendationTwo.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = "Health",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom005.png"
             });
             RecommendationTwo.Add(new TypeProblem
@@ -115,7 +115,7 @@ namespace Crosshelper.Views
             RecommendationTwo.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = "Emergency",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
             });
 
@@ -130,25 +130,25 @@ namespace Crosshelper.Views
             RecommendationThree.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = "Health",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom005.png"
             });
             RecommendationThree.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = "Translate",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
             });
             RecommendationThree.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = "Emergency",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
             });
             RecommendationThree.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = "Law",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
             });
 
@@ -163,19 +163,19 @@ namespace Crosshelper.Views
             RecommendationFour.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = "Emergency",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
             });
             RecommendationFour.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = "Translate",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
             });
             RecommendationFour.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = "Law",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
             });
 

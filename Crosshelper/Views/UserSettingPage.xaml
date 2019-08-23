@@ -28,12 +28,10 @@
     </sv:Section>
 
     <sv:Section Title="General" IsVisible="{Binding SctionIsVisible}">
-        <sv:CommandCell Title="Language" Tapped="Handle_Language"/>
+        <sv:CommandCell Title="App Language" Tapped="Handle_Language"/>
         <sv:PickerCell Title="Safety" Tapped="Handle_Safety" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
-        <sv:PickerCell Title="Privacy" Tapped="Handle_Privacy" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
-        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
-        <sv:PickerCell Title="Agreement" Tapped="Handle_AgreementPage" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        <sv:PickerCell Title="Legal" Tapped="Handle_Legal" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
         

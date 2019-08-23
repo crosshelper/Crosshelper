@@ -34,13 +34,9 @@ namespace Crosshelper.Views
         {
             Navigation.PushAsync(new TrustedContactsPage(currentUser));
         }
-        void Handle_Privacy(object sender, System.EventArgs e)
+        void Handle_Legal(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new PrivacyPage());
-        }
-        void Handle_AgreementPage(object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new AgreementPage());
+            Navigation.PushAsync(new LegalPage());
         }
         void Handle_AboutUs(object sender, System.EventArgs e)
         {

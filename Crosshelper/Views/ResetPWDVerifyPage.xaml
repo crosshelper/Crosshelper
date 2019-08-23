@@ -24,7 +24,7 @@
                            FontSize="16"
                            FontAttributes="Bold"
                            HorizontalOptions="Start"/>
-               <Label Text="for create or reset password"
+               <Label Text="for reset password"
                            TextColor="#888888"
                            FontSize="16"
                            FontAttributes="Bold"

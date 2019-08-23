@@ -10,6 +10,22 @@ namespace Crosshelper.Views
 {
     public partial class LaunchingPage : ContentPage
     {
+
+        public LaunchingPage()
+        {
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetLargeTitleDisplay(LargeTitleDisplayMode.Never);
+            InitializeComponent();
+            Init();
+            BindingContext = this;
+
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            // On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+        }
+
         List<UserInfo> _myItemsSource;
         public List<UserInfo> LaunchingItemsSource
         {
@@ -24,14 +40,6 @@ namespace Crosshelper.Views
             }
         }
 
-        public LaunchingPage()
-        {
-            InitializeComponent();
-            Init();
-            BindingContext = this;
-            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
-        }
-
         void Init()
         {
             LaunchingItemsSource = new List<UserInfo>()
@@ -44,7 +52,8 @@ namespace Crosshelper.Views
 
         void Handle_GetStarted(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage( new SignInPage()));
+           Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage( new SignInPage()));
+            //Navigation.PushModalAsync(new NavigationPage(new SignInPage()));
 
         }
     }

@@ -5,8 +5,8 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="Crosshelper.Views.LaunchingPage">
     <ContentPage.Content>
-        <StackLayout Margin="16,25,16,10">
-                <StackLayout Margin="0,10,0,0" Padding="0,10,0,0">
+        <StackLayout Margin="16,20,16,10">
+                <StackLayout Margin="0,20,0,0" Padding="0,15,0,0">
                     <Image Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/CycbisLogoH.png"
                           
                     HeightRequest="60"/>
@@ -24,7 +24,7 @@
                                         <ffimageloading:CachedImage x:Name="background" Source="{Binding Icon}" VerticalOptions="FillAndExpand"/>
                                         <StackLayout>
                                             <Image Margin="0,0,0,0"  Aspect="AspectFill"/>
-                                            <Label Text="Cycbis the most effecient way to help you out immediately." TextColor="#666666" FontSize="18" FontAttributes="Bold" Margin="0,0,0,10"></Label>
+                                            <Label Text="Cycbis the most effecient way to help you out immediately." TextColor="#666666" FontSize="18" FontAttributes="Bold" Margin="0,0,0,8"></Label>
             
                                         </StackLayout>
                                     </StackLayout>
@@ -41,7 +41,7 @@
                         HeightRequest="50"
                         FontAttributes="Bold"
                         BackgroundColor="#FF4E18"
-                        Margin="0,10,0,0"
+                        Margin="0,8,0,10"
                         Clicked="Handle_GetStarted"/>
                         </StackLayout>
                 </StackLayout>
