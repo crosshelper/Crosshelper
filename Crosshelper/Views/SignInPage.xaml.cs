@@ -16,6 +16,7 @@ namespace Crosshelper.Views
     {
         public List<string> CountryCodes { get; private set; }
         private TwilioHelper thelper = new TwilioHelper();
+        public string DefaultCountryCode { get; set; }
 
         protected override void OnAppearing()
         {
@@ -45,7 +46,8 @@ namespace Crosshelper.Views
             CountryCodes.Add("+852");
             CountryCodes.Add("+886");
             NavigationPage.SetHasBackButton(this, false);
-            countryCodePicker.SelectedIndex = 1;
+            DefaultCountryCode = "(US) +1";
+            //countryCodePicker.SelectedIndex = 1;
             this.BindingContext = this;
         }
 

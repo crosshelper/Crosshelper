@@ -17,7 +17,7 @@
                                 <Picker x:Name="countryCodePicker"
                                         Title="+1"
                                         FontSize="18"
-                                        SelectedItem="🇺🇸|+1"
+                                        SelectedItem="{Binding DefaultCountryCode, Mode = TwoWay}"
                                         TitleColor="#888888"
                                         ItemsSource="{Binding CountryCodes}">
                                 </Picker>
