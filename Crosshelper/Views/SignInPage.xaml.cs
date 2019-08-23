@@ -104,11 +104,19 @@ namespace Crosshelper.Views
             {
                 Settings.UserId = userAccess.GetUserIDbyNo(uac.ContactNo);
                 await Navigation.PushAsync(new SignInPasswordPage(uac.ContactNo));
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
+                signInloading.Text = "";
             }
             else
             {
                 userAccess.TwilioVerifyService(uac.ContactNo);
                 await Navigation.PushAsync(new SignUpVerifyPage(uac.ContactNo));
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
+                signInloading.Text = "";
             }
         }
 

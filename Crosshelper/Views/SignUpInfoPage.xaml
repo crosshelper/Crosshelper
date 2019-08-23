@@ -5,7 +5,7 @@
            <StackLayout Margin="15,20,15,10">
          <!--邮箱密码 Email&password input -->
                     <StackLayout>
-                        <Label Text="What's your Name?" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
+                        <Label Text="What's your Name? (Required)" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                         <StackLayout Orientation="Horizontal">
                             <Entry x:Name="FNameEntry" Placeholder="First Name (Required)"
                                    FontSize="16"
@@ -17,15 +17,40 @@
                                    HeightRequest="45"/>
                         </StackLayout>
                         <StackLayout>
-                            <Entry x:Name="PLangEntry" Placeholder="Preferred Language (Required)"
-                                   FontSize="16"
-                                   HorizontalOptions="FillAndExpand"
-                                   HeightRequest="45"/>
-                            <Entry x:Name="SLangEntry" Placeholder="Second Language (Option)"
-                                   FontSize="16"
-                                   HorizontalOptions="FillAndExpand"
-                                   HeightRequest="45"/>
-                            <Entry x:Name="EmailEntry" Placeholder="Email Address (Option)"
+                            <Label Text="Preferred language (Required)" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
+                            <Picker x:Name="FlanPicker" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select" TitleColor="#555555" FontSize="16" TextColor="#555555" >
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>Chinese</x:String>
+                                            <x:String>English</x:String>
+                                            <x:String>German</x:String>
+                                            <x:String>Italian</x:String>
+                                            <x:String>Japanese</x:String>
+                                            <x:String>Korean</x:String>
+                                            <x:String>Spanish</x:String>
+                                            <x:String>Vietnamance</x:String>
+                                            <x:String>Other</x:String>
+                                        </x:Array>
+                                    </Picker.ItemsSource>
+                                </Picker>
+                            <Label Text="Second language (Option)" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
+                            <Picker x:Name="SlanPicker" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select" TitleColor="#555555" FontSize="16" TextColor="#555555" >
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Chinese</x:String>
+                                        <x:String>English</x:String>
+                                        <x:String>German</x:String>
+                                        <x:String>Italian</x:String>
+                                        <x:String>Japanese</x:String>
+                                        <x:String>Korean</x:String>
+                                        <x:String>Spanish</x:String>
+                                        <x:String>Vietnamance</x:String>
+                                        <x:String>Other</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                            <Label Text="Email address (Option)" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
+                            <Entry x:Name="EmailEntry" Placeholder="email@email.com"
                                    FontSize="16"
                                    HorizontalOptions="FillAndExpand"
                                    HeightRequest="45"/>
