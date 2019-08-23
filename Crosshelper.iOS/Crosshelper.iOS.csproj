@@ -72,7 +72,6 @@
 <MtouchFloat32>true</MtouchFloat32>
 <MtouchLink>SdkOnly</MtouchLink>
 <MtouchExtraArgs>-v -v -v -v</MtouchExtraArgs>
-<CodesignEntitlements>GoogleService-Info.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
