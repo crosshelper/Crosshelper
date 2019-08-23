@@ -104,28 +104,6 @@ namespace Crosshelper.Views
 
         async void Handle_CreateAccount(object sender, EventArgs e)
         {
-            /*
-            if (GetRealName())
-            {
-                if(Email.IsNullOrEmpty() || ContactNo.IsNullOrEmpty())
-                {
-                    Email = "test@tert.com";
-                    ContactNo = "0000000000";
-                }
-                uih.UpdateUserRealName(FName, LName);
-                uAccess.UpdateEmailNo(Email, ContactNo);
-                //Settings.IsLogin = uAccess.VerifyUser(Uname, Pwd);
-                DisplayAlert("Congrats!", "You Have Done Sign Up, Sign In right now", "OK");
-                Navigation.PopToRootAsync();
-                //Application.Current.MainPage = new LaunchingPage();
-            }
-            else
-            {
-                DisplayAlert("Name not Valid","Name should be 'Donald Trump', Try again.","Got it!");
-                return; 
-            }
-            */
-
             if (FNameEntry.Text.IsNullOrEmpty() && LNameEntry.Text.IsNullOrEmpty())
             {
                 await DisplayAlert("Notice", "Please fill all required information box.", "OK");
