@@ -80,7 +80,7 @@ namespace Crosshelper.Helpers
             return caselist;
         }
 
-        internal void UpdateUserRealNameEmail(string fName, string lName, string email)
+        internal void UpdateUserRealNameEmail(string fName, string lName, string email, string planguage)
         {
             //建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -93,13 +93,14 @@ namespace Crosshelper.Helpers
                     string sql = "INSERT INTO UserInfo(Uid,FirstName,LastName,ChatID," +
                         "Flanguage,SLanguage,PaymentID,Icon,FENum,SENum," +
                         "Address,Location,Email,ZipCode) " +
-                        "VALUES(@para4, @para1, @para2, 'cycbis', 'English', 'English', 'cycbis0000', 'http', " +
-                        "0000000000, 0000000000, 'example', 'example', @para3, 95131)";
+                        "VALUES(@para4, @para1, @para2, 'cycbis', @para5, 'English', 'cycbis0000', 'https://s3-us-west-1.amazonaws.com/image.cycbis.com/CycbisLogo/CHAppLogo.png', " +
+                        "0000000000, 0000000000, 'example', 'example', @para3, 95025)";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("para1", fName);
                     cmd.Parameters.AddWithValue("para2", lName);
                     cmd.Parameters.AddWithValue("para3", email);
                     cmd.Parameters.AddWithValue("para4", Settings.UserId);
+                    cmd.Parameters.AddWithValue("para5", planguage);
 
                     cmd.ExecuteNonQuery();
                     Console.WriteLine("Connecting to MySQL success");

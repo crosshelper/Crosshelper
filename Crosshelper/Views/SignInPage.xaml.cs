@@ -48,7 +48,7 @@ namespace Crosshelper.Views
             CountryCodes.Add("+852");
             CountryCodes.Add("+886");
             NavigationPage.SetHasBackButton(this, false);
-            DefaultCountryCode = "(US) +1";
+            //DefaultCountryCode = "(US) +1";
             //countryCodePicker.SelectedIndex = 1;
             this.BindingContext = this;
         }
@@ -103,20 +103,22 @@ namespace Crosshelper.Views
             if (userAccess.CheckPhoneNoExist(uac.ContactNo))
             {
                 Settings.UserId = userAccess.GetUserIDbyNo(uac.ContactNo);
-                await Navigation.PushAsync(new SignInPasswordPage(uac.ContactNo));
                 activity.IsEnabled = false;
                 activity.IsRunning = false;
                 activity.IsVisible = false;
                 signInloading.Text = "";
+                await Navigation.PushAsync(new SignInPasswordPage(uac.ContactNo));
+
             }
             else
             {
                 userAccess.TwilioVerifyService(uac.ContactNo);
-                await Navigation.PushAsync(new SignUpVerifyPage(uac.ContactNo));
                 activity.IsEnabled = false;
                 activity.IsRunning = false;
                 activity.IsVisible = false;
                 signInloading.Text = "";
+                await Navigation.PushAsync(new SignUpVerifyPage(uac.ContactNo));
+
             }
         }
 
