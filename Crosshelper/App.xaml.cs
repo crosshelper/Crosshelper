@@ -16,7 +16,7 @@ namespace Crosshelper
             AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
             StripeConfiguration.SetApiKey("sk_live_XXXXXXXXXXXXXXX");
             SendBirdClient.Init(Crosshelper.Properties.Resources.APP_ID);
-            MainPage = new LaunchingPage();
+            MainPage = new MySplashScreen(); //LaunchingPage();
         }
 
         protected override void OnStart()

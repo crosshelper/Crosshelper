@@ -60,8 +60,9 @@ namespace Crosshelper.Views
         {
             InitializeComponent();
             currentUser = uih.GetUserInfoByID(Settings.UserId);
-            UserCell.Title = currentUser.FirstName + " " + currentUser.LastName;
-            //UserCell.Description = currentUser.LastName;
+            UserCell.Title = currentUser.FirstName;// + " " + currentUser.LastName;
+            var uac = new UserAccess();
+            UserCell.Description = uac.GetNobyID(currentUser.UserID);
             UserCell.IconSource = currentUser.Icon;
         }
 
