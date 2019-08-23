@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Crosshelper.Helpers;
 using Crosshelper.Models;
 using SendBird;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Crosshelper.Views
@@ -27,6 +28,35 @@ namespace Crosshelper.Views
         KeyChainHelper kch = new KeyChainHelper();
         private string _currentNumber = "";
 
+        public bool RememberMe
+        {
+            get => Preferences.Get(nameof(RememberMe), false);
+            set
+            {
+                Preferences.Set(nameof(RememberMe), value);
+                if (!value)
+                {
+                    Preferences.Set(nameof(Username), string.Empty);
+                }
+                OnPropertyChanged(nameof(RememberMe));
+            }
+        }
+
+        string username = Preferences.Get(nameof(Username), string.Empty);
+        public string Username
+        {
+            get => username;
+            set
+            {
+                username = value;
+                if (RememberMe)
+                {
+                    Preferences.Set(nameof(Username), value);
+                }
+                OnPropertyChanged(nameof(RememberMe));
+            }
+        }
+
         public SignInPasswordPage(string currentNumber)
         {
             InitializeComponent();
@@ -37,7 +67,7 @@ namespace Crosshelper.Views
         {
             if (pwdEntry.Text == null)
             {
-                DisplayAlert("Notice", "Please enter your password and make sure it's least 8 characters. ", "OK");
+                await DisplayAlert("Notice", "Please enter your password and make sure it's least 8 characters. ", "OK");
                 return;
             }
 
@@ -47,6 +77,9 @@ namespace Crosshelper.Views
             signInloading.Text = "Connecting...";
             signInloading.TextColor = Color.FromHex("#FF4E18");*/
             await Task.Delay(2000);
+
+            RememberMe = true;
+            Username = _currentNumber;
 
             if (userAccess.VerifyUser(_currentNumber, pwdEntry.Text))
             {

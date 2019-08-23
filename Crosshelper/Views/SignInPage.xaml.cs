@@ -24,6 +24,8 @@ namespace Crosshelper.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 await System.Threading.Tasks.Task.Delay(150);
+                DefaultCountryCode = "(US) +1";
+                countryCodePicker.SelectedIndex = 1;
                 PNumEntry.Focus();
             });
         }
@@ -108,16 +110,7 @@ namespace Crosshelper.Views
                 userAccess.TwilioVerifyService(uac.ContactNo);
                 await Navigation.PushAsync(new SignUpVerifyPage(uac.ContactNo));
             }
-        } 
-          /*protected override void OnAppearing()
-          {
-              base.OnAppearing();
-              savename.IsToggled = RememberMe;
-              if (RememberMe)
-              {
-                  uNameEntry.Text = Username;
-              }
-              */
+        }
 
         //取消按钮 Canceled
         void Handle_Canceled(object sender, EventArgs e)
