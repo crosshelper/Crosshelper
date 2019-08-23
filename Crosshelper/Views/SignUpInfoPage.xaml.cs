@@ -80,10 +80,6 @@ namespace Crosshelper.Views
         }
 
 
-
-
-
-
         // private bool GetRealName()
         // {
         //var IsNameValid = false;
@@ -104,9 +100,7 @@ namespace Crosshelper.Views
 
         async void Handle_CreateAccount(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             if (FNameEntry.Text.IsNullOrEmpty() && LNameEntry.Text.IsNullOrEmpty())
-=======
             /*
             if (GetRealName())
             {
@@ -130,7 +124,6 @@ namespace Crosshelper.Views
             */
 
             if (FNameEntry.Text.IsNullOrEmpty() && LNameEntry.Text.IsNullOrEmpty() && FlanPicker.SelectedItem.ToString().IsNullOrEmpty())
->>>>>>> 7013777... fix
             {
                 await DisplayAlert("Notice", "Please fill all required information box.", "OK");
             }
