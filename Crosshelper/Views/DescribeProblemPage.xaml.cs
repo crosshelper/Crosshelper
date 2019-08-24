@@ -77,6 +77,10 @@ namespace Crosshelper.Views
                 Settings.ZipCode = "95131";
                 if (switchButton.IsToggled)
                     status = 1;
+                if (Settings.CurrentLongitude > 0)
+                {
+                    return;
+                }
                 SetCurrentZipCode();
                 tih.ListMyTopic(_typeproblem.TagID, Settings.ZipCode, language, des.Text,status);
                 _currentTopic = new TopicInfo
@@ -91,6 +95,10 @@ namespace Crosshelper.Views
             }
             else
             {
+                if (Settings.CurrentLongitude > 0)
+                {
+                    return;
+                }
                 SetCurrentZipCode();
                 int status = 0;
                 if (switchButton.IsToggled)
@@ -117,6 +125,10 @@ namespace Crosshelper.Views
             var locator = CrossGeolocator.Current;
             locator.DesiredAccuracy = 50;
             var position = await locator.GetPositionAsync();
+            if (position.Longitude > 0)
+            {
+                return;
+            }
             Settings.CurrentLongitude = position.Longitude;
             Settings.CurrentLatitude = position.Latitude;
 

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Crosshelper.Helpers;
 using Crosshelper.Models;
 using SendBird;
+using WebSocketSharp;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -89,6 +90,8 @@ namespace Crosshelper.Views
                 Settings.UserId = userAccess.CurrentUid.ToString();
                 usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                 Settings.ChatID = usr.ChatID;
+                if(usr.FirstName.IsNullOrEmpty() || usr.LastName.IsNullOrEmpty() || usr.FLanguage.IsNullOrEmpty())
+                    await Navigation.PushAsync(new SignUpInfoPage("",""));
                 Name = usr.FirstName + " " + usr.LastName;
                 ProfileIcon = usr.Icon;
                 ChatServerConnect();
