@@ -52,13 +52,13 @@
                                            Grid.ColumnSpan="2"
                                            Text="{Binding Baseprice}"
                                            VerticalOptions="End" />
-                                    <Label Grid.Row="2"
-                                           Grid.Column="1"
+                                    <Label Grid.Row="3"
+                                           Grid.Column="0"
                                            TextColor="#393939"
-                                           Grid.ColumnSpan="2"
+                                           Grid.ColumnSpan="3"
                                            Text="{Binding HelperTags}"
                                            VerticalOptions="End" />
-                                    <Label Grid.Row="3"
+                                    <Label Grid.Row="4"
                                            Grid.Column="0"
                                            TextColor="#393939"
                                            Grid.ColumnSpan="3"
