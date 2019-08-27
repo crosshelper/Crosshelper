@@ -61,6 +61,12 @@ namespace Crosshelper.Views
             });
             RecommendationOne.Add(new TypeProblem
             {
+                TagID = 19,
+                Pcategory = "Writing",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Writing.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
                 TagID = 7,
                 Pcategory = "DMV & Driver License",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/DMV%26Driver.png"
@@ -76,12 +82,6 @@ namespace Crosshelper.Views
                 TagID = 12,
                 Pcategory = "Visa & Status",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Visa%26Status.png"
-            });
-            RecommendationOne.Add(new TypeProblem
-            {
-                TagID = 19,
-                Pcategory = "Writing",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Writing.png"
             });
             RecommendationOne.Add(new TypeProblem
             {
