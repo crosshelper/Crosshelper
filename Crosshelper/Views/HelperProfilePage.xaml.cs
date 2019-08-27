@@ -14,6 +14,15 @@ namespace Crosshelper.Views
     {
         private HelperLabel _currenthelperlabel;
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await System.Threading.Tasks.Task.Delay(150);
+            });
+        }
+
         public HelperProfilePage()
         {
             InitializeComponent();
@@ -79,6 +88,7 @@ namespace Crosshelper.Views
         //Confirm
         void Handle_GetHelp(object sender, EventArgs e)
         {
+            //GetHelpBtn.IsEnabled = false;
             if (Settings.IsLogin)
             {
                 var user = new UserInfo() {

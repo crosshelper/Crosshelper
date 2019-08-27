@@ -67,15 +67,6 @@
                       </StackLayout>
                     
                     <StackLayout Orientation="Horizontal" x:Name="loading" IsVisible="false">
-                        <ActivityIndicator 
-                         x:Name="activity"  
-                         IsRunning="false"  
-                         IsEnabled="false"  
-                         IsVisible="false" 
-                         Color="#555555"
-                         HorizontalOptions="Start" 
-                         BackgroundColor="#Gray"/>
-                      <Label Text="Searching..." TextColor="#555555"/>
                         </StackLayout>
                     
                                 <Button x:Name="qwe "

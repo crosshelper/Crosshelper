@@ -35,6 +35,7 @@
                                 Text="Get help"
                                 TextColor="White"
                                 FontSize="16"
+                                x:Name="GetHelpBtn"
                                 Margin="0,10,0,0"
                                 HeightRequest="35"
                                 WidthRequest="80"

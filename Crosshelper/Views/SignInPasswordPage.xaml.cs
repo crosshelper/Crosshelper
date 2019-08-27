@@ -19,6 +19,10 @@ namespace Crosshelper.Views
             {
                 await Task.Delay(150);
                 pwdEntry.Focus();
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
+                SignInStatus.Text = "";
             });
         }
 
@@ -68,7 +72,7 @@ namespace Crosshelper.Views
         {
             if (pwdEntry.Text == null)
             {
-                await DisplayAlert("Notice", "Please enter your password and make sure it's least 8 characters. ", "OK");
+                await DisplayAlert("Notice", "Please enter your current password and make sure it's least 8 characters. ", "OK");
                 return;
             }
 
@@ -77,13 +81,17 @@ namespace Crosshelper.Views
             activity.IsVisible = true;
             signInloading.Text = "Connecting...";
             signInloading.TextColor = Color.FromHex("#FF4E18");*/
-            await Task.Delay(2000);
+            await Task.Delay(1000);
 
             RememberMe = true;
             Username = _currentNumber;
 
             if (userAccess.VerifyUser(_currentNumber, pwdEntry.Text))
             {
+                activity.IsEnabled = true;
+                activity.IsRunning = true;
+                activity.IsVisible = true;
+                SignInStatus.Text = "Connecting...";
                 kch.SavetoSecureStorage("token_of_" + _currentNumber, pwdEntry.Text);
                 //signInloading.Text = "Sign In Succeeded, Data Loading...";
                 //signInloading.TextColor = Color.FromHex("#555555");
@@ -91,7 +99,7 @@ namespace Crosshelper.Views
                 usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                 Settings.ChatID = usr.ChatID;
                 if(usr.FirstName.IsNullOrEmpty() || usr.LastName.IsNullOrEmpty() || usr.FLanguage.IsNullOrEmpty())
-                    await Navigation.PushAsync(new SignUpInfoPage("",""));
+                await Navigation.PushAsync(new SignUpInfoPage("",""));
                 Name = usr.FirstName + " " + usr.LastName;
                 ProfileIcon = usr.Icon;
                 ChatServerConnect();
@@ -101,11 +109,7 @@ namespace Crosshelper.Views
             }
             else
             {
-                //signInloading.Text = "Sign in Faild";
-                //signInloading.TextColor = Color.FromHex("#555555");
-                //activity.IsEnabled = false;
-                //activity.IsRunning = false;
-                //activity.IsVisible = false;
+                await DisplayAlert("Notice", "Please enter your current password and make sure it's least 8 characters. ", "OK");
                 Settings.IsLogin = false;
             }
         }
