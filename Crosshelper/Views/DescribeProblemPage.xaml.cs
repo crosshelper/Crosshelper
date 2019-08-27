@@ -82,7 +82,7 @@ namespace Crosshelper.Views
                 _currentTopic = new TopicInfo
                 {
                     TagID = _typeproblem.TagID,
-                    Zipcode = "95131",
+                    Zipcode = Settings.ZipCode,
                     Language = language,
                     Description = des.Text,
                     Status = status
