@@ -70,7 +70,7 @@ namespace Crosshelper.Views
             if (_currentTopic==null)
             {
                 int status = 0;
-                Settings.ZipCode = "95131";
+                Settings.ZipCode = "00000";
                 if (switchButton.IsToggled)
                     status = 1;
                 if (Settings.CurrentLongitude > 0)
