@@ -17,19 +17,19 @@ namespace Crosshelper.Views
         public GetHelpPage()
         {
             InitializeComponent();
-
+            //TODO Get help page 数据放到后端.
             ////ProblemsCategory////
             ProblemsCategory = new List<TypeProblem>();
             ProblemsCategory.Add(new TypeProblem
             {
-                TagID = 1,
+                TagID = 2,
                 Pcategory = "Daily life",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/GetHelpIcon/Daily+life.png"
             });
             ProblemsCategory.Add(new TypeProblem
             {
                 TagID = 3,
-                Pcategory = "Language",
+                Pcategory = "Interpreter",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/GetHelpIcon/Language.png"
             });
             ProblemsCategory.Add(new TypeProblem
@@ -46,31 +46,36 @@ namespace Crosshelper.Views
             });
             ProblemsCategory.Add(new TypeProblem
             {
-                TagID = 14,
-                Pcategory = "Health",
+                TagID = 9,
+                Pcategory = "Doctor",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/GetHelpIcon/Health.png"
             });
-
 
             //////International Recommendation///////
             RecommendationOne = new List<TypeProblem>();
             RecommendationOne.Add(new TypeProblem
             {
-                TagID = 5,
-                Pcategory = "Health",
+                TagID = 3,
+                Pcategory = "Interpreter",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
+                TagID = 24,
+                Pcategory = "Phone line service",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom006.png"
+            });
+            RecommendationOne.Add(new TypeProblem
+            {
+                TagID = 9,
+                Pcategory = "Family Doctor",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom005.png"
             });
             RecommendationOne.Add(new TypeProblem
             {
-                TagID = 5,
+                TagID = 11,
                 Pcategory = "Emergency",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
-            });
-            RecommendationOne.Add(new TypeProblem
-            {
-                TagID = 5,
-                Pcategory = "Translate",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
             });
             RecommendationOne.Add(new TypeProblem
             {
@@ -80,7 +85,7 @@ namespace Crosshelper.Views
             });
             RecommendationOne.Add(new TypeProblem
             {
-                TagID = 5,
+                TagID = 8,
                 Pcategory = "Law",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
             });
@@ -89,20 +94,20 @@ namespace Crosshelper.Views
             RecommendationTwo = new List<TypeProblem>();
             RecommendationTwo.Add(new TypeProblem
             {
-                TagID = 5,
-                Pcategory = "Translate",
+                TagID = 3,
+                Pcategory = "Interpreter",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
             });
             RecommendationTwo.Add(new TypeProblem
             {
-                TagID = 5,
+                TagID = 8,
                 Pcategory = "Law",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
             });
             RecommendationTwo.Add(new TypeProblem
             {
-                TagID = 5,
-                Pcategory = "Health",
+                TagID = 9,
+                Pcategory = "Family Doctor",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom005.png"
             });
             RecommendationTwo.Add(new TypeProblem
@@ -113,7 +118,7 @@ namespace Crosshelper.Views
             });
             RecommendationTwo.Add(new TypeProblem
             {
-                TagID = 5,
+                TagID = 11,
                 Pcategory = "Emergency",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
             });
@@ -128,25 +133,25 @@ namespace Crosshelper.Views
             });
             RecommendationThree.Add(new TypeProblem
             {
-                TagID = 5,
-                Pcategory = "Health",
+                TagID = 9,
+                Pcategory = "Family Doctor",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom005.png"
             });
             RecommendationThree.Add(new TypeProblem
             {
-                TagID = 5,
-                Pcategory = "Translate",
+                TagID = 3,
+                Pcategory = "Interpreter",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
             });
             RecommendationThree.Add(new TypeProblem
             {
-                TagID = 5,
+                TagID = 11,
                 Pcategory = "Emergency",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
             });
             RecommendationThree.Add(new TypeProblem
             {
-                TagID = 5,
+                TagID = 8,
                 Pcategory = "Law",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
             });
@@ -161,19 +166,19 @@ namespace Crosshelper.Views
             });
             RecommendationFour.Add(new TypeProblem
             {
-                TagID = 5,
+                TagID = 11,
                 Pcategory = "Emergency",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom003.png"
             });
             RecommendationFour.Add(new TypeProblem
             {
-                TagID = 5,
-                Pcategory = "Translate",
+                TagID = 3,
+                Pcategory = "Interpreter",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom002.png"
             });
             RecommendationFour.Add(new TypeProblem
             {
-                TagID = 5,
+                TagID = 8,
                 Pcategory = "Law",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom004.png"
             });
