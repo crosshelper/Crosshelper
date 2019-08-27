@@ -28,7 +28,7 @@ namespace Crosshelper.Views
         public PickHelperPage(TopicInfo _topic)
         {
             InitializeComponent();
-            Helpers = cvt.BindingHelpersConvert(uih.GetHelperList(_topic.TagID.ToString(), _topic.Language, Settings.ZipCode),_topic.TagName);//"1"));
+            Helpers = cvt.BindingHelpersConvert(uih.GetHelperList(_topic.TagID.ToString(), _topic.Language, Settings.ZipCode));//"1"));
             BindingContext = this;
         }
     }

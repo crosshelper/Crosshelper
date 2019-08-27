@@ -18,7 +18,6 @@ namespace Crosshelper.Views
         {
             InitializeComponent();
 
-
             ////ProblemsCategory////
             ProblemsCategory = new List<TypeProblem>();
             ProblemsCategory.Add(new TypeProblem

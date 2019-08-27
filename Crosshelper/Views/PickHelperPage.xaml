@@ -17,8 +17,7 @@
                                         <RowDefinition Height="22" />
                                         <RowDefinition Height="22" />
                                         <RowDefinition Height="22" />
-                                        <RowDefinition Height="22" />
-                                        <RowDefinition Height="22" />
+                                        <RowDefinition Height="18" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="80" />
@@ -53,18 +52,6 @@
                                            Text="{Binding Baseprice}"
                                            VerticalOptions="End" />
                                     <Label Grid.Row="3"
-                                           Grid.Column="0"
-                                           TextColor="#393939"
-                                           Grid.ColumnSpan="3"
-                                           Text="{Binding HelperTags}"
-                                           VerticalOptions="End" />
-                                    <Label Grid.Row="4"
-                                           Grid.Column="0"
-                                           TextColor="#393939"
-                                           Grid.ColumnSpan="3"
-                                           Text="{Binding MatchedTag}"
-                                           VerticalOptions="End" />
-                                    <Label Grid.Row="4"
                                            Grid.Column="0"
                                            TextColor="#393939"
                                            Grid.ColumnSpan="3"

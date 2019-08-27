@@ -566,7 +566,7 @@ namespace Crosshelper.Helpers
             {   //建立连接，打开数据库
                 conn.Open();
                 string sqlstr =
-                "SELECT FirstName,LastName,Icon,ChatID,FLanguage,SLanguage,PaymentID,FENum,SENum,Address FROM UserInfo WHERE Uid = @para1";
+                "SELECT FirstName,LastName,Icon,ChatID,FLanguage,SLanguage,PaymentID,FENum,SENum,Address,Email FROM UserInfo WHERE Uid = @para1";
 
                 MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
                 //通过设置参数的形式给SQL 语句串值
@@ -586,6 +586,7 @@ namespace Crosshelper.Helpers
                     user.FENo = reader.GetString(7);
                     user.SENo = reader.GetString(8);
                     user.Address = reader.GetString(9);
+                    user.Email = reader.GetString(10);
                     user.UserID = userid.ToString();
                 }
                 return user;

@@ -55,7 +55,7 @@ namespace Crosshelper.Converters
             }
         }
 
-        public List<HelperLabel> BindingHelpersConvert(List<UserPro> helpers, string matchedtag)
+        public List<HelperLabel> BindingHelpersConvert(List<UserPro> helpers)
         {
             List<HelperLabel> newhelpers = new List<HelperLabel>();
             foreach (UserPro helper in helpers)
@@ -67,7 +67,7 @@ namespace Crosshelper.Converters
                 tmp.Language = "Language: " + helper.FLanguage + "/" + helper.SLanguage;
                 tmp.Baseprice = "$" + helper.PriceSign + " starting cost";
                 tmp.Location = "8 miles away";
-                tmp.MatchedTag = matchedtag;
+                tmp.MatchedTag = "";
                 tmp.StatusColor = StatusColorConverter(helper.Status);
                 tmp.StatusText = StatusTextConverter(helper.Status); ;
                 tmp.LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png";
