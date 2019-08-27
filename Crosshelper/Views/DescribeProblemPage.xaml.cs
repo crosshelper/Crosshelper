@@ -18,6 +18,19 @@ namespace Crosshelper.Views
             Navigation.PopModalAsync();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await System.Threading.Tasks.Task.Delay(150);
+                if (Settings.ZipCode.Length == 5)
+                {
+                    MyLocationName.Text = Settings.ZipCode;
+                }
+            });
+        }
+
         private TypeProblem _typeproblem;
         private TopicInfo _currentTopic;
 
@@ -33,7 +46,7 @@ namespace Crosshelper.Views
             InitializeComponent();
             languagepicker.SelectedItem = _currentTopic.Language;
             des.Text = _currentTopic.Description;
-            if(_currentTopic.Status == 1)
+            if (_currentTopic.Status == 1)
             {
                 switchButton.IsToggled = true;
             }
@@ -47,7 +60,7 @@ namespace Crosshelper.Views
         void Handle_NotReally(object sender, EventArgs e)
         {
             (sender as Button).Text = "Click me again!";
-        } 
+        }
         //Yes按钮 Yes Button
         void Handle_Yes(object sender, EventArgs e)
         {
@@ -56,6 +69,11 @@ namespace Crosshelper.Views
         //下一步按钮 Next Button
         void Handle_Next(object sender, EventArgs e)
         {
+            if (MyLocationName.Text == "Not Selected")
+            {
+                DisplayAlert("Missing info", "Check all activities you need fill and try again.", "OK");
+                return;
+            }
             string language = "English";
             var tih = new TopicInfoHelper();
             if (languagepicker.SelectedItem != null)
@@ -64,13 +82,13 @@ namespace Crosshelper.Views
             }
             if (des.Text.IsNullOrEmpty())
             {
-                DisplayAlert("No description","Describe your Question plsease!","OK");
+                DisplayAlert("No description", "Describe your Question plsease!", "OK");
                 return;
             }
-            if (_currentTopic==null)
+            if (_currentTopic == null)
             {
                 int status = 0;
-                Settings.ZipCode = "00000";
+                //Settings.ZipCode = "95131";
                 if (switchButton.IsToggled)
                     status = 1;
                 if (Settings.CurrentLongitude > 0)
@@ -78,19 +96,15 @@ namespace Crosshelper.Views
                     return;
                 }
                 SetCurrentZipCode();
-                tih.ListMyTopic(_typeproblem.TagID, Settings.ZipCode, language, des.Text,status);
+                tih.ListMyTopic(_typeproblem.TagID, Settings.ZipCode, language, des.Text, status);
                 _currentTopic = new TopicInfo
                 {
                     TagID = _typeproblem.TagID,
-                    Zipcode = Settings.ZipCode,
+                    Zipcode = MyLocationName.Text,
                     Language = language,
                     Description = des.Text,
                     Status = status
                 };
-                activity.IsEnabled = false;
-                activity.IsRunning = false;
-                activity.IsVisible = false;
-                loading.IsVisible = false;
                 Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
             }
             else
@@ -104,10 +118,6 @@ namespace Crosshelper.Views
                 if (switchButton.IsToggled)
                     status = 1;
                 tih.UpdateMyTopic(Settings.ZipCode, language, des.Text, _currentTopic.TopicID, status);
-                activity.IsEnabled = false;
-                activity.IsRunning = false;
-                activity.IsVisible = false;
-                loading.IsVisible = false;
                 Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
             }
 
@@ -115,12 +125,39 @@ namespace Crosshelper.Views
 
         private async void SetCurrentZipCode()
         {
-            var locator = CrossGeolocator.Current;
-            locator.DesiredAccuracy = 50;
-            var position = new Position(Settings.CurrentLatitude, Settings.CurrentLongitude);
-            var addresses = await locator.GetAddressesForPositionAsync(position, null);
-            var address = addresses.FirstOrDefault();
-            Settings.ZipCode = address.PostalCode;
+            try
+            {
+                var locator = CrossGeolocator.Current;
+                locator.DesiredAccuracy = 50;
+                var position = new Position(Settings.CurrentLatitude, Settings.CurrentLongitude);
+                var addresses = await locator.GetAddressesForPositionAsync(position, null);
+                var address = addresses.FirstOrDefault();
+                if (address.PostalCode.Length == 5)
+                {
+                    Settings.ZipCode = address.PostalCode;
+                }
+                else
+                {
+
+                    locator.DesiredAccuracy = 50;
+                    var newposition = await locator.GetPositionAsync();
+                    if (newposition.Longitude > 0)
+                    {
+                        return;
+                    }
+                    Settings.CurrentLongitude = newposition.Longitude;
+                    Settings.CurrentLatitude = newposition.Latitude;
+
+                    var newaddresses = await locator.GetAddressesForPositionAsync(newposition, null);
+                    var newaddress = newaddresses.FirstOrDefault();
+                    Settings.ZipCode = newaddress.PostalCode;
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+
         }
 
 

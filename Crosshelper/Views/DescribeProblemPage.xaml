@@ -19,13 +19,13 @@
                             <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
                                         <StackLayout>
                                             <StackLayout >
-                                              <Label Text="Current location" TextColor="#FF4E18" FontSize="17" FontAttributes="Bold"></Label>
+                                              <Label Text="Searching Area Zip Code" TextColor="#FF4E18" FontSize="17" FontAttributes="Bold"></Label>
                                             </StackLayout>
-                                                <Label Text="My location" 
-                                                       TextColor="#666666" 
+                                                <Label x:Name="MyLocationName"
+                                                       Text="Not Selected" 
+                                                       TextColor="#666666"
                                                        FontSize="18" 
-                                                       TextDecorations="Underline" 
-                                                       x:Name="MyLocationName"
+                                                       TextDecorations="Underline"
                                                        Margin="0,0,0,5" 
                                                        FontAttributes="Bold">
                                                 <Label.GestureRecognizers>
