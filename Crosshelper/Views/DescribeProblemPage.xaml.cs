@@ -87,6 +87,10 @@ namespace Crosshelper.Views
                     Description = des.Text,
                     Status = status
                 };
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
+                loading.IsVisible = false;
                 Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
             }
             else
@@ -100,6 +104,10 @@ namespace Crosshelper.Views
                 if (switchButton.IsToggled)
                     status = 1;
                 tih.UpdateMyTopic(Settings.ZipCode, language, des.Text, _currentTopic.TopicID, status);
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
+                loading.IsVisible = false;
                 Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
             }
 
