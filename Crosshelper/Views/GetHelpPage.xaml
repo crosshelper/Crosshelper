@@ -11,7 +11,7 @@
         <ScrollView>
         <StackLayout>
             <StackLayout>
-            <Label Text="Problem Category" FontSize="25" VerticalOptions="Center" Margin="10,5,10,0"/>
+            <Label Text="Problem Category" FontSize="25" FontAttributes="Bold" TextColor="#444444" VerticalOptions="Center" Margin="10,10,10,0"/>
                 <CollectionView x:Name="cv1" ItemsSource="{Binding ProblemsCategory}" SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.Horizontal}" HeightRequest="110">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -33,6 +33,7 @@
                                            WidthRequest="55" />
                                     <Label Grid.Row="3"
                                            Grid.Column="0"
+                                           FontSize="17"
                                            HorizontalOptions="Center"
                                            TextColor="#393939"
                                            Text="{Binding Pcategory}"
@@ -45,7 +46,7 @@
         <!-- 2 -->
             <StackLayout BackgroundColor="#F9F9F9" Padding="10">
             <StackLayout >
-            <Label Text="Are you international student?" FontSize="22" Margin="5,0,5,0"/>
+            <Label Text="Are you international student?" FontSize="19" TextColor="#444444" FontAttributes="Bold" Margin="5,0,5,0"/>
                     <CollectionView  x:Name="cv2" ItemsSource="{Binding RecommendationOne}"  SelectionMode="Single" SelectionChanged="Handle_PickProblem"  ItemsLayout="{x:Static ListItemsLayout.Horizontal}" HeightRequest="148">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -66,7 +67,7 @@
                                            WidthRequest="210"/>
                                      <Label Grid.Row="3"
                                            Grid.Column="0"
-                                           FontSize="18"
+                                           FontSize="17"
                                            HorizontalOptions="Center"
                                            TextColor="#393939"
                                            Text="{Binding Pcategory}"

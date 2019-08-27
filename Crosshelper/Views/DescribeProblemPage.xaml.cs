@@ -13,11 +13,6 @@ namespace Crosshelper.Views
 {
     public partial class DescribeProblemPage : ContentPage
     {
-        void Handle_Canceled(object sender, System.EventArgs e)
-        {
-            Navigation.PopModalAsync();
-        }
-
         protected override void OnAppearing()
         {
             base.OnAppearing();

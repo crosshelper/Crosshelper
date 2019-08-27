@@ -39,13 +39,14 @@ namespace Crosshelper.Views
             SLanguage = user.SLanguage;
             List<string> list = new List<string>
             {
-                "English",
-                "Spanish",
                 "Chinese",
-                "Korean",
-                "Japanese",
+                "English",
                 "French",
                 "German",
+                "Japanese",
+                "Korean",
+                "Portuguese",
+                "Spanish",
                 "Vietnamese"
             };
             LanguageItems = list;
