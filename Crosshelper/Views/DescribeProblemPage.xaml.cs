@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
@@ -108,7 +108,7 @@ namespace Crosshelper.Views
                         Status = status
                     };
                     pageused++;
-                    Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
+                    Navigation.PushAsync(new PickHelperPage(_currentTopic));
                 }
                 else
                 {
@@ -121,7 +121,7 @@ namespace Crosshelper.Views
                         Status = status
                     };
                     pageused++;
-                    Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
+                    Navigation.PushAsync(new PickHelperPage(_currentTopic));
                 }                
             }
             else
@@ -142,7 +142,7 @@ namespace Crosshelper.Views
                 {
                     tih.UpdateMyTopic("00000", language, des.Text, _currentTopic.TopicID, status);
                 }
-                Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
+                Navigation.PushAsync(new PickHelperPage(_currentTopic));
             }
 
         }

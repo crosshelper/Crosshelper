@@ -76,7 +76,7 @@ namespace Crosshelper.Views
             });
             await Task.Delay(2000);
             IsBusy = false;
-            await Navigation.PushAsync(new ChatTestPage(user, group));
+            await Navigation.PushModalAsync(new NavigationPage(new ChatTestPage(user, group)));
         }
         //Confirm
         void Handle_GetHelp(object sender, EventArgs e)

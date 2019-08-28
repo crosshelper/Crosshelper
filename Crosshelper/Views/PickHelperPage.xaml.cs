@@ -9,11 +9,6 @@ namespace Crosshelper.Views
 {
     public partial class PickHelperPage : ContentPage
     {
-        void Handle_Canceled(object sender, EventArgs e)
-        {
-            Navigation.PopModalAsync();
-        }
-
         void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
             HelperLabel hl = (HelperLabel)e.Item as HelperLabel;
