@@ -92,15 +92,32 @@ namespace Crosshelper.Views
                 }
                 SetCurrentZipCode();
                 tih.ListMyTopic(_typeproblem.TagID, Settings.ZipCode, language, des.Text, status);
-                _currentTopic = new TopicInfo
+
+                if (DigitalBtn.IsToggled)
                 {
-                    TagID = _typeproblem.TagID,
-                    Zipcode = MyLocationName.Text,
-                    Language = language,
-                    Description = des.Text,
-                    Status = status
-                };
-                Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
+                    _currentTopic = new TopicInfo
+                    {
+                        TagID = _typeproblem.TagID,
+                        Zipcode = MyLocationName.Text,
+                        Language = language,
+                        Description = des.Text,
+                        Status = status
+                    };
+                    Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
+                }
+                else
+                {
+                    _currentTopic = new TopicInfo
+                    {
+                        TagID = _typeproblem.TagID,
+                        Zipcode = "00000",
+                        Language = language,
+                        Description = des.Text,
+                        Status = status
+                    };
+                    Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
+                }
+                
             }
             else
             {
@@ -112,7 +129,14 @@ namespace Crosshelper.Views
                 int status = 0;
                 if (switchButton.IsToggled)
                     status = 1;
-                tih.UpdateMyTopic(Settings.ZipCode, language, des.Text, _currentTopic.TopicID, status);
+                if (DigitalBtn.IsToggled)
+                {
+                    tih.UpdateMyTopic(Settings.ZipCode, language, des.Text, _currentTopic.TopicID, status);
+                }
+                else
+                {
+                    tih.UpdateMyTopic("00000", language, des.Text, _currentTopic.TopicID, status);
+                }
                 Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
             }
 
