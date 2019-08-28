@@ -67,8 +67,15 @@ namespace Crosshelper.Views
 
             if (place != null)
             {
+                var locator = CrossGeolocator.Current;
+                locator.DesiredAccuracy = 50;
                 Settings.CurrentLatitude = place.Latitude;
                 Settings.CurrentLongitude = place.Longitude;
+                var position = new Position(Settings.CurrentLongitude, Settings.CurrentLatitude);
+                var addresses = await locator.GetAddressesForPositionAsync(position, null);
+                var address = addresses.FirstOrDefault();
+                Settings.ZipCode = address.PostalCode;
+
                 await DisplayAlert(
                     place.Name, "You are here!", "OK");//string.Format("Lat: {0}\nLon: {1}", place.Latitude, place.Longitude), "OK");
             }

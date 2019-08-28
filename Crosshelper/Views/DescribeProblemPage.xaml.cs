@@ -148,6 +148,7 @@ namespace Crosshelper.Views
             {
                 var locator = CrossGeolocator.Current;
                 locator.DesiredAccuracy = 50;
+                var temppp = await locator.GetPositionAsync();
                 var position = new Position(Settings.CurrentLatitude, Settings.CurrentLongitude);
                 var addresses = await locator.GetAddressesForPositionAsync(position, null);
                 var address = addresses.FirstOrDefault();
@@ -176,9 +177,7 @@ namespace Crosshelper.Views
             {
 
             }
-
         }
-
 
         private async void Handel_MyLocation(object sender, EventArgs e)
         {
