@@ -47,6 +47,7 @@ namespace Crosshelper.Views
                 "Korean",
                 "Portuguese",
                 "Spanish",
+                "Thai",
                 "Vietnamese"
             };
             LanguageItems = list;
