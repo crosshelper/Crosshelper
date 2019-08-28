@@ -8,7 +8,7 @@
     </NavigationPage.TitleView>
         <StackLayout Margin="10,0,10,0">
             <StackLayout>
-                <SearchBar Placeholder="Search problem type" BackgroundColor="White" FontSize="25" HeightRequest="100" MaxLength="25" HorizontalOptions="StartAndExpand"></SearchBar>
+                <SearchBar Placeholder="Search Service type" BackgroundColor="White" FontSize="25" HeightRequest="100" MaxLength="25" HorizontalOptions="StartAndExpand"></SearchBar>
             </StackLayout>
             <ListView ItemTapped="Handle_ItemTapped" ItemsSource="{Binding TypeProblems}">
                  <ListView.ItemTemplate>

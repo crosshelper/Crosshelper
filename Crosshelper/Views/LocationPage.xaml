@@ -10,7 +10,7 @@
         <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
         </NavigationPage.TitleView>
     <StackLayout>
-        <custom:PlacesBar x:Name="search_bar" />
+        <custom:PlacesBar x:Name="search_bar" Placeholder="Search location" BackgroundColor="White" FontSize="25" HeightRequest="100" MaxLength="25" HorizontalOptions="StartAndExpand"/>
         <AbsoluteLayout>
             <ActivityIndicator x:Name="spinner" IsRunning="false"
                 AbsoluteLayout.LayoutBounds="0.5, 0.1, 50, 50" AbsoluteLayout.LayoutFlags="PositionProportional" />

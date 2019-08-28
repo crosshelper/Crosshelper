@@ -5,13 +5,13 @@
              x:Class="Crosshelper.Views.GetHelpPage">
     <NavigationPage.TitleView>
         <Grid>
-            <SearchBar Placeholder="What kind problem do you have?" Focused="Handle_Search" />
+            <SearchBar Placeholder="What kind service do you need?" Focused="Handle_Search" />
         </Grid>
     </NavigationPage.TitleView>
         <ScrollView>
         <StackLayout>
             <StackLayout>
-            <Label Text="Problem Category" FontSize="25" FontAttributes="Bold" TextColor="#444444" VerticalOptions="Center" Margin="10,10,10,0"/>
+            <Label Text="Service Category" FontSize="25" FontAttributes="Bold" TextColor="#444444" VerticalOptions="Center" Margin="10,10,10,0"/>
                 <CollectionView x:Name="cv1" ItemsSource="{Binding ProblemsCategory}" SelectionMode="Single" SelectionChanged="Handle_PickProblem" ItemsLayout="{x:Static ListItemsLayout.Horizontal}" HeightRequest="110">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
