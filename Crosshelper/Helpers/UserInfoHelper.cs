@@ -80,6 +80,24 @@ namespace Crosshelper.Helpers
             return caselist;
         }
 
+        internal List<UserPro> GetExHelperList(string tagid, string language)
+        {
+            var newhelperlist = new List<UserPro>();
+            GetHelperIDByTag(tagid);
+            foreach (int uid in helperuidlist)
+            {
+                GetHelperInfoByID(uid.ToString());
+            }
+            foreach (UserPro helper in helperlist)
+            {
+                if (helper.FLanguage == language || helper.SLanguage == language)
+                {
+                    newhelperlist.Add(helper);
+                }
+            }
+            return newhelperlist;
+        }
+
         internal void UpdateUserRealNameEmail(string fName, string lName, string email, string planguage)
         {
             //建立数据库连接
