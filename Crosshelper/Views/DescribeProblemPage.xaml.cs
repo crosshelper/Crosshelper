@@ -8,6 +8,7 @@ using Crosshelper.Models;
 using Crosshelper.Helpers;
 using System.Linq;
 using WebSocketSharp;
+using System.Threading.Tasks;
 
 namespace Crosshelper.Views
 {
@@ -18,11 +19,11 @@ namespace Crosshelper.Views
             base.OnAppearing();
             Device.BeginInvokeOnMainThread(async () =>
             {
-                await System.Threading.Tasks.Task.Delay(150);
-                if (Settings.ZipCode.Length == 5)
-                {
-                    MyLocationName.Text = Settings.ZipCode;
-                }
+                await Task.Delay(150);
+                SetCurrentZipCode();
+                await Task.Delay(200);
+                MyLocationName.Text = Settings.ZipCode;
+                await Task.Delay(200);
             });
         }
 
@@ -61,9 +62,12 @@ namespace Crosshelper.Views
         {
             (sender as Button).Text = "Click me again!";
         }
+
+        int pageused = 0;
         //下一步按钮 Next Button
         void Handle_Next(object sender, EventArgs e)
         {
+            
             if (MyLocationName.Text == "Not Selected")
             {
                 DisplayAlert("Missing info", "Check all activities you need fill and try again.", "OK");
@@ -80,7 +84,7 @@ namespace Crosshelper.Views
                 DisplayAlert("No description", "Describe your Question plsease!", "OK");
                 return;
             }
-            if (_currentTopic == null)
+            if (_currentTopic == null || pageused != 0)
             {
                 int status = 0;
                 //Settings.ZipCode = "95131";
@@ -103,6 +107,7 @@ namespace Crosshelper.Views
                         Description = des.Text,
                         Status = status
                     };
+                    pageused++;
                     Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
                 }
                 else
@@ -115,9 +120,9 @@ namespace Crosshelper.Views
                         Description = des.Text,
                         Status = status
                     };
+                    pageused++;
                     Navigation.PushModalAsync(new NavigationPage(new PickHelperPage(_currentTopic)));
-                }
-                
+                }                
             }
             else
             {
@@ -181,6 +186,10 @@ namespace Crosshelper.Views
 
         private async void Handel_MyLocation(object sender, EventArgs e)
         {
+            if (!DigitalBtn.IsToggled)
+            {
+                return;
+            }
             var locator = CrossGeolocator.Current;
             locator.DesiredAccuracy = 50;
             var position = await locator.GetPositionAsync();
@@ -190,7 +199,7 @@ namespace Crosshelper.Views
             }
             Settings.CurrentLongitude = position.Longitude;
             Settings.CurrentLatitude = position.Latitude;
-
+            //var p = new Position(Settings.CurrentLongitude, Settings.CurrentLatitude);
             var addresses = await locator.GetAddressesForPositionAsync(position, null);
             var address = addresses.FirstOrDefault();
             Settings.ZipCode = address.PostalCode;
