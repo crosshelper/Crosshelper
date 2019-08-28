@@ -31,7 +31,7 @@
                                                 <Label Text="Find nearby helper?" TextColor="#666666" VerticalOptions="Center" FontSize="18" FontAttributes="Bold"></Label>
                                                 <Switch IsToggled="False" VerticalOptions="Center" HorizontalOptions="EndAndExpand" x:Name="DigitalBtn"></Switch>
                                             </StackLayout>
-                                                <Label Text="Turn on the button to searching helper nearby." Margin="0,-5,0,5" TextColor="#888888" VerticalOptions="Center" FontSize="12" FontAttributes="Bold"></Label> 
+                                                <Label Text="Turn on the button to get a helper nearby." Margin="0,-5,0,5" TextColor="#888888" VerticalOptions="Center" FontSize="12" FontAttributes="Bold"></Label> 
                                             <StackLayout >
                                               <Label Text="Language Preference" TextColor="#FF4E18" FontSize="17" FontAttributes="Bold"></Label>
                                             </StackLayout>
