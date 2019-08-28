@@ -78,13 +78,6 @@ namespace Crosshelper.Views
             IsBusy = false;
             await Navigation.PushAsync(new ChatTestPage(user, group));
         }
-
-        void Handle_Canceled(object sender, System.EventArgs e)
-        {
-
-            //Navigation.PushModalAsync(new QuotePage());
-            Navigation.PopModalAsync();
-        }
         //Confirm
         void Handle_GetHelp(object sender, EventArgs e)
         {
