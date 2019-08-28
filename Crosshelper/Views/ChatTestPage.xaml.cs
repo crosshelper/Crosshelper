@@ -11,6 +11,11 @@ namespace Crosshelper.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ChatTestPage : ContentPage
 	{
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
+
         public ChatTestPage (UserInfo user, GroupChannel channel)
 		{
 			InitializeComponent ();
