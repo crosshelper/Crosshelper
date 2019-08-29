@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using Crosshelper.Helpers;
 using System;
 using Crosshelper.Models;
+using System.Windows.Input;
 
 namespace Crosshelper.ViewModels
 {
@@ -79,6 +80,35 @@ namespace Crosshelper.ViewModels
             await Task.Delay(2000);
             IsBusy = false;
             await Navigation.PushModalAsync(new NavigationPage(new ChatTestPage(user, group)));
+        }
+
+        private bool _isRefreshing = false;
+        public bool IsRefreshing
+        {
+            get { return _isRefreshing; }
+            set
+            {
+                _isRefreshing = value;
+                OnPropertyChanged(nameof(IsRefreshing));
+            }
+        }
+
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    IsRefreshing = true;
+                    RefreshData();
+                    IsRefreshing = false;
+                });
+            }
+        }
+
+        private void RefreshData()
+        {
+            DataInit();
         }
     }
 }

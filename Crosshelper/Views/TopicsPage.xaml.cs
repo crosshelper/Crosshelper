@@ -47,7 +47,7 @@ namespace Crosshelper.Views
 
             TopicInfo _currentTopic = e.Item as TopicInfo;
             ((ListView)sender).SelectedItem = null;
-            await Navigation.PushModalAsync(new NavigationPage(new DescribeProblemPage(_currentTopic)));
+            await Navigation.PushAsync(new DescribeProblemPage(_currentTopic));
             //await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
             //Deselect Item
         }

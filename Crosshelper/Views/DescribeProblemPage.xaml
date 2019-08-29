@@ -18,7 +18,7 @@
                                                 <Switch IsToggled="False" VerticalOptions="Center" HorizontalOptions="EndAndExpand" x:Name="DigitalBtn"></Switch>
                                             </StackLayout>
                                             <StackLayout Orientation="Horizontal">
-                                                <Label Text="Current location:" TextColor="#666666" FontSize="17" FontAttributes="Bold"></Label>
+                                                <Label Text="Searching Area ZipCode: " TextColor="#666666" FontSize="17" FontAttributes="Bold"></Label>
                                                 <Label x:Name="MyLocationName"
                                                        Text="Not Selected" 
                                                        TextColor="#666666"
@@ -55,7 +55,7 @@
                         <StackLayout>
                             <StackLayout>
                                 <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
-                                <Label Text="Is emergency?" TextColor="#FF4E18" VerticalOptions="Center" FontSize="17" FontAttributes="Bold"></Label>
+                                <Label Text="Is Emergency?" TextColor="#FF4E18" VerticalOptions="Center" FontSize="17" FontAttributes="Bold"></Label>
                                 <Switch IsToggled="false" VerticalOptions="Center" HorizontalOptions="EndAndExpand" x:Name="switchButton"></Switch>
                                 </StackLayout>
                             </StackLayout>
