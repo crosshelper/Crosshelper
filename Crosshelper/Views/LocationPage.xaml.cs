@@ -70,7 +70,7 @@ namespace Crosshelper.Views
                 Settings.CurrentLatitude = place.Latitude;
                 Settings.CurrentLongitude = place.Longitude;
                 await DisplayAlert(
-                    place.Name, "You are here!", "OK");//string.Format("Lat: {0}\nLon: {1}", place.Latitude, place.Longitude), "OK");
+                    place.Name, "Selected", "OK");//string.Format("Lat: {0}\nLon: {1}", place.Latitude, place.Longitude), "OK");
             }
             await Navigation.PopModalAsync();
         }

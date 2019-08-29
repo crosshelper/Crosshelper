@@ -55,9 +55,9 @@
                                            Text="{Binding Language}"
                                            VerticalOptions="End" />
                                 <StackLayout Grid.Row="3" Orientation="Horizontal" Grid.ColumnSpan="4">
-                                    <Label TextColor= "{Binding StatusColor}"
+                                   <!-- <Label TextColor= "{Binding StatusColor}"
                                            Text="{Binding StatusText}"
-                                           HorizontalOptions="EndAndExpand" />
+                                           HorizontalOptions="EndAndExpand" /> -->
                                 </StackLayout>  
                                 </Grid>
                             </ViewCell>
