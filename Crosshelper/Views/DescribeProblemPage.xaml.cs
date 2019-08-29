@@ -155,7 +155,7 @@ namespace Crosshelper.Views
             {
                 var locator = CrossGeolocator.Current;
                 locator.DesiredAccuracy = 50;
-                var temppp = await locator.GetPositionAsync();
+                //var temppp = await locator.GetPositionAsync();
                 var position = new Position(Settings.CurrentLatitude, Settings.CurrentLongitude);
                 var addresses = await locator.GetAddressesForPositionAsync(position, null);
                 var address = addresses.FirstOrDefault();
