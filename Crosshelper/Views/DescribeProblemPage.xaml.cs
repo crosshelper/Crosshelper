@@ -94,11 +94,12 @@ namespace Crosshelper.Views
                 {
                     return;
                 }
-                SetCurrentZipCode();
-                tih.ListMyTopic(_typeproblem.TagID, Settings.ZipCode, language, des.Text, status);
-
+                
                 if (DigitalBtn.IsToggled)
                 {
+                    SetCurrentZipCode();
+                    tih.ListMyTopic(_typeproblem.TagID, Settings.ZipCode, language, des.Text, status);
+
                     _currentTopic = new TopicInfo
                     {
                         TagID = _typeproblem.TagID,
@@ -112,6 +113,7 @@ namespace Crosshelper.Views
                 }
                 else
                 {
+                    tih.ListMyTopic(_typeproblem.TagID, "00000", language, des.Text, status);
                     _currentTopic = new TopicInfo
                     {
                         TagID = _typeproblem.TagID,
