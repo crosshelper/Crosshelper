@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Crosshelper.Helpers;
 using Crosshelper.Models;
+using Plugin.Geolocator;
 using Xamarin.Forms;
 
 namespace Crosshelper.Views
@@ -16,6 +18,7 @@ namespace Crosshelper.Views
         public List<TypeProblem> RecommendationFour { get; private set; }
         public GetHelpPage()
         {
+            WakeUpLocationService();
             InitializeComponent();
             //TODO Get help page 数据放到后端.
             ////ProblemsCategory////
@@ -206,6 +209,19 @@ namespace Crosshelper.Views
             {
                 Navigation.PushAsync(new DescribeProblemPage(tmp));
             }
+        }
+
+        private async void WakeUpLocationService()
+        {
+            var locator = CrossGeolocator.Current;
+            locator.DesiredAccuracy = 50;
+            var position = await locator.GetPositionAsync();
+            if (position.Longitude > 0)
+            {
+                return;
+            }
+            Settings.CurrentLongitude = position.Longitude;
+            Settings.CurrentLatitude = position.Latitude;
         }
 
         protected override void OnAppearing()
