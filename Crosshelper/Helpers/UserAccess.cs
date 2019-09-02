@@ -3,7 +3,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
-
+using System.Text;
 using Twilio;
 using Twilio.Rest.Verify.V2;
 using Twilio.Rest.Verify.V2.Service;
@@ -49,13 +49,21 @@ namespace Crosshelper.Helpers
 
         public string GetVerificationCode()
         {
-            Guid g = Guid.NewGuid();
-            string verificationCode = Convert.ToBase64String(g.ToByteArray());
-            verificationCode = verificationCode.Replace("=", "");
-            verificationCode = verificationCode.Replace("+", "");
-            verificationCode = verificationCode.Replace("/", "");
-            verificationCode = verificationCode.Remove(6);
-            return verificationCode;
+            string buffer = "0123456789";
+            StringBuilder verificationCode = new StringBuilder();
+            Random random = new Random();
+            int range = buffer.Length;
+            for (int i = 0; i < 6; i++)
+            {
+                verificationCode.Append(buffer.Substring(random.Next(range),1));
+            }
+            //Guid g = Guid.NewGuid();
+            //string verificationCode = Convert.ToInt32(g.ToByteArray()).ToString();
+            //verificationCode = verificationCode.Replace("=", "");
+            //verificationCode = verificationCode.Replace("+", "");
+            //verificationCode = verificationCode.Replace("/", "");
+            //verificationCode = verificationCode.Remove(6);
+            return verificationCode.ToString();
         }
 
         public void TwilioVerifyService(string tempNumber)

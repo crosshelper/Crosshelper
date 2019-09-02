@@ -37,24 +37,17 @@ namespace Crosshelper.Views
 
         void Handle_CodeAgain(object sender, System.EventArgs e)
         {
-            //this.IsEnabled = false;
-            userAccess.TwilioVerifyService(_contactNo);
-            /*TmcodeAgain.TextColor = Color.FromHex("#888888");
-            var timer = 45;
-            while (timer > 0)
+            if (_contactNo.Remove(3) == "+86")
             {
-                TmcodeAgain.Text = "Resent code in " + timer + " second";
-                timer--;
-                Task.Delay(1000);
+                userAccess.SendverifyCodeYP(_contactNo.Substring(3), userAccess.GetVerificationCode());
             }
-            //Device.StartTimer(TimeSpan.FromSeconds(45), () =>
-            //{
-            //while
-
-            //return false; // True = Repeat again, False = Stop the timer
-            //});
-            this.IsEnabled = true;
-            */
+            else
+            {
+                userAccess.TwilioVerifyService(_contactNo);
+                var time = 45;
+                TmcodeAgain.Text = "Resent code in " + time + " second";
+                TmcodeAgain.TextColor = Color.FromHex("#888888");
+            }
         }
 
         void Handle_Next(object sender, EventArgs e)

@@ -15,7 +15,7 @@
                                         <StackLayout>
                                             <StackLayout Orientation="Horizontal">
                                                 <Label Text="Find nearby helper?" TextColor="#FF4E18"  VerticalOptions="Center" FontSize="17" FontAttributes="Bold"></Label>
-                                                <Switch IsToggled="False" VerticalOptions="Center" HorizontalOptions="EndAndExpand" x:Name="DigitalBtn"></Switch>
+                                                <Switch Toggled="Handle_DigitalToggled" IsToggled="False" VerticalOptions="Center" HorizontalOptions="EndAndExpand" x:Name="DigitalBtn"></Switch>
                                             </StackLayout>
                                             <StackLayout Orientation="Horizontal">
                                                 <Label Text="Searching Area ZipCode: " TextColor="#666666" FontSize="17" FontAttributes="Bold"></Label>

@@ -150,8 +150,16 @@ namespace Crosshelper.Views
 
         void Handle_forgotPwd(object sender, System.EventArgs e)
         {
-            userAccess.TwilioVerifyService(_currentNumber);
-            Navigation.PushAsync(new ResetPWDVerifyPage(_currentNumber));
+            if (_currentNumber.Remove(3) == "+86")
+            {
+                userAccess.SendverifyCodeYP(_currentNumber.Substring(3), userAccess.GetVerificationCode());
+                Navigation.PushAsync(new ResetPWDVerifyPage(_currentNumber));
+            }
+            else
+            {
+                userAccess.TwilioVerifyService(_currentNumber);
+                Navigation.PushAsync(new ResetPWDVerifyPage(_currentNumber));
+            }
         }
         void Handle_Privacy(object sender, System.EventArgs e)
         {

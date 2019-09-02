@@ -22,11 +22,19 @@ namespace Crosshelper.Views
                 await Task.Delay(150);
                 SetCurrentZipCode();
                 await Task.Delay(200);
-                MyLocationName.Text = Settings.ZipCode;
+                if (DigitalBtn.IsToggled)
+                {
+                    MyLocationName.Text = Settings.ZipCode;
+                }
+                else
+                {
+                    MyLocationName.Text = "Not Selected";
+                }
+                
                 await Task.Delay(200);
             });
         }
-
+        
         private TypeProblem _typeproblem;
         private TopicInfo _currentTopic;
 
@@ -49,6 +57,18 @@ namespace Crosshelper.Views
             else
             {
                 switchButton.IsToggled = false;
+            }
+        }
+
+        void Handle_DigitalToggled(object sender, EventArgs e)
+        {
+            if (DigitalBtn.IsToggled)
+            {
+                MyLocationName.Text = Settings.ZipCode;
+            }
+            else
+            {
+                MyLocationName.Text = "Not Selected";
             }
         }
 
