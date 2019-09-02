@@ -5,6 +5,7 @@ using Xamarin.Forms;
 
 using Twilio;
 using Twilio.Rest.Verify.V2.Service;
+using System.Threading.Tasks;
 
 namespace Crosshelper.Views
 {
@@ -36,13 +37,24 @@ namespace Crosshelper.Views
 
         void Handle_CodeAgain(object sender, System.EventArgs e)
         {
-            //TODO: Timer
-            userAccess.TwilioVerifyService(_contactNo);
-            var time = 45;
-            TmcodeAgain.Text = "Resent code in " + time + " second";
-            TmcodeAgain.TextColor = Color.FromHex("#888888");
             //this.IsEnabled = false;
+            userAccess.TwilioVerifyService(_contactNo);
+            /*TmcodeAgain.TextColor = Color.FromHex("#888888");
+            var timer = 45;
+            while (timer > 0)
+            {
+                TmcodeAgain.Text = "Resent code in " + timer + " second";
+                timer--;
+                Task.Delay(1000);
+            }
+            //Device.StartTimer(TimeSpan.FromSeconds(45), () =>
+            //{
+            //while
 
+            //return false; // True = Repeat again, False = Stop the timer
+            //});
+            this.IsEnabled = true;
+            */
         }
 
         void Handle_Next(object sender, EventArgs e)
