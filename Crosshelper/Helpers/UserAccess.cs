@@ -32,7 +32,7 @@ namespace Crosshelper.Helpers
                 var param = new Dictionary<string, string>
                 {
                     [Const.Mobile] = phone,
-                    [Const.Text] = "【Cycbis】您的验证码是 " + verificationCode
+                    [Const.Text] = "【Cycbis】您的验证码是" + verificationCode+ "。如非本人操作，请忽略本短信"
                 };
                 var r = clnt.Sms().SingleSend(param);
                 clnt.Dispose();
@@ -50,6 +50,7 @@ namespace Crosshelper.Helpers
             string verificationCode = Convert.ToBase64String(g.ToByteArray());
             verificationCode = verificationCode.Replace("=", "");
             verificationCode = verificationCode.Replace("+", "");
+            verificationCode = verificationCode.Replace("/", "");
             verificationCode = verificationCode.Remove(6);
             return verificationCode;
         }
