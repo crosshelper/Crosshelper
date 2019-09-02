@@ -1,11 +1,14 @@
 ﻿using Crosshelper.Models;
 using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.Data;
 
 using Twilio;
 using Twilio.Rest.Verify.V2;
 using Twilio.Rest.Verify.V2.Service;
+using Yunpian.Sdk;
+using Yunpian.Sdk.Model;
 
 namespace Crosshelper.Helpers
 {
@@ -19,6 +22,37 @@ namespace Crosshelper.Helpers
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
         private int currentUid;
         public int CurrentUid { get { return currentUid; } }
+
+        public string SendverifyCodeYP(string phone, string verificationCode)
+        {
+            try
+            {
+                Settings.ChinaVerify = verificationCode;
+                var clnt = new YunpianClient("apikey").Init();
+                var param = new Dictionary<string, string>
+                {
+                    [Const.Mobile] = phone,
+                    [Const.Text] = "【Cycbis】您的验证码是 " + verificationCode
+                };
+                var r = clnt.Sms().SingleSend(param);
+                clnt.Dispose();
+                return r.Msg;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public string GetVerificationCode()
+        {
+            Guid g = Guid.NewGuid();
+            string verificationCode = Convert.ToBase64String(g.ToByteArray());
+            verificationCode = verificationCode.Replace("=", "");
+            verificationCode = verificationCode.Replace("+", "");
+            verificationCode = verificationCode.Remove(6);
+            return verificationCode;
+        }
 
         public void TwilioVerifyService(string tempNumber)
         {

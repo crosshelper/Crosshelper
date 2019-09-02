@@ -24,6 +24,9 @@ namespace Crosshelper.Helpers
         private const string UserKey = "user_key";
         private static readonly string UserDefault = string.Empty;
 
+        private const string CodeKey = "user_key";
+        private static readonly string CodeDefault = string.Empty;
+
         private const string IsLoginKey = "login_key";
         private static readonly bool IsLoginDefault = false;
 
@@ -98,5 +101,16 @@ namespace Crosshelper.Helpers
             }
         }
 
+        public static string ChinaVerify
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(CodeKey, CodeDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(CodeKey, value);
+            }
+        }
     }
 }

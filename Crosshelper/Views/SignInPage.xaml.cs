@@ -112,13 +112,24 @@ namespace Crosshelper.Views
             }
             else
             {
-                userAccess.TwilioVerifyService(uac.ContactNo);
-                activity.IsEnabled = false;
-                activity.IsRunning = false;
-                activity.IsVisible = false;
-                signInloading.Text = "";
-                await Navigation.PushAsync(new SignUpVerifyPage(uac.ContactNo));
-
+                if (uac.ContactNo.Remove(3) == "+86")
+                {
+                    userAccess.SendverifyCodeYP(uac.ContactNo.Substring(3), userAccess.GetVerificationCode());
+                    activity.IsEnabled = false;
+                    activity.IsRunning = false;
+                    activity.IsVisible = false;
+                    signInloading.Text = "";
+                    await Navigation.PushAsync(new SignUpVerifyPage(uac.ContactNo));
+                }
+                else
+                {
+                    userAccess.TwilioVerifyService(uac.ContactNo);
+                    activity.IsEnabled = false;
+                    activity.IsRunning = false;
+                    activity.IsVisible = false;
+                    signInloading.Text = "";
+                    await Navigation.PushAsync(new SignUpVerifyPage(uac.ContactNo));
+                }
             }
         }
 
