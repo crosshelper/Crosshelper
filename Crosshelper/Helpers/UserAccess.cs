@@ -32,7 +32,10 @@ namespace Crosshelper.Helpers
                 var param = new Dictionary<string, string>
                 {
                     [Const.Mobile] = phone,
-                    [Const.Text] = "【Cycbis】您的验证码是" + verificationCode+ "。如非本人操作，请忽略本短信"
+                    [Const.Text] = "【Cycbis】您的验证码是" + verificationCode+ "。如非本人操作，请忽略本短信",
+                    [Const.TplId] = "3180896",
+                    [Const.TplValue] = "【Cycbis】您的验证码是#code#。如非本人操作，请忽略本短信",
+                    [Const.Code] = verificationCode
                 };
                 var r = clnt.Sms().SingleSend(param);
                 clnt.Dispose();
