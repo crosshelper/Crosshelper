@@ -28,7 +28,7 @@ namespace Crosshelper.Helpers
             try
             {
                 Settings.ChinaVerify = verificationCode;
-                var clnt = new YunpianClient("apikey").Init();
+                var clnt = new YunpianClient("d3a5e366f73162fe514f4883d1cd1cf3").Init();
                 var param = new Dictionary<string, string>
                 {
                     [Const.Mobile] = phone,
