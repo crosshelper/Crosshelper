@@ -87,12 +87,6 @@ namespace Crosshelper.Views
         //下一步按钮 Next Button
         void Handle_Next(object sender, EventArgs e)
         {
-            
-            if (MyLocationName.Text == "Not Selected")
-            {
-                DisplayAlert("Missing info", "Check all activities you need fill and try again.", "OK");
-                return;
-            }
             string language = "English";
             var tih = new TopicInfoHelper();
             if (languagepicker.SelectedItem != null)
@@ -112,6 +106,7 @@ namespace Crosshelper.Views
                     status = 1;
                 if (Settings.CurrentLongitude > 0)
                 {
+                    DisplayAlert("Missing info", "Google Service connection failed", "OK");
                     return;
                 }
                 
@@ -150,6 +145,7 @@ namespace Crosshelper.Views
             {
                 if (Settings.CurrentLongitude > 0)
                 {
+                    DisplayAlert("Missing info", "Google Service connection failed", "OK");
                     return;
                 }
                 SetCurrentZipCode();
@@ -212,6 +208,7 @@ namespace Crosshelper.Views
             {
                 return;
             }
+            /*
             var locator = CrossGeolocator.Current;
             locator.DesiredAccuracy = 50;
             var position = await locator.GetPositionAsync();
@@ -225,6 +222,7 @@ namespace Crosshelper.Views
             var addresses = await locator.GetAddressesForPositionAsync(position, null);
             var address = addresses.FirstOrDefault();
             Settings.ZipCode = address.PostalCode;
+            */
 
             await Navigation.PushModalAsync(new NavigationPage(new LocationPage()));
         }
