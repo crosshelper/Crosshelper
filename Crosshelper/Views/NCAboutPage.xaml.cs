@@ -1,6 +1,7 @@
 ﻿using Plugin.Messaging;
 using Xamarin.Forms;
 using Crosshelper.Helpers;
+using Xamarin.Essentials;
 
 namespace Crosshelper.Views
 {
@@ -10,7 +11,7 @@ namespace Crosshelper.Views
         public NCAboutPage()
         {
             InitializeComponent();
-
+            VersionCodeLabel.Text = "Version beta " + VersionTracking.CurrentVersion;
             supportsEmail = "bo.chen@cycbis.com";
             emailTitle = "[Supports Ticket] Feedback from Customer: " + Settings.ChatID;
 
