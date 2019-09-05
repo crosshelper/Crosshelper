@@ -64,7 +64,7 @@ namespace Crosshelper.Views
 
         async void Handle_ChangePhoto(object sender, EventArgs e)
         {
-            var action = await DisplayActionSheet("Change the photo", "Cencel", null, "Take photo", "From album");
+            var action = await DisplayActionSheet("Change the photo", "Cancel", null, "Take photo", "From album");
             switch (action)
             {
                 case "Take photo":

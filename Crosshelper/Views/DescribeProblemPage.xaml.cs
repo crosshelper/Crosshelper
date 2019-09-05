@@ -9,6 +9,7 @@ using Crosshelper.Helpers;
 using System.Linq;
 using WebSocketSharp;
 using System.Threading.Tasks;
+using Plugin.Permissions.Abstractions;
 
 namespace Crosshelper.Views
 {
@@ -20,18 +21,15 @@ namespace Crosshelper.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 await Task.Delay(150);
-                SetCurrentZipCode();
-                await Task.Delay(200);
                 if (DigitalBtn.IsToggled)
                 {
+                    await SetZipCodeAsync();
                     MyLocationName.Text = Settings.ZipCode;
                 }
                 else
                 {
                     MyLocationName.Text = "Not Selected";
                 }
-                
-                await Task.Delay(200);
             });
         }
         
@@ -64,6 +62,8 @@ namespace Crosshelper.Views
         {
             if (DigitalBtn.IsToggled)
             {
+                WakeUpLocationService();
+                //SetCurrentZipCode();
                 MyLocationName.Text = Settings.ZipCode;
             }
             else
@@ -112,7 +112,7 @@ namespace Crosshelper.Views
                 
                 if (DigitalBtn.IsToggled)
                 {
-                    SetCurrentZipCode();
+                    //SetCurrentZipCode();
                     tih.ListMyTopic(_typeproblem.TagID, Settings.ZipCode, language, des.Text, status);
 
                     _currentTopic = new TopicInfo
@@ -148,7 +148,7 @@ namespace Crosshelper.Views
                     DisplayAlert("Missing info", "Google Service connection failed", "OK");
                     return;
                 }
-                SetCurrentZipCode();
+                //SetCurrentZipCode();
                 int status = 0;
                 if (switchButton.IsToggled)
                     status = 1;
@@ -162,7 +162,69 @@ namespace Crosshelper.Views
                 }
                 Navigation.PushAsync(new PickHelperPage(_currentTopic));
             }
+        }
 
+        private async Task SetZipCodeAsync()
+        {
+            var placemarks = await Geocoding.GetPlacemarksAsync(Settings.CurrentLatitude, Settings.CurrentLongitude);
+
+            var placemark = placemarks?.FirstOrDefault();
+            if (placemark != null)
+            {
+                Settings.ZipCode = placemark.PostalCode;
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private async void WakeUpLocationService()
+        {
+            try
+            {
+                var location = await Geolocation.GetLastKnownLocationAsync();
+                if (location != null)
+                {
+                    if (location.Longitude > 0)
+                    {
+                        return;
+                    }
+                    Settings.CurrentLongitude = location.Longitude;
+                    Settings.CurrentLatitude = location.Latitude;
+                    var placemarks = await Geocoding.GetPlacemarksAsync(location.Latitude, location.Longitude);
+
+                    var placemark = placemarks?.FirstOrDefault();
+                    if (placemark != null)
+                    {
+                        Settings.ZipCode = placemark.PostalCode;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+            }
+            catch (PermissionException pEx)
+            {
+                // Handle permission exception
+                bool action = await DisplayAlert("Location Error", "Feature not accessable.", "go to Settings", "Cancel");
+                switch (action)
+                {
+                    case true:
+                        await GoToLocationSettingAsync();
+                        break;
+                    case false:
+                        DigitalBtn.IsToggled = false;
+                        return;
+                }
+                throw pEx;
+            }
+        }
+
+        private async Task GoToLocationSettingAsync()
+        {
+            Device.OpenUri(new Uri("app-settings:"));
         }
 
         private async void SetCurrentZipCode()
@@ -171,7 +233,6 @@ namespace Crosshelper.Views
             {
                 var locator = CrossGeolocator.Current;
                 locator.DesiredAccuracy = 50;
-                //var temppp = await locator.GetPositionAsync();
                 var position = new Position(Settings.CurrentLatitude, Settings.CurrentLongitude);
                 var addresses = await locator.GetAddressesForPositionAsync(position, null);
                 var address = addresses.FirstOrDefault();
@@ -196,9 +257,9 @@ namespace Crosshelper.Views
                     Settings.ZipCode = newaddress.PostalCode;
                 }
             }
-            catch (Exception e)
+            catch (PermissionException pEx)
             {
-
+                throw pEx;
             }
         }
 
@@ -208,22 +269,6 @@ namespace Crosshelper.Views
             {
                 return;
             }
-            /*
-            var locator = CrossGeolocator.Current;
-            locator.DesiredAccuracy = 50;
-            var position = await locator.GetPositionAsync();
-            if (position.Longitude > 0)
-            {
-                return;
-            }
-            Settings.CurrentLongitude = position.Longitude;
-            Settings.CurrentLatitude = position.Latitude;
-            //var p = new Position(Settings.CurrentLongitude, Settings.CurrentLatitude);
-            var addresses = await locator.GetAddressesForPositionAsync(position, null);
-            var address = addresses.FirstOrDefault();
-            Settings.ZipCode = address.PostalCode;
-            */
-
             await Navigation.PushModalAsync(new NavigationPage(new LocationPage()));
         }
         void Handle_Language(object sender, EventArgs e)
@@ -232,3 +277,19 @@ namespace Crosshelper.Views
         }
     }
 }
+
+/*
+var locator = CrossGeolocator.Current;
+locator.DesiredAccuracy = 50;
+var position = await locator.GetPositionAsync();
+if (position.Longitude > 0)
+{
+    return;
+}
+Settings.CurrentLongitude = position.Longitude;
+Settings.CurrentLatitude = position.Latitude;
+//var p = new Position(Settings.CurrentLongitude, Settings.CurrentLatitude);
+var addresses = await locator.GetAddressesForPositionAsync(position, null);
+var address = addresses.FirstOrDefault();
+Settings.ZipCode = address.PostalCode;
+*/

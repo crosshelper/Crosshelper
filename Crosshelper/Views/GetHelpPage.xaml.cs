@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Crosshelper.Helpers;
 using Crosshelper.Models;
 using Plugin.Geolocator;
+using UIKit;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Crosshelper.Views
@@ -18,7 +21,6 @@ namespace Crosshelper.Views
         public List<TypeProblem> RecommendationFour { get; private set; }
         public GetHelpPage()
         {
-            WakeUpLocationService();
             InitializeComponent();
             //TODO Get help page 数据放到后端.
             ////ProblemsCategory////
@@ -194,6 +196,7 @@ namespace Crosshelper.Views
             });
 
             BindingContext = this;
+            //WakeUpLocationService();
         }
 
         void Handle_Search(object sender, FocusEventArgs e)
@@ -213,15 +216,51 @@ namespace Crosshelper.Views
 
         private async void WakeUpLocationService()
         {
-            var locator = CrossGeolocator.Current;
-            locator.DesiredAccuracy = 50;
-            var position = await locator.GetPositionAsync();
-            if (position.Longitude > 0)
+            try
             {
-                return;
+                var location = await Geolocation.GetLastKnownLocationAsync();
+                if (location != null)
+                {
+                    if (location.Longitude > 0)
+                    {
+                        return;
+                    }
+                    Settings.CurrentLongitude = location.Longitude;
+                    Settings.CurrentLatitude = location.Latitude;
+                    //Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
+                }
+                else
+                {
+                    return;
+                }
+                //var locator = CrossGeolocator.Current;
+                //locator.DesiredAccuracy = 50;
+                //var position = await locator.GetPositionAsync();
+                //if (position.Longitude > 0)
+                //{
+                    //return;
+                //}
+                //Settings.CurrentLongitude = position.Longitude;
+                //Settings.CurrentLatitude = position.Latitude;
             }
-            Settings.CurrentLongitude = position.Longitude;
-            Settings.CurrentLatitude = position.Latitude;
+            catch (PermissionException pEx)
+            {
+                // Handle permission exception
+                bool action = await DisplayAlert("Location Error", "Feature not accessable.", "go to Settings", "Cancel");
+                switch (action)
+                {
+                    case true:
+                        await GoToLocationSettingAsync();
+                        break;
+                }
+                throw pEx;
+            }
+        }
+
+        private async Task GoToLocationSettingAsync()
+        {
+            Device.OpenUri(new Uri("app-settings:"));
+            //UIApplication.SharedApplication.OpenUrl(new NSUrl("app-settings:"));
         }
 
         protected override void OnAppearing()

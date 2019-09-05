@@ -6,7 +6,7 @@
               IsRefreshing="{Binding IsRefreshing}"
               ItemTapped="Handle_ItemTapped" 
               HasUnevenRows="true"
-              CachingStrategy="RecycleElement">
+              CachingStrategy="RetainElement">
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>

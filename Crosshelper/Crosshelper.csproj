@@ -93,6 +93,9 @@
     <Reference Include="Xamarin.iOS">
       <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\12.8.0.2\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.iOS">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\12.14.0.114\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MessageCells\" />

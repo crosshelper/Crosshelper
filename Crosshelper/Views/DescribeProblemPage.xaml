@@ -14,7 +14,7 @@
                             <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
                                         <StackLayout>
                                             <StackLayout Orientation="Horizontal">
-                                                <Label Text="Find nearby helper?" TextColor="#FF4E18"  VerticalOptions="Center" FontSize="17" FontAttributes="Bold"></Label>
+                                                <Label Text="Service by Zip" TextColor="#FF4E18"  VerticalOptions="Center" FontSize="17" FontAttributes="Bold"></Label>
                                                 <Switch Toggled="Handle_DigitalToggled" IsToggled="False" VerticalOptions="Center" HorizontalOptions="EndAndExpand" x:Name="DigitalBtn"></Switch>
                                             </StackLayout>
                                             <StackLayout Orientation="Horizontal">
