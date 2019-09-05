@@ -35,17 +35,21 @@ namespace Crosshelper.Views
         
         private TypeProblem _typeproblem;
         private TopicInfo _currentTopic;
-
+        public string TitleText { get; set; }
         public DescribeProblemPage(TypeProblem tmp)
         {
             _typeproblem = tmp;
+            TitleText = tmp.Pcategory;
             InitializeComponent();
+            BindingContext = this;
         }
 
         public DescribeProblemPage(TopicInfo tmp)
         {
             _currentTopic = tmp;
+            TitleText = tmp.TagName;
             InitializeComponent();
+            BindingContext = this;
             languagepicker.SelectedItem = _currentTopic.Language;
             des.Text = _currentTopic.Description;
             if (_currentTopic.Status == 1)

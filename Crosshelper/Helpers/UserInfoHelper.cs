@@ -390,7 +390,7 @@ namespace Crosshelper.Helpers
                 cmd.Parameters.AddWithValue("para9", usr.SENo);
                 cmd.Parameters.AddWithValue("para10", usr.Address);
                 cmd.Parameters.AddWithValue("para11", usr.Email);
-                cmd.Parameters.AddWithValue("para12", usr.ZipCode);
+                cmd.Parameters.AddWithValue("para12", "12345");
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
