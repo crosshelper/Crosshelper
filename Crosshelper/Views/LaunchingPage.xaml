@@ -3,13 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:i18n="clr-namespace:Crosshelper.Helpers"
              x:Class="Crosshelper.Views.LaunchingPage">
     <ContentPage.Content>
         <StackLayout Margin="16,20,16,10">
                 <StackLayout Margin="0,20,0,0" Padding="0,15,0,0">
-                    <Image Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/CycbisLogoH.png"
-                          
-                    HeightRequest="60"/>
+                    <Image Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/CycbisLogoH.png" HeightRequest="60"/>
                 </StackLayout>
                 <carousel:CarouselViewControl x:Name="carousel"
                 ItemsSource="{Binding LaunchingItemsSource}"
@@ -24,7 +23,7 @@
                                         <ffimageloading:CachedImage x:Name="background" Source="{Binding Icon}" VerticalOptions="FillAndExpand"/>
                                         <StackLayout>
                                             <Image Margin="0,0,0,0"  Aspect="AspectFill"/>
-                                            <Label Text="Cycbis the most effecient way to help you out immediately." TextColor="#666666" FontSize="18" FontAttributes="Bold" Margin="0,0,0,8"></Label>
+                                            <Label Text="{i18n:Translate LaunchingLabel}" TextColor="#666666" FontSize="18" FontAttributes="Bold" Margin="0,0,0,8"></Label>
             
                                         </StackLayout>
                                     </StackLayout>
@@ -35,7 +34,7 @@
             <BoxView BackgroundColor="#CDCDCD" HeightRequest="1"></BoxView>
                     <!-- 第三次登入 Third party sign in -->  
             <StackLayout VerticalOptions="Start">
-                <Button Text="Get Started"
+                <Button Text="{i18n:Translate GetStart}"
                         TextColor="White"
                         FontSize="18"
                         HeightRequest="50"

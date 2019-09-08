@@ -26,7 +26,7 @@ namespace Crosshelper.Views
                        // HorizontalOptions = LayoutOptions.FillAndExpand,
                         VerticalOptions = LayoutOptions.CenterAndExpand
                     },
-                    new Label { Text = "Data Loading......",
+                    new Label { Text = AppResources.Launching,
                         TextColor=Color.FromHex("#999999"),
                         FontAttributes = FontAttributes.Bold,
                         FontSize = 26,

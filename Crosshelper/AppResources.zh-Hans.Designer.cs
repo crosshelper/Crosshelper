@@ -46,5 +46,23 @@ namespace Crosshelper {
                 resourceCulture = value;
             }
         }
+        
+        internal static string Launching {
+            get {
+                return ResourceManager.GetString("Launching", resourceCulture);
+            }
+        }
+        
+        internal static string LaunchingLabel {
+            get {
+                return ResourceManager.GetString("LaunchingLabel", resourceCulture);
+            }
+        }
+        
+        internal static string GetStart {
+            get {
+                return ResourceManager.GetString("GetStart", resourceCulture);
+            }
+        }
     }
 }

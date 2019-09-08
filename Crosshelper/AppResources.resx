@@ -12,4 +12,13 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
+    <data name="Launching" xml:space="preserve">
+        <value>Data Loading...</value>
+    </data>
+    <data name="LaunchingLabel" xml:space="preserve">
+        <value>Cycbis is the most effecient way to help you out immediately.</value>
+    </data>
+    <data name="GetStart" xml:space="preserve">
+        <value>Get Start</value>
+    </data>
 </root>
