@@ -3,6 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:i18n="clr-namespace:Crosshelper.Helpers"
              x:Class="Crosshelper.Views.TopicsPage" Title="{i18n:Translate Text=Topic}">
+    <StackLayout  Margin="10">
+     <StackLayout Orientation="Horizontal">
+            <Label Text="{i18n:Translate Text=DemandList}" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="#555555" FontAttributes="Bold" Margin="0,3,0,3"/>
+            <Label Text="{i18n:Translate Text=PullDown}" FontSize="13" HorizontalOptions="EndAndExpand" VerticalOptions="Center" TextColor="#555555" ></Label>
+     </StackLayout>
+
+            <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
     <ListView x:Name="MyListView" 
               IsPullToRefreshEnabled="True"
               RefreshCommand="{Binding RefreshCommand}"
@@ -53,4 +60,5 @@
       </DataTemplate>
     </ListView.ItemTemplate>
     </ListView>
+        </StackLayout>
 </ContentPage>

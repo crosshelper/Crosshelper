@@ -6,7 +6,7 @@
              x:Class="Crosshelper.Views.GetHelpPage">
     <NavigationPage.TitleView>
         <Grid>
-            <SearchBar Placeholder="What kind service do you need?" Focused="Handle_Search" />
+            <SearchBar Placeholder="{i18n:Translate Text=SearchBar}" Focused="Handle_Search" />
         </Grid>
     </NavigationPage.TitleView>
         <ScrollView>

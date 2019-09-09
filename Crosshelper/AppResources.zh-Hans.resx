@@ -303,4 +303,10 @@
     <data name="SearchBar" xml:space="preserve">
         <value>这里搜索你需要的服务</value>
     </data>
+    <data name="DemandList" xml:space="preserve">
+        <value>需求列表</value>
+    </data>
+    <data name="PullDown" xml:space="preserve">
+        <value>下拉刷新列表</value>
+    </data>
 </root>

@@ -4,7 +4,9 @@
              xmlns:i18n="clr-namespace:Crosshelper.Helpers"
              x:Class="Crosshelper.Views.DescribeProblemPage"
              Title="{Binding TitleText}">
-             <ScrollView>
+        <AbsoluteLayout>
+             <ScrollView AbsoluteLayout.LayoutFlags="All"
+                        AbsoluteLayout.LayoutBounds="0,0,1,1">
                  <StackLayout Padding="20">
                     <!-- Case detial -->
                     <Label Text="{i18n:Translate Text=ServiceInfo}" FontSize="18" TextColor="#555555"  FontAttributes="Bold" Margin="0,5,0,5"></Label>
@@ -81,4 +83,18 @@
                 </StackLayout>
             </StackLayout>
         </ScrollView>
+
+                     <ContentView x:Name="actIndBackground"
+        Opacity="0.5"
+         AbsoluteLayout.LayoutFlags="All"
+         AbsoluteLayout.LayoutBounds="0,0,1,1"
+         IsVisible="{Binding IsLoading}">
+        </ContentView>
+        <ActivityIndicator x:Name="actInd"
+         AbsoluteLayout.LayoutFlags="PositionProportional"
+         AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"
+         IsRunning="{Binding IsLoading}"
+         Color="#ff4e18"                 
+         IsVisible="{Binding IsLoading}"/>
+        </AbsoluteLayout>
 </ContentPage>

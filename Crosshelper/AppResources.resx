@@ -303,4 +303,10 @@
     <data name="SearchBar" xml:space="preserve">
         <value>What kind service do you need?</value>
     </data>
+    <data name="DemandList" xml:space="preserve">
+        <value>Demand List</value>
+    </data>
+    <data name="PullDown" xml:space="preserve">
+        <value>Pull down to refresh the list</value>
+    </data>
 </root>

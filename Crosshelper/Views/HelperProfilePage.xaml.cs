@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using Crosshelper.Converters;
 using Crosshelper.Helpers;
@@ -10,7 +11,7 @@ using Xamarin.Forms;
 namespace Crosshelper.Views
 {
 
-    public partial class HelperProfilePage : ContentPage
+    public partial class HelperProfilePage : ContentPage, INotifyPropertyChanged
     {
         private HelperLabel _currenthelperlabel;
 
@@ -26,6 +27,8 @@ namespace Crosshelper.Views
         public HelperProfilePage()
         {
             InitializeComponent();
+            IsLoading = false;
+            BindingContext = this;
         }
 
         public HelperProfilePage(HelperLabel hl)
@@ -34,6 +37,33 @@ namespace Crosshelper.Views
             _currenthelperlabel = hl;
             Pageload(hl);
         }
+
+        /// <loading>
+        private bool isLoading;
+        public bool IsLoading
+        {
+            get
+            {
+                return this.isLoading;
+            }
+
+            set
+            {
+                this.isLoading = value;
+                RaisePropertyChanged("IsLoading");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void RaisePropertyChanged(string propName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            }
+        }
+        /// <loading>
 
         UserInfoHelper uih = new UserInfoHelper();
         BindingContextConverter bcc = new BindingContextConverter();
@@ -81,7 +111,7 @@ namespace Crosshelper.Views
         //Confirm
         void Handle_GetHelp(object sender, EventArgs e)
         {
-            //GetHelpBtn.IsEnabled = false;
+            IsLoading = true;
             if (Settings.IsLogin)
             {
                 var user = new UserInfo() {

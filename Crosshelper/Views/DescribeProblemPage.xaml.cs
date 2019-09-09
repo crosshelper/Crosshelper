@@ -14,7 +14,7 @@ using System.ComponentModel;
 
 namespace Crosshelper.Views
 {
-    public partial class DescribeProblemPage : ContentPage
+    public partial class DescribeProblemPage : ContentPage, INotifyPropertyChanged
     {
         protected override void OnAppearing()
         {
@@ -51,6 +51,7 @@ namespace Crosshelper.Views
             _currentTopic = tmp;
             TitleText = tmp.TagName;
             InitializeComponent();
+            IsLoading = false;
             BindingContext = this;
             languagepicker.SelectedItem = _currentTopic.Language;
             des.Text = _currentTopic.Description;
@@ -78,6 +79,33 @@ namespace Crosshelper.Views
             }
         }
 
+        /// <loading>
+        private bool isLoading;
+        public bool IsLoading
+        {
+            get
+            {
+                return this.isLoading;
+            }
+
+            set
+            {
+                this.isLoading = value;
+                RaisePropertyChanged("IsLoading");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void RaisePropertyChanged(string propName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            }
+        }
+        /// <loading>
+
         //Not Really按钮 Not really Button
         void Handle_NotReally(object sender, EventArgs e)
         {
@@ -93,6 +121,7 @@ namespace Crosshelper.Views
         //下一步按钮 Next Button
         void Handle_Next(object sender, EventArgs e)
         {
+            IsLoading = true;
             string language = "English";
             var tih = new TopicInfoHelper();
             if (languagepicker.SelectedItem != null)
@@ -101,6 +130,7 @@ namespace Crosshelper.Views
             }
             if (des.Text.IsNullOrEmpty())
             {
+                IsLoading = false;
                 DisplayAlert("No description", "Describe your Question plsease!", "OK");
                 return;
             }

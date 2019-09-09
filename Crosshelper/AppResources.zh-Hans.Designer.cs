@@ -628,5 +628,17 @@ namespace Crosshelper {
                 return ResourceManager.GetString("SearchBar", resourceCulture);
             }
         }
+        
+        internal static string DemandList {
+            get {
+                return ResourceManager.GetString("DemandList", resourceCulture);
+            }
+        }
+        
+        internal static string PullDown {
+            get {
+                return ResourceManager.GetString("PullDown", resourceCulture);
+            }
+        }
     }
 }
