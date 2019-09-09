@@ -240,7 +240,64 @@
     <data name="LP" xml:space="preserve">
         <value>Language Preference</value>
     </data>
-    <data name="Emergency" xml:space="preserve">
+    <data name="Emergencys" xml:space="preserve">
         <value>Is Emergency?</value>
+    </data>
+    <data name="DailyLife" xml:space="preserve">
+        <value>Daily life</value>
+    </data>
+    <data name="Interpreter" xml:space="preserve">
+        <value>Interpreter</value>
+    </data>
+    <data name="Law" xml:space="preserve">
+        <value>Law</value>
+    </data>
+    <data name="CarRepair" xml:space="preserve">
+        <value>Car Repair</value>
+    </data>
+    <data name="Doctor" xml:space="preserve">
+        <value>Doctor</value>
+    </data>
+    <data name="AirportPickup" xml:space="preserve">
+        <value>Airport Pickup</value>
+    </data>
+    <data name="Writing" xml:space="preserve">
+        <value>Writing</value>
+    </data>
+    <data name="DMVDriverLicense" xml:space="preserve">
+        <value>DMV, Driver License</value>
+    </data>
+    <data name="PhoneLineService" xml:space="preserve">
+        <value>Phone Line Service</value>
+    </data>
+    <data name="VisaStatus" xml:space="preserve">
+        <value>Visa, Status</value>
+    </data>
+    <data name="PhonePCRepair" xml:space="preserve">
+        <value>PhonePCRepair</value>
+    </data>
+    <data name="Housing" xml:space="preserve">
+        <value>Housing</value>
+    </data>
+    <data name="Insurance" xml:space="preserve">
+        <value>Insurance</value>
+    </data>
+    <data name="Accident" xml:space="preserve">
+        <value>Accident</value>
+    </data>
+    <data name="MedicineCare" xml:space="preserve">
+        <value>Medicine Care</value>
+    </data>
+    <data name="CarRental" xml:space="preserve">
+        <value>Car Rental</value>
+    </data>
+    <data name="Emergency" xml:space="preserve">
+        <value>Emergency</value>
+    </data>
+    <data name="TourGuide" xml:space="preserve">
+        <value>Tour Guide</value>
+    </data>
+    <data name="BusinessInfo" xml:space="preserve">
+        <value>Business Info</value>
     </data>
 </root>

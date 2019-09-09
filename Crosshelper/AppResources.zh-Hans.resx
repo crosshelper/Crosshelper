@@ -240,7 +240,64 @@
     <data name="LP" xml:space="preserve">
         <value>首选语言</value>
     </data>
-    <data name="Emergency" xml:space="preserve">
+    <data name="Emergencys" xml:space="preserve">
         <value>是否为紧急事件?</value>
+    </data>
+    <data name="DailyLife" xml:space="preserve">
+        <value>日常生活</value>
+    </data>
+    <data name="Interpreter" xml:space="preserve">
+        <value>口译员</value>
+    </data>
+    <data name="Law" xml:space="preserve">
+        <value>法律</value>
+    </data>
+    <data name="CarRepair" xml:space="preserve">
+        <value>修车</value>
+    </data>
+    <data name="Doctor" xml:space="preserve">
+        <value>医生</value>
+    </data>
+    <data name="AirportPickup" xml:space="preserve">
+        <value>接机</value>
+    </data>
+    <data name="Writing" xml:space="preserve">
+        <value>写作</value>
+    </data>
+    <data name="DMVDriverLicense" xml:space="preserve">
+        <value>车管所</value>
+    </data>
+    <data name="PhoneLineService" xml:space="preserve">
+        <value>电话线服务</value>
+    </data>
+    <data name="VisaStatus" xml:space="preserve">
+        <value>签证，状态</value>
+    </data>
+    <data name="PhonePCRepair" xml:space="preserve">
+        <value>修电脑电话</value>
+    </data>
+    <data name="Housing" xml:space="preserve">
+        <value>房屋出租出售</value>
+    </data>
+    <data name="Insurance" xml:space="preserve">
+        <value>保险</value>
+    </data>
+    <data name="Accident" xml:space="preserve">
+        <value>事故</value>
+    </data>
+    <data name="MedicineCare" xml:space="preserve">
+        <value>医疗关怀</value>
+    </data>
+    <data name="CarRental" xml:space="preserve">
+        <value>租车</value>
+    </data>
+    <data name="Emergency" xml:space="preserve">
+        <value>紧急情况</value>
+    </data>
+    <data name="TourGuide" xml:space="preserve">
+        <value>旅行指导</value>
+    </data>
+    <data name="BusinessInfo" xml:space="preserve">
+        <value>商家信息</value>
     </data>
 </root>

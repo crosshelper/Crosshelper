@@ -28,31 +28,31 @@ namespace Crosshelper.Views
             ProblemsCategory.Add(new TypeProblem
             {
                 TagID = 2,
-                Pcategory = "Daily life",
+                Pcategory = AppResources.DailyLife,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/GetHelpIcon/Daily+life.png"
             });
             ProblemsCategory.Add(new TypeProblem
             {
                 TagID = 3,
-                Pcategory = "Interpreter",
+                Pcategory = AppResources.Interpreter,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/GetHelpIcon/Language.png"
             });
             ProblemsCategory.Add(new TypeProblem
             {
                 TagID = 8,
-                Pcategory = "Law",
+                Pcategory = AppResources.Law,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/GetHelpIcon/Law.png"
             });
             ProblemsCategory.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = AppResources.CarRepair,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/GetHelpIcon/Repair.png"
             });
             ProblemsCategory.Add(new TypeProblem
             {
                 TagID = 9,
-                Pcategory = "Doctor",
+                Pcategory = AppResources.Doctor,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/GetHelpIcon/Health.png"
             });
 
@@ -61,43 +61,43 @@ namespace Crosshelper.Views
             RecommendationOne.Add(new TypeProblem
             {
                 TagID = 1,
-                Pcategory = "Airport Pickup",
+                Pcategory = AppResources.AirportPickup,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/AirportPick.png"
             });
             RecommendationOne.Add(new TypeProblem
             {
                 TagID = 19,
-                Pcategory = "Writing",
+                Pcategory = AppResources.Writing,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Writing.png"
             });
             RecommendationOne.Add(new TypeProblem
             {
                 TagID = 7,
-                Pcategory = "DMV & Driver License",
+                Pcategory = AppResources.DMVDriverLicense,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/DMV%26Driver.png"
             });
             RecommendationOne.Add(new TypeProblem
             {
                 TagID = 24,
-                Pcategory = "Phone Line Service",
+                Pcategory = AppResources.PhoneLineService,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/PhoneLineService.png"
             });
             RecommendationOne.Add(new TypeProblem
             {
                 TagID = 12,
-                Pcategory = "Visa & Status",
+                Pcategory = AppResources.VisaStatus,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Visa%26Status.png"
             });
             RecommendationOne.Add(new TypeProblem
             {
                 TagID = 5,
-                Pcategory = "Car Repair",
+                Pcategory = AppResources.CarRepair,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/CarRepair.png"
             });
             RecommendationOne.Add(new TypeProblem
             {
                 TagID = 23,
-                Pcategory = "Phone & PC Repair",
+                Pcategory = AppResources.PhonePCRepair,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Phone%26PC+repair.png"
             });
 
@@ -106,37 +106,37 @@ namespace Crosshelper.Views
             RecommendationTwo.Add(new TypeProblem
             {
                 TagID = 3,
-                Pcategory = "Interpreter",
+                Pcategory = AppResources.Interpreter,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Interpreter.png"
             });
             RecommendationTwo.Add(new TypeProblem
             {
                 TagID = 22,
-                Pcategory = "Housing",
+                Pcategory = AppResources.Housing,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Housing.png"
             });
             RecommendationTwo.Add(new TypeProblem
             {
                 TagID = 13,
-                Pcategory = "Insurance",
+                Pcategory = AppResources.Insurance,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Insurance.png"
             });
             RecommendationTwo.Add(new TypeProblem
             {
                 TagID = 15,
-                Pcategory = "Tax",
+                Pcategory = AppResources.Tax,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Tax.png"
             });
             RecommendationTwo.Add(new TypeProblem
             {
                 TagID = 25,
-                Pcategory = "Medicine Care",
+                Pcategory = AppResources.MedicineCare,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/MedicineCare.png"
             });
             RecommendationTwo.Add(new TypeProblem
             {
                 TagID = 4,
-                Pcategory = "Accident",
+                Pcategory = AppResources.Accident,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Accident.png"
             });
 
@@ -146,25 +146,25 @@ namespace Crosshelper.Views
             RecommendationThree.Add(new TypeProblem
             {
                 TagID = 18,
-                Pcategory = "Car Rental",
+                Pcategory = AppResources.CarRental,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/CarRental.png"
             });
             RecommendationThree.Add(new TypeProblem
             {
                 TagID = 6,
-                Pcategory = "Tour Guide",
+                Pcategory = AppResources.TourGuide,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Tourguide.png"
             });
             RecommendationThree.Add(new TypeProblem
             {
                 TagID = 11,
-                Pcategory = "Emergency",
+                Pcategory = AppResources.Emergency,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Emergency.png"
             });
             RecommendationThree.Add(new TypeProblem
             {
                 TagID = 3,
-                Pcategory = "Interpreter",
+                Pcategory = AppResources.Interpreter,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Interpreter.png"
             });
 
@@ -173,25 +173,25 @@ namespace Crosshelper.Views
             RecommendationFour.Add(new TypeProblem
             {
                 TagID = 26,
-                Pcategory = "Business Info",
+                Pcategory = AppResources.BusinessInfo,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/BusinessInfo.png"
             });
             RecommendationFour.Add(new TypeProblem
             {
                 TagID = 8,
-                Pcategory = "Law",
+                Pcategory = AppResources.Law,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Law.png"
             });
             RecommendationFour.Add(new TypeProblem
             {
                 TagID = 3,
-                Pcategory = "Interpreter",
+                Pcategory = AppResources.Interpreter,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/Interpreter.png"
             });
             RecommendationFour.Add(new TypeProblem
             {
                 TagID = 1,
-                Pcategory = "Airport Pickup",
+                Pcategory = AppResources.AirportPickup,
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/AirportPick.png"
             });
 

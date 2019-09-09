@@ -503,9 +503,123 @@ namespace Crosshelper {
             }
         }
         
+        internal static string Emergencys {
+            get {
+                return ResourceManager.GetString("Emergencys", resourceCulture);
+            }
+        }
+        
+        internal static string DailyLife {
+            get {
+                return ResourceManager.GetString("DailyLife", resourceCulture);
+            }
+        }
+        
+        internal static string Interpreter {
+            get {
+                return ResourceManager.GetString("Interpreter", resourceCulture);
+            }
+        }
+        
+        internal static string Law {
+            get {
+                return ResourceManager.GetString("Law", resourceCulture);
+            }
+        }
+        
+        internal static string CarRepair {
+            get {
+                return ResourceManager.GetString("CarRepair", resourceCulture);
+            }
+        }
+        
+        internal static string Doctor {
+            get {
+                return ResourceManager.GetString("Doctor", resourceCulture);
+            }
+        }
+        
+        internal static string AirportPickup {
+            get {
+                return ResourceManager.GetString("AirportPickup", resourceCulture);
+            }
+        }
+        
+        internal static string Writing {
+            get {
+                return ResourceManager.GetString("Writing", resourceCulture);
+            }
+        }
+        
+        internal static string DMVDriverLicense {
+            get {
+                return ResourceManager.GetString("DMVDriverLicense", resourceCulture);
+            }
+        }
+        
+        internal static string PhoneLineService {
+            get {
+                return ResourceManager.GetString("PhoneLineService", resourceCulture);
+            }
+        }
+        
+        internal static string VisaStatus {
+            get {
+                return ResourceManager.GetString("VisaStatus", resourceCulture);
+            }
+        }
+        
+        internal static string PhonePCRepair {
+            get {
+                return ResourceManager.GetString("PhonePCRepair", resourceCulture);
+            }
+        }
+        
+        internal static string Housing {
+            get {
+                return ResourceManager.GetString("Housing", resourceCulture);
+            }
+        }
+        
+        internal static string Insurance {
+            get {
+                return ResourceManager.GetString("Insurance", resourceCulture);
+            }
+        }
+        
+        internal static string Accident {
+            get {
+                return ResourceManager.GetString("Accident", resourceCulture);
+            }
+        }
+        
+        internal static string MedicineCare {
+            get {
+                return ResourceManager.GetString("MedicineCare", resourceCulture);
+            }
+        }
+        
+        internal static string CarRental {
+            get {
+                return ResourceManager.GetString("CarRental", resourceCulture);
+            }
+        }
+        
         internal static string Emergency {
             get {
                 return ResourceManager.GetString("Emergency", resourceCulture);
+            }
+        }
+        
+        internal static string TourGuide {
+            get {
+                return ResourceManager.GetString("TourGuide", resourceCulture);
+            }
+        }
+        
+        internal static string BusinessInfo {
+            get {
+                return ResourceManager.GetString("BusinessInfo", resourceCulture);
             }
         }
     }
