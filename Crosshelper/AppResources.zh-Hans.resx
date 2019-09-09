@@ -55,192 +55,192 @@
         <value>问题描述: </value>
     </data>
     <data name="Profile" xml:space="preserve">
-        <value>Profile</value>
+        <value>我</value>
     </data>
     <data name="Topic" xml:space="preserve">
-        <value>Topic</value>
+        <value>话题板</value>
     </data>
     <data name="Inbox" xml:space="preserve">
-        <value>Inbox</value>
+        <value>收件箱</value>
     </data>
     <data name="GetHelp" xml:space="preserve">
-        <value>Get Help</value>
+        <value>开始</value>
     </data>
     <data name="Search" xml:space="preserve">
-        <value>Search</value>
+        <value>搜索</value>
     </data>
     <data name="Account" xml:space="preserve">
-        <value>Account</value>
+        <value>账户</value>
     </data>
     <data name="Payment" xml:space="preserve">
-        <value>Payment</value>
+        <value>支付方式</value>
     </data>
     <data name="History" xml:space="preserve">
-        <value>History</value>
+        <value>历史记录</value>
     </data>
     <data name="General" xml:space="preserve">
-        <value>General</value>
+        <value>常规</value>
     </data>
     <data name="About" xml:space="preserve">
-        <value>About</value>
+        <value>关于</value>
     </data>
     <data name="Signout" xml:space="preserve">
-        <value>Sign Out</value>
+        <value>登出</value>
     </data>
     <data name="AboutUs" xml:space="preserve">
-        <value>About us</value>
+        <value>关于我们</value>
     </data>
     <data name="Safety" xml:space="preserve">
-        <value>Safety</value>
+        <value>安全</value>
     </data>
     <data name="Legal" xml:space="preserve">
-        <value>Legal</value>
+        <value>法律声明</value>
     </data>
     <data name="PastCase" xml:space="preserve">
-        <value>Past cases</value>
+        <value>历史记录</value>
     </data>
     <data name="MyLanguage" xml:space="preserve">
-        <value>My Language</value>
+        <value>我的语言</value>
     </data>
     <data name="PaymentMethods" xml:space="preserve">
-        <value>Payment Methods</value>
+        <value>支付方式</value>
     </data>
     <data name="AddPromo" xml:space="preserve">
-        <value>Add Promotion Code</value>
+        <value>添加优惠码</value>
     </data>
     <data name="PLanguage" xml:space="preserve">
-        <value>Preferred language</value>
+        <value>主选语言</value>
     </data>
     <data name="SLanguage" xml:space="preserve">
-        <value>Second language</value>
+        <value>次选语言</value>
     </data>
     <data name="Save" xml:space="preserve">
-        <value>Save</value>
+        <value>保存</value>
     </data>
     <data name="Feedback" xml:space="preserve">
-        <value>Feedback</value>
+        <value>反馈</value>
     </data>
     <data name="Submit" xml:space="preserve">
-        <value>Submit</value>
+        <value>提交</value>
     </data>
     <data name="Cancel" xml:space="preserve">
-        <value>Cancel</value>
+        <value>取消</value>
     </data>
     <data name="CaseInfo" xml:space="preserve">
-        <value>Case Info</value>
+        <value>事件信息</value>
     </data>
     <data name="Helper" xml:space="preserve">
-        <value>Helper</value>
+        <value>私人管家</value>
     </data>
     <data name="Receipt" xml:space="preserve">
-        <value>Receipt</value>
+        <value>收据</value>
     </data>
     <data name="ServiceFee" xml:space="preserve">
-        <value>Service Fee:</value>
+        <value>服务费:</value>
     </data>
     <data name="Tax" xml:space="preserve">
-        <value>Tax:</value>
+        <value>税款:</value>
     </data>
     <data name="EquipmentFee" xml:space="preserve">
-        <value>Equipment Fee:</value>
+        <value>设备费:</value>
     </data>
     <data name="CycbisFee" xml:space="preserve">
-        <value>Cycbis Fee:</value>
+        <value>Cycbis费:</value>
     </data>
     <data name="Total" xml:space="preserve">
-        <value>Total:</value>
+        <value>总计:</value>
     </data>
     <data name="PaymentInfo" xml:space="preserve">
-        <value>Payment Info</value>
+        <value>付款信息</value>
     </data>
     <data name="Visa" xml:space="preserve">
         <value>Visa:</value>
     </data>
     <data name="PhoneNumber" xml:space="preserve">
-        <value>Phone number</value>
+        <value>电话号码</value>
     </data>
     <data name="Password" xml:space="preserve">
-        <value>Password</value>
+        <value>密码</value>
     </data>
     <data name="ResetPassword" xml:space="preserve">
-        <value>Reset Password</value>
+        <value>重置密码</value>
     </data>
     <data name="AccountSetting" xml:space="preserve">
-        <value>Account Setting</value>
+        <value>账户设置g</value>
     </data>
     <data name="Email" xml:space="preserve">
-        <value>Email</value>
+        <value>电子邮箱</value>
     </data>
     <data name="Name" xml:space="preserve">
-        <value>Name</value>
+        <value>姓名</value>
     </data>
     <data name="NameLabel" xml:space="preserve">
-        <value>What is your name? (Required)</value>
+        <value>你的名字是? (必填)</value>
     </data>
     <data name="FName" xml:space="preserve">
-        <value>First Name</value>
+        <value>名</value>
     </data>
     <data name="LName" xml:space="preserve">
-        <value>Last Name</value>
+        <value>姓</value>
     </data>
     <data name="Security" xml:space="preserve">
-        <value>Security</value>
+        <value>安全</value>
     </data>
     <data name="Old" xml:space="preserve">
-        <value>Old</value>
+        <value>旧</value>
     </data>
     <data name="New" xml:space="preserve">
-        <value>New</value>
+        <value>新</value>
     </data>
     <data name="Confirm" xml:space="preserve">
-        <value>Confirm</value>
+        <value>确认</value>
     </data>
     <data name="Reviews" xml:space="preserve">
-        <value>Reviews</value>
+        <value>评论</value>
     </data>
     <data name="BasePrice" xml:space="preserve">
-        <value>Base Price</value>
+        <value>起价</value>
     </data>
     <data name="ReviewA" xml:space="preserve">
-        <value>Review your Assistant</value>
+        <value>给你的私人管家一个评价</value>
     </data>
     <data name="BaseInfoLabel" xml:space="preserve">
-        <value>Hi, Visitor</value>
+        <value>您好，旅行者</value>
     </data>
     <data name="Introduction" xml:space="preserve">
-        <value>Introduction</value>
+        <value>简介</value>
     </data>
     <data name="Specialities" xml:space="preserve">
-        <value>Specialities</value>
+        <value>擅长领域</value>
     </data>
     <data name="GH_Title" xml:space="preserve">
-        <value>Service Category</value>
+        <value>服务类型</value>
     </data>
     <data name="GH_Q1" xml:space="preserve">
-        <value>Are you international student?</value>
+        <value>您是留学生?</value>
     </data>
     <data name="GH_Q2" xml:space="preserve">
-        <value>Make immigrant life better</value>
+        <value>更好的新移民生活</value>
     </data>
     <data name="GH_Q3" xml:space="preserve">
-        <value>Traveler got some problem</value>
+        <value>旅途中的问题</value>
     </data>
     <data name="GH_Q4" xml:space="preserve">
-        <value>Business recommendation</value>
+        <value>推荐商家</value>
     </data>
     <data name="ServiceInfo" xml:space="preserve">
-        <value>Service info</value>
+        <value>服务信息</value>
     </data>
     <data name="FbZ" xml:space="preserve">
-        <value>Find by Zip</value>
+        <value>按邮编查找</value>
     </data>
     <data name="SAZ" xml:space="preserve">
-        <value>Searching Area ZipCode: </value>
+        <value>查询的邮编: </value>
     </data>
     <data name="LP" xml:space="preserve">
-        <value>Language Preference</value>
+        <value>首选语言</value>
     </data>
     <data name="Emergency" xml:space="preserve">
-        <value>Is Emergency?</value>
+        <value>是否为紧急事件?</value>
     </data>
 </root>
