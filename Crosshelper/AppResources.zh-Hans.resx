@@ -300,4 +300,7 @@
     <data name="BusinessInfo" xml:space="preserve">
         <value>商家信息</value>
     </data>
+    <data name="SearchBar" xml:space="preserve">
+        <value>这里搜索你需要的服务</value>
+    </data>
 </root>

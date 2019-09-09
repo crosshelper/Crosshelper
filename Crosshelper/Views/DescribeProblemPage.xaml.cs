@@ -10,6 +10,7 @@ using System.Linq;
 using WebSocketSharp;
 using System.Threading.Tasks;
 using Plugin.Permissions.Abstractions;
+using System.ComponentModel;
 
 namespace Crosshelper.Views
 {
@@ -32,7 +33,7 @@ namespace Crosshelper.Views
                 }
             });
         }
-        
+
         private TypeProblem _typeproblem;
         private TopicInfo _currentTopic;
         public string TitleText { get; set; }
@@ -41,6 +42,7 @@ namespace Crosshelper.Views
             _typeproblem = tmp;
             TitleText = tmp.Pcategory;
             InitializeComponent();
+            BindingContext = this;
             BindingContext = this;
         }
 

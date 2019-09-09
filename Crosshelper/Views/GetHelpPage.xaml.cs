@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Crosshelper.Helpers;
 using Crosshelper.Models;
 using Plugin.Geolocator;
-using UIKit;
+//using UIKit;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 

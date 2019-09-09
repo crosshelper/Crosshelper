@@ -300,4 +300,7 @@
     <data name="BusinessInfo" xml:space="preserve">
         <value>Business Info</value>
     </data>
+    <data name="SearchBar" xml:space="preserve">
+        <value>What kind service do you need?</value>
+    </data>
 </root>

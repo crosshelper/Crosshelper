@@ -622,5 +622,11 @@ namespace Crosshelper {
                 return ResourceManager.GetString("BusinessInfo", resourceCulture);
             }
         }
+        
+        internal static string SearchBar {
+            get {
+                return ResourceManager.GetString("SearchBar", resourceCulture);
+            }
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Crosshelper.Helpers;
 using Xamarin.Forms;
 
@@ -81,6 +81,11 @@ namespace Crosshelper.Views
         }
         void Handle_CodeAgain(object sender, System.EventArgs e)
         {
+            userAccess.TwilioVerifyService(_contactNo);
+            var time = 45;
+            TmcodeAgain.Text = "Resent code in " + time + " second";
+            TmcodeAgain.TextColor = Color.FromHex("#888888");
+            Code.IsEnabled = false;
 
             if (_contactNo.Remove(3)=="+86")
             {
@@ -89,10 +94,9 @@ namespace Crosshelper.Views
             else
             {
                 userAccess.TwilioVerifyService(_contactNo);
-                var time = 45;
+                //var time = 45;
                 TmcodeAgain.Text = "Resent code in " + time + " second";
                 TmcodeAgain.TextColor = Color.FromHex("#888888");
-                //this.IsEnabled = false;
             }
         }
     }

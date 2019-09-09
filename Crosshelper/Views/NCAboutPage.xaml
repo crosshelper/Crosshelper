@@ -8,7 +8,6 @@
             <Label Text="By CrosshelperInc." FontAttributes="Bold" FontSize="22" HorizontalOptions="Center"></Label>
             <Label x:Name="VersionCodeLabel" Text="Version beta 0.2.2" FontSize="20" HorizontalOptions="CenterAndExpand"></Label>
             <Label Text="Early access" FontSize="20" HorizontalOptions="CenterAndExpand"></Label>
-            <Image Source="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png" HeightRequest="80"/>
             <StackLayout>
                 <Label Text="{i18n:Translate Text=Feedback}"></Label>
                 <Editor x:Name="emaileditor" Placeholder="leave feedback here" HeightRequest="200" MaxLength="500" ></Editor>

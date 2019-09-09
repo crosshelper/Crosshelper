@@ -36,7 +36,7 @@
                        
                     </StackLayout >
                <Label Text="" x:Name="CodeStatus" TextColor="#ff4e18" FontSize="13"></Label>
-               <Label Margin="0,0,0,5">
+               <Label Margin="0,0,0,5" x:Name="Code">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="{i18n:Translate Text=ResendCode}"

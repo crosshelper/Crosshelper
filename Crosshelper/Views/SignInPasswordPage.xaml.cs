@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using Crosshelper.Helpers;
 using Crosshelper.Models;
@@ -10,7 +11,7 @@ using Xamarin.Forms;
 
 namespace Crosshelper.Views
 {
-    public partial class SignInPasswordPage : ContentPage
+    public partial class SignInPasswordPage : ContentPage, INotifyPropertyChanged
     {
         protected override void OnAppearing()
         {
@@ -19,10 +20,6 @@ namespace Crosshelper.Views
             {
                 await Task.Delay(150);
                 pwdEntry.Focus();
-                activity.IsEnabled = false;
-                activity.IsRunning = false;
-                activity.IsVisible = false;
-                SignInStatus.Text = "";
             });
         }
 
@@ -32,6 +29,33 @@ namespace Crosshelper.Views
         UserAccess userAccess = new UserAccess();
         KeyChainHelper kch = new KeyChainHelper();
         private string _currentNumber = "";
+
+        /// <loading>
+        private bool isLoading;
+        public bool IsLoading
+        {
+            get
+            {
+                return this.isLoading;
+            }
+
+            set
+            {
+                this.isLoading = value;
+                RaisePropertyChanged("IsLoading");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void RaisePropertyChanged(string propName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            }
+        }
+        /// <loading>
 
         public bool RememberMe
         {
@@ -65,6 +89,8 @@ namespace Crosshelper.Views
         public SignInPasswordPage(string currentNumber)
         {
             InitializeComponent();
+            IsLoading = false;
+            BindingContext = this;
             _currentNumber = currentNumber;
         }
 
@@ -88,10 +114,11 @@ namespace Crosshelper.Views
 
             if (userAccess.VerifyUser(_currentNumber, pwdEntry.Text))
             {
-                activity.IsEnabled = true;
-                activity.IsRunning = true;
-                activity.IsVisible = true;
-                SignInStatus.Text = "Connecting...";
+                //activity.IsEnabled = true;
+                // activity.IsRunning = true;
+                // activity.IsVisible = true;
+                // SignInStatus.Text = "Connecting...";
+                IsLoading = true;
                 kch.SavetoSecureStorage("token_of_" + _currentNumber, pwdEntry.Text);
                 //signInloading.Text = "Sign In Succeeded, Data Loading...";
                 //signInloading.TextColor = Color.FromHex("#555555");
