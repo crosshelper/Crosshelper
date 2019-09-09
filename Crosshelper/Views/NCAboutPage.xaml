@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.NCAboutPage"
-             Title="About Us">
-    <NavigationPage.TitleView>
-    </NavigationPage.TitleView>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:i18n="clr-namespace:Crosshelper.Helpers"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.NCAboutPage"
+             Title="{i18n:Translate Text=AboutUs}">
     <ContentPage.Content>
         <StackLayout Margin="20,25,20,0">
             <Label Text="By CrosshelperInc." FontAttributes="Bold" FontSize="22" HorizontalOptions="Center"></Label>
@@ -10,9 +10,9 @@
             <Label Text="Early access" FontSize="20" HorizontalOptions="CenterAndExpand"></Label>
             <Image Source="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png" HeightRequest="80"/>
             <StackLayout>
-                <Label Text="Feedback"></Label>
+                <Label Text="{i18n:Translate Text=Feedback}"></Label>
                 <Editor x:Name="emaileditor" Placeholder="leave feedback here" HeightRequest="200" MaxLength="500" ></Editor>
-                <Button x:Name="SubmitBtn" BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" Text="Submit"/>
+                <Button x:Name="SubmitBtn" BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" Text="{i18n:Translate Text=Submit}"/>
             </StackLayout>
             <Label Text="Or contact us: bo.chen@cycbis.com"/>
             <Label Text="© 2019-Present, Crosshelper Inc." FontSize="16" Margin="20"/>

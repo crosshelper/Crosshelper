@@ -2,16 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="Crosshelper.Views.PastHistoryDetailPage"
-             Title="Case detail">
+             xmlns:i18n="clr-namespace:Crosshelper.Helpers"
+             Title="{i18n:Translate Text=History}">
     <NavigationPage.TitleView>
         <Grid>
-            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled" VerticalOptions="Center"/>
+            <Button Text="{i18n:Translate Text=Cancel}" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled" VerticalOptions="Center"/>
         </Grid>
     </NavigationPage.TitleView>
             <ScrollView>
                  <StackLayout Padding="15">
                     <!-- Case detial -->
-                    <Label Text="Case Info" FontSize="Medium" FontAttributes="Bold" Margin="0,5,0,0"></Label>
+                    <Label Text="{i18n:Translate Text=CaseInfo}" FontSize="Medium" FontAttributes="Bold" Margin="0,5,0,0"></Label>
                     <BoxView BackgroundColor="#999999" HeightRequest="1.5"></BoxView>
                             <StackLayout 
                                      VerticalOptions="FillAndExpand" 
@@ -27,12 +28,12 @@
                                         </StackLayout>
                             </StackLayout>
                         <StackLayout>
-                            <Label Text="Problem description" FontSize="Default" Margin="0,5,0,0"></Label>
+                            <Label Text="{i18n:Translate Text=Description}" FontSize="Default" Margin="0,5,0,0"></Label>
                             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                                 <Label Text=""
                                     FontSize="Small" TextColor="#242424" x:Name="Description" ></Label>
                         </StackLayout>
-                            <Label Text="Helper" FontSize="Default" Margin="0,5,0,0"></Label>
+                            <Label Text="{i18n:Translate Text=Helper}" FontSize="Default" Margin="0,5,0,0"></Label>
                             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                             <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
                             <ImageButton
@@ -50,33 +51,33 @@
                                 <Label Text="" HorizontalOptions="EndAndExpand" FontSize="Default" x:Name="HelperLanguage"></Label>
                                 </StackLayout>
                 <!--Receipt-->
-                        <Label Text="Receipt" FontSize="Medium" Margin="0,20,0,0" FontAttributes="Bold" ></Label>
+                        <Label Text="{i18n:Translate Text=Receipt}" FontSize="Medium" Margin="0,20,0,0" FontAttributes="Bold" ></Label>
                         <BoxView BackgroundColor="#999999" HeightRequest="1.5"></BoxView>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Service Fee:" FontSize="Small" TextColor="#333333"></Label>
+                            <Label Text="{i18n:Translate Text=ServiceFee}" FontSize="Small" TextColor="#333333"></Label>
                                 <Label Text="" FontSize="Small" TextColor="#333333" x:Name="ServiceFee" ></Label>
                         </StackLayout>  
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Equipment Fee:" FontSize="Small" TextColor="#333333"></Label>
+                            <Label Text="{i18n:Translate Text=EquipmentFee}" FontSize="Small" TextColor="#333333"></Label>
                             <Label Text="" FontSize="Small" TextColor="#333333" x:Name="EquipmentFee"></Label>
                         </StackLayout> 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Cycbis fee:" FontSize="Small" TextColor="#333333"></Label>
+                            <Label Text="{i18n:Translate Text=CycbisFee}" FontSize="Small" TextColor="#333333"></Label>
                             <Label Text="" FontSize="Small" TextColor="#333333" x:Name="CycbisFee"></Label>
                         </StackLayout> 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Tax:" FontSize="Small" TextColor="#333333"></Label>
+                            <Label Text="{i18n:Translate Text=Tax}" FontSize="Small" TextColor="#333333"></Label>
                             <Label Text="" FontSize="Small" TextColor="#333333" x:Name="Tax"></Label>
                         </StackLayout> 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Total:" FontSize="Small" TextColor="#333333"></Label>
+                            <Label Text="{i18n:Translate Text=Total}" FontSize="Small" TextColor="#333333"></Label>
                             <Label Text="" FontSize="Small" TextColor="#333333" x:Name="Total"></Label>
                         </StackLayout>
                 <!--Receipt-->   
-                <Label Text="Payment info" FontSize="Default" Margin="0,5,0,0"></Label>
+                <Label Text="{i18n:Translate Text=PaymentInfo}" FontSize="Default" Margin="0,5,0,0"></Label>
                 <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Visa:" TextColor="#333333" FontSize="Small"></Label>
+                            <Label Text="{i18n:Translate Text=Visa}" TextColor="#333333" FontSize="Small"></Label>
                             <Label Text="" FontSize="Small" TextColor="#333333" x:Name="PaymentNum"></Label>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">

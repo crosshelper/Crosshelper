@@ -23,8 +23,7 @@
                                         <ffimageloading:CachedImage x:Name="background" Source="{Binding Icon}" VerticalOptions="FillAndExpand"/>
                                         <StackLayout>
                                             <Image Margin="0,0,0,0"  Aspect="AspectFill"/>
-                                            <Label Text="{i18n:Translate LaunchingLabel}" TextColor="#666666" FontSize="18" FontAttributes="Bold" Margin="0,0,0,8"></Label>
-            
+                                            <Label Text="{i18n:Translate Text=LaunchingLabel}" TextColor="#666666" FontSize="18" FontAttributes="Bold" Margin="0,0,0,8"></Label>
                                         </StackLayout>
                                     </StackLayout>
                             </DataTemplate>

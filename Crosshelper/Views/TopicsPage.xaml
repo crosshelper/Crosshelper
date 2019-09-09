@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.TopicsPage" Title="Topics">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:Crosshelper.Helpers"
+             x:Class="Crosshelper.Views.TopicsPage" Title="{i18n:Translate Text=Topic}">
     <ListView x:Name="MyListView" 
               IsPullToRefreshEnabled="True"
               RefreshCommand="{Binding RefreshCommand}"
@@ -21,14 +24,14 @@
             </StackLayout>
             <StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Location:" TextColor="#393939" FontSize="17" HorizontalOptions="Start"/>
+                    <Label Text="{i18n:Translate Text=Location}" TextColor="#393939" FontSize="17" HorizontalOptions="Start"/>
                     <Label
                        TextColor="#393939"
                         FontSize="17"
                        Text="{Binding Zipcode}"
                        Style="{DynamicResource ListItemTextStyle}"
                        HorizontalOptions="StartAndExpand" />
-                    <Label Text="Language:" TextColor="#393939" FontSize="17" HorizontalOptions="End"/>
+                    <Label Text="{i18n:Translate Text=Language}" TextColor="#393939" FontSize="17" HorizontalOptions="End"/>
                     <Label 
                        TextColor="#393939"
                        FontSize="17"
@@ -37,7 +40,7 @@
                 </StackLayout>       
             </StackLayout>
             <StackLayout>
-            <Label Text="Problem description" FontSize="18" TextColor="#393939"></Label>
+            <Label Text="{i18n:Translate Text=Description}" FontSize="18" TextColor="#393939"></Label>
             <Label 
                    TextColor="#393939"
                    MaxLines="4"

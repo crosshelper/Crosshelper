@@ -3,19 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
              x:Class="Crosshelper.Views.MyBackgroundPage"
-             Title="Language">
-     <NavigationPage.TitleView>
-    </NavigationPage.TitleView>
+             xmlns:i18n="clr-namespace:Crosshelper.Helpers"
+             Title="{i18n:Translate Text=Language}">
     <ContentPage.Content>
         <sv:SettingsView x:Name="settings"
                     HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
                     HasUnevenRows="true">
-        <sv:Section Title="Language Preference" FooterText="Pick your Language">
-                    <sv:TextPickerCell Title="Priority language" Items="{Binding LanguageItems}" TitleFontSize="18" ValueTextFontSize="16" SelectedItem="{Binding FLanguage}"/>
-                    <sv:TextPickerCell Title="Second language" Items="{Binding LanguageItems}" TitleFontSize="18" ValueTextFontSize="16" SelectedItem="{Binding SLanguage}"/>
+        <sv:Section Title="{i18n:Translate Text=Language}" FooterText="Pick your Language">
+                    <sv:TextPickerCell Title="{i18n:Translate Text=PLanguage}" Items="{Binding LanguageItems}" TitleFontSize="18" ValueTextFontSize="16" SelectedItem="{Binding FLanguage}"/>
+                    <sv:TextPickerCell Title="{i18n:Translate Text=SLanguage}" Items="{Binding LanguageItems}" TitleFontSize="18" ValueTextFontSize="16" SelectedItem="{Binding SLanguage}"/>
         </sv:Section>
         <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
-                 <sv:ButtonCell Title="Save" TitleColor="White" BackgroundColor="#FE5121" TitleFontSize="Large"
+                 <sv:ButtonCell Title="{i18n:Translate Text=Save}" TitleColor="White" BackgroundColor="#FE5121" TitleFontSize="Large"
                  TitleAlignment="Center" Command="{Binding SectionToggleCommand}" Tapped="Handle_Saved" />
         </sv:Section>
     </sv:SettingsView>

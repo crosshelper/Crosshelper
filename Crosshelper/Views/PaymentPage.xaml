@@ -4,8 +4,6 @@
              x:Class="Crosshelper.Views.PaymentPage"
              xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
              Title="Payment">
-    <NavigationPage.TitleView>
-    </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout BackgroundColor="#f4f4f4" Padding="0,30,0,0">
                 <Label Text="Payment info" 

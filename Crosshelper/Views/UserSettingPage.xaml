@@ -3,45 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
              x:Class="Crosshelper.Views.UserSettingPage"
-             Title="Profile">
+             xmlns:i18n="clr-namespace:Crosshelper.Helpers"
+             Title="{i18n:Translate Text=Profile}">
     <sv:SettingsView x:Name="settings"
                      HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
                      HasUnevenRows="true">
     
-    <sv:Section Title="Account" FooterText="" TextColor="Black" >
+    <sv:Section Title="{i18n:Translate Text=Account}" FooterText="" TextColor="Black" >
         <sv:CommandCell x:Name="UserCell" Tapped="Handle_MyProfile" IconSource="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png" IconSize="60,60" IconRadius="30"
             Title="William" Description="+16269886738" DescriptionFontSize="16"
             Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"/>
-        <sv:CommandCell Title="My Language" Tapped="Handle_Mybackground"/>
+        <sv:CommandCell Title="{i18n:Translate Text=MyLanguage}" Tapped="Handle_Mybackground"/>
     </sv:Section>
 
-    <sv:Section Title="Payment" IsVisible="{Binding SctionIsVisible}">
-        <sv:PickerCell Title="Payment Methods" Tapped="Handle_PaymentMethod" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+    <sv:Section Title="{i18n:Translate Text=Payment}" IsVisible="{Binding SctionIsVisible}">
+        <sv:PickerCell Title="{i18n:Translate Text=PaymentMethods}" Tapped="Handle_PaymentMethod" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
-        <sv:PickerCell Title="Add Promotion Code" Tapped="Handle_Promotion" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        <sv:PickerCell Title="{i18n:Translate Text=AddPromo}" Tapped="Handle_Promotion" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
         
-    <sv:Section Title="History" IsVisible="{Binding SctionIsVisible}">
-        <sv:PickerCell Title="Past cases" Tapped="Handle_PastCases" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+    <sv:Section Title="{i18n:Translate Text=History}" IsVisible="{Binding SctionIsVisible}">
+        <sv:PickerCell Title="{i18n:Translate Text=PastCase}" Tapped="Handle_PastCases" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true"/>
     </sv:Section>
 
-    <sv:Section Title="General" IsVisible="{Binding SctionIsVisible}">
-        <sv:CommandCell Title="App Language" Tapped="Handle_Language"/>
-        <sv:PickerCell Title="Safety" Tapped="Handle_Safety" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+    <sv:Section Title="{i18n:Translate Text=General}" IsVisible="{Binding SctionIsVisible}">
+        <!-- <sv:CommandCell Title="App Language" Tapped="Handle_Language"/> -->
+        <sv:PickerCell Title="{i18n:Translate Text=Safety}" Tapped="Handle_Safety" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
-        <sv:PickerCell Title="Legal" Tapped="Handle_Legal" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        <sv:PickerCell Title="{i18n:Translate Text=Legal}" Tapped="Handle_Legal" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
         
-    <sv:Section Title="About" IsVisible="{Binding SctionIsVisible}">
-        <sv:PickerCell Title="About us" Tapped="Handle_AboutUs" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+    <sv:Section Title="{i18n:Translate Text=About}" IsVisible="{Binding SctionIsVisible}">
+        <sv:PickerCell Title="{i18n:Translate Text=AboutUs}" Tapped="Handle_AboutUs" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
     
     <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
-             <sv:ButtonCell Title="Sign out" TitleColor="Red" Tapped="Handle_SignOut"
+             <sv:ButtonCell Title="{i18n:Translate Text=Signout}" TitleColor="Red" Tapped="Handle_SignOut"
              TitleAlignment="Center" Command="{Binding SectionToggleCommand}" />
     </sv:Section>
     

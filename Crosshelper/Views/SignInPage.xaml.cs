@@ -82,13 +82,10 @@ namespace Crosshelper.Views
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
                 await DisplayAlert("No Internet", "Try again later!", "OK");
-                return;
-            }
-
-            //Validation Check
-            if (!thelper.IsValidE164(uac.ContactNo, "US"))
-            {
-                await DisplayAlert("Not Valid", "Enter a real number and try again!", "OK");
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
+                signInloading.Text = "";
                 return;
             }
 
@@ -96,6 +93,21 @@ namespace Crosshelper.Views
             if (PNumEntry.Text.IsNullOrEmpty())
             {
                 await DisplayAlert("Error", "Try enter your Number and try again!", "OK");
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
+                signInloading.Text = "";
+                return;
+            }
+
+            //Validation Check
+            if (!thelper.IsValidE164(uac.ContactNo, "US"))
+            {
+                await DisplayAlert("Not Valid", "Enter a real number and try again!", "OK");
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
+                signInloading.Text = "";
                 return;
             }
 

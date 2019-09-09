@@ -3,9 +3,7 @@
     <ContentPage.Content>
         <!--Receipt-->
         <ScrollView>
-            <StackLayout> 
-           
-                
+            <StackLayout>
                 <StackLayout Margin="0,0,0,0" Padding="15,15,15,0">
                     <Label Text="Quote detail" FontSize="16" Margin="0,0,0,0"></Label>
                     <BoxView BackgroundColor="#555555" HeightRequest="0.5"></BoxView>

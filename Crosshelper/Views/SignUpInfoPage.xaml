@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.SignUpInfoPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:i18n="clr-namespace:Crosshelper.Helpers"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Crosshelper.Views.SignUpInfoPage">
     <ContentPage.Content>
         <ScrollView>
            <StackLayout Margin="15,20,15,10">
          <!--邮箱密码 Email&password input -->
                     <StackLayout>
-                        <Label Text="What's your Name? (Required)" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
+                        <Label Text="{i18n:Translate Text=NameLabel}" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                         <StackLayout Orientation="Horizontal">
                             <Entry x:Name="FNameEntry" Placeholder="First Name (Required)"
                                    FontSize="16"
@@ -17,7 +19,7 @@
                                    HeightRequest="45"/>
                         </StackLayout>
                         <StackLayout>
-                            <Label Text="Preferred language (Required)" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
+                            <Label Text="{i18n:Translate Text=PLanguage}" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
                             <Picker x:Name="FlanPicker" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select" TitleColor="#555555" FontSize="16" TextColor="#555555" >
                                     <Picker.ItemsSource>
                                         <x:Array Type="{x:Type x:String}">
@@ -34,7 +36,7 @@
                                         </x:Array>
                                     </Picker.ItemsSource>
                                 </Picker>
-                            <Label Text="Second language (Option)" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
+                            <Label Text="{i18n:Translate Text=SLanguage}" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
                             <Picker x:Name="SlanPicker" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select" TitleColor="#555555" FontSize="16" TextColor="#555555" >
                                 <Picker.ItemsSource>
                                     <x:Array Type="{x:Type x:String}">
@@ -51,7 +53,7 @@
                                     </x:Array>
                                 </Picker.ItemsSource>
                             </Picker>
-                            <Label Text="Email address (Option)" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
+                            <Label Text="{i18n:Translate Text=Email}" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
                             <Entry x:Name="EmailEntry" Placeholder="email@email.com"
                                    FontSize="16"
                                    HorizontalOptions="FillAndExpand"
@@ -64,7 +66,7 @@
            <!--登入按钮 Sign in Button -->   
                     <StackLayout VerticalOptions="StartAndExpand">
                             <Button  
-                                    Text="Create account"
+                                    Text="{i18n:Translate Text=Submit}"
                                     TextColor="White"
                                     FontSize="Medium"
                                     FontAttributes="Bold"

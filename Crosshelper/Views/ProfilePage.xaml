@@ -3,46 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
              x:Class="Crosshelper.Views.ProfilePage"
-             Title="Account Setting">
-     <NavigationPage.TitleView>
-    </NavigationPage.TitleView>
+             xmlns:i18n="clr-namespace:Crosshelper.Helpers"
+             Title="{i18n:Translate Text=AccountSetting}">
     <ContentPage.Content>
         <sv:SettingsView x:Name="settings"
                          HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
                          HasUnevenRows="true">
             <sv:Section FooterText="Tap image to change photo">
              <sv:CommandCell x:Name="NameCell" IconSource="https://s3-us-west-1.amazonaws.com/image.cycbis.com/UserProfileIcon/bochen.png" IconSize="60,60" IconRadius="30"
-                             Title="Bo Chen" Tapped="Handle_ChangePhoto" Description="Change the photo"
+                             Title="Mike" Tapped="Handle_ChangePhoto" Description="Change the photo"
                              Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"/>
             </sv:Section>
-            <sv:Section Title="Email Address" FooterText="">
-                <sv:EntryCell Title="Email" ValueText="{Binding Email}" 
+            <sv:Section Title="{i18n:Translate Text=Email}" FooterText="">
+                <sv:EntryCell Title="{i18n:Translate Text=Email}" ValueText="{Binding Email}" 
                               Placeholder="example@example.copm" Keyboard="Email" ValueTextFontSize="16"
                               TextAlignment="End" HintText="{Binding InputError.Value}" />
             </sv:Section>
-            <sv:Section Title="Name" FooterText="">
-                <sv:EntryCell Title="First Name" ValueText="{Binding FirstName}" 
+            <sv:Section Title="{i18n:Translate Text=Name}" FooterText="">
+                <sv:EntryCell Title="{i18n:Translate Text=FName}" ValueText="{Binding FirstName}" 
                               Keyboard="Email" 
                               ValueTextFontSize="16"
                               TextAlignment="End" HintText="{Binding InputError.Value}" /> 
-                <sv:EntryCell Title="Last Name" ValueText="{Binding LastName}" 
+                <sv:EntryCell Title="{i18n:Translate Text=LName}" ValueText="{Binding LastName}" 
                               Keyboard="Email" 
                               ValueTextFontSize="16"
                               TextAlignment="End" HintText="{Binding InputError.Value}" />
             </sv:Section>
             
-           <sv:Section Title="Security" FooterText="">
-                <sv:EntryCell Title="Phone number" ValueText="{Binding PhoneNumber}" 
+           <sv:Section Title="{i18n:Translate Text=Security}" FooterText="">
+                <sv:EntryCell Title="{i18n:Translate Text=PhoneNumber}" ValueText="{Binding PhoneNumber}" 
                               Placeholder="626 566 0781" Keyboard="Email" 
                               ValueTextFontSize="16" MaxLength="15"
                               TextAlignment="End" HintText="{Binding InputError.Value}" /> 
-                <sv:PickerCell Title="Reset Password" Tapped="Handle_ResetPassword" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+                <sv:PickerCell Title="{i18n:Translate Text=ResetPassword}" Tapped="Handle_ResetPassword" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
                               SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     
             </sv:Section>
                 
               <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
-                     <sv:ButtonCell Title="Save" TitleColor="White" BackgroundColor="#FE5121" TitleFontSize="Large"
+                     <sv:ButtonCell Title="{i18n:Translate Text=Save}" TitleColor="White" BackgroundColor="#FE5121" TitleFontSize="Large"
                      TitleAlignment="Center" Command="{Binding SectionToggleCommand}" Tapped="Handle_Saved"/>
               </sv:Section>
         </sv:SettingsView>
