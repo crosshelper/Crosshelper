@@ -48,6 +48,44 @@ namespace Crosshelper.Helpers
             }
         }
 
+        internal IList<TypeProblem> GetzhTagList()
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT * FROM Tags";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int TagID = reader.GetInt32(0);
+                    string Pcategory = reader.GetString(3);
+                    string ImageUrl = reader.GetString(2);
+
+                    TypeProblem tmp = new TypeProblem()
+                    {
+                        TagID = TagID,
+                        Pcategory = Pcategory,
+                        ImageUrl = ImageUrl
+                    };
+                    tagInfoList.Add(tmp);
+                }
+                return tagInfoList;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return tagInfoList;
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
         public string GetTagNameByID(int tagID)
         {
             //建立数据库连接

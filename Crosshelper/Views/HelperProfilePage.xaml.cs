@@ -34,6 +34,8 @@ namespace Crosshelper.Views
         public HelperProfilePage(HelperLabel hl)
         {
             InitializeComponent();
+            IsLoading = false;
+            BindingContext = this;
             _currenthelperlabel = hl;
             Pageload(hl);
         }
@@ -105,11 +107,12 @@ namespace Crosshelper.Views
                 group = groupChannel;
             });
             await Task.Delay(2000);
+            IsLoading = false;
             IsBusy = false;
             await Navigation.PushModalAsync(new NavigationPage(new ChatTestPage(user, group)));
         }
         //Confirm
-        void Handle_GetHelp(object sender, EventArgs e)
+        async void Handle_GetHelp(object sender, EventArgs e)
         {
             IsLoading = true;
             if (Settings.IsLogin)

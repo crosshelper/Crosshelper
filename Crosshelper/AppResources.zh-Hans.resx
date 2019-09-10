@@ -166,7 +166,7 @@
         <value>重置密码</value>
     </data>
     <data name="AccountSetting" xml:space="preserve">
-        <value>账户设置g</value>
+        <value>账户设置</value>
     </data>
     <data name="Email" xml:space="preserve">
         <value>电子邮箱</value>

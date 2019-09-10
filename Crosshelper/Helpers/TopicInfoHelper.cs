@@ -112,6 +112,36 @@ namespace Crosshelper.Helpers
             }
         }
 
+        internal bool TopicExist(int TagID)
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "select 1 from TopicInfo where Uid = @para1 and TagID = @para2 limit 1";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", Settings.UserId);
+                    cmd.Parameters.AddWithValue("para2", TagID);
+                    object result = cmd.ExecuteScalar();
+                    if (Convert.ToInt32(result) == 1)
+                        return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Connection failed");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false; 
+        }
+
         private void GetMyTopicByUid(string userId)
         {
             //建立数据库连接

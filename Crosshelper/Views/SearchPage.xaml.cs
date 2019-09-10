@@ -25,7 +25,14 @@ namespace Crosshelper.Views
         public SearchPage()
         {
             InitializeComponent();
-            TypeProblems = th.GetTagList();
+            if (AppResources.Culture.Name == "zh-CN")
+            {
+                TypeProblems = th.GetzhTagList();
+            }
+            else
+            {
+                TypeProblems = th.GetTagList();
+            }
             BindingContext = this;
         }
     }

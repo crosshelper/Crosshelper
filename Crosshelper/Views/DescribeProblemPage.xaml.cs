@@ -19,6 +19,7 @@ namespace Crosshelper.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            IsLoading = false;
             Device.BeginInvokeOnMainThread(async () =>
             {
                 await Task.Delay(150);
@@ -42,7 +43,7 @@ namespace Crosshelper.Views
             _typeproblem = tmp;
             TitleText = tmp.Pcategory;
             InitializeComponent();
-            BindingContext = this;
+            IsLoading = false;
             BindingContext = this;
         }
 
@@ -79,7 +80,6 @@ namespace Crosshelper.Views
             }
         }
 
-        /// <loading>
         private bool isLoading;
         public bool IsLoading
         {
@@ -104,13 +104,9 @@ namespace Crosshelper.Views
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
             }
         }
-        /// <loading>
 
         //Not Really按钮 Not really Button
-        void Handle_NotReally(object sender, EventArgs e)
-        {
-            (sender as Button).Text = "Click me again!";
-        }
+        void Handle_NotReally(object sender, EventArgs e) => (sender as Button).Text = "Click me again!";
         //Yes按钮 Yes Button
         void Handle_Yes(object sender, EventArgs e)
         {
@@ -119,7 +115,7 @@ namespace Crosshelper.Views
 
         int pageused = 0;
         //下一步按钮 Next Button
-        void Handle_Next(object sender, EventArgs e)
+        async void Handle_Next(object sender, EventArgs e)
         {
             IsLoading = true;
             string language = "English";
@@ -131,7 +127,13 @@ namespace Crosshelper.Views
             if (des.Text.IsNullOrEmpty())
             {
                 IsLoading = false;
-                DisplayAlert("No description", "Describe your Question plsease!", "OK");
+                await DisplayAlert("No description", "Describe your Question plsease!", "OK");
+                return;
+            }
+            if (tih.TopicExist(_typeproblem.TagID))
+            {
+                IsLoading = false;
+                await DisplayAlert("Exist", "Check Topic Board!", "OK");
                 return;
             }
             if (_currentTopic == null || pageused != 0)
@@ -142,7 +144,7 @@ namespace Crosshelper.Views
                     status = 1;
                 if (Settings.CurrentLongitude > 0)
                 {
-                    DisplayAlert("Missing info", "Google Service connection failed", "OK");
+                    await DisplayAlert("Missing info", "Google Service connection failed", "OK");
                     return;
                 }
                 
@@ -160,7 +162,7 @@ namespace Crosshelper.Views
                         Status = status
                     };
                     pageused++;
-                    Navigation.PushAsync(new PickHelperPage(_currentTopic));
+                    await Navigation.PushAsync(new PickHelperPage(_currentTopic));
                 }
                 else
                 {
@@ -174,14 +176,14 @@ namespace Crosshelper.Views
                         Status = status
                     };
                     pageused++;
-                    Navigation.PushAsync(new PickHelperPage(_currentTopic));
+                    await Navigation.PushAsync(new PickHelperPage(_currentTopic));
                 }                
             }
             else
             {
                 if (Settings.CurrentLongitude > 0)
                 {
-                    DisplayAlert("Missing info", "Google Service connection failed", "OK");
+                    await DisplayAlert("Missing info", "Google Service connection failed", "OK");
                     return;
                 }
                 //SetCurrentZipCode();
@@ -196,7 +198,7 @@ namespace Crosshelper.Views
                 {
                     tih.UpdateMyTopic("00000", language, des.Text, _currentTopic.TopicID, status);
                 }
-                Navigation.PushAsync(new PickHelperPage(_currentTopic));
+                await Navigation.PushAsync(new PickHelperPage(_currentTopic));
             }
         }
 
