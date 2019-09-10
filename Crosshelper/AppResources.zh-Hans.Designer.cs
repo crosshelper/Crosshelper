@@ -640,5 +640,35 @@ namespace Crosshelper {
                 return ResourceManager.GetString("PullDown", resourceCulture);
             }
         }
+        
+        internal static string DesSecondCheckAlart {
+            get {
+                return ResourceManager.GetString("DesSecondCheckAlart", resourceCulture);
+            }
+        }
+        
+        internal static string DescribeDemand {
+            get {
+                return ResourceManager.GetString("DescribeDemand", resourceCulture);
+            }
+        }
+        
+        internal static string GoogleFailed {
+            get {
+                return ResourceManager.GetString("GoogleFailed", resourceCulture);
+            }
+        }
+        
+        internal static string FeatureNotAccessable {
+            get {
+                return ResourceManager.GetString("FeatureNotAccessable", resourceCulture);
+            }
+        }
+        
+        internal static string GoSettings {
+            get {
+                return ResourceManager.GetString("GoSettings", resourceCulture);
+            }
+        }
     }
 }

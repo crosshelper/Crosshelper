@@ -309,4 +309,19 @@
     <data name="PullDown" xml:space="preserve">
         <value>Pull down to refresh the list</value>
     </data>
+    <data name="DesSecondCheckAlart" xml:space="preserve">
+        <value>Sorry, this service is existing, please check the topic board!</value>
+    </data>
+    <data name="DescribeDemand" xml:space="preserve">
+        <value>Describe your demand plsease!</value>
+    </data>
+    <data name="GoogleFailed" xml:space="preserve">
+        <value>Google Service connection failed!</value>
+    </data>
+    <data name="FeatureNotAccessable" xml:space="preserve">
+        <value>Location feature not accessable.</value>
+    </data>
+    <data name="GoSettings" xml:space="preserve">
+        <value>Go to Settings</value>
+    </data>
 </root>

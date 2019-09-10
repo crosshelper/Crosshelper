@@ -127,13 +127,13 @@ namespace Crosshelper.Views
             if (des.Text.IsNullOrEmpty())
             {
                 IsLoading = false;
-                await DisplayAlert("No description", "Describe your Question plsease!", "OK");
+                await DisplayAlert("No description", AppResources.DescribeDemand, "OK");
                 return;
             }
             if (tih.TopicExist(_typeproblem.TagID))
             {
                 IsLoading = false;
-                await DisplayAlert("Exist", "Check Topic Board!", "OK");
+                await DisplayAlert("Existting", AppResources.DesSecondCheckAlart, "OK");
                 return;
             }
             if (_currentTopic == null || pageused != 0)
@@ -144,7 +144,7 @@ namespace Crosshelper.Views
                     status = 1;
                 if (Settings.CurrentLongitude > 0)
                 {
-                    await DisplayAlert("Missing info", "Google Service connection failed", "OK");
+                    await DisplayAlert("Missing info", AppResources.GoogleFailed, "OK");
                     return;
                 }
                 
@@ -183,7 +183,7 @@ namespace Crosshelper.Views
             {
                 if (Settings.CurrentLongitude > 0)
                 {
-                    await DisplayAlert("Missing info", "Google Service connection failed", "OK");
+                    await DisplayAlert("Missing info", AppResources.GoogleFailed, "OK");
                     return;
                 }
                 //SetCurrentZipCode();
@@ -246,7 +246,7 @@ namespace Crosshelper.Views
             catch (PermissionException pEx)
             {
                 // Handle permission exception
-                bool action = await DisplayAlert("Location Error", "Feature not accessable.", "go to Settings", "Cancel");
+                bool action = await DisplayAlert("Location Error", AppResources.FeatureNotAccessable, AppResources.GoSettings, AppResources.Cancel);
                 switch (action)
                 {
                     case true:

@@ -309,4 +309,19 @@
     <data name="PullDown" xml:space="preserve">
         <value>下拉刷新列表</value>
     </data>
+    <data name="DesSecondCheckAlart" xml:space="preserve">
+        <value>您的此类需求已经存在，请到话题版查看。</value>
+    </data>
+    <data name="DescribeDemand" xml:space="preserve">
+        <value>请描述您的需求</value>
+    </data>
+    <data name="GoogleFailed" xml:space="preserve">
+        <value>谷歌服务连接失败</value>
+    </data>
+    <data name="FeatureNotAccessable" xml:space="preserve">
+        <value>手机地理位置无法使用</value>
+    </data>
+    <data name="GoSettings" xml:space="preserve">
+        <value>去设置</value>
+    </data>
 </root>
