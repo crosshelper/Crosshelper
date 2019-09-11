@@ -670,5 +670,11 @@ namespace Crosshelper {
                 return ResourceManager.GetString("GoSettings", resourceCulture);
             }
         }
+        
+        internal static string Matched {
+            get {
+                return ResourceManager.GetString("Matched", resourceCulture);
+            }
+        }
     }
 }

@@ -37,10 +37,12 @@ namespace Crosshelper.Views
 
         private TypeProblem _typeproblem;
         private TopicInfo _currentTopic;
+        private int TagID = 99999;
         public string TitleText { get; set; }
         public DescribeProblemPage(TypeProblem tmp)
         {
             _typeproblem = tmp;
+            TagID = tmp.TagID;
             TitleText = tmp.Pcategory;
             InitializeComponent();
             IsLoading = false;
@@ -50,6 +52,7 @@ namespace Crosshelper.Views
         public DescribeProblemPage(TopicInfo tmp)
         {
             _currentTopic = tmp;
+            //TagID = tmp.TagID;
             TitleText = tmp.TagName;
             InitializeComponent();
             IsLoading = false;
@@ -118,6 +121,7 @@ namespace Crosshelper.Views
         async void Handle_Next(object sender, EventArgs e)
         {
             IsLoading = true;
+            await Task.Delay(500);
             string language = "English";
             var tih = new TopicInfoHelper();
             if (languagepicker.SelectedItem != null)
@@ -130,7 +134,7 @@ namespace Crosshelper.Views
                 await DisplayAlert("No description", AppResources.DescribeDemand, "OK");
                 return;
             }
-            if (tih.TopicExist(_typeproblem.TagID))
+            if (tih.TopicExist(TagID))
             {
                 IsLoading = false;
                 await DisplayAlert("Existting", AppResources.DesSecondCheckAlart, "OK");

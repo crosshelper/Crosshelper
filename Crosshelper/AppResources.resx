@@ -324,4 +324,7 @@
     <data name="GoSettings" xml:space="preserve">
         <value>Go to Settings</value>
     </data>
+    <data name="Matched" xml:space="preserve">
+        <value>Matched Assistant</value>
+    </data>
 </root>

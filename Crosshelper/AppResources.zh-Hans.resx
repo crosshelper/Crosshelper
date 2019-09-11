@@ -324,4 +324,7 @@
     <data name="GoSettings" xml:space="preserve">
         <value>去设置</value>
     </data>
+    <data name="Matched" xml:space="preserve">
+        <value>匹配的私人管家</value>
+    </data>
 </root>

@@ -58,24 +58,49 @@ namespace Crosshelper.Converters
         public List<HelperLabel> BindingHelpersConvert(List<UserPro> helpers)
         {
             List<HelperLabel> newhelpers = new List<HelperLabel>();
-            foreach (UserPro helper in helpers)
+            if (AppResources.Culture.Name == "zh-CN")
             {
-                HelperLabel tmp = new HelperLabel();
-                tmp.HelperID = helper.UserID;
-                tmp.Name = helper.FirstName + "  " + helper.LastName;
-                tmp.Rating = StarNoToStarSign(helper.Rating);
-                tmp.Language = "Language: " + helper.FLanguage + "/" + helper.SLanguage;
-                tmp.Baseprice = "$" + helper.PriceSign + " starting cost";
-                tmp.Location = "8 miles away";
-                tmp.MatchedTag = "";
-                tmp.StatusColor = StatusColorConverter(helper.Status);
-                tmp.StatusText = StatusTextConverter(helper.Status); ;
-                tmp.LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png";
-                tmp.ImageUrl = helper.Icon;
-                tmp.ChatID = helper.ChatID;
-                tmp.Bio = helper.Bio;
-                newhelpers.Add(tmp);
+                foreach (UserPro helper in helpers)
+                {
+                    HelperLabel tmp = new HelperLabel();
+                    tmp.HelperID = helper.UserID;
+                    tmp.Name = helper.FirstName + "  " + helper.LastName;
+                    tmp.Rating = StarNoToStarSign(helper.Rating);
+                    tmp.Language = "语言: 普通话";// + helper.FLanguage + "/" + helper.SLanguage;
+                    tmp.Baseprice = "$" + helper.PriceSign + " 起价";
+                    tmp.Location = "8 miles away";
+                    tmp.MatchedTag = "";
+                    tmp.StatusColor = StatusColorConverter(helper.Status);
+                    tmp.StatusText = StatusTextConverter(helper.Status); ;
+                    tmp.LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png";
+                    tmp.ImageUrl = helper.Icon;
+                    tmp.ChatID = helper.ChatID;
+                    tmp.Bio = helper.Bio;
+                    newhelpers.Add(tmp);
+                }
             }
+            else
+            {
+                foreach (UserPro helper in helpers)
+                {
+                    HelperLabel tmp = new HelperLabel();
+                    tmp.HelperID = helper.UserID;
+                    tmp.Name = helper.FirstName + "  " + helper.LastName;
+                    tmp.Rating = StarNoToStarSign(helper.Rating);
+                    tmp.Language = "Language: " + helper.FLanguage + "/" + helper.SLanguage;
+                    tmp.Baseprice = "$" + helper.PriceSign + " starting cost";
+                    tmp.Location = "8 miles away";
+                    tmp.MatchedTag = "";
+                    tmp.StatusColor = StatusColorConverter(helper.Status);
+                    tmp.StatusText = StatusTextConverter(helper.Status); ;
+                    tmp.LocationIconUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/LocationPinIcon.png";
+                    tmp.ImageUrl = helper.Icon;
+                    tmp.ChatID = helper.ChatID;
+                    tmp.Bio = helper.Bio;
+                    newhelpers.Add(tmp);
+                }
+            }
+            
             return newhelpers;
         }
 
