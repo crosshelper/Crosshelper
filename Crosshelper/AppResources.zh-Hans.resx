@@ -130,7 +130,7 @@
         <value>事件信息</value>
     </data>
     <data name="Helper" xml:space="preserve">
-        <value>私人管家</value>
+        <value>海外助手</value>
     </data>
     <data name="Receipt" xml:space="preserve">
         <value>收据</value>
@@ -202,7 +202,7 @@
         <value>起价</value>
     </data>
     <data name="ReviewA" xml:space="preserve">
-        <value>给你的私人管家一个评价</value>
+        <value>给你的海外助手一个评价</value>
     </data>
     <data name="BaseInfoLabel" xml:space="preserve">
         <value>您好，旅行者</value>
@@ -325,6 +325,6 @@
         <value>去设置</value>
     </data>
     <data name="Matched" xml:space="preserve">
-        <value>匹配的私人管家</value>
+        <value>匹配的海外助手</value>
     </data>
 </root>
